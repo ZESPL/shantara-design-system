@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shantara design system</title>
+  <meta name="description" content="Colour, type, logo, pattern, components and the two UI kits for Shantara Naturopathy.">
+  <link rel="icon" href="assets/icon-olive.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="catalog.css">
+</head>
+<body class="catalog" data-view="home">
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="top">
+    <div class="top-start">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav" data-nav-toggle>
+        Browse
+      </button>
+      <a class="brand" href="#/" data-home>
+        <img src="assets/wordmark-dark.svg" alt="Shantara" height="16">
+        <span class="brand-rule" aria-hidden="true"></span>
+        <span class="brand-label">Design system</span>
+      </a>
+    </div>
+    <label class="search">
+      <span class="visually-hidden">Search cards</span>
+      <input type="search" placeholder="Search colour, type, components" autocomplete="off" data-search>
+    </label>
+  </header>
+
+  <div class="shell">
+    <div class="nav-backdrop" data-nav-close hidden></div>
+    <nav class="nav" id="nav" aria-label="Design system">
+      <p class="nav-count" data-nav-count></p>
+      <div data-nav-tree></div>
+    </nav>
+
+    <main class="main" id="main">
+      <section class="home" data-panel="home">
+        <div class="hero shantara-pattern" data-tone="dark">
+          <span class="shantara-pattern-band" data-edge="right" aria-hidden="true"></span>
+          <div class="hero-inner">
+            <span class="shantara-eyebrow" style="color: var(--color-gold-crayola)">Shantara Naturopathy</span>
+            <h1>Design system</h1>
+            <p class="hero-lead">Colour, type, logo, pattern, components and the two UI kits. Open a card to see it at the size it was drawn.</p>
+            <p class="hero-meta" data-home-meta></p>
+          </div>
+        </div>
+        <div class="catalog-list" data-catalog></div>
+      </section>
+
+      <section class="viewer" data-panel="viewer" hidden>
+        <header class="viewer-head">
+          <p class="shantara-eyebrow" data-view-group></p>
+          <div class="viewer-title-row">
+            <h1 data-view-name></h1>
+            <div class="viewer-actions">
+              <a class="btn btn-ghost" data-view-open href="#" target="_blank" rel="noopener">Open full page</a>
+              <span class="viewport-pill" data-view-size></span>
+            </div>
+          </div>
+          <p class="viewer-sub" data-view-sub></p>
+        </header>
+        <div class="stage" data-stage>
+          <div class="frame-wrap" data-frame-wrap>
+            <iframe class="frame" data-frame title="Selected card"></iframe>
+          </div>
+        </div>
+      </section>
+
+      <p class="empty" data-empty hidden>No cards match that search.</p>
+    </main>
+  </div>
+
+  <script src="catalog.js"></script>
+</body>
+</html>

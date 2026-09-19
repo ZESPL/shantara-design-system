@@ -1,0 +1,65 @@
+<!-- @dsCard group="Foundations" viewport="1000x780" name="Contrast audit" subtitle="Live WCAG 2.2 AA measurement of all 29 token pairs in use — fails visibly if a token changes" -->
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../styles.css"><style>body{margin:0;padding:24px;background:var(--surface-page);font-family:var(--font-body);color:var(--text-primary)}h3{margin:0 0 var(--space-4);font:var(--type-h4);font-size:var(--text-base)}table{width:100%;border-collapse:collapse;font-size:var(--text-xs)}th{text-align:left;font-family:var(--font-mono);font-size:var(--text-3xs);letter-spacing:.06em;text-transform:uppercase;color:var(--text-muted);font-weight:400;padding:0 20px 8px 0}th:last-child,td:last-child{padding-right:0}td{padding:7px 20px 7px 0;border-top:1px solid var(--border-subtle);vertical-align:middle}.sw{display:inline-block;width:13px;height:13px;border-radius:3px;border:1px solid var(--border-subtle);vertical-align:-2px;margin-right:6px}.n{font-variant-numeric:tabular-nums;text-align:right}.tick{font-size:var(--text-2xs);font-weight:var(--weight-semibold);color:var(--status-success)}.note{font-size:var(--text-2xs);color:var(--text-muted)}.card{background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-md);padding:var(--space-6)}ul{margin:0;padding-left:1.1em;font-size:var(--text-xs);line-height:1.75;color:var(--text-secondary)}li{margin-bottom:2px}</style></head><body>
+<div style="display:grid;gap:var(--space-7)">
+<div>
+<span class="shantara-eyebrow">Target</span>
+<h2 style="font:var(--type-h3);font-size:var(--text-2xl);margin:var(--space-3) 0 var(--space-3)">WCAG 2.2 Level AA</h2>
+<p style="font-size:var(--text-sm);color:var(--text-secondary);margin:0;max-width:80ch">Text at 4.5:1, large text (24px+, or 19px+ Semibold) at 3:1, control boundaries and focus indicators at 3:1. This resolves every semantic token — including the <code>oklch()</code> ramp and the <code>color-mix()</code> transparencies — and measures them on render, so it fails visibly if a token is ever changed.</p>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-8);align-items:start">
+<table id="tblA"><thead><tr><th>Pair</th><th>Fg</th><th>Bg</th><th class="n">Ratio</th><th class="n">Needs</th><th>AA</th></tr></thead><tbody></tbody></table>
+<table id="tblB"><thead><tr><th>Pair</th><th>Fg</th><th>Bg</th><th class="n">Ratio</th><th class="n">Needs</th><th>AA</th></tr></thead><tbody></tbody></table>
+</div>
+<p class="note" id="summary" style="margin:0"></p>
+</div>
+<span id="probe" style="display:none"></span>
+<script>
+const probe=document.getElementById('probe');
+const cv=document.createElement('canvas');cv.width=cv.height=1;const cx=cv.getContext('2d',{willReadFrequently:true});
+function resolve(v){probe.style.color='';probe.style.color=v;const c=getComputedStyle(probe).color;if(!c)return null;cx.clearRect(0,0,1,1);try{cx.fillStyle=c}catch(e){return null}cx.fillRect(0,0,1,1);const d=cx.getImageData(0,0,1,1).data;return {r:d[0],g:d[1],b:d[2],a:d[3]/255};}
+const over=(f,b)=>({r:f.r*f.a+b.r*(1-f.a),g:f.g*f.a+b.g*(1-f.a),b:f.b*f.a+b.b*(1-f.a),a:1});
+const lum=c=>{const f=x=>{x/=255;return x<=0.03928?x/12.92:Math.pow((x+0.055)/1.055,2.4)};return 0.2126*f(c.r)+0.7152*f(c.g)+0.0722*f(c.b)};
+function ratio(fv,bv){let bg=resolve(bv),fg=resolve(fv);if(!fg||!bg)return null;if(bg.a<1)bg=over(bg,{r:255,g:255,b:255,a:1});if(fg.a<1)fg=over(fg,bg);const a=lum(fg),b=lum(bg);return (Math.max(a,b)+0.05)/(Math.min(a,b)+0.05);}
+const PAIRS=[
+['Body text · page','var(--text-primary)','var(--surface-page)',4.5],
+['Body text · card','var(--text-primary)','var(--surface-card)',4.5],
+['Body text · Pearl Bush','var(--text-primary)','var(--surface-raised)',4.5],
+['Secondary · page','var(--text-secondary)','var(--surface-page)',4.5],
+['Secondary · Pearl Bush','var(--text-secondary)','var(--surface-raised)',4.5],
+['Muted (hints, captions) · page','var(--text-muted)','var(--surface-page)',4.5],
+['Muted · card','var(--text-muted)','var(--surface-card)',4.5],
+['Muted · Pearl Bush','var(--text-muted)','var(--surface-raised)',4.5],
+['Brand text / link · page','var(--text-link)','var(--surface-page)',4.5],
+['Link hover · page','var(--text-link-hover)','var(--surface-page)',4.5],
+['On Himalaya','var(--text-on-brand)','var(--surface-brand)',4.5],
+['On Gold Crayola','var(--text-on-accent)','var(--surface-accent)',4.5],
+['On Pine Tree','var(--text-on-inverse)','var(--surface-inverse)',4.5],
+['Gold eyebrow · Himalaya','var(--color-gold-crayola)','var(--surface-brand)',4.5],
+['Merino 88% · Himalaya','color-mix(in srgb, var(--color-merino) 88%, transparent)','var(--surface-brand)',4.5],
+['Cotton Seed · Pine Tree','var(--color-cotton-seed)','var(--color-pine-tree)',4.5],
+['Cotton Seed 70% · Pine Tree','color-mix(in srgb, var(--color-cotton-seed) 70%, transparent)','var(--color-pine-tree)',4.5],
+['Badge success','var(--status-success)','var(--status-success-soft)',4.5],
+['Badge info','var(--color-pine-tree)','var(--status-info-soft)',4.5],
+['Badge warning','var(--status-warning)','var(--status-warning-soft)',4.5],
+['Badge danger','var(--status-danger)','var(--status-danger-soft)',4.5],
+['Error text · card','var(--status-danger)','var(--surface-card)',4.5],
+['Control border · card','var(--border-control)','var(--surface-card)',3],
+['Control border · page','var(--border-control)','var(--surface-page)',3],
+['Control border · Pearl Bush','var(--border-control)','var(--surface-raised)',3],
+['Focus ring · page','var(--border-focus)','var(--surface-page)',3],
+['Primary button fill · page','var(--surface-brand)','var(--surface-page)',3],
+['Accent button edge · page','var(--color-gold-800)','var(--surface-page)',3],
+['Accent button edge · fill','var(--color-gold-800)','var(--surface-accent)',3],
+];
+const hex=v=>{const c=resolve(v);return c?'#'+[c.r,c.g,c.b].map(x=>Math.round(x).toString(16).padStart(2,'0')).join('').toUpperCase():'—'};
+const tA=document.querySelector('#tblA tbody'),tB=document.querySelector('#tblB tbody');
+const half=Math.ceil(PAIRS.length/2);let fails=0,min=99;
+PAIRS.forEach(([label,fg,bg,need],i)=>{
+  const r=ratio(fg,bg);const ok=r>=need;if(!ok)fails++;if(r<min)min=r;
+  const tr=document.createElement('tr');
+  tr.innerHTML='<td>'+label+'</td><td><span class="sw" style="background:'+fg+'"></span></td><td><span class="sw" style="background:'+bg+'"></span></td><td class="n">'+r.toFixed(2)+'</td><td class="n note">'+need.toFixed(1)+'</td><td class="tick" style="'+(ok?'':'color:var(--status-danger)')+'">'+(ok?'PASS':'FAIL')+'</td>';
+  (i<half?tA:tB).appendChild(tr);
+});
+document.getElementById('summary').textContent=PAIRS.length+' pairs measured · '+(PAIRS.length-fails)+' pass · '+fails+' fail · lowest ratio '+min.toFixed(2)+':1';
+</script>
+</body></html>

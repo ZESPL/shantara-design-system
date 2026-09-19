@@ -1,0 +1,6 @@
+uploads/
+scraps/
+dist/
+.netlify/
+.DS_Store
+Thumbs.db

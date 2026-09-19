@@ -1,0 +1,32 @@
+<!-- @dsCard group="App" viewport="1000x900" name="Shantara app" subtitle="In-stay guest companion — today's prescribed schedule, protocol, therapy sheet, notes & vitals" -->
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Shantara — app kit</title>
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>body{margin:0;min-height:100vh;display:grid;place-items:center;background:var(--color-pearl-bush);padding:28px}
+@media (max-width:460px){body{padding:0}#root>div>div{width:100vw!important;height:100vh!important;border-radius:0!important;border:0!important}}</style>
+</head><body>
+<div id="root"></div>
+<script type="text/babel" src="Shell.js"></script>
+<script type="text/babel" src="TodayScreen.js"></script>
+<script type="text/babel" src="TherapySheet.js"></script>
+<script type="text/babel">
+function App(){
+  const [tab,setTab]=React.useState("Today");
+  const [sheet,setSheet]=React.useState(false);
+  const { Phone, TodayScreen, ProtocolScreen, NotesScreen, ProfileScreen, TherapySheet } = window;
+  return (<div style={{position:"relative"}}>
+    <Phone tab={tab} onTab={setTab}>
+      {tab==="Today"?<TodayScreen onTab={setTab} onOpen={()=>setSheet(true)}/>:
+       tab==="Programme"?<ProtocolScreen onOpen={()=>setSheet(true)}/>:
+       tab==="Notes"?<NotesScreen/>:<ProfileScreen/>}
+    </Phone>
+    {sheet?<div style={{position:"absolute",inset:0,borderRadius:44,overflow:"hidden"}}><TherapySheet onClose={()=>setSheet(false)}/></div>:null}
+  </div>);
+}
+const boot=()=>{ if(window.Phone&&window.TodayScreen&&window.TherapySheet&&window.NotesScreen){ReactDOM.createRoot(document.getElementById("root")).render(<App/>);}else{setTimeout(boot,50);} };
+boot();
+</script>
+</body></html>

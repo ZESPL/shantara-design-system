@@ -1,0 +1,66 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../styles.css"><style>body{margin:0;padding:32px 24px;background:var(--surface-page);font-family:var(--font-body);color:var(--text-primary)}h3{margin:0 0 4px;font:var(--weight-medium) var(--text-sm)/1.2 var(--font-body);letter-spacing:.02em}.cap{font-family:var(--font-mono);font-size:var(--text-3xs);letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted)}.sw{position:relative;overflow:hidden;border-radius:var(--radius-md);border:1px solid var(--border-subtle)}.tag{position:absolute;bottom:10px;left:12px;font-family:var(--font-mono);font-size:var(--text-3xs);letter-spacing:.06em;color:var(--text-secondary)}table{border-collapse:collapse;font-size:var(--text-xs);width:100%}th{text-align:left;font-family:var(--font-mono);font-size:var(--text-3xs);letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);font-weight:var(--weight-regular);padding:0 0 8px}td{padding:7px 0;border-top:1px solid var(--border-subtle);font-variant-numeric:tabular-nums;color:var(--text-secondary)}td:first-child{color:var(--text-primary)}</style></head><body>
+<template id="__bundler_thumbnail" data-bg-color="#F4F0E6">
+<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg"><rect width="120" height="120" fill="#F4F0E6"/><rect x="78" y="0" width="42" height="120" fill="#EDE7D9"/><line x1="78" y1="0" x2="78" y2="120" stroke="#C4BFB6" stroke-width="1.5"/><g stroke="#A89F91" stroke-width="1.6" fill="none"><circle cx="99" cy="30" r="12"/><circle cx="99" cy="30" r="5.5"/><path d="M99 18v24M87 30h24M90.5 21.5l17 17M107.5 21.5l-17 17"/><circle cx="99" cy="76" r="12"/><circle cx="99" cy="76" r="5.5"/><path d="M99 64v24M87 76h24M90.5 67.5l17 17M107.5 67.5l-17 17"/></g><g fill="#3C4A33"><rect x="14" y="26" width="50" height="7" rx="3.5"/><rect x="14" y="40" width="38" height="7" rx="3.5"/><rect x="14" y="62" width="44" height="4" rx="2" opacity="0.45"/><rect x="14" y="72" width="50" height="4" rx="2" opacity="0.45"/><rect x="14" y="82" width="30" height="4" rx="2" opacity="0.45"/></g></svg>
+</template>
+<div style="display:grid;gap:var(--space-8);max-width:960px;margin:0 auto">
+
+<div style="display:grid;grid-template-columns:1.15fr 1fr;gap:var(--space-8);align-items:start">
+<div>
+<h3>Proportion — the cell is half the band</h3>
+<p class="cap" style="margin:0 0 12px">Cross-axis measure ÷ 2. Two rosettes across the band, at every surface size.</p>
+<table>
+<tr><th>Surface</th><th>Band</th><th>Cell</th></tr>
+<tr><td>1440 page · 30%</td><td>432px</td><td>216px</td></tr>
+<tr><td>1280 slide · 30%</td><td>380px</td><td>199px · 2xs</td></tr>
+<tr><td>1440 × 1800 post · strip 15%</td><td>270px</td><td>135px</td></tr>
+<tr><td>960 panel · 30%</td><td>288px</td><td>144px</td></tr>
+<tr><td>880 panel · 30%</td><td>264px</td><td>132px — the smallest surface</td></tr>
+</table>
+</div>
+<div style="font-size:var(--text-xs);color:var(--text-secondary);display:grid;gap:10px;line-height:var(--leading-relaxed)">
+<p style="margin:0"><strong style="color:var(--text-primary)">Usable range</strong> is band ÷ 1.5 to band ÷ 3 — outside it the band stops reading as one ornament and starts reading as texture or as a cropped drawing.</p>
+<p style="margin:0"><strong style="color:var(--text-primary)">Floor: 130px.</strong> The strokes close into grey below it, which puts the smallest patterned surface at roughly 880px across. Under that, drop the pattern rather than shrink it — a small card gets no band.</p>
+<p style="margin:0"><strong style="color:var(--text-primary)">Always square, always both axes.</strong> One value: <span style="font-family:var(--font-mono)">199px 199px</span>, never <span style="font-family:var(--font-mono)">300px 170px</span>.</p>
+<p style="margin:0"><strong style="color:var(--text-primary)">The inner edge is ruled.</strong> 1px Cotton Seed on light grounds, Merino 34% on dark and over photography. The three outer sides bleed off, unruled.</p>
+</div>
+</div>
+
+<div>
+<h3>Vertical band — right or left edge</h3>
+<p class="cap" style="margin:0 0 12px">912px surface · band 274px (30%) · cell 137px · hairline on the inner side</p>
+<div class="sw shantara-pattern" style="height:230px;background:var(--color-merino);--pattern-band:30%;--pattern-scale:137px"><span class="shantara-pattern-band" data-edge="right"></span><span style="position:absolute;left:24px;top:26px;font:var(--weight-light) var(--text-3xl)/1.05 var(--font-display);max-width:16ch">Three things we left out, on purpose</span><span class="tag">band 274 · cell 137 · rule 1px</span></div>
+</div>
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+<div>
+<h3>Horizontal strip — detail, actual size</h3>
+<p class="cap" style="margin:0 0 10px">270px strip on a 1440 × 1800 post · cell 135px</p>
+<div class="sw shantara-pattern" data-tone="dark" style="height:150px;background:var(--color-himalaya);--pattern-band:135px;--pattern-scale:135px"><span class="shantara-pattern-band" data-edge="top"></span><span class="tag" style="color:var(--color-gold-crayola)">strip 270 (15%) · cell 135</span></div>
+</div>
+<div>
+<h3>Over photography — detail, actual size</h3>
+<p class="cap" style="margin:0 0 10px">White line at 0.5 · one band there too</p>
+<div class="sw shantara-pattern" data-tone="photo" style="height:150px;background:var(--color-pine-tree) url(../assets/photos/water-wall.jpg) center/cover;--pattern-band:135px;--pattern-scale:135px"><span class="shantara-pattern-band" data-edge="bottom"></span></div>
+</div>
+</div>
+
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px">
+<div>
+<h3>The repeat cell</h3>
+<p class="cap" style="margin:0 0 10px">530 × 530 · tiles both axes</p>
+<div class="sw" style="height:170px;background:var(--color-merino) var(--pattern-unit) no-repeat center/contain"></div>
+</div>
+<div>
+<h3>Don't · wash</h3>
+<p class="cap" style="margin:0 0 10px">Whole surface tinted behind type</p>
+<div class="sw" style="height:170px;position:relative;overflow:hidden;background:var(--color-merino)"><span style="position:absolute;inset:0;background-color:var(--color-cotton-seed);-webkit-mask-image:var(--pattern-unit);mask-image:var(--pattern-unit);-webkit-mask-repeat:repeat;mask-repeat:repeat;-webkit-mask-size:137px 137px;mask-size:137px 137px;opacity:.85"></span><span style="position:absolute;left:14px;top:16px;right:14px;font:var(--weight-light) var(--text-xl)/1.15 var(--font-display)">Type on the field</span><span style="position:absolute;inset:0;background:color-mix(in srgb,var(--color-clay) 26%,transparent)"></span><span class="tag" style="color:var(--color-clay-700)">✕ full-surface wash</span></div>
+</div>
+<div>
+<h3>Don't · stretch</h3>
+<p class="cap" style="margin:0 0 10px">Non-square size distorts the geometry</p>
+<div class="sw" style="height:170px;background:var(--color-merino) var(--pattern-unit) repeat;background-size:300px 170px;position:relative"><span style="position:absolute;inset:0;background:color-mix(in srgb,var(--color-clay) 22%,transparent)"></span><span class="tag" style="color:var(--color-clay-700)">✕ 300 × 170</span></div>
+</div>
+</div>
+
+</div>
+</body></html>

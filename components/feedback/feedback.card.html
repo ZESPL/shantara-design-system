@@ -1,0 +1,27 @@
+<!-- @dsCard group="Components" viewport="700x300" name="Feedback" subtitle="Dialog, toast, tooltip, breathing spinner" -->
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>body{padding:20px;background:var(--surface-page)}.wrap{display:grid;grid-template-columns:1.15fr 1fr;gap:var(--space-7);align-items:start}.stack{display:flex;flex-direction:column;gap:var(--space-5);align-items:flex-start}.fake-dlg{background:var(--surface-card);border-radius:var(--radius-xl);box-shadow:var(--shadow-xl);padding:var(--space-7)}</style></head><body><div id="root"></div>
+<script type="text/babel">
+const { Toast, Tooltip, Spinner, Button, IconButton, Icon } = window.ShantaraDesignSystem_45bbe4;
+function Demo(){return (<div className="wrap">
+<div className="fake-dlg">
+<h3 style={{font:'var(--type-h3)',fontSize:'var(--text-xl)',margin:'0 0 var(--space-3)'}}>Move your booking?</h3>
+<p style={{margin:0,color:'var(--text-secondary)',fontSize:'var(--text-sm)'}}>Your practitioner and room stay the same.</p>
+<div style={{display:'flex',gap:'var(--space-4)',justifyContent:'flex-end',marginTop:'var(--space-6)'}}><Button variant="secondary" size="sm">Keep it</Button><Button size="sm">Move booking</Button></div>
+</div>
+<div className="stack">
+<Toast tone="success" title="Booking confirmed" message="Thursday, 9:30am with Anya." onClose={()=>{}}/>
+<Toast title="Saved to your journal"/>
+<div style={{display:'flex',alignItems:'center',gap:'var(--space-6)'}}>
+<Tooltip label="Quiet hours: 9pm–7am" side="right"><IconButton variant="outline" label="Info"><Icon name="info" size={16}/></IconButton></Tooltip>
+<Spinner/>
+<Spinner size={6} color="var(--text-muted)"/>
+</div>
+</div>
+</div>);}
+ReactDOM.createRoot(document.getElementById('root')).render(<Demo/>);
+</script></body></html>

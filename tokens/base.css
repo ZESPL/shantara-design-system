@@ -1,0 +1,17 @@
+/* Minimal element defaults so consuming pages inherit the brand without any component. */
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--surface-page);color:var(--text-primary);font:var(--type-body);-webkit-font-smoothing:antialiased;text-wrap:pretty}
+h1,h2,h3,h4,h5,h6{margin:0;color:var(--text-primary)}
+h1{font:var(--type-h1)}h2{font:var(--type-h2)}h3{font:var(--type-h3)}h4{font:var(--type-h4)}
+p{margin:0 0 1em;max-width:68ch}
+a{color:var(--text-link);text-decoration-color:color-mix(in srgb, var(--text-link) 40%, transparent);text-underline-offset:3px;transition:color var(--duration-fast) var(--ease-standard)}
+a:hover{color:var(--text-link-hover);text-decoration-color:currentColor}
+::selection{background:var(--color-gold-crayola);color:var(--color-pine-tree)}
+:focus-visible{outline:none;box-shadow:var(--ring-focus)}
+img,svg{max-width:100%}
+.shantara-eyebrow{font:var(--type-eyebrow);letter-spacing:var(--tracking-eyebrow);text-transform:uppercase;color:var(--text-secondary)}
+.shantara-wordmark-type{font-family:var(--font-display);font-weight:var(--weight-semibold);letter-spacing:var(--tracking-wordmark);text-transform:uppercase}
+/* Data figures: always tabular. A unit of measure sits on the numeral's own baseline
+   at 0.42em, Regular, one 0.16em space away — never superscript, never Light. */
+.shantara-figure{font-variant-numeric:tabular-nums;font-feature-settings:"tnum" 1}
+.shantara-unit{font-size:0.42em;font-weight:var(--weight-regular);letter-spacing:var(--tracking-wide);color:var(--text-secondary);margin-left:0.16em}

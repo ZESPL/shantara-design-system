@@ -1,0 +1,19 @@
+/* Shadows are warm and very low-contrast — the brand reads as paper and daylight, not UI chrome. */
+:root{
+--shadow-none:none;
+--shadow-xs:0 1px 2px color-mix(in srgb, var(--color-pine-tree) 6%, transparent);
+--shadow-sm:0 1px 3px color-mix(in srgb, var(--color-pine-tree) 6%, transparent), 0 1px 1px color-mix(in srgb, var(--color-pine-tree) 4%, transparent);
+--shadow-md:0 4px 16px color-mix(in srgb, var(--color-pine-tree) 8%, transparent);
+--shadow-lg:0 12px 32px color-mix(in srgb, var(--color-pine-tree) 10%, transparent);
+--shadow-xl:0 24px 64px color-mix(in srgb, var(--color-pine-tree) 14%, transparent);
+--shadow-inset:inset 0 1px 0 color-mix(in srgb, var(--color-white) 60%, transparent);
+--ring-focus:0 0 0 2px var(--surface-page), 0 0 0 4px var(--color-himalaya);
+--ring-focus-inverse:0 0 0 2px var(--color-pine-tree), 0 0 0 4px var(--color-gold-crayola);
+
+/* Protection gradients — for type over photography */
+--scrim-bottom:linear-gradient(to top, color-mix(in srgb, var(--color-pine-tree) 78%, transparent) 0%, transparent 62%);
+--scrim-top:linear-gradient(to bottom, color-mix(in srgb, var(--color-pine-tree) 55%, transparent) 0%, transparent 55%);
+--scrim-full:color-mix(in srgb, var(--color-pine-tree) 40%, transparent); /* @kind color */
+--blur-glass:saturate(1.1) blur(16px); /* @kind other */
+--glass-fill:color-mix(in srgb, var(--color-merino) 72%, transparent);
+}
