@@ -1,0 +1,41 @@
+# Sources
+
+The original brand pack lives in `uploads/`. Claude Design read it, curated what the system needs into `assets/`, and left working extracts in `scraps/` / `docs/`. This page is the inventory. The raw pack is gitignored and not published; if you are browsing this folder locally, the probes below show what is still on disk.
+
+## Brand pack (`uploads/`)
+
+| Source | What it is | What the system took |
+| --- | --- | --- |
+| `uploads/Compressed/Frame 1–5.jpg` | Five photographed guideline spreads | Voice, pattern, palette, type, colourways, print, imagery — written into `readme.md` and the guideline cards |
+| `uploads/Shantara_Brand Guidelines HQ.pdf` | Full guideline PDF | Not parsed. The Frame images superseded it |
+| `uploads/shantara_property_handbook.docx` | Property Handbook, draft July 2026 | All kit content. Structured extract: [handbook](handbook.html) |
+| `uploads/Compressed/TRD*.jpg` | Property shoot, 45 frames | 16 frames at 1600px in `assets/photos/` |
+| `uploads/Primary Colors.jpg` | Primary colour board | Himalaya, Gold Crayola |
+| `uploads/colors secondary.jpg` | Neutral board | Pine Tree through Merino |
+| `uploads/accent colors.jpg` | Accent board | Sand, Ocean, Clay, Forest, Sky, Lavender — three hexes sampled, not read |
+| `uploads/Shantara - Full logo / Icon / wordmark` | SVG ×4 each, plus PDF | Recoloured into `assets/` lockups |
+| `uploads/Pattern Single Tile.png` | Single rosette motif | `assets/pattern-motif.png` — ornament only, never tiled |
+| `uploads/Pattern Seamless_SCALE ACCORDINGLY.png` | Seamless repeat | Measured; `assets/pattern-unit.png` is the 530×530 cell |
+| `uploads/pattern LOW Q White/Black.png` | Low-resolution pattern proofs | Reference only |
+| `uploads/DiodrumCyrillic-*.ttf` | Six weights | `assets/fonts/` as shipped |
+
+On this machine the pack was about **575MB**, almost all of it the raw `TRD` frames.
+
+## Working extracts (`scraps/`)
+
+| File | What it is |
+| --- | --- |
+| `scraps/handbook.txt` | Plain-text dump of the handbook — also at `docs/handbook.txt` |
+| `scraps/accessibility-contract-src.html` | Earlier contract card. Now folded into `guidelines/accessibility.html` |
+
+## Curated photos (`assets/photos/`)
+
+`arrival-dusk` · `valley` · `courtyard` · `treatment` · `room-premium` · `room-twin` · `balcony` · `dining` · `water-wall` · `library` · `grounds` · `lobby` · `exterior-day` · `reception` · `corridor` · `lounge`
+
+Architecture and grounds. No identifiable guests, no faces in therapy, no room numbers.
+
+## Still open
+
+- Ocean / Clay / Lavender hexes were sampled because the accent board printed the same value for all three.
+- Handbook figures marked `[TO CONFIRM]`, and two internal conflicts (built-up area, check-in/out).
+- `Welnez Pattern.ai` was named in an earlier brief and is not on disk.
