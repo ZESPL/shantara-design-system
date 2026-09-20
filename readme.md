@@ -31,7 +31,7 @@ Shantara writes the way a good practitioner speaks: short declaratives, concrete
 - **Person.** "We" for the retreat, "you" for the guest. *Guests*, never clients or patients in guest-facing copy.
 - **Casing.** Sentence case everywhere: headlines, buttons, labels, nav. Uppercase is reserved for the 12px letterspaced eyebrow and the wordmark.
 - **Punctuation.** Full stops in body copy and hints; none in buttons, badges or nav. Em dashes and the middle dot (`·`) for meta strings — `14 nights · Superior Room`. No exclamation marks in body copy.
-- **Numbers.** Numerals always, tabular figures, Indian grouping for currency: `₹22,000`, `06:30`, `60,000 sq. ft.`, `4 acres`. 24-hour clock in the app, either in marketing copy.
+- **Numbers.** Numerals always, tabular figures: `06:30`, `60,000 sq. ft.`, `4 acres`. 24-hour clock in the app, either in marketing copy. **Currency figures appear only on dedicated tariff documents** (the website tariff card, brand-deck tariff slides, handbook tariff section). When they do, Indian grouping and an attached rupee symbol — no space between ₹ and the figure. Never put a rate, “from …” amount, indicative total, or rate-validity date on any other surface.
 - **Emoji.** Never.
 - **Length.** Headlines under 8 words. Lead paragraphs one sentence. Body paragraphs under 4 sentences.
 - **Buttons.** Verb + object, and the visitor must know what happens next: *Enquire about a stay*, *Request a consultation*, *View programmes*, *Meet our doctors*, *Check what is included*, *Speak to our team*, *Submit for review*. Not *Learn more*, not *Submit*, and never *Begin your journey* / *Discover more* / *Start healing*.
@@ -56,7 +56,7 @@ Evocative language is allowed selectively — hero, introduction, descriptions o
 
 *Correction on record:* the guideline deck printed `#3B6B7B` under Ocean, Clay **and** Lavender. Those values are sampled from the artwork instead: Ocean `#A0B1BB`, Clay `#E0A198`, Lavender `#C6C2D1`.
 
-**Type.** Diodrum Cyrillic only, six weights (Extralight → Bold). Display and H1 are set **Light (300)** at 84/64/48px with 1.06 leading — the brand gets its authority from air and scale, never from weight. H2 Regular, H3/H4 Medium. Body 17px/1.45 Regular, lead 20px/1.65 Light, measure capped at 68ch. Micro-type is the one place with tracking: eyebrow 12px Semibold uppercase at 0.18em, wordmark at 0.22em. Body copy never exceeds 0.06em. Tariffs, times and durations use tabular numerals.
+**Type.** Diodrum Cyrillic only, six weights (Extralight → Bold). Display and H1 are set **Light (300)** at 84/64/48px with 1.06 leading — the brand gets its authority from air and scale, never from weight. H2 Regular, H3/H4 Medium. Body 17px/1.45 Regular, lead 20px/1.65 Light, measure capped at 68ch. Micro-type is the one place with tracking: eyebrow 12px Semibold uppercase at 0.18em, wordmark at 0.22em. Body copy never exceeds 0.06em. Times, durations and — on dedicated tariff cards only — rates use tabular numerals.
 
 **Spacing & layout.** 4px-quantised scale (2 → 128). Cards pad 24, sections breathe at 96 (`--section-y`), content maxes at 1240 with 48px gutters, prose at 720. Control heights 32/40/48/56; mobile hit targets never below 44.
 
@@ -72,7 +72,7 @@ Evocative language is allowed selectively — hero, introduction, descriptions o
 
 **Transparency & blur.** Two uses only: the sticky header and media-overlay controls (`--glass-fill` Merino 72% + `--blur-glass` 16px), and the dialog scrim (Pine Tree 55% + 3px blur). Type over photography gets a **scrim gradient** (`--scrim-bottom`) when it sits in a corner, or a **glass capsule** when it floats mid-image — never bare text on an image.
 
-**Motion.** Breath-paced and unshowy: 160ms for control states, 240ms for surfaces, 420ms for entrances, one 1200ms ambient loop (the three-dot Spinner). Easing is `--ease-out` (0.16,1,0.3,1) for entrances, standard for states. **Nothing bounces, nothing overshoots, nothing spins.** Press is `scale(0.98)`, hover is a one-step colour shift, focus is a 2+2px Himalaya ring offset by the page colour.
+**Motion.** Breath-paced and unshowy: 160ms for control states, 240ms for surfaces, 420ms for entrances, one 1200ms ambient loop (the three-dot Spinner). Easing is `--ease-out` (0.16,1,0.3,1) for entrances, standard for states. **Nothing bounces, nothing overshoots, nothing spins.** Press is `scale(0.98)`, hover is a one-step colour shift or a 2px card lift, focus is a 2+2px Himalaya ring offset by the page colour. `prefers-reduced-motion: reduce` snaps every transition and freezes the Spinner. The mark, the rosette, dividers and badges do not move. Full mapping: `guidelines/motion.html`.
 
 **Imagery.** Tone of imagery is *Blooming in nature*: architecture read against weather and planting — deep greens, warm concrete, monsoon light, wide unhurried frames with real air in them. Never a stock-wellness close-up, never a saturated grade, no filters, no b&w. Pattern and photography do not share a surface: one or the other.
 
@@ -93,7 +93,7 @@ The brand package ships **no icon set**. Substitution, flagged for review: **Luc
 
 ## Accessibility — WCAG 2.2 Level AA
 
-`guidelines/accessibility.html` is a **live audit**, not a claim: it resolves every semantic token — including the `oklch()` ramp and the `color-mix()` transparencies — and measures 29 in-use pairs on render, so it fails visibly if a token is ever changed. All 29 pass at the level they need (text 4.5:1, large text and non-text 3:1). Lowest passing pair is 3.46:1. `guidelines/accessibility-contract.html` carries the component guarantees, the deliberate exceptions and the known gaps.
+`guidelines/accessibility.html` is a **live audit**, not a claim: it resolves every semantic token — including the `oklch()` ramp and the `color-mix()` transparencies — and measures 29 in-use pairs on render, so it fails visibly if a token is ever changed. All 29 pass at the level they need (text 4.5:1, large text and non-text 3:1). Lowest passing pair is 3.46:1. The same page carries the component guarantees, the deliberate exceptions and the known gaps.
 
 Fixes the audit forced, on record:
 
@@ -115,17 +115,29 @@ Deliberately below 3:1, and load-bearing nowhere: the two decorative border toke
 
 Remaining gaps are listed on the contract card: the kits' reflow layer uses overrides rather than authored breakpoints; `--control-sm` at 32px meets AA's 24px but not AAA's 44px (desktop toolbars only, never mobile); form error identification and prevention (3.3.1/3.3.3/3.3.4) belong to the implementation; and nothing here substitutes for a real screen-reader pass with NVDA, JAWS and VoiceOver.
 
-## Browse it
+## Two ways to use this
 
-The system is a static site. `index.html` is a catalog of every guideline card, component family, UI kit and the brand deck.
+This folder is the design system. Browse it. Copy it into another repo. Same files, both jobs. Full walkthrough: `docs/use.md` (also a card in the catalog).
+
+### Browse it
 
 ```
 npx --yes serve -l 4173
 ```
 
-Then open `http://localhost:4173`. Cards can also be opened as their own pages — `guidelines/colors-primary.html`, `ui_kits/website/index.html`.
+Then open `http://localhost:4173`. The catalog lists notes (system write-up, skill, component prompts, handbook extract, sources), every guideline card, component family, UI kit and the brand deck.
 
-Netlify: `netlify.toml` publishes a `dist/` copy that **excludes** `uploads/` (source boards, handbook, raw shoot). Connect the repo or run `node scripts/prepare-dist.mjs` and deploy `dist/`.
+Cards can also be opened as their own pages — `docs/readme.html`, `guidelines/colors.html`, `ui_kits/website/index.html`. Opening the folder as a `file://` path will not work.
+
+Netlify publishes a `dist/` copy. Raw `uploads/` stay off the public site (large, internal). They remain in this folder locally; `docs/sources.html` lists them and links any file that is present. The handbook extract and all markdown notes **are** published.
+
+### Add it to another repo
+
+Copy **this entire folder** to `.cursor/skills/shantara-design/`, or keep it at the repo root. Do not pick files out.
+
+- Agents start at `SKILL.md`, then `readme.md`, then the `*.prompt.md` beside a component. For the public marketing website, also read `ui_kits/website/SKILL.md` (Website Kit in this catalog).
+- Production pages link `styles.css` and keep `tokens/` + `assets/` next to it.
+- Import components from `components/`. Start from `ui_kits/website/` or `ui_kits/app/` if you need those surfaces.
 
 ## Foundations, files & index
 
@@ -134,13 +146,16 @@ styles.css              → the single entry point consumers link (imports only)
 tokens/                 → fonts, colors, typography, spacing, radius, elevation, motion, pattern, base
 assets/                 → logo / icon / wordmark in 4 colourways each, pattern cell + motif, Diodrum TTFs
 assets/photos/          → 16 curated frames from the property shoot
-guidelines/               → 28 specimen cards (Colors, Type, Spacing, Brand, Foundations)
-components/             → core, forms, navigation, feedback
-ui_kits/website/        → marketing site kit
+guidelines/             → specimen cards (Brand, Spacing, Foundations)
+components/             → core, forms, navigation, feedback — jsx, d.ts, prompt.md
+docs/                   → browsable notes: use, readme, skill, prompts, handbook, sources
+scraps/                 → working extracts (handbook.txt, accessibility contract source)
+uploads/                → original boards, handbook .docx, raw shoot (local; not published)
+ui_kits/website/        → marketing site kit + website skill (`SKILL.md`)
 ui_kits/app/            → in-stay guest companion kit
 templates/brand-deck/   → presentation template
 thumbnail.html          → homepage tile
-SKILL.md                → Agent-Skills wrapper for use outside this project
+SKILL.md                → Agent-Skills wrapper — drop this folder into another repo
 ```
 
 ### Components
@@ -156,7 +171,7 @@ Each directory holds `<Name>.jsx`, `<Name>.d.ts` (props contract) and `<Name>.pr
 
 ### UI kits
 
-- `ui_kits/website/` — home (tagline hero, approach, eight wellness programmes with filters, olive therapies band, rooms & tariffs, journal, house-rules FAQ), Detox programme detail with sticky tariff panel, journal index, and a three-step enquiry flow ending in *submitted for doctor review*. Nothing is instantly bookable, because nothing is.
+- `ui_kits/website/` — builder skill plus thin samples of the marketing site: home, conditions listing, one program, experience hub, about hub, insights, contact, one consultation form, and the dedicated tariff card. Primary CTA is *Book a Consultation*. Nothing is instantly bookable. Rates appear only on the tariff card. This is not a production website.
 - `ui_kits/app/` — in-stay guest companion, 390×844: Today's doctor-set schedule, protocol (therapies / diet), a therapy sheet whose only action is *I'll be there*, notes and vitals, You. Tab bar is live.
 
 ### Templates
@@ -166,10 +181,10 @@ Each directory holds `<Name>.jsx`, `<Name>.d.ts` (props contract) and `<Name>.pr
 ## Caveats
 
 1. **No product UI or copy deck was supplied.** Both kits are extrapolations of surfaces Shantara may or may not want. The handbook never mentions a guest app; if there is no app, that kit is a proposal.
-2. **Tariffs and timings are handbook figures marked `[TO CONFIRM]`** at source, and the handbook itself flags two internal conflicts (built-up area, check-in/out times). Confirm with Azhar / Dr. P.A. Kareem / Dr. Bahja Janu before anything is published.
+2. **Tariffs and timings are handbook figures marked `[TO CONFIRM]`** at source, and the handbook itself flags two internal conflicts (built-up area, check-in/out times). Confirm with Azhar / Dr. P.A. Kareem / Dr. Bahja Janu before anything is published. When a rate changes, edit only the dedicated tariff surfaces (`ui_kits/website/TariffScreen.js`, brand-deck tariff slides). Do not scatter the new figure.
 3. **Ocean / Clay / Lavender hexes were sampled**, not read, because the source printed the same value for all three.
 4. **Programme durations in the kits are indicative.** The handbook does not fix nights per programme beyond the 7-night minimum.
 5. **Journal copy is written for these kits**, not supplied.
 6. **Lucide stands in for a real icon set.**
-7. **Clear-space and minimum-size numbers** in `guidelines/brand-clearspace.html` are conventions consistent with the guideline artwork, not quoted brand law — confirm or correct.
+7. **Clear-space and minimum-size numbers** in `guidelines/logo.html` are conventions consistent with the guideline artwork, not quoted brand law — confirm or correct.
 8. `Welnez Pattern.ai` was named in an earlier brief but is not on disk; the name suggests a sibling brand ("Welnez") — unexplored.

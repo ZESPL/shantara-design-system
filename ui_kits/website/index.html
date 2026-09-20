@@ -1,10 +1,11 @@
-<!-- @dsCard group="Website" viewport="1280x900" name="Shantara website" subtitle="Marketing site — home, programme detail, journal, enquiry flow" -->
+<!-- @dsCard group="Website" viewport="1280x900" name="Shantara website" subtitle="Thin samples — home, conditions, program, experience, about, insights, contact, consultation, tariff" -->
 <!doctype html><html lang="en"><head><meta charset="utf-8"><title>Shantara — website kit</title>
 <link rel="stylesheet" href="../../styles.css">
 <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
 <script src="../../_ds_bundle.js"></script>
+<script src="../../i18n.js"></script>
 <style>html,body{height:100%}#kit-scroll{height:100vh;overflow-y:auto;background:var(--surface-page)}
 /* 1.4.10 Reflow — the kit's grids are inline-styled, so the responsive layer overrides
    them at the two breakpoints where a desktop grid stops fitting. No horizontal scroll
@@ -27,24 +28,32 @@
 }</style>
 </head><body>
 <div id="kit-scroll"><div id="root"></div></div>
-<script type="text/babel" src="Photo.js"></script>
-<script type="text/babel" src="SiteChrome.js"></script>
-<script type="text/babel" src="HomeScreen.js"></script>
-<script type="text/babel" src="ProgrammeScreen.js"></script>
-<script type="text/babel" src="JournalScreen.js"></script>
-<script type="text/babel" src="EnquiryScreen.js"></script>
+<script type="text/babel" src="/ui_kits/website/Photo.js"></script>
+<script type="text/babel" src="/ui_kits/website/SiteChrome.js"></script>
+<script type="text/babel" src="/ui_kits/website/HomeScreen.js"></script>
+<script type="text/babel" src="/ui_kits/website/ConditionsScreen.js"></script>
+<script type="text/babel" src="/ui_kits/website/ProgrammeScreen.js"></script>
+<script type="text/babel" src="/ui_kits/website/ExperienceScreen.js"></script>
+<script type="text/babel" src="/ui_kits/website/AboutScreen.js"></script>
+<script type="text/babel" src="/ui_kits/website/JournalScreen.js"></script>
+<script type="text/babel" src="/ui_kits/website/ContactScreen.js"></script>
+<script type="text/babel" src="/ui_kits/website/ConsultationScreen.js"></script>
+<script type="text/babel" src="/ui_kits/website/EnquiryScreen.js"></script>
+<script type="text/babel" src="/ui_kits/website/TariffScreen.js"></script>
 <script type="text/babel">
 function Site(){
   const [view,setView]=React.useState("home");
   const go=(v)=>{setView(v);const s=document.getElementById("kit-scroll");if(s)s.scrollTop=0;};
-  const { SiteHeader, SiteFooter, HomeScreen, ProgrammeScreen, JournalScreen, EnquiryScreen } = window;
+  const { SiteHeader, SiteFooter, HomeScreen, ConditionsScreen, ProgrammeScreen, ExperienceScreen, AboutScreen, JournalScreen, ContactScreen, ConsultationScreen, TariffScreen } = window;
+  const screens={home:<HomeScreen onNavigate={go}/>,conditions:<ConditionsScreen onNavigate={go}/>,programme:<ProgrammeScreen onNavigate={go}/>,experience:<ExperienceScreen onNavigate={go}/>,about:<AboutScreen onNavigate={go}/>,journal:<JournalScreen onNavigate={go}/>,contact:<ContactScreen onNavigate={go}/>,tariffs:<TariffScreen onNavigate={go}/>,booking:<ConsultationScreen onNavigate={go}/>};
+  const screen=screens[view]||screens.booking;
   return (<React.Fragment>
     <SiteHeader view={view} onNavigate={go}/>
-    {view==="home"?<HomeScreen onNavigate={go}/>:view==="programme"?<ProgrammeScreen onNavigate={go}/>:view==="journal"?<JournalScreen onNavigate={go}/>:<EnquiryScreen onNavigate={go}/>}
-    <SiteFooter/>
+    {screen}
+    <SiteFooter onNavigate={go}/>
   </React.Fragment>);
 }
-const boot=()=>{ if(window.SiteHeader&&window.HomeScreen&&window.EnquiryScreen&&window.Photo){ReactDOM.createRoot(document.getElementById("root")).render(<Site/>);}else{setTimeout(boot,50);} };
+const boot=()=>{ if(window.SiteHeader&&window.HomeScreen&&window.ConsultationScreen&&window.ConditionsScreen&&window.ExperienceScreen&&window.AboutScreen&&window.ContactScreen&&window.TariffScreen&&window.Photo){ReactDOM.createRoot(document.getElementById("root")).render(<Site/>);}else{setTimeout(boot,50);} };
 boot();
 </script>
 </body></html>
