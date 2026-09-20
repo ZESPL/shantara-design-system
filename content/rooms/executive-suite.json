@@ -1,0 +1,26 @@
+{
+  "id": "executive-suite",
+  "slug": "executive-suite",
+  "name": "Executive Suite",
+  "size": "530 sq.ft",
+  "occupancy": "Single or double",
+  "balcony": true,
+  "photo": "room-premium",
+  "home_teaser": true,
+  "spec_line": "530 sq.ft · balcony",
+  "locale": "en",
+  "translation_status": null,
+  "source_version": "2026-07",
+  "last_translated_at": null,
+  "translation_reviewed_at": null,
+  "translation_reviewed_by": null,
+  "needs_translation_review": null,
+  "publication_status": "published",
+  "source": "kit",
+  "amenities": [
+    "En-suite bathroom with rain shower",
+    "Individually controlled central air-conditioning",
+    "Orthopaedic mattress",
+    "Electronic safe, Wi-Fi, smart LED TV"
+  ]
+}

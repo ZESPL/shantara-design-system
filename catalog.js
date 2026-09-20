@@ -270,19 +270,114 @@
     applyDir();
   }
 
-  function fitFrame(card) {
-    if (card.kind === "doc") {
-      els.frameWrap.style.width = "100%";
-      els.frameWrap.style.height = "100%";
-      els.frameWrap.style.transform = "none";
-      els.frameWrap.style.marginBottom = "0";
-      els.frame.removeAttribute("width");
-      els.frame.removeAttribute("height");
+  let frameSizer = null;
+  let frameSizeLock = false;
+
+  function measureFrameContent(doc) {
+    const html = doc.documentElement;
+    const body = doc.body;
+    if (!html || !body) return 0;
+    return Math.max(
+      body.scrollHeight,
+      body.offsetHeight,
+      html.scrollHeight,
+      html.offsetHeight
+    );
+  }
+
+  function fitDocFrame() {
+    const doc = els.frame.contentDocument;
+    if (!doc || !doc.documentElement) return;
+    els.frameWrap.style.width = "100%";
+    els.frameWrap.style.transform = "none";
+    els.frameWrap.style.marginBottom = "0";
+    els.frame.removeAttribute("width");
+    els.frame.removeAttribute("height");
+    els.frame.style.minHeight = "0";
+    els.frame.style.height = "1px";
+    els.frameWrap.style.height = "auto";
+    const content = measureFrameContent(doc);
+    const floor = Math.max(1, Math.round(els.stage?.clientHeight || window.innerHeight - 64));
+    const next = Math.max(content, floor) + 2;
+    els.frame.style.height = `${next}px`;
+    els.frameWrap.style.height = `${next}px`;
+  }
+
+  function scrollStageToFrameTarget(target) {
+    const doc = els.frame.contentDocument;
+    if (!doc || !target) return;
+    const win = doc.defaultView;
+    const innerTop = target.getBoundingClientRect().top + (win?.scrollY || 0);
+    const dest = Math.max(0, els.frame.getBoundingClientRect().top + window.scrollY + innerTop - 76);
+    const stage = els.stage;
+    if (stage && stage.scrollHeight > stage.clientHeight + 2) {
+      const stageTop = stage.getBoundingClientRect().top + window.scrollY;
+      stage.scrollTo({ top: Math.max(0, dest - stageTop), behavior: "smooth" });
       return;
     }
+    window.scrollTo({ top: dest, behavior: "smooth" });
+  }
+
+  function onFrameDocClick(event) {
+    const link = event.target.closest("a[href^='#']");
+    if (!link) return;
+    const href = link.getAttribute("href");
+    if (!href || href === "#") return;
+    const id = decodeURIComponent(href.slice(1));
+    const doc = els.frame.contentDocument;
+    const target = doc && doc.getElementById(id);
+    if (!target) return;
+    event.preventDefault();
+    scrollStageToFrameTarget(target);
+  }
+
+  function releaseDocFrame() {
+    if (frameSizer) {
+      frameSizer.disconnect();
+      frameSizer = null;
+    }
+    const doc = els.frame.contentDocument;
+    if (doc) doc.removeEventListener("click", onFrameDocClick);
+  }
+
+  function bindDocFrame() {
+    releaseDocFrame();
+    const doc = els.frame.contentDocument;
+    if (!doc || !doc.body) {
+      fitDocFrame();
+      return;
+    }
+    fitDocFrame();
+    doc.addEventListener("click", onFrameDocClick);
+    if (doc.fonts?.ready) {
+      doc.fonts.ready.then(() => {
+        if (els.frame.contentDocument === doc) fitDocFrame();
+      });
+    }
+    if (typeof ResizeObserver === "undefined") return;
+    frameSizer = new ResizeObserver(() => {
+      if (frameSizeLock) return;
+      frameSizeLock = true;
+      fitDocFrame();
+      requestAnimationFrame(() => {
+        frameSizeLock = false;
+      });
+    });
+    frameSizer.observe(doc.body);
+    frameSizer.observe(doc.documentElement);
+  }
+
+  function fitFrame(card) {
+    if (card.kind === "doc") {
+      fitDocFrame();
+      return;
+    }
+    releaseDocFrame();
     const { w, h } = parseViewport(card);
     const max = Math.max(320, els.stage.clientWidth - 8);
     const scale = Math.min(1, max / w);
+    els.frame.style.height = "";
+    els.frame.style.minHeight = "";
     els.frameWrap.style.width = `${w}px`;
     els.frameWrap.style.height = `${h}px`;
     els.frameWrap.style.transform = scale < 1 ? `scale(${scale})` : "none";
@@ -292,6 +387,7 @@
   }
 
   function showHome() {
+    releaseDocFrame();
     els.body.dataset.view = "home";
     els.body.dataset.kind = "";
     els.home.hidden = false;
@@ -377,7 +473,13 @@
   document.querySelectorAll("[data-dir]").forEach((btn) => {
     btn.addEventListener("click", () => setDir(btn.dataset.dir));
   });
-  els.frame.addEventListener("load", applyDir);
+  els.frame.addEventListener("load", () => {
+    applyDir();
+    const card = activeCard();
+    if (!card) return;
+    if (card.kind === "doc") bindDocFrame();
+    else fitFrame(card);
+  });
   syncDirChrome(null);
 
   els.search.addEventListener("input", () => {

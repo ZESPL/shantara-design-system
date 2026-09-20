@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Component specimen</title>
+  <link rel="stylesheet" href="../styles.css">
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <script src="../_ds_bundle.js"></script>
+  <script src="../i18n.js"></script>
+  <style>
+    body{margin:0;padding:24px;background:var(--surface-page)}
+    .row{display:flex;flex-wrap:wrap;align-items:center;gap:12px}
+    .stack{display:flex;flex-direction:column;gap:16px;max-width:420px}
+    .err{color:var(--text-secondary);font-size:var(--text-sm)}
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+    const NS = window.ShantaraDesignSystem_45bbe4;
+    const name = new URLSearchParams(location.search).get("c") || "Button";
+
+    function Specimen() {
+      if (!NS || !NS[name]) {
+        return <p className="err">Unknown component: {name}</p>;
+      }
+      const {
+        Button, IconButton, Icon, Logo, Card, Badge, Tag, Divider, PatternPanel,
+        Input, Textarea, Select, Checkbox, Radio, Switch,
+        Tabs, Breadcrumbs, Accordion, LanguageSelector,
+        Dialog, Toast, Tooltip, Spinner,
+      } = NS;
+
+      switch (name) {
+        case "Button":
+          return <div className="row">
+            <Button>Book a Consultation</Button>
+            <Button variant="accent">My protocol</Button>
+            <Button variant="secondary">View programmes</Button>
+            <Button variant="ghost" endIcon={<Icon name="arrow-right" size={16} />}>Read journal</Button>
+          </div>;
+        case "IconButton":
+          return <div className="row">
+            <IconButton label="Favourite"><Icon name="heart" size={18} /></IconButton>
+            <IconButton variant="solid" label="Add"><Icon name="plus" size={18} /></IconButton>
+            <IconButton variant="outline" label="Share"><Icon name="share-2" size={18} /></IconButton>
+          </div>;
+        case "Icon":
+          return <div className="row">
+            <Icon name="leaf" size={22} />
+            <Icon name="sun" size={22} />
+            <Icon name="stethoscope" size={22} />
+            <Icon name="calendar-days" size={22} />
+          </div>;
+        case "Logo":
+          return <div className="row">
+            <Logo mark="wordmark" tone="olive" height={20} />
+            <Logo mark="icon" tone="olive" height={28} />
+          </div>;
+        case "Card":
+          return <Card padding="sm" style={{ maxWidth: 280 }}>
+            <span className="shantara-eyebrow">Prescribed therapy</span>
+            <h4 style={{ font: "var(--type-h4)", fontSize: "var(--text-lg)", margin: "8px 0" }}>Mud therapy</h4>
+            <p style={{ margin: 0, color: "var(--text-secondary)", fontSize: "var(--text-xs)" }}>90 min · prescribed</p>
+          </Card>;
+        case "Badge":
+          return <div className="row">
+            <Badge tone="brand">In season</Badge>
+            <Badge tone="accent">Members only</Badge>
+            <Badge tone="success">Confirmed</Badge>
+            <Badge tone="outline">Waitlist</Badge>
+          </div>;
+        case "Tag":
+          return <div className="row">
+            <Tag selected>Ayurveda</Tag>
+            <Tag>Breathwork</Tag>
+            <Tag onRemove={() => {}}>Vegan</Tag>
+          </div>;
+        case "Divider":
+          return <div className="stack" style={{ width: 280 }}>
+            <p style={{ margin: 0, fontSize: "var(--text-sm)" }}>Above</p>
+            <Divider />
+            <p style={{ margin: 0, fontSize: "var(--text-sm)" }}>Below</p>
+          </div>;
+        case "PatternPanel":
+          return <PatternPanel tone="olive" edge="top" band="96px" scale="96px" radius="var(--radius-card)" style={{ width: "100%" }}>
+            <div style={{ padding: 20 }}><Logo mark="wordmark" tone="cream" height={14} /></div>
+          </PatternPanel>;
+        case "Input":
+          return <div className="stack"><Input label="Full name" placeholder="As on your passport" /></div>;
+        case "Textarea":
+          return <div className="stack"><Textarea label="Anything you'd like us to know?" rows={3} /></div>;
+        case "Select":
+          return <div className="stack"><Select label="Country" options={["India", "United Arab Emirates", "United Kingdom"]} /></div>;
+        case "Checkbox":
+          return <Checkbox label="I agree to be contacted about my consultation" />;
+        case "Radio":
+          return <div className="stack">
+            <Radio name="stay" label="First visit" defaultChecked />
+            <Radio name="stay" label="Returning guest" />
+          </div>;
+        case "Switch":
+          return <Switch label="Remind me the day before" defaultChecked />;
+        case "Tabs":
+          return <Tabs items={["Overview", "Therapies", "Rooms"]} />;
+        case "Breadcrumbs":
+          return <Breadcrumbs items={[{ label: "Programmes", href: "#" }, { label: "Wellness", href: "#" }, "Detox"]} />;
+        case "Accordion":
+          return <Accordion items={[{ title: "How long should I stay?", content: "Duration depends on the programme and your assessment." }]} />;
+        case "LanguageSelector":
+          return <LanguageSelector locale="en" rest="" onSelect={() => {}} />;
+        case "Dialog": {
+          const [open, setOpen] = React.useState(false);
+          return <div className="row">
+            <Button onClick={() => setOpen(true)}>Open dialog</Button>
+            <Dialog
+              open={open}
+              onClose={() => setOpen(false)}
+              title="Consultation request received"
+              description="Our team will contact you within two working days."
+              footer={<Button onClick={() => setOpen(false)}>Close</Button>}
+            />
+          </div>;
+        }
+        case "Toast":
+          return <Toast title="Saved to your journal" message="Your note is with the care team." onClose={() => {}} />;
+        case "Tooltip":
+          return <Tooltip content="Doctor-prescribed session">
+            <Button variant="secondary">Hover me</Button>
+          </Tooltip>;
+        case "Spinner":
+          return <Spinner label="Loading" />;
+        default:
+          return <p className="err">No specimen for {name}</p>;
+      }
+    }
+
+    ReactDOM.createRoot(document.getElementById("root")).render(<Specimen />);
+  </script>
+</body>
+</html>

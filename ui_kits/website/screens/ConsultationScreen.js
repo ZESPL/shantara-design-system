@@ -93,4 +93,4 @@ function ConsultationScreen({ onNavigate, locale = "en", view = "booking" }) {
   );
 }
 
-Object.assign(window, { ConsultationScreen, EnquiryScreen: ConsultationScreen });
+Object.assign(window, { ConsultationScreen });

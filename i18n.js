@@ -2,7 +2,6 @@
    takes over under [dir=rtl]. Proper names stay Latin. */
 (() => {
   const AR = {
-    "Begin an enquiry": "ابدأ استفساراً",
     "My protocol": "برنامجي",
     "View therapies": "عرض العلاجات",
     "Read journal": "اقرأ المدونة",
@@ -155,7 +154,6 @@
     "Your stay begins with a consultation. Our doctors review your medical history, current medications, daily habits and goals, then write a programme of therapies, meals, activity and rest. It is reviewed every morning and adjusted as your stay progresses. Protocols need time to take effect, so duration is advised following consultation.": "تبدأ إقامتك باستشارة. يراجع أطباؤنا تاريخك الطبي وأدويتك الحالية وعاداتك اليومية وأهدافك، ثم يكتبون برنامجاً من العلاجات والوجبات والنشاط والراحة. يُراجع كل صباح ويُعدَّل مع تقدّم الإقامة. تحتاج البروتوكولات وقتاً حتى تؤتي أثرها، لذلك تُنصح المدة بعد الاستشارة.",
     "hilltop acres": "أفدنة على التلة",
     "rooms, 5 categories": "غرفة، 5 فئات",
-    "patients since 2000": "مريضاً منذ 2000",
     "typical stay length": "مدة إقامة معتادة",
     "Naturopathy programmes": "برامج العلاج الطبيعي",
     "Eight programmes to choose from": "ثمانية برامج للاختيار منها",

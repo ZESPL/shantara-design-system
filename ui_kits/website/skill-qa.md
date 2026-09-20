@@ -84,7 +84,7 @@ Before publishing:
 - [ ] No rates, “from …” amounts, or stay totals appear except on a dedicated tariff surface.
 - [ ] Listing images are 4:3; wide editorial may be 16:9; portrait mosaic 3:4. Page heroes use a fixed height (not a forced 4:3). Interactive cards lift without media zoom.
 - [ ] Type on photography sits on a bottom scrim (`--scrim-bottom`) with solid Merino body — photo still readable above the type; no faded Merino mixes, no double scrims.
-- [ ] Accordions expand with visible body (Programme “What to expect”, Home FAQ). After editing `components/**`, sync Accordion (and peers) into `_ds_bundle.js` until a rebuild script exists.
+- [ ] Accordions expand with visible body (Programme “What to expect”, Home FAQ). After editing `components/**`, sync components into `_ds_bundle.js` (components only — never kit copy). After editing entity facts, edit `content/` and run `node scripts/write-content-kit.mjs`. Run `node scripts/check-bundle.mjs` before shipping.
 - [ ] Full-bleed Himalaya content washes are rare (brand green under ~10% of the page). Pearl Bush / Merino for large bands; Pine Tree inverse and gold accents are allowed.
 - [ ] Type never sits on the rosette band; narrow surfaces drop the band.
 - [ ] CTAs are short; no decorative Badge/Tag pills next to actions; no 2xs helper essays.
@@ -242,7 +242,7 @@ When asked to modify Shantara’s website:
 2. Preserve working patterns unless there is a clear reason to replace them.
 3. Make the least invasive change that solves the task.
 4. Reuse existing sections/components.
-5. Do not invent content, credentials, prices, medical facts, or program details.
+5. Do not invent content, credentials, prices, medical facts, or program details. Prefer `content/`; empty folders and `needs_original` mean do not fabricate.
 6. Flag missing information explicitly.
 7. Do not introduce dependencies casually.
 8. Do not redesign unrelated pages.

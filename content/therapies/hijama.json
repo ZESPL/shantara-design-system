@@ -1,0 +1,16 @@
+{
+  "id": "hijama",
+  "name": "Hijama",
+  "home_featured": true,
+  "description": "Traditional cupping, delivered under medical supervision.",
+  "slug": "hijama",
+  "locale": "en",
+  "translation_status": null,
+  "source_version": "2026-07",
+  "last_translated_at": null,
+  "translation_reviewed_at": null,
+  "translation_reviewed_by": null,
+  "needs_translation_review": null,
+  "publication_status": "published",
+  "source": "kit"
+}

@@ -1,0 +1,14 @@
+{
+  "id": "faq-meals",
+  "question": "How do meals work?",
+  "answer": "Meals are planned as part of your programme, taking into account your doctor's recommendations and dietary requirements.",
+  "locale": "en",
+  "translation_status": null,
+  "source_version": "2026-07",
+  "last_translated_at": null,
+  "translation_reviewed_at": null,
+  "translation_reviewed_by": null,
+  "needs_translation_review": null,
+  "publication_status": "published",
+  "source": "kit"
+}

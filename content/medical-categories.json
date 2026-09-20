@@ -1,0 +1,138 @@
+{
+  "id": "medical-categories",
+  "locale": "en",
+  "translation_status": null,
+  "source_version": "2026-07",
+  "last_translated_at": null,
+  "translation_reviewed_at": null,
+  "translation_reviewed_by": null,
+  "needs_translation_review": null,
+  "publication_status": "draft",
+  "source": "handbook",
+  "note": "Eleven handbook clinical groupings — staff routing aid, not public IA.",
+  "categories": [
+    {
+      "id": "metabolic-lifestyle",
+      "name": "Metabolic & Lifestyle Health",
+      "examples": [
+        "Type 2 diabetes",
+        "obesity",
+        "fatty liver (NAFLD)",
+        "prediabetes/insulin resistance",
+        "dyslipidemia"
+      ]
+    },
+    {
+      "id": "inflammatory-musculoskeletal",
+      "name": "Inflammatory & Musculoskeletal Rehabilitation",
+      "examples": [
+        "Arthritis",
+        "gout",
+        "low back/neck pain",
+        "spondylosis",
+        "IVDP",
+        "fibromyalgia"
+      ]
+    },
+    {
+      "id": "hormonal-endocrine",
+      "name": "Hormonal & Endocrine Balance",
+      "examples": [
+        "PCOS",
+        "thyroid dysfunction",
+        "menstrual irregularities",
+        "perimenopause",
+        "fertility-related hormonal imbalance"
+      ]
+    },
+    {
+      "id": "gastrointestinal",
+      "name": "Gastrointestinal & Gut Health Restoration",
+      "examples": [
+        "IBS",
+        "gastritis",
+        "peptic ulcer",
+        "colitis",
+        "constipation",
+        "dyspepsia"
+      ]
+    },
+    {
+      "id": "neurological-stress",
+      "name": "Neurological & Stress-Related Conditions",
+      "examples": [
+        "Migraine",
+        "chronic headaches",
+        "burnout",
+        "chronic stress",
+        "insomnia",
+        "mild anxiety"
+      ]
+    },
+    {
+      "id": "renal",
+      "name": "Renal Health",
+      "examples": [
+        "Early-stage CKD",
+        "diabetic/hypertensive nephropathy",
+        "kidney stones",
+        "microalbuminuria",
+        "nephritis"
+      ]
+    },
+    {
+      "id": "heart-circulatory",
+      "name": "Heart & Circulatory Health",
+      "examples": [
+        "Hypertension",
+        "stable coronary artery disease",
+        "cardiac rehab",
+        "post-MI recovery",
+        "post-angioplasty/CABG rehab"
+      ]
+    },
+    {
+      "id": "respiratory-immune",
+      "name": "Respiratory & Immune Resilience",
+      "examples": [
+        "Asthma",
+        "chronic bronchitis",
+        "COPD",
+        "allergic rhinitis",
+        "sinusitis"
+      ]
+    },
+    {
+      "id": "dermatological",
+      "name": "Dermatological & Skin Health",
+      "examples": [
+        "Acne",
+        "dermatitis",
+        "psoriasis",
+        "eczema",
+        "hyperpigmentation"
+      ]
+    },
+    {
+      "id": "reproductive-fertility",
+      "name": "Reproductive & Fertility Optimization",
+      "examples": [
+        "Female/male infertility",
+        "PCOS",
+        "ovulatory dysfunction",
+        "irregular cycles",
+        "endometriosis"
+      ]
+    },
+    {
+      "id": "hematologic-nutritional",
+      "name": "Hematologic & Nutritional Disorders",
+      "examples": [
+        "Anemia",
+        "B12/D deficiency",
+        "hypoproteinemia",
+        "micronutrient deficiencies"
+      ]
+    }
+  ]
+}

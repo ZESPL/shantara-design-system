@@ -1,15 +1,31 @@
+function journalPosts() {
+  const C = window.ShantaraContent;
+  const fromArticles = (C.articles || [])
+    .filter((a) => a.kit_journal)
+    .map((a) => ({
+      t: a.title,
+      k: a.category,
+      photo: a.photo,
+      read: a.read_minutes,
+      lead: a.lead,
+    }));
+  const fromAnswers = (C.doctorAnswers || [])
+    .filter((a) => a.kit_journal)
+    .map((a) => ({
+      t: a.question,
+      k: a.category || "Doctor Answers",
+      photo: a.photo,
+      read: a.read_minutes,
+      lead: a.short_answer || "",
+    }));
+  return [...fromArticles, ...fromAnswers];
+}
+
 function JournalScreen({ onNavigate }) {
   const { t } = window.ShantaraI18n.useLocale();
   const { Tabs, Card, Badge, Button, Icon, Divider } = window.ShantaraDesignSystem_45bbe4;
   const [cat, setCat] = React.useState("All");
-  const posts = [
-    { t: "How programme duration is decided", k: "Clinical Guides", photo: "corridor", read: 5, lead: "How doctors advise the length of a stay after consultation and assessment." },
-    { t: "What a supervised fast actually feels like", k: "Doctor Answers", photo: "treatment", read: 7, lead: "How a supervised fast is introduced, monitored and ended." },
-    { t: "How meals are planned during a stay", k: "Food & Recipes", photo: "dining", read: 4, lead: "How meals are planned around your programme and dietary requirements." },
-    { t: "A week of monsoon light", k: "Guest Stories", photo: "valley", read: 6, lead: "Four acres above Chennamangallur, hour by hour." },
-    { t: "Twenty-six years of treating the cause", k: "Clinical Guides", photo: "library", read: 3, lead: "Dr. P.A. Kareem on drug-free practice since 2000." },
-    { t: "How our rooms are designed", k: "Guest Stories", photo: "room-premium", read: 5, lead: "Why the rooms are quiet, plain and easy to rest in." },
-  ];
+  const posts = journalPosts();
   const shown = cat === "All" ? posts : posts.filter((p) => p.k === cat);
   const [lead, ...rest] = shown;
   return (

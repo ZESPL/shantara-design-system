@@ -1,0 +1,32 @@
+{
+  "id": "diabetes",
+  "slug": "diabetes",
+  "name": "Diabetes",
+  "listing_group": "Metabolic",
+  "summary": "Residential programmes planned around blood-sugar control, meals and daily doctor review.",
+  "photo": "dining",
+  "icp_ids": [
+    "weight_metabolic"
+  ],
+  "related_program_ids": [
+    "diabetes-reversal",
+    "weight-management",
+    "detox"
+  ],
+  "related_therapy_ids": [],
+  "clinical": null,
+  "faqs": [],
+  "medical_reviewer": null,
+  "last_medically_reviewed": null,
+  "references": [],
+  "note": null,
+  "locale": "en",
+  "translation_status": null,
+  "source_version": "2026-07",
+  "last_translated_at": null,
+  "translation_reviewed_at": null,
+  "translation_reviewed_by": null,
+  "needs_translation_review": null,
+  "publication_status": "needs_original",
+  "source": "kit"
+}

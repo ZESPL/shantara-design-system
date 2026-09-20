@@ -9,7 +9,9 @@ description: >
 
 # Shantara Website Skill
 
-This is the website-building skill. The Website Kit (`ui_kits/website/`) is the place humans and agents read it. Sample screens here illustrate composition — they are **not** a production site.
+This is the website-building skill. The Website Kit (`ui_kits/website/`) is the place humans and agents read it. Sample screens here illustrate composition — they are **not** a production website.
+
+Entity facts for programmes, rooms, conditions, NAP, and tariff live in [`content/`](../../content/). Prefer those records over inventing local arrays. Use [`docs/handbook.txt`](../../docs/handbook.txt) for policies and `[TO CONFIRM]` flags — not for hero copy. Never quote handbook §15 as public language. Start from root [`AGENTS.md`](../../AGENTS.md).
 
 Read this file first. Open a sibling reference only when the task needs that inventory:
 
@@ -369,7 +371,7 @@ Schema: one Organization `@id`. WebPage `url` and `inLanguage` follow the locale
 
 ### This kit vs production
 
-Sample screens illustrate the skill. They are not a production Next.js site. The kit uses hash routes (`#/en/`, `#/en/programs`) that map to the production URL families above. Catalog LTR/RTL and `ui_kits/website/?fixture=rtl` are **development fixtures** for visual QA — they are not published Arabic pages.
+Sample screens illustrate the skill. They are not a production website. The kit uses hash routes (`#/en/`, `#/en/programs`) that map to the production URL families above. Catalog LTR/RTL and `ui_kits/website/?fixture=rtl` are **development fixtures** for visual QA — they are not published Arabic pages.
 
 Initial build in this system: English samples, locale-aware routing, central config, LanguageSelector infrastructure (hidden), RTL-ready components, Arabic type tokens, localized metadata helpers, hreflang/sitemap/schema/analytics helpers, documentation. Not a translated website.
 

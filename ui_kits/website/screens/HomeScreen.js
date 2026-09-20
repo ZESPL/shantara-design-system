@@ -1,36 +1,45 @@
-const PROGRAMMES = [
-  { name: "Stress Management", photo: "balcony", focus: "Mind", copy: "Doctor-led routines, therapies and rest for guests managing sustained stress, poor sleep or fatigue.", nights: "7–14 nights" },
-  { name: "Detox", photo: "water-wall", focus: "Metabolic", copy: "Your doctor may recommend a meal plan or supervised fasting based on your assessment. Therapies may also form part of your programme.", nights: "7–21 nights" },
-  { name: "Weight Management", photo: "grounds", focus: "Metabolic", copy: "Meals, daily activity and therapies, with weight and vitals reviewed by a doctor each morning.", nights: "14–21 nights" },
-  { name: "Diabetes Reversal", photo: "treatment", focus: "Clinical", copy: "Diet, activity and therapies planned around blood-sugar control, with medication reviewed by a doctor. Recommendations depend on your assessment.", nights: "14–28 nights" },
-  { name: "Complete Healing", photo: "courtyard", focus: "Immersive", copy: "For guests managing several long-standing conditions at once, across metabolic, musculoskeletal and mental health.", nights: "21–28 nights" },
-  { name: "Weekend Rejuvenation", photo: "lounge", focus: "Rest", copy: "A shorter stay for guests with limited time: rest, gentle therapies and meals planned for the programme.", nights: "7 nights" },
-  { name: "Executive Wellness", photo: "library", focus: "Rest", copy: "A compact daily plan for guests who need to stay partly available for work.", nights: "7–10 nights" },
-  { name: "Corporate Retreats", photo: "dining", focus: "Groups", copy: "Group programmes for teams, with therapies and schedule planned around group size and objectives.", nights: "By arrangement" },
-];
+function homeFeaturedPrograms() {
+  const C = window.ShantaraContent;
+  return (C.programs || []).filter((p) => p.home_featured).map((p) => ({
+    name: p.name,
+    photo: p.photo,
+    focus: p.focus,
+    copy: p.proposition,
+    nights: p.durations,
+  }));
+}
 
-const THERAPIES = [
-  ["Mud Therapy", "Mineral-rich earth applied to calm inflammation and ease physical tension."],
-  ["Yoga Therapy", "Gentle movement and breathwork adapted to the individual."],
-  ["Hydrotherapy", "Water at controlled temperatures to support circulation."],
-  ["Fasting Therapy", "Introduced gradually and supervised by a doctor throughout."],
-  ["Acupuncture", "Fine needles used to ease pain, when recommended by your doctor."],
-  ["Hijama", "Traditional cupping, delivered under medical supervision."],
-  ["Diet Therapy", "Meals planned for your programme and reviewed as your stay progresses."],
-  ["Heliotherapy", "Controlled sunlight exposure, scheduled in the early morning."],
-];
+function homeFeaturedTherapies() {
+  const C = window.ShantaraContent;
+  return (C.therapies || []).filter((t) => t.home_featured).map((t) => [t.name, t.description]);
+}
 
-const ROOMS = [
-  { name: "Executive Suite", spec: "530 sq.ft · balcony", photo: "room-premium" },
-  { name: "Premium Room", spec: "460 sq.ft · balcony", photo: "room-twin" },
-  { name: "Superior Room", spec: "300 sq.ft · balcony", photo: "balcony" },
-];
+function homeTeaserRooms() {
+  const C = window.ShantaraContent;
+  return (C.rooms || []).filter((r) => r.home_teaser).map((r) => ({
+    name: r.name,
+    spec: r.spec_line,
+    photo: r.photo,
+  }));
+}
+
+function siteStats() {
+  return (window.ShantaraContent.site && window.ShantaraContent.site.stats) || [];
+}
+
+function siteFaqs() {
+  return (window.ShantaraContent.faqs || []).map((f) => ({ title: f.question, content: f.answer }));
+}
 
 function HomeScreen({ onNavigate }) {
   const { t } = window.ShantaraI18n.useLocale();
   const { Button, Icon, Card, Badge, Tag, Accordion, Input, Divider, Logo } = window.ShantaraDesignSystem_45bbe4;
+  const programmes = homeFeaturedPrograms();
+  const therapies = homeFeaturedTherapies();
+  const rooms = homeTeaserRooms();
+  const stats = siteStats();
   const [focus, setFocus] = React.useState("All");
-  const shown = focus === "All" ? PROGRAMMES : PROGRAMMES.filter((p) => p.focus === focus);
+  const shown = focus === "All" ? programmes : programmes.filter((p) => p.focus === focus);
   return (
     <main>
       {/* Hero */}
@@ -60,10 +69,10 @@ function HomeScreen({ onNavigate }) {
           <p style={{ font: "var(--type-lead)", margin: "0 0 var(--space-6)" }}>{t("Naturopathy treats the causes of a condition through diet, activity, therapies and rest rather than through medication.")}</p>
           <p style={{ color: "var(--text-secondary)", margin: 0 }}>{t("Your programme begins with a consultation and assessment. Our doctors consider your medical history, current health, lifestyle and goals. They then plan your treatments, meals, activity and rest. The plan is reviewed during your stay and adjusted where necessary.")}</p>
           <div style={{ display: "flex", gap: "var(--space-9)", marginTop: "var(--space-9)", flexWrap: "wrap" }}>
-            {[["4", "hilltop acres"], ["52", "rooms, 5 categories"], ["25,000+", "guests since 2000"], ["13", "therapies"]].map(([n, l]) => (
-              <div key={l}>
-                <div style={{ font: "var(--weight-light) var(--text-3xl)/1 var(--font-display)", fontVariantNumeric: "tabular-nums" }}>{n}</div>
-                <div className="shantara-eyebrow" style={{ marginTop: "var(--space-3)" }}>{t(l)}</div>
+            {stats.map(({ value, label }) => (
+              <div key={label}>
+                <div style={{ font: "var(--weight-light) var(--text-3xl)/1 var(--font-display)", fontVariantNumeric: "tabular-nums" }}>{value}</div>
+                <div className="shantara-eyebrow" style={{ marginTop: "var(--space-3)" }}>{t(label)}</div>
               </div>
             ))}
           </div>
@@ -125,7 +134,7 @@ function HomeScreen({ onNavigate }) {
             <Button variant="accent" size="lg" onClick={() => onNavigate("programme")}>{t("Read what to expect")}</Button>
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "var(--space-6) var(--space-8)" }}>
-            {THERAPIES.map(([name, desc]) => (
+            {therapies.map(([name, desc]) => (
               <div key={name}>
                 <h3 style={{ font: "var(--type-h4)", fontSize: "var(--text-base)", color: "var(--text-primary)", margin: "0 0 var(--space-2)" }}>{t(name)}</h3>
                 <p style={{ font: "var(--type-body-sm)", color: "var(--text-secondary)", margin: 0 }}>{t(desc)}</p>
@@ -145,7 +154,7 @@ function HomeScreen({ onNavigate }) {
           <Button variant="ghost" style={{ marginInlineStart: "auto" }} onClick={() => onNavigate("tariffs")} endIcon={<Icon name="arrow-right" size={16} />}>{t("View tariffs")}</Button>
         </div>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "var(--space-7)" }}>
-          {ROOMS.map((r) => (
+          {rooms.map((r) => (
             <div key={r.name}>
               <Photo name={r.photo} alt={t(r.name)} />
               <h3 style={{ font: "var(--type-h4)", fontSize: "var(--text-lg)", margin: "var(--space-5) 0 0" }}>{t(r.name)}</h3>
@@ -197,13 +206,7 @@ function HomeScreen({ onNavigate }) {
         <div style={{ maxWidth: "var(--layout-max)", margin: "0 auto", padding: "var(--section-y-sm) var(--layout-gutter-lg)", display: "grid", gridTemplateColumns: "1fr 0.85fr", gap: "var(--space-11)" }}>
           <div>
             <h2 style={{ font: "var(--type-h3)", marginBottom: "var(--space-6)" }}>{t("Preparing for your stay")}</h2>
-            <Accordion items={[
-              { title: t("How long should I stay?"), content: t("Duration depends on the programme and your assessment. Your doctor advises a typical duration after consultation.") },
-              { title: t("Can I leave the property during my stay?"), content: t("Guests usually remain at the retreat during the programme so meals, therapies and reviews can follow the plan. Leaving for a medical emergency is arranged with the team.") },
-              { title: t("How do meals work?"), content: t("Meals are planned as part of your programme, taking into account your doctor's recommendations and dietary requirements.") },
-              { title: t("Is my booking confirmed straight away?"), content: t("A stay is confirmed after a preliminary consultation with our doctors. You will be asked to share a health assessment, relevant medical records and your current medication first.") },
-              { title: t("Who can stay?"), content: t("Shantara accepts guests aged 18 to 80 with conditions that can be managed through residential naturopathy. Acute or emergency care is outside what we provide.") },
-            ]} />
+            <Accordion items={siteFaqs().map((item) => ({ title: t(item.title), content: t(item.content) }))} />
           </div>
           <div style={{ background: "var(--surface-card)", borderRadius: "var(--radius-card)", padding: "var(--space-9)", alignSelf: "start", boxShadow: "var(--shadow-sm)" }}>
             <span className="shantara-eyebrow">{t("Book a Consultation")}</span>
@@ -221,4 +224,4 @@ function HomeScreen({ onNavigate }) {
   );
 }
 
-Object.assign(window, { HomeScreen, PROGRAMMES, THERAPIES, ROOMS });
+Object.assign(window, { HomeScreen });

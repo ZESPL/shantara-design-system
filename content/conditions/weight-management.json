@@ -1,0 +1,31 @@
+{
+  "id": "weight-management",
+  "slug": "weight-management",
+  "name": "Weight management",
+  "listing_group": "Metabolic",
+  "summary": "Meals, activity and therapies, with weight and vitals reviewed each morning.",
+  "photo": "grounds",
+  "icp_ids": [
+    "weight_metabolic"
+  ],
+  "related_program_ids": [
+    "weight-management",
+    "detox"
+  ],
+  "related_therapy_ids": [],
+  "clinical": null,
+  "faqs": [],
+  "medical_reviewer": null,
+  "last_medically_reviewed": null,
+  "references": [],
+  "note": "Listing need-card sample; distinct from the Weight Management programme entity.",
+  "locale": "en",
+  "translation_status": null,
+  "source_version": "2026-07",
+  "last_translated_at": null,
+  "translation_reviewed_at": null,
+  "translation_reviewed_by": null,
+  "needs_translation_review": null,
+  "publication_status": "kit_sample",
+  "source": "kit"
+}

@@ -1,7 +1,7 @@
 Location trail for deep pages (treatment detail, journal article).
 
 ```jsx
-<Breadcrumbs items={[{label:"Programmes", href:"/programmes"}, {label:"Wellness", href:"/programmes/wellness"}, "Detox"]} />
+<Breadcrumbs items={[{label:"Programmes", href:"/en/programs"}, "Detox"]} />
 ```
 
 **Motion.** Ancestor links take `--text-primary` and a Cotton Seed underline on hover, 160ms. The current page does not hover.

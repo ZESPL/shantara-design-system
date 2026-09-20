@@ -1,0 +1,22 @@
+{
+  "id": "twenty-six-years",
+  "slug": "twenty-six-years",
+  "title": "Twenty-six years of treating the cause",
+  "category": "Clinical Guides",
+  "photo": "library",
+  "read_minutes": 3,
+  "lead": "Dr. P.A. Kareem on drug-free practice since 2000.",
+  "body": null,
+  "author": null,
+  "medical_reviewer": null,
+  "kit_journal": true,
+  "locale": "en",
+  "translation_status": null,
+  "source_version": "2026-07",
+  "last_translated_at": null,
+  "translation_reviewed_at": null,
+  "translation_reviewed_by": null,
+  "needs_translation_review": null,
+  "publication_status": "kit_sample",
+  "source": "kit"
+}

@@ -1,0 +1,105 @@
+/* Shared design-system chrome and page title.
+   Catalog (.top / .viewer-head) and notes (.ds-chrome / .ds-handbook-mast) use the same bar. */
+
+.ds-chrome,
+.top{
+  position:sticky;
+  top:0;
+  z-index:40;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:var(--space-6);
+  min-height:64px;
+  padding:var(--space-4) var(--space-7);
+  background:color-mix(in srgb, var(--color-merino) 88%, transparent);
+  backdrop-filter:var(--blur-glass);
+  -webkit-backdrop-filter:var(--blur-glass);
+  border-bottom:1px solid var(--border-subtle);
+}
+
+.ds-chrome .brand,
+.top .brand{
+  display:flex;
+  align-items:center;
+  gap:var(--space-5);
+  text-decoration:none;
+  color:var(--text-primary);
+}
+.ds-chrome .brand img,
+.top .brand img{display:block;height:16px;width:auto}
+.ds-chrome .brand-rule,
+.top .brand-rule{width:1px;height:16px;background:var(--border-default)}
+.ds-chrome .brand-label,
+.top .brand-label{font:var(--type-label);letter-spacing:var(--tracking-wide);color:var(--text-secondary)}
+
+.ds-page-head,
+.ds-handbook-mast,
+.viewer-head{
+  background:var(--surface-page);
+  color:var(--text-primary);
+  border-bottom:1px solid var(--border-subtle);
+}
+
+.ds-page-head-inner,
+.ds-handbook-mast-inner{
+  max-width:1320px;
+  margin:0 auto;
+  padding:var(--space-8) var(--layout-gutter) var(--space-6);
+}
+
+.viewer-head{padding:var(--space-8) var(--space-10) var(--space-6)}
+
+.ds-page-head .shantara-eyebrow,
+.ds-handbook-mast-inner .shantara-eyebrow,
+.viewer-head .shantara-eyebrow{color:var(--text-secondary)}
+
+.ds-page-head h1,
+.ds-handbook-mast h1,
+.viewer-head h1{
+  margin:var(--space-4) 0 0;
+  font:var(--type-h2);
+  font-size:var(--text-3xl);
+  color:var(--text-primary);
+  max-width:22ch;
+}
+
+.ds-page-lead,
+.ds-handbook-lead,
+.viewer-sub{
+  margin:var(--space-4) 0 0;
+  font:var(--type-lead);
+  font-size:var(--text-sm);
+  color:var(--text-secondary);
+  max-width:46ch;
+}
+
+.ds-handbook-meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:var(--space-3) var(--space-6);
+  margin:var(--space-5) 0 0;
+  font-size:var(--text-sm);
+  color:var(--text-secondary);
+  font-variant-numeric:tabular-nums;
+}
+.ds-handbook-meta [data-confirm-count]{color:var(--status-warning)}
+.ds-handbook-meta a{color:inherit;text-decoration:none}
+@media (hover: hover) and (pointer: fine){
+  .ds-handbook-meta a:hover{color:var(--text-primary)}
+}
+.ds-handbook-meta a[aria-current="page"]{
+  color:var(--text-primary);
+  text-decoration:underline;
+  text-underline-offset:4px;
+}
+
+.ds-doc:not(.ds-handbook) .ds-page-head-inner{max-width:var(--layout-narrow)}
+.ds-doc:has(.ds-page-head) .ds-doc-inner{padding-top:var(--space-8)}
+
+html.is-framed .ds-chrome{display:none}
+
+@media print{
+  .ds-chrome,
+  .top{position:static;backdrop-filter:none;background:var(--surface-page)}
+}

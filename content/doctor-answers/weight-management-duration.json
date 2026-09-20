@@ -1,0 +1,22 @@
+{
+  "id": "weight-management-duration",
+  "slug": "weight-management-program-duration",
+  "question": "How long should a residential weight-management program be?",
+  "short_answer": null,
+  "detailed_answer": null,
+  "doctor_id": null,
+  "photo": null,
+  "read_minutes": null,
+  "category": "Doctor Answers",
+  "kit_journal": false,
+  "references": [],
+  "locale": "en",
+  "translation_status": null,
+  "source_version": "2026-07",
+  "last_translated_at": null,
+  "translation_reviewed_at": null,
+  "translation_reviewed_by": null,
+  "needs_translation_review": null,
+  "publication_status": "needs_original",
+  "source": "gap"
+}

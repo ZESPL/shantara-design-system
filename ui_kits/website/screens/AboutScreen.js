@@ -32,9 +32,9 @@ function AboutScreen({ onNavigate }) {
         <div style={{ maxWidth: "var(--layout-max)", margin: "0 auto", padding: "var(--section-y-sm) var(--layout-gutter-lg)" }}>
           <span className="shantara-eyebrow" style={{ color: "var(--color-gold-crayola)", display: "block", marginBottom: "var(--space-9)" }}>{t("Shantara in numbers")}</span>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "var(--space-8)" }}>
-            {[["4", "hilltop acres"], ["52", "rooms, 5 categories"], ["13", "therapies"], ["25,000+", "guests since 2000"]].map(([n, l]) => (
+            {((window.ShantaraContent.site && window.ShantaraContent.site.stats) || []).map(({ value: n, label: l }) => (
               <div key={l}>
-                <div style={{ font: "var(--weight-light) var(--text-4xl)/1 var(--font-display)", fontVariantNumeric: "tabular-nums", color: n === "13" ? "var(--color-gold-crayola)" : "var(--color-merino)" }}>{n}</div>
+                <div style={{ font: "var(--weight-light) var(--text-4xl)/1 var(--font-display)", fontVariantNumeric: "tabular-nums", color: /therapies/i.test(l) ? "var(--color-gold-crayola)" : "var(--color-merino)" }}>{n}</div>
                 <div className="shantara-eyebrow" style={{ marginTop: "var(--space-4)", color: "var(--color-cotton-seed)" }}>{t(l)}</div>
               </div>
             ))}

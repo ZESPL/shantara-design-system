@@ -1,0 +1,29 @@
+{
+  "id": "thyroid",
+  "slug": "thyroid",
+  "name": "Thyroid dysfunction",
+  "listing_group": null,
+  "summary": null,
+  "photo": null,
+  "icp_ids": [
+    "hormonal_vitality"
+  ],
+  "related_program_ids": [
+    "complete-healing"
+  ],
+  "related_therapy_ids": [],
+  "clinical": null,
+  "faqs": [],
+  "medical_reviewer": null,
+  "last_medically_reviewed": null,
+  "references": [],
+  "locale": "en",
+  "translation_status": null,
+  "source_version": "2026-07",
+  "last_translated_at": null,
+  "translation_reviewed_at": null,
+  "translation_reviewed_by": null,
+  "needs_translation_review": null,
+  "publication_status": "needs_original",
+  "source": "gap"
+}

@@ -1,0 +1,16 @@
+{
+  "id": "massage-therapy",
+  "name": "Massage Therapy",
+  "home_featured": false,
+  "description": "Therapeutic touch to ease muscle tension and support rest.",
+  "slug": "massage-therapy",
+  "locale": "en",
+  "translation_status": null,
+  "source_version": "2026-07",
+  "last_translated_at": null,
+  "translation_reviewed_at": null,
+  "translation_reviewed_by": null,
+  "needs_translation_review": null,
+  "publication_status": "published",
+  "source": "handbook"
+}

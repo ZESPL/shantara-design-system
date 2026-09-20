@@ -18,7 +18,7 @@ Netlify publishes a `dist/` copy. Raw `uploads/` (boards, handbook `.docx`, full
 
 ## Add it to another repo
 
-Copy **this entire folder**. Do not pick files out. Tokens, assets, components, kits, notes and the skill wrapper all resolve relative to each other.
+Copy the folder when you need the full skill + kits + content model. Prefer the take/leave table below over “copy everything blindly” or inventing a thinner subset that breaks relative paths.
 
 ### As a Cursor skill
 
@@ -28,7 +28,7 @@ Copy the folder to:
 .cursor/skills/shantara-design/
 ```
 
-Cursor will load `SKILL.md`. Agents then read `readme.md`, the component `*.prompt.md` files, and the kits. That is the intended path for “design something in this brand.”
+Cursor will load `SKILL.md` and `AGENTS.md`. Agents then read `content/`, the component `*.prompt.md` files, and the kits. That is the intended path for “design something in this brand.”
 
 You can also keep the folder at the repo root (as it is here) and treat `SKILL.md` as the project skill.
 
@@ -42,41 +42,48 @@ You can also keep the folder at the repo root (as it is here) and treat `SKILL.m
 
 2. Copy or import the components you need from `components/` (`*.jsx` + `*.d.ts`). Read the matching `*.prompt.md` before using a control.
 3. Use `assets/` as shipped — logos, pattern cell, fonts, the 16 curated photos. Do not retile `pattern-motif.png`. Do not invent a new icon set without replacing Lucide on purpose.
-4. For a marketing page, start from `ui_kits/website/`. Read `ui_kits/website/SKILL.md` (also the Website kit cards in this catalog) before composing pages, forms, or SEO. For an in-stay surface, start from `ui_kits/app/`. Both kits are extrapolations; read their READMEs.
+4. For entity facts (programmes, rooms, NAP, tariff), load [`content/`](../content/) or generated `content/kit.js`. Do not keep local `PROGRAMMES` / rate arrays in app code.
+5. For a marketing page, start from `ui_kits/website/`. Read `ui_kits/website/SKILL.md` before composing pages, forms, or SEO. For an in-stay surface, start from `ui_kits/app/`. Both kits are extrapolations; read their READMEs.
 
-The consumer contract is:
+### Take / leave
 
 | Take | Leave unless you need it |
 | --- | --- |
 | `styles.css`, `tokens/`, `assets/` | `uploads/` (raw boards and shoot) |
 | `components/` | `catalog.js`, `index.html` (browse-only chrome) |
-| `SKILL.md`, `readme.md`, `*.prompt.md`, `ui_kits/website/SKILL.md` | `dist/`, `.netlify/` |
-| `ui_kits/` if you are shipping those surfaces | |
+| `content/` (entity facts; generate `kit.js` via `scripts/write-content-kit.mjs`) | `_ds_bundle.js` for copy, programmes, or rates (components only) |
+| `AGENTS.md`, `SKILL.md`, `readme.md`, `*.prompt.md`, `ui_kits/website/SKILL.md`, `ui_kits/website/skill-copy.md` | `.agents/skills/` (generic motion / Swift / Sonner) |
+| `ui_kits/` if you are shipping those surfaces | `scraps/`, `dist/`, `.netlify/` |
+| `docs/handbook.txt` for policies and `[TO CONFIRM]` | Handbook §15 as public copy; inventing clinical bodies |
 
 ## Where this lives
 
 | Fact | Canonical file | Do not restate in |
 | --- | --- | --- |
+| Entity records (programmes, rooms, conditions, NAP) | [`content/`](../content/) | local arrays in kit screens |
+| Rates | [`content/tariff.json`](../content/tariff.json) + tariff surfaces only | home, programme, enquiry, journal, app, specimens |
 | Voice / public language | [`ui_kits/website/skill-copy.md`](../ui_kits/website/skill-copy.md) (browsed as [`docs/website-copy.html`](website-copy.html)) | long essays in `readme.md`; do not keep a second brand-copy card |
 | Colour, type, logo, pattern | the matching `guidelines/*.html` card | |
 | Contrast | [`guidelines/accessibility.html`](../guidelines/accessibility.html) | a11y changelog in `readme.md` |
 | How to consume | `docs/use.md` | |
 | Website IA / CMS / QA | `ui_kits/website/skill-*.md` | overlapping `README.md` chapters |
-| Audience | `docs/icp.md` | |
-| Property facts | `docs/handbook.txt` | |
+| Audience | `docs/icp.md` (internal) | public page copy |
+| Policies / `[TO CONFIRM]` | `docs/handbook.txt` | hero copy; never quote §15 publicly |
 
 ## What an agent should read
 
-1. `SKILL.md` — the five non-obvious rules
-2. `readme.md` — orientation, file map, caveats, on-record corrections
-3. `ui_kits/website/SKILL.md` when the work is the public marketing website
-4. The `*.prompt.md` next to the component being used (or the catalog component page)
-5. `docs/handbook.txt` (or this catalog’s handbook page) for programmes, rooms, rules and contact — not for inventing copy
-6. `docs/icp.md` (or this catalog’s ICP page) when the work is audience, SEO, campaigns, CRM, or content strategy — internal only; do not paste ICP names into public copy
-7. `guidelines/accessibility.html` before changing a colour token
+1. `AGENTS.md` — short index and bans
+2. `SKILL.md` — the five non-obvious rules
+3. `content/` — entity facts before inventing programmes, rooms, or contact
+4. `readme.md` — orientation, file map, caveats, on-record corrections
+5. `ui_kits/website/SKILL.md` when the work is the public marketing website
+6. The `*.prompt.md` next to the component being used (or the catalog component page)
+7. `docs/handbook.txt` for policies, conflicts, and `[TO CONFIRM]` — not for inventing public copy
+8. `docs/icp.md` when the work is audience, SEO, campaigns, CRM, or content strategy — internal only; do not paste ICP names into public copy
+9. `guidelines/accessibility.html` before changing a colour token
 
 ## What this folder is not
 
 It is not an npm package and not a Figma library. There is no install command beyond copying the folder. There is no product codebase behind the kits.
 
-Rates live only on the tariff card and in the handbook tariff section. Do not copy them onto home, programme, enquiry, journal, app or type specimens.
+Rates live only on the tariff card, in `content/tariff.json`, and in the handbook tariff section. Do not copy them onto home, programme, enquiry, journal, app or type specimens.

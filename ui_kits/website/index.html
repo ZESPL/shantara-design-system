@@ -7,8 +7,9 @@
 <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
 <script src="../../_ds_bundle.js"></script>
-<script src="../../locales.js"></script>
-<script src="../../i18n.js"></script>
+<script src="/content/kit.js"></script>
+<script src="/ui_kits/website/locales.js"></script>
+<script src="/i18n.js"></script>
 <style>html,body{height:100%}#kit-scroll{height:100vh;height:100dvh;overflow-y:auto;background:var(--surface-page);overscroll-behavior:contain}
 .sh-rtl-fixture{position:sticky;top:0;z-index:40;padding:8px 16px;background:var(--surface-raised);color:var(--text-secondary);font-size:var(--text-2xs);text-align:center}
 /* 1.4.10 Reflow — the kit's grids are inline-styled, so the responsive layer overrides
@@ -50,18 +51,17 @@
 })();
 </script>
 <div id="kit-scroll"><div id="root"></div></div>
-<script type="text/babel" src="/ui_kits/website/Photo.js"></script>
-<script type="text/babel" src="/ui_kits/website/SiteChrome.js"></script>
-<script type="text/babel" src="/ui_kits/website/HomeScreen.js"></script>
-<script type="text/babel" src="/ui_kits/website/ConditionsScreen.js"></script>
-<script type="text/babel" src="/ui_kits/website/ProgrammeScreen.js"></script>
-<script type="text/babel" src="/ui_kits/website/ExperienceScreen.js"></script>
-<script type="text/babel" src="/ui_kits/website/AboutScreen.js"></script>
-<script type="text/babel" src="/ui_kits/website/JournalScreen.js"></script>
-<script type="text/babel" src="/ui_kits/website/ContactScreen.js"></script>
-<script type="text/babel" src="/ui_kits/website/ConsultationScreen.js"></script>
-<script type="text/babel" src="/ui_kits/website/EnquiryScreen.js"></script>
-<script type="text/babel" src="/ui_kits/website/TariffScreen.js"></script>
+<script type="text/babel" src="/ui_kits/website/chrome/Photo.js"></script>
+<script type="text/babel" src="/ui_kits/website/chrome/SiteChrome.js"></script>
+<script type="text/babel" src="/ui_kits/website/screens/HomeScreen.js"></script>
+<script type="text/babel" src="/ui_kits/website/screens/ConditionsScreen.js"></script>
+<script type="text/babel" src="/ui_kits/website/screens/ProgrammeScreen.js"></script>
+<script type="text/babel" src="/ui_kits/website/screens/ExperienceScreen.js"></script>
+<script type="text/babel" src="/ui_kits/website/screens/AboutScreen.js"></script>
+<script type="text/babel" src="/ui_kits/website/screens/JournalScreen.js"></script>
+<script type="text/babel" src="/ui_kits/website/screens/ContactScreen.js"></script>
+<script type="text/babel" src="/ui_kits/website/screens/ConsultationScreen.js"></script>
+<script type="text/babel" src="/ui_kits/website/screens/TariffScreen.js"></script>
 <script type="text/babel">
 function Site(){
   const L = window.ShantaraLocales;

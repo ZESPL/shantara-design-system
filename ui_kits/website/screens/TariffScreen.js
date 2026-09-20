@@ -1,24 +1,37 @@
-const TARIFF = [
-  { name: "Executive Suite", size: "530 sq.ft", occ: "Single or double", single: "22,000", double: "28,000" },
-  { name: "Premium Room", size: "460 sq.ft", occ: "Single or double", single: "18,000", double: "24,000" },
-  { name: "Superior Room", size: "300 sq.ft", occ: "Single or double", single: "16,000", double: "22,000" },
-  { name: "Deluxe Room", size: "260 sq.ft", occ: "Single only", single: "14,000", double: null },
-  { name: "Standard Room", size: "220 sq.ft", occ: "Single only", single: "12,000", double: null },
-];
+function tariffRows() {
+  const C = window.ShantaraContent;
+  const roomsById = Object.fromEntries((C.rooms || []).map((r) => [r.id, r]));
+  const tariff = C.tariff || {};
+  return (tariff.rooms || []).map((row) => {
+    const room = roomsById[row.room_id] || {};
+    return {
+      name: room.name || row.room_id,
+      size: room.size || "",
+      occ: room.occupancy || "",
+      single: row.single_per_night == null ? null : String(row.single_per_night).replace(/\B(?=(\d{3})+(?!\d))/g, ","),
+      double: row.double_per_night == null ? null : String(row.double_per_night).replace(/\B(?=(\d{3})+(?!\d))/g, ","),
+    };
+  });
+}
 
-const INCLUDED = [
-  "Daily doctor consultation",
-  "All prescribed naturopathy therapies",
-  "Yoga therapy and meditation",
-  "Personalised diet therapy",
-  "Wellness attire and daily laundry",
-  "Airport and railway transfers",
-  "All applicable taxes",
-];
+function tariffInclusions() {
+  return (window.ShantaraContent.tariff && window.ShantaraContent.tariff.inclusions) || [];
+}
+
+function tariffValidCopy() {
+  const tariff = window.ShantaraContent.tariff || {};
+  if (!tariff.valid_to) return "Rates valid to 31 December 2026. Reservations are confirmed after a preliminary consultation.";
+  const d = new Date(tariff.valid_to + "T00:00:00");
+  const formatted = d.toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
+  return `Rates valid to ${formatted}. Reservations are confirmed after a preliminary consultation.`;
+}
 
 function TariffScreen({ onNavigate }) {
   const { t } = window.ShantaraI18n.useLocale();
   const { Button, Breadcrumbs, Divider, Card, Icon } = window.ShantaraDesignSystem_45bbe4;
+  const rows = tariffRows();
+  const included = tariffInclusions();
+  const symbol = (window.ShantaraContent.tariff && window.ShantaraContent.tariff.currency_symbol) || "₹";
   return (
     <main>
       <section style={{ position: "relative", marginTop: "-96px", paddingTop: "96px", marginBottom: "var(--space-9)" }}>
@@ -39,25 +52,25 @@ function TariffScreen({ onNavigate }) {
           <span className="shantara-eyebrow">{t("Rooms and tariffs")}</span>
           <h2 style={{ font: "var(--type-h1)", fontSize: "var(--text-3xl)", margin: "var(--space-4) 0 var(--space-6)" }}>{t("Rooms and tariffs")}</h2>
           <p style={{ font: "var(--type-lead)", margin: "0 0 var(--space-8)", maxWidth: "52ch" }}>{t("Each nightly rate includes the stay items listed here.")}</p>
-          {TARIFF.map((r) => (
+          {rows.map((r) => (
             <div key={r.name} style={{ display: "flex", alignItems: "baseline", gap: "var(--space-5)", borderTop: "1px solid var(--border-subtle)", padding: "18px 0" }}>
               <div>
                 <h2 style={{ font: "var(--type-h4)", fontSize: "var(--text-lg)", margin: 0 }}>{t(r.name)}</h2>
                 <p style={{ font: "var(--type-body-sm)", color: "var(--text-secondary)", margin: "var(--space-2) 0 0" }}>
                   {r.size} · {t(r.occ)}
-                  {r.double ? ` · ${t("Double / night")} ₹${r.double}` : ""}
+                  {r.double ? ` · ${t("Double / night")} ${symbol}${r.double}` : ""}
                 </p>
               </div>
-              <span style={{ marginInlineStart: "auto", font: "var(--weight-light) var(--text-2xl)/1 var(--font-display)", fontVariantNumeric: "tabular-nums", whiteSpace: "nowrap" }}>₹{r.single}</span>
+              <span style={{ marginInlineStart: "auto", font: "var(--weight-light) var(--text-2xl)/1 var(--font-display)", fontVariantNumeric: "tabular-nums", whiteSpace: "nowrap" }}>{symbol}{r.single}</span>
             </div>
           ))}
-          <p style={{ fontSize: "var(--text-sm)", color: "var(--text-secondary)", margin: "var(--space-7) 0 0", maxWidth: "72ch" }}>{t("Rates valid to 31 December 2026. Reservations are confirmed after a preliminary consultation.")}</p>
+          <p style={{ fontSize: "var(--text-sm)", color: "var(--text-secondary)", margin: "var(--space-7) 0 0", maxWidth: "72ch" }}>{t(tariffValidCopy())}</p>
         </div>
         <Card padding="lg" style={{ flex: "0 1 360px" }}>
           <span className="shantara-eyebrow">{t("What your stay includes")}</span>
           <h2 style={{ font: "var(--type-h4)", margin: "var(--space-4) 0 var(--space-6)" }}>{t("What the nightly rate includes")}</h2>
           <ul style={{ margin: 0, padding: 0, listStyle: "none", display: "flex", flexDirection: "column", gap: "var(--space-4)" }}>
-            {INCLUDED.map((line) => (
+            {included.map((line) => (
               <li key={line} style={{ display: "flex", gap: "var(--space-3)", alignItems: "flex-start", fontSize: "var(--text-sm)", borderTop: "1px solid var(--border-subtle)", paddingTop: "var(--space-4)" }}>
                 <Icon name="leaf" size={16} color="var(--text-brand)" /><span>{t(line)}</span>
               </li>
@@ -73,4 +86,4 @@ function TariffScreen({ onNavigate }) {
   );
 }
 
-Object.assign(window, { TariffScreen, TARIFF });
+Object.assign(window, { TariffScreen });

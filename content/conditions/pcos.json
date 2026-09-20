@@ -1,0 +1,31 @@
+{
+  "id": "pcos",
+  "slug": "pcos",
+  "name": "PCOS",
+  "listing_group": "Hormonal",
+  "summary": "A programme may be planned around hormonal health, meals, activity and rest, following assessment.",
+  "photo": "lounge",
+  "icp_ids": [
+    "hormonal_vitality"
+  ],
+  "related_program_ids": [
+    "complete-healing",
+    "detox"
+  ],
+  "related_therapy_ids": [],
+  "clinical": null,
+  "faqs": [],
+  "medical_reviewer": null,
+  "last_medically_reviewed": null,
+  "references": [],
+  "note": null,
+  "locale": "en",
+  "translation_status": null,
+  "source_version": "2026-07",
+  "last_translated_at": null,
+  "translation_reviewed_at": null,
+  "translation_reviewed_by": null,
+  "needs_translation_review": null,
+  "publication_status": "needs_original",
+  "source": "kit"
+}

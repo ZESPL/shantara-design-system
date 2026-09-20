@@ -249,12 +249,22 @@
       { label: "Site systems", from: 6, to: 10 },
       { label: "Workflow", from: 11, to: 15 },
     ],
-    "website-kit": [
-      { label: "Purpose", from: 1, to: 4 },
-      { label: "Systems", from: 5, to: 9 },
-      { label: "Using the kit", from: 10, to: 12 },
-    ],
   };
+
+  const MIN_TOC_HEADINGS = 4;
+
+  function pageNeedsToc(heads, article) {
+    if (heads.length < MIN_TOC_HEADINGS) return false;
+    if (article && article.scrollHeight <= window.innerHeight) return false;
+    return true;
+  }
+
+  function hideToc(toc) {
+    const shell = toc.closest(".ds-handbook-shell");
+    toc.hidden = true;
+    toc.replaceChildren();
+    if (shell) shell.classList.remove("has-toc");
+  }
 
   function parseTocHeading(heading) {
     if (heading && heading.dataset && heading.dataset.tocLabel) {
@@ -290,10 +300,20 @@
   }
 
   function buildToc(toc, heads, articleId) {
+    const shell = toc.closest(".ds-handbook-shell");
+    const article = shell?.querySelector(".ds-doc-inner") || document.getElementById(articleId);
+    if (!pageNeedsToc(heads, article)) {
+      hideToc(toc);
+      return;
+    }
+    toc.hidden = false;
+    if (shell) shell.classList.add("has-toc");
+
     const wide = window.matchMedia("(min-width: 1100px)");
     const groups = TOC_GROUPS[articleId];
+    const numbered = heads.some((heading) => parseTocHeading(heading).section != null);
     let inner;
-    if (groups) {
+    if (groups && numbered) {
       inner = `<div class="ds-toc-groups">${groups.map((group) => {
         const grouped = heads.filter((heading) => {
           const n = parseTocHeading(heading).section;
@@ -302,6 +322,9 @@
         if (!grouped.length) return "";
         return `<details class="ds-toc-group" open><summary class="ds-toc-group-label">${escapeHtml(group.label)}</summary><ol class="ds-toc-list">${grouped.map(tocItemHtml).join("")}</ol></details>`;
       }).join("")}</div>`;
+      if (!inner.includes("ds-toc-list")) {
+        inner = `<ol class="ds-toc-list">${heads.map(tocItemHtml).join("")}</ol>`;
+      }
     } else {
       inner = `<ol class="ds-toc-list">${heads.map(tocItemHtml).join("")}</ol>`;
     }
@@ -576,6 +599,102 @@
     restyleLanguagePriority(el);
   }
 
+  function framed() {
+    try {
+      return window.self !== window.top;
+    } catch {
+      return true;
+    }
+  }
+
+  function mountChrome() {
+    if (framed()) {
+      document.documentElement.classList.add("is-framed");
+      return;
+    }
+    if (document.querySelector(".ds-chrome")) return;
+    const header = document.createElement("header");
+    header.className = "ds-chrome";
+    header.innerHTML = `<a class="brand" href="../">
+      <img src="../assets/wordmark-dark.svg" alt="Shantara" height="16">
+      <span class="brand-rule" aria-hidden="true"></span>
+      <span class="brand-label">Design system</span>
+    </a>`;
+    const skip = document.querySelector(".ds-skip");
+    if (skip) skip.after(header);
+    else document.body.prepend(header);
+  }
+
+  function pageTitleFromDocument() {
+    return document.title.split(/[·|]/)[0].replace(/Â$/, "").trim();
+  }
+
+  function stripHandbookTitle(el) {
+    if (!document.body.classList.contains("ds-handbook")) return;
+    const title = el.querySelector("h1");
+    if (!title) return;
+    const section = el.querySelector("h2");
+    if (section && !(title.compareDocumentPosition(section) & Node.DOCUMENT_POSITION_FOLLOWING)) return;
+    title.remove();
+  }
+
+  function promotePageTitle(el) {
+    if (document.querySelector(".ds-handbook-mast, .ds-page-head")) {
+      stripHandbookTitle(el);
+      return;
+    }
+
+    const existing = el.querySelector("h1");
+    const titleText = pageTitleFromDocument() || (existing && existing.textContent.trim());
+    if (!titleText) return;
+
+    const head = document.createElement("header");
+    head.className = "ds-page-head";
+    const inner = document.createElement("div");
+    inner.className = "ds-page-head-inner";
+
+    const eyebrowText = document.body.dataset.eyebrow || el.querySelector(":scope > .shantara-eyebrow")?.textContent.trim();
+    if (eyebrowText) {
+      const eyebrow = document.createElement("p");
+      eyebrow.className = "shantara-eyebrow";
+      eyebrow.textContent = eyebrowText;
+      inner.appendChild(eyebrow);
+      el.querySelector(":scope > .shantara-eyebrow")?.remove();
+    }
+
+    const heading = document.createElement("h1");
+    heading.textContent = titleText;
+    inner.appendChild(heading);
+
+    if (existing) {
+      const lead = existing.nextElementSibling;
+      existing.remove();
+      if (lead && lead.tagName === "P" && !lead.classList.contains("note") && !lead.classList.contains("err")) {
+        lead.classList.add("ds-page-lead");
+        inner.appendChild(lead);
+      }
+    } else {
+      const first = el.querySelector(":scope > p");
+      if (first && !first.classList.contains("note") && !first.classList.contains("err")) {
+        first.classList.add("ds-page-lead");
+        inner.appendChild(first);
+      }
+    }
+
+    head.appendChild(inner);
+    const chrome = document.querySelector(".ds-chrome");
+    if (chrome) chrome.after(head);
+    else document.body.insertBefore(head, el);
+  }
+
+  function splitPromptLead(src) {
+    const text = String(src).replace(/\r\n/g, "\n").replace(/^---\n[\s\S]*?\n---\n/, "");
+    const match = text.match(/^([^\n]+)\n?/);
+    const line = (match?.[1] || "").trim();
+    if (!line || /^#{1,4}\s|^```|^[-*|>]/.test(line)) return { lead: "", body: src };
+    return { lead: line, body: text.slice(match[0].length) };
+  }
+
   function decorate(el) {
     const used = new Set();
     el.querySelectorAll("h1, h2, h3, h4").forEach((heading) => {
@@ -607,11 +726,13 @@
 
     wrapIcpProfiles(el);
 
-    const toc = document.querySelector("[data-toc]");
-    if (toc) {
-      const heads = [...el.querySelectorAll("h2")];
-      buildToc(toc, heads, el.id);
+    promotePageTitle(el);
 
+    const toc = document.querySelector("[data-toc]");
+    const heads = toc ? [...el.querySelectorAll("h2")] : [];
+    if (toc) buildToc(toc, heads, el.id);
+
+    if (toc && !toc.hidden) {
       const links = [...toc.querySelectorAll("a[href^='#']")];
       const map = new Map();
       heads.forEach((heading) => {
@@ -646,39 +767,76 @@
     mountKitNav();
   }
 
-  const NOTES = [
-    ["Button", "../components/core/Button.prompt.md"],
-    ["IconButton", "../components/core/IconButton.prompt.md"],
-    ["Icon", "../components/core/Icon.prompt.md"],
-    ["Logo", "../components/core/Logo.prompt.md"],
-    ["Card", "../components/core/Card.prompt.md"],
-    ["Badge", "../components/core/Badge.prompt.md"],
-    ["Tag", "../components/core/Tag.prompt.md"],
-    ["Divider", "../components/core/Divider.prompt.md"],
-    ["PatternPanel", "../components/core/PatternPanel.prompt.md"],
-    ["Input", "../components/forms/Input.prompt.md"],
-    ["Textarea", "../components/forms/Textarea.prompt.md"],
-    ["Select", "../components/forms/Select.prompt.md"],
-    ["Checkbox", "../components/forms/Checkbox.prompt.md"],
-    ["Radio", "../components/forms/Radio.prompt.md"],
-    ["Switch", "../components/forms/Switch.prompt.md"],
-    ["Tabs", "../components/navigation/Tabs.prompt.md"],
-    ["Breadcrumbs", "../components/navigation/Breadcrumbs.prompt.md"],
-    ["Accordion", "../components/navigation/Accordion.prompt.md"],
-    ["Dialog", "../components/feedback/Dialog.prompt.md"],
-    ["Toast", "../components/feedback/Toast.prompt.md"],
-    ["Tooltip", "../components/feedback/Tooltip.prompt.md"],
-    ["Spinner", "../components/feedback/Spinner.prompt.md"],
-    ["Website kit", "../ui_kits/website/README.md"],
-    ["Website skill", "../ui_kits/website/SKILL.md"],
-    ["Website IA", "../ui_kits/website/skill-ia.md"],
-    ["Website sections", "../ui_kits/website/skill-sections.md"],
-    ["Website content", "../ui_kits/website/skill-content.md"],
-    ["Website copy", "../ui_kits/website/skill-copy.md"],
-    ["Website technical", "../ui_kits/website/skill-technical.md"],
-    ["Website QA", "../ui_kits/website/skill-qa.md"],
-    ["Guest app kit", "../ui_kits/app/README.md"],
-  ];
+  const COMPONENT_FAMILIES = {
+    Core: ["Button", "IconButton", "Icon", "Logo", "Card", "Badge", "Tag", "Divider", "PatternPanel"],
+    Forms: ["Input", "Textarea", "Select", "Checkbox", "Radio", "Switch"],
+    Navigation: ["Tabs", "Breadcrumbs", "Accordion", "LanguageSelector"],
+    Feedback: ["Dialog", "Toast", "Tooltip", "Spinner"],
+  };
+
+  const COMPONENT_PATH = {
+    Button: "core", IconButton: "core", Icon: "core", Logo: "core", Card: "core",
+    Badge: "core", Tag: "core", Divider: "core", PatternPanel: "core",
+    Input: "forms", Textarea: "forms", Select: "forms", Checkbox: "forms",
+    Radio: "forms", Switch: "forms",
+    Tabs: "navigation", Breadcrumbs: "navigation", Accordion: "navigation", LanguageSelector: "navigation",
+    Dialog: "feedback", Toast: "feedback", Tooltip: "feedback", Spinner: "feedback",
+  };
+
+  function familyOf(name) {
+    return Object.keys(COMPONENT_FAMILIES).find((family) => COMPONENT_FAMILIES[family].includes(name)) || "";
+  }
+
+  async function fillComponentPage() {
+    const host = document.querySelector("[data-component-md]");
+    if (!host) return false;
+
+    const name = new URLSearchParams(location.search).get("c") || "Button";
+    const folder = COMPONENT_PATH[name];
+    const family = familyOf(name);
+    if (!folder) {
+      host.innerHTML = `<p class="err">Unknown component <code>${escapeHtml(name)}</code>.</p>`;
+      return true;
+    }
+
+    document.title = `${name} · Shantara design system`;
+    const titleEl = document.querySelector("[data-component-title]");
+    const leadEl = document.querySelector("[data-component-lead]");
+    const familyEl = document.querySelector("[data-component-family]");
+    const pathEl = document.querySelector("[data-component-path]");
+    if (titleEl) titleEl.textContent = name;
+    if (familyEl) familyEl.textContent = family || "Components";
+    if (pathEl) pathEl.textContent = `components/${folder}/${name}.prompt.md`;
+
+    const familyNav = document.querySelector("[data-family-nav]");
+    if (familyNav) {
+      familyNav.innerHTML = Object.keys(COMPONENT_FAMILIES).map((label) => {
+        const first = COMPONENT_FAMILIES[label][0];
+        const current = label === family;
+        return `<a href="component?c=${encodeURIComponent(first)}"${current ? ' aria-current="page"' : ""}>${escapeHtml(label)}</a>`;
+      }).join("");
+    }
+
+    const siblingNav = document.querySelector("[data-sibling-nav]");
+    if (siblingNav && family) {
+      siblingNav.innerHTML = COMPONENT_FAMILIES[family].map((comp) => {
+        const current = comp === name;
+        return `<li><a href="component?c=${encodeURIComponent(comp)}"${current ? ' aria-current="page"' : ""}>${escapeHtml(comp)}</a></li>`;
+      }).join("");
+    }
+
+    const specimen = document.querySelector("[data-specimen]");
+    if (specimen) specimen.src = `../components/_specimen?c=${encodeURIComponent(name)}`;
+
+    const promptPath = `../components/${folder}/${name}.prompt.md`;
+    const res = await fetch(promptPath);
+    if (!res.ok) throw new Error("Could not read " + promptPath);
+    const { lead, body } = splitPromptLead(await res.text());
+    if (leadEl && lead) leadEl.textContent = lead;
+    host.innerHTML = renderMarkdown(body);
+    decorate(host);
+    return true;
+  }
 
   const SOURCE_PROBES = [
     "uploads/shantara_property_handbook.docx",
@@ -716,15 +874,7 @@
     }
 
     if (notes) {
-      const blocks = await Promise.all(NOTES.map(async ([name, path]) => {
-        const res = await fetch(path);
-        const body = res.ok ? renderMarkdown(await res.text()) : `<p class="err">Missing ${escapeHtml(path)}</p>`;
-        return `<section class="prompt" id="${name.toLowerCase().replace(/\s+/g, "-")}"><p class="shantara-eyebrow">${escapeHtml(path.replace("../", ""))}</p><h2>${escapeHtml(name)}</h2>${body}</section>`;
-      }));
-      el.innerHTML = `<p class="shantara-eyebrow">Notes</p><h1>Component and kit notes</h1><p>Every <code>*.prompt.md</code> and both UI-kit READMEs, as shipped. These are the files an agent reads when this folder is added to another repo.</p>` + blocks.join("");
-      el.querySelectorAll("section.prompt").forEach((section) => {
-        if (section.id.startsWith("website-")) rewriteKitLinks(section, "ui_kits/website/");
-      });
+      el.innerHTML = `<p class="shantara-eyebrow">Archive</p><h1>Component notes</h1><p>Per-component prompts now live on individual catalog pages (<code>docs/component?c=Button</code>). Website and app kit notes are under their own groups. This dump is no longer maintained.</p>`;
       decorate(el);
       return;
     }
@@ -742,7 +892,13 @@
     }
   }
 
+  mountChrome();
   mountKitNav();
+
+  fillComponentPage().catch((err) => {
+    const host = document.querySelector("[data-component-md]");
+    if (host) host.innerHTML = `<p class="err">${escapeHtml(err.message)}. Serve this folder over http.</p>`;
+  });
 
   document.querySelectorAll("[data-md],[data-notes],[data-sources]").forEach((el) => {
     fill(el).catch((err) => {

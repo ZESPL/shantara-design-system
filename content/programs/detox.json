@@ -1,0 +1,31 @@
+{
+  "id": "detox",
+  "slug": "detox",
+  "name": "Detox",
+  "photo": "water-wall",
+  "focus": "Metabolic",
+  "home_featured": true,
+  "proposition": "Your doctor may recommend a meal plan or supervised fasting based on your assessment. Therapies may also form part of your programme.",
+  "durations": "7–21 nights",
+  "icp_ids": [
+    "digestive_inflammatory",
+    "weight_metabolic",
+    "short_reset"
+  ],
+  "related_therapy_ids": [
+    "fasting-therapy",
+    "diet-therapy",
+    "hydrotherapy",
+    "heliotherapy"
+  ],
+  "related_condition_ids": [],
+  "locale": "en",
+  "translation_status": null,
+  "source_version": "2026-07",
+  "last_translated_at": null,
+  "translation_reviewed_at": null,
+  "translation_reviewed_by": null,
+  "needs_translation_review": null,
+  "publication_status": "published",
+  "source": "kit"
+}

@@ -4,6 +4,8 @@ Back to the [website skill](SKILL.md).
 
 ## CMS / content model
 
+This model is instantiated in [`content/`](../../content/). Empty folders (`guest-stories/`, `events/`, `testimonials/`) mean the entity is not ready. Do not invent records to fill them. Stub conditions with `needs_original` and empty clinical bodies until medical review exists.
+
 Model business/content entities, not layout hacks. One entity, then localized records per locale. Do not duplicate types as `ProgramEn` / `ProgramAr`. English is the only populated locale until a localisation project.
 
 Every translatable record should carry: `locale`; `translation_status` (`draft` | `translated` | `review_required` | `published`); `source_version`; `last_translated_at`; `translation_reviewed_at`; `translation_reviewed_by`; `needs_translation_review`. Keep source medical review (`medical_reviewer`, `last_medically_reviewed`) distinct from language review and from localized clinical review.

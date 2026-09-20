@@ -1,0 +1,29 @@
+{
+  "id": "executive-wellness",
+  "slug": "executive-wellness",
+  "name": "Executive Wellness",
+  "photo": "library",
+  "focus": "Rest",
+  "home_featured": true,
+  "proposition": "A compact daily plan for guests who need to stay partly available for work.",
+  "durations": "7–10 nights",
+  "icp_ids": [
+    "stress_sleep_burnout",
+    "short_reset"
+  ],
+  "related_therapy_ids": [
+    "yoga-therapy",
+    "mind-body-therapy",
+    "diet-therapy"
+  ],
+  "related_condition_ids": [],
+  "locale": "en",
+  "translation_status": null,
+  "source_version": "2026-07",
+  "last_translated_at": null,
+  "translation_reviewed_at": null,
+  "translation_reviewed_by": null,
+  "needs_translation_review": null,
+  "publication_status": "published",
+  "source": "kit"
+}

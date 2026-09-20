@@ -1,0 +1,26 @@
+{
+  "id": "standard-room",
+  "slug": "standard-room",
+  "name": "Standard Room",
+  "size": "220 sq.ft",
+  "occupancy": "Single only",
+  "balcony": false,
+  "photo": "room-twin",
+  "home_teaser": false,
+  "spec_line": "220 sq.ft",
+  "locale": "en",
+  "translation_status": null,
+  "source_version": "2026-07",
+  "last_translated_at": null,
+  "translation_reviewed_at": null,
+  "translation_reviewed_by": null,
+  "needs_translation_review": null,
+  "publication_status": "published",
+  "source": "kit",
+  "amenities": [
+    "En-suite bathroom with rain shower",
+    "Individually controlled central air-conditioning",
+    "Orthopaedic mattress",
+    "Electronic safe, Wi-Fi, smart LED TV"
+  ]
+}

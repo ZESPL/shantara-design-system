@@ -1,0 +1,65 @@
+{
+  "id": "site",
+  "locale": "en",
+  "translation_status": null,
+  "source_version": "2026-07",
+  "last_translated_at": null,
+  "translation_reviewed_at": null,
+  "translation_reviewed_by": null,
+  "needs_translation_review": null,
+  "publication_status": "published",
+  "source": "handbook",
+  "business_name": "Shantara Naturopathy",
+  "parent_institution": "Hygiene Nature Cure Hospital",
+  "phone": [
+    "+91 9553 600 100",
+    "+91 9553 700 100"
+  ],
+  "email": "heal@shantara.life",
+  "website": "www.shantara.life",
+  "place": {
+    "locality": "Kozhikode (Calicut)",
+    "region": "Kerala",
+    "landmark": "overlooking the Chennamangallur valley",
+    "country": "IN"
+  },
+  "land_acres": 4,
+  "rooms_count": 52,
+  "room_categories": 5,
+  "built_up_sq_ft": 60000,
+  "built_up_note": "[TO CONFIRM] Website previously showed 56,000+ sq. ft.; handbook uses tariff-sheet 60,000 sq. ft.",
+  "therapies_count": 13,
+  "guests_served_label": "25,000+",
+  "guests_served_since": 2000,
+  "primary_cta": "Book a Consultation",
+  "form_chrome_cta": "Send your details",
+  "form_field_keys": [
+    "full_name",
+    "phone",
+    "email",
+    "country",
+    "notes"
+  ],
+  "schema_defaults": {
+    "type": "LocalBusiness",
+    "name": "Shantara Naturopathy"
+  },
+  "stats": [
+    {
+      "value": "4",
+      "label": "hilltop acres"
+    },
+    {
+      "value": "52",
+      "label": "rooms, 5 categories"
+    },
+    {
+      "value": "25,000+",
+      "label": "guests since 2000"
+    },
+    {
+      "value": "13",
+      "label": "therapies"
+    }
+  ]
+}

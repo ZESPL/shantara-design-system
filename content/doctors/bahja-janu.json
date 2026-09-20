@@ -1,0 +1,26 @@
+{
+  "id": "bahja-janu",
+  "slug": "bahja-janu",
+  "full_name": "Dr. Bahja Janu",
+  "role": "Medical Director",
+  "qualification": null,
+  "years_practice": null,
+  "publications_note": null,
+  "biography": null,
+  "areas_of_practice": [],
+  "to_confirm": [
+    "Qualifications",
+    "Areas of expertise",
+    "Years of clinical practice",
+    "Biography — do not invent; live site previously showed a mismatched bio"
+  ],
+  "locale": "en",
+  "translation_status": null,
+  "source_version": "2026-07",
+  "last_translated_at": null,
+  "translation_reviewed_at": null,
+  "translation_reviewed_by": null,
+  "needs_translation_review": null,
+  "publication_status": "needs_original",
+  "source": "handbook"
+}

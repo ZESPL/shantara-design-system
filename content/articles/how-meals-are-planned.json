@@ -1,0 +1,22 @@
+{
+  "id": "how-meals-are-planned",
+  "slug": "how-meals-are-planned",
+  "title": "How meals are planned during a stay",
+  "category": "Food & Recipes",
+  "photo": "dining",
+  "read_minutes": 4,
+  "lead": "How meals are planned around your programme and dietary requirements.",
+  "body": null,
+  "author": null,
+  "medical_reviewer": null,
+  "kit_journal": true,
+  "locale": "en",
+  "translation_status": null,
+  "source_version": "2026-07",
+  "last_translated_at": null,
+  "translation_reviewed_at": null,
+  "translation_reviewed_by": null,
+  "needs_translation_review": null,
+  "publication_status": "kit_sample",
+  "source": "kit"
+}

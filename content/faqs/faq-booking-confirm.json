@@ -1,0 +1,14 @@
+{
+  "id": "faq-booking-confirm",
+  "question": "Is my booking confirmed straight away?",
+  "answer": "A stay is confirmed after a preliminary consultation with our doctors. You will be asked to share a health assessment, relevant medical records and your current medication first.",
+  "locale": "en",
+  "translation_status": null,
+  "source_version": "2026-07",
+  "last_translated_at": null,
+  "translation_reviewed_at": null,
+  "translation_reviewed_by": null,
+  "needs_translation_review": null,
+  "publication_status": "published",
+  "source": "kit"
+}
