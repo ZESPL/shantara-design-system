@@ -59,8 +59,9 @@ Page
 ├── slug
 ├── page_type
 ├── navigation metadata
-├── SEO/social metadata
+├── SEO/social metadata (localized with the page)
 ├── medical/editorial metadata when applicable
+├── locale + translation metadata
 └── sections[]
 ```
 
@@ -72,7 +73,7 @@ Do not make fixed condition/program/experience/story/contact templates.
 
 Determine:
 
-1. **Audience:** Who is this page for?
+1. **Audience:** Who is this page for? When it serves a health need, cite an ICP ID from [`docs/icp.md`](../../docs/icp.md). Do not use a programme name as the audience.
 2. **Intent:** What are they trying to understand or decide?
 3. **Primary action:** What should they do next?
 4. **Proof:** What must they see before trusting the page?
@@ -111,7 +112,7 @@ Typical fields: eyebrow/category; title; summary; optional image; optional autho
 
 Purpose: immediately explain a commercial program; communicate high-intent information.
 
-Typical fields: program title; concise proposition; optional image; duration/options; optional starting price (**only if already published on the tariff card — never invent**); short suitability statement; Book Consultation CTA.
+Typical fields: program title; concise proposition; optional image; duration/options; optional starting price (**only if already published on the tariff card — never invent**); short suitability statement; Book a Consultation CTA.
 
 Do not require every field if it is not relevant.
 
@@ -143,7 +144,7 @@ Long-form text; headings; lists; quotes; inline links; simple inline media. Must
 
 ### Media + Content
 
-When text and media need equal emphasis. Limited variants: media left; media right; media top on mobile.
+When text and media need equal emphasis. Limited variants: media at **inline start**; media at **inline end**; media top on mobile. Do not invent a second Media+Content component per language. Cards, heroes, process, timeline, tables, galleries, FAQs, doctor blocks, and CTAs are locale-aware — they reflow and follow `dir`, they are not duplicated.
 
 Fields: optional eyebrow; title; content; image/video; optional CTA.
 
@@ -278,6 +279,16 @@ Recommended cards:
 Do not create one `Card` component with dozens of conditional fields.
 
 Cards should share: typography; spacing; radii; image behavior; interaction; focus states.
+
+Listing photography uses **4:3** (`--card-media-ratio` / `--media-ratio`). Wide editorial frames may use **16:9**; tall mosaic / portrait frames **3:4**. Full-bleed page heroes use an explicit **height** (typically 640 home / 420 inner), not a forced listing ratio — they are not required to be 4:3 or 16:9. Do not use 21:9. Interactive cards lift only — no media zoom on hover.
+
+**Card grid demos in this kit:** Home programmes = **3-col**; Conditions (and Experience / About card grids) = **2-col**. Keep both intentional.
+
+**Programme gallery:** thumb click swaps the main image (all four thumbs reachable; selected thumb matches main). Main + thumbs are **4:3**.
+
+**Section washes:** avoid full-bleed Himalaya / `--surface-brand` as large marketing grounds — brand green should stay under ~10% of a page’s surface (buttons, links, accents, rules). Prefer Pearl Bush / Merino for large content bands. Pine Tree inverse, gold eyebrows, and Himalaya accents are fine. Footer inverse pine + rosette strip stays as brand chrome.
+
+Condition listing cards: title + supporting sentence only. Do not repeat the group heading as a Badge, and do not add nights or decorative chips on that listing. Home programme cards may keep a focus badge + duration when those are not duplicated by a group heading.
 
 Each card should present information appropriate to its entity.
 
@@ -438,7 +449,7 @@ FAQ
 Consultation CTA
 ```
 
-### Book Consultation
+### Book a Consultation
 
 ```text
 Compact or Conversion-focused Hero

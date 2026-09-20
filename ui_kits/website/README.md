@@ -8,8 +8,11 @@ The website-building skill lives here:
 - Information architecture: [`skill-ia.md`](skill-ia.md)
 - Heroes, sections, cards: [`skill-sections.md`](skill-sections.md)
 - CMS, publishing, leads, E-E-A-T: [`skill-content.md`](skill-content.md)
+- Public website language: [`skill-copy.md`](skill-copy.md)
 - Analytics, SEO, schema, a11y: [`skill-technical.md`](skill-technical.md)
 - Workflow and QA: [`skill-qa.md`](skill-qa.md)
+
+Internal ICP and marketing-audience strategy: [`docs/icp.md`](../../docs/icp.md) (catalog: ICP and marketing audience). Need-led, not programme-led. Do not copy that file onto the public site.
 
 In the catalog, those files are the **Website kit** cards. Open `index.html` for sample screens.
 
@@ -30,7 +33,7 @@ A prospective guest should be able to answer:
 7. What is included, how long does it take, and what may it cost?
 8. What should I do next?
 
-The primary action is **Book a Consultation**. Make it easy without becoming sales-heavy.
+The primary visitor-facing action is **Book a Consultation**. Make it easy without becoming sales-heavy. Form chrome may use **Send your details**. Do not use **Enquire about a stay** or **Request a consultation** as primary CTAs.
 
 Rates and stay totals appear **only** on the tariff card (`TariffScreen.js`), brand-deck tariff slides, and the handbook tariff section. Every other surface links to the tariff card.
 
@@ -63,13 +66,15 @@ Do not add a mega-menu unless live page count requires it.
 ### URL families
 
 ```text
-/conditions
-/conditions/diabetes
-/programs
-/programs/[program-slug]
-/book-consultation
-/contact
+/en/conditions
+/en/conditions/diabetes
+/en/programs
+/en/programs/[program-slug]
+/en/book-consultation
+/en/contact
 ```
+
+Root `/` redirects to `/en/`. Seven languages are planned (`en` published; `ar` first future localisation; `de fr ru hi ml` later; Malayalam conditional). See [`SKILL.md` §15](SKILL.md#15-multilingual-architecture), `locales.js`, and [`docs/icp.md`](../../docs/icp.md) for the approved order.
 
 Do not create `/conditions/metabolic-lifestyle/diabetes` hubs. Do not pre-build dozens of thin condition pages. Do not create a page per therapy or room category by default.
 
@@ -81,7 +86,7 @@ Full inventory: [`skill-ia.md`](skill-ia.md).
 
 Every flexible page: title, slug, `page_type`, nav metadata, SEO/social metadata, medical/editorial metadata when needed, and `sections[]`.
 
-Before composing, write down audience, intent, one primary action, proof, objections, and what must appear before the fold. Then choose sections. Do not copy another page’s layout.
+Before composing, write down audience (an ICP ID from [`docs/icp.md`](../../docs/icp.md) when the page serves a health need), intent, one primary action, proof, objections, and what must appear before the fold. Then choose sections. Do not copy another page’s layout. Do not treat a programme name as the audience.
 
 ### Hero family
 
@@ -91,8 +96,8 @@ Do not build one Hero with 30 props, or 12 variants.
 | --- | --- | --- |
 | Immersive | Place, photography, short CTA | Home |
 | Editorial | Topic + readability | Conditions, Insights |
-| Program | Commercial program, duration, suitability, Book Consultation | Programme (Detox) |
-| Compact / utility | Minimal context | Contact, Consultation, tariff |
+| Program | Commercial program, duration, suitability, Book a Consultation | Programme (Detox) |
+| Compact / utility | Minimal context | Contact, enquiry, tariff |
 
 ### Section library
 
@@ -104,15 +109,19 @@ Example compositions (Diabetes ≠ Arthritis; Weight Management ≠ Executive We
 
 ### Cards
 
-Separate semantic cards sharing type, spacing, radii, image behavior, and focus: Condition, Program, Therapy, Room, Doctor, Article, Guest Story, Event. Do not make one `Card` with dozens of conditional fields. Kit samples compose the design-system `Card` primitive to show those jobs.
+Separate semantic cards sharing type, spacing, radii, image behavior, and focus: Condition, Program, Therapy, Room, Doctor, Article, Guest Story, Event. Do not make one `Card` with dozens of conditional fields. Kit samples compose the design-system `Card` primitive to show those jobs. Listing media is **4:3**; wide editorial may be **16:9**; portrait mosaic **3:4**. Page heroes use a fixed height (typically 640 / 420), not a forced listing ratio. Interactive cards lift without zooming the photo. Condition cards do not repeat the group name as a Badge. Home programmes demo **3-col**; Conditions / Experience / About card grids demo **2-col**.
 
-## 5. Copy tone
+### Components from `_ds_bundle.js`
 
-Calm, clear, warm, specific, clinically responsible, human.
+The website kit loads design-system components from [`_ds_bundle.js`](../../_ds_bundle.js), not live `components/**` sources. After editing Accordion (or peers) under `components/`, sync the change into `_ds_bundle.js` until a rebuild script exists — otherwise open panels can fail to expand (stale tree without `.sh-acc-clip`).
 
-Prefer concrete, verifiable details over “transformative holistic wellness”. Separate education (guides) from selling (program pages). The first screen should say what the page is, why it matters, and what to do next.
+## 5. Copy
 
-Never promise a clinical outcome. If a program name contains a strong claim such as “reversal”, flag it for clinical/legal review.
+All visitor-facing language follows [`skill-copy.md`](skill-copy.md). Clarity first, warmth second, brand expression third.
+
+Write for a prospective guest. Do not narrate information architecture, explain why a page exists, invent booking restrictions or a site-wide minimum stay, or convert design rationale into copy. Headings should still make sense if the paragraph disappeared.
+
+Never promise a clinical outcome. The programme name **Diabetes Reversal** is approved for catalogue use; do not present reversal as a guaranteed outcome or invent rates.
 
 Do not invent facts, credentials, prices, or program details. Flag gaps.
 
@@ -124,7 +133,7 @@ Also follow `guidelines/brand-copywriting.html` and the five non-obvious rules i
 
 Do not turn first contact into a Health Assessment. Do not calculate stay totals. Attach source page, page type, content id/name, and UTMs automatically.
 
-Same form as `/book-consultation`, modal, drawer, or inline panel. WhatsApp is a secondary channel.
+Same form as `/en/book-consultation`, modal, drawer, or inline panel. WhatsApp is a secondary channel. Field keys stay English (`full_name`, `phone`, `email`, `country`, `notes`). Locale is attached as lead context.
 
 Success: *Consultation request received. Our team will contact you to understand your requirements and guide you on the appropriate next step.*
 
@@ -152,9 +161,9 @@ Publishing families (not article volume):
 
 ## 9. i18n, routing, components
 
-The kit uses `i18n.js` (`t()` English keys, Arabic under `[dir=rtl]`). Add keys for new sample copy; do not embed prices in non-tariff keys.
+The kit uses `locales.js` (planned / enabled locales, URL helpers, hreflang, sitemap, schema, `track()`, formatting) and `i18n.js` (`t()` English keys; Arabic under `[dir=rtl]` is a **catalog / RTL fixture**, not a published locale). Add keys for new sample copy; do not embed prices in non-tariff keys. Do not invent DE/FR/RU/HI/ML strings.
 
-Routing in the sample is an in-page `view` switch, not production URLs. Name views after the skill: `home`, `conditions`, `programme`, `experience`, `about`, `journal`, `contact`, `booking`, `tariffs`.
+Routing in the sample is locale-prefixed hashes (`#/en/`, `#/en/programs`) that stand in for production `/en/…` URLs. Root hash redirects to `#/en/`. `LanguageSelector` is wired and **hidden** while only English is enabled. Catalog RTL and `ui_kits/website/?fixture=rtl` are development fixtures — they are not `/ar/` pages. Name views after the skill: `home`, `conditions`, `programme`, `experience`, `about`, `journal`, `contact`, `booking`, `tariffs`.
 
 Every visible control comes from the design-system bundle (`Button`, `Card`, `Tag`, `Tabs`, `Accordion`, `Input`, `Select`, `Checkbox`, `Textarea`, `Radio`, `Dialog`, `Toast`, `Spinner`, `Badge`, `Divider`, `Breadcrumbs`, `Tooltip`, `IconButton`, `Icon`, `Logo`, `PatternPanel`). Nothing is re-implemented locally except `Photo`.
 
@@ -167,23 +176,23 @@ Primitives recommended by the skill that are not yet first-class components (Con
 | `SiteChrome.js` | Skill nav + wordmark-only logo + Book a Consultation; Pine Tree footer under one top-edge rosette band (full lockup) |
 | `HomeScreen.js` | Immersive hero, approach + proof, statement band, program cards, two-up photos, insights, FAQ, consultation CTA |
 | `ConditionsScreen.js` | Compact/editorial listing — visual groups as deck-style tiles, no category URLs |
-| `ProgrammeScreen.js` | Detox program hero: who it suits, two-route comparison, day shape, sticky panel linking to the tariff card |
-| `ExperienceScreen.js` | Thin hub — four-movement day, photo mosaic, therapies / rooms / farm / a day |
-| `AboutScreen.js` | Thin hub — olive PatternPanel break, stats strip, statement, story / approach / doctors / policy |
+| `ProgrammeScreen.js` | Detox program: who it is for, how programmes are planned, a typical day, sticky panel linking to tariffs |
+| `ExperienceScreen.js` | What a stay includes: a typical day, photo mosaic, therapies, accommodation, meals |
+| `AboutScreen.js` | About Shantara: Pearl Bush statement, Pine Tree stats, story, approach, doctors, policy |
 | `JournalScreen.js` | Insights index with publishing-family tabs |
 | `ContactScreen.js` | Compact hero, photo + caption, distances, consultation CTA |
 | `ConsultationScreen.js` | One short consultation form + numbered process + success state |
 | `TariffScreen.js` | Dedicated tariff card — the only website surface that quotes rates |
 | `Photo.js` | Thin `<img>` wrapper over `assets/photos/*` |
 
-**Deliberately not built:** individual condition, therapy, or room pages; a CMS; analytics/SEO/schema implementation; multiple forms; stay-total calculators; a complete sitemap.
+**Deliberately not built:** individual condition, therapy, or room pages; a CMS; a production analytics/SEO/schema stack; multiple forms; stay-total calculators; a complete sitemap; translated AR/DE/FR/RU/HI/ML website content.
 
 ## 11. Do / don’t
 
 **Do**
 
 - Reuse semantic sections before inventing new ones.
-- Use Book a Consultation as the primary CTA.
+- Use Book a Consultation as the primary visitor-facing CTA.
 - Link to the tariff card for cost.
 - Put medical review next to health claims.
 - Prefer real photography and verified handbook facts.
@@ -203,4 +212,4 @@ Primitives recommended by the skill that are not yet first-class components (Con
 
 Tariffs (valid to 31 Dec 2026 and marked *to confirm* in the handbook — edit the tariff card only), the Monday-intake convention and monthly cap presentation, programme durations (indicative — the handbook does not fix nights per programme), and insights copy, which is written for this kit rather than supplied.
 
-The program name “Diabetes Reversal” is handbook wording. Flag it for clinical/legal review; do not present reversal as a guaranteed outcome.
+The programme name “Diabetes Reversal” is approved for catalogue use; do not present reversal as a guaranteed outcome or invent rates.

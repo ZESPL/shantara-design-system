@@ -15,15 +15,22 @@ Read this file first. Open a sibling reference only when the task needs that inv
 
 - [Information architecture](skill-ia.md) — nav, URLs, page inventory, publishing families
 - [Sections and composition](skill-sections.md) — heroes, section library, cards, example pages
-- [Content and leads](skill-content.md) — CMS entities, publishing, E-E-A-T, writing, consultation form
+- [Content and leads](skill-content.md) — CMS entities, publishing, E-E-A-T, consultation form
+- [Language and copywriting](skill-copy.md) — public-facing website language
 - [Technical](skill-technical.md) — analytics, SEO, schema, AEO/GEO, performance, accessibility
 - [QA and workflow](skill-qa.md) — page workflow, checklists, what not to build, agent rules
 
+Internal audience strategy (need-led ICPs, CRM IDs, agency requirements) lives in [`docs/icp.md`](../../docs/icp.md). Do not duplicate those definitions here. Do not use internal ICP names as website headings or keywords unless search research supports that language.
+
 Also read the design-system skill at the repo root (`SKILL.md`) and `readme.md` before inventing visual or clinical language.
+
+**Multilingual is architectural for the public website.** Central config: `locales.js`. Planned languages: English (`en`, source, currently published), Arabic (`ar`, first future localisation, RTL ready now), then German, French, Russian, Hindi, Malayalam. Malayalam is conditional — see [`docs/icp.md`](../../docs/icp.md). Do not translate the site in this kit. The design-system catalog, guidelines, and component docs stay English — do not localise them. Read [§15 Multilingual Architecture](#15-multilingual-architecture) before adding a route, string, or content type.
 
 ## 1. Purpose
 
-Shantara is a residential naturopathy and wellness retreat. **Welnez is the former name; use Shantara as the current brand name.** Do not introduce "Welnez" into new public-facing copy unless the task explicitly concerns legacy content, redirects, historical references, or migration.
+Shantara is a **naturopathy retreat** — a doctor-led residential clinic guests stay at in Kozhikode. Do not describe the product line as a “naturopathy and wellness retreat.” **Wellness** is a discovery gloss only (how some markets type intent); it is not the product type. Public naming: [skill-copy.md](skill-copy.md). Schema / titles: [skill-technical.md](skill-technical.md).
+
+**Welnez is the former name; use Shantara as the current brand name.** Do not introduce "Welnez" into new public-facing copy unless the task explicitly concerns legacy content, redirects, historical references, or migration.
 
 The website is a **marketing, trust, education, and lead-generation website**, not a web application.
 
@@ -38,11 +45,11 @@ Prospective guests should answer, with minimum friction:
 7. What is included, how long does it take, and what may it cost?
 8. What should I do next?
 
-Primary business action:
+Primary business action, in visitor-facing language:
 
 > **Book a Consultation**
 
-Make that action easy without becoming aggressive, cluttered, or sales-heavy.
+Form chrome may use **Send your details**. Make the action easy without becoming aggressive, cluttered, or sales-heavy. Do not invent parallel primary CTAs. Do not use **Enquire about a stay** or **Request a consultation** as visitor-facing primary CTAs.
 
 Rates, currency amounts, “from …” figures, and stay totals appear **only** on dedicated tariff surfaces (`TariffScreen.js`, brand-deck tariff slides, handbook tariff). Program, condition, enquiry, and home pages **link** to the tariff card. Do not invent prices.
 
@@ -51,7 +58,7 @@ Rates, currency amounts, “from …” figures, and stay totals appear **only**
 1. **Keep the architecture simple.** No generic page builder, no large backend for a marketing site, no CRM “just in case”, no dozens of analytics events, no hundreds of SEO landing pages, no parallel lead-capture flows, no one-component-per-page, no universal component with dozens of switches.
 2. **Page type describes meaning, not layout.** Types: home, condition, program, experience, doctor, about, article, contact, consultation, policy. Use them for CMS, schema, analytics, breadcrumbs, indexing — not to force a fixed template. A Diabetes page and an Arthritis page may use different sections.
 3. **Flexible pages, constrained sections.** Editors pick semantic sections (Process, FAQ, Expert, Gallery, Pricing, Feature Grid, Timeline) — not Spacer, Row, Column, Heading, Paragraph, Button, or 50/50 layout.
-4. **One system wherever possible.** One consultation form, one lead entity, one analytics abstraction, one SEO metadata system, one schema generator, one type system, one spacing system, one section library.
+4. **One system wherever possible.** One consultation form, one lead entity, one analytics abstraction, one SEO metadata system, one schema generator, one type system, one spacing system, one section library, **one locale architecture**. Same components, sections, content models, tokens, analytics, schema, and lead form for every locale. Do not create `HomeEn` / `HomeAr`.
 5. **Evidence close to claims.** Medical claim → expert + source. Clinical process → doctor explanation. Program claim → inclusions/process. Guest experience → real photography/testimonial. Accreditation → exact credential. Facility claim → real facility photography.
 
 ## 3. Mental model
@@ -75,7 +82,7 @@ Primitives are developer-level (Container, Heading, Button, Form Field, Accordio
 Recommended top-level navigation:
 
 - Conditions
-- Programs
+- Programmes
 - Experience
 - About
 - Blog / Insights
@@ -84,16 +91,18 @@ Recommended top-level navigation:
 
 Do not create a mega-menu unless live page count genuinely requires it.
 
-URL families (short, stable, human-readable):
+URL families are **locale-prefixed for every language, including English**:
 
 ```text
-/conditions
-/conditions/diabetes
-/programs
-/programs/[program-slug]
+/en/conditions
+/en/conditions/diabetes
+/en/programs
+/en/programs/[program-slug]
 ```
 
-Do not invent condition-category SEO hubs (`/conditions/metabolic-lifestyle/diabetes`). Group visually on `/conditions` without creating indexable category pages.
+Root `/` is the x-default entry and redirects to `/en/` (or a remembered enabled locale). Do not force locale by IP. Do not leave `/` and `/en/` both indexable. Only a published localized URL is canonical.
+
+Do not invent condition-category SEO hubs (`/en/conditions/metabolic-lifestyle/diabetes`). Group visually on `/en/conditions` without creating indexable category pages.
 
 Create a condition page only when Shantara can provide original content, a legitimate clinical perspective, a relevant program, medical review, and useful answers. Do not pre-build dozens of thin condition pages.
 
@@ -101,7 +110,7 @@ Experience pages (typical, not mandatory as individual URLs): Therapies, Rooms &
 
 About: Our Story, Our Approach, Our Doctors, Medical Editorial Policy.
 
-Utility: Book Consultation, Contact, Resident Policies, Cancellation Policy, Privacy Policy, Terms of Service.
+Utility: Book a Consultation, Contact, Resident Policies, Cancellation Policy, Privacy Policy, Terms of Service.
 
 Full inventory, publishing families, and URL rules: [skill-ia.md](skill-ia.md).
 
@@ -111,7 +120,7 @@ Every flexible content page conceptually contains title, slug, `page_type`, navi
 
 Before composing:
 
-1. Audience
+1. Audience — cite an ICP ID from [`docs/icp.md`](../../docs/icp.md) when the page is for a health need (`weight_metabolic`, `pain_mobility`, `stress_sleep_burnout`, `digestive_inflammatory`, `hormonal_vitality`, `healthy_ageing_longevity`, or secondary `short_reset`). Audience is the need, not the programme name.
 2. Intent
 3. Primary action
 4. Proof required
@@ -126,7 +135,7 @@ Heroes are a **family**, not one universal Hero with 30 props, and not 12 varian
 | --- | --- | --- |
 | Immersive | Place, emotion, photography | Home, Our Story, Farm & Dining, A Day at Shantara |
 | Editorial | Topic + readability | Conditions, Therapies, Approach, Guides, Articles |
-| Program | Commercial program, high intent | Program pages (duration/options, suitability, Book Consultation — **no invented price**) |
+| Program | Commercial program, high intent | Program pages (duration/options, suitability, Book a Consultation — **no invented price**) |
 | Compact / utility | Minimal context | Contact, policies, listings |
 
 Section library and example compositions: [skill-sections.md](skill-sections.md).
@@ -137,9 +146,9 @@ Visual direction: calm, premium, natural, clinically credible, spacious, human, 
 
 ## 6. Lead capture
 
-**One** consultation form. Primary CTA is **Book a Consultation**.
+**One** consultation form. The visitor-facing primary CTA is **Book a Consultation**.
 
-Avoid parallel CTAs (Enquire Now, Request Callback, Know More, Get Quote, Start Journey) unless a genuinely different action exists.
+Form chrome may use **Send your details**. Avoid parallel CTAs (Enquire about a stay, Request a consultation, Enquire Now, Request Callback, Know More, Get Quote, Start Journey, Begin your transformation) unless a genuinely different action exists. Visitor-facing labels follow [skill-copy.md](skill-copy.md).
 
 Recommended fields:
 
@@ -151,9 +160,9 @@ Recommended fields:
 
 Do not turn first contact into a medical intake. Do not ask questions merely because a CRM has fields. Do not calculate stay totals on this form.
 
-Automatically attach source URL, page type, content id/name, program/condition context, landing page, referrer, UTMs, timestamp. If the visitor submits from `/conditions/diabetes`, do not ask “Which condition?”.
+Automatically attach locale, source URL, page type, content id/name, program/condition context, landing page, referrer, UTMs, timestamp. If the visitor submits from `/en/conditions/diabetes`, do not ask “Which condition?”. Field **keys** stay `full_name`, `phone`, `email`, `country`, `notes` in every language — labels translate, keys do not.
 
-Same form may appear as `/book-consultation`, modal, drawer, or inline panel. WhatsApp is a secondary channel, not a second lead architecture.
+Same form may appear as `/en/book-consultation`, modal, drawer, or inline panel. WhatsApp is a secondary channel, not a second lead architecture.
 
 Success copy:
 
@@ -169,10 +178,12 @@ Launch custom events only:
 
 | Event | When | Properties |
 | --- | --- | --- |
-| `consultation_cta_click` | Book Consultation CTA clicked | `page_type`, `content_id`, `content_name`, `cta_location` (`header` / `hero` / `inline` / `bottom` / `sticky`) |
-| `form_start` | Form genuinely started | `form_id`, `page_type` |
-| `generate_lead` | Submission confirmed | `form_id`, `page_type`, `source_page` |
-| `contact_click` | WhatsApp / phone / email | `contact_method`, `page_type`, `cta_location` |
+| `consultation_cta_click` | Book Consultation CTA clicked | `page_type`, `content_id`, `content_name`, `cta_location` (`header` / `hero` / `inline` / `bottom` / `sticky`), `locale` |
+| `form_start` | Form genuinely started | `form_id`, `page_type`, `locale` |
+| `generate_lead` | Submission confirmed | `form_id`, `page_type`, `source_page`, `locale` |
+| `contact_click` | WhatsApp / phone / email | `contact_method`, `page_type`, `cta_location`, `locale` |
+
+`locale` is attached centrally by `ShantaraLocales.track()`. Do not create `consultation_cta_click_ar`. Do not send translated user-entered medical data to analytics.
 
 Never send name, email, phone, free text, diagnosis, symptoms, medication, or medical history to GA4 or OpenPanel.
 
@@ -180,11 +191,11 @@ Primary funnel: Page View → Consultation CTA Click → Form Start → Generate
 
 ## 8. SEO, schema, AEO
 
-SEO is part of the page system. Every indexable page: unique title, meta description, canonical, OG title/description/image, index/noindex, correct H1, crawlable internal links.
+SEO is part of the page system. Every **published localized** page: own URL, localized title/description/OG, self-referencing canonical, `hreflang` (only for locales that actually have that page), `inLanguage`, crawlable internal links in the current locale.
 
-Prefer `/conditions/diabetes` and `/programs/weight-management`. Avoid keyword-variation pages and invented hub depth.
+Prefer `/en/conditions/diabetes` and `/en/programs/weight-management`. Avoid keyword-variation pages and invented hub depth. Do not canonicalize a translation back to English.
 
-Generate schema from visible entity data. Do not add invisible claims. Do not ask editors to write JSON-LD. `Offer` only where real visible commercial information exists — in this repo, that means the tariff card, not invented program prices.
+Generate schema from visible entity data. One Shantara organization `@id` across locales. Doctor and program identities stay stable; names may translate. Do not add invisible claims. Do not ask editors to write JSON-LD. `Offer` only where real visible commercial information exists — in this repo, that means the tariff card, not invented program prices.
 
 Do not create separate “AEO pages” or “GEO pages”. Answer real questions first, then expand. Prefer first-party facts over generic wellness copy. Do not treat `llms.txt` as a major SEO project.
 
@@ -194,13 +205,13 @@ Details: [skill-technical.md](skill-technical.md).
 
 Health content is an architectural requirement, not a badge.
 
-- Identify author/reviewer, qualifications, last medically reviewed date, and references on medical pages.
+- Identify author/reviewer, qualifications, last medically reviewed date, and references on medical pages. English medical review does **not** make a translation trustworthy. A translated page must not imply that the English medical reviewer reviewed the translation unless that is true.
 - Maintain a public Medical Editorial Policy.
 - Do not fake freshness by changing dates on every deploy.
 - Testimonials describe experience, stay, food, service, how the guest felt — never clinical efficacy.
-- Avoid “cures diabetes”, “guarantees reversal”, “eliminates hypertension”, “permanent cure”, guaranteed detox claims. If a program name contains a strong outcome claim such as “reversal”, flag it for clinical/legal review.
+- Avoid “cures diabetes”, “guarantees reversal”, “eliminates hypertension”, “permanent cure”, guaranteed detox claims. The programme name **Diabetes Reversal** is approved for catalogue use; do not present reversal as a guaranteed outcome or invent rates.
 
-Tone: calm, clear, warm, specific, clinically responsible, human. Prefer concrete, verifiable details. Separate education (guides) from selling (program pages); link them.
+**All public-facing language follows [skill-copy.md](skill-copy.md).** Clarity first, warmth second, brand expression third. Write for a prospective guest. Do not narrate information architecture, invent booking restrictions or site-wide minimum stays, scatter prices, or convert design rationale into page copy.
 
 Do not invent content, credentials, prices, medical facts, or program details. Flag missing facts.
 
@@ -208,13 +219,13 @@ Do not invent content, credentials, prices, medical facts, or program details. F
 
 Marketing site: prefer static generation / prerendering. Minimize client JS. Hydrate only forms, navigation, gallery, accordion, modal/drawer, analytics, video.
 
-Accessibility is baseline: semantic headings, keyboard access, visible focus, meaningful alt, labelled fields, associated errors, contrast, 44px touch targets, reduced-motion, correct ARIA on accordion/dialog, captions/transcripts when needed. Do not rely on color alone.
+Accessibility is baseline: semantic headings, keyboard access, visible focus, meaningful alt, labelled fields, associated errors, contrast, 44px touch targets, reduced-motion, correct ARIA on accordion/dialog, captions/transcripts when needed. Set `html` `lang` and `dir` from the locale. Language selector must have an accessible name, current-locale state, keyboard support, and visible focus. Annotate passages in another language. Do not rely on color alone.
 
 This kit follows the design-system accessibility contract in `guidelines/accessibility.html`.
 
 ## 11. Page workflow
 
-1. Define the page job (audience, intent, one primary action, page type, proof).
+1. Define the page job (audience, intent, one primary action, page type, proof). Map audience to an ICP ID from `docs/icp.md` when the page serves a health need. Do not organise the sitemap as one URL per ICP.
 2. Reuse existing semantic sections.
 3. Order content from the visitor’s decision backward.
 4. Use real, verified Shantara information; flag gaps.
@@ -226,7 +237,7 @@ This kit follows the design-system accessibility contract in `guidelines/accessi
 
 ## 12. What not to build
 
-Do not introduce without a demonstrated need: rigid templates per content family; condition-category SEO hubs; individual therapy/room pages by default; multiple consultation forms or synonymous primary CTAs; drag-and-drop spacers/rows; one universal card or hero with dozens of props; 10+ hero variants; separate AEO/GEO systems; separate GA4 and OpenPanel implementations; CRM lifecycle analytics at launch; custom backend only for analytics; excessive events; fake E-E-A-T badges or review schema; unsupported medical claims; automatically refreshed dates; hundreds of generic AI articles; keyword-variation landers; complex personalization before traffic exists.
+Do not introduce without a demonstrated need: rigid templates per content family; condition-category SEO hubs; ICP-named category URLs; individual therapy/room pages by default; multiple consultation forms or synonymous primary CTAs; drag-and-drop spacers/rows; one universal card or hero with dozens of props; 10+ hero variants; separate AEO/GEO systems; separate GA4 and OpenPanel implementations; CRM lifecycle analytics at launch; custom backend only for analytics; excessive events; fake E-E-A-T badges or review schema; unsupported medical claims; automatically refreshed dates; hundreds of generic AI articles; keyword-variation landers; complex personalization before traffic exists; a translation platform, translation SaaS, runtime machine translation, IP geolocation, a second Arabic frontend, duplicated content types, or placeholder DE/FR/RU/HI/ML pages.
 
 Do not build the entire production website inside this kit. Samples stay thin.
 
@@ -249,7 +260,7 @@ When asked to modify Shantara’s website:
 13. Prefer clear implementation over clever implementation.
 14. If requirements conflict, prioritize: factual/clinical safety → user clarity → conversion simplicity → maintainability → design consistency → implementation elegance.
 
-A change is done only when it is visually integrated, mobile-responsive, accessible, performant, content-complete, SEO-complete, schema-correct, analytics-aware, privacy-safe, medically governed where relevant, tested, and not unnecessarily complex. “Code compiles” is not done.
+A change is done only when it is visually integrated, mobile-responsive, accessible, performant, content-complete, SEO-complete, schema-correct, analytics-aware, privacy-safe, medically governed where relevant, locale-correct, tested, and not unnecessarily complex. “Code compiles” is not done.
 
 ## 14. Sample kit map
 
@@ -266,6 +277,99 @@ These files are **previews** of the skill, not the live site:
 | `ContactScreen.js` | contact | Compact hero + location |
 | `ConsultationScreen.js` | consultation | One short form |
 | `TariffScreen.js` | pricing surface | **Only** place rates appear |
-| `SiteChrome.js` | chrome | Skill nav + wordmark-only logo + Book a Consultation |
+| `SiteChrome.js` | chrome | Skill nav + wordmark-only logo + Book a Consultation + LanguageSelector (hidden while only `en` is enabled) |
 
 Kit notes for humans: [README.md](README.md).
+
+## 15. Multilingual Architecture
+
+This is one website, one component system, one content architecture, one lead system, one analytics system. Localisation is additive. Do not restructure the site to add a language.
+
+### Planned languages
+
+Approved marketing-localisation order lives in [`docs/icp.md`](../../docs/icp.md) (Geography × Language). Do not duplicate ICP strategy here. Do not treat this list as a geo-spend ranking.
+
+| Code | Native name | Direction | Role now |
+| --- | --- | --- | --- |
+| `en` | English | LTR | **Source.** Currently published. The only enabled locale. |
+| `ar` | العربية | RTL | **First future localisation.** Website architecture must already support Arabic, including RTL. Do not translate the full site now. |
+| `de` | Deutsch | LTR | Planned. Separate future project. |
+| `fr` | Français | LTR | Planned. Separate future project. |
+| `ru` | Русский | LTR | Planned. Separate future project. |
+| `hi` | हिन्दी | LTR | Planned. Separate future project. Do not write public Hindi copy in this kit. |
+| `ml` | മലയാളം | LTR | Planned, **conditional** (meaningful local Kerala/local acquisition). Do not write public Malayalam copy in this kit. |
+
+Italian (`it`) and Spanish (`es`) are not current marketing-localisation priorities and are not planned codes.
+
+Build English first. Additional languages are introduced without restructuring. Each additional language is its own content and review project. Architecture is ready for all seven from the beginning.
+
+The **design-system catalog, guidelines, and component documentation stay English.** Do not localise them. Do not add locale-prefixed catalog URLs, translated guideline cards, or multilingual DS documentation. Multilingual architecture applies to the public website only.
+
+Central config: **`locales.js`** (`window.ShantaraLocales`). `SUPPORTED` = all seven. `ENABLED` / published = only `en` until a localisation project turns another `enabled: true`. Do not duplicate this table.
+
+### English first; Arabic next
+
+English is the source of truth. Do not machine-translate pages. Do not invent DE/FR/RU/HI/ML content. Catalog RTL toggles are development fixtures for component layout, not published website copy.
+
+Arabic is the first language to localise later. When that project starts: enable `ar` in `locales.js`, translate UI strings and editorial records separately, run language review, and run localized clinical review where required. Do not stand up a second frontend or a second deployment.
+
+### URLs, slugs, root
+
+Every published URL is locale-prefixed, including English: `/en/`, `/en/programs`, later `/ar/…`.
+
+- `/` is x-default. It may redirect to `/en/` or a remembered **enabled** locale. It is not a second indexable English homepage.
+- `/en` normalises to `/en/`. Other paths drop a trailing slash.
+- `/ar` and `/ar/` are not published while `ar` is disabled.
+- Do not force locale by IP. `Accept-Language` may **suggest** once; an explicit choice is remembered (`shantara-locale`). The suggestion is never irreversible.
+- Content identity uses stable internal IDs, not translated slugs. Relationships reference IDs. Localized slugs are allowed later; until then English slugs may be reused under the locale prefix (`/ar/programs/detox`). Document the reuse; do not make identity depend on the slug.
+
+### Language selector
+
+`LanguageSelector` is a reusable control the website consumes (`components/navigation/LanguageSelector.jsx`). Desktop and mobile nav. Keyboard and screen-reader accessible. Native names in the list; compact `EN AR DE FR RU HI ML` on the trigger. **No flags.** Its catalog prompt stays English.
+
+It hides when only one locale is enabled. It appears when Arabic (or any second locale) is enabled. It only offers enabled locales. For a given page it only links to a **published equivalent** of that page. Prefer omit if that page is not translated. Do not dump the visitor on the homepage unless the UI makes the gap obvious.
+
+### Content model
+
+Page / entity → source record → localized records per locale. Same section composition. Only English is populated initially.
+
+Localized metadata (simplest fields the future CMS should carry):
+
+`locale`, `translation_status` (`draft` / `translated` / `review_required` / `published`), `source_version`, `last_translated_at`, `translation_reviewed_at`, `translation_reviewed_by`, `needs_translation_review`.
+
+When English changes materially, bump `source_version` so translations can be marked stale. A translation publishes independently — it must not block English.
+
+**Medical workflow (documented, not a workflow engine):** English source → clinical/medical review of the source → translation → language review → medical terminology / localized clinical review where required → localized publication.
+
+Distinguish: medical review of the English source; language/translation review; localized clinical review. Schema and bylines must not claim the English reviewer signed off the translation unless they did. E-E-A-T applies independently per translation. Do not strengthen or weaken claims, change certainty, medication, terminology, or contraindications in translation.
+
+UI strings (nav, buttons, form labels, validation, statuses) live in a locale dictionary. Editorial content (heroes, programs, clinical, FAQs, testimonials, articles) lives on the entity. Not one massive file. Do not embed marketing sentences in presentation components.
+
+### Fallback and collections
+
+Never silently mix languages on one page. Never render an English body under an `/ar/` URL. If a translated page does not exist, do not fabricate it. Omit the link, or explicitly offer English. Related programs on an Arabic page return Arabic records where available. Do not expose untranslated drafts.
+
+Internal links are generated centrally (`localePath`). Stay in the current locale when the equivalent exists.
+
+### RTL, type, formatting
+
+`html` `dir` comes from the locale. One stylesheet. Logical CSS (`margin-inline`, `padding-inline`, `inset-inline`, `text-align: start`). Directional icons may flip; logos, media, phone numbers, emails, URLs, and numerals do not auto-mirror. Mixed-script runs use `dir=auto` or `.shantara-dir-ltr` / `.shantara-dir-rtl`.
+
+Diodrum covers Latin and Cyrillic. **IBM Plex Sans Arabic** is the Arabic counterpart (weights 300–600). Do not add extra families until a localisation project needs them. Hindi and Malayalam use Indic scripts; choose and load a type pairing when those projects start. Arabic uses more line-height; headings must not clip; buttons and cards grow with copy. No English-length fixed heights.
+
+**Locale is not currency.** Arabic does not imply AED. English does not imply INR. Format currency only with an explicit ISO code, and only on a tariff surface. Dates, numbers, and lists go through `Intl` helpers on `ShantaraLocales`.
+
+### SEO, schema, analytics
+
+Each published localized page has its own URL, localized metadata, self-canonical, and reciprocal `hreflang` (enabled locales that actually have that page) plus `x-default`. XML sitemap lists only published localized URLs. Do not generate seven empty trees.
+
+Schema: one Organization `@id`. WebPage `url` and `inLanguage` follow the locale. Doctor and program `@id`s stay stable across locales.
+
+`track(name, props)` adds `locale` centrally. Event names stay English.
+
+### This kit vs production
+
+Sample screens illustrate the skill. They are not a production Next.js site. The kit uses hash routes (`#/en/`, `#/en/programs`) that map to the production URL families above. Catalog LTR/RTL and `ui_kits/website/?fixture=rtl` are **development fixtures** for visual QA — they are not published Arabic pages.
+
+Initial build in this system: English samples, locale-aware routing, central config, LanguageSelector infrastructure (hidden), RTL-ready components, Arabic type tokens, localized metadata helpers, hreflang/sitemap/schema/analytics helpers, documentation. Not a translated website.
+

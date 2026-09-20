@@ -12,7 +12,7 @@ Application code should call:
 track("event_name", properties)
 ```
 
-The abstraction may forward to OpenPanel and GA4.
+Use `ShantaraLocales.track()` so `locale` is attached centrally. The abstraction may forward to OpenPanel and GA4. Do not create locale-suffixed event names.
 
 Do not scatter `gtag(...)` and `openpanel.track(...)` across components.
 
@@ -28,9 +28,9 @@ Keep the launch event model small.
 
 #### `consultation_cta_click`
 
-Fire when the main Book Consultation CTA is clicked.
+Fire when the Book a Consultation CTA is clicked.
 
-Properties: `page_type`; `content_id`; `content_name`; `cta_location`.
+Properties: `page_type`; `content_id`; `content_name`; `cta_location`; `locale` (added centrally).
 
 Allowed `cta_location` values should remain controlled, for example: header; hero; inline; bottom; sticky.
 
@@ -38,7 +38,7 @@ Allowed `cta_location` values should remain controlled, for example: header; her
 
 Fire when the consultation form is genuinely started.
 
-Properties: `form_id`; `page_type`.
+Properties: `form_id`; `page_type`; `locale` (added centrally).
 
 #### `generate_lead`
 
@@ -46,7 +46,7 @@ This is the primary conversion.
 
 Fire **only after the form destination confirms successful submission**.
 
-Properties: `form_id`; `page_type`; `source_page`.
+Properties: `form_id`; `page_type`; `source_page`; `locale` (added centrally).
 
 Do not treat a button click as a successful lead.
 
@@ -54,7 +54,7 @@ Do not treat a button click as a successful lead.
 
 Use one event for alternate contact channels.
 
-Properties: `contact_method` (`whatsapp` | `phone` | `email`); `page_type`; `cta_location`.
+Properties: `contact_method` (`whatsapp` | `phone` | `email`); `page_type`; `cta_location`; `locale` (added centrally).
 
 ### Optional events
 
@@ -71,6 +71,8 @@ Never send to GA4 or OpenPanel: name; email; phone; consultation free text; diag
 If identity linkage is ever required, use opaque internal identifiers.
 
 Analytics is not the CRM.
+
+ICP and overlay fields (`primary_icp`, `country`, `landing_page`, and the rest of the taxonomy in [`docs/icp.md`](../../docs/icp.md)) belong in CRM or a carefully designed reporting layer. Do not automatically push need-state or health detail into ad platforms. Do not add extra pixel events at launch just to record ICP. Infer ICP from landing page and campaign where possible.
 
 ### Initial funnel
 
@@ -110,13 +112,25 @@ Implement SEO as part of the page system, not as manual aftercare.
 
 ### Every indexable page
 
-Support: unique SEO title; meta description; canonical URL; Open Graph title; Open Graph description; Open Graph image; index/noindex setting; correct H1; crawlable internal links.
+Support: unique SEO title; meta description; **self-referencing** canonical URL for that locale; Open Graph title; Open Graph description; Open Graph image; index/noindex setting; correct H1; crawlable internal links in the current locale; `hreflang` alternates only for published equivalents, plus `x-default`.
+
+Do not canonicalize a translation to English. Do not emit `hreflang` for a locale or page that is not published. Root `/` must not compete with `/en/` as an indexable English document.
+
+### Global site identity (titles and Open Graph)
+
+Frozen public Organization / NAP name: **Shantara Naturopathy Retreat**.
+
+- Use that string for `og:site_name`, default title brand segment, and Organization schema `name`.
+- Do **not** use **Shantara Life Naturopathy** (or “Shantara Life”) in titles, `og:site_name`, schema `name`, or other global metadata.
+- Page titles may read `{Page} | Shantara Naturopathy Retreat` (or an approved short equivalent that still says Naturopathy Retreat). Do not invent a parallel brand line for SEO.
 
 ### URL principles
 
 Use short, stable, human-readable URLs.
 
-Prefer `/conditions/diabetes` and `/programs/weight-management`.
+Prefer `/en/conditions/diabetes` and `/en/programs/weight-management`.
+
+Do not create ICP-named hubs or synonym doorway pages. Keyword and landing-page architecture for agencies is specified in [`docs/icp.md`](../../docs/icp.md); it does not override these URL rules.
 
 Avoid unnecessary hierarchy and keyword repetition.
 
@@ -124,9 +138,11 @@ Do not create multiple pages targeting trivial keyword variations.
 
 ### XML sitemap
 
-Generate automatically from indexable content.
+Generate automatically from **published localized** URLs only.
 
-Use accurate modification dates.
+Include alternate-language relationships for locales that actually have that page.
+
+Use accurate modification dates. Do not generate seven empty sitemap trees for unpublished languages.
 
 Do not update `lastmod` on every build unless the page actually changed.
 
@@ -176,15 +192,16 @@ Do not ask editors to manually write JSON-LD.
 
 ### Site / business entity
 
-Use the most accurate entity type available.
+Use one Organization with a stable canonical `@id` across every locale.
 
-Possible types may include: Organization; LocalBusiness; MedicalClinic only if Shantara legitimately meets the definition.
+- **`name`:** `Shantara Naturopathy Retreat` (same as the frozen NAP / `og:site_name`).
+- **Primary type:** `MedicalClinic`, plus lodging / residential-stay facts that match visible content (rooms, residential programme, address). Prefer additional typed properties or a clearly related lodging representation over inventing a second competing Organization. Exact lodging companion (`Hotel` vs other lodging properties) is still TBD — do not invent a second competing Organization while that choice is open.
+- **Do not use** `Hospital`, spa types, or `HealthAndBeautyBusiness` — those mis-state the entity (hospital is the wrong local entity; spa framing is paid-exclusion territory).
+- Do not choose a medical schema type merely because it sounds advantageous; `MedicalClinic` is allowed here because the offer is a doctor-led residential clinic stay, not a beauty business.
 
-Do not choose a medical schema type merely because it sounds advantageous.
+Localized web pages have a locale-specific `url` and `inLanguage`. Doctor and program identities stay on the same `@id` when their names are translated.
 
-Use a stable canonical `@id`.
-
-Typical data: name; URL; logo; telephone; email; address; geo; opening hours; sameAs; contactPoint.
+Typical data: name; URL; logo; telephone; email; address; geo; opening hours; sameAs; contactPoint; lodging-relevant facts only when they appear on the site.
 
 ### Condition content
 
@@ -260,9 +277,11 @@ Avoid generic AI-written wellness content that could belong to any retreat.
 
 ### Entity consistency
 
-Use consistent names for: Shantara; doctors; programs; therapies; locations; credentials.
+Use consistent names for: **Shantara Naturopathy Retreat** (Organization); doctors; programs; therapies; locations; credentials.
 
 Do not rename the same program or doctor differently across pages without reason.
+
+Do not reintroduce legacy or parallel product strings (“Shantara Life Naturopathy”, “naturopathy and wellness retreat”, sanctuary / clinical-wellness product labels) in metadata or schema.
 
 ### Avoid pseudo-GEO hacks
 
@@ -306,7 +325,7 @@ Static content should remain static.
 - use sensible fallbacks;
 - avoid layout shift.
 
-This system ships Diodrum Cyrillic only. Do not add a second display face.
+This system ships Diodrum Cyrillic for Latin and Cyrillic. IBM Plex Sans Arabic is the Arabic counterpart under `[dir=rtl]` — not a second display face for English. Do not add further families.
 
 ### Third-party scripts
 
@@ -327,11 +346,18 @@ Ensure:
 - decorative images marked appropriately;
 - accessible form labels;
 - error messages associated with fields;
-- sufficient contrast;
+- sufficient contrast — including type on photography judged against the scrimmed photograph (solid Merino on a shorter bottom `--scrim-bottom`; gold eyebrows only on flat dark grounds; no double scrims);
+- pick the right media ratio: **4:3** listings/gallery, **16:9** when a wide editorial crop is needed, **3:4** portrait mosaic; page heroes use a fixed height (not a forced 4:3);
+- accordions open with a `.sh-acc-clip` wrapper (`aria-hidden` / `inert`, not `hidden`) — kit loads `_ds_bundle.js`, so sync after editing `components/navigation/Accordion.jsx`;
+- type never on the rosette; drop the band below ~880px;
 - touch targets large enough;
-- reduced-motion support where appropriate;
+- reduced-motion support where appropriate — keep colour and opacity, drop movement; use the design-system motion tokens (`--ease-out`, `--ease-drawer`, `--duration-*`) rather than local curves;
 - accordions/dialogs use correct ARIA patterns;
-- videos have captions/transcripts when needed.
+- videos have captions/transcripts when needed;
+- `html` `lang` and `dir` match the locale;
+- the language selector is named, keyboard-accessible, and announces the current locale;
+- passages in another language are annotated;
+- optional in-page text size via `html[data-text-size]` → `--text-scale` (Default / Large / Larger). Browser zoom to 200% remains the WCAG 1.4.4 path.
 
 Do not rely on color alone to communicate state.
 

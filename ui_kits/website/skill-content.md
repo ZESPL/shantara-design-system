@@ -4,15 +4,21 @@ Back to the [website skill](SKILL.md).
 
 ## CMS / content model
 
-Model business/content entities, not layout hacks.
+Model business/content entities, not layout hacks. One entity, then localized records per locale. Do not duplicate types as `ProgramEn` / `ProgramAr`. English is the only populated locale until a localisation project.
+
+Every translatable record should carry: `locale`; `translation_status` (`draft` | `translated` | `review_required` | `published`); `source_version`; `last_translated_at`; `translation_reviewed_at`; `translation_reviewed_by`; `needs_translation_review`. Keep source medical review (`medical_reviewer`, `last_medically_reviewed`) distinct from language review and from localized clinical review.
+
+A translation publishes on its own. It must not block English. When English changes materially, bump `source_version` so existing translations can be flagged stale.
+
+Localized slugs are optional later. Until then, reuse the English slug under the locale prefix. Relationships use stable IDs, never URLs.
 
 ### Condition
 
-name; slug; short summary; clinical content; relevant programs; relevant therapies; medical reviewer; last medically reviewed; references; FAQs; related content; SEO metadata.
+name; slug; short summary; clinical content; relevant programs; relevant therapies; medical reviewer; last medically reviewed; references; FAQs; related content; SEO metadata; optional `icp_ids[]` referencing [`docs/icp.md`](../../docs/icp.md) (`weight_metabolic`, `pain_mobility`, `stress_sleep_burnout`, `digestive_inflammatory`, `hormonal_vitality`, `healthy_ageing_longevity`, `short_reset`). ICPs are not a second content type.
 
 ### Program
 
-name; slug; proposition; durations; suitability; inclusions; pricing/package data (**figures live on the tariff surface**); related conditions; relevant therapies; clinicians; FAQs; SEO metadata.
+name; slug; proposition; durations; suitability; inclusions; pricing/package data (**figures live on the tariff surface**); related conditions; relevant therapies; clinicians; FAQs; SEO metadata; optional `icp_ids[]` (same taxonomy). Programmes reference ICPs. They do not define them.
 
 ### Doctor
 
@@ -66,9 +72,11 @@ Do not expose developer primitives to editors.
 
 Shantara should have **one lead-capture system**.
 
-Primary CTA:
+Primary visitor-facing CTA:
 
 > **Book a Consultation**
+
+Form chrome may use **Send your details**. Do not list **Enquire about a stay** or **Request a consultation** as equivalent primary CTAs. Visitor-facing language follows [skill-copy.md](skill-copy.md).
 
 Avoid multiple equivalent CTAs such as Enquire Now, Request Callback, Know More, Get Quote, Start Journey unless a genuinely different action exists.
 
@@ -94,13 +102,15 @@ Do not calculate stay totals on this form or on program pages.
 
 The visitor should not repeatedly select information the site already knows.
 
-Automatically attach: source page URL; page type; content ID/name; program/condition context where relevant; landing page; referrer; UTM source; UTM medium; UTM campaign; timestamp.
+Automatically attach: **locale**; source page URL; page type; content ID/name; program/condition context where relevant; landing page; referrer; UTM source; UTM medium; UTM campaign; timestamp.
 
-Example: if a visitor submits from `/conditions/diabetes`, the lead context should reflect that without asking “Which condition are you interested in?”
+Visitor-facing labels translate. Internal field keys stay `full_name`, `phone`, `email`, `country`, `notes`.
+
+Example: if a visitor submits from `/en/conditions/diabetes`, the lead context should reflect that without asking “Which condition are you interested in?”
 
 ### Presentation options
 
-The same underlying form may appear as: dedicated `/book-consultation` page; modal; drawer; inline panel.
+The same underlying form may appear as: dedicated `/en/book-consultation` page; modal; drawer; inline panel.
 
 Do not maintain separate forms or separate field definitions.
 
@@ -136,6 +146,8 @@ A secondary WhatsApp action may be offered after lead capture.
 Do not measure success by article volume.
 
 Prioritize content that exposes Shantara’s actual expertise and experience.
+
+Map publishing effort to need-led ICPs and intent stages in [`docs/icp.md`](../../docs/icp.md). Do not build a content calendar around programme names. SEO demand must not determine clinical truth.
 
 ### Doctor Answers
 
@@ -210,7 +222,7 @@ Do not manufacture news solely to appear active.
 
 Health-related content must meet a higher standard.
 
-Treat E-E-A-T as an architectural/content requirement, not a badge.
+Treat E-E-A-T as an architectural/content requirement, not a badge. It applies independently to each translation. An English medical review does not make a poor translation trustworthy. Translations must not strengthen or weaken claims, change certainty, medication, terminology, or contraindications.
 
 ### Experience
 
@@ -232,7 +244,7 @@ Do not manufacture authority.
 
 Trust is the highest priority.
 
-Clearly expose: who operates Shantara; contact details; real physical location; clinical team; policies; pricing/inclusions where possible (**via the tariff card**); relationship to associated organizations if relevant; terms/cancellation rules; privacy practices.
+Clearly expose: about Shantara; contact details; real physical location; clinical team; policies; pricing/inclusions where possible (**via the tariff card**); relationship to associated organizations if relevant; terms/cancellation rules; privacy practices. Do not use internal labels such as “trust pages” or “who operates Shantara” in public copy.
 
 ### Medical claims
 
@@ -240,7 +252,7 @@ Avoid unsupported language such as: cures diabetes; guarantees reversal; elimina
 
 Any significant clinical claim must have evidence, appropriate qualification, and clinical review.
 
-If a program name itself contains a strong outcome claim such as “reversal”, flag it for clinical/legal review rather than silently presenting it as guaranteed efficacy.
+The programme name **Diabetes Reversal** is approved for catalogue use. Do not present reversal as guaranteed efficacy or invent clinical rates.
 
 ### References
 
@@ -268,13 +280,15 @@ Do not fake freshness by automatically changing dates on every deployment.
 
 ## Content writing standards
 
+**All public-facing language follows [skill-copy.md](skill-copy.md).** That file is the writing skill. This section only records CMS and publishing constraints.
+
 ### Tone
 
 Use language that is: calm; clear; warm; specific; clinically responsible; human.
 
-Avoid: exaggerated luxury copy; mystical language; medical certainty; corporate jargon; generic AI phrasing; excessive adjectives.
+Avoid: exaggerated luxury copy; mystical language; medical certainty; corporate jargon; generic AI phrasing; excessive adjectives; information-architecture commentary; invented booking or duration rules.
 
-Also follow the design-system voice in `readme.md` and `guidelines/brand-copywriting.html`. Clarity first, warmth second, brand expression third. Marketing copy never promises a clinical outcome.
+Also follow `guidelines/brand-copywriting.html`. Clarity first, warmth second, brand expression third. Marketing copy never promises a clinical outcome.
 
 ### Prefer concrete details
 
@@ -284,7 +298,7 @@ Weak:
 
 Better:
 
-> A residential program combining medical consultation, prescribed naturopathy therapies, structured meals, movement, rest, and periodic clinical review.
+> Your programme is planned by our doctors based on your assessment, health history and goals.
 
 Use only facts Shantara can verify.
 
@@ -300,7 +314,7 @@ Link them rather than disguising a sales page as neutral medical information.
 
 The first screen should quickly establish: what the page is; why it matters; what the visitor can do next.
 
-Do not waste the hero on vague slogans.
+Do not waste the hero on vague slogans. Do not use the hero to explain how the website is organised.
 
 ## Schema-aware CMS
 

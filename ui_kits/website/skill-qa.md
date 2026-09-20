@@ -8,7 +8,9 @@ When adding or rebuilding a page, follow this sequence.
 
 ### Step 1 — Define the page job
 
-Write down: audience; search/user intent; one primary action; page type; main proof needed.
+Write down: audience (ICP ID from [`docs/icp.md`](../../docs/icp.md) when the page serves a health need); search/user intent; one primary action; page type; main proof needed.
+
+Do not treat a programme name as the audience.
 
 ### Step 2 — Check existing components
 
@@ -63,9 +65,14 @@ Before publishing:
 - [ ] Heading hierarchy is logical.
 - [ ] Links are crawlable anchors.
 - [ ] No unnecessary component or decorative clutter.
-- [ ] Consultation CTA uses the unified flow.
+- [ ] Primary CTA uses the unified enquiry flow and a visitor-facing label from skill-copy.md.
+- [ ] Copy follows [skill-copy.md](skill-copy.md): no architecture notes, invented policies, scattered prices, or promised outcomes.
 - [ ] Analytics context is correct.
-- [ ] SEO title/meta/canonical are set.
+- [ ] SEO title/meta/canonical are set for **this locale**.
+- [ ] `hreflang` lists only published equivalents, plus `x-default`.
+- [ ] Internal links stay in the current locale.
+- [ ] `html` `lang` and `dir` match the locale.
+- [ ] Language selector is hidden if only one locale is enabled; otherwise it is accessible and omits missing translations.
 - [ ] OG image is appropriate.
 - [ ] Schema matches visible content.
 - [ ] Page is keyboard accessible.
@@ -75,6 +82,13 @@ Before publishing:
 - [ ] No broken links.
 - [ ] No legacy “Welnez” branding remains accidentally.
 - [ ] No rates, “from …” amounts, or stay totals appear except on a dedicated tariff surface.
+- [ ] Listing images are 4:3; wide editorial may be 16:9; portrait mosaic 3:4. Page heroes use a fixed height (not a forced 4:3). Interactive cards lift without media zoom.
+- [ ] Type on photography sits on a bottom scrim (`--scrim-bottom`) with solid Merino body — photo still readable above the type; no faded Merino mixes, no double scrims.
+- [ ] Accordions expand with visible body (Programme “What to expect”, Home FAQ). After editing `components/**`, sync Accordion (and peers) into `_ds_bundle.js` until a rebuild script exists.
+- [ ] Full-bleed Himalaya content washes are rare (brand green under ~10% of the page). Pearl Bush / Merino for large bands; Pine Tree inverse and gold accents are allowed.
+- [ ] Type never sits on the rosette band; narrow surfaces drop the band.
+- [ ] CTAs are short; no decorative Badge/Tag pills next to actions; no 2xs helper essays.
+- [ ] Text-size control (if present) works at Larger without breaking layout.
 
 ## QA Checklist — Medical / condition content
 
@@ -97,6 +111,7 @@ Verify:
 
 - [ ] What the program is is immediately clear.
 - [ ] Intended audience is clear.
+- [ ] Audience maps to an ICP need where relevant, not only to a programme name (`docs/icp.md`).
 - [ ] Duration/options are clear.
 - [ ] Inclusions are clear.
 - [ ] Pricing is clear if the business has chosen to publish it — **via the tariff card, not copied onto the program page**.
@@ -104,7 +119,7 @@ Verify:
 - [ ] Stay/experience is tangible.
 - [ ] Relevant conditions/therapies are linked appropriately.
 - [ ] FAQs address real booking concerns.
-- [ ] Book Consultation is the primary action.
+- [ ] Book a Consultation is the primary action.
 - [ ] No clinical result is guaranteed.
 
 ## QA Checklist — Lead capture
@@ -113,7 +128,8 @@ Verify:
 
 - [ ] Same consultation fields are used everywhere.
 - [ ] Form does not ask unnecessary medical questions.
-- [ ] Source page/context is captured automatically.
+- [ ] Source page/context and locale are captured automatically.
+- [ ] Field keys stay `full_name`, `phone`, `email`, `country`, `notes`.
 - [ ] Form success is confirmed before `generate_lead`.
 - [ ] GA4/OpenPanel receive no PII or health data.
 - [ ] CTA click is not counted as a successful lead.
@@ -132,7 +148,9 @@ generate_lead
 contact_click
 ```
 
-Verify controlled properties.
+Verify controlled properties, including `locale` added centrally.
+
+Do not create `consultation_cta_click_ar` or send translated medical free text.
 
 Do not create new event names unless the event will answer a real business question.
 
@@ -158,6 +176,7 @@ Do not introduce these without a demonstrated need:
 
 - rigid page templates for every content family;
 - condition-category SEO hubs;
+- ICP-named category URLs or one landing page per ICP name;
 - individual therapy pages by default;
 - individual room pages by default;
 - multiple consultation forms;
@@ -178,7 +197,8 @@ Do not introduce these without a demonstrated need:
 - hundreds of generic AI-written articles;
 - keyword-variation landing pages;
 - complex personalization before sufficient traffic exists;
-- a complete production website inside this design-system kit.
+- a complete production website inside this design-system kit;
+- a translation platform, runtime MT, IP geolocation, a second Arabic frontend, or placeholder pages for unpublished locales.
 
 ## Migration / legacy brand rules
 
@@ -208,6 +228,7 @@ A website change is complete only when it is:
 - analytics-aware where relevant;
 - privacy-safe;
 - medically governed where relevant;
+- locale-correct (`lang`/`dir`, prefixed URLs, no mixed-language page);
 - tested;
 - not unnecessarily complex.
 
