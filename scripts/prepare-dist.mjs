@@ -12,9 +12,13 @@ const files = [
   "styles.css",
   "_ds_manifest.json",
   "_ds_bundle.js",
+  "readme.md",
+  "SKILL.md",
+  "i18n.js",
+  "locales.js",
 ];
 
-const dirs = ["assets", "tokens", "guidelines", "components", "ui_kits", "templates"];
+const dirs = ["assets", "tokens", "guidelines", "components", "docs", "scraps", "ui_kits", "templates"];
 
 rmSync(dist, { recursive: true, force: true });
 mkdirSync(dist, { recursive: true });
@@ -37,4 +41,4 @@ writeFileSync(
   `[build]\n  publish = "."\n\n[[headers]]\n  for = "/assets/fonts/*"\n  [headers.values]\n    Cache-Control = "public, max-age=31536000, immutable"\n\n[[headers]]\n  for = "/*"\n  [headers.values]\n    X-Content-Type-Options = "nosniff"\n    Referrer-Policy = "strict-origin-when-cross-origin"\n`,
 );
 
-console.log("Prepared dist/ for Netlify (uploads and scraps left out).");
+console.log("Prepared dist/ for Netlify (notes included; raw uploads left out).");
