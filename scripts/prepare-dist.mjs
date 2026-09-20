@@ -1,4 +1,4 @@
-import { cpSync, mkdirSync, rmSync, writeFileSync } from "node:fs";
+import { cpSync, existsSync, mkdirSync, rmSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -24,11 +24,15 @@ rmSync(dist, { recursive: true, force: true });
 mkdirSync(dist, { recursive: true });
 
 for (const file of files) {
-  cpSync(join(root, file), join(dist, file));
+  const src = join(root, file);
+  if (!existsSync(src)) continue;
+  cpSync(src, join(dist, file));
 }
 
 for (const dir of dirs) {
-  cpSync(join(root, dir), join(dist, dir), { recursive: true });
+  const src = join(root, dir);
+  if (!existsSync(src)) continue;
+  cpSync(src, join(dist, dir), { recursive: true });
 }
 
 writeFileSync(
