@@ -1349,7 +1349,7 @@ SEO demand must not determine clinical truth.
 
 Connect this ICP system to existing content rules rather than replacing them:
 
-- Public language: [skill-copy.md](../ui_kits/website/skill-copy.md) and [Copywriting](../guidelines/brand-copywriting.html)
+- Public language: [skill-copy.md](../ui_kits/website/skill-copy.md) (browsed as [Voice & copywriting](website-copy.html))
 - Publishing families and medical governance: [skill-content.md](../ui_kits/website/skill-content.md)
 - Page inventory: [skill-ia.md](../ui_kits/website/skill-ia.md)
 - Analytics, SEO, schema: [skill-technical.md](../ui_kits/website/skill-technical.md)
@@ -1392,11 +1392,9 @@ Canonical ICP definitions live **only** here (`docs/icp.md`, browsed as `docs/ic
 | [Website skill](website-skill.html) | How to build the public site. Page-job “audience” should cite an ICP ID. |
 | [Information architecture](website-ia.html) | Conditions and programmes as visitor IA, not as ICP architecture. |
 | [Content and leads](website-content.html) | CMS entities, E-E-A-T, one form. Optional `icp_ids[]` on entities. |
-| [Language and copywriting](website-copy.html) | Public voice. Internal ICP language stays out. |
+| [Voice & copywriting](website-copy.html) | Public voice, register, taglines, headings, and CTAs. Internal ICP language stays out. |
 | [Technical](website-technical.html) | Analytics privacy; SEO. Taxonomy above does not add health pixels. |
 | [QA](website-qa.html) | Page job includes audience; map it to an ICP when relevant. |
-| [Brand copywriting](../guidelines/brand-copywriting.html) | Public heading and CTA patterns. |
-| [Brand voice](../guidelines/brand-voice.html) | Register and taglines. |
 | `locales.js` | Planned languages (`en ar de fr ru hi ml`). Not a geo-priority list. |
 
 ---

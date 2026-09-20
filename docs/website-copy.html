@@ -1,24 +1,79 @@
+<!-- @dsCard group="Website" viewport="doc" kind="doc" name="Voice & copywriting" subtitle="Clarity first, warmth second, brand expression third" -->
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Website language ¬∑ Shantara design system</title>
+  <title>Voice & copywriting ù Shantara design system</title>
   <link rel="icon" href="../assets/icon-olive.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../styles.css">
   <link rel="stylesheet" href="doc.css">
+  <style>
+    .ds-copy-poster{max-width:1320px;margin:0 auto;padding:0 var(--layout-gutter) var(--space-10);display:grid;gap:var(--space-7)}
+    .ds-copy-poster-row{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-6)}
+    .ds-copy-poster-trio{display:grid;grid-template-columns:0.8fr 0.8fr 1.4fr;gap:var(--space-7)}
+    .ds-copy-poster-card{background:color-mix(in srgb, var(--color-merino) 8%, transparent);border-radius:var(--radius-card);padding:var(--space-7)}
+    .ds-copy-poster h2{margin:0 0 var(--space-4);font:var(--type-h4);font-size:var(--text-base);color:var(--text-on-brand)}
+    .ds-copy-poster-line{font:var(--weight-light) var(--text-3xl)/1.1 var(--font-display);margin:var(--space-4) 0 0;color:var(--text-on-brand)}
+    .ds-copy-poster-note{margin:var(--space-4) 0 0;font-size:var(--text-2xs);color:color-mix(in srgb, var(--color-merino) 70%, transparent)}
+    .ds-copy-poster-list{display:flex;flex-direction:column;gap:6px;font-size:var(--text-sm);color:color-mix(in srgb, var(--color-merino) 86%, transparent)}
+    .ds-copy-slider{display:grid;grid-template-columns:1fr 120px 1fr;align-items:center;gap:var(--space-4);font-size:var(--text-sm);color:color-mix(in srgb, var(--color-merino) 86%, transparent)}
+    .ds-copy-slider .track{position:relative;height:1px;background:color-mix(in srgb, var(--color-merino) 28%, transparent)}
+    .ds-copy-slider .dot{position:absolute;top:-4px;width:9px;height:9px;border-radius:999px;background:var(--color-gold-crayola)}
+    .ds-handbook-mast .ds-copy-poster-card h2{margin:0 0 var(--space-4)}
+    @media (max-width:800px){
+      .ds-copy-poster-row,.ds-copy-poster-trio{grid-template-columns:1fr}
+    }
+  </style>
 </head>
 <body class="ds-doc ds-handbook">
   <a class="ds-skip" href="#website-copy">Skip to content</a>
   <header class="ds-handbook-mast">
     <div class="ds-handbook-mast-inner">
-      <p class="shantara-eyebrow">Website kit</p>
-      <h1>Language and copywriting</h1>
-      <p class="ds-handbook-lead">Public-facing website language. Write for a prospective guest. Do not narrate the website architecture.</p>
+      <p class="shantara-eyebrow">Brand ù Website kit</p>
+      <h1>Voice &amp; copywriting</h1>
+      <p class="ds-handbook-lead">Public-facing language for a clinical hotel. Write for a guest. Do not narrate the website architecture.</p>
       <p class="ds-handbook-meta">
         <span>ui_kits/website/skill-copy.md</span>
         <span>.cursor/skills/shantara-website-copy/</span>
       </p>
+    </div>
+    <div class="ds-copy-poster">
+      <div class="ds-copy-poster-row">
+        <div class="ds-copy-poster-card">
+          <p class="shantara-eyebrow">Tagline</p>
+          <p class="ds-copy-poster-line">Finest hospitality by nature</p>
+        </div>
+        <div class="ds-copy-poster-card">
+          <p class="shantara-eyebrow">Catchphrase</p>
+          <p class="ds-copy-poster-line">Nurture in nature</p>
+          <p class="ds-copy-poster-note">Also: <em>Blooming in nature</em> (imagery), <em>always beyond!</em> (sign-off)</p>
+        </div>
+      </div>
+      <div class="ds-copy-poster-trio">
+        <div>
+          <h2>Who we are</h2>
+          <div class="ds-copy-poster-list">
+            <span>Positive</span><span>Calm</span><span>Honest</span><span>Polite</span><span>Caring</span><span>Trustworthy</span><span>Professional</span>
+          </div>
+        </div>
+        <div>
+          <h2>Who we are not</h2>
+          <div class="ds-copy-poster-list">
+            <span>Rude</span><span>Toxic</span><span>Passive-aggressive</span><span>Gender-negative</span><span>Stereotypical</span><span>Slow to respond</span>
+          </div>
+        </div>
+        <div>
+          <h2>Register</h2>
+          <div style="display:grid;gap:var(--space-5)">
+            <div class="ds-copy-slider"><span>Formal</span><span class="track"><span class="dot" style="left:16%"></span></span><span>Casual</span></div>
+            <div class="ds-copy-slider"><span>Serious</span><span class="track"><span class="dot" style="left:8%"></span></span><span>Funny</span></div>
+            <div class="ds-copy-slider"><span>Respectful</span><span class="track"><span class="dot" style="left:0%"></span></span><span>Irreverent</span></div>
+            <div class="ds-copy-slider"><span>Matter-of-fact</span><span class="track"><span class="dot" style="left:44%"></span></span><span>Enthusiastic</span></div>
+          </div>
+          <p class="ds-copy-poster-note"><strong>Hospitality</strong> leads. <strong>Belonging</strong> follows. Rejuvenation is not a voice word. Internally this is a clinical hotel, not a hospital. Public name: naturopathy retreat / doctor-led residential clinic.</p>
+        </div>
+      </div>
     </div>
   </header>
   <div class="ds-handbook-shell">

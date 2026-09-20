@@ -28,7 +28,7 @@ Also read the design-system skill at the repo root (`SKILL.md`) and `readme.md` 
 
 ## 1. Purpose
 
-Shantara is a **naturopathy retreat** — a doctor-led residential clinic guests stay at in Kozhikode. Do not describe the product line as a “naturopathy and wellness retreat.” **Wellness** is a discovery gloss only (how some markets type intent); it is not the product type. Public naming: [skill-copy.md](skill-copy.md). Schema / titles: [skill-technical.md](skill-technical.md).
+Shantara is a **naturopathy retreat** — a doctor-led residential clinic guests stay at in Kozhikode. Internally, treat it as a **clinical hotel**: a good hotel that has a clinic, not a hospital. That phrase is not a public product name. Do not describe the product line as a “naturopathy and wellness retreat.” **Wellness** is a discovery gloss only (how some markets type intent); it is not the product type. Public naming: [skill-copy.md](skill-copy.md). Schema / titles: [skill-technical.md](skill-technical.md).
 
 **Welnez is the former name; use Shantara as the current brand name.** Do not introduce "Welnez" into new public-facing copy unless the task explicitly concerns legacy content, redirects, historical references, or migration.
 
@@ -268,16 +268,16 @@ These files are **previews** of the skill, not the live site:
 
 | Sample | Skill page type | Notes |
 | --- | --- | --- |
-| `HomeScreen.js` | home | Immersive hero, approach, program cards, experience teasers |
-| `ConditionsScreen.js` | condition listing | Visual grouping only — no category URLs |
-| `ProgrammeScreen.js` | program | Program hero composition; tariff link, no rates |
-| `ExperienceScreen.js` | experience hub | Therapies, rooms, farm, a day — not one page per room |
-| `AboutScreen.js` | about hub | Story, approach, doctors, editorial policy |
-| `JournalScreen.js` | article listing | Insights / publishing families |
-| `ContactScreen.js` | contact | Compact hero + location |
-| `ConsultationScreen.js` | consultation | One short form |
-| `TariffScreen.js` | pricing surface | **Only** place rates appear |
-| `SiteChrome.js` | chrome | Skill nav + wordmark-only logo + Book a Consultation + LanguageSelector (hidden while only `en` is enabled) |
+| `screens/HomeScreen.js` | home | Immersive hero, approach, program cards, experience teasers |
+| `screens/ConditionsScreen.js` | condition listing | Visual grouping only — no category URLs |
+| `screens/ProgrammeScreen.js` | program | Program hero composition; tariff link, no rates |
+| `screens/ExperienceScreen.js` | experience hub | Therapies, rooms, farm, a day — not one page per room |
+| `screens/AboutScreen.js` | about hub | Story, approach, doctors, editorial policy |
+| `screens/JournalScreen.js` | article listing | Insights / publishing families |
+| `screens/ContactScreen.js` | contact | Compact hero + location |
+| `screens/ConsultationScreen.js` | consultation | One short form |
+| `screens/TariffScreen.js` | pricing surface | **Only** place rates appear |
+| `chrome/SiteChrome.js` | chrome | Skill nav + wordmark-only logo + Book a Consultation + LanguageSelector (hidden while only `en` is enabled) |
 
 Kit notes for humans: [README.md](README.md).
 

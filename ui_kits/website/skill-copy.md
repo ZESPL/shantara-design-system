@@ -44,6 +44,8 @@ Brand expression comes third.
 
 Shantara is a naturopathy retreat — a doctor-led residential clinic guests stay at.
 
+Internally, treat it as a **clinical hotel**: a good hotel that happens to have a clinic, not a clinic that borrowed a restaurant, and not a hospital. **Clinical hotel** is the working model. It is not a public product name, H1, title fragment, or schema type. Do not call Shantara a hospital. Do not call it a hotel without the clinical frame.
+
 It is not an abstract wellness brand. **Wellness** may appear as a discovery gloss in some markets; it is not the product type and must not replace “naturopathy retreat” in heroes, titles, or schema.
 
 A visitor should quickly understand:
@@ -76,7 +78,9 @@ What Shantara **is**, in public language:
 
 Short forms that remain accurate: **naturopathy retreat**; **doctor-led residential clinic**. Organization display name for NAP / schema / `og:site_name`: **Shantara Naturopathy Retreat** (see [skill-technical.md](skill-technical.md)).
 
-Public pages lead with this positive clause. Do not open heroes with “not a spa.”
+Public pages lead with this positive clause. Do not open heroes with “not a spa,” “not a hospital,” “not a wellness brand,” or “clinical hotel.”
+
+Hospitality leads the brand half of the voice. Belonging follows. Rejuvenation is not a voice word.
 
 ### Layer 2 — Need language
 
@@ -101,7 +105,7 @@ Do not use these as product type, H1, title fragment, or primary CTA:
 * Nature cure (except accurate historical parent naming on About, e.g. Hygiene Nature Cure Hospital)
 * Begin your wellness journey
 
-Also keep existing bans on luxury-sanctuary clichés and spa repositioning. Internal negatives (“not a spa”, “not an Ayurveda resort”, “not a US naturopathic office”, “not Hygiene Nature Cure Hospital”) live in ICP, ad exclusions, and FAQs — not as visitor-facing argument copy.
+Also keep existing bans on luxury-sanctuary clichés and spa repositioning. Internal negatives (“not a spa”, “not a hospital”, “not an Ayurveda resort”, “not a US naturopathic office”, “not Hygiene Nature Cure Hospital”) and the clinical-hotel model live in this skill, ICP, ad exclusions, and brand cards — not as visitor-facing argument copy.
 
 ---
 
@@ -493,7 +497,7 @@ Bad:
 
 Better:
 
-> Meals are planned as part of your programme based on your doctor's recommendations and nutritional needs.
+> Meals are planned as part of your programme based on your doctor's recommendations and dietary needs.
 
 Bad:
 
@@ -552,6 +556,8 @@ Use:
 ---
 
 # Do not personify systems, protocols or processes
+
+Do not extend this ban to “the body.” “Reconnect with your body's ability to heal” is a bad *claim*, not a personification error.
 
 Bad:
 
@@ -635,7 +641,7 @@ Words requiring caution include:
 
 These words are not automatically prohibited.
 
-They simply cannot substitute for information.
+They simply cannot substitute for information. A sentence may use one of them only if it still tells the visitor something useful after the word is removed. Do not use them as the heading or the point of the section.
 
 Bad:
 
@@ -684,7 +690,7 @@ Never hide the useful answer underneath atmospheric copy.
 
 # Voice
 
-Write like a knowledgeable practitioner and an attentive hotelier.
+Write like a knowledgeable practitioner and an attentive hotelier. That is the clinical-hotel voice: calm and warm, serious about care, never resort-cheerful and never hospital-solemn.
 
 The voice should be:
 
@@ -693,9 +699,27 @@ The voice should be:
 * Respectful
 * Reassuring
 * Specific
+* Positive, honest, polite, caring, trustworthy, professional
 * Warm without being sentimental
 * Clinical when necessary
 * Hospitable without sounding luxurious for its own sake
+
+Do not write Cheerful. That is spa-bright, not a hotel with doctors.
+
+Hospitality leads. Belonging follows. Rejuvenation is not a voice word; *rejuvenating* stays on the caution list above.
+
+**Who we are:** Positive, Calm, Honest, Polite, Caring, Trustworthy, Professional.
+
+**Who we are not:** Rude, Toxic, Passive-aggressive, Gender-negative, Stereotypical, Slow to respond. Do not add Cheap (that invites luxury language) or Cheerful (that is spa-bright).
+
+Register for writers: spoken-formal, serious about the medicine, fully respectful, warmly hospitable. A little warmth is hospitality. Spa enthusiasm is not.
+
+| Pole | Position | Meaning |
+| --- | --- | --- |
+| Formal → Casual | near Formal | Spoken-formal, not stiff |
+| Serious → Funny | near Serious | Serious about care, not grave |
+| Respectful → Irreverent | Respectful | Fully respectful |
+| Matter-of-fact → Enthusiastic | just short of halfway | Hotel warmth, not spa hype |
 
 Use:
 
@@ -1094,10 +1118,12 @@ Avoid:
 * Request a consultation
 * Begin your transformation
 * Start healing
+* Discover more
 * Transform your health
 * Change your life
 * Discover a new you
 * Begin your wellness journey
+* Take the first step
 * Take the first step towards healing
 
 The CTA should describe an action rather than promise an outcome. Keep labels short. Do not use Badge or static Tag as decorative pills next to actions.
@@ -1106,18 +1132,14 @@ The CTA should describe an action rather than promise an outcome. Keep labels sh
 
 # Brand language
 
-Taglines are brand devices.
+Taglines are brand devices for designated placements, not a vocabulary source for ordinary website copy.
 
-Examples may include:
+Use this rank. Do not treat the four lines as interchangeable.
 
-* Finest hospitality by nature
-* Nurture in nature
-* Blooming in nature
-* always beyond!
-
-Use them only in deliberate brand placements.
-
-Do not use them as a vocabulary source for ordinary website copy.
+* **Tagline:** Finest hospitality by nature
+* **Catchphrase:** Nurture in nature
+* **Imagery:** Blooming in nature
+* **Sign-off:** always beyond!
 
 A page should remain completely understandable if every tagline is removed.
 

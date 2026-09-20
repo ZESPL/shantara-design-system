@@ -53,12 +53,24 @@ The consumer contract is:
 | `SKILL.md`, `readme.md`, `*.prompt.md`, `ui_kits/website/SKILL.md` | `dist/`, `.netlify/` |
 | `ui_kits/` if you are shipping those surfaces | |
 
+## Where this lives
+
+| Fact | Canonical file | Do not restate in |
+| --- | --- | --- |
+| Voice / public language | [`ui_kits/website/skill-copy.md`](../ui_kits/website/skill-copy.md) (browsed as [`docs/website-copy.html`](website-copy.html)) | long essays in `readme.md`; do not keep a second brand-copy card |
+| Colour, type, logo, pattern | the matching `guidelines/*.html` card | |
+| Contrast | [`guidelines/accessibility.html`](../guidelines/accessibility.html) | a11y changelog in `readme.md` |
+| How to consume | `docs/use.md` | |
+| Website IA / CMS / QA | `ui_kits/website/skill-*.md` | overlapping `README.md` chapters |
+| Audience | `docs/icp.md` | |
+| Property facts | `docs/handbook.txt` | |
+
 ## What an agent should read
 
 1. `SKILL.md` — the five non-obvious rules
-2. `readme.md` — voice, colour, type, pattern, a11y, kits
+2. `readme.md` — orientation, file map, caveats, on-record corrections
 3. `ui_kits/website/SKILL.md` when the work is the public marketing website
-4. The `*.prompt.md` next to the component being used
+4. The `*.prompt.md` next to the component being used (or the catalog component page)
 5. `docs/handbook.txt` (or this catalog’s handbook page) for programmes, rooms, rules and contact — not for inventing copy
 6. `docs/icp.md` (or this catalog’s ICP page) when the work is audience, SEO, campaigns, CRM, or content strategy — internal only; do not paste ICP names into public copy
 7. `guidelines/accessibility.html` before changing a colour token

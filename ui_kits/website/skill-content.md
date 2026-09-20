@@ -288,7 +288,7 @@ Use language that is: calm; clear; warm; specific; clinically responsible; human
 
 Avoid: exaggerated luxury copy; mystical language; medical certainty; corporate jargon; generic AI phrasing; excessive adjectives; information-architecture commentary; invented booking or duration rules.
 
-Also follow `guidelines/brand-copywriting.html`. Clarity first, warmth second, brand expression third. Marketing copy never promises a clinical outcome.
+Clarity first, warmth second, brand expression third. Marketing copy never promises a clinical outcome.
 
 ### Prefer concrete details
 
