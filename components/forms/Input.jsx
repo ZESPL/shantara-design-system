@@ -4,11 +4,13 @@ const CSS = `
 .sh-field{display:flex;flex-direction:column;gap:var(--space-3);font-family:var(--font-body)}
 .sh-field-label{font:var(--type-label);letter-spacing:var(--tracking-wide);color:var(--text-secondary)}
 .sh-field-req{color:var(--status-danger)}
-.sh-field-hint{font-size:var(--text-2xs);color:var(--text-muted)}
-.sh-field-error{font-size:var(--text-2xs);color:var(--status-danger)}
+.sh-field-hint{font-size:var(--text-xs);color:var(--text-muted)}
+.sh-field-error{font-size:var(--text-xs);color:var(--status-danger);animation:sh-enter-up var(--duration-base) var(--ease-out)}
 .sh-input-wrap{display:flex;align-items:center;gap:var(--space-3);height:var(--control-md);padding:0 var(--space-5);background:var(--surface-card);border:var(--border-width) solid var(--border-control);border-radius:var(--radius-input);color:var(--text-primary);transition:var(--transition-control)}
-.sh-input-wrap:hover{border-color:var(--border-strong)}
 .sh-input-wrap:focus-within{border-color:var(--border-focus);box-shadow:0 0 0 3px var(--surface-brand-soft)}
+@media (hover: hover) and (pointer: fine){
+  .sh-input-wrap:hover{border-color:var(--border-strong)}
+}
 .sh-input-wrap[data-invalid="true"]{border-color:var(--status-danger)}
 .sh-input-wrap[data-size="lg"]{height:var(--control-lg);padding:0 var(--space-6)}
 .sh-input-wrap[data-size="sm"]{height:var(--control-sm)}

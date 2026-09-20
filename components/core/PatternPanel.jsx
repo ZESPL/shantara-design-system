@@ -37,7 +37,7 @@ export function PatternPanel({
   ...rest
 }) {
   const base = resolveBase();
-  const vertical = edge === "right" || edge === "left";
+  const vertical = edge === "right" || edge === "left" || edge === "start" || edge === "end";
   const dark = tone === "olive" || tone === "pine" || tone === "none";
   const size = band || (vertical ? "var(--pattern-band-md)" : "var(--pattern-strip)");
   /* cell = band / 2. Only computable when the band is an absolute length; a
@@ -47,9 +47,23 @@ export function PatternPanel({
   const tint = ink || (dark ? "var(--pattern-ink-dark)" : "var(--pattern-ink-light)");
   const line = rule || (dark ? "var(--pattern-rule-dark)" : "var(--pattern-rule-light)");
   const pad = reserve
-    ? { right: { paddingRight: size }, left: { paddingLeft: size }, top: { paddingTop: size }, bottom: { paddingBottom: size } }[edge]
+    ? {
+        right: { paddingRight: size },
+        left: { paddingLeft: size },
+        top: { paddingTop: size },
+        bottom: { paddingBottom: size },
+        start: { paddingInlineStart: size },
+        end: { paddingInlineEnd: size },
+      }[edge]
     : null;
-  const ruleSide = { right: "borderLeft", left: "borderRight", top: "borderBottom", bottom: "borderTop" }[edge];
+  const bandBox = {
+    right: { top: 0, bottom: 0, right: 0, width: size, borderLeft: `1px solid ${line}` },
+    left: { top: 0, bottom: 0, left: 0, width: size, borderRight: `1px solid ${line}` },
+    top: { left: 0, right: 0, top: 0, height: size, borderBottom: `1px solid ${line}` },
+    bottom: { left: 0, right: 0, bottom: 0, height: size, borderTop: `1px solid ${line}` },
+    start: { top: 0, bottom: 0, insetInlineStart: 0, width: size, borderInlineEnd: `1px solid ${line}` },
+    end: { top: 0, bottom: 0, insetInlineEnd: 0, width: size, borderInlineStart: `1px solid ${line}` },
+  }[edge] || { top: 0, bottom: 0, right: 0, width: size, borderLeft: `1px solid ${line}` };
   return (
     <div style={{ position: "relative", isolation: "isolate", background: BG[tone] || tone, color: dark && tone !== "none" ? "var(--text-on-inverse)" : "var(--text-primary)", borderRadius: radius, overflow: "hidden", ...style }} {...rest}>
       <span
@@ -57,15 +71,9 @@ export function PatternPanel({
         style={{
           position: "absolute",
           boxSizing: "border-box",
-          top: edge === "bottom" ? "auto" : 0,
-          bottom: edge === "top" ? "auto" : 0,
-          left: edge === "right" ? "auto" : 0,
-          right: edge === "left" ? "auto" : 0,
-          width: vertical ? size : "auto",
-          height: vertical ? "auto" : size,
-          [ruleSide]: `1px solid ${line}`,
           pointerEvents: "none",
           zIndex: 0,
+          ...bandBox,
         }}
       >
         <span

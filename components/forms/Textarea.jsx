@@ -3,8 +3,10 @@ import React from "react";
 const CSS = `
 .sh-ta-wrap{display:flex;flex-direction:column;gap:var(--space-3);font-family:var(--font-body)}
 .sh-ta{min-height:104px;padding:var(--space-5);background:var(--surface-card);border:var(--border-width) solid var(--border-control);border-radius:var(--radius-input);color:var(--text-primary);font-family:var(--font-body);font-size:var(--text-sm);line-height:var(--leading-normal);resize:vertical;outline:none;transition:var(--transition-control)}
-.sh-ta:hover{border-color:var(--border-strong)}
 .sh-ta:focus{border-color:var(--border-focus);box-shadow:0 0 0 3px var(--surface-brand-soft)}
+@media (hover: hover) and (pointer: fine){
+  .sh-ta:hover{border-color:var(--border-strong)}
+}
 .sh-ta::placeholder{color:var(--text-muted)}
 .sh-ta[aria-invalid="true"]{border-color:var(--status-danger)}
 .sh-ta:disabled{background:var(--surface-raised);opacity:.6}

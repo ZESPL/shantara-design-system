@@ -10,6 +10,7 @@ function Photo({ name, alt = "", height = 160, radius = "var(--radius-media)", p
 }
 
 function Phone({ children, tab, onTab }) {
+  const { t } = window.ShantaraI18n.useLocale();
   const { Icon } = window.ShantaraDesignSystem_45bbe4;
   const tabs = [["Today", "sun"], ["Programme", "flower"], ["Notes", "notebook-pen"], ["You", "user-round"]];
   return (
@@ -18,11 +19,11 @@ function Phone({ children, tab, onTab }) {
         <span>6:15</span><span style={{ display: "flex", gap: 5 }}><Icon name="signal" size={13} /><Icon name="wifi" size={13} /><Icon name="battery-full" size={13} /></span>
       </div>
       <div style={{ flex: 1, overflowY: "auto", padding: "0 20px 20px" }}>{children}</div>
-      <nav style={{ flex: "0 0 auto", height: 78, display: "grid", gridTemplateColumns: "repeat(4,1fr)", alignItems: "center", borderTop: "1px solid var(--border-subtle)", background: "color-mix(in srgb, var(--color-merino) 92%, transparent)", backdropFilter: "var(--blur-glass)", paddingBottom: 14 }}>
+      <nav style={{ flex: "0 0 auto", height: 78, display: "grid", gridTemplateColumns: "repeat(4,1fr)", alignItems: "center", borderTop: "1px solid var(--border-subtle)", background: "color-mix(in srgb, var(--color-merino) 92%, transparent)", backdropFilter: "var(--blur-glass)", paddingBottom: "calc(14px + env(safe-area-inset-bottom, 0px))" }}>
         {tabs.map(([l, ic]) => (
-          <button key={l} type="button" onClick={() => onTab(l)} style={{ border: 0, background: "transparent", display: "grid", justifyItems: "center", gap: 5, cursor: "pointer", minHeight: 44, color: tab === l ? "var(--text-brand)" : "var(--text-muted)" }}>
+          <button key={l} type="button" onClick={() => onTab(l)} style={{ border: 0, background: "transparent", display: "grid", justifyItems: "center", gap: 5, cursor: "pointer", minHeight: 44, color: tab === l ? "var(--text-brand)" : "var(--text-muted)", transition: "color var(--duration-fast) var(--ease-standard), transform var(--duration-fast) var(--ease-out)", touchAction: "manipulation", userSelect: "none", WebkitUserSelect: "none" }} onPointerDown={(e) => { e.currentTarget.style.transform = "scale(var(--press-scale))"; }} onPointerUp={(e) => { e.currentTarget.style.transform = "none"; }} onPointerLeave={(e) => { e.currentTarget.style.transform = "none"; }}>
             <Icon name={ic} size={21} />
-            <span style={{ fontSize: 10, letterSpacing: "0.04em", fontFamily: "var(--font-body)" }}>{l}</span>
+            <span style={{ fontSize: 10, letterSpacing: "0.04em", fontFamily: "var(--font-body)" }}>{t(l)}</span>
           </button>
         ))}
       </nav>

@@ -2,9 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Shantara design system</title>
-  <meta name="description" content="Colour, type, logo, pattern, components and the two UI kits for Shantara Naturopathy.">
+  <meta name="description" content="Notes, colour, type, logo, pattern, components and the two UI kits for Shantara Naturopathy.">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#F4F0E6">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2D2926">
   <link rel="icon" href="assets/icon-olive.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="catalog.css">
@@ -23,10 +25,16 @@
         <span class="brand-label">Design system</span>
       </a>
     </div>
-    <label class="search">
-      <span class="visually-hidden">Search cards</span>
-      <input type="search" placeholder="Search colour, type, components" autocomplete="off" data-search>
-    </label>
+    <div class="top-end">
+      <div class="dir-toggle" role="group" aria-label="Reading direction" hidden>
+        <button type="button" data-dir="ltr" aria-pressed="true">LTR</button>
+        <button type="button" data-dir="rtl" aria-pressed="false">RTL</button>
+      </div>
+      <label class="search">
+        <span class="visually-hidden">Search cards</span>
+        <input type="search" placeholder="Search notes, colour, type, components" autocomplete="off" data-search>
+      </label>
+    </div>
   </header>
 
   <div class="shell">
@@ -40,11 +48,13 @@
       <section class="home" data-panel="home">
         <div class="hero shantara-pattern" data-tone="dark">
           <span class="shantara-pattern-band" data-edge="right" aria-hidden="true"></span>
-          <div class="hero-inner">
-            <span class="shantara-eyebrow" style="color: var(--color-gold-crayola)">Shantara Naturopathy</span>
-            <h1>Design system</h1>
-            <p class="hero-lead">Colour, type, logo, pattern, components and the two UI kits. Open a card to see it at the size it was drawn.</p>
-            <p class="hero-meta" data-home-meta></p>
+          <div class="hero-copy">
+            <div class="hero-inner">
+              <span class="shantara-eyebrow" style="color: var(--color-gold-crayola)">Shantara Naturopathy</span>
+              <h1>Design system</h1>
+              <p class="hero-lead">Notes, colour, type, logo, pattern, components and the two UI kits. Browse it here, or copy this folder into another repo as the design system.</p>
+              <p class="hero-meta" data-home-meta></p>
+            </div>
           </div>
         </div>
         <div class="catalog-list" data-catalog></div>
@@ -64,7 +74,7 @@
         </header>
         <div class="stage" data-stage>
           <div class="frame-wrap" data-frame-wrap>
-            <iframe class="frame" data-frame title="Selected card"></iframe>
+            <iframe class="frame" data-frame title="Selected card" allow="clipboard-write"></iframe>
           </div>
         </div>
       </section>

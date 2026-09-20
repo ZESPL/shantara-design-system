@@ -6,10 +6,14 @@
 --radius-xl:24px;
 --radius-2xl:32px;
 --radius-pill:999px;
---radius-card:var(--radius-lg);
+--radius-card:var(--radius-sm);
 --radius-control:var(--radius-pill);
 --radius-input:var(--radius-sm);
---radius-media:var(--radius-lg);
+--radius-media:var(--radius-sm);
+--card-media-ratio:4 / 3;           /* listing cards */
+--media-ratio:var(--card-media-ratio); /* default Photo */
+--media-ratio-wide:16 / 9;          /* cinematic / hero */
+--media-ratio-portrait:3 / 4;       /* tall architectural */
 --border-width:1px;
 --border-width-strong:1.5px;
 }

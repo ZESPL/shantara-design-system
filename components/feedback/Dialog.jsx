@@ -1,17 +1,23 @@
 import React from "react";
 
 const CSS = `
-.sh-dlg-scrim{position:fixed;inset:0;background:var(--surface-overlay);backdrop-filter:blur(3px);display:grid;place-items:center;padding:var(--space-7);z-index:1000;animation:sh-dlg-fade var(--duration-base) var(--ease-out)}
-.sh-dlg{position:relative;width:100%;max-width:520px;background:var(--surface-card);border-radius:var(--radius-xl);box-shadow:var(--shadow-xl);padding:var(--space-9);font-family:var(--font-body);animation:sh-dlg-rise var(--duration-slow) var(--ease-out)}
+.sh-dlg-scrim{position:fixed;inset:0;background:var(--surface-overlay);backdrop-filter:blur(3px);display:grid;place-items:center;padding:var(--space-7);z-index:1000;opacity:1;transition:opacity var(--duration-base) var(--ease-out)}
+.sh-dlg-scrim[data-phase="enter"],.sh-dlg-scrim[data-phase="exit"]{opacity:0}
+.sh-dlg{position:relative;width:100%;max-width:520px;background:var(--surface-card);border-radius:var(--radius-xl);box-shadow:var(--shadow-xl);padding:var(--space-9);font-family:var(--font-body);transform-origin:center;opacity:1;transform:scale(1);transition:opacity var(--duration-slow) var(--ease-out),transform var(--duration-slow) var(--ease-out)}
+.sh-dlg-scrim[data-phase="enter"] .sh-dlg,.sh-dlg-scrim[data-phase="exit"] .sh-dlg{opacity:0;transform:scale(0.96)}
+.sh-dlg-scrim[data-phase="exit"] .sh-dlg{transition-duration:var(--duration-fast)}
 .sh-dlg[data-size="sm"]{max-width:400px}
 .sh-dlg[data-size="lg"]{max-width:720px}
-.sh-dlg-title{font:var(--type-h3);margin:0 var(--space-9) var(--space-4) 0}
+.sh-dlg-title{font:var(--type-h3);margin:0;margin-inline-end:var(--space-9);margin-block-end:var(--space-4)}
 .sh-dlg-desc{color:var(--text-secondary);font-size:var(--text-sm);line-height:var(--leading-relaxed);margin:0}
 .sh-dlg-foot{display:flex;justify-content:flex-end;gap:var(--space-4);margin-top:var(--space-8)}
-.sh-dlg-x{position:absolute;top:var(--space-6);right:var(--space-6);width:36px;height:36px;display:grid;place-items:center;border:0;border-radius:var(--radius-pill);background:transparent;color:var(--text-secondary);font-size:18px;cursor:pointer;transition:var(--transition-control)}
-.sh-dlg-x:hover{background:var(--surface-raised);color:var(--text-primary)}
-@keyframes sh-dlg-fade{from{opacity:0}to{opacity:1}}
-@keyframes sh-dlg-rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.sh-dlg-x{position:absolute;top:var(--space-6);inset-inline-end:var(--space-6);width:36px;height:36px;display:grid;place-items:center;border:0;border-radius:var(--radius-pill);background:transparent;color:var(--text-secondary);font-size:18px;cursor:pointer;transition:var(--transition-control)}
+@media (hover: hover) and (pointer: fine){
+  .sh-dlg-x:hover{background:var(--surface-raised);color:var(--text-primary)}
+}
+@media (prefers-reduced-motion: reduce){
+  .sh-dlg-scrim[data-phase="enter"] .sh-dlg,.sh-dlg-scrim[data-phase="exit"] .sh-dlg{transform:none}
+}
 `;
 
 function ensure() {
@@ -31,6 +37,29 @@ export function Dialog({ open = false, title, description, size = "md", onClose,
   const box = React.useRef(null);
   const returnTo = React.useRef(null);
   const uid = React.useMemo(() => "sh-dlg-" + ++dlgSeq, []);
+  const [shown, setShown] = React.useState(open);
+  const [phase, setPhase] = React.useState(open ? "enter" : "exit");
+  const shownRef = React.useRef(open);
+  shownRef.current = shown;
+
+  React.useEffect(() => {
+    if (open) {
+      setShown(true);
+      setPhase("enter");
+      let nested = 0;
+      const id = requestAnimationFrame(() => {
+        nested = requestAnimationFrame(() => setPhase("open"));
+      });
+      return () => {
+        cancelAnimationFrame(id);
+        cancelAnimationFrame(nested);
+      };
+    }
+    if (!shownRef.current) return;
+    setPhase("exit");
+    const t = setTimeout(() => setShown(false), 180);
+    return () => clearTimeout(t);
+  }, [open]);
 
   React.useEffect(() => {
     if (!open) return;
@@ -60,9 +89,9 @@ export function Dialog({ open = false, title, description, size = "md", onClose,
     };
   }, [open, onClose]);
 
-  if (!open) return null;
+  if (!shown) return null;
   return (
-    <div className="sh-dlg-scrim" onClick={onClose ? (e) => { if (e.target === e.currentTarget) onClose(); } : undefined}>
+    <div className="sh-dlg-scrim" data-phase={phase} onClick={onClose ? (e) => { if (e.target === e.currentTarget) onClose(); } : undefined}>
       <div
         ref={box}
         className="sh-dlg"

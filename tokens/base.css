@@ -1,11 +1,25 @@
 /* Minimal element defaults so consuming pages inherit the brand without any component. */
 *,*::before,*::after{box-sizing:border-box}
+html{-webkit-tap-highlight-color:transparent;-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--surface-page);color:var(--text-primary);font:var(--type-body);-webkit-font-smoothing:antialiased;text-wrap:pretty}
 h1,h2,h3,h4,h5,h6{margin:0;color:var(--text-primary)}
 h1{font:var(--type-h1)}h2{font:var(--type-h2)}h3{font:var(--type-h3)}h4{font:var(--type-h4)}
 p{margin:0 0 1em;max-width:68ch}
 a{color:var(--text-link);text-decoration-color:color-mix(in srgb, var(--text-link) 40%, transparent);text-underline-offset:3px;transition:color var(--duration-fast) var(--ease-standard)}
-a:hover{color:var(--text-link-hover);text-decoration-color:currentColor}
+@media (hover: hover) and (pointer: fine){
+  a:hover{color:var(--text-link-hover);text-decoration-color:currentColor}
+}
+button,a,[role="button"],.sh-btn,.sh-ibtn,.sh-tag,.sh-tab,.sh-acc-btn,.nav-link,.card-link,.btn{
+  touch-action:manipulation;
+}
+button,[role="button"],.sh-btn,.sh-ibtn,.sh-tag,.sh-tab,.sh-acc-btn,.btn{
+  user-select:none;
+  -webkit-user-select:none;
+  -webkit-touch-callout:none;
+}
+@media (pointer: coarse){
+  input,textarea,select{font-size:16px}
+}
 ::selection{background:var(--color-gold-crayola);color:var(--color-pine-tree)}
 :focus-visible{outline:none;box-shadow:var(--ring-focus)}
 img,svg{max-width:100%}
@@ -14,4 +28,6 @@ img,svg{max-width:100%}
 /* Data figures: always tabular. A unit of measure sits on the numeral's own baseline
    at 0.42em, Regular, one 0.16em space away — never superscript, never Light. */
 .shantara-figure{font-variant-numeric:tabular-nums;font-feature-settings:"tnum" 1}
-.shantara-unit{font-size:0.42em;font-weight:var(--weight-regular);letter-spacing:var(--tracking-wide);color:var(--text-secondary);margin-left:0.16em}
+.shantara-unit{font-size:0.42em;font-weight:var(--weight-regular);letter-spacing:var(--tracking-wide);color:var(--text-secondary);margin-inline-start:0.16em}
+/* Usage notes under a specimen — muted, 12px, never a heading. */
+.shantara-note{margin:0;font-size:var(--text-2xs);line-height:1.5;color:var(--text-muted);max-width:72ch}

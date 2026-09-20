@@ -1,12 +1,16 @@
-<!-- @dsCard group="Website" viewport="1280x900" name="Shantara website" subtitle="Thin samples — home, conditions, program, experience, about, insights, contact, consultation, tariff" -->
-<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Shantara — website kit</title>
+<!-- @dsCard group="Website" viewport="1280x900" name="Shantara website" subtitle="Thin samples — locale-prefixed English routes, hidden language selector until a second locale is enabled" -->
+<!doctype html><html lang="en" dir="ltr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>Shantara — website kit</title>
+<link rel="canonical" href="/en/">
+<meta name="description" content="Shantara website kit — English source locale.">
 <link rel="stylesheet" href="../../styles.css">
 <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
 <script src="../../_ds_bundle.js"></script>
+<script src="../../locales.js"></script>
 <script src="../../i18n.js"></script>
-<style>html,body{height:100%}#kit-scroll{height:100vh;overflow-y:auto;background:var(--surface-page)}
+<style>html,body{height:100%}#kit-scroll{height:100vh;height:100dvh;overflow-y:auto;background:var(--surface-page);overscroll-behavior:contain}
+.sh-rtl-fixture{position:sticky;top:0;z-index:40;padding:8px 16px;background:var(--surface-raised);color:var(--text-secondary);font-size:var(--text-2xs);text-align:center}
 /* 1.4.10 Reflow — the kit's grids are inline-styled, so the responsive layer overrides
    them at the two breakpoints where a desktop grid stops fitting. No horizontal scroll
    down to 320px. */
@@ -23,10 +27,28 @@
  #root main h2{font-size:clamp(26px,6.5vw,44px)!important}
 }
 @media (max-width:520px){
- #root header > div,#root main > section > div,#root footer > div{padding-left:20px!important;padding-right:20px!important}
+ #root header > div,#root main > section > div,#root footer > div{padding-inline:20px!important}
  #root [style*="display: flex"]{flex-wrap:wrap}
 }</style>
 </head><body>
+<script>
+(() => {
+  const fixture = new URLSearchParams(location.search).get("fixture") === "rtl";
+  if (fixture) {
+    document.documentElement.dir = "rtl";
+    document.documentElement.lang = "ar";
+    document.documentElement.setAttribute("data-rtl-fixture", "1");
+    document.body.dir = "rtl";
+    document.body.lang = "ar";
+  }
+  try {
+    const size = localStorage.getItem("shantara-text-size");
+    if (size === "md" || size === "lg" || size === "xl") {
+      document.documentElement.setAttribute("data-text-size", size);
+    }
+  } catch (_) {}
+})();
+</script>
 <div id="kit-scroll"><div id="root"></div></div>
 <script type="text/babel" src="/ui_kits/website/Photo.js"></script>
 <script type="text/babel" src="/ui_kits/website/SiteChrome.js"></script>
@@ -42,18 +64,78 @@
 <script type="text/babel" src="/ui_kits/website/TariffScreen.js"></script>
 <script type="text/babel">
 function Site(){
-  const [view,setView]=React.useState("home");
-  const go=(v)=>{setView(v);const s=document.getElementById("kit-scroll");if(s)s.scrollTop=0;};
+  const L = window.ShantaraLocales;
+  const params = new URLSearchParams(location.search);
+  const fixtureRtl = params.get("fixture") === "rtl";
+  const first = L.parseKitHash(location.hash);
+  const [view,setView]=React.useState(first.view);
+  const [locale,setLocale]=React.useState(first.locale);
+  const applyChrome = (code) => {
+    if (fixtureRtl || document.documentElement.getAttribute("data-rtl-fixture") === "1") {
+      document.documentElement.dir = "rtl";
+      document.documentElement.lang = "ar";
+      document.documentElement.setAttribute("data-rtl-fixture", "1");
+      if (document.body) {
+        document.body.dir = "rtl";
+        document.body.lang = "ar";
+      }
+      window.dispatchEvent(new CustomEvent("shantara:dir", { detail: { dir: "rtl" } }));
+      return;
+    }
+    L.applyDocumentLocale(code);
+  };
+  React.useEffect(() => {
+    if (!location.hash || first.redirect) {
+      const remembered = L.readRememberedLocale();
+      const next = first.redirect || L.kitHash(remembered || L.DEFAULT_LOCALE, first.view || "home");
+      if (location.hash !== next) location.hash = next;
+    }
+    applyChrome(locale);
+    const onHash = () => {
+      const parsed = L.parseKitHash(location.hash);
+      if (parsed.redirect) { location.hash = parsed.redirect; return; }
+      setView(parsed.view);
+      setLocale(parsed.locale);
+      applyChrome(parsed.locale);
+    };
+    window.addEventListener("hashchange", onHash);
+    return () => window.removeEventListener("hashchange", onHash);
+  }, []);
+  const go=(v)=>{
+    setView(v);
+    location.hash = L.kitHash(locale, v);
+    const s=document.getElementById("kit-scroll");if(s)s.scrollTop=0;
+  };
+  const changeLocale=(code)=>{
+    if (!L.isEnabled(code)) return;
+    L.rememberLocale(code);
+    setLocale(code);
+    location.hash = L.kitHash(code, view);
+    applyChrome(code);
+  };
   const { SiteHeader, SiteFooter, HomeScreen, ConditionsScreen, ProgrammeScreen, ExperienceScreen, AboutScreen, JournalScreen, ContactScreen, ConsultationScreen, TariffScreen } = window;
-  const screens={home:<HomeScreen onNavigate={go}/>,conditions:<ConditionsScreen onNavigate={go}/>,programme:<ProgrammeScreen onNavigate={go}/>,experience:<ExperienceScreen onNavigate={go}/>,about:<AboutScreen onNavigate={go}/>,journal:<JournalScreen onNavigate={go}/>,contact:<ContactScreen onNavigate={go}/>,tariffs:<TariffScreen onNavigate={go}/>,booking:<ConsultationScreen onNavigate={go}/>};
+  const screens={home:<HomeScreen onNavigate={go}/>,conditions:<ConditionsScreen onNavigate={go}/>,programme:<ProgrammeScreen onNavigate={go}/>,experience:<ExperienceScreen onNavigate={go}/>,about:<AboutScreen onNavigate={go}/>,journal:<JournalScreen onNavigate={go}/>,contact:<ContactScreen onNavigate={go}/>,tariffs:<TariffScreen onNavigate={go}/>,booking:<ConsultationScreen onNavigate={go} locale={locale} view={view}/>};
   const screen=screens[view]||screens.booking;
+  const rest = L.kitViewPath(view);
+  const canonical = L.canonicalUrl({ origin: "", locale, path: rest });
+  const alternates = L.hreflangAlternates({
+    origin: "",
+    pageTranslations: { [locale]: { path: rest, translation_status: "published" } },
+  });
+  React.useEffect(() => {
+    const link = document.querySelector('link[rel="canonical"]');
+    if (link) link.href = canonical || L.localeHomePath(locale);
+  }, [canonical, locale]);
   return (<React.Fragment>
-    <SiteHeader view={view} onNavigate={go}/>
-    {screen}
-    <SiteFooter onNavigate={go}/>
+    {fixtureRtl ? <div className="sh-rtl-fixture" role="note">RTL development fixture — not a published Arabic page</div> : null}
+    <SiteHeader view={view} onNavigate={go} locale={locale} onLocaleChange={changeLocale}/>
+    <div key={locale + "-" + view} className="sh-page-enter">{screen}</div>
+    <SiteFooter onNavigate={go} locale={locale}/>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(L.webpageSchema({ locale, path: rest, name: "Shantara", type: "WebPage" }))}} />
+    {alternates.map((alt) => <link key={alt.hreflang} rel="alternate" hrefLang={alt.hreflang} href={alt.href} />)}
   </React.Fragment>);
 }
-const boot=()=>{ if(window.SiteHeader&&window.HomeScreen&&window.ConsultationScreen&&window.ConditionsScreen&&window.ExperienceScreen&&window.AboutScreen&&window.ContactScreen&&window.TariffScreen&&window.Photo){ReactDOM.createRoot(document.getElementById("root")).render(<Site/>);}else{setTimeout(boot,50);} };
+const boot=()=>{ if(window.ShantaraLocales&&window.SiteHeader&&window.HomeScreen&&window.ConsultationScreen&&window.ConditionsScreen&&window.ExperienceScreen&&window.AboutScreen&&window.ContactScreen&&window.TariffScreen&&window.Photo){ReactDOM.createRoot(document.getElementById("root")).render(<Site/>);}else{setTimeout(boot,50);} };
 boot();
 </script>
 </body></html>

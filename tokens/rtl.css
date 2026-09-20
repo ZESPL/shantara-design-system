@@ -1,0 +1,144 @@
+/* Reading direction. Set `dir="rtl"` on the document or a region.
+   Diodrum covers Latin and Cyrillic. It has no Arabic glyphs —
+   IBM Plex Sans Arabic is the Arabic counterpart (weights 300–600).
+   Do not add a second stylesheet for RTL. Components use logical properties.
+   This file also flips directional Lucide glyphs. */
+
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600&display=swap");
+
+[dir="rtl"]{
+  --font-core:"IBM Plex Sans Arabic","Diodrum","Segoe UI",Tahoma,sans-serif;
+  --font-display:var(--font-core);
+  --font-body:var(--font-core);
+  /* Arabic needs more line height than Diodrum's Latin display settings. */
+  --leading-tight:1.25;
+  --leading-snug:1.4;
+  --leading-normal:1.7;
+  --leading-relaxed:1.85;
+}
+
+[dir="rtl"] h1,
+[dir="rtl"] h2,
+[dir="rtl"] h3,
+[dir="rtl"] h4{
+  overflow:visible;
+  text-wrap:pretty;
+}
+
+/* Eyebrow tracking and forced uppercase are Latin micro-type. Drop them in Arabic. */
+[dir="rtl"] .shantara-eyebrow,
+[dir="rtl"] .sh-field-label{
+  letter-spacing:0;
+  text-transform:none;
+  font-weight:var(--weight-medium);
+}
+
+/* Controls grow with copy. Do not keep English-length nowrap in RTL. */
+[dir="rtl"] .sh-btn{
+  letter-spacing:0;
+  white-space:normal;
+  height:auto;
+  min-height:var(--control-md);
+  padding-block:var(--space-3);
+  text-align:center;
+}
+[dir="rtl"] .sh-btn[data-size="sm"]{min-height:var(--control-sm)}
+[dir="rtl"] .sh-btn[data-size="lg"]{min-height:var(--control-lg)}
+
+/* Directional icons may flip. Logo, rosette, check, plus, heart, search do not. */
+[dir="rtl"] [data-icon="arrow-right"],
+[dir="rtl"] [data-icon="arrow-left"],
+[dir="rtl"] [data-icon="arrow-up-right"],
+[dir="rtl"] [data-icon="arrow-up-left"],
+[dir="rtl"] [data-icon="arrow-down-right"],
+[dir="rtl"] [data-icon="arrow-down-left"],
+[dir="rtl"] [data-icon="chevron-right"],
+[dir="rtl"] [data-icon="chevron-left"],
+[dir="rtl"] [data-icon="chevrons-right"],
+[dir="rtl"] [data-icon="chevrons-left"],
+[dir="rtl"] [data-icon="corner-down-right"],
+[dir="rtl"] [data-icon="corner-down-left"],
+[dir="rtl"] [data-icon="corner-up-right"],
+[dir="rtl"] [data-icon="corner-up-left"]{
+  transform:scaleX(-1);
+}
+
+.shantara-rtl{direction:rtl;text-align:start}
+
+/* Mixed-script isolates. Do not assume every inline inherits the page direction.
+   Use on phone numbers, emails, URLs, Latin degrees (BNYS), and Latin proper names. */
+.shantara-dir-ltr{direction:ltr;unicode-bidi:isolate;text-align:start}
+.shantara-dir-rtl{direction:rtl;unicode-bidi:isolate;text-align:start}
+.shantara-dir-auto{unicode-bidi:isolate}
+
+.shantara-usage-label{
+  margin:0 0 var(--space-3);
+  font-family:var(--font-mono);
+  font-size:var(--text-3xs);
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--text-muted);
+}
+
+/* Language selector — visually restrained, no flags. */
+.sh-lang{
+  position:relative;
+  display:inline-flex;
+  align-items:center;
+  font-family:var(--font-body);
+}
+.sh-lang[hidden]{display:none}
+.sh-lang-btn{
+  appearance:none;
+  border:0;
+  background:transparent;
+  color:var(--text-secondary);
+  min-height:var(--tap-min);
+  min-width:var(--tap-min);
+  padding:0 var(--space-3);
+  font:var(--weight-medium) var(--text-xs)/1 var(--font-body);
+  letter-spacing:var(--tracking-wide);
+  cursor:pointer;
+  border-radius:var(--radius-xs);
+}
+.sh-lang-btn:focus-visible{outline:none;box-shadow:var(--ring-focus)}
+@media (hover: hover) and (pointer: fine){
+  .sh-lang-btn:hover{color:var(--text-primary)}
+}
+.sh-lang-btn[aria-expanded="true"]{color:var(--text-primary)}
+.sh-lang-list{
+  position:absolute;
+  inset-block-start:100%;
+  inset-inline-end:0;
+  z-index:40;
+  margin:var(--space-2) 0 0;
+  min-width:11rem;
+  padding:var(--space-2);
+  background:var(--surface-card);
+  border:1px solid var(--border-subtle);
+  border-radius:var(--radius-md);
+  box-shadow:var(--shadow-md);
+  list-style:none;
+}
+.sh-lang-opt{
+  display:block;
+  width:100%;
+  appearance:none;
+  border:0;
+  background:transparent;
+  color:var(--text-primary);
+  text-align:start;
+  text-decoration:none;
+  padding:var(--space-3) var(--space-4);
+  min-height:var(--tap-min);
+  font:var(--weight-regular) var(--text-sm)/1.3 var(--font-body);
+  letter-spacing:0;
+  border-radius:var(--radius-sm);
+  cursor:pointer;
+}
+.sh-lang-opt[aria-current="true"]{font-weight:var(--weight-medium);background:var(--surface-raised)}
+.sh-lang-opt:focus-visible{outline:none;box-shadow:var(--ring-focus)}
+@media (hover: hover) and (pointer: fine){
+  .sh-lang-opt:hover{background:var(--surface-raised)}
+}
+.sh-lang-opt[aria-disabled="true"]{opacity:.42;cursor:not-allowed}

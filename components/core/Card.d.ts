@@ -1,7 +1,8 @@
 import * as React from "react";
 
 /**
- * Content container: 16px radius, hairline border, whisper-soft warm shadow.
+ * Content container: 8px radius, hairline border, whisper-soft warm shadow.
+ * Listing `media` is flush at 3/2 unless `mediaHeight` overrides.
  */
 export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
   tone?: "default" | "raised" | "sunken" | "outline" | "brand" | "inverse";

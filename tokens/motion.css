@@ -1,14 +1,43 @@
-/* Motion is slow, breath-paced. Nothing bounces; nothing snaps. */
+/* Motion is restrained: ease-out on enter, no bounce, no snap. */
 :root{
---ease-standard:cubic-bezier(0.4,0,0.2,1); /* @kind other */
---ease-out:cubic-bezier(0.16,1,0.3,1); /* @kind other */
---ease-in:cubic-bezier(0.7,0,0.84,0); /* @kind other */
---ease-breath:cubic-bezier(0.37,0,0.63,1); /* @kind other */
+--ease-out:cubic-bezier(0.23, 1, 0.32, 1); /* strong ease-out for UI enter/exit */
+--ease-in-out:cubic-bezier(0.77, 0, 0.175, 1); /* on-screen movement */
+--ease-drawer:cubic-bezier(0.32, 0.72, 0, 1); /* sheets and drawers */
+--ease-standard:ease; /* hover / colour */
+--ease-in:cubic-bezier(0.7,0,0.84,0); /* reserved — never use on UI */
+--ease-breath:cubic-bezier(0.37,0,0.63,1); /* Spinner loop only */
 --duration-instant:80ms; /* @kind other */
---duration-fast:160ms; /* @kind other */
---duration-base:240ms; /* @kind other */
---duration-slow:420ms; /* @kind other */
---duration-ambient:1200ms; /* @kind other */
---transition-control:background-color var(--duration-fast) var(--ease-standard), color var(--duration-fast) var(--ease-standard), border-color var(--duration-fast) var(--ease-standard), box-shadow var(--duration-fast) var(--ease-standard), transform var(--duration-fast) var(--ease-standard); /* @kind other */
---press-scale:0.98; /* @kind other */
+--duration-fast:160ms; /* press, hover colour, tooltip */
+--duration-base:240ms; /* accordion, switch, tab rule, select */
+--duration-slow:420ms; /* dialog, toast, drawer — within 200–500ms */
+--duration-ambient:1200ms; /* Spinner only */
+--transition-control:background-color var(--duration-fast) var(--ease-standard), color var(--duration-fast) var(--ease-standard), border-color var(--duration-fast) var(--ease-standard), box-shadow var(--duration-fast) var(--ease-standard), transform var(--duration-fast) var(--ease-out); /* @kind other */
+--transition-surface:box-shadow var(--duration-base) var(--ease-out), transform var(--duration-base) var(--ease-out); /* @kind other */
+--transition-fade:opacity var(--duration-fast) var(--ease-out), transform var(--duration-fast) var(--ease-out); /* @kind other */
+--press-scale:0.96; /* @kind other */
+--lift-hover:-4px; /* @kind other */
+}
+
+.sh-page-enter{animation:sh-enter-up var(--duration-slow) var(--ease-out) both}
+
+@keyframes sh-enter-fade{from{opacity:0}to{opacity:1}}
+@keyframes sh-enter-rise{from{opacity:0;transform:translateY(8px) scale(0.98)}to{opacity:1;transform:none}}
+@keyframes sh-enter-up{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@keyframes sh-breathe{0%,100%{transform:scale(0.82);opacity:.45}50%{transform:scale(1);opacity:1}}
+
+/* Gentler, not zero: keep colour/opacity, drop movement. */
+@media (prefers-reduced-motion: reduce){
+  :root{
+    --lift-hover:0px;
+    --press-scale:1;
+    --duration-fast:80ms;
+    --duration-base:120ms;
+    --duration-slow:160ms;
+    --duration-ambient:0ms;
+  }
+  @keyframes sh-enter-rise{from{opacity:0}to{opacity:1}}
+  @keyframes sh-enter-up{from{opacity:0}to{opacity:1}}
+  @keyframes sh-breathe{0%,100%{transform:none;opacity:.7}}
+  .sh-page-enter{animation:sh-enter-fade var(--duration-fast) var(--ease-out) both}
+  html{scroll-behavior:auto}
 }

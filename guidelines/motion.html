@@ -1,9 +1,53 @@
-<!-- @dsCard group="Spacing" viewport="700x180" name="Motion" subtitle="Breath-paced: 160 / 240 / 420ms, one ambient 1200ms loop" -->
-<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../styles.css"><style>body{margin:0;padding:16px;background:var(--surface-page);font-family:var(--font-body)}</style></head><body><style>@keyframes drift{0%,100%{transform:translateX(0)}50%{transform:translateX(120px)}}@keyframes breathe{0%,100%{transform:scale(.82);opacity:.45}50%{transform:scale(1);opacity:1}}.dot{width:12px;height:12px;border-radius:99px;background:var(--color-himalaya)}</style>
-<div style="display:flex;flex-direction:column;gap:14px;font-family:var(--font-mono);font-size:var(--text-3xs);color:var(--text-secondary)">
-<div style="display:flex;align-items:center;gap:14px"><span style="width:150px">--duration-fast 160ms</span><span class="dot" style="animation:drift 1.6s var(--ease-standard) infinite"></span></div>
-<div style="display:flex;align-items:center;gap:14px"><span style="width:150px">--duration-base 240ms</span><span class="dot" style="animation:drift 2.4s var(--ease-out) infinite"></span></div>
-<div style="display:flex;align-items:center;gap:14px"><span style="width:150px">--duration-slow 420ms</span><span class="dot" style="animation:drift 4.2s var(--ease-out) infinite"></span></div>
-<div style="display:flex;align-items:center;gap:14px"><span style="width:150px">--duration-ambient 1200ms</span><span style="display:flex;gap:6px"><span class="dot" style="animation:breathe 1.2s var(--ease-breath) infinite"></span><span class="dot" style="animation:breathe 1.2s var(--ease-breath) .18s infinite"></span><span class="dot" style="animation:breathe 1.2s var(--ease-breath) .36s infinite"></span></span></div>
-<div>No bounce, no overshoot. Press = scale(0.98), never a colour flash.</div>
-</div></body></html>
+<!-- @dsCard group="Spacing" viewport="960x920" name="Motion" subtitle="Restrained: 160 / 240 / 420ms, one ambient 1200ms loop" -->
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../styles.css"><style>
+body{margin:0;padding:20px;background:var(--surface-page);font-family:var(--font-body);color:var(--text-primary)}
+@keyframes drift{0%,100%{transform:translateX(0)}50%{transform:translateX(120px)}}
+@keyframes breathe{0%,100%{transform:scale(.82);opacity:.45}50%{transform:scale(1);opacity:1}}
+.dot{width:12px;height:12px;border-radius:99px;background:var(--color-himalaya);flex:0 0 auto}
+.row{display:flex;align-items:center;gap:14px}
+label.mono, .mono{font-family:var(--font-mono);font-size:var(--text-3xs);color:var(--text-secondary)}
+table{width:100%;border-collapse:collapse;font-size:var(--text-2xs)}
+th{text-align:left;font-family:var(--font-mono);font-size:var(--text-3xs);letter-spacing:.06em;text-transform:uppercase;color:var(--text-muted);font-weight:400;padding:0 16px 8px 0}
+td{padding:7px 16px 7px 0;border-top:1px solid var(--border-subtle);vertical-align:top;color:var(--text-secondary)}
+td:first-child{color:var(--text-primary);white-space:nowrap}
+h3{margin:0 0 var(--space-4);font:var(--type-h4);font-size:var(--text-base)}
+.note{margin:0;font-size:var(--text-2xs);line-height:1.5;color:var(--text-muted);max-width:72ch}
+</style></head><body>
+<div style="display:flex;flex-direction:column;gap:var(--space-8)">
+
+<div style="display:flex;flex-direction:column;gap:14px" class="mono">
+<div class="row"><span style="width:170px">--duration-fast 160ms</span><span class="dot" style="animation:drift 1.6s var(--ease-standard) infinite"></span><span>controls · hover, press, tooltip</span></div>
+<div class="row"><span style="width:170px">--duration-base 240ms</span><span class="dot" style="animation:drift 2.4s var(--ease-out) infinite"></span><span>surfaces · lift, switch, tab rule, accordion</span></div>
+<div class="row"><span style="width:170px">--duration-slow 420ms</span><span class="dot" style="animation:drift 4.2s var(--ease-out) infinite"></span><span>entrances · dialog, toast, drawer</span></div>
+<div class="row"><span style="width:170px">--duration-ambient 1200ms</span><span style="display:flex;gap:6px"><span class="dot" style="animation:breathe 1.2s var(--ease-breath) infinite"></span><span class="dot" style="animation:breathe 1.2s var(--ease-breath) .18s infinite"></span><span class="dot" style="animation:breathe 1.2s var(--ease-breath) .36s infinite"></span></span><span>Spinner only — never a second loop</span></div>
+</div>
+
+<div>
+<h3>The contract</h3>
+<p class="note" style="margin-bottom:var(--space-5)">No bounce, no overshoot, no spin, no <code>ease-in</code> on UI. Press is <code>scale(0.96)</code>. Hover is a one-step colour or a 4px lift, gated to fine pointers so it never sticks after a tap. Catalog tiles stagger on first paint. Website pages and app tab panels enter with <code>sh-enter-up</code>. Enter uses <code>--ease-out</code> (<code>cubic-bezier(0.23, 1, 0.32, 1)</code>) and never starts from <code>scale(0)</code>. <code>prefers-reduced-motion: reduce</code> keeps colour and opacity, drops movement, and freezes the Spinner.</p>
+<table>
+<thead><tr><th>Element</th><th>What moves</th><th>Token</th></tr></thead>
+<tbody>
+<tr><td>Button, IconButton</td><td>Fill / hairline colour on hover; press scale; focus ring</td><td>--duration-fast · --transition-control</td></tr>
+<tr><td>Tag</td><td>Fill on hover and selected; press scale; remove fades in</td><td>--duration-fast</td></tr>
+<tr><td>Card interactive</td><td>Lifts 4px into --shadow-lg; media does not zoom; card itself never scales</td><td>--duration-base · --lift-hover</td></tr>
+<tr><td>Badge</td><td>Tone changes only — not a control, no hover or press</td><td>--</td></tr>
+<tr><td>Input, Textarea, Select</td><td>Border to --border-strong on hover, Himalaya + soft halo on focus; error rises 8px</td><td>--duration-fast / --duration-base</td></tr>
+<tr><td>Checkbox, Radio</td><td>Tick / inner dot scale from 0.5 with opacity; box press; radio card fill</td><td>--duration-fast · --ease-out</td></tr>
+<tr><td>Switch</td><td>Knob travels 18px; track fills Himalaya; hover darkens the off track</td><td>--duration-base</td></tr>
+<tr><td>Tabs</td><td>Underline grows from the inline start; pill selected fill + --shadow-sm; press scale. Panel content enters with sh-enter-up</td><td>--duration-base / --duration-slow</td></tr>
+<tr><td>Accordion</td><td>Panel opens on grid 0fr→1fr; plus becomes minus</td><td>--duration-base</td></tr>
+<tr><td>Breadcrumbs</td><td>Ancestor links colour + underline on hover</td><td>--duration-fast</td></tr>
+<tr><td>Dialog</td><td>Scrim fades; panel scales from 0.96 at centre; exit is faster than enter</td><td>--duration-base / --duration-slow</td></tr>
+<tr><td>Toast</td><td>Enters from its own height (<code>translateY(100%)</code>) with <code>ease</code>, same path out</td><td>--duration-slow</td></tr>
+<tr><td>Tooltip</td><td>Scales from 0.97 toward the control after a short delay; neighbours open instantly</td><td>125ms · --ease-out</td></tr>
+<tr><td>Spinner</td><td>Three dots breathe. The only looping motion in the system</td><td>--duration-ambient · --ease-breath</td></tr>
+<tr><td>Drawer / sheet</td><td>Rises from <code>translateY(100%)</code> on --ease-drawer</td><td>--duration-slow · --ease-drawer</td></tr>
+<tr><td>Logo, Icon, Divider, PatternPanel</td><td>Still. The mark and the rosette do not animate</td><td>—</td></tr>
+</tbody>
+</table>
+</div>
+
+<p class="note">Never add a second ambient loop, a bounce easing, a colour flash on press, a rotating spinner, or motion on a keyboard shortcut. Catalog search, tab switches in the app bar, and daily list browsing stay still. If the styling disappeared, the motion should still feel like a breath — not a notification.</p>
+</div>
+</body></html>

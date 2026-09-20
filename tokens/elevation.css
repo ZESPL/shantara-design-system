@@ -11,7 +11,7 @@
 --ring-focus-inverse:0 0 0 2px var(--color-pine-tree), 0 0 0 4px var(--color-gold-crayola);
 
 /* Protection gradients — for type over photography */
---scrim-bottom:linear-gradient(to top, color-mix(in srgb, var(--color-pine-tree) 78%, transparent) 0%, transparent 62%);
+--scrim-bottom:linear-gradient(to top, color-mix(in srgb, var(--color-pine-tree) 82%, transparent) 0%, color-mix(in srgb, var(--color-pine-tree) 48%, transparent) 28%, transparent 52%);
 --scrim-top:linear-gradient(to bottom, color-mix(in srgb, var(--color-pine-tree) 55%, transparent) 0%, transparent 55%);
 --scrim-full:color-mix(in srgb, var(--color-pine-tree) 40%, transparent); /* @kind color */
 --blur-glass:saturate(1.1) blur(16px); /* @kind other */

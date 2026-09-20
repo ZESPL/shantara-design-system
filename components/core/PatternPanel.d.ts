@@ -11,7 +11,7 @@ export interface PatternPanelProps extends React.HTMLAttributes<HTMLDivElement> 
   /** Ground under the band. `none` = transparent, for a band laid over photography. */
   tone?: "merino" | "pearl" | "sand" | "olive" | "pine" | "gold" | "none";
   /** Which edge the band bleeds off. */
-  edge?: "right" | "left" | "top" | "bottom";
+  edge?: "right" | "left" | "top" | "bottom" | "start" | "end";
   /** Band footprint: width for left/right, height for top/bottom. Defaults to
    *  `--pattern-band-md` (30%) vertically, `--pattern-strip` (14%) horizontally. */
   band?: string;

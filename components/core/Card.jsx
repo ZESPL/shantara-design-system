@@ -12,11 +12,13 @@ const CSS = `
 .sh-card[data-pad="lg"] .sh-card-body{padding:var(--space-9)}
 .sh-card[data-pad="none"] .sh-card-body{padding:0}
 .sh-card-body{display:flex;flex-direction:column;gap:var(--space-3)}
-.sh-card-media{display:block;width:100%;object-fit:cover;background:var(--surface-sunken)}
+.sh-card-media{display:block;width:100%;height:auto;aspect-ratio:var(--card-media-ratio);object-fit:cover;background:var(--surface-sunken)}
 .sh-card[data-interactive="true"]{cursor:pointer}
-.sh-card[data-interactive="true"]:hover{box-shadow:var(--shadow-lg);transform:translateY(-2px)}
 .sh-card[data-interactive="true"]:active{transform:translateY(0)}
 .sh-card[data-interactive="true"]:focus-visible{outline:none;box-shadow:var(--ring-focus)}
+@media (hover: hover) and (pointer: fine){
+  .sh-card[data-interactive="true"]:hover{box-shadow:var(--shadow-lg);transform:translateY(var(--lift-hover))}
+}
 `;
 
 function ensure() {
@@ -30,7 +32,7 @@ function ensure() {
 /* An interactive Card is operable by keyboard as well as pointer (2.1.1): it takes a
    button role, enters the tab order, and responds to Enter and Space. Pass `mediaAlt`
    whenever the image carries meaning; it stays alt="" when purely decorative. */
-export function Card({ tone = "default", padding = "md", media, mediaAlt = "", mediaHeight = 180, interactive = false, footer, children, onClick, onKeyDown, ...rest }) {
+export function Card({ tone = "default", padding = "md", media, mediaAlt = "", mediaHeight, interactive = false, footer, children, onClick, onKeyDown, ...rest }) {
   ensure();
   const activate = interactive && onClick
     ? (e) => {
@@ -39,6 +41,9 @@ export function Card({ tone = "default", padding = "md", media, mediaAlt = "", m
         if (e.key === "Enter" || e.key === " " || e.key === "Spacebar") { e.preventDefault(); onClick(e); }
       }
     : onKeyDown;
+  const mediaStyle = mediaHeight != null
+    ? { height: typeof mediaHeight === "number" ? mediaHeight + "px" : mediaHeight, aspectRatio: "auto" }
+    : undefined;
   return (
     <div
       className="sh-card"
@@ -51,7 +56,7 @@ export function Card({ tone = "default", padding = "md", media, mediaAlt = "", m
       tabIndex={interactive && onClick ? 0 : undefined}
       {...rest}
     >
-      {media ? <img className="sh-card-media" src={media} alt={mediaAlt} style={{ height: typeof mediaHeight === "number" ? mediaHeight + "px" : mediaHeight }} /> : null}
+      {media ? <img className="sh-card-media" src={media} alt={mediaAlt} style={mediaStyle} /> : null}
       <div className="sh-card-body">{children}</div>
       {footer}
     </div>

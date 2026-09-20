@@ -7,6 +7,7 @@ const CSS = `
 .sh-spinner-row{display:inline-flex;align-items:center;gap:0.4em}
 .sh-spinner-row span:nth-child(2){animation-delay:180ms}
 .sh-spinner-row span:nth-child(3){animation-delay:360ms}
+@media (prefers-reduced-motion: reduce){.sh-spinner span{animation:none;opacity:.7;transform:none}}
 `;
 
 function ensure() {

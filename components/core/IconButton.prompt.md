@@ -5,3 +5,7 @@ Icon-only circular button for toolbars, cards and media overlays.
 ```
 
 `glass` is for controls over photography (Merino at 72% + 16px blur). `inverse` for Pine Tree surfaces. Always pass `label` — the component has no visible text.
+
+**Motion.** Same contract as `Button`: 160ms colour shift on fine pointers, press `scale(0.97)`, Himalaya focus ring. `glass` does not change its blur on hover.
+
+**RTL.** The control is symmetric. A directional child (`chevron-left` for back) flips under `dir="rtl"` — keep the same slug.

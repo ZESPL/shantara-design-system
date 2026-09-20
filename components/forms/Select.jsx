@@ -3,13 +3,16 @@ import React from "react";
 const CSS = `
 .sh-sel-wrap{display:flex;flex-direction:column;gap:var(--space-3);font-family:var(--font-body)}
 .sh-sel-box{position:relative;display:flex;align-items:center}
-.sh-sel{appearance:none;width:100%;height:var(--control-md);padding:0 var(--space-9) 0 var(--space-5);background:var(--surface-card);border:var(--border-width) solid var(--border-control);border-radius:var(--radius-input);color:var(--text-primary);font-family:var(--font-body);font-size:var(--text-sm);outline:none;cursor:pointer;transition:var(--transition-control)}
-.sh-sel:hover{border-color:var(--border-strong)}
+.sh-sel{appearance:none;width:100%;height:var(--control-md);padding-block:0;padding-inline:var(--space-5) var(--space-9);background:var(--surface-card);border:var(--border-width) solid var(--border-control);border-radius:var(--radius-input);color:var(--text-primary);font-family:var(--font-body);font-size:var(--text-sm);outline:none;cursor:pointer;transition:var(--transition-control)}
 .sh-sel:focus{border-color:var(--border-focus);box-shadow:0 0 0 3px var(--surface-brand-soft)}
+@media (hover: hover) and (pointer: fine){
+  .sh-sel:hover{border-color:var(--border-strong)}
+}
 .sh-sel[data-size="lg"]{height:var(--control-lg)}
 .sh-sel[data-size="sm"]{height:var(--control-sm)}
 .sh-sel:disabled{background:var(--surface-raised);opacity:.6;cursor:not-allowed}
-.sh-sel-caret{position:absolute;right:var(--space-5);width:8px;height:8px;border-right:1.5px solid var(--text-secondary);border-bottom:1.5px solid var(--text-secondary);transform:translateY(-2px) rotate(45deg);pointer-events:none}
+.sh-sel-caret{position:absolute;inset-inline-end:var(--space-5);width:8px;height:8px;border-inline-end:1.5px solid var(--text-secondary);border-bottom:1.5px solid var(--text-secondary);transform:translateY(-2px) rotate(45deg);pointer-events:none;transition:border-color var(--duration-fast) var(--ease-standard),transform var(--duration-fast) var(--ease-out)}
+.sh-sel-box:focus-within .sh-sel-caret{border-color:var(--text-brand);transform:translateY(1px) rotate(45deg)}
 `;
 
 function ensure() {

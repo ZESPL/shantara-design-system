@@ -43,7 +43,7 @@
     "Reports from the last 12 months, if you have them": "تقارير الاثني عشر شهراً الماضية، إن وُجدت",
     "All therapies acknowledged": "اطّلعت على جميع العلاجات",
     "7 nights": "7 ليالٍ",
-    "the clinical minimum": "الحد السريري الأدنى",
+    "a shorter stay": "إقامة أقصر",
     "14 nights": "14 ليلة",
     "recommended for detox": "مُوصى به لإزالة السموم",
     "21 nights": "21 ليلة",
@@ -80,11 +80,7 @@
     Country: "البلد",
     "Anything you'd like us to know?": "أي شيء تود أن نعلمه؟",
     "Optional — program, condition, or timing if you already know it.": "اختياري — البرنامج أو الحالة أو التوقيت إن كنت تعرفه.",
-    "What happens next": "ما الذي يحدث بعد ذلك",
     "A short sequence": "تسلسل قصير",
-    "We receive this request and the page you came from.": "نستلم هذا الطلب والصفحة التي جئت منها.",
-    "A team member contacts you to understand what you need.": "يتصل بك أحد الفريق لفهم ما تحتاجه.",
-    "A doctor reviews whether a stay is appropriate.": "يراجع طبيب ما إذا كانت الإقامة مناسبة.",
     "Send this consultation request?": "نرسل طلب الاستشارة هذا؟",
     "We will use these details only to contact you. This is not yet a booking.": "نستخدم هذه البيانات فقط للاتصال بك. هذا ليس حجزاً بعد.",
     "Yes, send": "نعم، أرسل",
@@ -111,10 +107,8 @@
     Journal: "المدونة",
     All: "الكل",
     Diet: "النظام الغذائي",
-    "Why is the minimum stay seven nights?": "لماذا الحد الأدنى للإقامة سبع ليالٍ؟",
-    "Naturopathy protocols need this duration to take effect.": "تحتاج بروتوكولات العلاج الطبيعي هذه المدة حتى تؤتي أثرها.",
-    "Naturopathy protocols need this duration to take effect. It is a clinical requirement.": "تحتاج بروتوكولات العلاج الطبيعي هذه المدة حتى تؤتي أثرها. هذا متطلّب سريري.",
-    "Naturopathy protocols need this minimum duration to take effect. It is a clinical requirement rather than a booking policy — shorter stays cannot deliver a measurable result.": "تحتاج بروتوكولات العلاج الطبيعي هذا الحد الأدنى حتى تؤتي أثرها. هذا متطلّب سريري لا سياسة حجز — والإقامة الأقصر لا تعطي نتيجة يمكن قياسها.",
+    "How long should I stay?": "كم ينبغي أن أقيم؟",
+    "Duration depends on the programme and your assessment. Your doctor advises a typical duration after consultation.": "تعتمد المدة على البرنامج وتقييمك. ينصح طبيبك بمدة معتادة بعد الاستشارة.",
     "How do meals work?": "كيف تعمل الوجبات؟",
     "Meals are part of the treatment, personalised to your condition — not a menu.": "الوجبات جزء من العلاج، مخصّصة لحالتك — وليست قائمة طعام.",
     "Meals are part of the treatment rather than a restaurant menu. Diet therapy is personalised to your condition and goals, so there is no à la carte ordering and no outside food.": "الوجبات جزء من العلاج لا قائمة مطعم. العلاج بالحمية مخصّص لحالتك وأهدافك، فلا طلب من قائمة ولا طعام من الخارج.",
@@ -129,9 +123,7 @@
     "Quiet hours: 9pm–7am": "ساعات الهدوء: 9 مساءً–7 صباحاً",
     Close: "إغلاق",
     Info: "معلومات",
-    "Enquire about a stay": "استفسر عن إقامة",
     "View programmes": "عرض البرامج",
-    "Request a consultation": "اطلب استشارة",
     "Speak to our team": "تحدّث إلى فريقنا",
     "Submit for review": "أرسل للمراجعة",
     Continue: "متابعة",
@@ -160,11 +152,11 @@
     "Our approach": "منهجنا",
     "How our doctors plan your programme": "كيف يضع أطباؤنا برنامجك",
     "Naturopathy treats the causes of a condition through diet, activity, therapies and rest rather than through medication.": "يعالج الطب الطبيعي أسباب الحالة عبر الحمية والنشاط والعلاجات والراحة، لا عبر الدواء.",
-    "Your stay begins with a consultation. Our doctors review your medical history, current medications, daily habits and goals, then write a programme of therapies, meals, activity and rest. It is reviewed every morning and adjusted as your stay progresses. Protocols need time to take effect, which is why the minimum stay is seven nights.": "تبدأ إقامتك باستشارة. يراجع أطباؤنا تاريخك الطبي وأدويتك الحالية وعاداتك اليومية وأهدافك، ثم يكتبون برنامجاً من العلاجات والوجبات والنشاط والراحة. يُراجع كل صباح ويُعدَّل مع تقدّم الإقامة. تحتاج البروتوكولات وقتاً حتى تؤتي أثرها، ولهذا الحد الأدنى سبع ليالٍ.",
+    "Your stay begins with a consultation. Our doctors review your medical history, current medications, daily habits and goals, then write a programme of therapies, meals, activity and rest. It is reviewed every morning and adjusted as your stay progresses. Protocols need time to take effect, so duration is advised following consultation.": "تبدأ إقامتك باستشارة. يراجع أطباؤنا تاريخك الطبي وأدويتك الحالية وعاداتك اليومية وأهدافك، ثم يكتبون برنامجاً من العلاجات والوجبات والنشاط والراحة. يُراجع كل صباح ويُعدَّل مع تقدّم الإقامة. تحتاج البروتوكولات وقتاً حتى تؤتي أثرها، لذلك تُنصح المدة بعد الاستشارة.",
     "hilltop acres": "أفدنة على التلة",
     "rooms, 5 categories": "غرفة، 5 فئات",
     "patients since 2000": "مريضاً منذ 2000",
-    "night minimum stay": "ليالٍ حداً أدنى",
+    "typical stay length": "مدة إقامة معتادة",
     "Naturopathy programmes": "برامج العلاج الطبيعي",
     "Eight programmes to choose from": "ثمانية برامج للاختيار منها",
     Mind: "الذهن",
@@ -254,7 +246,7 @@
     Therapy: "جلسة علاجية",
     Kitchen: "المطبخ",
     "5 min read": "5 دقائق قراءة",
-    "Why seven nights is a clinical number, not a sales one": "لماذا سبع ليالٍ رقم سريري لا رقم بيع",
+    "How programme duration is decided": "كيف تُقرَّر مدة البرنامج",
     "What a supervised fast actually feels like": "كيف يكون الصيام تحت الإشراف فعلاً",
     "Reading the valley: a week of monsoon light": "قراءة الوادي: أسبوع من ضوء الموسم",
     "Before you arrive": "قبل وصولك",
@@ -269,7 +261,7 @@
     "Doctor-guided": "بإشراف طبي",
     "Drug-free": "بلا أدوية",
     "Supervised fasting": "صيام بإشراف",
-    "7-night minimum": "سبع ليالٍ حداً أدنى",
+    "Typical duration": "مدة معتادة",
     "Who it suits": "لمن يناسب",
     "What a day includes": "ما يتضمنه اليوم",
     "Consultation required": "الاستشارة مطلوبة",
@@ -480,7 +472,7 @@
     "Therapies for the body": "علاجات للجسد",
     "What to expect": "ما تتوقعه",
     "Your programme is planned by our doctors after a consultation on your health, medical history and goals.": "يضع أطباؤنا برنامجك بعد استشارة عن صحتك وتاريخك الطبي وأهدافك.",
-    "Each guest is treated as a whole, with physical health, mental well-being and daily habits read together. Treatment is unhurried and personalised, and it addresses the root cause rather than the symptom — which is why the minimum stay is seven nights. A doctor writes the programme after the preliminary consultation and reviews it every morning.": "يُعامل كل ضيف ككل، فتُقرأ الصحة الجسدية والعافية النفسية والعادات اليومية معاً. العلاج غير متعجّل ومخصّص، ويعالج السبب لا العرض — ولهذا الحد الأدنى سبع ليالٍ. يكتب طبيب البرنامج بعد الاستشارة الأوّلية ويراجعه كل صباح.",
+    "Each guest is treated as a whole, with physical health, mental well-being and daily habits read together. Treatment is unhurried and personalised, and it addresses the root cause rather than the symptom — which is why duration is advised following consultation. A doctor writes the programme after the preliminary consultation and reviews it every morning.": "يُعامل كل ضيف ككل، فتُقرأ الصحة الجسدية والعافية النفسية والعادات اليومية معاً. العلاج غير متعجّل ومخصّص، ويعالج السبب لا العرض — ولذلك تُنصح المدة بعد الاستشارة. يكتب طبيب البرنامج بعد الاستشارة الأوّلية ويراجعه كل صباح.",
     "Meals are prescribed as part of your programme, not chosen from a menu. Diet therapy is personalised to your condition and reviewed as your stay progresses.": "تُوصف الوجبات كجزء من برنامجك، ولا تُختار من قائمة. العلاج بالحمية مخصّص لحالتك ويُراجع مع تقدّم إقامتك.",
     "Meals are prescribed as part of your programme, not chosen from a menu.": "تُوصف الوجبات كجزء من برنامجك، ولا تُختار من قائمة.",
     Category: "الفئة",
@@ -492,7 +484,7 @@
     "Water at controlled temperatures": "ماء بدرجات حرارة مضبوطة",
     "Four acres, walked slowly": "أربعة أفدنة، تُمشى على مهل",
     "A day in the programme": "يوم في البرنامج",
-    "Four movements, seven nights minimum": "أربع حركات، سبع ليالٍ حداً أدنى",
+    "Four movements, a typical day": "أربع حركات، يوم معتاد",
     "Every day is written by a doctor and reviewed each morning. The protocol does the deciding; the guest only has to arrive.": "كل يوم يكتبه طبيب ويُراجع كل صباح. البروتوكول يقرّر؛ على الضيف أن يصل فقط.",
     Consultation: "استشارة",
     "Prescribed therapies": "علاجات موصوفة",
@@ -507,7 +499,7 @@
     "The lounge": "الصالة",
     "Shantara in numbers": "شانتارا بالأرقام",
     therapies: "علاجات",
-    "No drugs, no injections, no shortcuts to seven nights": "لا أدوية، لا حقن، ولا اختصار لسبع ليالٍ",
+    "No drugs, no injections, no shortcuts": "لا أدوية، لا حقن، ولا اختصارات",
     "What we do not do": "ما لا نفعله",
     "Two routes through the same retreat": "مساران في المنتجع نفسه",
     "Naturopathy programme": "برنامج العلاج الطبيعي",
@@ -528,17 +520,149 @@
     "Transfer included with a confirmed stay": "النقل مشمول مع إقامة مؤكّدة",
     "Restraint, not excess": "انضباط، لا إفراط",
     "Fifty-two rooms across five categories, six floors, and mountain views from some rooms in every one of them.": "اثنتان وخمسون غرفة في خمس فئات، ستة طوابق، وإطلالة جبلية من بعض الغرف في كل فئة.",
+    "Your programme begins with a consultation and assessment. Our doctors consider your medical history, current health, lifestyle and goals. They then plan your treatments, meals, activity and rest. The plan is reviewed during your stay and adjusted where necessary.": "يبدأ برنامجك باستشارة وتقييم. ينظر أطباؤنا في تاريخك الطبي وصحتك الحالية ونمط حياتك وأهدافك. ثم يخططون علاجاتك ووجباتك ونشاطك وراحتك. يُراجع الخطة خلال إقامتك وتُعدَّل عند الحاجة.",
+    "guests since 2000": "ضيفاً منذ 2000",
+    "Your programme is planned after consultation and assessment.": "يُخطَّط برنامجك بعد الاستشارة والتقييم.",
+    "Your doctor may recommend a meal plan or supervised fasting based on your assessment. Therapies may also form part of your programme.": "قد يوصي طبيبك بخطة وجبات أو صيام بإشراف بناءً على تقييمك. وقد تدخل العلاجات أيضاً في برنامجك.",
+    "Meals, daily activity and therapies, with weight and vitals reviewed by a doctor each morning.": "وجبات ونشاط يومي وعلاجات، مع مراجعة الوزن والعلامات الحيوية كل صباح.",
+    "Diet, activity and therapies planned around blood-sugar control, with medication reviewed by a doctor. Recommendations depend on your assessment.": "حمية ونشاط وعلاجات حول ضبط سكر الدم، مع مراجعة الدواء من طبيب. التوصيات تعتمد على تقييمك.",
+    "A shorter stay for guests with limited time: rest, gentle therapies and meals planned for the programme.": "إقامة أقصر لمن وقتهم محدود: راحة وعلاجات لطيفة ووجبات مخططة للبرنامج.",
+    "A compact daily plan for guests who need to stay partly available for work.": "خطة يومية موجزة للضيوف الذين يحتاجون البقاء متاحين للعمل جزئياً.",
+    "Fine needles used to ease pain, when recommended by your doctor.": "إبر دقيقة لتخفيف الألم، حين يوصي بها طبيبك.",
+    "Meals planned for your programme and reviewed as your stay progresses.": "وجبات مخططة لبرنامجك وتُراجع مع تقدّم إقامتك.",
+    "Water at controlled temperatures to support circulation.": "ماء بدرجات حرارة مضبوطة لدعم الدورة الدموية.",
+    "Naturopathy treatments and therapies": "علاجات الطب الطبيعي",
+    "Your doctor may recommend specific therapies based on your assessment and programme.": "قد يوصي طبيبك بعلاجات معيّنة بناءً على تقييمك وبرنامجك.",
+    "View tariffs": "عرض التعرفة",
+    "Shantara has 52 rooms across five accommodation categories, designed for comfortable residential stays.": "لدى شانتارا 52 غرفة عبر خمس فئات إقامة، مصممة لإقامات سكنية مريحة.",
+    "How programme duration is decided": "كيف تُحدَّد مدة البرنامج",
+    "A week of monsoon light": "أسبوع من ضوء الموسم",
+    "Preparing for your stay": "التحضير لإقامتك",
+    "How long should I stay?": "كم ينبغي أن أقيم؟",
+    "Duration depends on the programme and your assessment. Your doctor advises a typical duration after consultation.": "تعتمد المدة على البرنامج وتقييمك. ينصح طبيبك بمدة معتادة بعد الاستشارة.",
+    "Guests usually remain at the retreat during the programme so meals, therapies and reviews can follow the plan. Leaving for a medical emergency is arranged with the team.": "يبقى الضيوف عادة في المنتجع خلال البرنامج حتى تسير الوجبات والعلاجات والمراجعات وفق الخطة. يُرتَّب المغادرة لطوارئ طبية مع الفريق.",
+    "Meals are planned as part of your programme, taking into account your doctor's recommendations and dietary requirements.": "تُخطَّط الوجبات كجزء من برنامجك، مع مراعاة توصيات طبيبك ومتطلباتك الغذائية.",
+    "A stay is confirmed after a preliminary consultation with our doctors. You will be asked to share a health assessment, relevant medical records and your current medication first.": "تُؤكَّد الإقامة بعد استشارة أوّلية مع أطبائنا. سيُطلب منك أولاً مشاركة تقييم صحي والسجلات الطبية ذات الصلة ودوائك الحالي.",
+    "Who can stay?": "من يمكنه الإقامة؟",
+    "Shantara accepts guests aged 18 to 80 with conditions that can be managed through residential naturopathy. Acute or emergency care is outside what we provide.": "تقبل شانتارا الضيوف بين 18 و80 عاماً ممن لديهم حالات يمكن إدارتها بالعلاج الطبيعي السكني. الرعاية الحادة أو الطارئة خارج ما نقدّمه.",
+    "Send your details": "أرسل بياناتك",
+    "Share your name and a number we can reach. Our team will contact you to arrange a consultation.": "شارك اسمك ورقماً يمكننا الوصول إليه. سيتصل بك فريقنا لترتيب استشارة.",
+    "Our doctors see guests with a range of long-standing conditions. Programmes are planned after consultation and assessment.": "يرى أطباؤنا ضيوفاً لديهم مجموعة من الحالات المزمنة. تُخطَّط البرامج بعد الاستشارة والتقييم.",
+    "Residential programmes planned around blood-sugar control, meals and daily doctor review.": "برامج سكنية حول ضبط سكر الدم والوجبات ومراجعة الطبيب اليومية.",
+    "Meals, activity and therapies, with weight and vitals reviewed each morning.": "وجبات ونشاط وعلاجات، مع مراجعة الوزن والعلامات الحيوية كل صباح.",
+    "A programme may be planned around hormonal health, meals, activity and rest, following assessment.": "قد يُخطَّط برنامج حول الصحة الهرمونية والوجبات والنشاط والراحة، بعد التقييم.",
+    "Therapies, movement and rest may be recommended to support joint comfort, following assessment.": "قد تُوصى علاجات وحركة وراحة لدعم راحة المفاصل، بعد التقييم.",
+    "Your doctor may recommend a specific meal plan or supervised fasting based on your assessment. Therapies may also be included as part of your programme.": "قد يوصي طبيبك بخطة وجبات معيّنة أو صيام بإشراف بناءً على تقييمك. وقد تدخل العلاجات أيضاً في برنامجك.",
+    "Your programme is planned after consultation and assessment. A doctor reviews it each morning and adjusts it where needed. If fasting is included, it is introduced gradually and supervised throughout. Meals are planned according to your programme and dietary requirements.": "يُخطَّط برنامجك بعد الاستشارة والتقييم. يراجعه طبيب كل صباح ويعدّله عند الحاجة. إن شمل الصيام، يُبدأ تدريجياً ويُشرف عليه طوال المدة. تُخطَّط الوجبات وفق برنامجك ومتطلباتك الغذائية.",
+    "Who this programme is for": "لمن يناسب هذا البرنامج",
+    "Wanting a supervised stay after a long period of irregular eating, travel or sleep": "الرغبة في إقامة بإشراف بعد فترة طويلة من الأكل أو السفر أو النوم غير المنتظم",
+    "How programmes are planned": "كيف تُخطَّط البرامج",
+    "Typical duration varies by programme": "المدة المعتادة تختلف حسب البرنامج",
+    "Often a longer residential stay": "غالباً إقامة سكنية أطول",
+    "Planned with you after consultation": "يُخطَّط معك بعد الاستشارة",
+    "Two therapy sessions a day, reviewed each morning": "جلستا علاج في اليوم، تُراجعان كل صباح",
+    "Meals planned as part of the programme": "وجبات مخططة كجزء من البرنامج",
+    "Planned by a doctor after reviewing your assessment": "يخطّطه طبيب بعد مراجعة تقييمك",
+    "A fuller daily plan of treatments and review": "خطة يومية أوفى من العلاجات والمراجعة",
+    "Meals planned as a central part of the programme": "وجبات مخططة كجزء أساسي من البرنامج",
+    Morning: "صباحاً",
+    Midday: "منتصف النهار",
+    Afternoon: "بعد الظهر",
+    Evening: "مساءً",
+    "Vitals and a short doctor review, then yoga therapy in the hall. Movement and breathwork are adapted to what you can manage that day.": "علامات حيوية ومراجعة قصيرة من الطبيب، ثم علاج يوغا في القاعة. تُكيَّف الحركة وتمارين التنفس لما تستطيعه في ذلك اليوم.",
+    "Therapy sessions may include mud therapy, hydrotherapy, massage or acupuncture, sequenced by the clinical team.": "قد تشمل جلسات العلاج العلاج بالطين أو الماء أو التدليك أو الوخز، يرتّبها الفريق السريري.",
+    "Depending on your programme, the afternoon may include controlled sunlight, walking on the grounds, or time in the library.": "حسب برنامجك، قد يشمل بعد الظهر ضوء شمس مضبوطاً أو مشياً في الأرض أو وقتاً في المكتبة.",
+    "A meal planned for your programme, a mind-body session and an early night.": "وجبة مخططة لبرنامجك، وجلسة ذهن وجسد، ونوم مبكر.",
+    "Consultation first": "الاستشارة أولاً",
+    "Typical duration": "المدة المعتادة",
+    "a shorter stay": "إقامة أقصر",
+    "often recommended for this programme": "يُوصى بها غالباً لهذا البرنامج",
+    "for a longer residential stay": "لإقامة سكنية أطول",
+    "Your stay is confirmed after a doctor reviews your details.": "تُؤكَّد إقامتك بعد أن يراجع طبيب بياناتك.",
+    "Treatments and therapies": "العلاجات",
+    "Your doctor may recommend therapies based on your assessment and programme.": "قد يوصي طبيبك بعلاجات بناءً على تقييمك وبرنامجك.",
+    "Learn about the programme": "تعرّف على البرنامج",
+    "Read what to expect": "اقرأ ما يمكن توقعه",
+    "A typical day may include consultations, therapies, meals, physical activity, rest and time for yourself.": "قد يشمل اليوم المعتاد استشارات وعلاجات ووجبات ونشاطاً بدنياً وراحة ووقتاً لنفسك.",
+    "A typical day": "يوم معتاد",
+    "What a day may include": "ما قد يتضمنه اليوم",
+    "A typical day is planned by your doctor and reviewed each morning. It may include a consultation, therapies, meals, movement, rest and personal time.": "يخطّط طبيبك اليوم المعتاد ويراجعه كل صباح. قد يشمل استشارة وعلاجات ووجبات وحركة وراحة ووقتاً شخصياً.",
+    Therapies: "العلاجات",
+    "Sessions recommended for your programme": "جلسات موصى بها لبرنامجك",
+    "Meals and rest": "وجبات وراحة",
+    "Meals planned for your programme, walking or quiet time, and an early night": "وجبات مخططة لبرنامجك، ومشي أو وقت هادئ، ونوم مبكر",
+    "A typical day may include a consultation, therapies, meals, physical activity, rest and personal time.": "قد يشمل اليوم المعتاد استشارة وعلاجات ووجبات ونشاطاً بدنياً وراحة ووقتاً شخصياً.",
+    "About Shantara": "عن شانتارا",
+    "Shantara is a doctor-led naturopathy retreat on four hilltop acres above the Chennamangallur valley. It is the evolution of Hygiene Nature Cure Hospital, which has cared for guests since 2000.": "شانتارا منتجع علاج طبيعي بإشراف الأطباء على أربعة أفدنة فوق وادي تشينامانغالور. وهو امتداد لمستشفى هايجين ناتشر كيور الذي يرعى الضيوف منذ 2000.",
+    "The clinical team plans your programme and adjusts it where necessary during your stay.": "يخطّط الفريق السريري برنامجك ويعدّله عند الحاجة خلال إقامتك.",
+    "Our story": "قصتنا",
+    "Shantara is the evolution of Hygiene Nature Cure Hospital, which has cared for more than 25,000 guests since 2000.": "شانتارا امتداد لمستشفى هايجين ناتشر كيور الذي رعى أكثر من 25,000 ضيف منذ 2000.",
+    "Treatment is drug-free and planned by our doctors after consultation and assessment. Plans are reviewed during the stay and adjusted where needed.": "العلاج بلا أدوية ويخطّطه أطباؤنا بعد الاستشارة والتقييم. تُراجع الخطط خلال الإقامة وتُعدَّل عند الحاجة.",
+    "Meet our doctors": "تعرّف على أطبائنا",
+    "A doctor plans your programme after consultation and reviews it during your stay. Profiles include qualifications so you can see who is responsible for clinical guidance.": "يخطّط طبيب برنامجك بعد الاستشارة ويراجعه خلال إقامتك. تتضمن الملفات المؤهلات حتى ترى من المسؤول عن التوجيه السريري.",
+    "Health pages name who writes, who reviews, which sources are used, and how often content is reviewed.": "تسمّي الصفحات الصحية من يكتب ومن يراجع وأي مصادر تُستخدم وكم مرة يُراجع المحتوى.",
+    "Doctor-led naturopathy, planned around your assessment.": "علاج طبيعي بإشراف الأطباء، يُخطَّط حول تقييمك.",
+    "How doctors advise the length of a stay after consultation and assessment.": "كيف ينصح الأطباء بطول الإقامة بعد الاستشارة والتقييم.",
+    "How meals are planned during a stay": "كيف تُخطَّط الوجبات خلال الإقامة",
+    "How meals are planned around your programme and dietary requirements.": "كيف تُخطَّط الوجبات حول برنامجك ومتطلباتك الغذائية.",
+    "How our rooms are designed": "كيف صُمِّمت غرفنا",
+    "Address, telephone, email and WhatsApp. To book a consultation, send your details and our team will be in touch.": "العنوان والهاتف والبريد وواتساب. لحجز استشارة، أرسل بياناتك وسيتواصل فريقنا.",
+    "Phones are left at the entrance to the court.": "تُترك الهواتف عند مدخل الفناء.",
+    "Four hilltop acres. Airport and railway transfers are included with a confirmed stay. Details follow after consultation.": "أربعة أفدنة على التلة. النقل من المطار والمحطة مشمول مع إقامة مؤكّدة. التفاصيل تأتي بعد الاستشارة.",
+    "You can also write, call or message us. To book a consultation, send your details and our team will be in touch.": "يمكنك أيضاً الكتابة أو الاتصال أو المراسلة. لحجز استشارة، أرسل بياناتك وسيتواصل فريقنا.",
+    "Optional. A programme, a condition, or when you hope to come, if you already know.": "اختياري. برنامج أو حالة أو موعد تودّ المجيء فيه، إن كنت تعرفه.",
+    "We'll be in touch": "سنتواصل معك",
+    "A member of the team will call you to understand what you need. A doctor then reviews whether a stay is the right next step.": "سيتصل بك أحد أعضاء الفريق لفهم ما تحتاجه. ثم يراجع طبيب ما إذا كانت الإقامة هي الخطوة التالية المناسبة.",
+    "A stay is confirmed after a doctor has spoken with you.": "تُؤكَّد الإقامة بعد أن يتحدث طبيب معك.",
+    "Doctor-guided and drug-free. Supervised fasting may be included when your doctor considers it appropriate.": "بإشراف طبي وبلا أدوية. قد يُدرج الصيام تحت الإشراف عندما يراه طبيبك مناسباً.",
+    "Text size": "حجم النص",
+    Default: "افتراضي",
+    Larger: "أكبر",
+    "Send your details?": "نرسل بياناتك؟",
+    "We will use these details only to contact you.": "نستخدم هذه البيانات فقط للاتصال بك.",
+    "Each nightly rate includes the stay items listed here.": "يشمل سعر كل ليلة بنود الإقامة المذكورة هنا.",
+    "Rates valid to 31 December 2026. Reservations are confirmed after a preliminary consultation.": "الأسعار سارية حتى 31 ديسمبر 2026. تُؤكَّد الحجوزات بعد استشارة أوّلية.",
+    "What the nightly rate includes": "ما يشمله سعر الليلة",
+    "Each guest is treated as a whole, with physical health, mental well-being and daily habits read together. Treatment is unhurried and personalised, and it addresses the root cause rather than the symptom. A doctor writes the programme after the preliminary consultation and reviews it every morning.": "يُعامل كل ضيف ككل، فتُقرأ الصحة الجسدية والعافية النفسية والعادات اليومية معاً. العلاج غير متعجّل ومخصّص، ويعالج السبب لا العرض. يكتب طبيب البرنامج بعد الاستشارة الأوّلية ويراجعه كل صباح.",
+    "Meals are planned as part of your programme based on your doctor's recommendations and dietary needs.": "تُخطَّط الوجبات كجزء من برنامجك بناءً على توصيات طبيبك واحتياجاتك الغذائية.",
+    Language: "اللغة",
+    "Choose language": "اختر اللغة",
+    "Current language": "اللغة الحالية",
+    India: "الهند",
+    "United Arab Emirates": "الإمارات العربية المتحدة",
+    "United Kingdom": "المملكة المتحدة",
+    Other: "أخرى",
   };
+
+  function localesApi() {
+    return (typeof window !== "undefined" && window.ShantaraLocales) || null;
+  }
 
   function isRtl(node) {
     const root = node || (typeof document !== "undefined" ? document.documentElement : null);
     return !!(root && (root.dir === "rtl" || (root.closest && root.closest("[dir='rtl']"))));
   }
 
+  function currentLocaleCode() {
+    const api = localesApi();
+    if (typeof document !== "undefined" && document.documentElement) {
+      const lang = document.documentElement.lang;
+      if (api && api.isSupported(lang)) return api.localeRecord(lang).code;
+      if (document.documentElement.dir === "rtl") return "ar";
+    }
+    return api ? api.DEFAULT_LOCALE : "en";
+  }
+
+  function shouldUseArabic(force) {
+    if (force === true) return true;
+    if (force === false) return false;
+    if (currentLocaleCode() === "ar") return true;
+    return typeof document !== "undefined" && document.documentElement.dir === "rtl";
+  }
+
   function t(en, force) {
     if (en == null || en === "") return en;
-    const rtl = force === true || (force !== false && typeof document !== "undefined" && document.documentElement.dir === "rtl");
-    if (!rtl) return en;
+    if (!shouldUseArabic(force)) return en;
     return Object.prototype.hasOwnProperty.call(AR, en) ? AR[en] : en;
   }
 
@@ -548,23 +672,35 @@
 
   function useLocale() {
     const React = window.React;
+    const api = localesApi();
     const [rtl, setRtl] = React.useState(() => document.documentElement.dir === "rtl");
+    const [lang, setLang] = React.useState(() => currentLocaleCode());
     React.useEffect(() => {
-      const sync = () => setRtl(document.documentElement.dir === "rtl");
+      const sync = () => {
+        setRtl(document.documentElement.dir === "rtl");
+        setLang(currentLocaleCode());
+      };
       sync();
       window.addEventListener("shantara:dir", sync);
+      window.addEventListener("shantara:locale", sync);
       const obs = new MutationObserver(sync);
-      obs.observe(document.documentElement, { attributes: true, attributeFilter: ["dir"] });
+      obs.observe(document.documentElement, { attributes: true, attributeFilter: ["dir", "lang"] });
       return () => {
         window.removeEventListener("shantara:dir", sync);
+        window.removeEventListener("shantara:locale", sync);
         obs.disconnect();
       };
     }, []);
     return {
       rtl,
-      lang: rtl ? "ar" : "en",
-      t: (en) => t(en, rtl),
+      lang,
+      locale: lang,
+      direction: rtl ? "rtl" : "ltr",
+      enabled: api ? api.enabledLocales() : [{ code: "en" }],
+      t: (en) => t(en, rtl || lang === "ar"),
       ar,
+      path: (rest) => (api ? api.localePath(lang, rest) : "/" + lang + "/" + String(rest || "").replace(/^\/+/, "")),
+      track: (name, props) => (api ? api.track(name, props, { locale: lang }) : { ok: false }),
     };
   }
 
@@ -580,5 +716,5 @@
     return apply;
   }
 
-  window.ShantaraI18n = { AR, t, ar, useLocale, isRtl, bind };
+  window.ShantaraI18n = { AR, t, ar, useLocale, isRtl, bind, currentLocaleCode };
 })();

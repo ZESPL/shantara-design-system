@@ -1,27 +1,64 @@
-<!-- @dsCard group="Components" viewport="700x300" name="Feedback" subtitle="Dialog, toast, tooltip, breathing spinner" -->
+<!-- @dsCard group="Components" viewport="700x820" name="Feedback" subtitle="Dialog, toast, tooltip, breathing spinner" -->
 <!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../styles.css">
 <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
 <script src="../../_ds_bundle.js"></script>
-<style>body{padding:20px;background:var(--surface-page)}.wrap{display:grid;grid-template-columns:1.15fr 1fr;gap:var(--space-7);align-items:start}.stack{display:flex;flex-direction:column;gap:var(--space-5);align-items:flex-start}.fake-dlg{background:var(--surface-card);border-radius:var(--radius-xl);box-shadow:var(--shadow-xl);padding:var(--space-7)}</style></head><body><div id="root"></div>
+<script src="../../i18n.js"></script>
+<style>body{padding:20px;background:var(--surface-page)}.wrap{display:grid;grid-template-columns:1.15fr 1fr;gap:var(--space-7);align-items:start}.stack{display:flex;flex-direction:column;gap:var(--space-5);align-items:flex-start}.pair{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-6);margin-top:var(--space-7)}.fake-dlg{background:var(--surface-card);border-radius:var(--radius-xl);box-shadow:var(--shadow-xl);padding:var(--space-7);position:relative;width:100%;box-sizing:border-box}</style></head><body><div id="root"></div>
 <script type="text/babel">
-const { Toast, Tooltip, Spinner, Button, IconButton, Icon } = window.ShantaraDesignSystem_45bbe4;
-function Demo(){return (<div className="wrap">
-<div className="fake-dlg">
-<h3 style={{font:'var(--type-h3)',fontSize:'var(--text-xl)',margin:'0 0 var(--space-3)'}}>Move your booking?</h3>
-<p style={{margin:0,color:'var(--text-secondary)',fontSize:'var(--text-sm)'}}>Your practitioner and room stay the same.</p>
-<div style={{display:'flex',gap:'var(--space-4)',justifyContent:'flex-end',marginTop:'var(--space-6)'}}><Button variant="secondary" size="sm">Keep it</Button><Button size="sm">Move booking</Button></div>
+const { Dialog, Toast, Tooltip, Spinner, Button, IconButton, Icon } = window.ShantaraDesignSystem_45bbe4;
+function Demo(){
+  const {t,ar}=window.ShantaraI18n.useLocale();
+  const [open,setOpen]=React.useState(false);
+  const [toasts,setToasts]=React.useState([{id:1,tone:"success",title:"Booking confirmed",message:"Thursday, 9:30am with Anya."},{id:2,title:"Saved to your journal"}]);
+  return (<div>
+<div className="wrap">
+<div className="stack">
+<Button size="sm" onClick={()=>setOpen(true)}>{t("Open a confirmation")}</Button>
+<Dialog open={open} onClose={()=>setOpen(false)} title={t("Move your booking?")} description={t("Your practitioner and room stay the same.")}
+  footer={<><Button variant="secondary" size="sm" onClick={()=>setOpen(false)}>{t("Keep it")}</Button><Button size="sm" onClick={()=>setOpen(false)}>{t("Move booking")}</Button></>} />
+<p className="shantara-note">Scrim fades 240ms; the panel scales from 0.96 at centre over 420ms. Escape, the scrim and the close control all dismiss it. Focus is taken on open and returned on close.</p>
 </div>
 <div className="stack">
-<Toast tone="success" title="Booking confirmed" message="Thursday, 9:30am with Anya." onClose={()=>{}}/>
-<Toast title="Saved to your journal"/>
+{toasts.map(item=><Toast key={item.id} tone={item.tone} title={t(item.title)} message={item.message?t(item.message):undefined} onClose={()=>setToasts(cur=>cur.filter(x=>x.id!==item.id))}/>)}
 <div style={{display:'flex',alignItems:'center',gap:'var(--space-6)'}}>
-<Tooltip label="Quiet hours: 9pm–7am" side="right"><IconButton variant="outline" label="Info"><Icon name="info" size={16}/></IconButton></Tooltip>
+<Tooltip label={t("Quiet hours: 9pm–7am")} side="end"><IconButton variant="outline" label={t("Info")}><Icon name="info" size={16}/></IconButton></Tooltip>
 <Spinner/>
 <Spinner size={6} color="var(--text-muted)"/>
 </div>
 </div>
+</div>
+<p className="shantara-note" style={{marginTop:"var(--space-6)"}}>Toasts enter from their own height over 420ms — dismiss the × to remove them. Tooltip scales from the trigger after a short delay; neighbours open instantly; Escape hides it. The Spinner is three dots on a 1200ms breath. Never a rotating ring.</p>
+<div className="pair">
+<div dir="ltr" lang="en">
+<p className="shantara-usage-label">LTR</p>
+<div className="fake-dlg">
+<button type="button" aria-label="Close" style={{position:"absolute",top:16,insetInlineEnd:16,border:0,background:"transparent",color:"var(--text-secondary)",fontSize:18,cursor:"pointer"}}>×</button>
+<h3 style={{font:'var(--type-h3)',fontSize:'var(--text-xl)',margin:'0 var(--space-8) var(--space-3) 0'}}>Move your booking?</h3>
+<p style={{margin:0,color:'var(--text-secondary)',fontSize:'var(--text-sm)'}}>Your practitioner and room stay the same.</p>
+<div style={{display:'flex',gap:'var(--space-4)',justifyContent:'flex-end',marginTop:'var(--space-6)'}}><Button variant="secondary" size="sm">Keep it</Button><Button size="sm">Move booking</Button></div>
+</div>
+<div style={{display:'flex',alignItems:'center',gap:'var(--space-4)',marginTop:'var(--space-5)'}}>
+<Toast title="Saved to your journal" onClose={()=>{}}/>
+<Tooltip label="Quiet hours: 9pm–7am" side="end"><IconButton variant="outline" label="Info"><Icon name="info" size={16}/></IconButton></Tooltip>
+</div>
+</div>
+<div className="shantara-rtl" dir="rtl" lang="ar">
+<p className="shantara-usage-label">RTL</p>
+<div className="fake-dlg">
+<button type="button" aria-label={ar("Close")} style={{position:"absolute",top:16,insetInlineEnd:16,border:0,background:"transparent",color:"var(--text-secondary)",fontSize:18,cursor:"pointer"}}>×</button>
+<h3 style={{font:'var(--type-h3)',fontSize:'var(--text-xl)',margin:'0',marginInlineEnd:'var(--space-8)',marginBlockEnd:'var(--space-3)'}}>{ar("Move your booking?")}</h3>
+<p style={{margin:0,color:'var(--text-secondary)',fontSize:'var(--text-sm)'}}>{ar("Your practitioner and room stay the same.")}</p>
+<div style={{display:'flex',gap:'var(--space-4)',justifyContent:'flex-end',marginTop:'var(--space-6)'}}><Button variant="secondary" size="sm">{ar("Keep it")}</Button><Button size="sm">{ar("Move booking")}</Button></div>
+</div>
+<div style={{display:'flex',alignItems:'center',gap:'var(--space-4)',marginTop:'var(--space-5)'}}>
+<Toast title={ar("Saved to your journal")} onClose={()=>{}}/>
+<Tooltip label={ar("Quiet hours: 9pm–7am")} side="end"><IconButton variant="outline" label={ar("Info")}><Icon name="info" size={16}/></IconButton></Tooltip>
+</div>
+</div>
+</div>
+<p className="shantara-note" style={{marginTop:"var(--space-4)"}}>Close and dismiss sit at the inline end. Footer actions stay at the end of the reading order. <code>side="end"</code> on Tooltip follows direction; <code>left</code> / <code>right</code> stay physical. The Spinner does not flip.</p>
 </div>);}
 ReactDOM.createRoot(document.getElementById('root')).render(<Demo/>);
 </script></body></html>

@@ -1,40 +1,71 @@
-<!-- @dsCard group="Components" viewport="700x560" name="Core" subtitle="Buttons, icon buttons, cards, badges, tags, logo, pattern panel" -->
+<!-- @dsCard group="Components" viewport="700x1120" name="Core" subtitle="Buttons, icon buttons, cards, badges, tags, logo, pattern panel" -->
 <!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../styles.css">
 <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
 <script src="../../_ds_bundle.js"></script>
-<style>body{padding:20px;background:var(--surface-page)}.row{display:flex;align-items:center;gap:var(--space-4);flex-wrap:wrap;margin-bottom:var(--space-5)}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-5)}</style></head><body><div id="root"></div>
+<script src="../../i18n.js"></script>
+<style>body{padding:20px;background:var(--surface-page)}.row{display:flex;align-items:center;gap:var(--space-4);flex-wrap:wrap;margin-bottom:var(--space-3)}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-5)}.pair{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-6);margin-top:var(--space-7)}</style></head><body><div id="root"></div>
 <script type="text/babel">
 const { Button, IconButton, Icon, Card, Badge, Tag, Logo, PatternPanel, Divider } = window.ShantaraDesignSystem_45bbe4;
-function Demo(){return (<div>
+function Demo(){
+  const {t,ar}=window.ShantaraI18n.useLocale();
+  const [picked,setPicked]=React.useState(["Ayurveda"]);
+  const toggle=v=>setPicked(cur=>cur.includes(v)?cur.filter(x=>x!==v):[...cur,v]);
+  const [diet,setDiet]=React.useState(["Vegan"]);
+  return (<div>
 <div className="row">
-<Button>Begin an enquiry</Button>
-<Button variant="accent">My protocol</Button>
-<Button variant="secondary">View therapies</Button>
-<Button variant="ghost" endIcon={<Icon name="arrow-right" size={16}/>}>Read journal</Button>
-<Button size="sm">Small</Button>
-<Button size="lg">Large</Button>
-<Button disabled>Disabled</Button>
+<Button>{t("Begin an enquiry")}</Button>
+<Button variant="accent">{t("My protocol")}</Button>
+<Button variant="secondary">{t("View therapies")}</Button>
+<Button variant="ghost" endIcon={<Icon name="arrow-right" size={16}/>}>{t("Read journal")}</Button>
+<Button size="sm">{t("Small")}</Button>
+<Button size="lg">{t("Large")}</Button>
+<Button disabled>{t("Disabled")}</Button>
 </div>
+<p className="shantara-note" style={{marginBottom:"var(--space-5)"}}>Hover is a one-step fill shift at 160ms on fine pointers. Press is scale(0.96), never a colour flash. Disabled sits at 42% and does not move.</p>
 <div className="row">
-<IconButton label="Favourite"><Icon name="heart" size={18}/></IconButton>
-<IconButton variant="solid" label="Add"><Icon name="plus" size={18}/></IconButton>
-<IconButton variant="outline" label="Share"><Icon name="share-2" size={18}/></IconButton>
+<IconButton label={t("Favourite")}><Icon name="heart" size={18}/></IconButton>
+<IconButton variant="solid" label={t("Add")}><Icon name="plus" size={18}/></IconButton>
+<IconButton variant="outline" label={t("Share")}><Icon name="share-2" size={18}/></IconButton>
 <Divider orientation="vertical" spacing="var(--space-2)"/>
-<Badge tone="brand">In season</Badge>
-<Badge tone="accent">Members only</Badge>
-<Badge tone="success">Confirmed</Badge>
-<Badge tone="outline">Waitlist</Badge>
-<Tag selected>Ayurveda</Tag>
-<Tag>Breathwork</Tag>
+<Badge tone="brand">{t("In season")}</Badge>
+<Badge tone="accent">{t("Members only")}</Badge>
+<Badge tone="success">{t("Confirmed")}</Badge>
+<Badge tone="outline">{t("Waitlist")}</Badge>
+<Tag selected={picked.includes("Ayurveda")} onClick={()=>toggle("Ayurveda")}>{t("Ayurveda")}</Tag>
+<Tag selected={picked.includes("Breathwork")} onClick={()=>toggle("Breathwork")}>{t("Breathwork")}</Tag>
+{diet.map(d=><Tag key={d} onRemove={()=>setDiet(cur=>cur.filter(x=>x!==d))}>{t(d)}</Tag>)}
+</div>
+<p className="shantara-note" style={{marginBottom:"var(--space-5)"}}>Tags toggle and dismiss. Selected fills Himalaya; press scale matches the button. Badges are status, not controls — they do not hover or press.</p>
+<div className="grid">
+<Card interactive onClick={()=>{}} padding="sm"><span className="shantara-eyebrow">{t("Prescribed therapy")}</span><h4 style={{font:'var(--type-h4)',fontSize:'var(--text-lg)'}}>{t("Mud therapy")}</h4><p style={{margin:0,color:'var(--text-secondary)',fontSize:'var(--text-xs)'}}>{t("90 min · prescribed")}</p></Card>
+<Card tone="raised" padding="sm"><Logo mark="icon" tone="olive" height={28}/><p style={{margin:'var(--space-3) 0 0',fontSize:'var(--text-xs)',color:'var(--text-secondary)'}}>{t("Pearl Bush panel, no shadow")}</p></Card>
+<Card interactive onClick={()=>{}} media="../../assets/photos/treatment.jpg" mediaAlt={t("Therapy wing")} padding="sm"><span className="shantara-eyebrow">{t("The property")}</span><h4 style={{font:'var(--type-h4)',fontSize:'var(--text-lg)'}}>{t("Therapy wing")}</h4></Card>
+</div>
+<p className="shantara-note" style={{margin:"var(--space-4) 0 0"}}>Cards are 8px. Listing photography is flush at 3/2 — never a small inset crop. Interactive cards lift 4px into --shadow-lg over 240ms. The card never scales; only the photograph crops in 1.03. Logo, Divider and PatternPanel stay still.</p>
+<PatternPanel tone="olive" edge="top" band="132px" scale="132px" radius="var(--radius-card)" style={{marginTop:'var(--space-5)'}}><div style={{padding:'var(--space-5)'}}><Logo mark="wordmark" tone="cream" height={16}/><p style={{margin:'var(--space-3) 0 0',fontSize:'var(--text-xs)',opacity:.8}}>Rosette strip, top edge — shown as a detail at actual size. Cell = band / 2, floor 130px, so a real band needs a surface ≥880px.</p></div></PatternPanel>
+<div className="pair">
+<div dir="ltr" lang="en">
+<p className="shantara-usage-label">LTR</p>
+<div className="row">
+<Button variant="ghost" endIcon={<Icon name="arrow-right" size={16}/>}>Read journal</Button>
+<IconButton label="Back"><Icon name="chevron-left" size={18}/></IconButton>
 <Tag onRemove={()=>{}}>Vegan</Tag>
 </div>
-<div className="grid">
-<Card padding="sm"><span className="shantara-eyebrow">Prescribed therapy</span><h4 style={{font:'var(--type-h4)',fontSize:'var(--text-lg)'}}>Mud therapy</h4><p style={{margin:0,color:'var(--text-secondary)',fontSize:'var(--text-xs)'}}>90 min · from $210</p></Card>
-<Card tone="raised" padding="sm"><Logo mark="icon" tone="olive" height={28}/><p style={{margin:'var(--space-3) 0 0',fontSize:'var(--text-xs)',color:'var(--text-secondary)'}}>Pearl Bush panel, no shadow</p></Card>
+<Card padding="sm"><span className="shantara-eyebrow">Prescribed therapy</span><h4 style={{font:'var(--type-h4)',fontSize:'var(--text-lg)'}}>Mud therapy</h4><p style={{margin:0,color:'var(--text-secondary)',fontSize:'var(--text-xs)'}}>90 min · prescribed</p></Card>
 </div>
-<PatternPanel tone="olive" edge="top" band="132px" scale="132px" radius="var(--radius-card)" style={{marginTop:'var(--space-5)'}}><div style={{padding:'var(--space-5)'}}><Logo mark="wordmark" tone="cream" height={16}/><p style={{margin:'var(--space-3) 0 0',fontSize:'var(--text-xs)',opacity:.8}}>Rosette strip, top edge — shown as a detail at actual size. Cell = band / 2, floor 130px, so a real band needs a surface ≥880px.</p></div></PatternPanel>
+<div dir="rtl" className="shantara-rtl" lang="ar">
+<p className="shantara-usage-label">RTL</p>
+<div className="row">
+<Button variant="ghost" endIcon={<Icon name="arrow-right" size={16}/>}>{ar("Read journal")}</Button>
+<IconButton label={ar("Back")}><Icon name="chevron-left" size={18}/></IconButton>
+<Tag onRemove={()=>{}}>{ar("Vegan")}</Tag>
+</div>
+<Card padding="sm"><span className="shantara-eyebrow">{ar("Prescribed therapy")}</span><h4 style={{font:'var(--type-h4)',fontSize:'var(--text-lg)'}}>{ar("Mud therapy")}</h4><p style={{margin:0,color:'var(--text-secondary)',fontSize:'var(--text-xs)'}}>{ar("90 min · prescribed")}</p></Card>
+</div>
+</div>
+<p className="shantara-note" style={{marginTop:"var(--space-4)"}}>Set <code>dir="rtl"</code> on the page or a region. <code>startIcon</code> / <code>endIcon</code> stay logical; arrow and chevron glyphs flip. The logo and the rosette motif do not mirror. Symmetric marks (plus, heart) and top/bottom pattern bands stay as they are.</p>
 </div>);}
 ReactDOM.createRoot(document.getElementById('root')).render(<Demo/>);
 </script></body></html>

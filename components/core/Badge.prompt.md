@@ -5,4 +5,6 @@ Uppercase micro-label for state and category. Always short — one or two words.
 <Badge tone="success" icon={<Icon name="check" size={12} />}>Confirmed</Badge>
 ```
 
-Copy in Badges is sentence-cased in source and uppercased by CSS tracking. Never use a Badge as a button.
+Copy in Badges is sentence-cased in source and uppercased by CSS tracking. Never use a Badge as a button. Do not use Badge or static Tag as decorative pills next to actions.
+
+**Motion.** Status, not a control. Tone changes cross-fade at 160ms. No hover, no press, no entrance loop.

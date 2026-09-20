@@ -3,10 +3,10 @@ function ContactScreen({ onNavigate }) {
   const { Button, Card, Breadcrumbs, Icon, Divider } = window.ShantaraDesignSystem_45bbe4;
   return (
     <main style={{ maxWidth: "var(--layout-max)", margin: "0 auto", padding: "var(--space-8) var(--layout-gutter-lg) var(--section-y)" }}>
-      <Breadcrumbs items={[{ label: t("Home"), href: "#" }, t("Contact")]} />
+      <Breadcrumbs items={[{ label: t("Home"), href: window.ShantaraLocales ? window.ShantaraLocales.kitHash(window.ShantaraI18n.currentLocaleCode(), "home") : "#/en/" }, t("Contact")]} />
       <span className="shantara-eyebrow" style={{ display: "block", marginTop: "var(--space-7)" }}>{t("Contact")}</span>
       <h1 style={{ font: "var(--type-h1)", fontSize: "var(--text-3xl)", margin: "var(--space-4) 0 var(--space-5)" }}>{t("How to reach the retreat")}</h1>
-      <p style={{ font: "var(--type-lead)", color: "var(--text-secondary)", maxWidth: "52ch", margin: "0 0 var(--space-9)" }}>{t("Address, telephone, email and WhatsApp. The structured lead path is still Book a Consultation.")}</p>
+      <p style={{ font: "var(--type-lead)", color: "var(--text-secondary)", maxWidth: "52ch", margin: "0 0 var(--space-9)" }}>{t("Address, telephone, email and WhatsApp. To book a consultation, send your details and our team will be in touch.")}</p>
       <div style={{ display: "grid", gridTemplateColumns: "1.35fr 1fr", gap: "var(--space-8)", alignItems: "stretch", marginBottom: "var(--space-8)" }}>
         <Photo name="water-wall" alt={t("The water wall court")} height={360} />
         <div style={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
@@ -14,7 +14,7 @@ function ContactScreen({ onNavigate }) {
           <h2 style={{ font: "var(--type-h3)", margin: "var(--space-4) 0 var(--space-6)" }}>{t("The water wall court")}</h2>
           <div style={{ display: "flex", flexDirection: "column", gap: "var(--space-4)", borderTop: "1px solid var(--border-subtle)", paddingTop: "var(--space-5)" }}>
             <p style={{ margin: 0, color: "var(--text-secondary)" }}>{t("Guided meditation is held here at six each evening.")}</p>
-            <p style={{ margin: 0, color: "var(--text-secondary)" }}>{t("Phones are left at the entrance to the court, without exception.")}</p>
+            <p style={{ margin: 0, color: "var(--text-secondary)" }}>{t("Phones are left at the entrance to the court.")}</p>
           </div>
         </div>
       </div>
@@ -22,7 +22,7 @@ function ContactScreen({ onNavigate }) {
         <Card padding="lg">
           <h2 style={{ font: "var(--type-h4)", margin: "0 0 var(--space-6)" }}>{t("Location")}</h2>
           <p style={{ margin: "0 0 var(--space-4)" }}>{t("Chennamangallur valley, Kozhikode, Kerala, India")}</p>
-          <p style={{ font: "var(--type-body-sm)", color: "var(--text-secondary)", margin: "0 0 var(--space-6)" }}>{t("Four hilltop acres. Airport and railway transfers are included with a confirmed stay — details after consultation.")}</p>
+          <p style={{ font: "var(--type-body-sm)", color: "var(--text-secondary)", margin: "0 0 var(--space-6)" }}>{t("Four hilltop acres. Airport and railway transfers are included with a confirmed stay. Details follow after consultation.")}</p>
           <Divider spacing="var(--space-5)" />
           <div style={{ display: "flex", flexDirection: "column" }}>
             {[["Calicut International Airport", "28 km", "55 min"], ["Kozhikode railway station", "14 km", "30 min"]].map(([place, km, mins]) => (
@@ -40,17 +40,17 @@ function ContactScreen({ onNavigate }) {
           </div>
           <Divider spacing="var(--space-5)" />
           <div style={{ display: "flex", flexDirection: "column", gap: "var(--space-3)", fontSize: "var(--text-sm)" }}>
-            <span>heal@shantara.life</span>
-            <span style={{ fontVariantNumeric: "tabular-nums" }}>+91 9553 600 100 · +91 9553 700 100</span>
+            <a className="shantara-dir-ltr" href="mailto:heal@shantara.life" onClick={() => window.ShantaraLocales && window.ShantaraLocales.track("contact_click", { contact_method: "email", page_type: "contact", cta_location: "inline" })}>heal@shantara.life</a>
+            <a className="shantara-dir-ltr" href="tel:+919553600100" style={{ fontVariantNumeric: "tabular-nums" }} onClick={() => window.ShantaraLocales && window.ShantaraLocales.track("contact_click", { contact_method: "phone", page_type: "contact", cta_location: "inline" })}>+91 9553 600 100 · +91 9553 700 100</a>
           </div>
         </Card>
         <Card tone="raised" padding="lg">
           <span className="shantara-eyebrow">{t("Next step")}</span>
           <h2 style={{ font: "var(--type-h4)", margin: "var(--space-4) 0 var(--space-4)" }}>{t("Book a Consultation")}</h2>
-          <p style={{ font: "var(--type-body-sm)", color: "var(--text-secondary)", margin: "0 0 var(--space-6)" }}>{t("WhatsApp and phone are secondary. Use the same consultation form everywhere.")}</p>
+          <p style={{ font: "var(--type-body-sm)", color: "var(--text-secondary)", margin: "0 0 var(--space-6)" }}>{t("You can also write, call or message us. To book a consultation, send your details and our team will be in touch.")}</p>
           <div style={{ display: "flex", flexDirection: "column", gap: "var(--space-4)" }}>
-            <Button fullWidth size="lg" onClick={() => onNavigate("booking")}>{t("Book a Consultation")}</Button>
-            <Button fullWidth variant="secondary" onClick={() => onNavigate("tariffs")} endIcon={<Icon name="arrow-right" size={16} />}>{t("View the tariff card")}</Button>
+            <Button fullWidth size="lg" onClick={() => { if (window.ShantaraLocales) window.ShantaraLocales.track("consultation_cta_click", { page_type: "contact", content_id: "contact", content_name: "Contact", cta_location: "inline" }); onNavigate("booking"); }}>{t("Book a Consultation")}</Button>
+            <Button fullWidth variant="secondary" onClick={() => onNavigate("tariffs")} endIcon={<Icon name="arrow-right" size={16} />}>{t("View tariffs")}</Button>
           </div>
         </Card>
       </div>

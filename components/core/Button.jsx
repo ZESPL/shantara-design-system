@@ -5,20 +5,22 @@ const CSS = `
 .sh-btn:focus-visible{outline:none;box-shadow:var(--ring-focus)}
 .sh-btn:active:not(:disabled){transform:scale(var(--press-scale))}
 .sh-btn:disabled{opacity:.42;cursor:not-allowed}
-.sh-btn[data-size="sm"]{height:var(--control-sm);padding:0 var(--space-5);font-size:var(--text-xs)}
-.sh-btn[data-size="md"]{height:var(--control-md);padding:0 var(--space-6);font-size:var(--text-sm)}
-.sh-btn[data-size="lg"]{height:var(--control-lg);padding:0 var(--space-8);font-size:var(--text-base)}
+.sh-btn[data-size="sm"]{min-height:var(--control-sm);height:auto;padding:0 var(--space-5);font-size:var(--text-xs)}
+.sh-btn[data-size="md"]{min-height:var(--control-md);height:auto;padding:0 var(--space-6);font-size:var(--text-sm)}
+.sh-btn[data-size="lg"]{min-height:var(--control-lg);height:auto;padding:0 var(--space-8);font-size:var(--text-base)}
 .sh-btn[data-full="true"]{width:100%}
-.sh-btn[data-variant="primary"]:hover:not(:disabled){--_bg:var(--color-himalaya-800)}
 .sh-btn[data-variant="accent"]{--_bg:var(--surface-accent);--_fg:var(--text-on-accent);--_bd:var(--color-gold-800)}
-.sh-btn[data-variant="accent"]:hover:not(:disabled){--_bg:var(--color-gold-200)}
 .sh-btn[data-variant="secondary"]{--_bg:transparent;--_fg:var(--text-primary);--_bd:var(--border-control)}
-.sh-btn[data-variant="secondary"]:hover:not(:disabled){--_bg:var(--surface-raised);--_bd:var(--border-strong)}
 .sh-btn[data-variant="ghost"]{--_bg:transparent;--_fg:var(--text-brand)}
-.sh-btn[data-variant="ghost"]:hover:not(:disabled){--_bg:var(--surface-brand-soft)}
 .sh-btn[data-variant="inverse"]{--_bg:var(--color-merino);--_fg:var(--color-pine-tree)}
-.sh-btn[data-variant="inverse"]:hover:not(:disabled){--_bg:var(--color-white)}
 .sh-btn[data-variant="inverse"]:focus-visible{box-shadow:var(--ring-focus-inverse)}
+@media (hover: hover) and (pointer: fine){
+  .sh-btn[data-variant="primary"]:hover:not(:disabled){--_bg:var(--color-himalaya-800)}
+  .sh-btn[data-variant="accent"]:hover:not(:disabled){--_bg:var(--color-gold-200)}
+  .sh-btn[data-variant="secondary"]:hover:not(:disabled){--_bg:var(--surface-raised);--_bd:var(--border-strong)}
+  .sh-btn[data-variant="ghost"]:hover:not(:disabled){--_bg:var(--surface-brand-soft)}
+  .sh-btn[data-variant="inverse"]:hover:not(:disabled){--_bg:var(--color-white)}
+}
 `;
 
 function ensure() {
