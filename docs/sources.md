@@ -9,7 +9,7 @@ The original brand pack lives in `uploads/`. Claude Design read it, curated what
 | `uploads/Compressed/Frame 1–5.jpg` | Five photographed guideline spreads | Voice, pattern, palette, type, colourways, print, imagery — written into `readme.md` and the guideline cards |
 | `uploads/Shantara_Brand Guidelines HQ.pdf` | Full guideline PDF | Not parsed. The Frame images superseded it |
 | `uploads/shantara_property_handbook.docx` | Property Handbook, draft July 2026 | All kit content. Structured extract: [handbook](handbook.html) |
-| `uploads/Compressed/TRD*.jpg` | Property shoot, 45 frames | 16 frames at 1600px in `assets/photos/` |
+| `uploads/Compressed/TRD*.jpg` | Property shoot, 45 frames | Merged into flat `assets/photos/` (kit slugs + descriptive alternates, ~2880px long edge) |
 | `uploads/Primary Colors.jpg` | Primary colour board | Himalaya, Gold Crayola |
 | `uploads/colors secondary.jpg` | Neutral board | Pine Tree through Merino |
 | `uploads/accent colors.jpg` | Accent board | Sand, Ocean, Clay, Forest, Sky, Lavender — three hexes sampled, not read |
@@ -28,11 +28,13 @@ On this machine the pack was about **575MB**, almost all of it the raw `TRD` fra
 | `scraps/handbook.txt` | Plain-text dump of the handbook — also at `docs/handbook.txt` |
 | `scraps/accessibility-contract-src.html` | Earlier contract card. Now folded into `guidelines/accessibility.html` |
 
-## Curated photos (`assets/photos/`)
+## Photos (`assets/photos/`)
 
-`arrival-dusk` · `valley` · `courtyard` · `treatment` · `room-premium` · `room-twin` · `balcony` · `dining` · `water-wall` · `library` · `grounds` · `lobby` · `exterior-day` · `reception` · `corridor` · `lounge`
+Flat folder — see [`assets/photos/README.md`](../assets/photos/README.md).
 
-Architecture and grounds. No identifiable guests, no faces in therapy, no room numbers.
+**Kit defaults:** `arrival-dusk` · `valley` · `courtyard` · `treatment` · `room-premium` · `room-twin` · `balcony` · `dining` · `water-wall` · `library` · `grounds` · `lobby` · `exterior-day` · `reception` · `corridor` · `lounge`
+
+Plus descriptive alternates (rooms, dining, exteriors, treatments, etc.) and doctor photos (`doctor-*-portrait` full; `doctor-*-profile` square close-up). Prefer frames without `-guest` for public marketing. No room numbers.
 
 ## Still open
 

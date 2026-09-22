@@ -1,7 +1,7 @@
 const ABOUT = [
   { title: "Our story", copy: "Shantara is the evolution of Hygiene Nature Cure Hospital, which has cared for more than 25,000 guests since 2000.", photo: "courtyard" },
   { title: "Our approach", copy: "Treatment is drug-free and planned by our doctors after consultation and assessment. Plans are reviewed during the stay and adjusted where needed.", photo: "library" },
-  { title: "Meet our doctors", copy: "A doctor plans your programme after consultation and reviews it during your stay. Profiles include qualifications so you can see who is responsible for clinical guidance.", photo: "corridor" },
+  { title: "Meet our doctors", copy: "A doctor plans your programme after consultation and reviews it during your stay. Profiles include qualifications so you can see who is responsible for clinical guidance.", photo: "doctor-bahja-janu-profile" },
   { title: "Medical Editorial Policy", copy: "Health pages name who writes, who reviews, which sources are used, and how often content is reviewed.", photo: "lounge" },
 ];
 

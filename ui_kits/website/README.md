@@ -7,6 +7,8 @@ Builder notes and thin samples for the public marketing website. **Not a product
 | File | Role |
 | --- | --- |
 | [`SKILL.md`](SKILL.md) | Agent skill — how to build and review the marketing website |
+| [`skill-stack.md`](skill-stack.md) | Production stack for shantara.life (Astro, Keystatic, Netlify, …) |
+| [skill-premium.md](skill-premium.md) | Premium design, build order, motion vocabulary |
 | [`skill-ia.md`](skill-ia.md) | Nav, URL families, page inventory |
 | [`skill-sections.md`](skill-sections.md) | Heroes, semantic sections, cards |
 | [`skill-content.md`](skill-content.md) | CMS, publishing, leads, E-E-A-T |
@@ -55,7 +57,7 @@ rtl-fixture.html
 
 Locale config: `locales.js` (`window.ShantaraLocales`). Shared UI strings: root `i18n.js`. Sample routing uses locale-prefixed hashes (`#/en/`, `#/en/programs`).
 
-**Deliberately not built:** individual condition/therapy/room pages; a CMS; production analytics/SEO stack; multiple forms; stay-total calculators; translated AR/DE/FR/RU/HI/ML website content.
+**Deliberately not built in this kit:** individual condition/therapy/room pages; Keystatic/Astro app wiring; production analytics/SEO endpoints; multiple forms; stay-total calculators; translated AR/DE/FR/RU/HI/ML website content. Production stack lives in [`skill-stack.md`](skill-stack.md).
 
 ## Confirm before any real use
 

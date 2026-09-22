@@ -291,11 +291,11 @@ Build a clear, crawlable, trustworthy website first.
 
 ## Performance and rendering
 
-This is a marketing site. Keep the technology stack simple.
+This is a marketing site. Keep the technology stack simple. **Locked choices** (Astro, Tailwind, Keystatic, Netlify, OpenPanel, Web3Forms, Playwright smoke only, no UI kits / Motion / DB): [skill-stack.md](skill-stack.md).
 
 ### Rendering
 
-Prefer: static generation; prerendering; SSR/SSG hybrid where useful.
+Prefer: static generation; prerendering (Astro). SSR/SSG hybrid only where useful.
 
 Do not introduce a persistent application backend unless a real requirement needs it.
 
@@ -310,6 +310,8 @@ Use hydration only where necessary for: form interactions; navigation; gallery; 
 Static content should remain static.
 
 ### Images
+
+In production, use **Astro Image**. In all surfaces:
 
 - use responsive sizes;
 - modern formats;

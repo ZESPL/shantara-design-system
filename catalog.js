@@ -26,7 +26,7 @@
     Components: { label: "Components", blurb: "Core, forms, navigation and feedback — family overviews and per-component notes" },
     Website: { label: "Website kit", blurb: "Sample site first, then builder skill, IA, sections, leads, and QA" },
     App: { label: "Guest app", blurb: "In-stay companion — schedule, protocol, notes" },
-    Templates: { label: "Templates", blurb: "Presentation deck in the guideline style" },
+    Templates: { label: "Templates", blurb: "Brand deck layouts — see shantara-premium-presentations for deck design rules" },
     Content: { label: "Content", blurb: "Property handbook, ICP, and sources" },
   };
 

@@ -4,7 +4,9 @@ Back to the [website skill](SKILL.md).
 
 ## CMS / content model
 
-This model is instantiated in [`content/`](../../content/). Empty folders (`guest-stories/`, `events/`, `testimonials/`) mean the entity is not ready. Do not invent records to fill them. Stub conditions with `needs_original` and empty clinical bodies until medical review exists.
+**Production CMS:** Keystatic (git-based) with Markdoc for long-form, typed via Astro Content Collections — see [skill-stack.md](skill-stack.md).
+
+This model is instantiated in [`content/`](../../content/) for the design-system kit. Empty folders (`guest-stories/`, `events/`, `testimonials/`) mean the entity is not ready. Do not invent records to fill them. Stub conditions with `needs_original` and empty clinical bodies until medical review exists.
 
 Model business/content entities, not layout hacks. One entity, then localized records per locale. Do not duplicate types as `ProgramEn` / `ProgramAr`. English is the only populated locale until a localisation project.
 
@@ -72,7 +74,7 @@ Do not expose developer primitives to editors.
 
 ## Unified lead capture
 
-Shantara should have **one lead-capture system**.
+Shantara should have **one lead-capture system**. In production, submit via **Web3Forms** — no custom forms backend ([skill-stack.md](skill-stack.md)).
 
 Primary visitor-facing CTA:
 

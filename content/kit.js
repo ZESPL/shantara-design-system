@@ -1369,6 +1369,8 @@ window.ShantaraContent = {
       "slug": "bahja-janu",
       "full_name": "Dr. Bahja Janu",
       "role": "Medical Director",
+      "photo": "doctor-bahja-janu-portrait",
+      "photo_profile": "doctor-bahja-janu-profile",
       "qualification": null,
       "years_practice": null,
       "publications_note": null,

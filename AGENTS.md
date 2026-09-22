@@ -2,7 +2,7 @@
 
 Read this before inventing copy, programmes, rates, or IA.
 
-1. **Skills.** Read root [`SKILL.md`](SKILL.md). For the public marketing website, also read [`ui_kits/website/SKILL.md`](ui_kits/website/SKILL.md) and [`ui_kits/website/skill-copy.md`](ui_kits/website/skill-copy.md).
+1. **Skills.** Read root [`SKILL.md`](SKILL.md). For the public marketing website, also read [`ui_kits/website/SKILL.md`](ui_kits/website/SKILL.md) and [`ui_kits/website/skill-copy.md`](ui_kits/website/skill-copy.md). Production stack for **shantara.life** (Astro, Keystatic, Tailwind, Netlify, OpenPanel, …): [`ui_kits/website/skill-stack.md`](ui_kits/website/skill-stack.md). Premium design and motion: [`ui_kits/website/skill-premium.md`](ui_kits/website/skill-premium.md). For any presentation or deck (PowerPoint, Google Slides, Keynote, Canva, HTML, PDF): [`.cursor/skills/shantara-premium-presentations/SKILL.md`](.cursor/skills/shantara-premium-presentations/SKILL.md). The HTML brand-deck template is [`templates/brand-deck/`](templates/brand-deck/).
 2. **Facts.** Prefer [`content/`](content/) first. Use [`docs/handbook.txt`](docs/handbook.txt) for policies, conflicts, and `[TO CONFIRM]` — not for hero or marketing copy. Never quote handbook §15 (the “wellness retreat” 30-second line) on public pages. Never use “patients” or “wellness retreat” as public product language.
 3. **Audience.** [`docs/icp.md`](docs/icp.md) is internal. Do not paste ICP names or competitor paragraphs onto pages. Store only stable `icp_ids` on content records.
 4. **Samples.** Files under `ui_kits/website/screens/` illustrate composition. They are not the production site. Production URLs are `/en/…`, not `#/en/…`.

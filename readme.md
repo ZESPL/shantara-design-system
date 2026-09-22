@@ -12,7 +12,7 @@ Foundations (colour, type, logo, pattern, voice, imagery, print) are **verbatim 
 | --- | --- |
 | `uploads/Compressed/Frame 1–5.jpg` | The five brand-guideline pages as images. **Read** — logo story, pattern structure, colour palette, tone of voice, typography, logo colourways, print rules, product applications, imagery direction. |
 | `uploads/shantara_property_handbook.docx` | Property Handbook (draft, July 2026). Read in full: programmes, therapies, rooms and tariffs, admission and eligibility, house rules, privacy rules, team, contact. Source of all content in the UI kits. |
-| `uploads/Compressed/TRD*.jpg` (45 frames) | The property shoot. 16 frames curated into `assets/photos/` at 1600px. |
+| `uploads/Compressed/TRD*.jpg` (45 frames) | The property shoot. Organised in flat `assets/photos/` (kit slugs + descriptive frames, retina-sized). |
 | `uploads/Primary Colors.jpg`, `colors secondary.jpg`, `accent colors.jpg` | Colour boards. Hexes read from the labels; three mislabels corrected by sampling (below). |
 | `uploads/Shantara - Full logo / Icon / wordmark` (.svg ×4 each, .pdf) | The numbered SVG copies are byte-identical monochrome artwork with no fill declared. Copied in and re-coloured programmatically into four brand tones. |
 | `uploads/Pattern Single Tile.png`, `Pattern Seamless_SCALE ACCORDINGLY.png`, `pattern LOW Q White/Black.png` | Rosette artwork. The repeat cell was measured out of the seamless file — see the pattern guideline card. |
@@ -46,7 +46,7 @@ Then open `http://localhost:4173`. Netlify publishes a `dist/` copy; raw `upload
 styles.css              → the single entry point consumers link (imports only)
 tokens/                 → fonts, colors, typography, spacing, radius, elevation, motion, pattern, base
 assets/                 → logo / icon / wordmark in 4 colourways each, pattern cell + motif, Diodrum TTFs
-assets/photos/          → 16 curated frames from the property shoot
+assets/photos/          → property + doctor photos (flat; see assets/photos/README.md)
 guidelines/             → specimen cards (Brand, Foundations)
 components/             → core, forms, navigation, feedback — jsx, d.ts, prompt.md; catalog pages via docs/component?c=
 docs/                   → use, orientation, skill wrappers, handbook, ICP, sources
@@ -77,7 +77,7 @@ Each directory holds `<Name>.jsx`, `<Name>.d.ts` (props contract) and `<Name>.pr
 
 ### Templates
 
-- `templates/brand-deck/` — presentation template in the guideline-deck style.
+- `templates/brand-deck/` — presentation template in the guideline-deck style. Deck design rules: `.cursor/skills/shantara-premium-presentations/SKILL.md`.
 
 ## Caveats
 

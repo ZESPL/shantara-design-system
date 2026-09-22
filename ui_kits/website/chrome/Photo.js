@@ -1,6 +1,8 @@
-/* Real Shantara property photography, downscaled from the shoot supplied with the brand
-   package. `src` is a filename inside assets/photos. Faces and guests are not shown
-   close-up anywhere in this kit — per the handbook's guest-privacy rules.
+/* Real Shantara property photography from assets/photos (flat folder; see README there).
+   `name` is the filename without .jpg. Prefer kit slugs or frames without `-guest`.
+   Doctor portraits (`doctor-*-portrait`) and square profiles (`doctor-*-profile`) are
+   intentional for About / team. Guests are not
+   shown close-up in kit samples — per the handbook's guest-privacy rules.
    Ratio vocabulary (by job — pick what the frame needs):
      "4:3" (default) — listing / architectural landscape (`--media-ratio`)
      "16:9" | "wide" — wide editorial frames when a ratio crop is wanted (`--media-ratio-wide`)

@@ -15,6 +15,8 @@ Entity facts for programmes, rooms, conditions, NAP, and tariff live in [`conten
 
 Read this file first. Open a sibling reference only when the task needs that inventory:
 
+- [Production stack](skill-stack.md) — Astro, Keystatic, Tailwind, Netlify, analytics/SEO services; locked defaults for shantara.life
+- [Premium design](skill-premium.md) — build order, photography, type, layout, motion vocabulary, “premium feel”
 - [Information architecture](skill-ia.md) — nav, URLs, page inventory, publishing families
 - [Sections and composition](skill-sections.md) — heroes, section library, cards, example pages
 - [Content and leads](skill-content.md) — CMS entities, publishing, E-E-A-T, consultation form
@@ -34,7 +36,7 @@ Shantara is a **naturopathy retreat** — a doctor-led residential clinic guests
 
 **Welnez is the former name; use Shantara as the current brand name.** Do not introduce "Welnez" into new public-facing copy unless the task explicitly concerns legacy content, redirects, historical references, or migration.
 
-The website is a **marketing, trust, education, and lead-generation website**, not a web application.
+The website is a **marketing, trust, education, and lead-generation website**, not a web application. Production technology is fixed in [skill-stack.md](skill-stack.md) (Astro + TypeScript + Tailwind + Keystatic on Netlify for **shantara.life**). Do not introduce alternate frameworks, UI kits, databases, or animation libraries without updating that file.
 
 Prospective guests should answer, with minimum friction:
 
@@ -144,7 +146,7 @@ Section library and example compositions: [skill-sections.md](skill-sections.md)
 
 Cards are separate semantic components sharing type, spacing, radii, image behavior, and focus: `ConditionCard`, `ProgramCard`, `TherapyCard`, `RoomCard`, `DoctorCard`, `ArticleCard`, `GuestStoryCard`, `EventCard`. Do not make one `Card` with dozens of conditional fields.
 
-Visual direction: calm, premium, natural, clinically credible, spacious, human, restrained. Prefer real Shantara photography. Avoid crowded cards, excessive badges/gradients, decorative animation, wellness clichés, unrelated stock, and oversized “premium” chrome.
+Visual direction: calm, premium, natural, clinically credible, spacious, human, restrained. Prefer real Shantara photography. Avoid crowded cards, excessive badges/gradients, decorative animation, wellness clichés, unrelated stock, and oversized “premium” chrome. Full premium / motion rules: [skill-premium.md](skill-premium.md).
 
 ## 6. Lead capture
 
@@ -239,7 +241,7 @@ This kit follows the design-system accessibility contract in `guidelines/accessi
 
 ## 12. What not to build
 
-Do not introduce without a demonstrated need: rigid templates per content family; condition-category SEO hubs; ICP-named category URLs; individual therapy/room pages by default; multiple consultation forms or synonymous primary CTAs; drag-and-drop spacers/rows; one universal card or hero with dozens of props; 10+ hero variants; separate AEO/GEO systems; separate GA4 and OpenPanel implementations; CRM lifecycle analytics at launch; custom backend only for analytics; excessive events; fake E-E-A-T badges or review schema; unsupported medical claims; automatically refreshed dates; hundreds of generic AI articles; keyword-variation landers; complex personalization before traffic exists; a translation platform, translation SaaS, runtime machine translation, IP geolocation, a second Arabic frontend, duplicated content types, or placeholder DE/FR/RU/HI/ML pages.
+Do not introduce without a demonstrated need: rigid templates per content family; condition-category SEO hubs; ICP-named category URLs; individual therapy/room pages by default; multiple consultation forms or synonymous primary CTAs; drag-and-drop spacers/rows; one universal card or hero with dozens of props; 10+ hero variants; separate AEO/GEO systems; separate GA4 and OpenPanel implementations; CRM lifecycle analytics at launch; custom backend only for analytics; excessive events; fake E-E-A-T badges or review schema; unsupported medical claims; automatically refreshed dates; hundreds of generic AI articles; keyword-variation landers; complex personalization before traffic exists; a translation platform, translation SaaS, runtime machine translation, IP geolocation, a second Arabic frontend, duplicated content types, or placeholder DE/FR/RU/HI/ML pages; stack substitutes listed as **None** in [skill-stack.md](skill-stack.md) (component libraries, Motion/GSAP, Redux/Zustand, databases/APIs, CI deploy).
 
 Do not build the entire production website inside this kit. Samples stay thin.
 
