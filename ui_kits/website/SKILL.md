@@ -28,7 +28,7 @@ Internal audience strategy (need-led ICPs, CRM IDs, agency requirements) lives i
 
 Also read the design-system skill at the repo root (`SKILL.md`) and `readme.md` before inventing visual or clinical language.
 
-**Multilingual is architectural for the public website.** Central config: `locales.js`. Planned languages: English (`en`, source, currently published), Arabic (`ar`, first future localisation, RTL ready now), then German, French, Russian, Hindi, Malayalam. Malayalam is conditional — see [`docs/icp.md`](../../docs/icp.md). Do not translate the site in this kit. The design-system catalog, guidelines, and component docs stay English — do not localise them. Read [§15 Multilingual Architecture](#15-multilingual-architecture) before adding a route, string, or content type.
+**Multilingual is architectural for the public website.** Central config: `locales.js`. Planned languages: English (`en`, source, currently published), Arabic (`ar`, first future localisation, RTL ready now), then German, French, Russian, Hindi, Malayalam. Malayalam is conditional — see [`docs/icp.md`](../../docs/icp.md). Do not translate the site in this kit. The design-system catalog, guidelines, and component docs stay English — do not localise them. Read [§15 Multilingual Architecture](#section-15) before adding a route, string, or content type.
 
 ## 1. Purpose
 
