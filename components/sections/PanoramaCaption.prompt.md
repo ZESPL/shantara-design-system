@@ -1,0 +1,14 @@
+A full-width photograph with a short caption bottom-left and no button — the pause between dense sections (deck slide 5).
+
+```jsx
+<PanoramaCaption
+  src="/assets/photos/valley.jpg" alt="The Chennamangallur valley from the hilltop"
+  eyebrow="The setting" title="Overlooking the Chennamangallur valley"
+/>
+```
+
+**Use** once or twice on a long page, between sections of text. It carries no action and no paragraph — if it needs a sentence of explanation, use `SplitSection` instead.
+
+**Content.** A place or a moment, in a few words. Only frames with no identifiable guests.
+
+**Responsive.** Desktop and tablet (≥760px): 21:9, full width, the caption inside a bottom scrim and aligned to the page container; the title is statement size from 1000px, title size below. Phone (<760px): the frame switches to 4:5 so it keeps its height instead of becoming a sliver — pass `mobilePosition` to choose which part of the panorama survives the crop.

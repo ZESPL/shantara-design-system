@@ -10,6 +10,8 @@ const FAMILY_LABEL = {
   forms: "Forms",
   navigation: "Navigation",
   feedback: "Feedback",
+  editorial: "Editorial",
+  sections: "Sections",
 };
 
 function walk(dir, out = []) {

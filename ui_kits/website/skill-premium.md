@@ -62,8 +62,8 @@ Full stack table: [skill-stack.md](skill-stack.md).
 Shantara ships **one typeface for Latin/Cyrillic: Diodrum** (weights via design-system tokens). Display and body are the same family at different sizes and weights — do **not** introduce a separate “premium serif” for headings.
 
 - Self-host fonts. Subset them. Use `font-display: swap` (already set on Diodrum faces).
-- Generous heading sizes, comfortable body line height (about 1.6 to 1.75), body line length around 60 to 75 characters.
-- Use type tokens (`--type-display`, `--type-body`, …) and the spacing/type scale — no one-off font stacks in components.
+- Generous heading sizes, body line height 1.6, body measure `--measure-body` (62ch), headlines `--measure-statement` (30ch).
+- Use type tokens (`--type-display`, `--type-statement`, `--type-body`, …) and the spacing/type scale — no one-off font stacks in components. Voices and weights: [Design system rules](#design-system-rules-from-the-brand-deck).
 - Arabic: **IBM Plex Sans Arabic** pairing under `[dir=rtl]` (see `tokens/rtl.css`). Do not use a system fallback as the Arabic display face.
 
 ## Layout and whitespace
@@ -79,7 +79,111 @@ Shantara ships **one typeface for Latin/Cyrillic: Diodrum** (weights via design-
 - Use the design-system palette: deep olive / gold primary pair, stone and linen neutrals, landscape accents — defined once as tokens. No hard-coded hex values in components.
 - The rosette is a **band on one edge**, never a page wash (root `SKILL.md`).
 - Subtle texture is allowed only if it does not hurt contrast or performance.
-- Meet WCAG AA contrast for all text. Type on photography sits on a bottom scrim with solid Merino — see accessibility guidelines.
+- Meet WCAG AA contrast for all text. Type on photography sits inside a scrim that covers the whole text block (`--scrim-hero`) and is set in solid Merino — see accessibility guidelines.
+
+## Design system rules (from the brand deck)
+
+The website is the brand deck carried to a scrolling page. The deck rules are in [`.cursor/skills/shantara-premium-presentations/SKILL.md`](../../.cursor/skills/shantara-premium-presentations/SKILL.md) and [`templates/brand-deck/`](../../templates/brand-deck/). Tokens live in `tokens/`; components in `components/editorial/` and `components/sections/`. Read the comment at the top of each `.jsx` before using it.
+
+### Type: five voices, one weight rule
+
+| Voice | Token | Size (360 → 1440) | Weight | Use |
+| --- | --- | --- | --- | --- |
+| Display | `--type-display` | 40 → 84 | Light | Full-bleed hero headline only |
+| Statement | `--type-h1` / `--type-statement` (= h2) | 34 → 64 / 28 → 48 | Light | Page title / section headline, a full sentence |
+| Title | `--type-title` (= h3) | 22 → 30 | Light | Tile and sub-section titles |
+| Item | `--type-item` (= h4) | 20 | Medium | Step, list and table item titles |
+| Numeral | `--type-numeral` | 48 → 84 | Light | Two or three figures in `NumeralsSplit` |
+
+- **The Light rule:** every heading at 24px or larger is Diodrum Light. Medium is only for item titles at 20px or smaller. Body is Regular 17/1.6 — never Light.
+- `--type-lead` is deprecated. Use body, or a `Statement` with a `sub` line.
+- Headlines are left-aligned and wrap at `--measure-statement` (30ch). Body wraps at `--measure-body` (62ch).
+
+### Grounds
+
+A section paints one of five grounds with `data-ground` (use `Section`; nothing else paints its own background):
+
+| Ground | Use |
+| --- | --- |
+| `merino` | Default. Most sections. |
+| `stone` | Alternate light ground to separate two adjacent sections. |
+| `himalaya` | `BandStatement` only. At most one per page. |
+| `pine` | `ClosingCTA` without a photograph, footer. |
+| `photo` | Heroes, `PanoramaCaption`, `ClosingCTA` with a photograph. |
+
+Dark grounds re-point the ink tokens. Inside `himalaya`, `pine` and `photo` the primary button becomes Gold with Pine ink, text becomes Merino, and the eyebrow becomes Gold (Merino on `photo`). Do not pass tone props or hard-code colours to get this.
+
+### Shape
+
+- Photographs are square-cut (`--radius-media: 0`). No rounded images anywhere on the website.
+- Buttons and inputs are near-square (`--radius-control` / `--radius-input`: 2px).
+- `--radius-card` (4px) is for forms and dialogs only.
+- Pills survive only on small chips (`Tag`, `Badge`).
+
+### Buttons
+
+- `Button` has three variants: `primary`, `secondary`, `link`. `accent`, `ghost` and `inverse` are deprecated aliases kept for the app kit. Do not use them on the website.
+- One primary button per view. On light grounds it is Himalaya; on dark grounds it is Gold automatically.
+- "More" links are `TextLink` (hairline and arrow), aligned to the grid — not a second button.
+- Sizes 36 / 44 / 52px (`--control-sm/md/lg`). Every size reaches 44px on touch.
+
+### Tiles, not cards
+
+- Marketing listings use `Tile`: photograph and text directly on the ground. No border, shadow, radius or white card on linen.
+- `Card` is for forms and dialogs only.
+- Tile hover: photograph scales to 1.02 inside its frame, title takes a hairline underline. No lift.
+- Listing ratio 4:3. A list too long for photographs becomes an `IndexList`.
+
+### Photographs
+
+- One photograph per job. A section has one photograph, or a row of tiles with one photograph each. No collages, no thumbnail strips.
+- Every photograph goes through `Media` (the kit's `chrome/Photo.js` is an adapter over it).
+- Ratios: 4:3 listing (default), 16:9 wide, 4:5 portrait (doctors, tall split media), 3:4 tall architecture, 21:9 panorama (desktop only, through `PanoramaCaption`, with `mobileRatio`).
+- Heroes use a height (100svh, or 72svh with `height="tall"`), not a ratio.
+
+### Eyebrows
+
+- An eyebrow must add information the heading does not already give (a category, a place, a step). If it repeats the heading, delete it.
+- Colour comes from the ground (`--eyebrow-color`): Himalaya on Merino/Stone, Gold on flat dark grounds, Merino on photography.
+
+### Component map
+
+| Job | Use |
+| --- | --- |
+| Home or immersive page opening | `HeroFullBleed` |
+| Programme page opening | `HeroFullBleed height="tall"` + booking panel below |
+| Inner page opening without a photograph | `HeroStatement` |
+| Section heading block | `Statement` (eyebrow → Light headline → one line) |
+| Text beside a photograph | `SplitSection` |
+| The page's single accent statement | `BandStatement` (Himalaya + rosette band) |
+| A pause between dense sections | `PanoramaCaption` |
+| Doctors | `PeopleRow` (uses `PortraitFrame`) |
+| Two or three proof figures | `NumeralsSplit` (uses `Numeral`) |
+| Programmes, rooms, articles with photographs | `TileGrid` (uses `Tile`) |
+| A long list without photographs | `IndexList` |
+| Process | `NumberedSteps` |
+| Schedule / a day | `TimeTable` |
+| Comparison or specification | `SpecTable` |
+| Short lists | `PlainList`, `GroupedList` |
+| Quote with facts | `QuoteBlock` |
+| Questions | `Accordion` |
+| Page end | `ClosingCTA` |
+| Consultation form | `FormSplit` |
+
+Section-level mapping from the CMS library: [skill-sections.md](skill-sections.md).
+
+### Responsive rules
+
+- **Mobile first.** Styles start at a 360px phone and add columns with `min-width` queries.
+- **Breakpoints:** 520 (large phone), 760 (tablet, two columns start), 1000 (split layouts and full nav start; menu sheet below), 1280 (desktop). Use these literals; do not invent others. The grid is 4 / 8 / 12 columns.
+- **Fluid tokens:** type, `--layout-gutter` (20 → 48), `--grid-gap`, `--section-y` (80 → 160), `--section-y-sm` (56 → 96), `--stack-lg` / `--stack-md` scale between 360 and 1440. Do not add breakpoint overrides for sizes the tokens already scale.
+- **Stacking order:** on phones the photograph comes first, then the text (`SplitSection`, `TileGrid`). `FormSplit` is the exception: the form comes first.
+- **Taps:** every interactive target is at least 44px (`--tap-min`).
+- **No horizontal scroll** at any width from 360 to 1440. Test 360, 390, 768, 1024, 1280, 1440.
+- **Pattern floor:** the rosette band disappears on surfaces under ~880px (`PatternPanel` container query). Do not force it back.
+- **Panoramas:** 21:9 only on desktop. Pass `mobileRatio` (`PanoramaCaption` defaults to 4:5) so the frame keeps its height on a phone.
+- **Tables:** under 520px `SpecTable` rows become blocks (name on its own line, other cells labelled beneath). `TimeTable` puts the time above the title under 760px.
+- **Tile grids:** never an uneven last row. Keep counts to multiples of the column count.
 
 ## Copy
 
@@ -99,8 +203,8 @@ Motion should make Shantara feel calm, continuous, and intentional. It must neve
 Not every section animates. Use only this vocabulary:
 
 - **Hero:** one subtle entrance on first load (for example, a gentle fade and small upward settle of the heading). Once only.
-- **Major editorial images:** an occasional reveal as they enter the viewport. Not every image. At most one or two per page.
-- **Buttons, links and cards:** subtle hover and focus states (colour, underline, slight image scale around 1.02 to 1.04). Interactive cards lift without media zoom as the primary pattern in the kit.
+- **Major editorial images:** an occasional reveal as they enter the viewport (`--duration-reveal`, 640 ms). Not every image. At most one or two per page.
+- **Buttons, links and tiles:** subtle hover and focus states (colour, underline). A `Tile` scales its photograph to 1.02 inside the frame (`--tile-media-scale`) and underlines its title. Nothing lifts or gains a shadow on marketing pages.
 - **Page changes:** a restrained Astro View Transition. Shared-element transitions (for example, a programme card image becoming the programme page hero) are allowed where they help continuity.
 - **Long-form, programme, therapy and clinical content:** mostly static. Reading pages should not move.
 
@@ -176,4 +280,13 @@ Before marking any page or component done, check:
 - [ ] Layout works in right-to-left.
 - [ ] Text contrast meets WCAG AA.
 - [ ] Mobile Core Web Vitals still pass.
+- [ ] Every heading 24px or larger is Light; item titles are Medium; body is Regular.
+- [ ] Each section uses one ground via `Section` / `data-ground`; at most one `BandStatement` per page.
+- [ ] Photographs are square-cut and go through `Media`; one photograph per job.
+- [ ] Listings use `Tile`, not `Card`; no hover lift or shadow.
+- [ ] Buttons are `primary`, `secondary` or `link`; one primary per view.
+- [ ] Every eyebrow adds information the heading does not.
+- [ ] No horizontal scroll at 360, 390, 768, 1024, 1280, 1440.
+- [ ] Phones: photograph before text; every tap target at least 44px.
+- [ ] Panoramas pass `mobileRatio`; tables read as blocks under 520px; no rosette band under ~880px.
 - [ ] No rates or “from …” amounts except on a dedicated tariff surface.

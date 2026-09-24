@@ -20,6 +20,6 @@ Read that file before building, styling, reviewing, or changing visual design, l
 
 Motion comes last in the build order. Stack locks (no animation libraries, no UI kits) are reinforced in `ui_kits/website/skill-stack.md`. Public copy remains governed by `ui_kits/website/skill-copy.md` — this skill does not replace it.
 
-Typography uses the design-system face (**Diodrum**; **IBM Plex Sans Arabic** for RTL). Do not invent a separate display serif.
+Typography uses the design-system face (**Diodrum**; **IBM Plex Sans Arabic** for RTL). Do not invent a separate display serif. Every heading at 24px or larger is Light. Design-system rules from the brand deck (grounds, square shape, buttons, tiles, component map, responsive rules) are in the same file.
 
 Also read `ui_kits/website/SKILL.md` for information architecture and page composition, and the root `SKILL.md` for brand tokens, rosette rules, and accessibility.

@@ -1,0 +1,64 @@
+/* LAYOUT LAYER — grounds, container, grid, section rhythm.
+   Everything here is mobile first. Breakpoints: 520 / 760 / 1000 / 1280 (tokens/spacing.css).
+
+   GROUNDS. A section paints exactly one of five grounds with data-ground. Dark grounds
+   (himalaya, pine, photo) re-point the semantic ink tokens inside their subtree, so every
+   component — Button, Eyebrow, TextLink, lists — adapts without a tone prop. */
+:root{
+--eyebrow-color:var(--color-himalaya);
+--btn-primary-bg:var(--surface-brand);
+--btn-primary-bg-hover:var(--color-himalaya-800);
+--btn-primary-fg:var(--text-on-brand);
+--rule-color:var(--border-subtle);
+}
+[data-ground]{color:var(--text-primary)}
+[data-ground="merino"]{background:var(--ground-merino)}
+[data-ground="stone"]{background:var(--ground-stone)}
+[data-ground="himalaya"]{background:var(--ground-himalaya)}
+[data-ground="pine"]{background:var(--ground-pine)}
+[data-ground="photo"]{background:var(--ground-pine)}
+[data-ground="himalaya"],[data-ground="pine"],[data-ground="photo"]{
+  --text-primary:var(--color-merino);
+  --text-secondary:color-mix(in srgb, var(--color-merino) 82%, transparent);
+  --text-muted:color-mix(in srgb, var(--color-merino) 70%, transparent);
+  --text-brand:var(--color-gold-crayola);
+  --text-link:var(--color-merino);
+  --text-link-hover:var(--color-gold-crayola);
+  --eyebrow-color:var(--color-gold-crayola);
+  --border-subtle:color-mix(in srgb, var(--color-merino) 18%, transparent);
+  --border-control:color-mix(in srgb, var(--color-merino) 60%, transparent);
+  --rule-color:color-mix(in srgb, var(--color-merino) 18%, transparent);
+  --btn-primary-bg:var(--color-gold-crayola);
+  --btn-primary-bg-hover:var(--color-gold-200);
+  --btn-primary-fg:var(--color-pine-tree);
+  --ring-focus:var(--ring-focus-inverse);
+  color:var(--text-primary);
+}
+/* On photography the eyebrow is Merino: the crop under it is never guaranteed dark. */
+[data-ground="photo"]{--eyebrow-color:var(--color-merino)}
+
+/* CONTAINER — content never touches the viewport edge; gutter is fluid 20 → 48. */
+.sh-container{width:100%;max-width:calc(var(--layout-max) + 2 * var(--layout-gutter));margin-inline:auto;padding-inline:var(--layout-gutter)}
+.sh-container[data-width="wide"]{max-width:calc(var(--layout-wide) + 2 * var(--layout-gutter))}
+.sh-container[data-width="narrow"]{max-width:calc(var(--layout-narrow) + 2 * var(--layout-gutter))}
+.sh-container[data-width="full"]{max-width:none;padding-inline:0}
+
+/* GRID — 4 columns on phones, 8 on tablets, 12 from 1000px. */
+.sh-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--grid-gap)}
+@media (min-width:760px){.sh-grid{grid-template-columns:repeat(8,minmax(0,1fr))}}
+@media (min-width:1000px){.sh-grid{grid-template-columns:repeat(var(--grid-columns),minmax(0,1fr))}}
+
+/* SECTION RHYTHM */
+.sh-section{position:relative;padding-block:var(--section-y)}
+.sh-section[data-space="sm"]{padding-block:var(--section-y-sm)}
+.sh-section[data-space="none"]{padding-block:0}
+.sh-section[data-space="top"]{padding-block:var(--section-y) 0}
+.sh-section[data-space="bottom"]{padding-block:0 var(--section-y)}
+
+/* Stack a row of actions; wraps on phones, never overflows. */
+.sh-actions{display:flex;flex-wrap:wrap;align-items:center;gap:var(--space-4) var(--space-6)}
+@media (max-width:519.98px){.sh-actions[data-stack="mobile"]{flex-direction:column;align-items:stretch}.sh-actions[data-stack="mobile"]>*{width:100%}
+  /* A text link stays a link on the grid's left edge — it never stretches into a centred bar. */
+  .sh-actions[data-stack="mobile"]>.sh-btn[data-variant="link"],.sh-actions[data-stack="mobile"]>.sh-btn[data-variant="ghost"]{width:auto;align-self:flex-start}}
+
+.sh-visually-hidden{position:absolute!important;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}

@@ -1,8 +1,9 @@
 /* Minimal element defaults so consuming pages inherit the brand without any component. */
 *,*::before,*::after{box-sizing:border-box}
-html{-webkit-tap-highlight-color:transparent;-webkit-text-size-adjust:100%}
+html{-webkit-tap-highlight-color:transparent;-webkit-text-size-adjust:100%;scroll-padding-top:88px}
+body{overflow-x:clip}
 body{margin:0;background:var(--surface-page);color:var(--text-primary);font:var(--type-body);-webkit-font-smoothing:antialiased;text-wrap:pretty}
-h1,h2,h3,h4,h5,h6{margin:0;color:var(--text-primary)}
+h1,h2,h3,h4,h5,h6{margin:0;color:var(--text-primary);text-wrap:balance;overflow-wrap:break-word}
 h1{font:var(--type-h1)}h2{font:var(--type-h2)}h3{font:var(--type-h3)}h4{font:var(--type-h4)}
 p{margin:0 0 1em;max-width:68ch}
 a{color:var(--text-link);text-decoration-color:color-mix(in srgb, var(--text-link) 40%, transparent);text-underline-offset:3px;transition:color var(--duration-fast) var(--ease-standard)}
@@ -22,8 +23,13 @@ button,[role="button"],.sh-btn,.sh-ibtn,.sh-tag,.sh-tab,.sh-acc-btn,.btn{
 }
 ::selection{background:var(--color-gold-crayola);color:var(--color-pine-tree)}
 :focus-visible{outline:none;box-shadow:var(--ring-focus)}
-img,svg{max-width:100%}
-.shantara-eyebrow{font:var(--type-eyebrow);letter-spacing:var(--tracking-eyebrow);text-transform:uppercase;color:var(--text-secondary)}
+img,svg,video{max-width:100%;height:auto}
+/* Form controls and buttons do not inherit the page font by default — they must, or
+   Tabs, Accordion and every <button> fall back to the system face. */
+button,input,select,textarea{font-family:inherit;color:inherit}
+/* Eyebrow colour follows the ground: Himalaya on light, Gold on flat dark, Merino on photography
+   (--eyebrow-color, tokens/layout.css). */
+.shantara-eyebrow{font:var(--type-eyebrow);letter-spacing:var(--tracking-eyebrow);text-transform:uppercase;color:var(--eyebrow-color)}
 .shantara-wordmark-type{font-family:var(--font-display);font-weight:var(--weight-semibold);letter-spacing:var(--tracking-wordmark);text-transform:uppercase}
 /* Data figures: always tabular. A unit of measure sits on the numeral's own baseline
    at 0.42em, Regular, one 0.16em space away — never superscript, never Light. */

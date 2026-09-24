@@ -95,3 +95,10 @@
 .shantara-pattern[data-tone="dark"] .shantara-pattern-band,.shantara-pattern[data-tone="photo"] .shantara-pattern-band{border-color:var(--pattern-rule,var(--pattern-rule-dark))}
 .shantara-pattern[data-tone="dark"] .shantara-pattern-band::before{background-color:var(--pattern-ink-dark);opacity:var(--pattern-opacity,var(--pattern-opacity-dark))}
 .shantara-pattern[data-tone="photo"] .shantara-pattern-band::before{background-color:var(--pattern-ink-dark);opacity:var(--pattern-opacity,var(--pattern-opacity-photo))}
+/* RESPONSIVE FLOOR — the cell cannot go under 130px, so no surface under ~880px carries a
+   band. Below it the band is removed (not shrunk) and the space it reserved is returned
+   to the content. PatternPanel and the kit sections rely on this rule. */
+@media (max-width:879.98px){
+  .shantara-pattern-band{display:none}
+  .shantara-pattern [data-pattern-reserve]{padding:0!important}
+}

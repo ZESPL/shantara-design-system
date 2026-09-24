@@ -13,6 +13,6 @@ Rosette **band** on one edge of a surface — the only way the pattern is used. 
 - `reserve` (default true) pads the content clear of the band. Only switch it off when the children are absolutely positioned away from that edge. Type, cards and controls never sit in the band — the rosette is not a field behind headlines or body copy.
 - `ink` / `rule` override the line and hairline colours.
 
-**Hard rule.** If the surface is narrower than ~880px, omit the pattern band. Do not put long Merino headings beside a wide patterned edge and call it “reserved.”
+**Hard rule.** If the surface is narrower than ~880px, omit the pattern band. PatternPanel now does this for you with a container query on its own width: under 880px the band disappears and the padding it reserved returns to the content, so one component works from phone to desktop. Do not put long Merino headings beside a wide patterned edge and call it “reserved.”
 
 **Motion.** None. The rosette is a still band. The only looping motion in the system is the Spinner — never give the pattern a drift, pulse or fade.

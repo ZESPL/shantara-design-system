@@ -8,9 +8,9 @@ Builder notes and thin samples for the public marketing website. **Not a product
 | --- | --- |
 | [`SKILL.md`](SKILL.md) | Agent skill — how to build and review the marketing website |
 | [`skill-stack.md`](skill-stack.md) | Production stack for shantara.life (Astro, Keystatic, Netlify, …) |
-| [skill-premium.md](skill-premium.md) | Premium design, build order, motion vocabulary |
+| [`skill-premium.md`](skill-premium.md) | Premium design, deck-derived design-system rules, responsive rules, motion |
 | [`skill-ia.md`](skill-ia.md) | Nav, URL families, page inventory |
-| [`skill-sections.md`](skill-sections.md) | Heroes, semantic sections, cards |
+| [`skill-sections.md`](skill-sections.md) | Heroes, semantic sections → components, tiles |
 | [`skill-content.md`](skill-content.md) | CMS, publishing, leads, E-E-A-T |
 | [`skill-copy.md`](skill-copy.md) | Public-facing language |
 | [`skill-technical.md`](skill-technical.md) | Analytics, SEO, schema, a11y |
@@ -24,7 +24,7 @@ Welnez is the former name. Use **Shantara** in all new public copy.
 
 Primary visitor-facing action: **Book a Consultation**. Rates appear **only** in [`content/tariff.json`](../../content/tariff.json), the tariff card (`screens/TariffScreen.js`), brand-deck tariff slides, and the handbook tariff section.
 
-Entity facts for kit screens: [`content/`](../../content/) (load `content/kit.js` → `window.ShantaraContent`). After editing facts, edit `content/` only. After editing `components/**`, sync `_ds_bundle.js` (components only — never for copy).
+Entity facts for kit screens: [`content/`](../../content/) (load `content/kit.js` → `window.ShantaraContent`). After editing facts, edit `content/` only. Screens compose `components/sections/` and `components/editorial/`. After editing `components/**`, rebuild `_ds_bundle.js` with `node scripts/build-bundle.mjs` (components only — never for copy).
 
 ## Sample file map
 
@@ -43,9 +43,9 @@ rtl-fixture.html
 
 | File | Surface |
 | --- | --- |
-| `chrome/SiteChrome.js` | Skill nav + wordmark-only logo + Book a Consultation; LanguageSelector (hidden while only `en` is enabled) |
-| `chrome/Photo.js` | Thin `<img>` wrapper over `assets/photos/*` |
-| `screens/HomeScreen.js` | Immersive hero, approach + proof, programmes, insights, FAQ, consultation CTA |
+| `chrome/SiteChrome.js` | Header over every page (menu sheet under 1000px), wordmark-only logo, Book a Consultation, LanguageSelector (hidden while only `en` is enabled); footer band via `PatternPanel` |
+| `chrome/Photo.js` | Adapter over the `Media` primitive for `assets/photos/*` (square-cut, ratio, `mobileRatio`, scrim) |
+| `screens/HomeScreen.js` | Full-bleed hero, approach + proof, programme tiles, insights, FAQ, closing CTA |
 | `screens/ConditionsScreen.js` | Condition listing — visual groups only |
 | `screens/ProgrammeScreen.js` | Detox programme sample |
 | `screens/ExperienceScreen.js` | What a stay includes |

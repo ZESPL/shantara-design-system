@@ -772,6 +772,8 @@
     Forms: ["Input", "Textarea", "Select", "Checkbox", "Radio", "Switch"],
     Navigation: ["Tabs", "Breadcrumbs", "Accordion", "LanguageSelector"],
     Feedback: ["Dialog", "Toast", "Tooltip", "Spinner"],
+    Editorial: ["Media", "Eyebrow", "Statement", "Numeral", "TextLink", "Tile", "NumberedSteps", "PlainList", "GroupedList", "SpecTable", "TimeTable", "QuoteBlock", "PortraitFrame"],
+    Sections: ["Section", "HeroFullBleed", "HeroStatement", "SplitSection", "BandStatement", "PanoramaCaption", "PeopleRow", "NumeralsSplit", "TileGrid", "IndexList", "ClosingCTA", "FormSplit"],
   };
 
   const COMPONENT_PATH = {
@@ -781,6 +783,12 @@
     Radio: "forms", Switch: "forms",
     Tabs: "navigation", Breadcrumbs: "navigation", Accordion: "navigation", LanguageSelector: "navigation",
     Dialog: "feedback", Toast: "feedback", Tooltip: "feedback", Spinner: "feedback",
+    Media: "editorial", Eyebrow: "editorial", Statement: "editorial", Numeral: "editorial", TextLink: "editorial",
+    Tile: "editorial", NumberedSteps: "editorial", PlainList: "editorial", GroupedList: "editorial",
+    SpecTable: "editorial", TimeTable: "editorial", QuoteBlock: "editorial", PortraitFrame: "editorial",
+    Section: "sections", HeroFullBleed: "sections", HeroStatement: "sections", SplitSection: "sections",
+    BandStatement: "sections", PanoramaCaption: "sections", PeopleRow: "sections", NumeralsSplit: "sections",
+    TileGrid: "sections", IndexList: "sections", ClosingCTA: "sections", FormSplit: "sections",
   };
 
   function familyOf(name) {
@@ -826,7 +834,19 @@
     }
 
     const specimen = document.querySelector("[data-specimen]");
-    if (specimen) specimen.src = `../components/_specimen?c=${encodeURIComponent(name)}`;
+    if (specimen) {
+      /* Section specimens are page-width and tall: size the frame to its content (capped). */
+      specimen.addEventListener("load", () => {
+        const fit = () => {
+          try {
+            const h = specimen.contentDocument.documentElement.scrollHeight;
+            specimen.style.height = Math.min(Math.max(h, 280), 1400) + "px";
+          } catch (e) { /* cross-origin preview: keep the default height */ }
+        };
+        [0, 400, 1200, 2500].forEach((ms) => setTimeout(fit, ms));
+      });
+      specimen.src = `../components/_specimen?c=${encodeURIComponent(name)}`;
+    }
 
     const promptPath = `../components/${folder}/${name}.prompt.md`;
     const res = await fetch(promptPath);

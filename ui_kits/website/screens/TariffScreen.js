@@ -5,9 +5,11 @@ function tariffRows() {
   return (tariff.rooms || []).map((row) => {
     const room = roomsById[row.room_id] || {};
     return {
+      id: row.room_id,
       name: room.name || row.room_id,
       size: room.size || "",
       occ: room.occupancy || "",
+      spec: room.spec_line || room.size || "",
       single: row.single_per_night == null ? null : String(row.single_per_night).replace(/\B(?=(\d{3})+(?!\d))/g, ","),
       double: row.double_per_night == null ? null : String(row.double_per_night).replace(/\B(?=(\d{3})+(?!\d))/g, ","),
     };
@@ -26,62 +28,93 @@ function tariffValidCopy() {
   return `Rates valid to ${formatted}. Reservations are confirmed after a preliminary consultation.`;
 }
 
+/* One photograph per room on this page (the content records share `room-twin` between
+   three categories), and none of them the hero frame. */
+const TARIFF_ROOM_PHOTOS = {
+  "executive-suite": "suite-living-balcony-empty",
+  "premium-room": "room-premium",
+  "superior-room": "balcony",
+  "deluxe-room": "room-twin",
+  "standard-room": "room-bedroom-forest-view-armchair",
+};
+
 function TariffScreen({ onNavigate }) {
   const { t } = window.ShantaraI18n.useLocale();
-  const { Button, Breadcrumbs, Divider, Card, Icon } = window.ShantaraDesignSystem_45bbe4;
+  const { Button, Breadcrumbs, HeroFullBleed, Section, FormSplit, SpecTable, Eyebrow, PlainList, TileGrid, Tile, Media, ClosingCTA } = window.ShantaraDesignSystem_45bbe4;
+  const L = window.ShantaraLocales;
+  const site = window.ShantaraContent.site || {};
+  const phones = site.phone || ["+91 9553 600 100", "+91 9553 700 100"];
+  const email = site.email || "heal@shantara.life";
+  const home = L ? L.kitHash(window.ShantaraI18n.currentLocaleCode(), "home") : "#/en/";
   const rows = tariffRows();
   const included = tariffInclusions();
   const symbol = (window.ShantaraContent.tariff && window.ShantaraContent.tariff.currency_symbol) || "₹";
+  const book = (where) => () => { if (L) L.track("consultation_cta_click", { page_type: "tariffs", content_id: "tariffs", content_name: "Rooms and tariffs", cta_location: where }); onNavigate("booking"); };
   return (
     <main>
-      <section style={{ position: "relative", marginTop: "-96px", paddingTop: "96px", marginBottom: "var(--space-9)" }}>
-        <Photo name="room-premium" alt={t("Rooms and tariffs")} height={420} radius="0px" scrim="bottom">
-          <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "flex-end" }}>
-            <div style={{ maxWidth: "var(--layout-max)", width: "100%", margin: "0 auto", padding: "0 var(--layout-gutter-lg) var(--space-11)" }}>
-              <span className="shantara-eyebrow" style={{ color: "var(--color-gold-crayola)" }}>{t("Rooms & tariffs")}</span>
-              <h1 style={{ font: "var(--type-h1)", color: "var(--color-merino)", margin: "var(--space-4) 0 var(--space-5)", maxWidth: "14ch" }}>{t("Rooms and tariffs")}</h1>
-              <p style={{ font: "var(--type-lead)", color: "var(--color-merino)", maxWidth: "42ch", margin: 0 }}>{t("Shantara has 52 rooms across five accommodation categories, designed for comfortable residential stays.")}</p>
-            </div>
-          </div>
-        </Photo>
-      </section>
-      <div style={{ maxWidth: "var(--layout-max)", margin: "0 auto", padding: "0 var(--layout-gutter-lg) var(--section-y)" }}>
-      <Breadcrumbs items={[{ label: t("Stay"), href: window.ShantaraLocales ? window.ShantaraLocales.kitHash(window.ShantaraI18n.currentLocaleCode(), "home") : "#/en/" }, t("Rooms & tariffs")]} />
-      <div style={{ display: "flex", gap: "var(--space-11)", marginTop: "var(--space-7)", alignItems: "flex-start", flexWrap: "wrap" }}>
-        <div style={{ flex: "1 1 520px", minWidth: 0 }}>
-          <span className="shantara-eyebrow">{t("Rooms and tariffs")}</span>
-          <h2 style={{ font: "var(--type-h1)", fontSize: "var(--text-3xl)", margin: "var(--space-4) 0 var(--space-6)" }}>{t("Rooms and tariffs")}</h2>
-          <p style={{ font: "var(--type-lead)", margin: "0 0 var(--space-8)", maxWidth: "52ch" }}>{t("Each nightly rate includes the stay items listed here.")}</p>
-          {rows.map((r) => (
-            <div key={r.name} style={{ display: "flex", alignItems: "baseline", gap: "var(--space-5)", borderTop: "1px solid var(--border-subtle)", padding: "18px 0" }}>
-              <div>
-                <h2 style={{ font: "var(--type-h4)", fontSize: "var(--text-lg)", margin: 0 }}>{t(r.name)}</h2>
-                <p style={{ font: "var(--type-body-sm)", color: "var(--text-secondary)", margin: "var(--space-2) 0 0" }}>
-                  {r.size} · {t(r.occ)}
-                  {r.double ? ` · ${t("Double / night")} ${symbol}${r.double}` : ""}
-                </p>
-              </div>
-              <span style={{ marginInlineStart: "auto", font: "var(--weight-light) var(--text-2xl)/1 var(--font-display)", fontVariantNumeric: "tabular-nums", whiteSpace: "nowrap" }}>{symbol}{r.single}</span>
-            </div>
-          ))}
-          <p style={{ fontSize: "var(--text-sm)", color: "var(--text-secondary)", margin: "var(--space-7) 0 0", maxWidth: "72ch" }}>{t(tariffValidCopy())}</p>
+      <HeroFullBleed
+        height="tall"
+        src={window.photoSrc("room-bedroom-desk-balcony-view")}
+        alt={t("A bedroom with a desk and a balcony view")}
+        title={t("Rooms and tariffs")}
+        sub={t("Shantara has 52 rooms across five accommodation categories, designed for comfortable residential stays.")}
+      />
+
+      <Section>
+        <div style={{ marginBottom: "var(--stack-lg)" }}>
+          <Breadcrumbs items={[{ label: t("Home"), href: home }, t("Rooms and tariffs")]} />
         </div>
-        <Card padding="lg" style={{ flex: "0 1 360px" }}>
-          <span className="shantara-eyebrow">{t("What your stay includes")}</span>
-          <h2 style={{ font: "var(--type-h4)", margin: "var(--space-4) 0 var(--space-6)" }}>{t("What the nightly rate includes")}</h2>
-          <ul style={{ margin: 0, padding: 0, listStyle: "none", display: "flex", flexDirection: "column", gap: "var(--space-4)" }}>
-            {included.map((line) => (
-              <li key={line} style={{ display: "flex", gap: "var(--space-3)", alignItems: "flex-start", fontSize: "var(--text-sm)", borderTop: "1px solid var(--border-subtle)", paddingTop: "var(--space-4)" }}>
-                <Icon name="leaf" size={16} color="var(--text-brand)" /><span>{t(line)}</span>
-              </li>
-            ))}
-          </ul>
-          <Divider spacing="var(--space-7)" />
-          <Button fullWidth size="lg" onClick={() => onNavigate("booking")}>{t("Book a Consultation")}</Button>
-          <Button fullWidth variant="secondary" style={{ marginTop: "var(--space-4)" }} onClick={() => onNavigate("home")}>{t("Back to home")}</Button>
-        </Card>
-      </div>
-      </div>
+        <FormSplit
+          aside={<>
+            <Eyebrow>{t("What the nightly rate includes")}</Eyebrow>
+            <PlainList columns={1} rules items={included.map((line) => t(line))} />
+            <Button fullWidth size="lg" onClick={book("inline")}>{t("Book a Consultation")}</Button>
+          </>}
+        >
+          <SpecTable
+            size="lg"
+            showHeader
+            caption={t("Rooms and tariffs")}
+            columns={[
+              { key: "name", label: t("Room") },
+              { key: "single", label: t("Single / night"), accent: true, mobileLabel: true },
+              { key: "double", label: t("Double / night"), mobileLabel: true },
+              { key: "size", label: t("Size"), mobileLabel: true },
+              { key: "occ", label: t("Occupancy"), mobileLabel: true },
+            ]}
+            rows={rows.map((r) => ({
+              name: t(r.name),
+              single: r.single ? `${symbol}${r.single}` : "—",
+              double: r.double ? `${symbol}${r.double}` : "—",
+              size: r.size.replace(/ /g, "\u00a0"),
+              occ: t(r.occ),
+            }))}
+          />
+          <p style={{ margin: 0, font: "var(--type-body-sm)", color: "var(--text-secondary)", maxWidth: "var(--measure-body)" }}>{t(tariffValidCopy())}</p>
+        </FormSplit>
+      </Section>
+
+      <Section space="bottom">
+        {/* Five categories: layout "2" puts the first across the full width and the other
+            four in two even rows, so no row is left half empty. */}
+        <TileGrid layout="2">
+          {rows.map((r, i) => (
+            <Tile key={r.id} media={<Media src={window.photoSrc(TARIFF_ROOM_PHOTOS[r.id] || "room-twin")} alt="" ratio={i === 0 && rows.length % 2 === 1 ? "21:9" : "4:3"} mobileRatio="4:3" />} title={t(r.name)} meta={t(r.spec)} />
+          ))}
+        </TileGrid>
+      </Section>
+
+      <ClosingCTA
+        src={window.photoSrc("exterior-entrance-dusk-lit-canopy")}
+        alt={t("The entrance canopy at dusk")}
+        title={t("Share your name and a number we can reach.")}
+        sub={t("Our team will contact you to arrange a consultation.")}
+        action={<Button size="lg" onClick={book("closing")}>{t("Book a Consultation")}</Button>}
+        contact={<>
+          <a className="shantara-dir-ltr" href={"mailto:" + email} onClick={() => L && L.track("contact_click", { contact_method: "email", page_type: "tariffs", cta_location: "closing" })}>{email}</a>
+          {phones.map((n) => <a key={n} className="shantara-dir-ltr" href={"tel:" + n.replace(/\s/g, "")} style={{ fontVariantNumeric: "tabular-nums" }} onClick={() => L && L.track("contact_click", { contact_method: "phone", page_type: "tariffs", cta_location: "closing" })}>{n}</a>)}
+        </>}
+      />
     </main>
   );
 }

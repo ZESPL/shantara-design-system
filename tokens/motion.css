@@ -16,6 +16,8 @@
 --transition-fade:opacity var(--duration-fast) var(--ease-out), transform var(--duration-fast) var(--ease-out); /* @kind other */
 --press-scale:0.96; /* @kind other */
 --lift-hover:-4px; /* @kind other */
+--tile-media-scale:1.02; /* @kind other — Tile hover; the only media zoom in the system */
+--duration-reveal:640ms; /* editorial image reveal, within 500–800ms */
 }
 
 .sh-page-enter{animation:sh-enter-up var(--duration-slow) var(--ease-out) both}
@@ -29,6 +31,8 @@
 @media (prefers-reduced-motion: reduce){
   :root{
     --lift-hover:0px;
+    --tile-media-scale:1;
+    --duration-reveal:0ms;
     --press-scale:1;
     --duration-fast:80ms;
     --duration-base:120ms;

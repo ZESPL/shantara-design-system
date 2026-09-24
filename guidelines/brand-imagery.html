@@ -1,5 +1,5 @@
 <!-- @dsCard group="Brand" viewport="960x620" name="Imagery" subtitle="The property shoot — what to reach for, what to crop, and the privacy rule" -->
-<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../styles.css"><style>body{margin:0;padding:24px;background:var(--surface-page);font-family:var(--font-body);color:var(--text-primary)}figure{margin:0}figcaption{font-family:var(--font-mono);font-size:var(--text-3xs);letter-spacing:.06em;text-transform:uppercase;color:var(--text-muted);margin-top:8px}img{display:block;width:100%;height:100%;object-fit:cover}.f{position:relative;border-radius:var(--radius-md);overflow:hidden;background:var(--color-cotton-seed)}</style></head><body>
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../styles.css"><style>body{margin:0;padding:24px;background:var(--surface-page);font-family:var(--font-body);color:var(--text-primary)}figure{margin:0}figcaption{font-family:var(--font-mono);font-size:var(--text-3xs);letter-spacing:.06em;text-transform:uppercase;color:var(--text-muted);margin-top:8px}img{display:block;width:100%;height:100%;object-fit:cover}.f{position:relative;border-radius:var(--radius-media);overflow:hidden;background:var(--color-cotton-seed)}</style></head><body>
 <div style="display:grid;gap:var(--space-8)">
 <div style="display:grid;grid-template-columns:1.5fr 1fr;gap:var(--space-7);align-items:end">
 <div>
@@ -15,10 +15,10 @@
 <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:var(--space-5)">
 <figure><div class="f" style="height:180px"><img src="../assets/photos/arrival-dusk.jpg" alt="Arrival canopy at dusk" style="width:100%;height:100%;object-fit:cover"></div><figcaption>Arrival · page hero (fixed height, not a forced listing ratio)</figcaption></figure>
 <figure><div class="f" style="aspect-ratio:4/3"><img src="../assets/photos/valley.jpg" alt="The Chennamangallur valley"></div><figcaption>Place · 4:3 listing</figcaption></figure>
-<figure><div class="f" style="aspect-ratio:3/4"><img src="../assets/photos/courtyard.jpg" alt="Planted courtyard"></div><figcaption>Portrait · 3:4 mosaic</figcaption></figure>
+<figure><div class="f" style="aspect-ratio:3/4"><img src="../assets/photos/courtyard.jpg" alt="Planted courtyard"></div><figcaption>Tall · 3:4 architecture</figcaption></figure>
 <figure><div class="f" style="aspect-ratio:4/3"><img src="../assets/photos/treatment.jpg" alt="Therapy room, unoccupied"></div><figcaption>Therapy · room, never guest</figcaption></figure>
 </div>
-<div style="font-size:var(--text-sm);color:var(--text-secondary);max-width:72ch">Ratio by job: <strong>4:3</strong> listings and gallery; <strong>16:9</strong> when a wide editorial crop is needed; <strong>3:4</strong> tall mosaic tiles. Page heroes use an explicit height (cover crop) — they are not forced to 4:3. Type over photos uses a shorter bottom <code>--scrim-bottom</code> with solid Merino body — never a second manual scrim on top.</div>
+<div style="font-size:var(--text-sm);color:var(--text-secondary);max-width:72ch">Every photograph is square-cut (<code>--radius-media: 0</code>) and goes through <code>Media</code>. One photograph per job. Ratio by job: <strong>4:3</strong> listing tiles; <strong>16:9</strong> wide editorial; <strong>4:5</strong> doctor portraits and tall split media; <strong>3:4</strong> tall architecture; <strong>21:9</strong> panorama on desktop only, with a <code>mobileRatio</code> for phones. Page heroes use an explicit height (100svh / 72svh), not a ratio. Type over photos sits inside <code>--scrim-hero</code>, which covers the whole text block, in solid Merino — never a second manual scrim on top.</div>
 <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:var(--space-4)">
 <figure><div class="f" style="aspect-ratio:4/3"><img src="../assets/photos/room-premium.jpg" alt="Premium room"></div><figcaption>Rooms</figcaption></figure>
 <figure><div class="f" style="aspect-ratio:4/3"><img src="../assets/photos/dining.jpg" alt="Dining hall"></div><figcaption>Diet therapy</figcaption></figure>
@@ -30,12 +30,12 @@
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-6)">
 <div class="f" style="height:180px">
 <img src="../assets/photos/exterior-day.jpg" alt="Exterior by day">
-<span style="position:absolute;inset:0;background:var(--scrim-bottom)"></span>
+<span style="position:absolute;inset:0;background:var(--scrim-hero)"></span>
 <span style="position:absolute;left:20px;bottom:18px;color:var(--color-merino);font:var(--weight-light) var(--text-2xl)/1.05 var(--font-display)">Type sits on a scrim,<br>never bare glass</span>
 </div>
 <div style="display:grid;grid-template-rows:1fr 1fr;gap:var(--space-4);font-size:var(--text-sm)">
 <div style="background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-md);padding:var(--space-6)"><strong>Do</strong> · crop to architecture and horizon lines. Let green dominate. Keep the pattern off photography — one or the other, never both.</div>
-<div style="background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-md);padding:var(--space-6)"><strong>Don't</strong> · no filters, no teal-orange grade, no faces in therapy, no text without <code>--scrim-bottom</code> or <code>--glass-fill</code> behind it.</div>
+<div style="background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-md);padding:var(--space-6)"><strong>Don't</strong> · no filters, no teal-orange grade, no faces in therapy, no text without <code>--scrim-hero</code> or <code>--glass-fill</code> behind it.</div>
 </div>
 </div>
 </div>

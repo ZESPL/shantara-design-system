@@ -1,13 +1,21 @@
-Shantara's action control — use for every commit action; pill radius is non-negotiable in this brand.
+Shantara's action control — three variants, one near-square shape (`--radius-control`, 2px), taken from the brand deck's closing slide.
 
 ```jsx
-<Button variant="primary" size="lg" endIcon={<Icon name="arrow-right" />}>Book a Consultation</Button>
+<Button size="lg">Book a Consultation</Button>
+<Button variant="secondary">View programmes</Button>
+<Button variant="link" endIcon={<Icon name="arrow-right" size={16} />}>View conditions</Button>
 ```
 
-Variants: `primary` (Himalaya olive), `accent` (Gold Crayola, for warm/promotional CTAs), `secondary` (hairline Cotton Seed outline), `ghost` (olive text, soft olive hover), `inverse` (Merino on dark or over photography). Sizes `sm|md|lg` map to the 32/40/48px control heights. Pass `href` for a link-button; `fullWidth` for mobile sheets.
+**Variants.** `primary` is the one commit action per view. `secondary` is a 1px outline for a second, weaker action. `link` is text with a hairline underline and an arrow; it has zero inline padding so its left edge sits on the grid, and it still keeps a 44px tap height. `accent`, `ghost` and `inverse` are deprecated aliases kept so the app kit keeps working (`ghost` now renders as `link`). Do not use them on the website.
 
-Labels stay short — about one action, roughly 20 characters in English. Extra meaning lives in nearby text or on the destination page. Buttons may wrap; they must not become captions.
+**Ground-aware colour.** Buttons never take a tone prop. Inside `data-ground="himalaya" | "pine" | "photo"` the primary turns Gold with Pine ink and the secondary and link turn Merino (tokens/layout.css). On Merino and Stone the primary is Himalaya olive.
 
-**Motion.** Hover is a one-step fill or hairline shift at `--duration-fast` (160ms), gated to fine pointers. Press is `scale(var(--press-scale))` (`0.96`) on `:active`, never a colour flash. Focus is the 2+2px Himalaya ring. Disabled sits at 42% and does not move.
+**Sizes.** `md` (44px) and `lg` (52px) on the website; `sm` (36px) only in dense chrome, and it grows to 44px on touch screens.
 
-**RTL.** `startIcon` / `endIcon` follow reading direction. An `arrow-right` or `chevron-right` end icon flips when the page or region is `dir="rtl"` — do not swap the slug yourself.
+**Responsive.** Under 520px labels may wrap instead of overflowing. Put button rows in `.sh-actions` — add `data-stack="mobile"` to stack them full width on phones.
+
+Labels stay short — about one action, roughly 20 characters in English.
+
+**Motion.** Hover is a one-step fill or hairline shift at `--duration-fast`, fine pointers only; the link arrow moves 3px. Press is `scale(var(--press-scale))`, except `link`, which does not move. Focus is the 2+2px ring (Gold on dark grounds).
+
+**RTL.** `startIcon` / `endIcon` follow reading direction. Arrow icons flip under `dir="rtl"`.

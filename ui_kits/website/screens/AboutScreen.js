@@ -1,68 +1,89 @@
-const ABOUT = [
-  { title: "Our story", copy: "Shantara is the evolution of Hygiene Nature Cure Hospital, which has cared for more than 25,000 guests since 2000.", photo: "courtyard" },
-  { title: "Our approach", copy: "Treatment is drug-free and planned by our doctors after consultation and assessment. Plans are reviewed during the stay and adjusted where needed.", photo: "library" },
-  { title: "Meet our doctors", copy: "A doctor plans your programme after consultation and reviews it during your stay. Profiles include qualifications so you can see who is responsible for clinical guidance.", photo: "doctor-bahja-janu-profile" },
-  { title: "Medical Editorial Policy", copy: "Health pages name who writes, who reviews, which sources are used, and how often content is reviewed.", photo: "lounge" },
-];
+/* About — HeroStatement → numerals → doctors → story → approach → editorial policy → closing.
+   Copy comes from content/ (site, doctors) and the strings this screen already carried. */
+
+function aboutDoctors() {
+  return (window.ShantaraContent.doctors || []).map((d) => ({
+    name: d.full_name,
+    role: d.role,
+    detail: [d.qualification, d.publications_note].filter(Boolean).join(". ") || undefined,
+    src: d.photo_profile ? window.photoSrc(d.photo_profile) : undefined,
+  }));
+}
+
+function aboutNumerals() {
+  const stats = (window.ShantaraContent.site && window.ShantaraContent.site.stats) || [];
+  // Two or three figures only; the guests figure is already in the statement beside them.
+  return stats.filter((s) => !/guests/i.test(s.label)).slice(0, 3);
+}
 
 function AboutScreen({ onNavigate }) {
   const { t } = window.ShantaraI18n.useLocale();
-  const { Button, Card, Breadcrumbs, Logo } = window.ShantaraDesignSystem_45bbe4;
+  const { Breadcrumbs, HeroStatement, Section, NumeralsSplit, PeopleRow, SplitSection, Statement, TextLink, ClosingCTA, Button } = window.ShantaraDesignSystem_45bbe4;
+  const L = window.ShantaraLocales;
+  const site = window.ShantaraContent.site || {};
+  const phones = site.phone || ["+91 9553 600 100", "+91 9553 700 100"];
+  const email = site.email || "heal@shantara.life";
+  const home = L ? L.kitHash(window.ShantaraI18n.currentLocaleCode(), "home") : "#/en/";
   return (
     <main>
-      <div style={{ maxWidth: "var(--layout-max)", margin: "0 auto", padding: "var(--space-8) var(--layout-gutter-lg) var(--space-10)" }}>
-        <Breadcrumbs items={[{ label: t("Home"), href: window.ShantaraLocales ? window.ShantaraLocales.kitHash(window.ShantaraI18n.currentLocaleCode(), "home") : "#/en/" }, t("About")]} />
-        <span className="shantara-eyebrow" style={{ display: "block", marginTop: "var(--space-7)" }}>{t("About")}</span>
-        <h1 style={{ font: "var(--type-h1)", fontSize: "var(--text-3xl)", margin: "var(--space-4) 0 var(--space-5)", maxWidth: "20ch" }}>{t("About Shantara")}</h1>
-        <p style={{ font: "var(--type-lead)", color: "var(--text-secondary)", maxWidth: "58ch", margin: 0 }}>{t("Shantara is a doctor-led naturopathy retreat on four hilltop acres above the Chennamangallur valley. It is the evolution of Hygiene Nature Cure Hospital, which has cared for guests since 2000.")}</p>
-      </div>
+      <HeroStatement
+        breadcrumbs={<Breadcrumbs items={[{ label: t("Home"), href: home }, t("About")]} />}
+        title={t("About Shantara")}
+        sub={t("Shantara is a doctor-led naturopathy retreat on four hilltop acres above the Chennamangallur valley. It is the evolution of Hygiene Nature Cure Hospital, which has cared for guests since 2000.")}
+      />
 
-      {/* Statement — warm neutral. Avoid full-bleed Himalaya washes; brand green stays under ~10% of the page. */}
-      <section style={{ background: "var(--color-pearl-bush)" }}>
-        <div style={{ maxWidth: "var(--layout-max)", margin: "0 auto", padding: "var(--section-y) var(--layout-gutter-lg)" }}>
-          <span className="shantara-eyebrow" style={{ color: "var(--text-brand)" }}>{t("Our approach")}</span>
-          <h2 style={{ font: "var(--weight-light) var(--text-4xl)/1.08 var(--font-display)", color: "var(--text-primary)", margin: "var(--space-6) 0 var(--space-8)", maxWidth: "18ch" }}>{t("Your programme is planned after consultation and assessment.")}</h2>
-          <div style={{ height: 1, width: 160, background: "var(--border-brand)", marginBottom: "var(--space-6)" }} />
-          <p style={{ font: "var(--type-lead)", color: "var(--text-secondary)", maxWidth: "46ch", margin: 0 }}>{t("The clinical team plans your programme and adjusts it where necessary during your stay.")}</p>
-        </div>
-      </section>
+      <Section ground="stone">
+        <NumeralsSplit
+          eyebrow={t("Shantara in numbers")}
+          title={t("Shantara is the evolution of Hygiene Nature Cure Hospital, which has cared for more than 25,000 guests since 2000.")}
+          numerals={aboutNumerals().map((s) => ({ value: s.value, label: t(s.label) }))}
+        />
+      </Section>
 
-      {/* Stats — Pine Tree inverse (not Himalaya). Gold eyebrows and one accent numeral. */}
-      <section style={{ background: "var(--color-pine-tree)", color: "var(--text-on-inverse)" }}>
-        <div style={{ maxWidth: "var(--layout-max)", margin: "0 auto", padding: "var(--section-y-sm) var(--layout-gutter-lg)" }}>
-          <span className="shantara-eyebrow" style={{ color: "var(--color-gold-crayola)", display: "block", marginBottom: "var(--space-9)" }}>{t("Shantara in numbers")}</span>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "var(--space-8)" }}>
-            {((window.ShantaraContent.site && window.ShantaraContent.site.stats) || []).map(({ value: n, label: l }) => (
-              <div key={l}>
-                <div style={{ font: "var(--weight-light) var(--text-4xl)/1 var(--font-display)", fontVariantNumeric: "tabular-nums", color: /therapies/i.test(l) ? "var(--color-gold-crayola)" : "var(--color-merino)" }}>{n}</div>
-                <div className="shantara-eyebrow" style={{ marginTop: "var(--space-4)", color: "var(--color-cotton-seed)" }}>{t(l)}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <Section>
+        <PeopleRow
+          eyebrow={t("Meet our doctors")}
+          title={t("A doctor plans your programme after consultation and reviews it during your stay.")}
+          sub={t("Profiles include qualifications so you can see who is responsible for clinical guidance.")}
+          people={aboutDoctors().map((p) => ({ ...p, role: t(p.role), detail: p.detail ? t(p.detail) : undefined }))}
+        />
+      </Section>
 
-      <div style={{ maxWidth: "var(--layout-max)", margin: "0 auto", padding: "var(--section-y) var(--layout-gutter-lg)" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(2, minmax(0,1fr))", gap: "var(--space-7)" }}>
-          {ABOUT.map((item) => (
-            <Card key={item.title} padding="md" media={"../../assets/photos/" + item.photo + ".jpg"} mediaAlt={t(item.title)}>
-              <h2 style={{ font: "var(--type-h4)", margin: "0 0 var(--space-3)" }}>{t(item.title)}</h2>
-              <p style={{ font: "var(--type-body-sm)", color: "var(--text-secondary)", margin: 0 }}>{t(item.copy)}</p>
-            </Card>
-          ))}
-        </div>
+      <SplitSection src={window.photoSrc("courtyard")} alt={t("The courtyard at Shantara")} ground="merino">
+        <Statement eyebrow={t("Our story")} sub={t("Dr. P.A. Kareem founded Hygiene Nature Cure Hospital in 2000. Its core approach is to treat the cause through ethical, drug-free naturopathy.")}>
+          {t("Shantara is the evolution of Hygiene Nature Cure Hospital.")}
+        </Statement>
+      </SplitSection>
 
-        {/* Statement — brand-deck slide 19 */}
-        <div style={{ background: "var(--color-pearl-bush)", borderRadius: "var(--radius-card)", padding: "var(--space-12) var(--space-9)", textAlign: "center", marginTop: "var(--space-11)", display: "flex", flexDirection: "column", alignItems: "center" }}>
-          <Logo mark="icon" tone="olive" height={44} assetBase="../../assets" />
-          <p style={{ font: "var(--weight-light) var(--text-3xl)/1.18 var(--font-display)", margin: "var(--space-7) 0 0", maxWidth: "26ch" }}>{t("Doctor-led naturopathy, planned around your assessment.")}</p>
-          <span className="shantara-eyebrow" style={{ marginTop: "var(--space-7)" }}>{t("Our approach")}</span>
+      <SplitSection src={window.photoSrc("library")} alt={t("The library at Shantara")} mediaSide="end" ground="merino">
+        <Statement
+          eyebrow={t("Our approach")}
+          sub={t("Treatment is drug-free and planned by our doctors after consultation and assessment. Plans are reviewed during the stay and adjusted where needed.")}
+        >
+          {t("Your programme is planned after consultation and assessment.")}
+        </Statement>
+        <div>
+          <TextLink onClick={() => onNavigate("programme")}>{t("Programmes")}</TextLink>
         </div>
+      </SplitSection>
 
-        <div style={{ marginTop: "var(--space-10)" }}>
-          <Button size="lg" onClick={() => onNavigate("booking")}>{t("Book a Consultation")}</Button>
-        </div>
-      </div>
+      <Section ground="stone" space="sm">
+        <Statement size="title" eyebrow={t("Medical Editorial Policy")}>
+          {t("Health pages name who writes, who reviews, which sources are used, and how often content is reviewed.")}
+        </Statement>
+      </Section>
+
+      <ClosingCTA
+        src={window.photoSrc("arrival-dusk")}
+        alt={t("Shantara at dusk")}
+        title={t("Share your name and a number we can reach.")}
+        sub={t("Our team will contact you to arrange a consultation.")}
+        action={<Button size="lg" onClick={() => { if (L) L.track("consultation_cta_click", { page_type: "about", content_id: "about", content_name: "About", cta_location: "closing" }); onNavigate("booking"); }}>{t("Book a Consultation")}</Button>}
+        contact={<>
+          <a className="shantara-dir-ltr" href={"mailto:" + email} onClick={() => L && L.track("contact_click", { contact_method: "email", page_type: "about", cta_location: "closing" })}>{email}</a>
+          {phones.map((n) => <a key={n} className="shantara-dir-ltr" href={"tel:" + n.replace(/\s/g, "")} style={{ fontVariantNumeric: "tabular-nums" }} onClick={() => L && L.track("contact_click", { contact_method: "phone", page_type: "about", cta_location: "closing" })}>{n}</a>)}
+        </>}
+      />
     </main>
   );
 }

@@ -1,9 +1,9 @@
 import React from "react";
 
 const CSS = `
-.sh-acc{border-top:var(--border-width) solid var(--border-subtle);font-family:var(--font-body)}
-.sh-acc-item{border-bottom:var(--border-width) solid var(--border-subtle)}
-.sh-acc-btn{display:flex;align-items:center;justify-content:space-between;gap:var(--space-5);width:100%;padding:var(--space-6) 0;border:0;background:transparent;text-align:start;font:var(--type-h4);font-size:var(--text-lg);color:var(--text-primary);cursor:pointer;transition:color var(--duration-fast) var(--ease-standard)}
+.sh-acc{border-top:var(--border-width) solid var(--rule-color);font-family:var(--font-body)}
+.sh-acc-item{border-bottom:var(--border-width) solid var(--rule-color)}
+.sh-acc-btn{display:flex;align-items:center;justify-content:space-between;gap:var(--space-5);width:100%;padding:var(--space-6) 0;border:0;background:transparent;text-align:start;min-height:var(--tap-min);font-family:inherit;font-weight:var(--weight-light);font-size:calc(clamp(18px, 0.4vw + 16.5px, 22px) * var(--text-scale));line-height:1.3;color:var(--text-primary);cursor:pointer;transition:color var(--duration-fast) var(--ease-standard)}
 .sh-acc-btn:focus-visible{outline:none;box-shadow:var(--ring-focus);border-radius:var(--radius-xs)}
 @media (hover: hover) and (pointer: fine){
   .sh-acc-btn:hover{color:var(--text-brand)}
@@ -16,7 +16,8 @@ const CSS = `
 .sh-acc-panel{display:grid;grid-template-rows:0fr;transition:grid-template-rows var(--duration-base) var(--ease-out)}
 .sh-acc-item[data-open="true"] .sh-acc-panel{grid-template-rows:1fr}
 .sh-acc-clip{overflow:hidden;min-height:0}
-.sh-acc-inner{padding-block:0 var(--space-7);padding-inline:0 var(--space-9);color:var(--text-secondary);font-size:var(--text-sm);line-height:var(--leading-relaxed)}
+.sh-acc-inner{padding-block:0 var(--space-7);padding-inline:0 var(--space-9);color:var(--text-secondary);font-size:var(--text-base);line-height:var(--leading-body);max-width:var(--measure-body)}
+@media (max-width:519.98px){.sh-acc-inner{padding-inline:0}}
 `;
 
 function ensure() {
@@ -44,7 +45,7 @@ export function Accordion({ items = [], defaultOpen = 0, allowMultiple = false, 
             <button type="button" className="sh-acc-btn" id={bid} aria-expanded={on} aria-controls={pid} onClick={() => toggle(i)}>
               {it.title}<span className="sh-acc-sign" aria-hidden="true" />
             </button>
-            <div className="sh-acc-panel" id={pid} role="region" aria-labelledby={bid} aria-hidden={!on} inert={on ? undefined : true}>
+            <div className="sh-acc-panel" id={pid} role="region" aria-labelledby={bid} aria-hidden={!on} inert={on ? undefined : ""}>
               <div className="sh-acc-clip">
                 <div className="sh-acc-inner">{it.content}</div>
               </div>

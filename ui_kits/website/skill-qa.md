@@ -82,10 +82,10 @@ Before publishing:
 - [ ] No broken links.
 - [ ] No legacy “Welnez” branding remains accidentally.
 - [ ] No rates, “from …” amounts, or stay totals appear except on a dedicated tariff surface.
-- [ ] Listing images are 4:3; wide editorial may be 16:9; portrait mosaic 3:4. Page heroes use a fixed height (not a forced 4:3). Interactive cards lift without media zoom.
-- [ ] Type on photography sits on a bottom scrim (`--scrim-bottom`) with solid Merino body — photo still readable above the type; no faded Merino mixes, no double scrims.
-- [ ] Accordions expand with visible body (Programme “What to expect”, Home FAQ). After editing `components/**`, sync components into `_ds_bundle.js` (components only — never kit copy). After editing entity facts, edit `content/` and run `node scripts/write-content-kit.mjs`. Run `node scripts/check-bundle.mjs` before shipping.
-- [ ] Full-bleed Himalaya content washes are rare (brand green under ~10% of the page). Pearl Bush / Merino for large bands; Pine Tree inverse and gold accents are allowed.
+- [ ] Photographs are square-cut and go through `Media`. Listing tiles 4:3; wide editorial 16:9; doctors 4:5; tall architecture 3:4; 21:9 only via `PanoramaCaption` with `mobileRatio`. Heroes use a height, not a ratio. Tiles hover with a 1.02 media scale and title underline — no lift, no shadow. Design and responsive checks: [skill-premium.md](skill-premium.md#review-checklist).
+- [ ] Type on photography sits inside `--scrim-hero`, which covers the whole text block, in solid Merino — photo still readable above the type; no faded Merino mixes, no double scrims.
+- [ ] Accordions expand with visible body (Programme “What to expect”, Home FAQ). After editing `components/**`, rebuild `_ds_bundle.js` with `node scripts/build-bundle.mjs` (components only — never kit copy). After editing entity facts, edit `content/` and run `node scripts/write-content-kit.mjs`. Run `node scripts/check-bundle.mjs` before shipping.
+- [ ] At most one `BandStatement` (Himalaya + rosette band) per page. Other large grounds are Merino or Stone; Pine for `ClosingCTA` without a photograph and the footer.
 - [ ] Type never sits on the rosette band; narrow surfaces drop the band.
 - [ ] CTAs are short; no decorative Badge/Tag pills next to actions; no 2xs helper essays.
 - [ ] Text-size control (if present) works at Larger without breaking layout.

@@ -32,15 +32,68 @@
         Input, Textarea, Select, Checkbox, Radio, Switch,
         Tabs, Breadcrumbs, Accordion, LanguageSelector,
         Dialog, Toast, Tooltip, Spinner,
+        Media, Eyebrow, Statement, Numeral, TextLink, Tile, NumberedSteps, PlainList,
+        GroupedList, SpecTable, TimeTable, QuoteBlock, PortraitFrame,
+        Section, HeroFullBleed, HeroStatement, SplitSection, BandStatement, PanoramaCaption,
+        PeopleRow, NumeralsSplit, TileGrid, IndexList, ClosingCTA, FormSplit,
       } = NS;
+      const P = "../assets/photos/";
+      const doctors = [
+        { name: "Dr. P.A. Kareem", role: "Founder, Chairman & Chief Naturopathy Consultant", detail: "Government of India-certified Naturopathy Practitioner" },
+        { name: "Dr. Bahja Janu", role: "Medical Director", src: P + "doctor-bahja-janu-portrait-cropped.jpeg" },
+      ];
+      const programmes = [
+        { name: "Stress Management", focus: "Mind", durations: "7–14 nights", photo: "balcony", alt: "A balcony over the valley", text: "Doctor-led routines, therapies and rest for guests managing sustained stress, poor sleep or fatigue.", slug: "stress-management" },
+        { name: "Detox", focus: "Metabolic", durations: "7–21 nights", photo: "water-wall", alt: "The water wall court", text: "Your doctor may recommend a meal plan or supervised fasting based on your assessment. Therapies may also form part of your programme.", slug: "detox" },
+        { name: "Weight Management", focus: "Metabolic", durations: "14–21 nights", photo: "grounds", alt: "The grounds", text: "Meals, daily activity and therapies, with weight and vitals reviewed by a doctor each morning.", slug: "weight-management" },
+      ];
+      const tiles = programmes.map((p) => <Tile key={p.slug} src={P + p.photo + ".jpg"} alt={p.alt} eyebrow={p.focus + " · " + p.durations} title={p.name} text={p.text} href={"#/en/programs/" + p.slug} />);
+      const careSteps = [
+        { title: "Consultation and assessment", text: "Our doctors consider your medical history, current health, lifestyle and goals." },
+        { title: "A plan for you", text: "They then plan your treatments, meals, activity and rest." },
+        { title: "Therapies and daily routines", text: "Your doctor may recommend therapies based on your assessment and programme." },
+        { title: "Progress reviewed", text: "The plan is reviewed during your stay and adjusted where necessary." },
+      ];
+      const day = [
+        { time: "Morning", title: "Vitals and doctor review", text: "Vitals and a short doctor review, then yoga therapy in the hall. Movement and breathwork are adapted to what you can manage that day." },
+        { time: "Midday", title: "Therapies", text: "Therapy sessions may include mud therapy, hydrotherapy, massage or acupuncture, sequenced by the clinical team." },
+        { time: "Afternoon", title: "Sunlight, walking or reading", text: "Depending on your programme, the afternoon may include controlled sunlight, walking on the grounds, or time in the library." },
+        { time: "Evening", title: "Meal and rest", text: "A meal planned for your programme, a mind-body session and an early night." },
+      ];
+      const rooms = [
+        { name: "Standard Room", size: "220 sq.ft", occ: "Single only" },
+        { name: "Deluxe Room", size: "260 sq.ft", occ: "Single only" },
+        { name: "Superior Room", size: "300 sq.ft · balcony", occ: "Single or double" },
+        { name: "Premium Room", size: "460 sq.ft · balcony", occ: "Single or double" },
+        { name: "Executive Suite", size: "530 sq.ft · balcony", occ: "Single or double" },
+      ];
+      const roomCols = [{ key: "name", label: "Room" }, { key: "size", label: "Size", accent: true, mobileLabel: true }, { key: "occ", label: "Occupancy", mobileLabel: true }];
+      const contact = <>
+        <a href="tel:+919553600100">+91 9553 600 100</a>
+        <a href="mailto:heal@shantara.life">heal@shantara.life</a>
+        <span>Kozhikode (Calicut), Kerala</span>
+      </>;
 
       switch (name) {
         case "Button":
-          return <div className="row">
-            <Button>Book a Consultation</Button>
-            <Button variant="accent">My protocol</Button>
-            <Button variant="secondary">View programmes</Button>
-            <Button variant="ghost" endIcon={<Icon name="arrow-right" size={16} />}>Read journal</Button>
+          return <div className="stack" style={{ maxWidth: "none" }}>
+            <div className="row">
+              <Button size="lg">Book a Consultation</Button>
+              <Button variant="secondary" size="lg">View programmes</Button>
+              <Button variant="link" endIcon={<Icon name="arrow-right" size={16} />}>View conditions</Button>
+            </div>
+            <div className="row">
+              <Button>Book a Consultation</Button>
+              <Button variant="secondary">Speak to our team</Button>
+              <Button disabled>Send your details</Button>
+            </div>
+            <div data-ground="himalaya" style={{ padding: 24 }}>
+              <div className="row">
+                <Button size="lg">Book a Consultation</Button>
+                <Button variant="secondary" size="lg">View programmes</Button>
+                <Button variant="link" endIcon={<Icon name="arrow-right" size={16} />}>View conditions</Button>
+              </div>
+            </div>
           </div>;
         case "IconButton":
           return <div className="row">
@@ -86,8 +139,11 @@
             <p style={{ margin: 0, fontSize: "var(--text-sm)" }}>Below</p>
           </div>;
         case "PatternPanel":
-          return <PatternPanel tone="olive" edge="top" band="96px" scale="96px" radius="var(--radius-card)" style={{ width: "100%" }}>
-            <div style={{ padding: 20 }}><Logo mark="wordmark" tone="cream" height={14} /></div>
+          return <PatternPanel tone="olive" edge="right" band="288px" data-ground="himalaya" style={{ width: "100%" }}>
+            <div style={{ padding: "clamp(24px, 3vw, 48px)", display: "flex", flexDirection: "column", gap: 16 }}>
+              <Logo mark="wordmark" tone="cream" height={16} />
+              <p style={{ margin: 0, font: "var(--type-body-sm)", color: "var(--text-secondary)", maxWidth: "44ch" }}>Band 288px, cell 144px (band / 2). Under 880px of panel width the band drops and the padding returns to the content.</p>
+            </div>
           </PatternPanel>;
         case "Input":
           return <div className="stack"><Input label="Full name" placeholder="As on your passport" /></div>;
@@ -133,11 +189,175 @@
           </Tooltip>;
         case "Spinner":
           return <Spinner label="Loading" />;
+        /* ── Editorial ── */
+        case "Media":
+          return <div className="stack" style={{ maxWidth: 880 }}>
+            <Media src={P + "balcony.jpg"} alt="A balcony over the valley" ratio="4:3" style={{ maxWidth: 420 }} />
+            <Media src={P + "valley.jpg"} alt="The Chennamangallur valley from the hilltop" ratio="21:9" mobileRatio="4:3" />
+          </div>;
+        case "Eyebrow":
+          return <div className="stack" style={{ maxWidth: "none" }}>
+            <Eyebrow>Kozhikode, Kerala · since 2000</Eyebrow>
+            <div data-ground="himalaya" style={{ padding: 24 }}><Eyebrow>Our approach</Eyebrow></div>
+          </div>;
+        case "Statement":
+          return <Statement eyebrow="Our approach" sub="The clinical team plans your programme and adjusts it where necessary during your stay.">
+            Your programme is planned after consultation and assessment.
+          </Statement>;
+        case "Numeral":
+          return <div style={{ display: "grid", gridTemplateColumns: "repeat(2, minmax(0, 1fr))", gap: "var(--grid-gap)", maxWidth: 560 }}>
+            <Numeral value="25,000+" label="guests since 2000" />
+            <Numeral value="52" label="rooms, 5 categories" />
+          </div>;
+        case "TextLink":
+          return <div className="stack" style={{ maxWidth: "none" }}>
+            <div className="row" style={{ gap: 32 }}>
+              <TextLink href="#">View conditions</TextLink>
+              <TextLink href="#">Read about the programme</TextLink>
+            </div>
+            <div data-ground="pine" style={{ padding: 24 }}><TextLink href="#">All programmes</TextLink></div>
+          </div>;
+        case "Tile":
+          return <div className="stack" style={{ maxWidth: 960, gap: 48 }}>
+            <div style={{ maxWidth: 400 }}>{tiles[0]}</div>
+            <Tile layout="row" src={P + "courtyard.jpg"} alt="The courtyard" eyebrow="Immersive · 21–28 nights" title="Complete Healing" text="For guests managing several long-standing conditions at once, across metabolic, musculoskeletal and mental health." href="#/en/programs/complete-healing" />
+          </div>;
+        case "NumberedSteps":
+          return <NumberedSteps columns={4} items={careSteps} />;
+        case "PlainList":
+          return <PlainList columns={2} items={["En-suite bathroom with rain shower", "Individually controlled central air-conditioning", "Orthopaedic mattress", "Electronic safe, Wi-Fi, smart LED TV"]} style={{ maxWidth: 720 }} />;
+        case "GroupedList":
+          return <GroupedList columns={3} groups={[
+            { label: "Mind", items: ["Stress Management"] },
+            { label: "Metabolic", items: ["Detox", "Weight Management"] },
+            { label: "Clinical", items: ["Diabetes Reversal", "Longevity", "Men's Vitality"] },
+            { label: "Rest", items: ["Executive Wellness", "Weekend Rejuvenation"] },
+            { label: "Immersive", items: ["Complete Healing"] },
+            { label: "Groups", items: ["Corporate Retreats"] },
+          ]} />;
+        case "SpecTable":
+          return <div style={{ maxWidth: 720 }}><SpecTable caption="Room categories" showHeader columns={roomCols} rows={rooms} /></div>;
+        case "TimeTable":
+          return <div style={{ maxWidth: 880 }}><TimeTable rows={day} /></div>;
+        case "QuoteBlock":
+          return <QuoteBlock style={{ maxWidth: 880 }}
+            quote="Naturopathy treats the causes of a condition through diet, activity, therapies and rest rather than through medication."
+            cite="Our approach"
+            facts={[
+              { label: "Since 2000", text: "The evolution of Hygiene Nature Cure Hospital, which has cared for guests since 2000." },
+              { label: "The setting", text: "Four hilltop acres above the Chennamangallur valley." },
+            ]} />;
+        case "PortraitFrame":
+          return <div style={{ display: "grid", gridTemplateColumns: "repeat(2, minmax(0, 240px))", gap: "var(--grid-gap)" }}>
+            {doctors.map((d) => <PortraitFrame key={d.name} {...d} />)}
+          </div>;
+
+        /* ── Sections (full width: the body padding is removed below) ── */
+        case "Section":
+          return <>
+            {[["merino", "Merino — the page"], ["stone", "Stone — a quiet change of room"], ["himalaya", "Himalaya — dark, ink re-pointed"], ["pine", "Pine — dark, ink re-pointed"]].map(([g, label]) => (
+              <Section key={g} ground={g} space="sm">
+                <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
+                  <p style={{ margin: 0, font: "var(--type-caption)", color: "var(--text-muted)" }}>{label}</p>
+                  <Statement eyebrow="Our approach" size="title">Your programme is planned after consultation and assessment.</Statement>
+                  <div className="sh-actions"><Button>Book a Consultation</Button><TextLink href="#">Read what to expect</TextLink></div>
+                </div>
+              </Section>
+            ))}
+          </>;
+        case "HeroFullBleed":
+          return <HeroFullBleed
+            src={P + "arrival-dusk.jpg"} alt="Shantara at dusk"
+            eyebrow="Kozhikode, Kerala · since 2000"
+            title="A doctor-led naturopathy retreat in Kerala"
+            sub="Drug-free naturopathy on four hilltop acres above the Chennamangallur valley. Every stay begins with a consultation, and your programme is planned by our doctors."
+            actions={<><Button size="lg">Book a Consultation</Button><TextLink href="#">View programmes</TextLink></>} />;
+        case "HeroStatement":
+          return <HeroStatement
+            breadcrumbs={<Breadcrumbs items={[{ label: "Home", href: "#" }, "Conditions"]} />}
+            eyebrow="Conditions"
+            title="Conditions we commonly see"
+            sub="Our doctors see guests with a range of long-standing conditions. Programmes are planned after consultation and assessment."
+            aside={<TextLink href="#">Book a Consultation</TextLink>} />;
+        case "SplitSection":
+          return <>
+            <SplitSection src={P + "balcony.jpg"} alt="A balcony over the valley">
+              <Statement eyebrow="Mind · 7–14 nights" sub="Doctor-led routines, therapies and rest for guests managing sustained stress, poor sleep or fatigue.">Stress Management</Statement>
+              <div><TextLink href="#">Read about the programme</TextLink></div>
+            </SplitSection>
+            <SplitSection src={P + "room-premium.jpg"} alt="A room with a balcony" mediaSide="end" split="40" ground="stone">
+              <Statement eyebrow="Accommodation" sub="Shantara has 52 rooms across five categories, designed for comfortable residential stays.">Five room categories</Statement>
+              <SpecTable caption="Room categories" columns={roomCols} rows={rooms} />
+            </SplitSection>
+          </>;
+        case "BandStatement":
+          return <BandStatement>
+            <Statement eyebrow="Our approach" sub="The clinical team plans your programme and adjusts it where necessary during your stay.">
+              Your programme is planned after consultation and assessment.
+            </Statement>
+            <PlainList columns={2} items={careSteps.map((s) => s.title)} />
+          </BandStatement>;
+        case "PanoramaCaption":
+          return <PanoramaCaption src={P + "valley.jpg"} alt="The Chennamangallur valley from the hilltop" eyebrow="The setting" title="Overlooking the Chennamangallur valley" />;
+        case "PeopleRow":
+          return <Section>
+            <PeopleRow eyebrow="Our doctors" title="Your programme is planned by our doctors." people={doctors} action={<TextLink href="#">About Shantara</TextLink>} />
+          </Section>;
+        case "NumeralsSplit":
+          return <Section ground="stone">
+            <NumeralsSplit eyebrow="Shantara in numbers" title="Doctor-led naturopathy, planned around your assessment."
+              numerals={[{ value: "25,000+", label: "guests since 2000" }, { value: "4", label: "hilltop acres" }]} />
+          </Section>;
+        case "TileGrid":
+          return <Section>
+            <TileGrid eyebrow="Programmes" title="Naturopathy programmes" action={<TextLink href="#">All programmes</TextLink>}>{tiles}</TileGrid>
+          </Section>;
+        case "IndexList":
+          return <Section>
+            <IndexList groups={[
+              { label: "Metabolic", items: [
+                { title: "Diabetes", text: "Residential programmes planned around blood-sugar control, meals and daily doctor review.", href: "#" },
+                { title: "Weight management", text: "Meals, activity and therapies, with weight and vitals reviewed each morning.", href: "#" },
+              ] },
+              { label: "Hormonal", items: [
+                { title: "PCOS", text: "A programme may be planned around hormonal health, meals, activity and rest, following assessment.", href: "#" },
+              ] },
+              { label: "Musculoskeletal", items: [
+                { title: "Arthritis", text: "Therapies, movement and rest may be recommended to support joint comfort, following assessment.", href: "#" },
+              ] },
+            ]} />
+          </Section>;
+        case "ClosingCTA":
+          return <ClosingCTA
+            src={P + "exterior-entrance-dusk-lit-canopy.jpg"} alt="The entrance at dusk"
+            eyebrow="Book a Consultation"
+            title="A stay is confirmed after a doctor has spoken with you."
+            sub="Share your name and a number we can reach. Our team will contact you to arrange a consultation."
+            action={<Button size="lg">Book a Consultation</Button>}
+            contact={contact} />;
+        case "FormSplit":
+          return <Section>
+            <FormSplit aside={<>
+              <PortraitFrame src={P + "doctor-bahja-janu-portrait-cropped.jpeg"} name="Dr. Bahja Janu" role="Medical Director" style={{ maxWidth: 220 }} />
+              <Statement as="h3" size="title" sub="A member of the team will call you to understand what you need. A doctor then reviews whether a stay is the right next step.">We'll be in touch</Statement>
+            </>}>
+              <Statement as="h2" size="title" eyebrow="Book a Consultation" sub="Share your name and a number we can reach. Our team will contact you to arrange a consultation.">Send your details</Statement>
+              <Input label="Name" />
+              <Input label="Mobile / WhatsApp number" placeholder="+91" />
+              <Input label="Email" type="email" />
+              <Select label="Country" options={["India", "United Arab Emirates", "United Kingdom", "Other"]} />
+              <Textarea label="Anything you'd like us to know?" rows={3} />
+              <p style={{ margin: 0, font: "var(--type-caption)", color: "var(--text-muted)" }}>We will use these details only to contact you.</p>
+              <div><Button size="lg">Send your details</Button></div>
+            </FormSplit>
+          </Section>;
         default:
           return <p className="err">No specimen for {name}</p>;
       }
     }
 
+    const SECTIONS = ["Section", "HeroFullBleed", "HeroStatement", "SplitSection", "BandStatement", "PanoramaCaption", "PeopleRow", "NumeralsSplit", "TileGrid", "IndexList", "ClosingCTA", "FormSplit"];
+    if (SECTIONS.includes(name)) document.body.style.padding = "0";
     ReactDOM.createRoot(document.getElementById("root")).render(<Specimen />);
   </script>
 </body>

@@ -1,12 +1,16 @@
+/* Book a consultation — HeroStatement → the form beside a Stone panel (who calls, what
+   happens next). Dialog confirm, Spinner, success state and Toast are kept. No ClosingCTA. */
+
 function ConsultationScreen({ onNavigate, locale = "en", view = "booking" }) {
   const { t, track } = window.ShantaraI18n.useLocale();
   const L = window.ShantaraLocales;
   const keys = (L && L.FORM_FIELD_KEYS) || { full_name: "full_name", phone: "phone", email: "email", country: "country", notes: "notes" };
-  const { Button, Input, Select, Textarea, Card, Icon, Dialog, Toast, Spinner } = window.ShantaraDesignSystem_45bbe4;
+  const { Button, Input, Select, Textarea, Dialog, Toast, Spinner, HeroStatement, Section, FormSplit, PortraitFrame, Statement, NumberedSteps, TextLink } = window.ShantaraDesignSystem_45bbe4;
   const [started, setStarted] = React.useState(false);
   const [confirming, setConfirming] = React.useState(false);
   const [pending, setPending] = React.useState(false);
   const [done, setDone] = React.useState(false);
+  const [toast, setToast] = React.useState(true);
 
   const context = L ? L.leadContext({
     locale,
@@ -34,61 +38,95 @@ function ConsultationScreen({ onNavigate, locale = "en", view = "booking" }) {
     }, 1400);
   };
 
+  // The success view is much shorter than the form: bring it into view.
+  React.useEffect(() => {
+    if (!done || typeof document === "undefined") return;
+    const el = document.getElementById("kit-scroll");
+    if (el) el.scrollTop = 0;
+    if (typeof window !== "undefined" && window.scrollTo) window.scrollTo(0, 0);
+    // The toast repeats the heading; let it go on its own so it never sits over the buttons.
+    const timer = setTimeout(() => setToast(false), 4000);
+    return () => clearTimeout(timer);
+  }, [done]);
+
+  const bahja = (window.ShantaraContent.doctors || []).find((d) => d.id === "bahja-janu");
+
   if (done) {
     return (
-      <main style={{ maxWidth: "720px", margin: "0 auto", padding: "var(--space-9) var(--layout-gutter-lg) var(--section-y)" }}>
-        <div style={{ textAlign: "center", padding: "var(--space-11) 0" }}>
-          <div style={{ width: 56, height: 56, borderRadius: "999px", background: "var(--status-success-soft)", display: "grid", placeItems: "center", margin: "0 auto var(--space-6)" }}>
-            <Icon name="check" size={26} color="var(--status-success)" />
-          </div>
-          <h1 style={{ font: "var(--type-h2)", fontSize: "var(--text-3xl)", margin: "0 0 var(--space-5)" }}>{t("Consultation request received")}</h1>
-          <p style={{ color: "var(--text-secondary)", margin: "0 auto var(--space-8)", maxWidth: "46ch" }}>{t("Our team will contact you to understand your requirements and guide you on the appropriate next step.")}</p>
-          <div style={{ display: "flex", gap: "var(--space-4)", justifyContent: "center", flexWrap: "wrap" }}>
-            <Button variant="secondary" onClick={() => onNavigate("home")}>{t("Back to home")}</Button>
-            <Button variant="secondary" onClick={() => onNavigate("contact")}>{t("Contact")}</Button>
-          </div>
-        </div>
+      <main>
+        <HeroStatement
+          tall={false}
+          eyebrow={t("Book a Consultation")}
+          title={t("Consultation request received")}
+          sub={t("Our team will contact you to understand your requirements and guide you on the appropriate next step.")}
+          actions={<>
+            <Button variant="secondary" size="lg" onClick={() => onNavigate("home")}>{t("Back to home")}</Button>
+            <Button variant="secondary" size="lg" onClick={() => onNavigate("contact")}>{t("Contact")}</Button>
+          </>}
+          style={{ paddingBlockEnd: "var(--section-y)" }}
+        />
+        {toast ? <Toast fixed tone="success" title={t("Consultation request received")} message={t("Our team will contact you to understand your requirements and guide you on the appropriate next step.")} onClose={() => setToast(false)} /> : null}
       </main>
     );
   }
 
-  return (
-    <main style={{ maxWidth: "980px", margin: "0 auto", padding: "var(--space-9) var(--layout-gutter-lg) var(--section-y)" }}>
-      <span className="shantara-eyebrow">{t("Book a Consultation")}</span>
-      <h1 style={{ font: "var(--type-h1)", fontSize: "var(--text-3xl)", margin: "var(--space-4) 0 var(--space-4)" }}>{t("Send your details")}</h1>
-      <p style={{ font: "var(--type-lead)", color: "var(--text-secondary)", maxWidth: "52ch", margin: "0 0 var(--space-8)" }}>{t("Share your name and a number we can reach. Our team will contact you to arrange a consultation.")}</p>
+  const aside = (
+    <>
+      {bahja ? (
+        <PortraitFrame
+          src={bahja.photo_profile ? window.photoSrc(bahja.photo_profile) : undefined}
+          alt={bahja.full_name}
+          name={bahja.full_name}
+          role={t(bahja.role)}
+          headingLevel={2}
+          style={{ maxWidth: "min(100%, 20rem)" }}
+        />
+      ) : null}
+      <Statement size="title" as="h2">{t("We'll be in touch")}</Statement>
+      <NumberedSteps
+        columns={1}
+        rules
+        items={[
+          { title: t("A member of the team will call you to understand what you need.") },
+          { title: t("A doctor then reviews whether a stay is the right next step.") },
+          { title: t("A stay is confirmed after a doctor has spoken with you.") },
+        ]}
+      />
+      <div>
+        <TextLink onClick={() => onNavigate("tariffs")}>{t("View tariffs")}</TextLink>
+      </div>
+    </>
+  );
 
-      <div style={{ display: "grid", gridTemplateColumns: "1.2fr 0.8fr", gap: "var(--space-8)", alignItems: "start" }}>
-        <Card padding="lg">
-          <div style={{ display: "grid", gap: "var(--space-5)" }}>
-            <Input name={keys.full_name} autoComplete="name" label={t("Name")} required onFocus={markStart} />
-            <Input name={keys.phone} autoComplete="tel" label={t("Mobile / WhatsApp number")} required onFocus={markStart} />
-            <Input name={keys.email} autoComplete="email" label={t("Email")} type="email" hint={t("Optional")} onFocus={markStart} />
-            <Select name={keys.country} label={t("Country")} options={[{ value: "IN", label: t("India") }, { value: "AE", label: t("United Arab Emirates") }, { value: "GB", label: t("United Kingdom") }, { value: "OTHER", label: t("Other") }]} defaultValue="IN" onFocus={markStart} />
-            <Textarea name={keys.notes} label={t("Anything you'd like us to know?")} hint={t("Optional")} maxLength={400} onFocus={markStart} />
-            {Object.entries(context).map(([key, value]) => (
-              <input key={key} type="hidden" name={key} value={value || ""} readOnly />
-            ))}
-          </div>
-          <div style={{ display: "flex", justifyContent: "flex-end", marginTop: "var(--space-8)" }}>
+  return (
+    <main>
+      <HeroStatement
+        tall={false}
+        eyebrow={t("Book a Consultation")}
+        title={t("Send your details")}
+        sub={t("Share your name and a number we can reach. Our team will contact you to arrange a consultation.")}
+      />
+
+      <Section space="bottom">
+        <FormSplit aside={aside}>
+          <Input name={keys.full_name} autoComplete="name" label={t("Name")} required onFocus={markStart} />
+          <Input name={keys.phone} autoComplete="tel" label={t("Mobile / WhatsApp number")} required onFocus={markStart} />
+          <Input name={keys.email} autoComplete="email" label={t("Email")} type="email" hint={t("Optional")} onFocus={markStart} />
+          <Select name={keys.country} label={t("Country")} options={[{ value: "IN", label: t("India") }, { value: "AE", label: t("United Arab Emirates") }, { value: "GB", label: t("United Kingdom") }, { value: "OTHER", label: t("Other") }]} defaultValue="IN" onFocus={markStart} />
+          <Textarea name={keys.notes} label={t("Anything you'd like us to know?")} hint={t("Optional")} maxLength={400} onFocus={markStart} />
+          {Object.entries(context).map(([key, value]) => (
+            <input key={key} type="hidden" name={key} value={value || ""} readOnly />
+          ))}
+          <div className="sh-actions" data-stack="mobile" style={{ marginTop: "var(--space-4)" }}>
             <Button size="lg" onClick={() => setConfirming(true)}>{t("Send your details")}</Button>
           </div>
-        </Card>
-
-        <Card tone="raised" padding="lg">
-          <h2 style={{ font: "var(--type-h4)", margin: "0 0 var(--space-5)" }}>{t("We'll be in touch")}</h2>
-          <p style={{ font: "var(--type-body-sm)", color: "var(--text-secondary)", margin: "0 0 var(--space-7)" }}>{t("A member of the team will call you to understand what you need. A doctor then reviews whether a stay is the right next step.")}</p>
-          <Button variant="ghost" fullWidth onClick={() => onNavigate("tariffs")} endIcon={<Icon name="arrow-right" size={16} />}>{t("View tariffs")}</Button>
-          <p style={{ font: "var(--type-body-sm)", color: "var(--text-muted)", margin: "var(--space-6) 0 0" }}>{t("A stay is confirmed after a doctor has spoken with you.")}</p>
-        </Card>
-      </div>
+        </FormSplit>
+      </Section>
 
       <Dialog open={confirming} onClose={pending ? undefined : () => setConfirming(false)}
         title={t("Send your details?")}
         description={t("We will use these details only to contact you.")}
         footer={pending ? <Spinner /> : <><Button variant="secondary" onClick={() => setConfirming(false)}>{t("Not yet")}</Button><Button onClick={submit}>{t("Yes, send")}</Button></>} />
-
-      {done ? <Toast fixed tone="success" title={t("Consultation request received")} message={t("Our team will contact you to understand your requirements and guide you on the appropriate next step.")} onClose={() => setDone(false)} /> : null}
     </main>
   );
 }
