@@ -85,7 +85,6 @@ function HomeScreen({ onNavigate }) {
       <P id="home/programmes">
         <Section ground="stone">
           <TileGrid
-            className="sh-kit-tiles-aligned"
             title={t("Naturopathy programmes")}
             action={<TextLink onClick={() => onNavigate("programme")}>{t("View programmes")}</TextLink>}
             layout="3"
@@ -104,12 +103,12 @@ function HomeScreen({ onNavigate }) {
             ))}
           </TileGrid>
           {/* One column up to 1280px, two from there, with roomier rows (kit CSS in SiteChrome). */}
+          <div className="sh-kit-index-roomy" style={{ marginTop: "var(--section-y)" }}>
           <IndexList
-            className="sh-kit-index-roomy"
-            style={{ marginTop: "var(--section-y)" }}
             columns={2}
             groups={[{ label: t("All programmes"), items: rest.map((p) => ({ title: t(p.name), text: t(firstSentence(p.proposition)), onClick: () => onNavigate("programme") })) }]}
           />
+          </div>
           <div className="sh-kit-index-after">
             <p style={{ margin: 0, font: "var(--type-body-sm)", color: "var(--text-secondary)", maxWidth: "var(--measure-body)" }}>
               {t("Alongside these, Shantara runs condition-specific medical programmes across eleven categories, from metabolic and renal health to hormonal conditions. Every guest in a medical programme is under a doctor's direct care.")}
@@ -157,8 +156,8 @@ function HomeScreen({ onNavigate }) {
       <P id="home/insights">
         <Section ground="merino">
           {/* Three equal tiles: same image ratio, titles on one line start, meta aligned. */}
+          <div className="sh-kit-tiles-aligned">
           <TileGrid
-            className="sh-kit-tiles-aligned"
             title={t("Articles from our doctors and team")}
             action={<TextLink onClick={() => onNavigate("journal")}>{t("View all articles")}</TextLink>}
             layout="3"
@@ -176,6 +175,7 @@ function HomeScreen({ onNavigate }) {
               />
             ))}
           </TileGrid>
+          </div>
         </Section>
       </P>
 

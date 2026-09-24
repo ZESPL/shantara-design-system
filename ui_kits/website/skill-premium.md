@@ -111,7 +111,7 @@ A section paints one of five grounds with `data-ground` (use `Section`; nothing 
 | `pine` | `ClosingCTA` without a photograph, footer. |
 | `photo` | Heroes, `PanoramaCaption`, `ClosingCTA` with a photograph. |
 
-Dark grounds re-point the ink tokens. Inside `himalaya`, `pine` and `photo` the primary button becomes Gold with Pine ink, text becomes Merino, and the eyebrow becomes Gold (Merino on `photo`). Do not pass tone props or hard-code colours to get this.
+Dark grounds re-point the ink tokens. Inside `himalaya`, `pine` and `photo` the primary button becomes Gold with Pine ink, text becomes Merino, Do not pass tone props or hard-code colours to get this.
 
 ### Shape
 
@@ -141,19 +141,19 @@ Dark grounds re-point the ink tokens. Inside `himalaya`, `pine` and `photo` the 
 - Ratios: 4:3 listing (default), 16:9 wide, 4:5 portrait (doctors, tall split media), 3:4 tall architecture, 21:9 panorama (desktop only, through `PanoramaCaption`, with `mobileRatio`).
 - Heroes use a height (100svh, or 72svh with `height="tall"`), not a ratio.
 
-### Eyebrows
+### No eyebrows
 
-- An eyebrow must add information the heading does not already give (a category, a place, a step). If it repeats the heading, delete it.
-- Colour comes from the ground (`--eyebrow-color`): Himalaya on Merino/Stone, Gold on flat dark grounds, Merino on photography.
+- Owner decision: no small uppercase tracked label above a hero, section, card or column title — anywhere. The `Eyebrow` component is deleted.
+- Category, duration, place or date goes in a caption meta row **below** the title, in normal case (`meta` prop on heroes, `Statement`, `Tile`; `MetaRow` elsewhere).
 
 ### Component map
 
 | Job | Use |
 | --- | --- |
 | Home or immersive page opening | `HeroFullBleed` |
-| Programme page opening | `HeroFullBleed height="tall"` + booking panel below |
-| Inner page opening without a photograph | `HeroStatement` |
-| Section heading block | `Statement` (eyebrow → Light headline → one line) |
+| Programme / tariffs page opening | `HeroSplit` + booking panel below |
+| Inner page opening without a full photograph | `HeroStatement` with `pattern` or a side image |
+| Section heading block | `Statement` (headline → optional meta row → one line) |
 | Text beside a photograph | `SplitSection` |
 | The page's single accent statement | `BandStatement` (Himalaya + rosette band) |
 | A pause between dense sections | `PanoramaCaption` |
@@ -167,7 +167,7 @@ Dark grounds re-point the ink tokens. Inside `himalaya`, `pine` and `photo` the 
 | Short lists | `PlainList`, `GroupedList` |
 | Quote with facts | `QuoteBlock` |
 | Questions | `Accordion` |
-| Page end | `ClosingCTA` |
+| Page end (only when the page has no other CTA) | `ClosingCTA` (`photo` / `ground` / `compact`) |
 | Consultation form | `FormSplit` |
 
 Section-level mapping from the CMS library: [skill-sections.md](skill-sections.md).
@@ -285,7 +285,7 @@ Before marking any page or component done, check:
 - [ ] Photographs are square-cut and go through `Media`; one photograph per job.
 - [ ] Listings use `Tile`, not `Card`; no hover lift or shadow.
 - [ ] Buttons are `primary`, `secondary` or `link`; one primary per view.
-- [ ] Every eyebrow adds information the heading does not.
+- [ ] No eyebrows: nothing small and uppercase above a title; facts sit in a meta row below it.
 - [ ] No horizontal scroll at 360, 390, 768, 1024, 1280, 1440.
 - [ ] Phones: photograph before text; every tap target at least 44px.
 - [ ] Panoramas pass `mobileRatio`; tables read as blocks under 520px; no rosette band under ~880px.

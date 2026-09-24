@@ -83,15 +83,15 @@ Primitives are developer-level (Container, Heading, Button, Form Field, Accordio
 
 ## 4. Information architecture
 
-Recommended top-level navigation:
+Top-level navigation — **five items, no more**, centred between the logo and the actions on desktop:
 
-- Conditions
 - Programmes
+- Conditions
 - Experience
 - About
-- Blog / Insights
-- Contact
-- **Book a Consultation** (primary CTA)
+- Insights
+
+Header actions: `LanguageSelector` (desktop; inside the menu sheet under 1000px), a **phone button** that opens a dropdown (Call +91 9553 700 100 · WhatsApp · Email heal@shantara.life), and **Book a Consultation** (primary CTA). Contact is reached from the phone dropdown and the footer, not the main nav. There is one public number for calls and WhatsApp: **+91 9553 700 100**.
 
 Do not create a mega-menu unless live page count genuinely requires it.
 
@@ -137,10 +137,14 @@ Heroes are a **family**, not one universal Hero with 30 props, and not 12 varian
 
 | Hero | Job | Typical uses | Component |
 | --- | --- | --- | --- |
-| Immersive | Place, emotion, photography | Home, Our Story, Farm & Dining, A Day at Shantara | `HeroFullBleed` |
-| Editorial | Topic + readability | Conditions, Therapies, Approach, Guides, Articles | `HeroStatement` |
-| Program | Commercial program, high intent | Program pages (duration/options, suitability, Book a Consultation — **no invented price**) | `HeroFullBleed height="tall"` + booking panel |
-| Compact / utility | Minimal context | Contact, policies, listings | `HeroStatement` |
+| Immersive | Place, emotion, photography | Home, Experience | `HeroFullBleed` |
+| Offer | Commercial page, high intent | Programme pages, Rooms and tariffs (duration/options, suitability, Book a Consultation — **no invented price**) | `HeroSplit` + booking panel |
+| Editorial / utility | Topic + readability | Conditions, About, Insights, Contact, Book a Consultation | `HeroStatement` with a rosette band (`pattern`) or a side image — never "naked" |
+| Article | One Insights article | `/en/insights/<slug>` | `ArticleHeader` |
+
+No eyebrows anywhere: no small uppercase label above a hero, section or card title. Category, duration or place goes in a caption meta row **below** the title (`meta` prop / `MetaRow`).
+
+`ClosingCTA` only on pages that otherwise have no CTA (not Home, Programme, Tariffs or Book a Consultation). Vary its variants (`photo` / `ground` / `compact`) across pages.
 
 Section library and example compositions: [skill-sections.md](skill-sections.md).
 
@@ -272,16 +276,17 @@ These files are **previews** of the skill, not the live site:
 
 | Sample | Skill page type | Notes |
 | --- | --- | --- |
-| `screens/HomeScreen.js` | home | `HeroFullBleed`, approach, programme tiles, experience teasers |
+| `screens/HomeScreen.js` | home | `HeroFullBleed`, approach, doctors, programme tiles + roomy index, therapies, rooms, insights, FAQ |
 | `screens/ConditionsScreen.js` | condition listing | Visual grouping only — no category URLs |
-| `screens/ProgrammeScreen.js` | program | Program hero composition; tariff link, no rates |
+| `screens/ProgrammeScreen.js` | program | `HeroSplit` + booking panel; tariff link, no rates |
 | `screens/ExperienceScreen.js` | experience hub | Therapies, rooms, farm, a day — not one page per room |
 | `screens/AboutScreen.js` | about hub | Story, approach, doctors, editorial policy |
-| `screens/JournalScreen.js` | article listing | Insights / publishing families |
-| `screens/ContactScreen.js` | contact | Compact hero + location |
+| `screens/JournalScreen.js` | article listing | `HeroStatement` → `Tabs` → `TileGrid` → `Pagination` |
+| `screens/ArticleScreen.js` | article | `#/en/insights/<slug>`: `ArticleHeader`, `Prose`, `TableOfContents`, `ReviewedBy`, `ShareBar`, `AuthorCard`, `RelatedArticles` (kit body is a marked sample) |
+| `screens/ContactScreen.js` | contact | `HeroStatement` + NAP (Shantara Naturopathy Retreat), distances, call / WhatsApp / email |
 | `screens/ConsultationScreen.js` | consultation | One short form |
 | `screens/TariffScreen.js` | pricing surface | **Only** place rates appear |
-| `chrome/SiteChrome.js` | chrome | Header overlays every page; menu sheet under 1000px; wordmark-only logo + Book a Consultation + LanguageSelector (hidden while only `en` is enabled); footer band via `PatternPanel` |
+| `chrome/SiteChrome.js` | chrome | Header overlays every page: logo, five centred nav items, LanguageSelector, phone dropdown, Book a Consultation; menu sheet (with the LanguageSelector) under 1000px; compact wordmark / frangipani mark at narrow or zoomed widths. Footer: Pine Tree ground, rosette strip on top, brand column (NAP) + three link columns (accordions under 760px), bottom bar with text size. Also `PageSlot` (`data-ds-id="page/<view>/<slot>"` on every section) |
 | `chrome/Photo.js` | chrome | Adapter over `Media` for `assets/photos/*` |
 
 Kit notes for humans: [README.md](README.md).
@@ -332,7 +337,7 @@ Every published URL is locale-prefixed, including English: `/en/`, `/en/programs
 
 `LanguageSelector` is a reusable control the website consumes (`components/navigation/LanguageSelector.jsx`). Desktop and mobile nav. Keyboard and screen-reader accessible. Native names in the list; compact `EN AR DE FR RU HI ML` on the trigger. **No flags.** Its catalog prompt stays English.
 
-It hides when only one locale is enabled. It appears when Arabic (or any second locale) is enabled. It only offers enabled locales. For a given page it only links to a **published equivalent** of that page. Prefer omit if that page is not translated. Do not dump the visitor on the homepage unless the UI makes the gap obvious.
+It always renders (globe + current code + chevron); planned locales that are not enabled are listed disabled with "Coming soon". In the kit it sits in the header actions from 1000px and inside the menu sheet below that. It only links to enabled locales. For a given page it only links to a **published equivalent** of that page. Prefer omit if that page is not translated. Do not dump the visitor on the homepage unless the UI makes the gap obvious.
 
 ### Content model
 
@@ -376,5 +381,5 @@ Schema: one Organization `@id`. WebPage `url` and `inLanguage` follow the locale
 
 Sample screens illustrate the skill. They are not a production website. The kit uses hash routes (`#/en/`, `#/en/programs`) that map to the production URL families above. Catalog LTR/RTL and `ui_kits/website/?fixture=rtl` are **development fixtures** for visual QA — they are not published Arabic pages.
 
-Initial build in this system: English samples, locale-aware routing, central config, LanguageSelector infrastructure (hidden), RTL-ready components, Arabic type tokens, localized metadata helpers, hreflang/sitemap/schema/analytics helpers, documentation. Not a translated website.
+Initial build in this system: English samples, locale-aware routing, central config, LanguageSelector (always rendered; other locales "Coming soon"), RTL-ready components, Arabic type tokens, localized metadata helpers, hreflang/sitemap/schema/analytics helpers, documentation. Not a translated website.
 

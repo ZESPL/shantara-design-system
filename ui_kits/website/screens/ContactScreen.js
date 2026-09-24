@@ -1,4 +1,4 @@
-/* Contact — HeroStatement (side photograph) → address (NAP), distances and direct lines
+/* Contact — HeroStatement (rosette band) → address (NAP), distances and direct lines
    beside the entrance photograph → ClosingCTA (ground, Himalaya; the page has no other CTA). */
 
 const CONTACT_DISTANCES = [
@@ -23,9 +23,7 @@ function ContactScreen({ onNavigate }) {
           breadcrumbs={<Breadcrumbs items={[{ label: t("Home"), href: home }, t("Contact")]} />}
           title={t("How to reach the retreat")}
           sub={t("Address, telephone, email and WhatsApp. To book a consultation, send your details and our team will be in touch.")}
-          src={window.photoSrc("reception")}
-          alt={t("The reception desk at Shantara")}
-          ratio="4:3"
+          pattern="end"
         />
       </P>
 

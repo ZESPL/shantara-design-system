@@ -90,10 +90,10 @@ function Site(){
   const go=(target)=>{
     const t = String(target || "home");
     const v = t.indexOf("article:") === 0 ? "article" : t;
-    const s = v === "article" ? (t.slice(8) || null) : null;
+    const sl = v === "article" ? (t.slice(8) || null) : null;
     setView(v);
-    setSlug(s);
-    location.hash = L.kitHash(locale, v, s);
+    setSlug(sl);
+    location.hash = L.kitHash(locale, v, sl);
     const s=document.getElementById("kit-scroll");if(s)s.scrollTop=0;
   };
   const changeLocale=(code)=>{

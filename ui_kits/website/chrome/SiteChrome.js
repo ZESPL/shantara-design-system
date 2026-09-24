@@ -488,7 +488,7 @@ function SiteFooter({ onNavigate, locale = "en" }) {
             <Logo mark="full" tone="cream" height={44} assetBase="../../assets" />
             <p className="sh-foot-blurb">{t("A naturopathy retreat on a hilltop above the Chennamangallur valley, Kozhikode. An evolution of Hygiene Nature Cure Hospital, caring for guests since 2000.")}</p>
             <address className="sh-foot-nap">
-              <strong>{c.name}</strong>
+              <strong>{t(c.name)}</strong>
               <span>{t("Chennamangallur, Kozhikode, Kerala, India")}</span>
               <a className="shantara-dir-ltr" href={c.tel} style={{ fontVariantNumeric: "tabular-nums" }}><Icon name="phone" size={16} />{c.phone}</a>
               <a href={c.whatsapp} target="_blank" rel="noopener"><Icon name="message-circle" size={16} />{t("WhatsApp")}</a>
@@ -502,7 +502,7 @@ function SiteFooter({ onNavigate, locale = "en" }) {
       </div>
       <div className="sh-container">
         <div className="sh-foot-bar">
-          <span>{"© 2026 " + c.name}</span>
+          <span>{"© 2026 " + t(c.name)}</span>
           <span>{t("Privacy")}</span>
           <span>{t("Terms")}</span>
           <span>{t("Kozhikode · Kerala · India")}</span>

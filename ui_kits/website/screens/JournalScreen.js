@@ -48,7 +48,7 @@ function JournalScreen({ onNavigate }) {
         <Section space="bottom">
           <Tabs items={cats.map((key) => ({ value: key, label: t(key) }))} value={cat} onChange={onTab} />
           <div key={cat + "-" + page} className="sh-page-enter" style={{ display: "flex", flexDirection: "column", gap: "var(--section-y-sm)", marginTop: "var(--stack-lg)" }}>
-            <TileGrid layout="3" className="sh-kit-tiles-aligned">
+            <div className="sh-kit-tiles-aligned"><TileGrid layout="3">
               {visible.map((p) => (
                 <Tile
                   key={p.id}
@@ -61,7 +61,7 @@ function JournalScreen({ onNavigate }) {
                   onClick={p.article ? () => onNavigate("article:" + p.id) : undefined}
                 />
               ))}
-            </TileGrid>
+            </TileGrid></div>
             {pageCount > 1 ? (
               <Pagination
                 page={page}

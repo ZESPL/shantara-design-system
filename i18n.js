@@ -391,7 +391,7 @@
     "therapies done": "علاجاً أُنجز",
     arrived: "وصل",
     "Messages from the care team": "رسائل من فريق الرعاية",
-    "© 2026 Shantara Naturopathy": "© 2026 شانتارا ناتشوروباتي",
+    "Shantara Naturopathy Retreat": "منتجع شانتارا للعلاج الطبيعي",
     "Show older articles": "عرض مقالات أقدم",
     "min read": "دقائق قراءة",
     "by the clinical team": "من الفريق السريري",

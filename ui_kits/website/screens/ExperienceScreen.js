@@ -68,7 +68,7 @@ function ExperienceScreen({ onNavigate }) {
 
       <P id="experience/stay">
         <Section ground="merino">
-          <TileGrid layout="2" className="sh-kit-tiles-aligned">
+          <TileGrid layout="2">
             {EXPERIENCES.map((item) => (
               <Tile key={item.title} src={window.photoSrc(item.photo)} alt={t(item.alt)} title={t(item.title)} text={t(item.copy)} onClick={() => onNavigate(item.view)} />
             ))}

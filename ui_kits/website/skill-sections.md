@@ -92,10 +92,10 @@ Do not create a single Hero with 30 props. Do not create 12 hero variants.
 
 | Hero | Component |
 | --- | --- |
-| Immersive | `HeroFullBleed` (100svh, Display headline, one primary button) |
-| Editorial | `HeroStatement` (Merino or Stone, no photograph, Light statement placed low) |
-| Program | `HeroFullBleed height="tall"` (72svh, h1-size headline) + a booking panel directly below |
-| Compact / Utility | `HeroStatement` (short title, optional breadcrumb) |
+| Immersive (Home, Experience) | `HeroFullBleed` (Display headline, one primary button, `meta` caption row) |
+| Offer (Programme, Tariffs) | `HeroSplit` (photo one side, title + meta + one line + button) + a booking panel directly below |
+| Editorial / Utility (Conditions, About, Insights, Contact, Book a Consultation) | `HeroStatement` with a rosette band (`pattern`) or a side image — never a bare statement |
+| Article | `ArticleHeader` |
 
 The header overlays every page. On `HeroStatement` it sits on the Merino/Stone ground.
 
@@ -105,7 +105,7 @@ Purpose: emotion; sense of place; brand positioning; strong photography/video.
 
 Typical uses: Home; Our Story; Farm & Dining; A Day at Shantara; possibly Rooms & Suites.
 
-Typical fields: eyebrow (optional); title; supporting text (short); primary CTA (optional); secondary CTA (optional); image/video; optional short trust cue.
+Typical fields: title; meta row below the title (optional); supporting text (short); primary CTA (optional); secondary CTA (optional); image/video; optional short trust cue.
 
 Do not overload it with program tables, long copy, or multiple data points.
 
@@ -115,7 +115,7 @@ Purpose: establish topic clearly; support educational/medical content; prioritiz
 
 Typical uses: Conditions; Therapies; Our Approach; Clinical Guides; Doctor Answers; Articles.
 
-Typical fields: eyebrow/category; title; summary; optional image; optional author/reviewer metadata; optional updated/reviewed date.
+Typical fields: title; category in the meta row below it; summary; optional image; optional author/reviewer metadata; optional updated/reviewed date.
 
 ### Program Hero
 
@@ -165,7 +165,7 @@ Editors should select **what the section means**, not manually recreate layout m
 
 ### Section Intro
 
-Eyebrow; heading; short introduction. Do not use it as a substitute for long content.
+Heading; short introduction (no eyebrow). Do not use it as a substitute for long content.
 
 ### Rich Content
 
@@ -175,7 +175,7 @@ Long-form text; headings; lists; quotes; inline links; simple inline media. Must
 
 When text and media need equal emphasis. Limited variants: media at **inline start**; media at **inline end**; media top on mobile. Do not invent a second Media+Content component per language. Cards, heroes, process, timeline, tables, galleries, FAQs, doctor blocks, and CTAs are locale-aware — they reflow and follow `dir`, they are not duplicated.
 
-Fields: optional eyebrow; title; content; image/video; optional CTA.
+Fields: title; optional meta row; content; image/video; optional CTA.
 
 Component: `SplitSection`. From 1000px the photograph runs to the screen edge on one side (`mediaSide` start or end; `split` 50/50 or 40/60). Under 1000px the photograph goes first, full width at `mobileRatio`, then the text.
 
@@ -310,7 +310,7 @@ A unified CTA system. May render as: CTA banner; inline CTA panel; modal/drawer 
 
 All should lead to the same underlying consultation mechanism.
 
-Components: `ClosingCTA` ends every marketing page (dark photograph or Pine ground, one Gold primary button, contact lines). `FormSplit` holds the one consultation form (form first on phones).
+Components: `ClosingCTA` ends a page **only when the page has no other CTA** (variants `photo` / `ground` / `compact`; vary them), one Gold primary button, contact lines. `FormSplit` holds the one consultation form (form first on phones).
 
 ## Card component family (Tile)
 
