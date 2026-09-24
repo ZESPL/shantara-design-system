@@ -4,7 +4,7 @@ Back to the [website skill](SKILL.md).
 
 The site architecture should remain simple and expandable.
 
-Locale architecture, enabled vs planned languages, and hreflang live in the [website skill §15](SKILL.md#15-multilingual-architecture) and `locales.js`. This file only records IA.
+Locale architecture, enabled vs planned languages, and hreflang live in the [website skill §15](SKILL.md#section-15) and `locales.js`. This file only records IA.
 
 ## Primary navigation
 

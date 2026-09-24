@@ -1,16 +1,18 @@
 import * as React from "react";
+import type { MetaItem } from "./MetaRow";
 
 export interface StatementProps extends React.HTMLAttributes<HTMLDivElement> {
-  eyebrow?: React.ReactNode;
-  /** The headline — one full sentence, Diodrum Light. */
+  /** The headline — one full sentence. The heading leads: there is no label above it. */
   children: React.ReactNode;
-  /** One quiet supporting line in body size. */
+  /** Caption facts BELOW the headline (MetaRow items), or any small node. */
+  meta?: Array<string | MetaItem> | React.ReactNode;
+  /** One quiet supporting line in body size (lead size for display/h1). */
   sub?: React.ReactNode;
   /** Buttons, laid out in `.sh-actions` and stacked full width on phones. */
   actions?: React.ReactNode;
   as?: "h1" | "h2" | "h3" | "p";
-  /** display 40→84, h1 34→64, statement 28→48, title 22→30 — all fluid. */
-  size?: "display" | "h1" | "statement" | "title";
+  /** Maps onto the type roles: display, h1, statement/h2, title/h3, h4 — fluid, never overflow. */
+  size?: "display" | "h1" | "statement" | "h2" | "title" | "h3" | "h4";
   /** Line length for the headline. Default `--measure-statement` (30ch). */
   measure?: string;
 }

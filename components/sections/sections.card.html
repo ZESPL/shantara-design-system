@@ -1,4 +1,4 @@
-<!-- @dsCard group="Components" viewport="1440x10300" name="Sections" subtitle="Full-width page sections from the brand deck, stacked at desktop width — heroes, splits, band, panorama, people, numerals, tiles, index, form, close" -->
+<!-- @dsCard group="Components" viewport="1440x14200" name="Sections" subtitle="Full-width page sections from the brand deck, stacked at desktop width — heroes, splits, band, panorama, people, numerals, tiles, index, form, close — plus HeroSplit and the Insights article header and related reading" -->
 <!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../styles.css">
 <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
@@ -14,7 +14,7 @@ body{margin:0;background:var(--ground-merino)}
 <script type="text/babel">
 const NS = window.ShantaraDesignSystem_45bbe4;
 const { Button, Breadcrumbs, Input, Select, Textarea, Statement, Tile, TextLink, PlainList, SpecTable, PortraitFrame,
-  Section, HeroFullBleed, HeroStatement, SplitSection, BandStatement, PanoramaCaption, PeopleRow, NumeralsSplit, TileGrid, IndexList, ClosingCTA, FormSplit } = NS;
+  Section, HeroFullBleed, HeroStatement, SplitSection, BandStatement, PanoramaCaption, PeopleRow, NumeralsSplit, TileGrid, IndexList, ClosingCTA, FormSplit, HeroSplit, ArticleHeader, RelatedArticles, ShareBar } = NS;
 const P = "../../assets/photos/";
 const Label = ({ name, note }) => <p className="lbl"><b>{name}</b>{note ? " · " + note : ""}</p>;
 const rooms = [
@@ -28,50 +28,58 @@ function Demo(){
   return (<div>
 <Label name="HeroFullBleed" note="deck slide 1 · photo ground, Gold primary" />
 <HeroFullBleed src={P + "arrival-dusk.jpg"} alt="Shantara at dusk"
-  eyebrow="Kozhikode, Kerala · since 2000"
   title="A doctor-led naturopathy retreat in Kerala"
-  sub="Drug-free naturopathy on four hilltop acres above the Chennamangallur valley. Every stay begins with a consultation, and your programme is planned by our doctors."
-  actions={<><Button size="lg">Book a Consultation</Button><TextLink href="#">View programmes</TextLink></>} />
+  sub="Drug-free naturopathy on a hilltop above the Chennamangallur valley. Every stay begins with a consultation, and your programme is planned by our doctors."
+  actions={<><Button size="lg">Book a Consultation</Button><TextLink href="#">View programmes</TextLink></>}
+  meta={["Kozhikode, Kerala", "Since 2000"]} />
+
+<Label name="HeroSplit" note="offer hero · programme pages, meta below the title" />
+<HeroSplit src={P + "water-wall.jpg"} alt="The water wall court"
+  breadcrumbs={<Breadcrumbs items={[{ label: "Programmes", href: "#" }, "Detox"]} />}
+  title="Detox" meta={[{ icon: "leaf", label: "Metabolic" }, { icon: "moon", label: "7–21 nights" }]}
+  sub="Your doctor may recommend a meal plan or supervised fasting based on your assessment."
+  actions={<><Button size="lg">Book a Consultation</Button><TextLink href="#">What the programme includes</TextLink></>}
+  facts={<PlainList columns={2} size="sm" items={["Consultation and assessment first", "Doctor review each morning"]} />} />
 
 <Label name="Section + NumeralsSplit" note="deck slide 8 · stone ground" />
 <Section ground="stone">
-  <NumeralsSplit eyebrow="Shantara in numbers" title="Doctor-led naturopathy, planned around your assessment."
-    numerals={[{ value: "25,000+", label: "guests since 2000" }, { value: "4", label: "hilltop acres" }]} />
+  <NumeralsSplit title="Doctor-led naturopathy, planned around your assessment."
+    numerals={[{ value: "25,000+", label: "guests since 2000" }, { value: "13", label: "therapies" }]} />
 </Section>
 
 <Label name="BandStatement" note="deck slide 3 · himalaya ground, rosette band on one edge" />
 <BandStatement>
-  <Statement eyebrow="Our approach" sub="The clinical team plans your programme and adjusts it where necessary during your stay.">Your programme is planned after consultation and assessment.</Statement>
+  <Statement sub="The clinical team plans your programme and adjusts it where necessary during your stay.">Your programme is planned after consultation and assessment.</Statement>
   <PlainList columns={2} items={["Consultation and assessment", "A plan for you", "Therapies and daily routines", "Progress reviewed"]} />
 </BandStatement>
 
 <Label name="Section + TileGrid" note="deck slide 11 · layout 3" />
 <Section>
-  <TileGrid eyebrow="Programmes" title="Naturopathy programmes" action={<TextLink href="#">All programmes</TextLink>}>
-    <Tile href="#" src={P + "balcony.jpg"} alt="" eyebrow="Mind · 7–14 nights" title="Stress Management" text="Doctor-led routines, therapies and rest for guests managing sustained stress, poor sleep or fatigue." />
-    <Tile href="#" src={P + "water-wall.jpg"} alt="" eyebrow="Metabolic · 7–21 nights" title="Detox" text="Your doctor may recommend a meal plan or supervised fasting based on your assessment. Therapies may also form part of your programme." />
-    <Tile href="#" src={P + "grounds.jpg"} alt="" eyebrow="Metabolic · 14–21 nights" title="Weight Management" text="Meals, daily activity and therapies, with weight and vitals reviewed by a doctor each morning." />
+  <TileGrid title="Naturopathy programmes" action={<TextLink href="#">All programmes</TextLink>}>
+    <Tile href="#" src={P + "balcony.jpg"} alt="" title="Stress Management" meta={["Mind", "7–14 nights"]} text="Doctor-led routines, therapies and rest for guests managing sustained stress, poor sleep or fatigue." />
+    <Tile href="#" src={P + "water-wall.jpg"} alt="" title="Detox" meta={["Metabolic", "7–21 nights"]} text="Your doctor may recommend a meal plan or supervised fasting based on your assessment. Therapies may also form part of your programme." />
+    <Tile href="#" src={P + "grounds.jpg"} alt="" title="Weight Management" meta={["Metabolic", "14–21 nights"]} text="Meals, daily activity and therapies, with weight and vitals reviewed by a doctor each morning." />
   </TileGrid>
 </Section>
 
 <Label name="SplitSection" note="deck slides 4 / 6 · photo to the edge, text bottom-aligned" />
 <SplitSection src={P + "dining-restaurant-valley-window.jpg"} alt="The dining room by the valley window">
-  <Statement eyebrow="Meals during your stay" sub="Meals are planned as part of your programme, taking into account your doctor's recommendations and dietary requirements.">Meals are planned for your programme.</Statement>
+  <Statement sub="Meals are planned as part of your programme, taking into account your doctor's recommendations and dietary requirements.">Meals are planned for your programme.</Statement>
   <div><TextLink href="#">Read what to expect</TextLink></div>
 </SplitSection>
 
 <Label name="SplitSection" note="deck slide 13 · mediaSide end, split 40, stone ground, SpecTable" />
 <SplitSection src={P + "room-premium.jpg"} alt="A room with a balcony" mediaSide="end" split="40" ground="stone">
-  <Statement eyebrow="Accommodation" sub="Shantara has 52 rooms across five categories, designed for comfortable residential stays.">Five room categories</Statement>
+  <Statement sub="Five room categories, designed for comfortable residential stays.">Five room categories</Statement>
   <SpecTable caption="Room categories" columns={[{ key: "name", label: "Room" }, { key: "size", label: "Size", accent: true, mobileLabel: true }, { key: "occ", label: "Occupancy", mobileLabel: true }]} rows={rooms} />
 </SplitSection>
 
 <Label name="PanoramaCaption" note="deck slide 5 · 21:9, 4:5 on phones, no button" />
-<PanoramaCaption src={P + "valley.jpg"} alt="The Chennamangallur valley from the hilltop" eyebrow="The setting" title="Overlooking the Chennamangallur valley" />
+<PanoramaCaption src={P + "valley.jpg"} alt="The Chennamangallur valley from the hilltop" title="Overlooking the Chennamangallur valley" />
 
 <Label name="Section + PeopleRow" note="deck slide 7 · initials until a photograph exists" />
 <Section>
-  <PeopleRow eyebrow="Our doctors" title="Your programme is planned by our doctors."
+  <PeopleRow title="Your programme is planned by our doctors."
     people={[
       { name: "Dr. P.A. Kareem", role: "Founder, Chairman & Chief Naturopathy Consultant", detail: "Government of India-certified Naturopathy Practitioner" },
       { name: "Dr. Bahja Janu", role: "Medical Director", src: P + "doctor-bahja-janu-portrait-cropped.jpeg" },
@@ -79,11 +87,29 @@ function Demo(){
     action={<TextLink href="#">About Shantara</TextLink>} />
 </Section>
 
-<Label name="HeroStatement" note="deck slide 2 · inner page, no photograph" />
-<HeroStatement tall={false}
+<Label name="HeroStatement" note="editorial hero · rosette band edge, closing hairline + meta" />
+<HeroStatement tall={false} pattern
   breadcrumbs={<Breadcrumbs items={[{ label: "Home", href: "#" }, "Conditions"]} />}
-  eyebrow="Conditions" title="Conditions we commonly see"
-  sub="Our doctors see guests with a range of long-standing conditions. Programmes are planned after consultation and assessment." />
+  title="Conditions we commonly see"
+  sub="Our doctors see guests with a range of long-standing conditions. Programmes are planned after consultation and assessment."
+  meta={["Reviewed by Dr. Bahja Janu, Medical Director", "Updated August 2026"]} />
+
+<Label name="ArticleHeader" note="insights article · meta below the title, byline + reviewer" />
+<ArticleHeader breadcrumbs={<Breadcrumbs items={[{ label: "Insights", href: "#" }, "Food & Recipes"]} />}
+  title="How meals are planned during a stay" dek="How meals are planned around your programme and dietary requirements."
+  category="Food & Recipes" date="12 August 2026" dateTime="2026-08-12" readTime="4 min read"
+  author={{ name: "Dr. Bahja Janu", role: "Medical Director", src: P + "doctor-bahja-janu-portrait-cropped.jpeg" }}
+  reviewer={{ name: "Dr. P.A. Kareem", role: "Chief Naturopathy Consultant" }}
+  share={<ShareBar compact label="" url="https://shantara.life/en/insights/how-meals-are-planned" />} />
+
+<Label name="Section + RelatedArticles" note="TileGrid preset for the end of an article" />
+<Section ground="stone">
+  <RelatedArticles action={<TextLink href="#">All insights</TextLink>} articles={[
+    { title: "How programme duration is decided", href: "#", src: P + "treatment.jpg", alt: "", category: "Clinical Guides", readTime: "5 min read" },
+    { title: "Managing PCOS through lifestyle", href: "#", src: P + "grounds.jpg", alt: "", category: "Clinical Guides", readTime: "6 min read" },
+    { title: "How rooms are designed", href: "#", src: P + "room-twin.jpg", alt: "", category: "Life at Shantara", readTime: "3 min read" },
+  ]} />
+</Section>
 
 <Label name="Section + IndexList" note="text-only index" />
 <Section>
@@ -107,7 +133,7 @@ function Demo(){
     <PortraitFrame src={P + "doctor-bahja-janu-portrait-cropped.jpeg"} name="Dr. Bahja Janu" role="Medical Director" style={{ maxWidth: 220 }} />
     <Statement as="h3" size="title" sub="A member of the team will call you to understand what you need. A doctor then reviews whether a stay is the right next step.">We'll be in touch</Statement>
   </>}>
-    <Statement as="h2" size="title" eyebrow="Book a Consultation" sub="Share your name and a number we can reach. Our team will contact you to arrange a consultation.">Send your details</Statement>
+    <Statement as="h2" size="title" sub="Share your name and a number we can reach. Our team will contact you to arrange a consultation.">Send your details</Statement>
     <Input label="Name" />
     <Input label="Mobile / WhatsApp number" placeholder="+91" />
     <Select label="Country" options={["India", "United Arab Emirates", "United Kingdom", "Other"]} />
@@ -116,13 +142,17 @@ function Demo(){
   </FormSplit>
 </Section>
 
-<Label name="ClosingCTA" note="deck slide 18 · one Gold button, contact lines" />
+<Label name="ClosingCTA" note="variant photo · only on pages with no other CTA" />
 <ClosingCTA src={P + "exterior-entrance-dusk-lit-canopy.jpg"} alt="The entrance at dusk"
-  eyebrow="Book a Consultation"
   title="A stay is confirmed after a doctor has spoken with you."
   sub="Share your name and a number we can reach. Our team will contact you to arrange a consultation."
   action={<Button size="lg">Book a Consultation</Button>}
-  contact={<><a href="tel:+919553600100">+91 9553 600 100</a><a href="mailto:heal@shantara.life">heal@shantara.life</a><span>Kozhikode (Calicut), Kerala</span></>} />
+  contact={[{ icon: "phone", label: "+91 9553 700 100", href: "tel:+919553700100" }, { icon: "mail", label: "heal@shantara.life", href: "mailto:heal@shantara.life" }, { icon: "map-pin", label: "Kozhikode (Calicut), Kerala" }]} />
+
+<Label name="ClosingCTA" note="variant compact · stone ground, one row" />
+<ClosingCTA variant="compact" ground="stone" title="Questions about a programme?"
+  sub="Our team will call you back to arrange a consultation."
+  action={<Button>Book a Consultation</Button>} />
 </div>);}
 ReactDOM.createRoot(document.getElementById('root')).render(<Demo/>);
 </script></body></html>

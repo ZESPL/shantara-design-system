@@ -2,7 +2,7 @@ A photograph running to the edge of the screen on one side and a bottom-aligned 
 
 ```jsx
 <SplitSection src="/assets/photos/balcony.jpg" alt="A balcony over the valley" mediaSide="start">
-  <Statement eyebrow="Mind · 7–14 nights" sub="Doctor-led routines, therapies and rest for guests managing sustained stress, poor sleep or fatigue.">
+  <Statement meta={["Mind", "7–14 nights"]} sub="Doctor-led routines, therapies and rest for guests managing sustained stress, poor sleep or fatigue.">
     Stress Management
   </Statement>
   <TextLink href="/en/programs/stress-management">Read about the programme</TextLink>

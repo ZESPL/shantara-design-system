@@ -19,6 +19,7 @@ const files = [
   "catalog.css",
   "chrome.css",
   "catalog.js",
+  "portal.js",
   "styles.css",
   "_ds_manifest.json",
   "_ds_bundle.js",

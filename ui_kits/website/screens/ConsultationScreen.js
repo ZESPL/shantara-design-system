@@ -1,11 +1,13 @@
-/* Book a consultation — HeroStatement → the form beside a Stone panel (who calls, what
-   happens next). Dialog confirm, Spinner, success state and Toast are kept. No ClosingCTA. */
+/* Book a consultation — HeroStatement (rosette band) → the form beside a Stone panel (who
+   calls, what happens next). Dialog confirm, Spinner, success state and Toast are kept.
+   No ClosingCTA: the form is the page's CTA (#35). */
 
 function ConsultationScreen({ onNavigate, locale = "en", view = "booking" }) {
   const { t, track } = window.ShantaraI18n.useLocale();
   const L = window.ShantaraLocales;
   const keys = (L && L.FORM_FIELD_KEYS) || { full_name: "full_name", phone: "phone", email: "email", country: "country", notes: "notes" };
   const { Button, Input, Select, Textarea, Dialog, Toast, Spinner, HeroStatement, Section, FormSplit, PortraitFrame, Statement, NumberedSteps, TextLink } = window.ShantaraDesignSystem_45bbe4;
+  const P = window.PageSlot;
   const [started, setStarted] = React.useState(false);
   const [confirming, setConfirming] = React.useState(false);
   const [pending, setPending] = React.useState(false);
@@ -54,9 +56,11 @@ function ConsultationScreen({ onNavigate, locale = "en", view = "booking" }) {
   if (done) {
     return (
       <main>
+        <P id="booking/done">
         <HeroStatement
           tall={false}
-          eyebrow={t("Book a Consultation")}
+          pattern="end"
+          meta={[t("Book a Consultation")]}
           title={t("Consultation request received")}
           sub={t("Our team will contact you to understand your requirements and guide you on the appropriate next step.")}
           actions={<>
@@ -65,6 +69,7 @@ function ConsultationScreen({ onNavigate, locale = "en", view = "booking" }) {
           </>}
           style={{ paddingBlockEnd: "var(--section-y)" }}
         />
+        </P>
         {toast ? <Toast fixed tone="success" title={t("Consultation request received")} message={t("Our team will contact you to understand your requirements and guide you on the appropriate next step.")} onClose={() => setToast(false)} /> : null}
       </main>
     );
@@ -100,13 +105,16 @@ function ConsultationScreen({ onNavigate, locale = "en", view = "booking" }) {
 
   return (
     <main>
-      <HeroStatement
-        tall={false}
-        eyebrow={t("Book a Consultation")}
-        title={t("Send your details")}
-        sub={t("Share your name and a number we can reach. Our team will contact you to arrange a consultation.")}
-      />
+      <P id="booking/hero">
+        <HeroStatement
+          tall={false}
+          pattern="end"
+          title={t("Book a Consultation")}
+          sub={t("Share your name and a number we can reach. Our team will contact you to arrange a consultation.")}
+        />
+      </P>
 
+      <P id="booking/form">
       <Section space="bottom">
         <FormSplit aside={aside}>
           <Input name={keys.full_name} autoComplete="name" label={t("Name")} required onFocus={markStart} />
@@ -122,6 +130,7 @@ function ConsultationScreen({ onNavigate, locale = "en", view = "booking" }) {
           </div>
         </FormSplit>
       </Section>
+      </P>
 
       <Dialog open={confirming} onClose={pending ? undefined : () => setConfirming(false)}
         title={t("Send your details?")}

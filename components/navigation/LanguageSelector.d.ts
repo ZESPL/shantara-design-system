@@ -8,6 +8,8 @@ export interface LanguageSelectorOption {
   current: boolean;
   href: string | null;
   available: boolean;
+  /** Planned but not yet enabled — listed disabled with "Coming soon". */
+  comingSoon?: boolean;
 }
 
 export interface LanguageSelectorProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -20,12 +22,17 @@ export interface LanguageSelectorProps extends React.HTMLAttributes<HTMLDivEleme
   /** Compact trigger uses EN / AR / … Native names always appear in the list. No flags. */
   compact?: boolean;
   label?: string;
+  /** Text beside unavailable languages. Default t("Coming soon"). */
+  comingSoonLabel?: string;
+  /** Start with the list open (specimens). */
+  defaultOpen?: boolean;
   /** Specimen-only override. Production omits this and reads enabled locales from locales.js. */
   options?: LanguageSelectorOption[];
 }
 
 /**
- * Reusable locale control. Renders nothing when only one locale is enabled.
+ * Reusable locale control. Always renders: the current language on the trigger, every planned
+ * language in the list, unavailable ones disabled with "Coming soon".
  * Never uses flags as the primary representation.
  */
-export declare function LanguageSelector(props: LanguageSelectorProps): JSX.Element | null;
+export declare function LanguageSelector(props: LanguageSelectorProps): JSX.Element;

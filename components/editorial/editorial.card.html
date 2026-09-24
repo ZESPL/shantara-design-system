@@ -1,4 +1,4 @@
-<!-- @dsCard group="Components" viewport="1000x4380" name="Editorial" subtitle="Media, statements, numerals, tiles, lists, tables, quotes and portraits — the brand deck's page parts" -->
+<!-- @dsCard group="Components" viewport="1000x6400" name="Editorial" subtitle="Media, statements, meta rows, numerals, tiles, lists, tables, quotes, portraits and the Insights article parts" -->
 <!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../styles.css">
 <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
@@ -14,9 +14,11 @@ body{margin:0;padding:clamp(20px,3vw,40px);background:var(--ground-merino)}
 .portraits{display:grid;grid-template-columns:repeat(2,minmax(0,220px));gap:var(--grid-gap)}
 @media (min-width:760px){.two{grid-template-columns:repeat(2,minmax(0,1fr))}.three{grid-template-columns:repeat(3,minmax(0,1fr))}}
 .dark{padding:clamp(24px,4vw,48px)}
+.art{display:grid;grid-template-columns:minmax(0,1fr);gap:var(--space-8) var(--grid-gap)}
+@media (min-width:1000px){.art{grid-template-columns:minmax(0,8fr) minmax(0,3fr);column-gap:calc(var(--grid-gap)*2)}.art>nav{order:2}}
 </style></head><body><div id="root"></div>
 <script type="text/babel">
-const { Media, Eyebrow, Statement, Numeral, TextLink, Tile, NumberedSteps, PlainList, GroupedList, SpecTable, TimeTable, QuoteBlock, PortraitFrame } = window.ShantaraDesignSystem_45bbe4;
+const { Media, MetaRow, Statement, Numeral, TextLink, Tile, NumberedSteps, PlainList, GroupedList, SpecTable, TimeTable, QuoteBlock, PortraitFrame, Prose, ArticleFigure, AuthorCard, ReviewedBy, TableOfContents, ShareBar, Pagination } = window.ShantaraDesignSystem_45bbe4;
 const P = "../../assets/photos/";
 const L = ({ children }) => <p className="shantara-usage-label" style={{ margin: 0 }}>{children}</p>;
 const rooms = [
@@ -28,8 +30,9 @@ const rooms = [
 function Demo(){
   return (<div>
 <div className="blk">
-  <L>Statement · Eyebrow</L>
-  <Statement eyebrow="Our approach" sub="The clinical team plans your programme and adjusts it where necessary during your stay.">Your programme is planned after consultation and assessment.</Statement>
+  <L>Statement · MetaRow — the heading leads; facts sit below it, never above</L>
+  <Statement sub="The clinical team plans your programme and adjusts it where necessary during your stay.">Your programme is planned after consultation and assessment.</Statement>
+  <MetaRow items={[{ icon: "tag", label: "Food & Recipes" }, { icon: "calendar-days", label: "12 August 2026" }, { icon: "clock", label: "4 min read" }]} />
 </div>
 <div className="blk">
   <L>Media — square-cut, ratio tokens, 21:9 becomes 4:3 on phones</L>
@@ -41,20 +44,20 @@ function Demo(){
   <Media src={P + "valley.jpg"} alt="The Chennamangallur valley from the hilltop" ratio="21:9" mobileRatio="4:3" />
 </div>
 <div className="blk">
-  <L>Tile — photograph and text directly on the ground; hover scales the photo to 1.02</L>
+  <L>Tile — photograph, title, then the meta row; hover scales the photo to 1.02</L>
   <div className="three">
-    <Tile href="#" src={P + "balcony.jpg"} alt="" eyebrow="Mind · 7–14 nights" title="Stress Management" text="Doctor-led routines, therapies and rest for guests managing sustained stress, poor sleep or fatigue." />
-    <Tile href="#" src={P + "water-wall.jpg"} alt="" eyebrow="Metabolic · 7–21 nights" title="Detox" text="Your doctor may recommend a meal plan or supervised fasting based on your assessment." />
-    <Tile href="#" src={P + "grounds.jpg"} alt="" eyebrow="Metabolic · 14–21 nights" title="Weight Management" text="Meals, daily activity and therapies, with weight and vitals reviewed by a doctor each morning." />
+    <Tile href="#" src={P + "balcony.jpg"} alt="" title="Stress Management" meta={["Mind", "7–14 nights"]} text="Doctor-led routines, therapies and rest for guests managing sustained stress, poor sleep or fatigue." />
+    <Tile href="#" src={P + "water-wall.jpg"} alt="" title="Detox" meta={["Metabolic", "7–21 nights"]} text="Your doctor may recommend a meal plan or supervised fasting based on your assessment." />
+    <Tile href="#" src={P + "grounds.jpg"} alt="" title="Weight Management" meta={["Metabolic", "14–21 nights"]} text="Meals, daily activity and therapies, with weight and vitals reviewed by a doctor each morning." />
   </div>
-  <Tile href="#" layout="row" src={P + "courtyard.jpg"} alt="" eyebrow="Immersive · 21–28 nights" title="Complete Healing" text="For guests managing several long-standing conditions at once, across metabolic, musculoskeletal and mental health." />
+  <Tile href="#" layout="row" src={P + "courtyard.jpg"} alt="" title="Complete Healing" meta={["Immersive", "21–28 nights"]} text="For guests managing several long-standing conditions at once, across metabolic, musculoskeletal and mental health." />
 </div>
 <div className="blk">
   <L>Numeral · TextLink</L>
   <div className="two" style={{ alignItems: "end" }}>
     <div style={{ display: "flex", flexWrap: "wrap", gap: "var(--space-8) calc(var(--grid-gap) * 2)" }}>
       <Numeral value="25,000+" label="guests since 2000" />
-      <Numeral value="52" label="rooms, 5 categories" />
+      <Numeral value="13" label="therapies" />
     </div>
     <div style={{ display: "flex", flexWrap: "wrap", gap: "var(--space-4) var(--space-8)" }}>
       <TextLink href="#">View conditions</TextLink>
@@ -70,6 +73,12 @@ function Demo(){
     { title: "Therapies and daily routines", text: "Your doctor may recommend therapies based on your assessment and programme." },
     { title: "Progress reviewed", text: "The plan is reviewed during your stay and adjusted where necessary." },
   ]} />
+  <L>NumberedSteps orientation="vertical" — a timeline</L>
+  <NumberedSteps orientation="vertical" items={[
+    { title: "Consultation and assessment", text: "Our doctors consider your medical history, current health, lifestyle and goals." },
+    { title: "A plan for you", text: "They then plan your treatments, meals, activity and rest." },
+    { title: "Progress reviewed", text: "The plan is reviewed during your stay and adjusted where necessary." },
+  ]} />
 </div>
 <div className="blk">
   <div className="two">
@@ -78,7 +87,7 @@ function Demo(){
       <PlainList columns={2} size="sm" items={["En-suite bathroom with rain shower", "Individually controlled central air-conditioning", "Orthopaedic mattress", "Electronic safe, Wi-Fi, smart LED TV"]} />
     </div>
     <div style={{ display: "flex", flexDirection: "column", gap: "var(--space-6)" }}>
-      <L>GroupedList — programmes by focus</L>
+      <L>GroupedList — Medium group headings, one item per line</L>
       <GroupedList columns={2} groups={[
         { label: "Metabolic", items: ["Detox", "Weight Management"] },
         { label: "Clinical", items: ["Diabetes Reversal", "Longevity", "Men's Vitality"] },
@@ -108,8 +117,8 @@ function Demo(){
   <div className="two">
     <div style={{ display: "flex", flexDirection: "column", gap: "var(--space-6)" }}>
       <L>QuoteBlock — brand statements only until consented words exist</L>
-      <QuoteBlock quote="Naturopathy treats the causes of a condition through diet, activity, therapies and rest rather than through medication." cite="Our approach"
-        facts={[{ label: "Since 2000", text: "The evolution of Hygiene Nature Cure Hospital." }, { label: "The setting", text: "Four hilltop acres above the Chennamangallur valley." }]} />
+      <QuoteBlock quote="Naturopathy treats the causes of a condition through diet, activity, therapies and rest rather than through medication." cite="Shantara Naturopathy Retreat" role="Our approach to care"
+        facts={[{ label: "Since 2000", text: "The evolution of Hygiene Nature Cure Hospital." }, { label: "The setting", text: "A hilltop above the Chennamangallur valley." }]} />
     </div>
     <div style={{ display: "flex", flexDirection: "column", gap: "var(--space-6)" }}>
       <L>PortraitFrame — initials until a photograph exists</L>
@@ -121,10 +130,33 @@ function Demo(){
   </div>
 </div>
 <div className="blk">
-  <L>On a dark ground — ink, eyebrow, rules and links re-point; no tone props</L>
+  <L>Insights — ReviewedBy · Prose · ArticleFigure · TableOfContents</L>
+  <div className="art">
+    <div style={{ display: "flex", flexDirection: "column", gap: "var(--space-7)", minWidth: 0 }}>
+      <ReviewedBy name="Dr. Bahja Janu" role="Medical Director" href="#" date="12 August 2026" dateTime="2026-08-12" />
+      <Prose>
+        <p>Meals at Shantara are part of your programme. They are planned after your consultation and assessment, and reviewed during your stay.</p>
+        <h2 id="c-planned">How meals are planned</h2>
+        <p>Your doctor recommends a meal plan and the kitchen prepares meals to it. <a href="#">Read about the care model</a>.</p>
+        <ul><li>Meals are planned for your programme, not chosen from a menu.</li><li>Tell the team about allergies before you arrive.</li></ul>
+        <blockquote><p>The plan is reviewed during your stay and adjusted where necessary.</p></blockquote>
+      </Prose>
+      <ArticleFigure src={P + "dining-table-set-detail.jpg"} alt="A table set for a meal" caption="A table set in the dining room." credit="Photograph: Shantara" style={{ margin: 0 }} />
+    </div>
+    <TableOfContents sticky={false} track={false} items={[{ id: "c-planned", label: "How meals are planned" }, { id: "c-fasting", label: "Supervised fasting" }, { id: "c-diet", label: "Dietary requirements" }]} />
+  </div>
+</div>
+<div className="blk">
+  <L>AuthorCard · ShareBar · Pagination</L>
+  <AuthorCard name="Dr. Bahja Janu" role="Medical Director" src={P + "doctor-bahja-janu-portrait-cropped.jpeg"} href="#" action={<TextLink href="#">About our doctors</TextLink>} />
+  <ShareBar url="https://shantara.life/en/insights/how-meals-are-planned" title="How meals are planned during a stay" />
+  <Pagination page={3} pageCount={8} onChange={() => {}} />
+</div>
+<div className="blk">
+  <L>On a dark ground — ink, rules and links re-point; no tone props</L>
   <div className="dark" data-ground="himalaya">
     <div className="two" style={{ alignItems: "end" }}>
-      <Statement eyebrow="Our approach" size="title">Your programme is planned after consultation and assessment.</Statement>
+      <Statement size="title">Your programme is planned after consultation and assessment.</Statement>
       <div style={{ display: "flex", flexDirection: "column", gap: "var(--space-7)" }}>
         <PlainList columns={2} rules items={["Consultation and assessment", "A plan for you", "Therapies and daily routines", "Progress reviewed"]} />
         <div><TextLink href="#">Read what to expect</TextLink></div>

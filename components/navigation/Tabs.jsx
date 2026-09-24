@@ -52,7 +52,7 @@ export function Tabs({ items = [], value, onChange, variant = "underline", style
     if (btns[next]) btns[next].focus();
   };
   return (
-    <div ref={list} className="sh-tabs" data-variant={variant} role="tablist" onKeyDown={onKeyDown} style={style} {...rest}>
+    <div ref={list} className="sh-tabs" data-ds-id="navigation/Tabs" data-variant={variant} role="tablist" onKeyDown={onKeyDown} style={style} {...rest}>
       {items.map((it) => {
         const v = typeof it === "string" ? it : it.value;
         const l = typeof it === "string" ? it : it.label;

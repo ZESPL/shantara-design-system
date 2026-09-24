@@ -10,9 +10,9 @@
 const { Button, IconButton, Icon, Card, Badge, Tag, Logo, PatternPanel, Divider } = window.ShantaraDesignSystem_45bbe4;
 function Demo(){
   const {t,ar}=window.ShantaraI18n.useLocale();
-  const [picked,setPicked]=React.useState(["Ayurveda"]);
+  const [picked,setPicked]=React.useState(["Yoga therapy"]);
   const toggle=v=>setPicked(cur=>cur.includes(v)?cur.filter(x=>x!==v):[...cur,v]);
-  const [diet,setDiet]=React.useState(["Vegan"]);
+  const [diet,setDiet]=React.useState(["No dairy"]);
   return (<div>
 <div className="row">
 <Button>{t("Book a Consultation")}</Button>
@@ -28,22 +28,30 @@ function Demo(){
 <IconButton label={t("Favourite")}><Icon name="heart" size={18}/></IconButton>
 <IconButton variant="solid" label={t("Add")}><Icon name="plus" size={18}/></IconButton>
 <IconButton variant="outline" label={t("Share")}><Icon name="share-2" size={18}/></IconButton>
-<Divider orientation="vertical" spacing="var(--space-2)"/>
-<Badge tone="brand">{t("In season")}</Badge>
-<Badge tone="accent">{t("Members only")}</Badge>
-<Badge tone="success">{t("Confirmed")}</Badge>
+</div>
+<div className="row">
+<Badge tone="brand">{t("Prescribed")}</Badge>
+<Badge tone="success" dot>{t("Confirmed")}</Badge>
+<Badge tone="warning">{t("Awaiting reports")}</Badge>
+<Badge>{t("7 nights")}</Badge>
 <Badge tone="outline">{t("Waitlist")}</Badge>
-<Tag selected={picked.includes("Ayurveda")} onClick={()=>toggle("Ayurveda")}>{t("Ayurveda")}</Tag>
-<Tag selected={picked.includes("Breathwork")} onClick={()=>toggle("Breathwork")}>{t("Breathwork")}</Tag>
+<Divider orientation="vertical" spacing="var(--space-2)"/>
+<Tag>{t("Type 2 diabetes")}</Tag>
+<Tag selected>{t("In stay")}</Tag>
 {diet.map(d=><Tag key={d} onRemove={()=>setDiet(cur=>cur.filter(x=>x!==d))}>{t(d)}</Tag>)}
 </div>
-<p className="shantara-note" style={{marginBottom:"var(--space-5)"}}>Tags toggle and dismiss. Selected fills Himalaya; press scale matches the button. Badges are status, not controls — they do not hover or press.</p>
-<div className="grid">
-<Card interactive onClick={()=>{}} padding="sm"><span className="shantara-eyebrow">{t("Prescribed therapy")}</span><h4 style={{font:'var(--type-h4)',fontSize:'var(--text-lg)'}}>{t("Mud therapy")}</h4><p style={{margin:0,color:'var(--text-secondary)',fontSize:'var(--text-xs)'}}>{t("90 min · prescribed")}</p></Card>
-<Card tone="raised" padding="sm"><Logo mark="icon" tone="olive" height={28}/><p style={{margin:'var(--space-3) 0 0',fontSize:'var(--text-xs)',color:'var(--text-secondary)'}}>{t("Pearl Bush panel, no shadow")}</p></Card>
-<Card interactive onClick={()=>{}} media="../../assets/photos/treatment.jpg" mediaAlt={t("Therapy wing")} padding="sm"><span className="shantara-eyebrow">{t("The property")}</span><h4 style={{font:'var(--type-h4)',fontSize:'var(--text-lg)'}}>{t("Therapy wing")}</h4></Card>
+<div className="row">
+<Tag selected={picked.includes("Yoga therapy")} onClick={()=>toggle("Yoga therapy")}>{t("Yoga therapy")}</Tag>
+<Tag selected={picked.includes("Hydrotherapy")} onClick={()=>toggle("Hydrotherapy")}>{t("Hydrotherapy")}</Tag>
+<Tag selected={picked.includes("Mud therapy")} onClick={()=>toggle("Mud therapy")}>{t("Mud therapy")}</Tag>
 </div>
-<p className="shantara-note" style={{margin:"var(--space-4) 0 0"}}>Cards are 8px. Listing photography is flush at 3/2 — never a small inset crop. Interactive cards lift 4px into --shadow-lg over 240ms. The card never scales; only the photograph crops in 1.03. Logo, Divider and PatternPanel stay still.</p>
+<p className="shantara-note" style={{marginBottom:"var(--space-5)"}}>Labels and chips never share a look. Badge and static Tag are flat 20–24px tints with 2px corners, no border and no hover — they cannot be mistaken for buttons. Only a Tag with onClick becomes a chip: pill outline, 36px, hover, press, a tick when selected.</p>
+<div className="grid">
+<Card interactive onClick={()=>{}} padding="sm"><h4 style={{font:'var(--type-h4)',fontSize:'var(--text-lg)'}}>{t("Mud therapy")}</h4><p style={{margin:"4px 0 0",font:"var(--type-caption)",color:"var(--text-secondary)"}}>{t("Prescribed therapy")}</p><p style={{margin:0,color:'var(--text-secondary)',fontSize:'var(--text-xs)'}}>{t("90 min · prescribed")}</p></Card>
+<Card tone="raised" padding="sm"><Logo mark="icon" tone="olive" height={28}/><p style={{margin:'var(--space-3) 0 0',fontSize:'var(--text-xs)',color:'var(--text-secondary)'}}>{t("Pearl Bush panel, no shadow")}</p></Card>
+<Card interactive onClick={()=>{}} media="../../assets/photos/treatment.jpg" mediaAlt={t("Therapy wing")} padding="sm"><h4 style={{font:'var(--type-h4)',fontSize:'var(--text-lg)'}}>{t("Therapy wing")}</h4><p style={{margin:"4px 0 0",font:"var(--type-caption)",color:"var(--text-secondary)"}}>{t("The property")}</p></Card>
+</div>
+<p className="shantara-note" style={{margin:"var(--space-4) 0 0"}}>Cards are 4px. Listing photography is flush at 3/2 — never a small inset crop. Interactive cards lift 4px into --shadow-lg over 240ms. The card never scales; only the photograph crops in 1.03. Logo, Divider and PatternPanel stay still.</p>
 <PatternPanel tone="olive" edge="top" band="132px" scale="132px" radius="var(--radius-card)" style={{marginTop:'var(--space-5)'}}><div style={{padding:'var(--space-5)'}}><Logo mark="wordmark" tone="cream" height={16}/><p style={{margin:'var(--space-3) 0 0',fontSize:'var(--text-xs)',opacity:.8}}>Rosette strip, top edge — shown as a detail at actual size. Cell = band / 2, floor 130px, so a real band needs a surface ≥880px.</p></div></PatternPanel>
 <div className="pair">
 <div dir="ltr" lang="en">
@@ -51,18 +59,18 @@ function Demo(){
 <div className="row">
 <Button variant="ghost" endIcon={<Icon name="arrow-right" size={16}/>}>Read journal</Button>
 <IconButton label="Back"><Icon name="chevron-left" size={18}/></IconButton>
-<Tag onRemove={()=>{}}>Vegan</Tag>
+<Tag onRemove={()=>{}}>No dairy</Tag>
 </div>
-<Card padding="sm"><span className="shantara-eyebrow">Prescribed therapy</span><h4 style={{font:'var(--type-h4)',fontSize:'var(--text-lg)'}}>Mud therapy</h4><p style={{margin:0,color:'var(--text-secondary)',fontSize:'var(--text-xs)'}}>90 min · prescribed</p></Card>
+<Card padding="sm"><h4 style={{font:'var(--type-h4)',fontSize:'var(--text-lg)'}}>Mud therapy</h4><p style={{margin:"4px 0 0",font:"var(--type-caption)",color:"var(--text-secondary)"}}>Prescribed therapy</p><p style={{margin:0,color:'var(--text-secondary)',fontSize:'var(--text-xs)'}}>90 min · prescribed</p></Card>
 </div>
 <div dir="rtl" className="shantara-rtl" lang="ar">
 <p className="shantara-usage-label">RTL</p>
 <div className="row">
 <Button variant="ghost" endIcon={<Icon name="arrow-right" size={16}/>}>{ar("Read journal")}</Button>
 <IconButton label={ar("Back")}><Icon name="chevron-left" size={18}/></IconButton>
-<Tag onRemove={()=>{}}>{ar("Vegan")}</Tag>
+<Tag onRemove={()=>{}}>{ar("No dairy")}</Tag>
 </div>
-<Card padding="sm"><span className="shantara-eyebrow">{ar("Prescribed therapy")}</span><h4 style={{font:'var(--type-h4)',fontSize:'var(--text-lg)'}}>{ar("Mud therapy")}</h4><p style={{margin:0,color:'var(--text-secondary)',fontSize:'var(--text-xs)'}}>{ar("90 min · prescribed")}</p></Card>
+<Card padding="sm"><h4 style={{font:'var(--type-h4)',fontSize:'var(--text-lg)'}}>{ar("Mud therapy")}</h4><p style={{margin:"4px 0 0",font:"var(--type-caption)",color:"var(--text-secondary)"}}>{ar("Prescribed therapy")}</p><p style={{margin:0,color:'var(--text-secondary)',fontSize:'var(--text-xs)'}}>{ar("90 min · prescribed")}</p></Card>
 </div>
 </div>
 <p className="shantara-note" style={{marginTop:"var(--space-4)"}}>Set <code>dir="rtl"</code> on the page or a region. <code>startIcon</code> / <code>endIcon</code> stay logical; arrow and chevron glyphs flip. The logo and the rosette motif do not mirror. Symmetric marks (plus, heart) and top/bottom pattern bands stay as they are.</p>

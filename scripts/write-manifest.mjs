@@ -87,18 +87,21 @@ function collectComponentPages() {
     const parts = rel.split("/");
     const folder = parts[1];
     const name = parts[2].replace(/\.prompt\.md$/, "");
+    if (!existsSync(join(componentsDir, folder, `${name}.jsx`))) return null;
     const family = FAMILY_LABEL[folder] || folder;
     const subtitle = firstSentence(readFileSync(file, "utf8"));
     return {
-      path: `docs/component?c=${name}`,
+      path: `docs/component.html?c=${name}`,
       group: "Components",
       family,
+      folder,
+      source: rel,
       kind: "doc",
       viewport: "doc",
       name,
       subtitle,
     };
-  });
+  }).filter(Boolean);
 }
 
 function sortCards(cards) {

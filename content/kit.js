@@ -13,10 +13,9 @@ window.ShantaraContent = {
     "needs_translation_review": null,
     "publication_status": "published",
     "source": "handbook",
-    "business_name": "Shantara Naturopathy",
+    "business_name": "Shantara Naturopathy Retreat",
     "parent_institution": "Hygiene Nature Cure Hospital",
     "phone": [
-      "+91 9553 600 100",
       "+91 9553 700 100"
     ],
     "email": "heal@shantara.life",
@@ -46,17 +45,9 @@ window.ShantaraContent = {
     ],
     "schema_defaults": {
       "type": "LocalBusiness",
-      "name": "Shantara Naturopathy"
+      "name": "Shantara Naturopathy Retreat"
     },
     "stats": [
-      {
-        "value": "4",
-        "label": "hilltop acres"
-      },
-      {
-        "value": "52",
-        "label": "rooms, 5 categories"
-      },
       {
         "value": "25,000+",
         "label": "guests since 2000"
@@ -65,7 +56,11 @@ window.ShantaraContent = {
         "value": "13",
         "label": "therapies"
       }
-    ]
+    ],
+    "short_name": "Shantara",
+    "whatsapp": "+91 9553 700 100",
+    "land_acres_note": "Internal only. Never publish the acreage; say 'hilltop'.",
+    "rooms_count_note": "Mention at most once on the website, never as a stat or heading."
   },
   "tariff": {
     "id": "tariff",
@@ -1578,7 +1573,7 @@ window.ShantaraContent = {
       "category": "Guest Stories",
       "photo": "valley",
       "read_minutes": 6,
-      "lead": "Four acres above Chennamangallur, hour by hour.",
+      "lead": "A hilltop above Chennamangallur, hour by hour.",
       "body": null,
       "author": null,
       "medical_reviewer": null,

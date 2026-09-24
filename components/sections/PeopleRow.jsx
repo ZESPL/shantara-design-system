@@ -21,11 +21,11 @@ function ensure() {
 }
 
 /* people: [{ name, role, detail?, src? }] */
-export function PeopleRow({ eyebrow, title, sub, people = [], note, action, style, ...rest }) {
+export function PeopleRow({ title, sub, people = [], note, action, style, ...rest }) {
   ensure();
   return (
-    <div className="sh-people" style={style} {...rest}>
-      {title ? <Statement eyebrow={eyebrow} sub={sub}>{title}</Statement> : null}
+    <div data-ds-id="sections/PeopleRow" className="sh-people" style={style} {...rest}>
+      {title ? <Statement sub={sub}>{title}</Statement> : null}
       <div className="sh-people-grid">
         {people.map((p) => <PortraitFrame key={p.name} {...p} />)}
       </div>

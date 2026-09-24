@@ -51,6 +51,7 @@ export function Media({ src, alt = "", ratio = "4:3", mobileRatio, position = "c
   if (mobilePosition) vars["--_posm"] = mobilePosition;
   return (
     <figure
+      data-ds-id="editorial/Media"
       className={"sh-media" + (className ? " " + className : "")}
       data-ratio={ratio === "fill" ? "fill" : undefined}
       data-mobile-ratio={mobileRatio ? "" : undefined}

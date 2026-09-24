@@ -72,7 +72,8 @@ Before publishing:
 - [ ] `hreflang` lists only published equivalents, plus `x-default`.
 - [ ] Internal links stay in the current locale.
 - [ ] `html` `lang` and `dir` match the locale.
-- [ ] Language selector is hidden if only one locale is enabled; otherwise it is accessible and omits missing translations.
+- [ ] Language selector always renders (unavailable locales disabled, "Coming soon"); header from 1000px, menu sheet below; accessible; omits missing translations.
+- [ ] Header fits at 390px with text size xl (lays out at 312px); every page has no horizontal overflow at 390 / 390 xl / 1440.
 - [ ] OG image is appropriate.
 - [ ] Schema matches visible content.
 - [ ] Page is keyboard accessible.

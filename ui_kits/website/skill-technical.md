@@ -348,7 +348,7 @@ Ensure:
 - decorative images marked appropriately;
 - accessible form labels;
 - error messages associated with fields;
-- sufficient contrast — including type on photography judged against the scrimmed photograph (solid Merino on a shorter bottom `--scrim-bottom`; gold eyebrows only on flat dark grounds; no double scrims);
+- sufficient contrast — including type on photography judged against the scrimmed photograph (solid Merino on a shorter bottom `--scrim-bottom`; Gold text only on flat dark grounds; no double scrims);
 - pick the right media ratio: **4:3** listing tiles, **16:9** wide editorial, **4:5** doctor portraits, **3:4** tall architecture, **21:9** desktop panorama with a `mobileRatio`; page heroes use a height (not a ratio);
 - accordions open with a `.sh-acc-clip` wrapper (`aria-hidden` / `inert`, not `hidden`) — kit loads `_ds_bundle.js`, so sync after editing `components/navigation/Accordion.jsx`;
 - type never on the rosette; drop the band below ~880px;

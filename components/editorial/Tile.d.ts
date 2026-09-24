@@ -1,4 +1,5 @@
 import * as React from "react";
+import type { MetaItem } from "./MetaRow";
 
 export interface TileProps extends React.HTMLAttributes<HTMLElement> {
   /** A <Media/> node, or pass `src` + `alt` + `ratio`. */
@@ -6,11 +7,15 @@ export interface TileProps extends React.HTMLAttributes<HTMLElement> {
   src?: string;
   alt?: string;
   ratio?: string;
-  eyebrow?: React.ReactNode;
   title: React.ReactNode;
+  /**
+   * The meta row BELOW the title (caption type, normal case).
+   * - string or string[] → "Metabolic · 7–21 nights"
+   * - MetaItem[] with `icon` → icon-led items, e.g. [{ icon: "clock", label: "7–21 nights" }]
+   * - any other node → rendered as-is in caption type
+   */
+  meta?: string | Array<string | MetaItem> | React.ReactNode;
   text?: React.ReactNode;
-  /** Duration, read time, size — caption type. */
-  meta?: React.ReactNode;
   href?: string;
   onClick?: React.MouseEventHandler;
   /** `lg` for the featured tile in a TileGrid. */

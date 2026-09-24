@@ -24,7 +24,7 @@ function ensure() {
 export function PlainList({ items = [], columns = 2, size = "md", rules = false, style, ...rest }) {
   ensure();
   return (
-    <ul className="sh-plist" data-columns={String(columns)} data-size={size} data-rules={String(rules)} style={style} {...rest}>
+    <ul data-ds-id="editorial/PlainList" className="sh-plist" data-columns={String(columns)} data-size={size} data-rules={String(rules)} style={style} {...rest}>
       {items.map((item, i) => (
         <li key={typeof item === "string" ? item : item.title || i}>
           {typeof item === "string" ? item : (

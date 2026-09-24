@@ -1,4 +1,6 @@
-/* Programme detail — Detox sample (not the production site). */
+/* Programme detail — Detox sample (not the production site).
+   HeroSplit → overview beside the booking panel → what to expect → doctors.
+   The booking panel is the page's CTA, so there is no ClosingCTA (#35). */
 
 const PROGRAMME_ID = "detox";
 
@@ -44,7 +46,8 @@ function ensureProgrammeCss() {
 
 function ProgrammeScreen({ onNavigate }) {
   const { t } = window.ShantaraI18n.useLocale();
-  const { Button, Radio, Breadcrumbs, Eyebrow, Media, Section, HeroFullBleed, FormSplit, Statement, PlainList, TimeTable, PeopleRow, ClosingCTA } = window.ShantaraDesignSystem_45bbe4;
+  const { Button, Radio, Breadcrumbs, MetaRow, Media, Section, HeroSplit, FormSplit, Statement, PlainList, TimeTable, PeopleRow } = window.ShantaraDesignSystem_45bbe4;
+  const P = window.PageSlot;
   ensureProgrammeCss();
   const C = window.ShantaraContent;
   const programme = (C.programs || []).find((p) => p.id === PROGRAMME_ID) || { name: "Detox", durations: "7–21 nights", proposition: "" };
@@ -54,29 +57,31 @@ function ProgrammeScreen({ onNavigate }) {
     detail: d.qualification ? t(d.qualification) : undefined,
     src: d.photo_profile ? window.photoSrc(d.photo_profile) : undefined,
   }));
-  const site = C.site || {};
-  const phones = site.phone || [];
   const [len, setLen] = React.useState("14");
   const stack = { marginTop: "var(--section-y-sm)" };
 
   return (
     <main>
-      <HeroFullBleed
-        height="tall"
-        src={window.photoSrc(programme.photo || "water-wall")}
-        alt={t("Water wall at the therapy wing")}
-        eyebrow={[t("Naturopathy programme"), programme.durations ? t(programme.durations) : null].filter(Boolean).join(" · ")}
-        title={t(programme.name)}
-        sub={t(programme.proposition)}
-        actions={<Button size="lg" onClick={() => onNavigate("booking")}>{t("Book a Consultation")}</Button>}
-      />
+      <P id="programme/hero">
+        <HeroSplit
+          src={window.photoSrc(programme.photo || "water-wall")}
+          alt={t("Water wall at the therapy wing")}
+          breadcrumbs={<Breadcrumbs items={[{ label: t("Programmes"), href: window.ShantaraLocales ? window.ShantaraLocales.kitHash(window.ShantaraI18n.currentLocaleCode(), "programme") : "#/en/programs" }, t(programme.name)]} />}
+          title={t(programme.name)}
+          meta={[t("Naturopathy programme"), programme.durations ? t(programme.durations) : null].filter(Boolean)}
+          sub={t(programme.proposition)}
+          actions={<Button size="lg" onClick={() => onNavigate("booking")}>{t("Book a Consultation")}</Button>}
+        />
+      </P>
 
-      <Section ground="merino" style={{ paddingTop: "var(--section-y-sm)" }}>
-        <Breadcrumbs style={{ marginBottom: "var(--stack-lg)" }} items={[{ label: t("Programmes"), href: window.ShantaraLocales ? window.ShantaraLocales.kitHash(window.ShantaraI18n.currentLocaleCode(), "programme") : "#/en/programs" }, t(programme.name)]} />
+      <P id="programme/overview">
+      <Section ground="merino">
         <FormSplit
           aside={<>
-            <Eyebrow>{t("Consultation first")}</Eyebrow>
-            <h2 className="sh-prog-h">{t(programme.name)}</h2>
+            <div>
+              <h2 className="sh-prog-h">{t(programme.name)}</h2>
+              <MetaRow style={{ marginTop: "var(--space-3)" }} items={[t("Consultation first"), programme.durations ? t(programme.durations) : null]} />
+            </div>
             <div>
               <p className="sh-prog-sub" id="sh-prog-len">{t("Typical duration")}</p>
               <div role="radiogroup" aria-labelledby="sh-prog-len" style={{ display: "flex", flexDirection: "column", gap: "var(--space-3)" }}>
@@ -122,7 +127,9 @@ function ProgrammeScreen({ onNavigate }) {
           </div>
         </FormSplit>
       </Section>
+      </P>
 
+      <P id="programme/expect">
       <Section ground="stone">
         <Statement>{t("What to expect during your stay")}</Statement>
         <div className="sh-prog-strip" role="region" aria-label={t("Photographs of the retreat")} tabIndex={0} style={{ marginTop: "var(--stack-lg)" }}>
@@ -132,22 +139,14 @@ function ProgrammeScreen({ onNavigate }) {
         </div>
         <TimeTable style={{ marginTop: "var(--stack-lg)" }} rows={DAY_TIMES.map((r) => ({ time: t(r.time), title: t(r.text) }))} />
       </Section>
+      </P>
 
-      <Section ground="merino">
-        <PeopleRow title={t("Meet our doctors")} people={doctors} />
-      </Section>
+      <P id="programme/doctors">
+        <Section ground="merino">
+          <PeopleRow title={t("Meet our doctors")} people={doctors} />
+        </Section>
+      </P>
 
-      <ClosingCTA
-        src={window.photoSrc("exterior-entrance-dusk-driveway")}
-        alt={t("The driveway and entrance at dusk")}
-        title={t("Start with a consultation.")}
-        sub={t("Share your name and a number we can reach. Our team will contact you to arrange a consultation.")}
-        action={<Button size="lg" onClick={() => onNavigate("booking")}>{t("Book a Consultation")}</Button>}
-        contact={<>
-          <a className="shantara-dir-ltr" href={"mailto:" + (site.email || "")}>{site.email}</a>
-          {phones.map((p) => <a key={p} className="shantara-dir-ltr" href={"tel:" + p.replace(/[^\d+]/g, "")} style={{ fontVariantNumeric: "tabular-nums" }}>{p}</a>)}
-        </>}
-      />
     </main>
   );
 }

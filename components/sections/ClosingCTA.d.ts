@@ -1,16 +1,33 @@
 import * as React from "react";
 
+export interface ContactItem {
+  label: React.ReactNode;
+  href?: string;
+  /** Optional core Icon name: "phone", "message-circle", "mail", "map-pin". */
+  icon?: string;
+}
+
 export interface ClosingCTAProps extends React.HTMLAttributes<HTMLElement> {
-  /** A dark photograph. Omit it and the section paints the Pine ground instead. */
+  /** "photo" (default when `src`): full-bleed dark photograph, 72svh.
+   *  "ground" (default without `src`): same block on a flat ground, content height.
+   *  "compact": one row band — title (+ sub) left, actions right. */
+  variant?: "photo" | "ground" | "compact";
+  /** Ground for "ground" / "compact". Default "pine". */
+  ground?: "pine" | "himalaya" | "stone";
+  /** Photograph for variant "photo". */
   src?: string;
   alt?: string;
   position?: string;
-  eyebrow?: React.ReactNode;
+  /** One sentence. No label above it. */
   title: React.ReactNode;
+  /** Optional one supporting line. */
   sub?: React.ReactNode;
-  /** ONE primary button — Gold on this ground. */
+  /** ONE primary Button. */
   action?: React.ReactNode;
-  /** Phone, email and place lines in small type, above a hairline. */
-  contact?: React.ReactNode;
+  /** Optional second action — a secondary Button or TextLink, never a second primary. */
+  secondaryAction?: React.ReactNode;
+  /** Optional contact row: items (aligned, 44px each, stack under 520px) or a node. */
+  contact?: Array<string | ContactItem> | React.ReactNode;
+  titleAs?: "h2" | "h3";
 }
 export declare function ClosingCTA(props: ClosingCTAProps): JSX.Element;

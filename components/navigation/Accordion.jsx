@@ -36,7 +36,7 @@ export function Accordion({ items = [], defaultOpen = 0, allowMultiple = false, 
   const uid = React.useMemo(() => "sh-acc-" + ++accSeq, []);
   const toggle = (i) => setOpen((cur) => (cur.includes(i) ? cur.filter((x) => x !== i) : allowMultiple ? [...cur, i] : [i]));
   return (
-    <div className="sh-acc" style={style} {...rest}>
+    <div className="sh-acc" data-ds-id="navigation/Accordion" style={style} {...rest}>
       {items.map((it, i) => {
         const on = open.includes(i);
         const pid = `${uid}-p${i}`, bid = `${uid}-b${i}`;

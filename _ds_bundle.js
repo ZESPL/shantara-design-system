@@ -1,4 +1,4 @@
-/* @ds-bundle: {"format":4,"namespace":"ShantaraDesignSystem_45bbe4","components":[{"name":"Badge","sourcePath":"components/core/Badge.jsx"},{"name":"Button","sourcePath":"components/core/Button.jsx"},{"name":"Card","sourcePath":"components/core/Card.jsx"},{"name":"Divider","sourcePath":"components/core/Divider.jsx"},{"name":"Icon","sourcePath":"components/core/Icon.jsx"},{"name":"IconButton","sourcePath":"components/core/IconButton.jsx"},{"name":"Logo","sourcePath":"components/core/Logo.jsx"},{"name":"PatternPanel","sourcePath":"components/core/PatternPanel.jsx"},{"name":"Tag","sourcePath":"components/core/Tag.jsx"},{"name":"Dialog","sourcePath":"components/feedback/Dialog.jsx"},{"name":"Spinner","sourcePath":"components/feedback/Spinner.jsx"},{"name":"Toast","sourcePath":"components/feedback/Toast.jsx"},{"name":"Tooltip","sourcePath":"components/feedback/Tooltip.jsx"},{"name":"Checkbox","sourcePath":"components/forms/Checkbox.jsx"},{"name":"Input","sourcePath":"components/forms/Input.jsx"},{"name":"Radio","sourcePath":"components/forms/Radio.jsx"},{"name":"Select","sourcePath":"components/forms/Select.jsx"},{"name":"Switch","sourcePath":"components/forms/Switch.jsx"},{"name":"Textarea","sourcePath":"components/forms/Textarea.jsx"},{"name":"Accordion","sourcePath":"components/navigation/Accordion.jsx"},{"name":"Breadcrumbs","sourcePath":"components/navigation/Breadcrumbs.jsx"},{"name":"LanguageSelector","sourcePath":"components/navigation/LanguageSelector.jsx"},{"name":"Tabs","sourcePath":"components/navigation/Tabs.jsx"},{"name":"Eyebrow","sourcePath":"components/editorial/Eyebrow.jsx"},{"name":"GroupedList","sourcePath":"components/editorial/GroupedList.jsx"},{"name":"Media","sourcePath":"components/editorial/Media.jsx"},{"name":"NumberedSteps","sourcePath":"components/editorial/NumberedSteps.jsx"},{"name":"Numeral","sourcePath":"components/editorial/Numeral.jsx"},{"name":"PlainList","sourcePath":"components/editorial/PlainList.jsx"},{"name":"PortraitFrame","sourcePath":"components/editorial/PortraitFrame.jsx"},{"name":"QuoteBlock","sourcePath":"components/editorial/QuoteBlock.jsx"},{"name":"SpecTable","sourcePath":"components/editorial/SpecTable.jsx"},{"name":"Statement","sourcePath":"components/editorial/Statement.jsx"},{"name":"TextLink","sourcePath":"components/editorial/TextLink.jsx"},{"name":"Tile","sourcePath":"components/editorial/Tile.jsx"},{"name":"TimeTable","sourcePath":"components/editorial/TimeTable.jsx"},{"name":"BandStatement","sourcePath":"components/sections/BandStatement.jsx"},{"name":"ClosingCTA","sourcePath":"components/sections/ClosingCTA.jsx"},{"name":"FormSplit","sourcePath":"components/sections/FormSplit.jsx"},{"name":"HeroFullBleed","sourcePath":"components/sections/HeroFullBleed.jsx"},{"name":"HeroStatement","sourcePath":"components/sections/HeroStatement.jsx"},{"name":"IndexList","sourcePath":"components/sections/IndexList.jsx"},{"name":"NumeralsSplit","sourcePath":"components/sections/NumeralsSplit.jsx"},{"name":"PanoramaCaption","sourcePath":"components/sections/PanoramaCaption.jsx"},{"name":"PeopleRow","sourcePath":"components/sections/PeopleRow.jsx"},{"name":"Section","sourcePath":"components/sections/Section.jsx"},{"name":"SplitSection","sourcePath":"components/sections/SplitSection.jsx"},{"name":"TileGrid","sourcePath":"components/sections/TileGrid.jsx"}],"sourceHashes":{"components/core/Badge.jsx":"4c091fbe0d3b","components/core/Button.jsx":"ccbb8e62496a","components/core/Card.jsx":"c3ac5f51d5c7","components/core/Divider.jsx":"a024dde18521","components/core/Icon.jsx":"96f71088e126","components/core/IconButton.jsx":"f7b966b11b0b","components/core/Logo.jsx":"1b29cec98534","components/core/PatternPanel.jsx":"14cafd69e5f2","components/core/Tag.jsx":"0b4b76318b5c","components/feedback/Dialog.jsx":"512c0d79f6d1","components/feedback/Spinner.jsx":"0f9568799636","components/feedback/Toast.jsx":"8d42d4bc2a68","components/feedback/Tooltip.jsx":"44d4ba5fbfba","components/forms/Checkbox.jsx":"6a215923c22a","components/forms/Input.jsx":"436a3eedc79f","components/forms/Radio.jsx":"c4f894458efa","components/forms/Select.jsx":"6e338f36a6b2","components/forms/Switch.jsx":"3cb874f879cf","components/forms/Textarea.jsx":"7a36d58cfdeb","components/navigation/Accordion.jsx":"ddca9d95100a","components/navigation/Breadcrumbs.jsx":"44a3d3ddfa08","components/navigation/LanguageSelector.jsx":"b43bdf24de69","components/navigation/Tabs.jsx":"09a29bdaebe0","components/editorial/Eyebrow.jsx":"69252124a876","components/editorial/GroupedList.jsx":"3dca175406e0","components/editorial/Media.jsx":"9e3d53718f8f","components/editorial/NumberedSteps.jsx":"5c4aaa7cc4d0","components/editorial/Numeral.jsx":"ae37b54c7766","components/editorial/PlainList.jsx":"035bff57c640","components/editorial/PortraitFrame.jsx":"e26309076320","components/editorial/QuoteBlock.jsx":"c77cb4a58867","components/editorial/SpecTable.jsx":"d717038ddfde","components/editorial/Statement.jsx":"8d738fa131fe","components/editorial/TextLink.jsx":"ac26e52447e0","components/editorial/Tile.jsx":"54d593fc8eeb","components/editorial/TimeTable.jsx":"17f200c9d612","components/sections/BandStatement.jsx":"9834d2c9dbdd","components/sections/ClosingCTA.jsx":"f8e27175dff8","components/sections/FormSplit.jsx":"e0345eb414f1","components/sections/HeroFullBleed.jsx":"06320decf846","components/sections/HeroStatement.jsx":"4e72c2afb7a7","components/sections/IndexList.jsx":"df5230516e5b","components/sections/NumeralsSplit.jsx":"d0bc9d663f42","components/sections/PanoramaCaption.jsx":"5360c4724936","components/sections/PeopleRow.jsx":"2cc545e3cc4e","components/sections/Section.jsx":"27bf2da1e0e9","components/sections/SplitSection.jsx":"33dda9a102eb","components/sections/TileGrid.jsx":"a9623545ceb3"},"inlinedExternals":[],"unexposedExports":[]} */
+/* @ds-bundle: {"format":4,"namespace":"ShantaraDesignSystem_45bbe4","components":[{"name":"Badge","sourcePath":"components/core/Badge.jsx"},{"name":"Button","sourcePath":"components/core/Button.jsx"},{"name":"Card","sourcePath":"components/core/Card.jsx"},{"name":"Divider","sourcePath":"components/core/Divider.jsx"},{"name":"ICON_GROUPS","sourcePath":"components/core/Icon.jsx"},{"name":"ICON_NAMES","sourcePath":"components/core/Icon.jsx"},{"name":"Icon","sourcePath":"components/core/Icon.jsx"},{"name":"IconButton","sourcePath":"components/core/IconButton.jsx"},{"name":"Logo","sourcePath":"components/core/Logo.jsx"},{"name":"PatternPanel","sourcePath":"components/core/PatternPanel.jsx"},{"name":"Tag","sourcePath":"components/core/Tag.jsx"},{"name":"Dialog","sourcePath":"components/feedback/Dialog.jsx"},{"name":"Spinner","sourcePath":"components/feedback/Spinner.jsx"},{"name":"Toast","sourcePath":"components/feedback/Toast.jsx"},{"name":"Tooltip","sourcePath":"components/feedback/Tooltip.jsx"},{"name":"Checkbox","sourcePath":"components/forms/Checkbox.jsx"},{"name":"Input","sourcePath":"components/forms/Input.jsx"},{"name":"Radio","sourcePath":"components/forms/Radio.jsx"},{"name":"Select","sourcePath":"components/forms/Select.jsx"},{"name":"Switch","sourcePath":"components/forms/Switch.jsx"},{"name":"Textarea","sourcePath":"components/forms/Textarea.jsx"},{"name":"Accordion","sourcePath":"components/navigation/Accordion.jsx"},{"name":"Breadcrumbs","sourcePath":"components/navigation/Breadcrumbs.jsx"},{"name":"LanguageSelector","sourcePath":"components/navigation/LanguageSelector.jsx"},{"name":"Tabs","sourcePath":"components/navigation/Tabs.jsx"},{"name":"Media","sourcePath":"components/editorial/Media.jsx"},{"name":"ArticleFigure","sourcePath":"components/editorial/ArticleFigure.jsx"},{"name":"PortraitFrame","sourcePath":"components/editorial/PortraitFrame.jsx"},{"name":"AuthorCard","sourcePath":"components/editorial/AuthorCard.jsx"},{"name":"GroupedList","sourcePath":"components/editorial/GroupedList.jsx"},{"name":"MetaRow","sourcePath":"components/editorial/MetaRow.jsx"},{"name":"NumberedSteps","sourcePath":"components/editorial/NumberedSteps.jsx"},{"name":"Numeral","sourcePath":"components/editorial/Numeral.jsx"},{"name":"Pagination","sourcePath":"components/editorial/Pagination.jsx"},{"name":"PlainList","sourcePath":"components/editorial/PlainList.jsx"},{"name":"Prose","sourcePath":"components/editorial/Prose.jsx"},{"name":"QuoteBlock","sourcePath":"components/editorial/QuoteBlock.jsx"},{"name":"ReviewedBy","sourcePath":"components/editorial/ReviewedBy.jsx"},{"name":"ShareBar","sourcePath":"components/editorial/ShareBar.jsx"},{"name":"SpecTable","sourcePath":"components/editorial/SpecTable.jsx"},{"name":"Statement","sourcePath":"components/editorial/Statement.jsx"},{"name":"TableOfContents","sourcePath":"components/editorial/TableOfContents.jsx"},{"name":"TextLink","sourcePath":"components/editorial/TextLink.jsx"},{"name":"Tile","sourcePath":"components/editorial/Tile.jsx"},{"name":"TimeTable","sourcePath":"components/editorial/TimeTable.jsx"},{"name":"ArticleHeader","sourcePath":"components/sections/ArticleHeader.jsx"},{"name":"BandStatement","sourcePath":"components/sections/BandStatement.jsx"},{"name":"ClosingCTA","sourcePath":"components/sections/ClosingCTA.jsx"},{"name":"FormSplit","sourcePath":"components/sections/FormSplit.jsx"},{"name":"HeroFullBleed","sourcePath":"components/sections/HeroFullBleed.jsx"},{"name":"HeroSplit","sourcePath":"components/sections/HeroSplit.jsx"},{"name":"HeroStatement","sourcePath":"components/sections/HeroStatement.jsx"},{"name":"IndexList","sourcePath":"components/sections/IndexList.jsx"},{"name":"NumeralsSplit","sourcePath":"components/sections/NumeralsSplit.jsx"},{"name":"PanoramaCaption","sourcePath":"components/sections/PanoramaCaption.jsx"},{"name":"PeopleRow","sourcePath":"components/sections/PeopleRow.jsx"},{"name":"TileGrid","sourcePath":"components/sections/TileGrid.jsx"},{"name":"RelatedArticles","sourcePath":"components/sections/RelatedArticles.jsx"},{"name":"Section","sourcePath":"components/sections/Section.jsx"},{"name":"SplitSection","sourcePath":"components/sections/SplitSection.jsx"}],"sourceHashes":{"components/core/Badge.jsx":"b014d0a4d8ea","components/core/Button.jsx":"66ad8b155d36","components/core/Card.jsx":"899ecf09e977","components/core/Divider.jsx":"7841bbb870dd","components/core/Icon.jsx":"8599c863c660","components/core/IconButton.jsx":"6f1174bc80f5","components/core/Logo.jsx":"82ebb0dfac10","components/core/PatternPanel.jsx":"dd26bb639ce9","components/core/Tag.jsx":"480f3225f1d4","components/feedback/Dialog.jsx":"c1b84ed6f276","components/feedback/Spinner.jsx":"49fa70a95320","components/feedback/Toast.jsx":"c64129df2a1a","components/feedback/Tooltip.jsx":"9c7b40a94408","components/forms/Checkbox.jsx":"621ba3e2309a","components/forms/Input.jsx":"b9f0693aead7","components/forms/Radio.jsx":"861dea337cdb","components/forms/Select.jsx":"4ebda94f9354","components/forms/Switch.jsx":"73709580dd9e","components/forms/Textarea.jsx":"80d6d168a80c","components/navigation/Accordion.jsx":"b8870511c6fe","components/navigation/Breadcrumbs.jsx":"421f19e62be1","components/navigation/LanguageSelector.jsx":"b8c0ce1f200e","components/navigation/Tabs.jsx":"414b48cd2f58","components/editorial/Media.jsx":"33a6b0c1bfde","components/editorial/ArticleFigure.jsx":"f7689927c7db","components/editorial/PortraitFrame.jsx":"6b53471987b8","components/editorial/AuthorCard.jsx":"e96ed75df2fb","components/editorial/GroupedList.jsx":"d8cd9e26b4bf","components/editorial/MetaRow.jsx":"8c95d79ee5e1","components/editorial/NumberedSteps.jsx":"6f2950654a05","components/editorial/Numeral.jsx":"e6b7086ade4c","components/editorial/Pagination.jsx":"3e8fe1c8492a","components/editorial/PlainList.jsx":"5fdca30d99bf","components/editorial/Prose.jsx":"e6e8e061f5d0","components/editorial/QuoteBlock.jsx":"c79559f0cb83","components/editorial/ReviewedBy.jsx":"cf907ffdf4c1","components/editorial/ShareBar.jsx":"a5d673d91fb9","components/editorial/SpecTable.jsx":"097e36746780","components/editorial/Statement.jsx":"50cb58806250","components/editorial/TableOfContents.jsx":"f92f3b4de4c4","components/editorial/TextLink.jsx":"b730c74e745f","components/editorial/Tile.jsx":"4ebf341907e5","components/editorial/TimeTable.jsx":"ce1bbdbc25c1","components/sections/ArticleHeader.jsx":"ced8165fe119","components/sections/BandStatement.jsx":"28aa51447566","components/sections/ClosingCTA.jsx":"e010d9783ea4","components/sections/FormSplit.jsx":"86987313de54","components/sections/HeroFullBleed.jsx":"90de10fed20c","components/sections/HeroSplit.jsx":"e43e0f969b2f","components/sections/HeroStatement.jsx":"812f5fd0454a","components/sections/IndexList.jsx":"4a13d2f62a15","components/sections/NumeralsSplit.jsx":"58792a80105c","components/sections/PanoramaCaption.jsx":"34b6e6fbaf48","components/sections/PeopleRow.jsx":"fbf817dcc648","components/sections/TileGrid.jsx":"577cfcc55a90","components/sections/RelatedArticles.jsx":"00eaa2867c3b","components/sections/Section.jsx":"eacd861e84d9","components/sections/SplitSection.jsx":"42b09796c47a"},"inlinedExternals":[],"unexposedExports":[]} */
 
 (() => {
 
@@ -11,15 +11,20 @@ const __ds_scope = {};
 // components/core/Badge.jsx
 try { (() => {
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+/* A Badge is a label, never a control. Small, flat, square-cornered, sentence case:
+   a 2px-radius tint at 20px — half a control's height — with no border and no pill,
+   so it can never be mistaken for a button. `outline` is a dot plus text with no box. */
 const CSS = `
-.sh-badge{display:inline-flex;align-items:center;gap:var(--space-2);height:22px;padding:0 var(--space-4);border-radius:var(--radius-pill);font-family:var(--font-body);font-size:var(--text-3xs);font-weight:var(--weight-semibold);letter-spacing:var(--tracking-eyebrow);text-transform:uppercase;background:var(--surface-raised);color:var(--text-secondary);white-space:nowrap;transition:background-color var(--duration-fast) var(--ease-standard),color var(--duration-fast) var(--ease-standard),box-shadow var(--duration-fast) var(--ease-standard)}
-.sh-badge[data-tone="brand"]{background:var(--surface-brand);color:var(--text-on-brand)}
-.sh-badge[data-tone="accent"]{background:var(--surface-accent);color:var(--text-on-accent)}
+.sh-badge{display:inline-flex;align-items:center;gap:6px;height:20px;padding:0 6px;border:0;border-radius:var(--radius-xs);font-family:var(--font-body);font-size:var(--text-2xs);font-weight:var(--weight-medium);line-height:1;letter-spacing:0.01em;text-transform:none;background:color-mix(in srgb, var(--text-primary) 7%, transparent);color:var(--text-secondary);white-space:nowrap;vertical-align:middle;cursor:default;user-select:none;transition:background-color var(--duration-fast) var(--ease-standard),color var(--duration-fast) var(--ease-standard)}
+.sh-badge [data-icon]{width:12px!important;height:12px!important}
+.sh-badge-dot{width:6px;height:6px;border-radius:50%;background:currentColor;flex:0 0 auto}
+.sh-badge[data-tone="brand"]{background:var(--surface-brand-soft);color:var(--color-himalaya-800, var(--text-brand))}
+.sh-badge[data-tone="accent"]{background:color-mix(in srgb, var(--color-gold-crayola) 30%, transparent);color:var(--color-pine-tree)}
 .sh-badge[data-tone="success"]{background:var(--status-success-soft);color:var(--status-success)}
 .sh-badge[data-tone="info"]{background:var(--status-info-soft);color:var(--color-pine-tree)}
 .sh-badge[data-tone="warning"]{background:var(--status-warning-soft);color:var(--status-warning)}
 .sh-badge[data-tone="danger"]{background:var(--status-danger-soft);color:var(--status-danger)}
-.sh-badge[data-tone="outline"]{background:transparent;box-shadow:inset 0 0 0 var(--border-width) var(--border-control);color:var(--text-secondary)}
+.sh-badge[data-tone="outline"]{background:transparent;padding:0;color:var(--text-secondary)}
 `;
 function ensure() {
   if (typeof document === "undefined" || document.getElementById("sh-badge-css")) return;
@@ -31,14 +36,20 @@ function ensure() {
 function Badge({
   tone = "neutral",
   icon,
+  dot,
   children,
   ...rest
 }) {
   ensure();
+  const showDot = dot != null ? dot : tone === "outline" && !icon;
   return /*#__PURE__*/React.createElement("span", _extends({
     className: "sh-badge",
+    "data-ds-id": "core/Badge",
     "data-tone": tone
-  }, rest), icon, children);
+  }, rest), showDot ? /*#__PURE__*/React.createElement("span", {
+    className: "sh-badge-dot",
+    "aria-hidden": "true"
+  }) : null, icon, children);
 }
 Object.assign(__ds_scope, { Badge });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/core/Badge.jsx", error: String((e && e.message) || e) }); }
@@ -105,6 +116,7 @@ function Button({
   const type = Tag === "button" && !rest.type ? "button" : rest.type;
   return /*#__PURE__*/React.createElement(Tag, _extends({
     className: "sh-btn",
+    "data-ds-id": "core/Button",
     "data-variant": variant,
     "data-size": size,
     "data-full": String(fullWidth),
@@ -178,6 +190,7 @@ function Card({
   } : undefined;
   return /*#__PURE__*/React.createElement("div", _extends({
     className: "sh-card",
+    "data-ds-id": "core/Card",
     "data-tone": tone,
     "data-pad": padding,
     "data-interactive": String(interactive),
@@ -212,6 +225,7 @@ function Divider({
   if (orientation === "vertical") {
     return /*#__PURE__*/React.createElement("span", _extends({
       "aria-hidden": "true",
+      "data-ds-id": "core/Divider",
       style: {
         display: "inline-block",
         width: "1px",
@@ -224,6 +238,8 @@ function Divider({
   }
   if (label) {
     return /*#__PURE__*/React.createElement("div", _extends({
+      "data-ds-id": "core/Divider",
+      role: "separator",
       style: {
         display: "flex",
         alignItems: "center",
@@ -238,7 +254,10 @@ function Divider({
         background: color
       }
     }), /*#__PURE__*/React.createElement("span", {
-      className: "shantara-eyebrow"
+      style: {
+        font: "var(--type-caption)",
+        color: "var(--text-muted)"
+      }
     }, label), /*#__PURE__*/React.createElement("span", {
       style: {
         flex: 1,
@@ -248,6 +267,7 @@ function Divider({
     }));
   }
   return /*#__PURE__*/React.createElement("hr", _extends({
+    "data-ds-id": "core/Divider",
     style: {
       border: 0,
       height: "1px",
@@ -265,19 +285,37 @@ try { (() => {
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 const BASE = "https://unpkg.com/lucide-static@0.544.0/icons/";
 
+/* The curated Shantara icon registry — every Lucide slug the brand uses, grouped by job.
+   Any other Lucide slug still renders, but new names should be added here first so the
+   set stays small and consistent. WhatsApp has no Lucide glyph: `message-circle` stands in. */
+const ICON_GROUPS = {
+  contact: ["phone", "message-circle", "mail", "map-pin", "globe", "languages", "share-2", "external-link"],
+  stay: ["calendar-days", "clock", "bed-double", "utensils", "wifi", "car", "plane", "train-front"],
+  care: ["stethoscope", "heart-pulse", "user-round", "users", "shield-check", "award", "leaf", "sprout"],
+  nature: ["sun", "moon", "droplets", "wind", "mountain"],
+  content: ["book-open", "file-text", "quote", "bookmark", "download", "filter", "sliders-horizontal", "search"],
+  status: ["info", "alert-circle", "check-circle-2", "check", "x"],
+  direction: ["arrow-right", "arrow-left", "arrow-up", "arrow-down", "chevron-right", "chevron-left", "chevron-up", "chevron-down", "plus", "minus", "menu"]
+};
+const ICON_NAMES = Object.values(ICON_GROUPS).flat();
+
 /* Lucide is a documented substitution: the Shantara brand package ships no icon set.
-   Glyphs are painted as masks so they inherit currentColor and the 1.5px brand stroke feel. */
+   Glyphs are painted as masks so they inherit currentColor. */
 function Icon({
   name,
   size = 20,
   strokeWidth,
   color = "currentColor",
+  label,
   style,
   ...rest
 }) {
   const px = typeof size === "number" ? size + "px" : size;
   return /*#__PURE__*/React.createElement("span", _extends({
-    "aria-hidden": "true",
+    "aria-hidden": label ? undefined : "true",
+    role: label ? "img" : undefined,
+    "aria-label": label,
+    "data-ds-id": "core/Icon",
     "data-icon": name,
     style: {
       display: "inline-block",
@@ -297,7 +335,7 @@ function Icon({
     }
   }, rest));
 }
-Object.assign(__ds_scope, { Icon });
+Object.assign(__ds_scope, { ICON_GROUPS, ICON_NAMES, Icon });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/core/Icon.jsx", error: String((e && e.message) || e) }); }
 
 // components/core/IconButton.jsx
@@ -339,6 +377,7 @@ function IconButton({
   return /*#__PURE__*/React.createElement("button", _extends({
     type: "button",
     className: "sh-ibtn",
+    "data-ds-id": "core/IconButton",
     "data-variant": variant,
     "data-size": size,
     "aria-label": label,
@@ -377,6 +416,7 @@ function Logo({
   return /*#__PURE__*/React.createElement("img", _extends({
     src: `${base}/${FILE[mark] || "logo"}-${tone}.svg`,
     alt: "Shantara",
+    "data-ds-id": "core/Logo",
     style: {
       height: typeof h === "number" ? h + "px" : h,
       width: "auto",
@@ -520,6 +560,7 @@ function PatternPanel({
   };
   return /*#__PURE__*/React.createElement("div", _extends({
     className: "sh-pp",
+    "data-ds-id": "core/PatternPanel",
     style: {
       position: "relative",
       isolation: "isolate",
@@ -568,17 +609,27 @@ Object.assign(__ds_scope, { PatternPanel });
 // components/core/Tag.jsx
 try { (() => {
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+/* Two looks, decided by behaviour — never by prop choice alone:
+   · Interactive (onClick): a selectable chip — pill outline, 36px, hover, press, focus ring.
+   · Static (no onClick): a flat label like Badge — no border, no pill, no hover,
+     so it never reads as a button. `onRemove` adds a 24px remove control to either. */
 const CSS = `
-.sh-tag{display:inline-flex;align-items:center;gap:var(--space-3);height:32px;padding:0 var(--space-5);border-radius:var(--radius-pill);border:var(--border-width) solid var(--border-control);background:transparent;color:var(--text-primary);font-family:var(--font-body);font-size:var(--text-xs);font-weight:var(--weight-regular);cursor:pointer;transition:var(--transition-control)}
-.sh-tag:active:not([data-static="true"]){transform:scale(var(--press-scale))}
-.sh-tag:focus-visible{outline:none;box-shadow:var(--ring-focus)}
-.sh-tag[data-selected="true"]{background:var(--surface-brand);border-color:var(--surface-brand);color:var(--text-on-brand)}
-.sh-tag[data-static="true"]{cursor:default}
-.sh-tag-x{display:inline-grid;place-items:center;width:24px;height:24px;margin-block:0;margin-inline:-2px -4px;border:0;border-radius:var(--radius-pill);background:transparent;color:inherit;opacity:.6;cursor:pointer;padding:0;line-height:1;transition:opacity var(--duration-fast) var(--ease-standard),box-shadow var(--duration-fast) var(--ease-standard)}
+.sh-tag{display:inline-flex;align-items:center;gap:var(--space-3);font-family:var(--font-body);white-space:nowrap;vertical-align:middle}
+.sh-tag[data-static="true"]{height:24px;padding:0 var(--space-3);border-radius:var(--radius-xs);background:color-mix(in srgb, var(--text-primary) 7%, transparent);color:var(--text-secondary);font-size:var(--text-xs);font-weight:var(--weight-regular);cursor:default}
+.sh-tag[data-static="true"][data-selected="true"]{background:var(--surface-brand-soft);color:var(--text-primary)}
+.sh-tag[data-static="true"][data-removable="true"]{padding-inline-end:0}
+.sh-tag[data-static="false"]{height:36px;padding:0 var(--space-5);border-radius:var(--radius-chip);border:var(--border-width) solid var(--border-control);background:transparent;color:var(--text-primary);font-size:var(--text-sm);font-weight:var(--weight-regular);cursor:pointer;transition:var(--transition-control)}
+.sh-tag[data-static="false"]:active{transform:scale(var(--press-scale))}
+.sh-tag[data-static="false"]:focus-visible{outline:none;box-shadow:var(--ring-focus)}
+.sh-tag[data-static="false"][data-selected="true"]{background:var(--surface-brand);border-color:var(--surface-brand);color:var(--text-on-brand)}
+.sh-tag-check{display:inline-grid;place-items:center;width:14px;height:14px;margin-inline-start:-2px}
+.sh-tag-x{display:inline-grid;place-items:center;width:24px;height:24px;margin:0;border:0;border-radius:var(--radius-xs);background:transparent;color:inherit;opacity:.6;cursor:pointer;padding:0;transition:opacity var(--duration-fast) var(--ease-standard),box-shadow var(--duration-fast) var(--ease-standard)}
+.sh-tag[data-static="false"] .sh-tag-x{margin-inline:-4px -8px;border-radius:var(--radius-pill)}
 .sh-tag-x:focus-visible{outline:none;box-shadow:var(--ring-focus);opacity:1}
+@media (pointer: coarse){.sh-tag[data-static="false"]{height:var(--tap-min)}}
 @media (hover: hover) and (pointer: fine){
-  .sh-tag:hover{background:var(--surface-raised)}
-  .sh-tag[data-selected="true"]:hover{background:var(--color-himalaya-800)}
+  .sh-tag[data-static="false"]:hover{border-color:var(--text-primary);background:color-mix(in srgb, var(--text-primary) 5%, transparent)}
+  .sh-tag[data-static="false"][data-selected="true"]:hover{background:var(--color-himalaya-800);border-color:var(--color-himalaya-800)}
   .sh-tag-x:hover{opacity:1}
 }
 `;
@@ -589,6 +640,31 @@ function ensure() {
   el.textContent = CSS;
   document.head.appendChild(el);
 }
+const X = /*#__PURE__*/React.createElement("svg", {
+  width: "12",
+  height: "12",
+  viewBox: "0 0 12 12",
+  "aria-hidden": "true"
+}, /*#__PURE__*/React.createElement("path", {
+  d: "M2.5 2.5l7 7M9.5 2.5l-7 7",
+  stroke: "currentColor",
+  strokeWidth: "1.5",
+  strokeLinecap: "round",
+  fill: "none"
+}));
+const TICK = /*#__PURE__*/React.createElement("svg", {
+  width: "14",
+  height: "14",
+  viewBox: "0 0 14 14",
+  "aria-hidden": "true"
+}, /*#__PURE__*/React.createElement("path", {
+  d: "M3 7.4l2.6 2.6L11 4.4",
+  stroke: "currentColor",
+  strokeWidth: "1.5",
+  strokeLinecap: "round",
+  strokeLinejoin: "round",
+  fill: "none"
+}));
 function Tag({
   selected = false,
   onRemove,
@@ -596,10 +672,11 @@ function Tag({
   children,
   onClick,
   onKeyDown,
+  removeLabel = "Remove",
   ...rest
 }) {
   ensure();
-  const interactive = Boolean(onClick || onRemove);
+  const interactive = Boolean(onClick);
   const activate = onClick ? e => {
     if (onKeyDown) onKeyDown(e);
     if (e.defaultPrevented) return;
@@ -610,21 +687,26 @@ function Tag({
   } : onKeyDown;
   return /*#__PURE__*/React.createElement("span", _extends({
     className: "sh-tag",
+    "data-ds-id": "core/Tag",
     "data-selected": String(selected),
     "data-static": String(!interactive),
-    role: onClick ? "button" : undefined,
-    tabIndex: onClick ? 0 : undefined,
+    "data-removable": String(Boolean(onRemove)),
+    role: interactive ? "button" : undefined,
+    "aria-pressed": interactive ? selected : undefined,
+    tabIndex: interactive ? 0 : undefined,
     onClick: onClick,
     onKeyDown: activate
-  }, rest), icon, children, onRemove ? /*#__PURE__*/React.createElement("button", {
+  }, rest), interactive && selected && !icon ? /*#__PURE__*/React.createElement("span", {
+    className: "sh-tag-check"
+  }, TICK) : icon, children, onRemove ? /*#__PURE__*/React.createElement("button", {
     type: "button",
     className: "sh-tag-x",
-    "aria-label": "Remove",
+    "aria-label": removeLabel,
     onClick: e => {
       e.stopPropagation();
       onRemove(e);
     }
-  }, "\xD7") : null);
+  }, X) : null);
 }
 Object.assign(__ds_scope, { Tag });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/core/Tag.jsx", error: String((e && e.message) || e) }); }
@@ -633,19 +715,26 @@ Object.assign(__ds_scope, { Tag });
 try { (() => {
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 const CSS = `
-.sh-dlg-scrim{position:fixed;inset:0;background:var(--surface-overlay);backdrop-filter:blur(3px);display:grid;place-items:center;padding:var(--space-7);z-index:1000;opacity:1;transition:opacity var(--duration-base) var(--ease-out)}
+.sh-dlg-scrim{position:fixed;inset:0;z-index:1000;display:grid;place-items:center;padding:var(--space-5);background:var(--surface-overlay);opacity:1;overflow-y:auto;overscroll-behavior:contain;transition:opacity var(--duration-base) var(--ease-out)}
 .sh-dlg-scrim[data-phase="enter"],.sh-dlg-scrim[data-phase="exit"]{opacity:0}
-.sh-dlg{position:relative;width:100%;max-width:520px;background:var(--surface-card);border-radius:var(--radius-xl);box-shadow:var(--shadow-xl);padding:var(--space-9);font-family:var(--font-body);transform-origin:center;opacity:1;transform:scale(1);transition:opacity var(--duration-slow) var(--ease-out),transform var(--duration-slow) var(--ease-out)}
-.sh-dlg-scrim[data-phase="enter"] .sh-dlg,.sh-dlg-scrim[data-phase="exit"] .sh-dlg{opacity:0;transform:scale(0.96)}
+.sh-dlg{position:relative;width:100%;max-width:560px;max-height:calc(100dvh - 2 * var(--space-5));overflow-y:auto;box-sizing:border-box;padding:clamp(28px, 2.2vw + 20px, 48px);background:var(--color-merino);color:var(--text-primary);border-radius:var(--radius-card);box-shadow:var(--shadow-xl);font-family:var(--font-body);outline:none;opacity:1;transform:none;transition:opacity var(--duration-slow) var(--ease-out),transform var(--duration-slow) var(--ease-out)}
+.sh-dlg-scrim[data-phase="enter"] .sh-dlg,.sh-dlg-scrim[data-phase="exit"] .sh-dlg{opacity:0;transform:translateY(8px) scale(0.98)}
 .sh-dlg-scrim[data-phase="exit"] .sh-dlg{transition-duration:var(--duration-fast)}
-.sh-dlg[data-size="sm"]{max-width:400px}
-.sh-dlg[data-size="lg"]{max-width:720px}
-.sh-dlg-title{font:var(--type-h3);margin:0;margin-inline-end:var(--space-9);margin-block-end:var(--space-4)}
-.sh-dlg-desc{color:var(--text-secondary);font-size:var(--text-sm);line-height:var(--leading-relaxed);margin:0}
-.sh-dlg-foot{display:flex;justify-content:flex-end;gap:var(--space-4);margin-top:var(--space-8)}
-.sh-dlg-x{position:absolute;top:var(--space-6);inset-inline-end:var(--space-6);width:36px;height:36px;display:grid;place-items:center;border:0;border-radius:var(--radius-pill);background:transparent;color:var(--text-secondary);font-size:18px;cursor:pointer;transition:var(--transition-control)}
+.sh-dlg[data-size="sm"]{max-width:440px}
+.sh-dlg[data-size="lg"]{max-width:760px}
+.sh-dlg-title{margin:0;padding-inline-end:var(--space-9);font:var(--weight-light) var(--text-2xl)/var(--leading-snug) var(--font-display);color:var(--text-primary);text-wrap:balance}
+.sh-dlg-desc{margin:var(--space-5) 0 0;max-width:none;font:var(--type-body);color:var(--text-secondary)}
+.sh-dlg-body{margin-top:var(--space-6)}
+.sh-dlg-foot{display:flex;flex-wrap:wrap;justify-content:flex-end;align-items:center;gap:var(--space-4);margin-top:var(--space-9)}
+.sh-dlg-x{position:absolute;top:var(--space-4);inset-inline-end:var(--space-4);width:var(--tap-min);height:var(--tap-min);display:grid;place-items:center;padding:0;border:0;border-radius:var(--radius-xs);background:transparent;color:var(--text-secondary);cursor:pointer;transition:var(--transition-control)}
+.sh-dlg-x svg{display:block;width:20px;height:20px}
+.sh-dlg-x:focus-visible{outline:none;box-shadow:var(--ring-focus)}
 @media (hover: hover) and (pointer: fine){
-  .sh-dlg-x:hover{background:var(--surface-raised);color:var(--text-primary)}
+  .sh-dlg-x:hover{background:color-mix(in srgb, var(--text-primary) 6%, transparent);color:var(--text-primary)}
+}
+@media (max-width:519.98px){
+  .sh-dlg-foot{flex-direction:column-reverse;align-items:stretch}
+  .sh-dlg-foot>*{width:100%}
 }
 @media (prefers-reduced-motion: reduce){
   .sh-dlg-scrim[data-phase="enter"] .sh-dlg,.sh-dlg-scrim[data-phase="exit"] .sh-dlg{transform:none}
@@ -659,6 +748,16 @@ function ensure() {
   document.head.appendChild(el);
 }
 let dlgSeq = 0;
+const X_ICON = /*#__PURE__*/React.createElement("svg", {
+  viewBox: "0 0 20 20",
+  "aria-hidden": "true"
+}, /*#__PURE__*/React.createElement("path", {
+  d: "M5 5l10 10M15 5L5 15",
+  fill: "none",
+  stroke: "currentColor",
+  strokeWidth: "1.5",
+  strokeLinecap: "round"
+}));
 const FOCUSABLE = 'a[href],button:not([disabled]),input:not([disabled]),select:not([disabled]),textarea:not([disabled]),[tabindex]:not([tabindex="-1"])';
 function Dialog({
   open = false,
@@ -668,6 +767,7 @@ function Dialog({
   onClose,
   footer,
   children,
+  closeLabel = "Close",
   ...rest
 }) {
   ensure();
@@ -700,12 +800,10 @@ function Dialog({
     if (!open) return;
     returnTo.current = document.activeElement;
     const node = box.current;
-    if (node) {
-      const first = node.querySelector(FOCUSABLE);
-      (first || node).focus({
-        preventScroll: true
-      });
-    }
+    /* Focus the panel itself (no ring on a control at open); Tab then enters the controls. */
+    if (node) node.focus({
+      preventScroll: true
+    });
     const prevOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
     const onKey = e => {
@@ -719,6 +817,11 @@ function Dialog({
       if (!items.length) return;
       const first = items[0],
         last = items[items.length - 1];
+      if (document.activeElement === node) {
+        e.preventDefault();
+        (e.shiftKey ? last : first).focus();
+        return;
+      }
       if (e.shiftKey && document.activeElement === first) {
         e.preventDefault();
         last.focus();
@@ -740,6 +843,7 @@ function Dialog({
   if (!shown) return null;
   return /*#__PURE__*/React.createElement("div", {
     className: "sh-dlg-scrim",
+    "data-ds-id": "feedback/Dialog",
     "data-phase": phase,
     onClick: onClose ? e => {
       if (e.target === e.currentTarget) onClose();
@@ -756,15 +860,17 @@ function Dialog({
   }, rest), onClose ? /*#__PURE__*/React.createElement("button", {
     type: "button",
     className: "sh-dlg-x",
-    "aria-label": "Close",
+    "aria-label": closeLabel,
     onClick: onClose
-  }, "\xD7") : null, title ? /*#__PURE__*/React.createElement("h3", {
+  }, X_ICON) : null, title ? /*#__PURE__*/React.createElement("h2", {
     className: "sh-dlg-title",
     id: uid + "-t"
   }, title) : null, description ? /*#__PURE__*/React.createElement("p", {
     className: "sh-dlg-desc",
     id: uid + "-d"
-  }, description) : null, children, footer ? /*#__PURE__*/React.createElement("div", {
+  }, description) : null, children ? /*#__PURE__*/React.createElement("div", {
+    className: "sh-dlg-body"
+  }, children) : null, footer ? /*#__PURE__*/React.createElement("div", {
     className: "sh-dlg-foot"
   }, footer) : null));
 }
@@ -774,14 +880,27 @@ Object.assign(__ds_scope, { Dialog });
 // components/feedback/Spinner.jsx
 try { (() => {
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+/* Spinner — three dots breathing in sequence, the brand's only loader (never a rotating
+   ring). Each dot swells and brightens on a slow 1400ms wave, staggered by a third of a
+   cycle, so the row reads as one calm breath travelling left to right.
+   Reduced motion: the dots hold still at three quiet opacities and the label carries it. */
 const CSS = `
-@keyframes sh-breathe{0%,100%{transform:scale(0.82);opacity:.45}50%{transform:scale(1);opacity:1}}
-.sh-spinner{display:inline-grid;place-items:center}
-.sh-spinner span{display:block;border-radius:var(--radius-pill);background:currentColor;animation:sh-breathe var(--duration-ambient) var(--ease-breath) infinite}
-.sh-spinner-row{display:inline-flex;align-items:center;gap:0.4em}
-.sh-spinner-row span:nth-child(2){animation-delay:180ms}
-.sh-spinner-row span:nth-child(3){animation-delay:360ms}
-@media (prefers-reduced-motion: reduce){.sh-spinner span{animation:none;opacity:.7;transform:none}}
+@keyframes sh-spin-breathe{0%,100%{transform:scale(.6);opacity:.28}40%{transform:scale(1);opacity:1}70%{transform:scale(.72);opacity:.5}}
+.sh-spinner{display:inline-flex;align-items:center;gap:var(--space-4);color:var(--text-brand);font:var(--type-body-sm);vertical-align:middle}
+.sh-spinner-dots{display:inline-flex;align-items:center;gap:calc(var(--_d) * .7)}
+.sh-spinner-dots>i{display:block;width:var(--_d);height:var(--_d);border-radius:50%;background:currentColor;transform-origin:center;animation:sh-spin-breathe 1400ms var(--ease-breath) infinite both}
+.sh-spinner-dots>i:nth-child(2){animation-delay:233ms}
+.sh-spinner-dots>i:nth-child(3){animation-delay:466ms}
+.sh-spinner[data-size="sm"]{--_d:5px}
+.sh-spinner[data-size="md"]{--_d:7px}
+.sh-spinner[data-size="lg"]{--_d:10px}
+.sh-spinner-label{color:var(--text-secondary)}
+.sh-spinner-sr{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+@media (prefers-reduced-motion: reduce){
+  .sh-spinner-dots>i{animation:none;transform:none;opacity:.35}
+  .sh-spinner-dots>i:nth-child(2){opacity:.65}
+  .sh-spinner-dots>i:nth-child(3){opacity:1}
+}
 `;
 function ensure() {
   if (typeof document === "undefined" || document.getElementById("sh-spinner-css")) return;
@@ -790,44 +909,45 @@ function ensure() {
   el.textContent = CSS;
   document.head.appendChild(el);
 }
+const SIZES = {
+  sm: 1,
+  md: 1,
+  lg: 1
+};
 function Spinner({
-  size = 8,
-  color = "var(--text-brand)",
+  size = "md",
+  color,
   label = "Loading",
+  showLabel = false,
   style,
   ...rest
 }) {
   ensure();
-  const px = size + "px";
+  const named = SIZES[size] ? size : null;
+  const custom = named ? null : {
+    "--_d": typeof size === "number" ? size + "px" : size
+  };
   return /*#__PURE__*/React.createElement("span", _extends({
     className: "sh-spinner",
+    "data-ds-id": "feedback/Spinner",
+    "data-size": named || "custom",
     role: "status",
-    "aria-label": label,
+    "aria-live": "polite",
     style: {
-      color,
+      ...(color ? {
+        color
+      } : null),
+      ...custom,
       ...style
     }
   }, rest), /*#__PURE__*/React.createElement("span", {
-    className: "sh-spinner-row",
-    style: {
-      fontSize: px
-    }
-  }, /*#__PURE__*/React.createElement("span", {
-    style: {
-      width: px,
-      height: px
-    }
-  }), /*#__PURE__*/React.createElement("span", {
-    style: {
-      width: px,
-      height: px
-    }
-  }), /*#__PURE__*/React.createElement("span", {
-    style: {
-      width: px,
-      height: px
-    }
-  })));
+    className: "sh-spinner-dots",
+    "aria-hidden": "true"
+  }, /*#__PURE__*/React.createElement("i", null), /*#__PURE__*/React.createElement("i", null), /*#__PURE__*/React.createElement("i", null)), showLabel ? /*#__PURE__*/React.createElement("span", {
+    className: "sh-spinner-label"
+  }, label) : /*#__PURE__*/React.createElement("span", {
+    className: "sh-spinner-sr"
+  }, label));
 }
 Object.assign(__ds_scope, { Spinner });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/feedback/Spinner.jsx", error: String((e && e.message) || e) }); }
@@ -836,7 +956,7 @@ Object.assign(__ds_scope, { Spinner });
 try { (() => {
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 const CSS = `
-.sh-toast{display:flex;align-items:flex-start;gap:var(--space-4);min-width:300px;max-width:420px;padding:var(--space-5) var(--space-6);background:var(--surface-inverse);color:var(--text-on-inverse);border-radius:var(--radius-md);box-shadow:var(--shadow-lg);font-family:var(--font-body);font-size:var(--text-sm);opacity:1;transform:translateY(0);transition:opacity var(--duration-slow) var(--ease-standard),transform var(--duration-slow) var(--ease-standard)}
+.sh-toast{display:flex;align-items:flex-start;gap:var(--space-4);min-width:min(300px, 100%);max-width:420px;box-sizing:border-box;padding:var(--space-5) var(--space-6);background:var(--surface-inverse);color:var(--text-on-inverse);border-radius:var(--radius-md);box-shadow:var(--shadow-lg);font-family:var(--font-body);font-size:var(--text-sm);opacity:1;transform:translateY(0);transition:opacity var(--duration-slow) var(--ease-standard),transform var(--duration-slow) var(--ease-standard)}
 @starting-style{.sh-toast{opacity:0;transform:translateY(100%)}}
 .sh-toast[data-tone="success"]{background:var(--color-himalaya)}
 .sh-toast[data-tone="warning"]{background:var(--color-gold-crayola);color:var(--text-on-accent)}
@@ -844,9 +964,11 @@ const CSS = `
 .sh-toast-body{flex:1}
 .sh-toast-title{font-weight:var(--weight-medium)}
 .sh-toast-msg{opacity:.82;margin-top:2px}
-.sh-toast-x{border:0;background:transparent;color:inherit;opacity:.6;font-size:16px;cursor:pointer;padding:0 2px;transition:opacity var(--duration-fast) var(--ease-standard)}
+.sh-toast-x{flex:0 0 auto;display:grid;place-items:center;width:var(--tap-min);height:var(--tap-min);margin-block:-10px;margin-inline:0 -14px;padding:0;border:0;border-radius:var(--radius-xs);background:transparent;color:inherit;opacity:.72;cursor:pointer;transition:opacity var(--duration-fast) var(--ease-standard),background-color var(--duration-fast) var(--ease-standard)}
+.sh-toast-x svg{display:block;width:20px;height:20px}
+.sh-toast-x:focus-visible{outline:none;opacity:1;box-shadow:var(--ring-focus-inverse)}
 @media (hover: hover) and (pointer: fine){
-  .sh-toast-x:hover{opacity:1}
+  .sh-toast-x:hover{opacity:1;background:color-mix(in srgb, currentColor 12%, transparent)}
 }
 .sh-toast-region{position:fixed;bottom:var(--space-8);left:50%;transform:translateX(-50%);display:flex;flex-direction:column;gap:var(--space-4);z-index:1100;padding-bottom:env(safe-area-inset-bottom, 0px)}
 @media (prefers-reduced-motion: reduce){
@@ -861,12 +983,23 @@ function ensure() {
   el.textContent = CSS;
   document.head.appendChild(el);
 }
+const X_ICON = /*#__PURE__*/React.createElement("svg", {
+  viewBox: "0 0 20 20",
+  "aria-hidden": "true"
+}, /*#__PURE__*/React.createElement("path", {
+  d: "M5 5l10 10M15 5L5 15",
+  fill: "none",
+  stroke: "currentColor",
+  strokeWidth: "1.5",
+  strokeLinecap: "round"
+}));
 function Toast({
   tone = "neutral",
   title,
   message,
   icon,
   onClose,
+  closeLabel = "Dismiss",
   fixed = false,
   style,
   ...rest
@@ -874,6 +1007,7 @@ function Toast({
   ensure();
   const node = /*#__PURE__*/React.createElement("div", _extends({
     className: "sh-toast",
+    "data-ds-id": "feedback/Toast",
     "data-tone": tone,
     role: "status",
     style: style
@@ -886,9 +1020,9 @@ function Toast({
   }, message) : null), onClose ? /*#__PURE__*/React.createElement("button", {
     type: "button",
     className: "sh-toast-x",
-    "aria-label": "Dismiss",
+    "aria-label": closeLabel,
     onClick: onClose
-  }, "\xD7") : null);
+  }, X_ICON) : null);
   return fixed ? /*#__PURE__*/React.createElement("div", {
     className: "sh-toast-region"
   }, node) : node;
@@ -901,7 +1035,7 @@ try { (() => {
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 const CSS = `
 .sh-tip{position:relative;display:inline-flex}
-.sh-tip-bubble{position:absolute;z-index:900;padding:var(--space-3) var(--space-4);background:var(--surface-inverse);color:var(--text-on-inverse);border-radius:var(--radius-xs);font-family:var(--font-body);font-size:var(--text-2xs);line-height:1.4;white-space:nowrap;pointer-events:none;opacity:0;transition:opacity 125ms var(--ease-out),transform 125ms var(--ease-out)}
+.sh-tip-bubble{position:absolute;z-index:900;padding:var(--space-3) var(--space-4);background:var(--surface-inverse);color:var(--text-on-inverse);border-radius:var(--radius-xs);font-family:var(--font-body);font-size:var(--text-xs);line-height:1.4;width:max-content;max-width:min(260px, 70vw);white-space:normal;text-wrap:balance;pointer-events:none;opacity:0;transition:opacity 125ms var(--ease-out),transform 125ms var(--ease-out)}
 .sh-tip[data-instant="true"] .sh-tip-bubble{transition-duration:0ms}
 .sh-tip[data-open="true"] .sh-tip-bubble{opacity:1}
 .sh-tip-bubble[data-side="top"]{bottom:calc(100% + 6px);left:50%;transform:translateX(-50%) translateY(4px) scale(0.97);transform-origin:bottom center}
@@ -934,14 +1068,19 @@ let lastTipAt = 0;
 const TIP_RECENT_MS = 400;
 const TIP_DELAY_MS = 280;
 function Tooltip({
+  content,
   label,
   side = "top",
+  open: openProp,
+  defaultOpen = false,
   children,
   style,
   ...rest
 }) {
   ensure();
-  const [open, setOpen] = React.useState(false);
+  const text = content != null ? content : label;
+  const [openState, setOpen] = React.useState(defaultOpen);
+  const open = openProp != null ? openProp : openState;
   const [instant, setInstant] = React.useState(false);
   const uid = React.useMemo(() => "sh-tip-" + ++tipSeq, []);
   const delayRef = React.useRef(0);
@@ -977,6 +1116,7 @@ function Tooltip({
   }, [open]);
   return /*#__PURE__*/React.createElement("span", _extends({
     className: "sh-tip",
+    "data-ds-id": "feedback/Tooltip",
     "data-open": String(open),
     "data-instant": String(instant),
     "aria-describedby": uid,
@@ -990,7 +1130,7 @@ function Tooltip({
     id: uid,
     "data-side": side,
     role: "tooltip"
-  }, label));
+  }, text));
 }
 Object.assign(__ds_scope, { Tooltip });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/feedback/Tooltip.jsx", error: String((e && e.message) || e) }); }
@@ -998,24 +1138,30 @@ Object.assign(__ds_scope, { Tooltip });
 // components/forms/Checkbox.jsx
 try { (() => {
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+/* Checkbox — 20px box, 2px radius, 1.5px border. The tick is an inline SVG drawn on a
+   20×20 grid and centred with place-items:center, so it sits dead centre at any zoom. */
 const CSS = `
-.sh-check{display:inline-flex;align-items:flex-start;gap:var(--space-4);min-height:24px;font-family:var(--font-body);font-size:var(--text-sm);color:var(--text-primary);cursor:pointer;line-height:1.35}
-.sh-check input{position:absolute;opacity:0;width:0;height:0}
-.sh-check-box{flex:0 0 auto;display:grid;place-items:center;width:20px;height:20px;margin-top:1px;background:var(--surface-card);border:var(--border-width-strong) solid var(--border-control);border-radius:var(--radius-xs);transition:var(--transition-control)}
-.sh-check:active .sh-check-box{transform:scale(var(--press-scale))}
+.sh-check{position:relative;display:flex;width:fit-content;max-width:100%;flex-direction:column;gap:var(--space-2);font-family:var(--font-body)}
+.sh-check-row{display:inline-flex;align-items:flex-start;gap:var(--space-4);min-height:var(--tap-min);padding-block:10px;font:var(--weight-regular) var(--text-base)/1.4 var(--font-body);color:var(--text-primary);cursor:pointer}
+.sh-check input{position:absolute;opacity:0;width:1px;height:1px;margin:0;pointer-events:none}
+.sh-check-box{flex:0 0 auto;box-sizing:border-box;display:grid;place-items:center;width:20px;height:20px;margin-top:calc((1.4em - 20px) / 2);background:var(--surface-card);border:var(--border-width-strong) solid var(--border-control);border-radius:var(--radius-xs);color:var(--text-on-brand);transition:var(--transition-control)}
+.sh-check-box svg{display:block;width:14px;height:14px;grid-area:1 / 1;opacity:0;transform:scale(.6);transition:opacity var(--duration-fast) var(--ease-out),transform var(--duration-fast) var(--ease-out)}
+.sh-check-row:active .sh-check-box{transform:scale(var(--press-scale))}
 @media (hover: hover) and (pointer: fine){
-  .sh-check:hover .sh-check-box{border-color:var(--border-strong)}
+  .sh-check-row:hover input:not(:disabled) + .sh-check-box{border-color:var(--border-strong)}
 }
 .sh-check input:focus-visible + .sh-check-box{box-shadow:var(--ring-focus)}
-.sh-check input:checked + .sh-check-box{background:var(--surface-brand);border-color:var(--surface-brand)}
-.sh-check input:disabled ~ *{opacity:.45}
-.sh-check-tick{width:11px;height:6px;border-left:1.5px solid var(--color-merino);border-bottom:1.5px solid var(--color-merino);transform:translateY(-1px) rotate(-45deg) scale(.6);opacity:0;transition:opacity var(--duration-fast) var(--ease-out),transform var(--duration-fast) var(--ease-out)}
-.sh-check input:checked + .sh-check-box .sh-check-tick{opacity:1;transform:translateY(-1px) rotate(-45deg) scale(1)}
-.sh-check-dash{width:10px;height:1.5px;background:var(--color-merino);opacity:0;transition:opacity var(--duration-fast) var(--ease-standard)}
-.sh-check input:indeterminate + .sh-check-box{background:var(--surface-brand);border-color:var(--surface-brand)}
-.sh-check input:indeterminate + .sh-check-box .sh-check-dash{opacity:1}
-.sh-check input:indeterminate + .sh-check-box .sh-check-tick{opacity:0}
-.sh-check-desc{display:block;color:var(--text-muted);font-size:var(--text-xs);margin-top:2px}
+.sh-check input:checked + .sh-check-box,.sh-check input:indeterminate + .sh-check-box{background:var(--surface-brand);border-color:var(--surface-brand)}
+.sh-check input:checked:not(:indeterminate) + .sh-check-box .sh-check-tick,.sh-check input:indeterminate + .sh-check-box .sh-check-dash{opacity:1;transform:none}
+.sh-check[data-invalid="true"] .sh-check-box{border-color:var(--status-danger)}
+.sh-check input:disabled + .sh-check-box{background:var(--surface-raised);border-color:var(--border-subtle)}
+.sh-check input:disabled:checked + .sh-check-box{background:color-mix(in srgb, var(--surface-brand) 45%, var(--surface-raised));border-color:transparent}
+.sh-check[data-disabled="true"] .sh-check-row{cursor:not-allowed;color:var(--text-muted)}
+.sh-check-text{min-width:0}
+.sh-check-req{color:var(--text-brand);margin-inline-start:2px}
+.sh-check-desc{display:block;margin-top:2px;color:var(--text-secondary);font-size:var(--text-sm);line-height:1.45}
+.sh-check-err{display:flex;gap:var(--space-2);align-items:flex-start;margin-inline-start:calc(20px + var(--space-4));font:var(--weight-regular) var(--text-xs)/1.45 var(--font-body);color:var(--status-danger);animation:sh-enter-up var(--duration-base) var(--ease-out)}
+.sh-check-err svg{flex:0 0 auto;margin-top:2px}
 `;
 function ensure() {
   if (typeof document === "undefined" || document.getElementById("sh-check-css")) return;
@@ -1024,33 +1170,99 @@ function ensure() {
   el.textContent = CSS;
   document.head.appendChild(el);
 }
+const TICK = /*#__PURE__*/React.createElement("svg", {
+  className: "sh-check-tick",
+  viewBox: "0 0 14 14",
+  "aria-hidden": "true"
+}, /*#__PURE__*/React.createElement("path", {
+  d: "M2.75 7.25l2.75 2.75 5.75-6",
+  fill: "none",
+  stroke: "currentColor",
+  strokeWidth: "1.75",
+  strokeLinecap: "round",
+  strokeLinejoin: "round"
+}));
+const DASH = /*#__PURE__*/React.createElement("svg", {
+  className: "sh-check-dash",
+  viewBox: "0 0 14 14",
+  "aria-hidden": "true"
+}, /*#__PURE__*/React.createElement("path", {
+  d: "M3 7h8",
+  fill: "none",
+  stroke: "currentColor",
+  strokeWidth: "1.75",
+  strokeLinecap: "round"
+}));
+const ALERT = /*#__PURE__*/React.createElement("svg", {
+  width: "14",
+  height: "14",
+  viewBox: "0 0 16 16",
+  "aria-hidden": "true"
+}, /*#__PURE__*/React.createElement("circle", {
+  cx: "8",
+  cy: "8",
+  r: "6.75",
+  fill: "none",
+  stroke: "currentColor",
+  strokeWidth: "1.5"
+}), /*#__PURE__*/React.createElement("path", {
+  d: "M8 4.75v3.75",
+  stroke: "currentColor",
+  strokeWidth: "1.5",
+  strokeLinecap: "round"
+}), /*#__PURE__*/React.createElement("circle", {
+  cx: "8",
+  cy: "11.1",
+  r: "0.9",
+  fill: "currentColor"
+}));
 function Checkbox({
   label,
   description,
   indeterminate = false,
+  error,
+  required,
+  id,
+  className,
   style,
   ...rest
 }) {
   ensure();
   const ref = React.useRef(null);
+  const auto = React.useId();
+  const fid = id || "sh-cb" + auto.replace(/:/g, "");
   React.useEffect(() => {
     if (ref.current) ref.current.indeterminate = indeterminate;
   }, [indeterminate]);
-  return /*#__PURE__*/React.createElement("label", {
-    className: "sh-check",
+  return /*#__PURE__*/React.createElement("span", {
+    className: "sh-check" + (className ? " " + className : ""),
+    "data-ds-id": "forms/Checkbox",
+    "data-invalid": String(Boolean(error)),
+    "data-disabled": String(Boolean(rest.disabled)),
     style: style
+  }, /*#__PURE__*/React.createElement("label", {
+    className: "sh-check-row",
+    htmlFor: fid
   }, /*#__PURE__*/React.createElement("input", _extends({
     ref: ref,
-    type: "checkbox"
+    id: fid,
+    type: "checkbox",
+    required: required,
+    "aria-invalid": error ? "true" : undefined,
+    "aria-describedby": error ? fid + "-err" : undefined
   }, rest)), /*#__PURE__*/React.createElement("span", {
     className: "sh-check-box"
-  }, /*#__PURE__*/React.createElement("span", {
-    className: "sh-check-tick"
-  }), /*#__PURE__*/React.createElement("span", {
-    className: "sh-check-dash"
-  })), /*#__PURE__*/React.createElement("span", null, label, description ? /*#__PURE__*/React.createElement("span", {
+  }, TICK, DASH), /*#__PURE__*/React.createElement("span", {
+    className: "sh-check-text"
+  }, label, required ? /*#__PURE__*/React.createElement("span", {
+    className: "sh-check-req",
+    "aria-hidden": "true"
+  }, "*") : null, description ? /*#__PURE__*/React.createElement("span", {
     className: "sh-check-desc"
-  }, description) : null));
+  }, description) : null)), error ? /*#__PURE__*/React.createElement("span", {
+    className: "sh-check-err",
+    id: fid + "-err"
+  }, ALERT, /*#__PURE__*/React.createElement("span", null, error)) : null);
 }
 Object.assign(__ds_scope, { Checkbox });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/forms/Checkbox.jsx", error: String((e && e.message) || e) }); }
@@ -1058,26 +1270,103 @@ Object.assign(__ds_scope, { Checkbox });
 // components/forms/Input.jsx
 try { (() => {
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
-const CSS = `
-.sh-field{display:flex;flex-direction:column;gap:var(--space-3);font-family:var(--font-body)}
-.sh-field-label{font:var(--type-label);letter-spacing:var(--tracking-wide);color:var(--text-secondary)}
-.sh-field-req{color:var(--status-danger)}
-.sh-field-hint{font-size:var(--text-xs);color:var(--text-muted)}
-.sh-field-error{font-size:var(--text-xs);color:var(--status-danger);animation:sh-enter-up var(--duration-base) var(--ease-out)}
-.sh-input-wrap{display:flex;align-items:center;gap:var(--space-3);height:var(--control-md);padding:0 var(--space-5);background:var(--surface-card);border:var(--border-width) solid var(--border-control);border-radius:var(--radius-input);color:var(--text-primary);transition:var(--transition-control)}
-.sh-input-wrap:focus-within{border-color:var(--border-focus);box-shadow:0 0 0 3px var(--surface-brand-soft)}
+/* Shared field chrome — identical in Input, Textarea and Select (one <style id="sh-field-css">). */
+const FIELD_CSS = `
+.sh-field{display:flex;flex-direction:column;gap:var(--space-3);min-width:0;font-family:var(--font-body)}
+.sh-field-label{display:flex;align-items:baseline;gap:var(--space-2);font:var(--weight-medium) var(--text-sm)/1.3 var(--font-body);color:var(--text-primary)}
+.sh-field-req{color:var(--text-brand);font-weight:var(--weight-regular)}
+.sh-field-opt{color:var(--text-muted);font-weight:var(--weight-regular);font-size:var(--text-xs)}
+.sh-field-msg{display:flex;align-items:flex-start;gap:var(--space-2);font:var(--weight-regular) var(--text-xs)/1.45 var(--font-body);color:var(--text-secondary)}
+.sh-field-msg[data-kind="error"]{color:var(--status-danger);animation:sh-enter-up var(--duration-base) var(--ease-out)}
+.sh-field-msg svg{flex:0 0 auto;margin-top:2px}
+.sh-field-foot{display:flex;justify-content:space-between;align-items:flex-start;gap:var(--space-4)}
+.sh-field-count{margin-inline-start:auto;font:var(--weight-regular) var(--text-xs)/1.45 var(--font-body);color:var(--text-muted);font-variant-numeric:tabular-nums}
+.sh-ctl{--_bd:var(--border-control);--_ring:var(--surface-brand-soft);width:100%;min-width:0;background:var(--surface-card);border:var(--border-width) solid var(--_bd);border-radius:var(--radius-input);color:var(--text-primary);font:var(--weight-regular) var(--text-base)/1.4 var(--font-body);transition:var(--transition-control)}
+.sh-ctl[data-invalid="true"]{--_bd:var(--status-danger);--_ring:var(--status-danger-soft)}
 @media (hover: hover) and (pointer: fine){
-  .sh-input-wrap:hover{border-color:var(--border-strong)}
+  .sh-ctl:not([data-disabled="true"]):not([data-invalid="true"]):hover{--_bd:var(--border-strong)}
 }
-.sh-input-wrap[data-invalid="true"]{border-color:var(--status-danger)}
-.sh-input-wrap[data-size="lg"]{height:var(--control-lg);padding:0 var(--space-6)}
-.sh-input-wrap[data-size="sm"]{height:var(--control-sm)}
-.sh-input-wrap[data-disabled="true"]{background:var(--surface-raised);opacity:.6}
-.sh-input{flex:1;min-width:0;border:0;background:transparent;color:inherit;font-family:var(--font-body);font-size:var(--text-sm);outline:none}
-.sh-input::placeholder{color:var(--text-muted)}
-.sh-input-affix{color:var(--text-muted);display:inline-flex;align-items:center;font-size:var(--text-xs)}
+.sh-ctl:focus-within,.sh-ctl:focus{outline:none;--_bd:var(--border-focus);box-shadow:0 0 0 3px var(--_ring)}
+.sh-ctl[data-invalid="true"]:focus-within,.sh-ctl[data-invalid="true"]:focus{--_bd:var(--status-danger)}
+.sh-ctl[data-disabled="true"],.sh-ctl:disabled{background:var(--surface-raised);--_bd:var(--border-subtle);color:var(--text-muted);cursor:not-allowed}
+.sh-ctl ::placeholder,.sh-ctl::placeholder{color:var(--text-muted);opacity:1}
+`;
+function ensureField() {
+  if (typeof document === "undefined" || document.getElementById("sh-field-css")) return;
+  const el = document.createElement("style");
+  el.id = "sh-field-css";
+  el.textContent = FIELD_CSS;
+  document.head.appendChild(el);
+}
+const ALERT = /*#__PURE__*/React.createElement("svg", {
+  width: "14",
+  height: "14",
+  viewBox: "0 0 16 16",
+  "aria-hidden": "true"
+}, /*#__PURE__*/React.createElement("circle", {
+  cx: "8",
+  cy: "8",
+  r: "6.75",
+  fill: "none",
+  stroke: "currentColor",
+  strokeWidth: "1.5"
+}), /*#__PURE__*/React.createElement("path", {
+  d: "M8 4.75v3.75",
+  stroke: "currentColor",
+  strokeWidth: "1.5",
+  strokeLinecap: "round"
+}), /*#__PURE__*/React.createElement("circle", {
+  cx: "8",
+  cy: "11.1",
+  r: "0.9",
+  fill: "currentColor"
+}));
+function FieldLabel({
+  htmlFor,
+  label,
+  required,
+  optional
+}) {
+  if (!label) return null;
+  return /*#__PURE__*/React.createElement("label", {
+    className: "sh-field-label",
+    htmlFor: htmlFor
+  }, /*#__PURE__*/React.createElement("span", null, label), required ? /*#__PURE__*/React.createElement("span", {
+    className: "sh-field-req",
+    "aria-hidden": "true"
+  }, "*") : null, !required && optional ? /*#__PURE__*/React.createElement("span", {
+    className: "sh-field-opt"
+  }, typeof optional === "string" ? optional : "Optional") : null);
+}
+function FieldMessage({
+  id,
+  error,
+  hint
+}) {
+  if (error) return /*#__PURE__*/React.createElement("span", {
+    className: "sh-field-msg",
+    "data-kind": "error",
+    id: id
+  }, ALERT, /*#__PURE__*/React.createElement("span", null, error));
+  if (hint) return /*#__PURE__*/React.createElement("span", {
+    className: "sh-field-msg",
+    id: id
+  }, hint);
+  return null;
+}
+
+/* Input — 52px, 2px radius, 17px text (never zooms on iOS), calm 3px brand-soft focus halo. */
+const CSS = `
+.sh-input-wrap{display:flex;align-items:center;gap:var(--space-3);height:var(--control-lg);padding:0 var(--space-5)}
+.sh-input-wrap[data-size="sm"]{height:var(--control-md)}
+.sh-input-wrap[data-size="lg"]{height:var(--control-xl)}
+.sh-input{flex:1;min-width:0;height:100%;padding:0;border:0;background:transparent;color:inherit;font:inherit;outline:none}
+.sh-input:disabled{cursor:not-allowed}
+.sh-input:focus-visible{box-shadow:none}
+.sh-input-affix{display:inline-flex;align-items:center;color:var(--text-muted);font-size:var(--text-sm)}
 `;
 function ensure() {
+  ensureField();
   if (typeof document === "undefined" || document.getElementById("sh-input-css")) return;
   const el = document.createElement("style");
   el.id = "sh-input-css";
@@ -1089,25 +1378,30 @@ function Input({
   hint,
   error,
   required,
+  optional,
   size = "md",
   startIcon,
   endIcon,
   id,
+  className,
   style,
   ...rest
 }) {
   ensure();
-  const fid = id || `sh-in-${label ? label.replace(/\W+/g, "-").toLowerCase() : "field"}`;
+  const auto = React.useId();
+  const fid = id || "sh-in" + auto.replace(/:/g, "");
+  const mid = fid + "-msg";
   return /*#__PURE__*/React.createElement("div", {
-    className: "sh-field",
+    className: "sh-field" + (className ? " " + className : ""),
+    "data-ds-id": "forms/Input",
     style: style
-  }, label ? /*#__PURE__*/React.createElement("label", {
-    className: "sh-field-label",
-    htmlFor: fid
-  }, label, required ? /*#__PURE__*/React.createElement("span", {
-    className: "sh-field-req"
-  }, " *") : null) : null, /*#__PURE__*/React.createElement("span", {
-    className: "sh-input-wrap",
+  }, /*#__PURE__*/React.createElement(FieldLabel, {
+    htmlFor: fid,
+    label: label,
+    required: required,
+    optional: optional
+  }), /*#__PURE__*/React.createElement("span", {
+    className: "sh-ctl sh-input-wrap",
     "data-size": size,
     "data-invalid": String(Boolean(error)),
     "data-disabled": String(Boolean(rest.disabled))
@@ -1116,14 +1410,16 @@ function Input({
   }, startIcon) : null, /*#__PURE__*/React.createElement("input", _extends({
     id: fid,
     className: "sh-input",
-    "aria-invalid": error ? "true" : undefined
+    required: required,
+    "aria-invalid": error ? "true" : undefined,
+    "aria-describedby": error || hint ? mid : undefined
   }, rest)), endIcon ? /*#__PURE__*/React.createElement("span", {
     className: "sh-input-affix"
-  }, endIcon) : null), error ? /*#__PURE__*/React.createElement("span", {
-    className: "sh-field-error"
-  }, error) : hint ? /*#__PURE__*/React.createElement("span", {
-    className: "sh-field-hint"
-  }, hint) : null);
+  }, endIcon) : null), /*#__PURE__*/React.createElement(FieldMessage, {
+    id: mid,
+    error: error,
+    hint: hint
+  }));
 }
 Object.assign(__ds_scope, { Input });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/forms/Input.jsx", error: String((e && e.message) || e) }); }
@@ -1131,22 +1427,28 @@ Object.assign(__ds_scope, { Input });
 // components/forms/Radio.jsx
 try { (() => {
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+/* Radio — 20px ring, 1.5px border; the 8px dot is a grid child centred with
+   place-items:center (no offsets), so it stays centred at every zoom level. */
 const CSS = `
-.sh-radio{display:inline-flex;align-items:flex-start;gap:var(--space-4);min-height:24px;font-family:var(--font-body);font-size:var(--text-sm);color:var(--text-primary);cursor:pointer;line-height:1.35}
-.sh-radio input{position:absolute;opacity:0;width:0;height:0}
-.sh-radio-dot{flex:0 0 auto;display:grid;place-items:center;width:20px;height:20px;margin-top:1px;background:var(--surface-card);border:var(--border-width-strong) solid var(--border-control);border-radius:var(--radius-pill);transition:var(--transition-control)}
+.sh-radio{position:relative;display:flex;width:fit-content;max-width:100%;box-sizing:border-box;align-items:flex-start;gap:var(--space-4);min-height:var(--tap-min);padding-block:10px;font:var(--weight-regular) var(--text-base)/1.4 var(--font-body);color:var(--text-primary);cursor:pointer}
+.sh-radio input{position:absolute;opacity:0;width:1px;height:1px;margin:0;pointer-events:none}
+.sh-radio-dot{flex:0 0 auto;box-sizing:border-box;display:grid;place-items:center;width:20px;height:20px;margin-top:calc((1.4em - 20px) / 2);background:var(--surface-card);border:var(--border-width-strong) solid var(--border-control);border-radius:50%;transition:var(--transition-control)}
+.sh-radio-dot::after{content:"";width:8px;height:8px;border-radius:50%;background:var(--surface-brand);opacity:0;transform:scale(.4);transition:transform var(--duration-fast) var(--ease-out),opacity var(--duration-fast) var(--ease-out)}
 .sh-radio input:focus-visible + .sh-radio-dot{box-shadow:var(--ring-focus)}
 .sh-radio input:checked + .sh-radio-dot{border-color:var(--surface-brand)}
-.sh-radio-dot::after{content:"";width:10px;height:10px;border-radius:var(--radius-pill);background:var(--surface-brand);opacity:0;transform:scale(0.5);transition:transform var(--duration-fast) var(--ease-out),opacity var(--duration-fast) var(--ease-out)}
-.sh-radio input:checked + .sh-radio-dot::after{opacity:1;transform:scale(1)}
-.sh-radio input:disabled ~ *{opacity:.45}
-.sh-radio-desc{display:block;color:var(--text-muted);font-size:var(--text-xs);margin-top:2px}
+.sh-radio input:checked + .sh-radio-dot::after{opacity:1;transform:none}
 .sh-radio:active .sh-radio-dot{transform:scale(var(--press-scale))}
-.sh-radio-card{padding:var(--space-5);border:var(--border-width) solid var(--border-control);border-radius:var(--radius-sm);background:var(--surface-card);width:100%;transition:var(--transition-control)}
-.sh-radio-card:has(input:checked){border-color:var(--surface-brand);background:var(--surface-brand-soft)}
+.sh-radio input:disabled + .sh-radio-dot{background:var(--surface-raised);border-color:var(--border-subtle)}
+.sh-radio input:disabled + .sh-radio-dot::after{background:var(--text-muted)}
+.sh-radio[data-disabled="true"]{cursor:not-allowed;color:var(--text-muted)}
+.sh-radio[data-invalid="true"] .sh-radio-dot{border-color:var(--status-danger)}
+.sh-radio-desc{display:block;margin-top:2px;color:var(--text-secondary);font-size:var(--text-sm);line-height:1.45}
+.sh-radio-card{width:100%;padding:var(--space-5);border:var(--border-width) solid var(--border-control);border-radius:var(--radius-input);background:var(--surface-card)}
+.sh-radio-card:has(input:checked){border-color:var(--surface-brand);box-shadow:inset 0 0 0 1px var(--surface-brand)}
+.sh-radio-card:has(input:focus-visible){box-shadow:var(--ring-focus)}
 @media (hover: hover) and (pointer: fine){
-  .sh-radio:hover .sh-radio-dot{border-color:var(--border-strong)}
-  .sh-radio-card:hover{border-color:var(--border-strong)}
+  .sh-radio:hover input:not(:disabled):not(:checked) + .sh-radio-dot{border-color:var(--border-strong)}
+  .sh-radio-card:hover:not(:has(input:checked)):not([data-disabled="true"]){border-color:var(--border-strong)}
 }
 `;
 function ensure() {
@@ -1160,15 +1462,21 @@ function Radio({
   label,
   description,
   card = false,
+  invalid = false,
+  className,
   style,
   ...rest
 }) {
   ensure();
   return /*#__PURE__*/React.createElement("label", {
-    className: "sh-radio" + (card ? " sh-radio-card" : ""),
+    className: "sh-radio" + (card ? " sh-radio-card" : "") + (className ? " " + className : ""),
+    "data-ds-id": "forms/Radio",
+    "data-disabled": String(Boolean(rest.disabled)),
+    "data-invalid": String(Boolean(invalid)),
     style: style
   }, /*#__PURE__*/React.createElement("input", _extends({
-    type: "radio"
+    type: "radio",
+    "aria-invalid": invalid ? "true" : undefined
   }, rest)), /*#__PURE__*/React.createElement("span", {
     className: "sh-radio-dot"
   }), /*#__PURE__*/React.createElement("span", null, label, description ? /*#__PURE__*/React.createElement("span", {
@@ -1181,59 +1489,179 @@ Object.assign(__ds_scope, { Radio });
 // components/forms/Select.jsx
 try { (() => {
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
-const CSS = `
-.sh-sel-wrap{display:flex;flex-direction:column;gap:var(--space-3);font-family:var(--font-body)}
-.sh-sel-box{position:relative;display:flex;align-items:center}
-.sh-sel{appearance:none;width:100%;height:var(--control-md);padding-block:0;padding-inline:var(--space-5) var(--space-9);background:var(--surface-card);border:var(--border-width) solid var(--border-control);border-radius:var(--radius-input);color:var(--text-primary);font-family:var(--font-body);font-size:var(--text-sm);outline:none;cursor:pointer;transition:var(--transition-control)}
-.sh-sel:focus{border-color:var(--border-focus);box-shadow:0 0 0 3px var(--surface-brand-soft)}
+/* Shared field chrome — identical in Input, Textarea and Select (one <style id="sh-field-css">). */
+const FIELD_CSS = `
+.sh-field{display:flex;flex-direction:column;gap:var(--space-3);min-width:0;font-family:var(--font-body)}
+.sh-field-label{display:flex;align-items:baseline;gap:var(--space-2);font:var(--weight-medium) var(--text-sm)/1.3 var(--font-body);color:var(--text-primary)}
+.sh-field-req{color:var(--text-brand);font-weight:var(--weight-regular)}
+.sh-field-opt{color:var(--text-muted);font-weight:var(--weight-regular);font-size:var(--text-xs)}
+.sh-field-msg{display:flex;align-items:flex-start;gap:var(--space-2);font:var(--weight-regular) var(--text-xs)/1.45 var(--font-body);color:var(--text-secondary)}
+.sh-field-msg[data-kind="error"]{color:var(--status-danger);animation:sh-enter-up var(--duration-base) var(--ease-out)}
+.sh-field-msg svg{flex:0 0 auto;margin-top:2px}
+.sh-field-foot{display:flex;justify-content:space-between;align-items:flex-start;gap:var(--space-4)}
+.sh-field-count{margin-inline-start:auto;font:var(--weight-regular) var(--text-xs)/1.45 var(--font-body);color:var(--text-muted);font-variant-numeric:tabular-nums}
+.sh-ctl{--_bd:var(--border-control);--_ring:var(--surface-brand-soft);width:100%;min-width:0;background:var(--surface-card);border:var(--border-width) solid var(--_bd);border-radius:var(--radius-input);color:var(--text-primary);font:var(--weight-regular) var(--text-base)/1.4 var(--font-body);transition:var(--transition-control)}
+.sh-ctl[data-invalid="true"]{--_bd:var(--status-danger);--_ring:var(--status-danger-soft)}
 @media (hover: hover) and (pointer: fine){
-  .sh-sel:hover{border-color:var(--border-strong)}
+  .sh-ctl:not([data-disabled="true"]):not([data-invalid="true"]):hover{--_bd:var(--border-strong)}
 }
-.sh-sel[data-size="lg"]{height:var(--control-lg)}
-.sh-sel[data-size="sm"]{height:var(--control-sm)}
-.sh-sel:disabled{background:var(--surface-raised);opacity:.6;cursor:not-allowed}
-.sh-sel-caret{position:absolute;inset-inline-end:var(--space-5);width:8px;height:8px;border-inline-end:1.5px solid var(--text-secondary);border-bottom:1.5px solid var(--text-secondary);transform:translateY(-2px) rotate(45deg);pointer-events:none;transition:border-color var(--duration-fast) var(--ease-standard),transform var(--duration-fast) var(--ease-out)}
-.sh-sel-box:focus-within .sh-sel-caret{border-color:var(--text-brand);transform:translateY(1px) rotate(45deg)}
+.sh-ctl:focus-within,.sh-ctl:focus{outline:none;--_bd:var(--border-focus);box-shadow:0 0 0 3px var(--_ring)}
+.sh-ctl[data-invalid="true"]:focus-within,.sh-ctl[data-invalid="true"]:focus{--_bd:var(--status-danger)}
+.sh-ctl[data-disabled="true"],.sh-ctl:disabled{background:var(--surface-raised);--_bd:var(--border-subtle);color:var(--text-muted);cursor:not-allowed}
+.sh-ctl ::placeholder,.sh-ctl::placeholder{color:var(--text-muted);opacity:1}
+`;
+function ensureField() {
+  if (typeof document === "undefined" || document.getElementById("sh-field-css")) return;
+  const el = document.createElement("style");
+  el.id = "sh-field-css";
+  el.textContent = FIELD_CSS;
+  document.head.appendChild(el);
+}
+const ALERT = /*#__PURE__*/React.createElement("svg", {
+  width: "14",
+  height: "14",
+  viewBox: "0 0 16 16",
+  "aria-hidden": "true"
+}, /*#__PURE__*/React.createElement("circle", {
+  cx: "8",
+  cy: "8",
+  r: "6.75",
+  fill: "none",
+  stroke: "currentColor",
+  strokeWidth: "1.5"
+}), /*#__PURE__*/React.createElement("path", {
+  d: "M8 4.75v3.75",
+  stroke: "currentColor",
+  strokeWidth: "1.5",
+  strokeLinecap: "round"
+}), /*#__PURE__*/React.createElement("circle", {
+  cx: "8",
+  cy: "11.1",
+  r: "0.9",
+  fill: "currentColor"
+}));
+function FieldLabel({
+  htmlFor,
+  label,
+  required,
+  optional
+}) {
+  if (!label) return null;
+  return /*#__PURE__*/React.createElement("label", {
+    className: "sh-field-label",
+    htmlFor: htmlFor
+  }, /*#__PURE__*/React.createElement("span", null, label), required ? /*#__PURE__*/React.createElement("span", {
+    className: "sh-field-req",
+    "aria-hidden": "true"
+  }, "*") : null, !required && optional ? /*#__PURE__*/React.createElement("span", {
+    className: "sh-field-opt"
+  }, typeof optional === "string" ? optional : "Optional") : null);
+}
+function FieldMessage({
+  id,
+  error,
+  hint
+}) {
+  if (error) return /*#__PURE__*/React.createElement("span", {
+    className: "sh-field-msg",
+    "data-kind": "error",
+    id: id
+  }, ALERT, /*#__PURE__*/React.createElement("span", null, error));
+  if (hint) return /*#__PURE__*/React.createElement("span", {
+    className: "sh-field-msg",
+    id: id
+  }, hint);
+  return null;
+}
+
+/* Select — native <select> (best on phones) in Input's chrome, with a 16px chevron centred
+   on the field's midline at the inline end. */
+const CSS = `
+.sh-sel-box{position:relative;display:block}
+.sh-sel{appearance:none;-webkit-appearance:none;display:block;height:var(--control-lg);padding-block:0;padding-inline:var(--space-5) calc(var(--space-5) + 16px + var(--space-3));cursor:pointer;text-overflow:ellipsis}
+.sh-sel[data-size="sm"]{height:var(--control-md)}
+.sh-sel[data-size="lg"]{height:var(--control-xl)}
+.sh-sel[data-placeholder="true"]{color:var(--text-muted)}
+.sh-sel option{color:var(--text-primary)}
+.sh-sel-caret{position:absolute;top:50%;inset-inline-end:var(--space-5);width:16px;height:16px;margin-top:-8px;color:var(--text-secondary);pointer-events:none;transition:color var(--duration-fast) var(--ease-standard)}
+.sh-sel-box:focus-within .sh-sel-caret{color:var(--text-brand)}
+.sh-sel:disabled + .sh-sel-caret{color:var(--text-muted)}
 `;
 function ensure() {
+  ensureField();
   if (typeof document === "undefined" || document.getElementById("sh-sel-css")) return;
   const el = document.createElement("style");
   el.id = "sh-sel-css";
   el.textContent = CSS;
   document.head.appendChild(el);
 }
+const CHEVRON = /*#__PURE__*/React.createElement("svg", {
+  className: "sh-sel-caret",
+  viewBox: "0 0 16 16",
+  "aria-hidden": "true"
+}, /*#__PURE__*/React.createElement("path", {
+  d: "M4 6l4 4 4-4",
+  fill: "none",
+  stroke: "currentColor",
+  strokeWidth: "1.5",
+  strokeLinecap: "round",
+  strokeLinejoin: "round"
+}));
 function Select({
   label,
   hint,
   error,
   required,
+  optional,
   size = "md",
   options = [],
   placeholder,
   children,
   id,
+  className,
   style,
+  value,
+  defaultValue,
+  onChange,
   ...rest
 }) {
   ensure();
-  const fid = id || `sh-sel-${label ? label.replace(/\W+/g, "-").toLowerCase() : "field"}`;
+  const auto = React.useId();
+  const fid = id || "sh-sel" + auto.replace(/:/g, "");
+  const mid = fid + "-msg";
+  const controlled = value !== undefined;
+  const [inner, setInner] = React.useState(defaultValue !== undefined ? defaultValue : "");
+  const current = controlled ? value : inner;
+  const isPlaceholder = Boolean(placeholder) && (current === "" || current == null);
   return /*#__PURE__*/React.createElement("div", {
-    className: "sh-sel-wrap",
+    className: "sh-field" + (className ? " " + className : ""),
+    "data-ds-id": "forms/Select",
     style: style
-  }, label ? /*#__PURE__*/React.createElement("label", {
-    className: "sh-field-label",
-    htmlFor: fid
-  }, label, required ? /*#__PURE__*/React.createElement("span", {
-    className: "sh-field-req"
-  }, " *") : null) : null, /*#__PURE__*/React.createElement("span", {
+  }, /*#__PURE__*/React.createElement(FieldLabel, {
+    htmlFor: fid,
+    label: label,
+    required: required,
+    optional: optional
+  }), /*#__PURE__*/React.createElement("span", {
     className: "sh-sel-box"
   }, /*#__PURE__*/React.createElement("select", _extends({
     id: fid,
-    className: "sh-sel",
+    className: "sh-ctl sh-sel",
     "data-size": size,
-    "aria-invalid": error ? "true" : undefined
+    "data-invalid": String(Boolean(error)),
+    "data-placeholder": String(isPlaceholder),
+    required: required,
+    "aria-invalid": error ? "true" : undefined,
+    "aria-describedby": error || hint ? mid : undefined,
+    value: controlled ? value : undefined,
+    defaultValue: controlled ? undefined : defaultValue !== undefined ? defaultValue : placeholder ? "" : undefined,
+    onChange: e => {
+      if (!controlled) setInner(e.target.value);
+      if (onChange) onChange(e);
+    }
   }, rest), placeholder ? /*#__PURE__*/React.createElement("option", {
-    value: ""
+    value: "",
+    disabled: required
   }, placeholder) : null, options.map(o => {
     const v = typeof o === "string" ? o : o.value;
     const l = typeof o === "string" ? o : o.label;
@@ -1241,13 +1669,11 @@ function Select({
       key: v,
       value: v
     }, l);
-  }), children), /*#__PURE__*/React.createElement("span", {
-    className: "sh-sel-caret"
-  })), error ? /*#__PURE__*/React.createElement("span", {
-    className: "sh-field-error"
-  }, error) : hint ? /*#__PURE__*/React.createElement("span", {
-    className: "sh-field-hint"
-  }, hint) : null);
+  }), children), CHEVRON), /*#__PURE__*/React.createElement(FieldMessage, {
+    id: mid,
+    error: error,
+    hint: hint
+  }));
 }
 Object.assign(__ds_scope, { Select });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/forms/Select.jsx", error: String((e && e.message) || e) }); }
@@ -1255,20 +1681,24 @@ Object.assign(__ds_scope, { Select });
 // components/forms/Switch.jsx
 try { (() => {
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+/* Switch — 44×26 track, 20px knob travelling 18px over 240ms. Label at the same
+   17px as Checkbox/Radio; whole row is a 44px target. */
 const CSS = `
-.sh-switch{display:inline-flex;align-items:center;gap:var(--space-4);font-family:var(--font-body);font-size:var(--text-sm);color:var(--text-primary);cursor:pointer}
-.sh-switch input{position:absolute;opacity:0;width:0;height:0}
-.sh-switch-track{position:relative;flex:0 0 auto;width:44px;height:26px;border-radius:var(--radius-pill);background:var(--color-cotton-seed);transition:background-color var(--duration-base) var(--ease-out),box-shadow var(--duration-base) var(--ease-out)}
-.sh-switch-knob{position:absolute;inset-block-start:3px;inset-inline-start:3px;width:20px;height:20px;border-radius:var(--radius-pill);background:var(--color-white);box-shadow:var(--shadow-sm);transition:transform var(--duration-base) var(--ease-out)}
-.sh-switch input:checked + .sh-switch-track{background:var(--surface-brand)}
+.sh-switch{position:relative;display:flex;width:fit-content;max-width:100%;align-items:center;gap:var(--space-4);min-height:var(--tap-min);font:var(--weight-regular) var(--text-base)/1.4 var(--font-body);color:var(--text-primary);cursor:pointer}
+.sh-switch input{position:absolute;opacity:0;width:1px;height:1px;margin:0;pointer-events:none}
+.sh-switch-track{position:relative;flex:0 0 auto;width:44px;height:26px;border-radius:var(--radius-pill);background:var(--color-cotton-seed);box-shadow:inset 0 0 0 1px color-mix(in srgb, var(--color-pine-tree) 8%, transparent);transition:background-color var(--duration-base) var(--ease-out),box-shadow var(--duration-base) var(--ease-out)}
+.sh-switch-knob{position:absolute;inset-block-start:3px;inset-inline-start:3px;width:20px;height:20px;border-radius:50%;background:var(--color-white);box-shadow:var(--shadow-sm);transition:transform var(--duration-base) var(--ease-out)}
+.sh-switch input:checked + .sh-switch-track{background:var(--surface-brand);box-shadow:none}
 @media (hover: hover) and (pointer: fine){
   .sh-switch:hover input:not(:checked):not(:disabled) + .sh-switch-track{background:var(--color-line-600)}
 }
 .sh-switch input:checked + .sh-switch-track .sh-switch-knob{transform:translateX(18px)}
 [dir="rtl"] .sh-switch input:checked + .sh-switch-track .sh-switch-knob{transform:translateX(-18px)}
 .sh-switch input:focus-visible + .sh-switch-track{box-shadow:var(--ring-focus)}
-.sh-switch input:disabled ~ *{opacity:.45}
+.sh-switch input:disabled + .sh-switch-track{opacity:.45}
+.sh-switch[data-disabled="true"]{cursor:not-allowed;color:var(--text-muted)}
 .sh-switch[data-reverse="true"]{flex-direction:row-reverse;justify-content:space-between;width:100%}
+.sh-switch-desc{display:block;margin-top:2px;color:var(--text-secondary);font-size:var(--text-sm);line-height:1.45}
 `;
 function ensure() {
   if (typeof document === "undefined" || document.getElementById("sh-switch-css")) return;
@@ -1279,14 +1709,18 @@ function ensure() {
 }
 function Switch({
   label,
+  description,
   labelFirst = false,
+  className,
   style,
   ...rest
 }) {
   ensure();
   return /*#__PURE__*/React.createElement("label", {
-    className: "sh-switch",
+    className: "sh-switch" + (className ? " " + className : ""),
+    "data-ds-id": "forms/Switch",
     "data-reverse": String(labelFirst),
+    "data-disabled": String(Boolean(rest.disabled)),
     style: style
   }, /*#__PURE__*/React.createElement("input", _extends({
     type: "checkbox",
@@ -1295,7 +1729,9 @@ function Switch({
     className: "sh-switch-track"
   }, /*#__PURE__*/React.createElement("span", {
     className: "sh-switch-knob"
-  })), label ? /*#__PURE__*/React.createElement("span", null, label) : null);
+  })), label ? /*#__PURE__*/React.createElement("span", null, label, description ? /*#__PURE__*/React.createElement("span", {
+    className: "sh-switch-desc"
+  }, description) : null) : null);
 }
 Object.assign(__ds_scope, { Switch });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/forms/Switch.jsx", error: String((e && e.message) || e) }); }
@@ -1303,19 +1739,97 @@ Object.assign(__ds_scope, { Switch });
 // components/forms/Textarea.jsx
 try { (() => {
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
-const CSS = `
-.sh-ta-wrap{display:flex;flex-direction:column;gap:var(--space-3);font-family:var(--font-body)}
-.sh-ta{min-height:104px;padding:var(--space-5);background:var(--surface-card);border:var(--border-width) solid var(--border-control);border-radius:var(--radius-input);color:var(--text-primary);font-family:var(--font-body);font-size:var(--text-sm);line-height:var(--leading-normal);resize:vertical;outline:none;transition:var(--transition-control)}
-.sh-ta:focus{border-color:var(--border-focus);box-shadow:0 0 0 3px var(--surface-brand-soft)}
+/* Shared field chrome — identical in Input, Textarea and Select (one <style id="sh-field-css">). */
+const FIELD_CSS = `
+.sh-field{display:flex;flex-direction:column;gap:var(--space-3);min-width:0;font-family:var(--font-body)}
+.sh-field-label{display:flex;align-items:baseline;gap:var(--space-2);font:var(--weight-medium) var(--text-sm)/1.3 var(--font-body);color:var(--text-primary)}
+.sh-field-req{color:var(--text-brand);font-weight:var(--weight-regular)}
+.sh-field-opt{color:var(--text-muted);font-weight:var(--weight-regular);font-size:var(--text-xs)}
+.sh-field-msg{display:flex;align-items:flex-start;gap:var(--space-2);font:var(--weight-regular) var(--text-xs)/1.45 var(--font-body);color:var(--text-secondary)}
+.sh-field-msg[data-kind="error"]{color:var(--status-danger);animation:sh-enter-up var(--duration-base) var(--ease-out)}
+.sh-field-msg svg{flex:0 0 auto;margin-top:2px}
+.sh-field-foot{display:flex;justify-content:space-between;align-items:flex-start;gap:var(--space-4)}
+.sh-field-count{margin-inline-start:auto;font:var(--weight-regular) var(--text-xs)/1.45 var(--font-body);color:var(--text-muted);font-variant-numeric:tabular-nums}
+.sh-ctl{--_bd:var(--border-control);--_ring:var(--surface-brand-soft);width:100%;min-width:0;background:var(--surface-card);border:var(--border-width) solid var(--_bd);border-radius:var(--radius-input);color:var(--text-primary);font:var(--weight-regular) var(--text-base)/1.4 var(--font-body);transition:var(--transition-control)}
+.sh-ctl[data-invalid="true"]{--_bd:var(--status-danger);--_ring:var(--status-danger-soft)}
 @media (hover: hover) and (pointer: fine){
-  .sh-ta:hover{border-color:var(--border-strong)}
+  .sh-ctl:not([data-disabled="true"]):not([data-invalid="true"]):hover{--_bd:var(--border-strong)}
 }
-.sh-ta::placeholder{color:var(--text-muted)}
-.sh-ta[aria-invalid="true"]{border-color:var(--status-danger)}
-.sh-ta:disabled{background:var(--surface-raised);opacity:.6}
-.sh-ta-foot{display:flex;justify-content:space-between;gap:var(--space-4)}
+.sh-ctl:focus-within,.sh-ctl:focus{outline:none;--_bd:var(--border-focus);box-shadow:0 0 0 3px var(--_ring)}
+.sh-ctl[data-invalid="true"]:focus-within,.sh-ctl[data-invalid="true"]:focus{--_bd:var(--status-danger)}
+.sh-ctl[data-disabled="true"],.sh-ctl:disabled{background:var(--surface-raised);--_bd:var(--border-subtle);color:var(--text-muted);cursor:not-allowed}
+.sh-ctl ::placeholder,.sh-ctl::placeholder{color:var(--text-muted);opacity:1}
+`;
+function ensureField() {
+  if (typeof document === "undefined" || document.getElementById("sh-field-css")) return;
+  const el = document.createElement("style");
+  el.id = "sh-field-css";
+  el.textContent = FIELD_CSS;
+  document.head.appendChild(el);
+}
+const ALERT = /*#__PURE__*/React.createElement("svg", {
+  width: "14",
+  height: "14",
+  viewBox: "0 0 16 16",
+  "aria-hidden": "true"
+}, /*#__PURE__*/React.createElement("circle", {
+  cx: "8",
+  cy: "8",
+  r: "6.75",
+  fill: "none",
+  stroke: "currentColor",
+  strokeWidth: "1.5"
+}), /*#__PURE__*/React.createElement("path", {
+  d: "M8 4.75v3.75",
+  stroke: "currentColor",
+  strokeWidth: "1.5",
+  strokeLinecap: "round"
+}), /*#__PURE__*/React.createElement("circle", {
+  cx: "8",
+  cy: "11.1",
+  r: "0.9",
+  fill: "currentColor"
+}));
+function FieldLabel({
+  htmlFor,
+  label,
+  required,
+  optional
+}) {
+  if (!label) return null;
+  return /*#__PURE__*/React.createElement("label", {
+    className: "sh-field-label",
+    htmlFor: htmlFor
+  }, /*#__PURE__*/React.createElement("span", null, label), required ? /*#__PURE__*/React.createElement("span", {
+    className: "sh-field-req",
+    "aria-hidden": "true"
+  }, "*") : null, !required && optional ? /*#__PURE__*/React.createElement("span", {
+    className: "sh-field-opt"
+  }, typeof optional === "string" ? optional : "Optional") : null);
+}
+function FieldMessage({
+  id,
+  error,
+  hint
+}) {
+  if (error) return /*#__PURE__*/React.createElement("span", {
+    className: "sh-field-msg",
+    "data-kind": "error",
+    id: id
+  }, ALERT, /*#__PURE__*/React.createElement("span", null, error));
+  if (hint) return /*#__PURE__*/React.createElement("span", {
+    className: "sh-field-msg",
+    id: id
+  }, hint);
+  return null;
+}
+
+/* Textarea — same chrome as Input; resizes vertically only. */
+const CSS = `
+.sh-ta{display:block;min-height:136px;padding:14px var(--space-5);line-height:var(--leading-normal);resize:vertical}
 `;
 function ensure() {
+  ensureField();
   if (typeof document === "undefined" || document.getElementById("sh-ta-css")) return;
   const el = document.createElement("style");
   el.id = "sh-ta-css";
@@ -1327,38 +1841,50 @@ function Textarea({
   hint,
   error,
   required,
+  optional,
   maxLength,
   value,
+  rows = 4,
   id,
+  className,
   style,
   ...rest
 }) {
   ensure();
-  const fid = id || `sh-ta-${label ? label.replace(/\W+/g, "-").toLowerCase() : "field"}`;
+  const auto = React.useId();
+  const fid = id || "sh-ta" + auto.replace(/:/g, "");
+  const mid = fid + "-msg";
   const count = typeof value === "string" ? value.length : null;
+  const showCount = maxLength && count != null;
   return /*#__PURE__*/React.createElement("div", {
-    className: "sh-ta-wrap",
+    className: "sh-field" + (className ? " " + className : ""),
+    "data-ds-id": "forms/Textarea",
     style: style
-  }, label ? /*#__PURE__*/React.createElement("label", {
-    className: "sh-field-label",
-    htmlFor: fid
-  }, label, required ? /*#__PURE__*/React.createElement("span", {
-    className: "sh-field-req"
-  }, " *") : null) : null, /*#__PURE__*/React.createElement("textarea", _extends({
+  }, /*#__PURE__*/React.createElement(FieldLabel, {
+    htmlFor: fid,
+    label: label,
+    required: required,
+    optional: optional
+  }), /*#__PURE__*/React.createElement("textarea", _extends({
     id: fid,
-    className: "sh-ta",
+    className: "sh-ctl sh-ta",
+    rows: rows,
+    required: required,
+    "data-invalid": String(Boolean(error)),
     "aria-invalid": error ? "true" : undefined,
+    "aria-describedby": error || hint ? mid : undefined,
     maxLength: maxLength,
     value: value
-  }, rest)), /*#__PURE__*/React.createElement("span", {
-    className: "sh-ta-foot"
-  }, error ? /*#__PURE__*/React.createElement("span", {
-    className: "sh-field-error"
-  }, error) : /*#__PURE__*/React.createElement("span", {
-    className: "sh-field-hint"
-  }, hint || ""), maxLength && count != null ? /*#__PURE__*/React.createElement("span", {
-    className: "sh-field-hint"
-  }, count, "/", maxLength) : null));
+  }, rest)), error || hint || showCount ? /*#__PURE__*/React.createElement("span", {
+    className: "sh-field-foot"
+  }, /*#__PURE__*/React.createElement(FieldMessage, {
+    id: mid,
+    error: error,
+    hint: hint
+  }), showCount ? /*#__PURE__*/React.createElement("span", {
+    className: "sh-field-count",
+    "aria-live": "polite"
+  }, count, "/", maxLength) : null) : null);
 }
 Object.assign(__ds_scope, { Textarea });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/forms/Textarea.jsx", error: String((e && e.message) || e) }); }
@@ -1406,6 +1932,7 @@ function Accordion({
   const toggle = i => setOpen(cur => cur.includes(i) ? cur.filter(x => x !== i) : allowMultiple ? [...cur, i] : [i]);
   return /*#__PURE__*/React.createElement("div", _extends({
     className: "sh-acc",
+    "data-ds-id": "navigation/Accordion",
     style: style
   }, rest), items.map((it, i) => {
     const on = open.includes(i);
@@ -1472,6 +1999,7 @@ function Breadcrumbs({
   ensure();
   return /*#__PURE__*/React.createElement("nav", _extends({
     className: "sh-bc",
+    "data-ds-id": "navigation/Breadcrumbs",
     "aria-label": ariaLabel,
     style: style
   }, rest), items.map((it, i) => {
@@ -1507,6 +2035,156 @@ function i18n() {
     t: s => s
   };
 }
+const CSS = `
+.sh-lang{position:relative;display:inline-flex;align-items:center;font-family:var(--font-body)}
+.sh-lang-btn{appearance:none;display:inline-flex;align-items:center;gap:6px;min-height:var(--tap-min);min-width:var(--tap-min);padding:0 var(--space-3);border:0;border-radius:var(--radius-xs);background:transparent;color:var(--text-secondary);font:var(--weight-medium) var(--text-xs)/1 var(--font-body);letter-spacing:var(--tracking-wide);cursor:pointer;transition:var(--transition-control)}
+.sh-lang-btn svg{flex:0 0 auto;display:block}
+.sh-lang-chev{transition:transform var(--duration-fast) var(--ease-out)}
+.sh-lang-btn[aria-expanded="true"] .sh-lang-chev{transform:rotate(180deg)}
+.sh-lang-btn:focus-visible{outline:none;box-shadow:var(--ring-focus)}
+.sh-lang-btn[aria-expanded="true"]{color:var(--text-primary)}
+.sh-lang-list{position:absolute;inset-block-start:100%;inset-inline-end:0;z-index:40;margin:var(--space-2) 0 0;min-width:15rem;padding:var(--space-2);background:var(--surface-card);border:var(--border-width) solid var(--border-subtle);border-radius:var(--radius-card);box-shadow:var(--shadow-md);list-style:none;animation:sh-enter-up var(--duration-fast) var(--ease-out)}
+.sh-lang-opt{display:flex;align-items:center;justify-content:space-between;gap:var(--space-5);width:100%;min-height:var(--tap-min);padding:var(--space-3) var(--space-4);appearance:none;border:0;border-radius:var(--radius-xs);background:transparent;color:var(--text-primary);text-align:start;text-decoration:none;font:var(--weight-regular) var(--text-sm)/1.3 var(--font-body);letter-spacing:0;cursor:pointer}
+.sh-lang-opt[aria-selected="true"]{font-weight:var(--weight-medium);background:var(--surface-raised)}
+.sh-lang-opt:focus-visible{outline:none;box-shadow:var(--ring-focus)}
+.sh-lang-opt[aria-disabled="true"]{color:var(--text-muted);cursor:not-allowed}
+.sh-lang-note{flex:0 0 auto;font:var(--weight-regular) var(--text-2xs)/1.2 var(--font-body);color:var(--text-muted)}
+.sh-lang-tick{flex:0 0 auto;color:var(--text-brand)}
+@media (hover: hover) and (pointer: fine){
+  .sh-lang-btn:hover{color:var(--text-primary);background:color-mix(in srgb, var(--text-primary) 5%, transparent)}
+  .sh-lang-opt:not([aria-disabled="true"]):hover{background:var(--surface-raised)}
+}
+[data-ground="himalaya"] .sh-lang-btn,[data-ground="pine"] .sh-lang-btn,[data-ground="photo"] .sh-lang-btn{color:var(--text-primary)}
+`;
+function ensure() {
+  if (typeof document === "undefined" || document.getElementById(CSS_ID)) return;
+  const el = document.createElement("style");
+  el.id = CSS_ID;
+  el.textContent = CSS;
+  document.head.appendChild(el);
+}
+
+/* Planned site languages (ui_kits/website/locales.js). Used only when locales.js is not
+   loaded — e.g. in the catalog — so the control can always be seen. */
+const PLANNED = [{
+  code: "en",
+  nativeName: "English",
+  compact: "EN",
+  direction: "ltr",
+  enabled: true
+}, {
+  code: "ar",
+  nativeName: "العربية",
+  compact: "AR",
+  direction: "rtl",
+  enabled: false
+}, {
+  code: "de",
+  nativeName: "Deutsch",
+  compact: "DE",
+  direction: "ltr",
+  enabled: false
+}, {
+  code: "fr",
+  nativeName: "Français",
+  compact: "FR",
+  direction: "ltr",
+  enabled: false
+}, {
+  code: "ru",
+  nativeName: "Русский",
+  compact: "RU",
+  direction: "ltr",
+  enabled: false
+}, {
+  code: "hi",
+  nativeName: "हिन्दी",
+  compact: "HI",
+  direction: "ltr",
+  enabled: false
+}, {
+  code: "ml",
+  nativeName: "മലയാളം",
+  compact: "ML",
+  direction: "ltr",
+  enabled: false
+}];
+
+/* Every planned language, always: enabled ones link to the equivalent page, the rest are
+   listed disabled with "Coming soon". The control never hides itself. */
+function buildOptions(api, current, pageTranslations, rest) {
+  const records = api && api.supportedLocales ? api.supportedLocales() : PLANNED;
+  const live = api ? api.languageSelectorOptions({
+    currentLocale: current.code,
+    pageTranslations,
+    rest,
+    includeUnavailable: true
+  }) : [];
+  return records.map(rec => {
+    const hit = live.find(o => o.code === rec.code);
+    if (hit) return hit;
+    const enabled = rec.enabled !== false;
+    const isCurrent = rec.code === current.code;
+    const href = enabled && api && api.localePath ? api.localePath(rec.code, rest || "") : null;
+    return {
+      code: rec.code,
+      nativeName: rec.nativeName,
+      compact: rec.compact,
+      direction: rec.direction,
+      current: isCurrent,
+      href,
+      available: isCurrent || enabled,
+      comingSoon: !enabled
+    };
+  });
+}
+const GLOBE = /*#__PURE__*/React.createElement("svg", {
+  width: "16",
+  height: "16",
+  viewBox: "0 0 16 16",
+  "aria-hidden": "true"
+}, /*#__PURE__*/React.createElement("circle", {
+  cx: "8",
+  cy: "8",
+  r: "6.25",
+  fill: "none",
+  stroke: "currentColor",
+  strokeWidth: "1.25"
+}), /*#__PURE__*/React.createElement("path", {
+  d: "M1.75 8h12.5M8 1.75c1.8 1.9 2.6 4 2.6 6.25S9.8 12.35 8 14.25C6.2 12.35 5.4 10.25 5.4 8S6.2 3.65 8 1.75z",
+  fill: "none",
+  stroke: "currentColor",
+  strokeWidth: "1.25",
+  strokeLinejoin: "round"
+}));
+const CHEV = /*#__PURE__*/React.createElement("svg", {
+  className: "sh-lang-chev",
+  width: "12",
+  height: "12",
+  viewBox: "0 0 12 12",
+  "aria-hidden": "true"
+}, /*#__PURE__*/React.createElement("path", {
+  d: "M3 4.5l3 3 3-3",
+  fill: "none",
+  stroke: "currentColor",
+  strokeWidth: "1.25",
+  strokeLinecap: "round",
+  strokeLinejoin: "round"
+}));
+const TICK = /*#__PURE__*/React.createElement("svg", {
+  className: "sh-lang-tick",
+  width: "16",
+  height: "16",
+  viewBox: "0 0 16 16",
+  "aria-hidden": "true"
+}, /*#__PURE__*/React.createElement("path", {
+  d: "M3.5 8.25l3 3 6-6.5",
+  fill: "none",
+  stroke: "currentColor",
+  strokeWidth: "1.5",
+  strokeLinecap: "round",
+  strokeLinejoin: "round"
+}));
 function LanguageSelector({
   locale,
   pageTranslations,
@@ -1514,25 +2192,21 @@ function LanguageSelector({
   onSelect,
   compact = true,
   label,
+  comingSoonLabel,
+  defaultOpen = false,
   options: optionsProp,
   style,
   ...restProps
 }) {
+  ensure();
   const api = localesApi();
   const {
     t
   } = i18n();
-  const current = api && api.localeRecord(locale) || {
-    code: "en",
-    compact: "EN",
-    nativeName: "English"
-  };
-  const options = optionsProp || (api ? api.languageSelectorOptions({
-    currentLocale: current.code,
-    pageTranslations,
-    rest
-  }) : []);
-  const [open, setOpen] = React.useState(false);
+  const fallback = PLANNED.find(p => p.code === locale) || PLANNED[0];
+  const current = api && api.localeRecord(locale) || fallback;
+  const options = optionsProp || buildOptions(api, current, pageTranslations, rest);
+  const [open, setOpen] = React.useState(defaultOpen);
   const root = React.useRef(null);
   React.useEffect(() => {
     if (!open) return undefined;
@@ -1549,12 +2223,12 @@ function LanguageSelector({
       document.removeEventListener("keydown", onKey);
     };
   }, [open]);
-  if (!options.length) return null;
   const accessibleName = label || t("Language");
   const triggerLabel = compact ? current.compact : current.nativeName;
   return /*#__PURE__*/React.createElement("div", _extends({
     ref: root,
     className: "sh-lang",
+    "data-ds-id": "navigation/LanguageSelector",
     style: style
   }, restProps), /*#__PURE__*/React.createElement("button", {
     type: "button",
@@ -1563,13 +2237,13 @@ function LanguageSelector({
     "aria-haspopup": "listbox",
     "aria-expanded": open,
     onClick: () => setOpen(value => !value)
-  }, triggerLabel), open ? /*#__PURE__*/React.createElement("ul", {
+  }, GLOBE, /*#__PURE__*/React.createElement("span", null, triggerLabel), CHEV), open ? /*#__PURE__*/React.createElement("ul", {
     className: "sh-lang-list",
     role: "listbox",
     "aria-label": t("Choose language")
   }, options.map(opt => {
     const selected = opt.current;
-    const disabled = opt.available === false;
+    const disabled = !selected && (opt.available === false || opt.comingSoon === true);
     const Tag = opt.href && !disabled && !onSelect ? "a" : "button";
     return /*#__PURE__*/React.createElement("li", {
       key: opt.code,
@@ -1596,7 +2270,9 @@ function LanguageSelector({
           onSelect(opt.code, opt);
         }
       }
-    }, opt.nativeName));
+    }, /*#__PURE__*/React.createElement("span", null, opt.nativeName), selected ? TICK : disabled ? /*#__PURE__*/React.createElement("span", {
+      className: "sh-lang-note"
+    }, comingSoonLabel || t("Coming soon")) : null));
   })) : null);
 }
 if (typeof window !== "undefined") {
@@ -1668,6 +2344,7 @@ function Tabs({
   return /*#__PURE__*/React.createElement("div", _extends({
     ref: list,
     className: "sh-tabs",
+    "data-ds-id": "navigation/Tabs",
     "data-variant": variant,
     role: "tablist",
     onKeyDown: onKeyDown,
@@ -1694,75 +2371,6 @@ function Tabs({
 }
 Object.assign(__ds_scope, { Tabs });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/navigation/Tabs.jsx", error: String((e && e.message) || e) }); }
-
-// components/editorial/Eyebrow.jsx
-try { (() => {
-function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
-/* The deck's small tracked label. Colour comes from the ground (--eyebrow-color):
-   Himalaya on Merino/Stone, Gold on flat dark grounds, Merino on photography.
-   It must add information — never repeat the heading beneath it. */
-function Eyebrow({
-  as: Tag = "p",
-  children,
-  style,
-  ...rest
-}) {
-  return /*#__PURE__*/React.createElement(Tag, _extends({
-    className: "shantara-eyebrow",
-    style: {
-      margin: 0,
-      ...style
-    }
-  }, rest), children);
-}
-Object.assign(__ds_scope, { Eyebrow });
-})(); } catch (e) { __ds_ns.__errors.push({ path: "components/editorial/Eyebrow.jsx", error: String((e && e.message) || e) }); }
-
-// components/editorial/GroupedList.jsx
-try { (() => {
-function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
-/* Small olive group labels with their items inline, separated by a middot — the deck's
-   therapy slide. Groups stack on phones and sit in columns from 760px. */
-const CSS = `
-.sh-glist{display:grid;grid-template-columns:minmax(0,1fr);gap:var(--space-7) var(--grid-gap);margin:0}
-.sh-glist-group{min-width:0}
-.sh-glist-label{margin:0 0 var(--space-3)}
-.sh-glist-items{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;font:var(--type-body);color:var(--text-primary)}
-.sh-glist-items>li:not(:last-child)::after{content:"·";margin-inline:0.5em;color:var(--text-muted)}
-@media (min-width:760px){.sh-glist[data-columns="2"],.sh-glist[data-columns="3"]{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (min-width:1000px){.sh-glist[data-columns="3"]{grid-template-columns:repeat(3,minmax(0,1fr))}}
-`;
-function ensure() {
-  if (typeof document === "undefined" || document.getElementById("sh-glist-css")) return;
-  const el = document.createElement("style");
-  el.id = "sh-glist-css";
-  el.textContent = CSS;
-  document.head.appendChild(el);
-}
-function GroupedList({
-  groups = [],
-  columns = 1,
-  style,
-  ...rest
-}) {
-  ensure();
-  return /*#__PURE__*/React.createElement("div", _extends({
-    className: "sh-glist",
-    "data-columns": String(columns),
-    style: style
-  }, rest), groups.map(g => /*#__PURE__*/React.createElement("div", {
-    className: "sh-glist-group",
-    key: g.label
-  }, /*#__PURE__*/React.createElement("p", {
-    className: "shantara-eyebrow sh-glist-label"
-  }, g.label), /*#__PURE__*/React.createElement("ul", {
-    className: "sh-glist-items"
-  }, g.items.map(it => /*#__PURE__*/React.createElement("li", {
-    key: it
-  }, it))))));
-}
-Object.assign(__ds_scope, { GroupedList });
-})(); } catch (e) { __ds_ns.__errors.push({ path: "components/editorial/GroupedList.jsx", error: String((e && e.message) || e) }); }
 
 // components/editorial/Media.jsx
 try { (() => {
@@ -1828,6 +2436,7 @@ function Media({
   vars["--_pos"] = position;
   if (mobilePosition) vars["--_posm"] = mobilePosition;
   return /*#__PURE__*/React.createElement("figure", _extends({
+    "data-ds-id": "editorial/Media",
     className: "sh-media" + (className ? " " + className : ""),
     "data-ratio": ratio === "fill" ? "fill" : undefined,
     "data-mobile-ratio": mobileRatio ? "" : undefined,
@@ -1857,142 +2466,55 @@ function Media({
 Object.assign(__ds_scope, { Media });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/editorial/Media.jsx", error: String((e && e.message) || e) }); }
 
-// components/editorial/NumberedSteps.jsx
+// components/editorial/ArticleFigure.jsx
 try { (() => {
+const { Media } = __ds_scope;
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
-/* Muted 01–04 numerals, a Medium item title and one line — the deck's process slide.
-   One column on phones, two from 760px, `columns` from 1000px. */
+/* A photograph or diagram inside an article, with a caption and an optional credit.
+   width "prose" keeps the 68ch measure; "wide" breaks out to ~68ch + 16rem from 1000px
+   (inside Prose); "full" fills the container. */
 const CSS = `
-.sh-steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:minmax(0,1fr);gap:var(--space-8) var(--grid-gap);counter-reset:none}
-.sh-step{display:grid;grid-template-columns:3ch minmax(0,1fr);gap:var(--space-5);align-items:baseline;padding-top:var(--space-5);border-top:var(--border-width) solid var(--rule-color)}
-.sh-step-n{font:var(--weight-light) var(--text-lg)/1 var(--font-display);color:var(--text-brand);font-variant-numeric:tabular-nums}
-.sh-step-title{margin:0;font:var(--type-item);color:var(--text-primary)}
-.sh-step-text{margin:var(--space-3) 0 0;font:var(--type-body-sm);color:var(--text-secondary);max-width:48ch}
-.sh-steps[data-rules="false"] .sh-step{border-top:0;padding-top:0}
-@media (min-width:760px){.sh-steps[data-columns="2"],.sh-steps[data-columns="3"],.sh-steps[data-columns="4"]{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (min-width:1000px){.sh-steps[data-columns="3"]{grid-template-columns:repeat(3,minmax(0,1fr))}.sh-steps[data-columns="4"]{grid-template-columns:repeat(4,minmax(0,1fr))}.sh-steps[data-columns="4"] .sh-step{grid-template-columns:minmax(0,1fr);gap:var(--space-4)}}
+.sh-afig{margin:2em 0;min-width:0}
+.sh-afig[data-width="prose"]{max-width:68ch}
+.sh-afig-cap{display:flex;flex-wrap:wrap;gap:var(--space-1) var(--space-4);margin-top:var(--space-3);font:var(--type-caption);color:var(--text-muted);max-width:68ch}
+.sh-afig-cap>span:first-child{color:var(--text-secondary)}
 `;
 function ensure() {
-  if (typeof document === "undefined" || document.getElementById("sh-steps-css")) return;
+  if (typeof document === "undefined" || document.getElementById("sh-afig-css")) return;
   const el = document.createElement("style");
-  el.id = "sh-steps-css";
+  el.id = "sh-afig-css";
   el.textContent = CSS;
   document.head.appendChild(el);
 }
-function NumberedSteps({
-  items = [],
-  columns = 1,
-  start = 1,
-  rules = true,
-  headingLevel = 3,
+function ArticleFigure({
+  src,
+  alt = "",
+  media,
+  ratio = "3:2",
+  mobileRatio,
+  caption,
+  credit,
+  width = "prose",
   style,
   ...rest
 }) {
   ensure();
-  const H = "h" + headingLevel;
-  return /*#__PURE__*/React.createElement("ol", _extends({
-    className: "sh-steps",
-    "data-columns": String(columns),
-    "data-rules": String(rules),
+  return /*#__PURE__*/React.createElement("figure", _extends({
+    "data-ds-id": "editorial/ArticleFigure",
+    className: "sh-afig",
+    "data-width": width,
     style: style
-  }, rest), items.map((item, i) => /*#__PURE__*/React.createElement("li", {
-    className: "sh-step",
-    key: item.title || i
-  }, /*#__PURE__*/React.createElement("span", {
-    className: "sh-step-n",
-    "aria-hidden": "true"
-  }, String(start + i).padStart(2, "0")), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(H, {
-    className: "sh-step-title"
-  }, item.title), item.text ? /*#__PURE__*/React.createElement("p", {
-    className: "sh-step-text"
-  }, item.text) : null))));
+  }, rest), media || /*#__PURE__*/React.createElement(Media, {
+    src: src,
+    alt: alt,
+    ratio: ratio,
+    mobileRatio: mobileRatio
+  }), caption || credit ? /*#__PURE__*/React.createElement("figcaption", {
+    className: "sh-afig-cap"
+  }, caption ? /*#__PURE__*/React.createElement("span", null, caption) : null, credit ? /*#__PURE__*/React.createElement("span", null, credit) : null) : null);
 }
-Object.assign(__ds_scope, { NumberedSteps });
-})(); } catch (e) { __ds_ns.__errors.push({ path: "components/editorial/NumberedSteps.jsx", error: String((e && e.message) || e) }); }
-
-// components/editorial/Numeral.jsx
-try { (() => {
-function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
-/* One large Light figure with a small caption. Two or three per row, never four.
-   Tabular figures so a row of numbers lines up. */
-const CSS = `
-.sh-num{display:flex;flex-direction:column;gap:var(--space-4);min-width:0}
-.sh-num-value{font:var(--type-numeral);font-variant-numeric:tabular-nums;font-feature-settings:"tnum" 1;color:var(--text-primary);letter-spacing:-0.01em}
-.sh-num-label{font:var(--type-body-sm);color:var(--text-secondary);max-width:24ch}
-`;
-function ensure() {
-  if (typeof document === "undefined" || document.getElementById("sh-num-css")) return;
-  const el = document.createElement("style");
-  el.id = "sh-num-css";
-  el.textContent = CSS;
-  document.head.appendChild(el);
-}
-function Numeral({
-  value,
-  label,
-  style,
-  ...rest
-}) {
-  ensure();
-  return /*#__PURE__*/React.createElement("div", _extends({
-    className: "sh-num",
-    style: style
-  }, rest), /*#__PURE__*/React.createElement("span", {
-    className: "sh-num-value"
-  }, value), label ? /*#__PURE__*/React.createElement("span", {
-    className: "sh-num-label"
-  }, label) : null);
-}
-Object.assign(__ds_scope, { Numeral });
-})(); } catch (e) { __ds_ns.__errors.push({ path: "components/editorial/Numeral.jsx", error: String((e && e.message) || e) }); }
-
-// components/editorial/PlainList.jsx
-try { (() => {
-function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
-/* Plain text in columns — no bullets, no icons, no ticks (the deck's list style).
-   Items are strings, or { title, text } pairs. One column under 520px. */
-const CSS = `
-.sh-plist{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:minmax(0,1fr);gap:var(--space-5) var(--grid-gap)}
-.sh-plist>li{min-width:0;font:var(--type-body);color:var(--text-primary)}
-.sh-plist[data-size="sm"]>li{font:var(--type-body-sm)}
-.sh-plist[data-rules="true"]>li{padding-top:var(--space-4);border-top:var(--border-width) solid var(--rule-color)}
-.sh-plist-title{display:block;font:var(--type-item);font-size:var(--text-base);color:var(--text-primary)}
-.sh-plist-text{display:block;margin-top:var(--space-2);font:var(--type-body-sm);color:var(--text-secondary);max-width:44ch}
-@media (min-width:520px){.sh-plist[data-columns="2"],.sh-plist[data-columns="3"]{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (min-width:1000px){.sh-plist[data-columns="3"]{grid-template-columns:repeat(3,minmax(0,1fr))}}
-`;
-function ensure() {
-  if (typeof document === "undefined" || document.getElementById("sh-plist-css")) return;
-  const el = document.createElement("style");
-  el.id = "sh-plist-css";
-  el.textContent = CSS;
-  document.head.appendChild(el);
-}
-function PlainList({
-  items = [],
-  columns = 2,
-  size = "md",
-  rules = false,
-  style,
-  ...rest
-}) {
-  ensure();
-  return /*#__PURE__*/React.createElement("ul", _extends({
-    className: "sh-plist",
-    "data-columns": String(columns),
-    "data-size": size,
-    "data-rules": String(rules),
-    style: style
-  }, rest), items.map((item, i) => /*#__PURE__*/React.createElement("li", {
-    key: typeof item === "string" ? item : item.title || i
-  }, typeof item === "string" ? item : /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("span", {
-    className: "sh-plist-title"
-  }, item.title), item.text ? /*#__PURE__*/React.createElement("span", {
-    className: "sh-plist-text"
-  }, item.text) : null))));
-}
-Object.assign(__ds_scope, { PlainList });
-})(); } catch (e) { __ds_ns.__errors.push({ path: "components/editorial/PlainList.jsx", error: String((e && e.message) || e) }); }
+Object.assign(__ds_scope, { ArticleFigure });
+})(); } catch (e) { __ds_ns.__errors.push({ path: "components/editorial/ArticleFigure.jsx", error: String((e && e.message) || e) }); }
 
 // components/editorial/PortraitFrame.jsx
 try { (() => {
@@ -2032,6 +2554,7 @@ function PortraitFrame({
   name,
   role,
   detail,
+  caption = true,
   headingLevel = 3,
   position = "center top",
   style,
@@ -2053,34 +2576,613 @@ function PortraitFrame({
     "aria-hidden": "true"
   }, initialsOf(name))));
   return /*#__PURE__*/React.createElement("figure", _extends({
+    "data-ds-id": "editorial/PortraitFrame",
     className: "sh-portrait",
     style: style
-  }, rest), frame, /*#__PURE__*/React.createElement("figcaption", null, /*#__PURE__*/React.createElement(H, {
+  }, rest), frame, caption ? /*#__PURE__*/React.createElement("figcaption", null, /*#__PURE__*/React.createElement(H, {
     className: "sh-portrait-name"
   }, name), role ? /*#__PURE__*/React.createElement("p", {
     className: "sh-portrait-role"
   }, role) : null, detail ? /*#__PURE__*/React.createElement("p", {
     className: "sh-portrait-detail"
-  }, detail) : null));
+  }, detail) : null) : null);
 }
 Object.assign(__ds_scope, { PortraitFrame });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/editorial/PortraitFrame.jsx", error: String((e && e.message) || e) }); }
 
+// components/editorial/AuthorCard.jsx
+try { (() => {
+const { PortraitFrame } = __ds_scope;
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+/* The author's byline card at the foot of an article: the doctor's 4:5 portrait (initials
+   until a photograph exists), a short normal-case label, the name, role, an optional
+   one-paragraph bio and a link to their profile. Portrait beside the text on every width;
+   the portrait shrinks on phones. */
+const CSS = `
+.sh-author{display:grid;grid-template-columns:clamp(84px, 6vw + 60px, 128px) minmax(0,1fr);gap:var(--space-5) var(--space-7);align-items:start;padding-block:var(--space-7);border-block:var(--border-width) solid var(--rule-color);max-width:68ch;min-width:0}
+.sh-author .sh-portrait{gap:0}
+.sh-author-body{display:flex;flex-direction:column;gap:var(--space-2);min-width:0}
+.sh-author-label{margin:0;font:var(--type-caption);color:var(--text-muted)}
+.sh-author-name{margin:0;font:var(--type-item);color:var(--text-primary)}
+.sh-author-name a{color:inherit;text-decoration:none}
+.sh-author-role{margin:0;font:var(--type-body-sm);color:var(--text-secondary)}
+.sh-author-bio{margin:var(--space-3) 0 0;font:var(--type-body-sm);color:var(--text-secondary);max-width:56ch}
+.sh-author-link{margin-top:var(--space-3)}
+@media (hover: hover) and (pointer: fine){.sh-author-name a:hover{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px}}
+`;
+function ensure() {
+  if (typeof document === "undefined" || document.getElementById("sh-author-css")) return;
+  const el = document.createElement("style");
+  el.id = "sh-author-css";
+  el.textContent = CSS;
+  document.head.appendChild(el);
+}
+function AuthorCard({
+  name,
+  role,
+  src,
+  label = "Written by",
+  bio,
+  href,
+  action,
+  headingLevel = 2,
+  style,
+  ...rest
+}) {
+  ensure();
+  const H = "h" + headingLevel;
+  return /*#__PURE__*/React.createElement("aside", _extends({
+    "data-ds-id": "editorial/AuthorCard",
+    className: "sh-author",
+    "aria-label": label,
+    style: style
+  }, rest), /*#__PURE__*/React.createElement(PortraitFrame, {
+    src: src,
+    name: name,
+    caption: false
+  }), /*#__PURE__*/React.createElement("div", {
+    className: "sh-author-body"
+  }, label ? /*#__PURE__*/React.createElement("p", {
+    className: "sh-author-label"
+  }, label) : null, /*#__PURE__*/React.createElement(H, {
+    className: "sh-author-name"
+  }, href ? /*#__PURE__*/React.createElement("a", {
+    href: href
+  }, name) : name), role ? /*#__PURE__*/React.createElement("p", {
+    className: "sh-author-role"
+  }, role) : null, bio ? /*#__PURE__*/React.createElement("p", {
+    className: "sh-author-bio"
+  }, bio) : null, action ? /*#__PURE__*/React.createElement("div", {
+    className: "sh-author-link"
+  }, action) : null));
+}
+Object.assign(__ds_scope, { AuthorCard });
+})(); } catch (e) { __ds_ns.__errors.push({ path: "components/editorial/AuthorCard.jsx", error: String((e && e.message) || e) }); }
+
+// components/editorial/GroupedList.jsx
+try { (() => {
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+/* Groups of short items (programmes by focus, therapies by kind). Each group has a small
+   Medium heading in normal case, then its items as a clean vertical list on hairlines —
+   one item per line, never a middot run-on. Groups stack on phones and sit in columns
+   from 760px with generous space between them. */
+const CSS = `
+.sh-glist{display:grid;grid-template-columns:minmax(0,1fr);gap:var(--space-10) var(--grid-gap);margin:0}
+.sh-glist-group{min-width:0;display:flex;flex-direction:column;gap:var(--space-4)}
+.sh-glist-label{margin:0;font:var(--type-item);color:var(--text-primary)}
+.sh-glist-items{margin:0;padding:0;list-style:none;display:flex;flex-direction:column}
+.sh-glist-items>li{padding:var(--space-3) 0;border-top:var(--border-width) solid var(--rule-color);font:var(--type-body);color:var(--text-primary);min-width:0}
+.sh-glist-items>li:last-child{border-bottom:var(--border-width) solid var(--rule-color)}
+.sh-glist-items a{color:inherit;text-decoration:none;display:flex;justify-content:space-between;gap:var(--space-4);align-items:baseline}
+.sh-glist-items a::after{content:"→";color:var(--text-brand);transition:transform var(--duration-fast) var(--ease-out)}
+[dir="rtl"] .sh-glist-items a::after{content:"←"}
+.sh-glist-text{display:block;margin-top:var(--space-1);font:var(--type-body-sm);color:var(--text-secondary);max-width:44ch}
+.sh-glist[data-rules="false"] .sh-glist-items>li{border:0;padding:var(--space-2) 0}
+.sh-glist-items a:focus-visible{outline:none;box-shadow:var(--ring-focus)}
+@media (hover: hover) and (pointer: fine){.sh-glist-items a:hover{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px}.sh-glist-items a:hover::after{transform:translateX(3px)}}
+@media (min-width:760px){.sh-glist[data-columns="2"],.sh-glist[data-columns="3"]{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:1000px){.sh-glist[data-columns="3"]{grid-template-columns:repeat(3,minmax(0,1fr));column-gap:calc(var(--grid-gap) * 1.5)}}
+`;
+function ensure() {
+  if (typeof document === "undefined" || document.getElementById("sh-glist-css")) return;
+  const el = document.createElement("style");
+  el.id = "sh-glist-css";
+  el.textContent = CSS;
+  document.head.appendChild(el);
+}
+
+/* groups: [{ label, items: [string | { label, text?, href? }] }] */
+function GroupedList({
+  groups = [],
+  columns = 1,
+  rules = true,
+  headingLevel = 3,
+  style,
+  ...rest
+}) {
+  ensure();
+  const H = "h" + headingLevel;
+  return /*#__PURE__*/React.createElement("div", _extends({
+    "data-ds-id": "editorial/GroupedList",
+    className: "sh-glist",
+    "data-columns": String(columns),
+    "data-rules": String(rules),
+    style: style
+  }, rest), groups.map(g => /*#__PURE__*/React.createElement("section", {
+    className: "sh-glist-group",
+    key: g.label
+  }, /*#__PURE__*/React.createElement(H, {
+    className: "sh-glist-label"
+  }, g.label), /*#__PURE__*/React.createElement("ul", {
+    className: "sh-glist-items"
+  }, g.items.map(it => {
+    const o = typeof it === "string" ? {
+      label: it
+    } : it;
+    const body = /*#__PURE__*/React.createElement(React.Fragment, null, o.label, o.text ? /*#__PURE__*/React.createElement("span", {
+      className: "sh-glist-text"
+    }, o.text) : null);
+    return /*#__PURE__*/React.createElement("li", {
+      key: o.label
+    }, o.href ? /*#__PURE__*/React.createElement("a", {
+      href: o.href
+    }, /*#__PURE__*/React.createElement("span", null, body)) : body);
+  })))));
+}
+Object.assign(__ds_scope, { GroupedList });
+})(); } catch (e) { __ds_ns.__errors.push({ path: "components/editorial/GroupedList.jsx", error: String((e && e.message) || e) }); }
+
+// components/editorial/MetaRow.jsx
+try { (() => {
+const { Icon } = __ds_scope;
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+/* The one place category, duration, date and read time are shown — a caption-size row
+   BELOW a title, in normal case. Never above a heading (the system has no eyebrows).
+   items: strings, or { label, icon?, href?, dateTime? }. Without icons the items are
+   separated by a middot; with icons each item leads with its 14px glyph instead. */
+const CSS = `
+.sh-meta{display:flex;flex-wrap:wrap;align-items:center;gap:var(--space-2) 0;margin:0;padding:0;list-style:none;font:var(--type-caption);color:var(--text-muted);font-variant-numeric:tabular-nums}
+.sh-meta>li{display:inline-flex;align-items:center;gap:0.4em;min-width:0}
+.sh-meta:not([data-icons="true"])>li:not(:last-child)::after{content:"·";margin-inline:0.55em;color:var(--text-muted)}
+.sh-meta[data-icons="true"]{gap:var(--space-2) var(--space-6)}
+.sh-meta [data-icon]{opacity:0.85}
+.sh-meta a{color:inherit;text-decoration:underline;text-decoration-color:color-mix(in srgb, currentColor 35%, transparent);text-underline-offset:3px}
+.sh-meta[data-size="sm"]{font:var(--type-body-sm);color:var(--text-secondary)}
+@media (hover: hover) and (pointer: fine){.sh-meta a:hover{color:var(--text-primary)}}
+`;
+function ensure() {
+  if (typeof document === "undefined" || document.getElementById("sh-meta-css")) return;
+  const el = document.createElement("style");
+  el.id = "sh-meta-css";
+  el.textContent = CSS;
+  document.head.appendChild(el);
+}
+function norm(item) {
+  if (item == null || item === false || item === "") return null;
+  if (typeof item === "object" && !React.isValidElement(item)) return item;
+  return {
+    label: item
+  };
+}
+function MetaRow({
+  items = [],
+  size = "caption",
+  className,
+  style,
+  ...rest
+}) {
+  ensure();
+  const list = (Array.isArray(items) ? items : [items]).map(norm).filter(Boolean);
+  if (!list.length) return null;
+  const icons = list.some(m => m.icon);
+  return /*#__PURE__*/React.createElement("ul", _extends({
+    "data-ds-id": "editorial/MetaRow",
+    className: "sh-meta" + (className ? " " + className : ""),
+    "data-icons": icons ? "true" : undefined,
+    "data-size": size === "sm" ? "sm" : undefined,
+    style: style
+  }, rest), list.map((m, i) => {
+    const label = m.dateTime ? /*#__PURE__*/React.createElement("time", {
+      dateTime: m.dateTime
+    }, m.label) : m.label;
+    return /*#__PURE__*/React.createElement("li", {
+      key: i
+    }, m.icon ? /*#__PURE__*/React.createElement(Icon, {
+      name: m.icon,
+      size: 14
+    }) : null, m.href ? /*#__PURE__*/React.createElement("a", {
+      href: m.href
+    }, label) : /*#__PURE__*/React.createElement("span", null, label));
+  }));
+}
+Object.assign(__ds_scope, { MetaRow });
+})(); } catch (e) { __ds_ns.__errors.push({ path: "components/editorial/MetaRow.jsx", error: String((e && e.message) || e) }); }
+
+// components/editorial/NumberedSteps.jsx
+try { (() => {
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+/* Numbered steps in two orientations.
+   horizontal (default): muted 01–04 numerals in a FIXED-width column, so every title and
+   description starts on the same line whatever the number's width; the number sits on
+   the title's baseline. One column on phones, two from 760px, `columns` from 1000px
+   (at 4 columns the number moves above the title — still one shared left edge).
+   vertical: a timeline — numbers in a column of hairline circles joined by a 1px line,
+   content to the right. Same on every width; the circles shrink on phones. */
+const CSS = `
+.sh-steps{--_nw:2.75rem;list-style:none;margin:0;padding:0;display:grid;grid-template-columns:minmax(0,1fr);gap:var(--space-8) var(--grid-gap)}
+.sh-step{display:grid;grid-template-columns:var(--_nw) minmax(0,1fr);column-gap:var(--space-4);align-items:baseline;padding-top:var(--space-5);border-top:var(--border-width) solid var(--rule-color);min-width:0}
+.sh-step-n{font:var(--weight-light) var(--text-lg)/1.3 var(--font-display);color:var(--text-brand);font-variant-numeric:tabular-nums;font-feature-settings:"tnum" 1;white-space:nowrap}
+.sh-step-body{min-width:0}
+.sh-step-title{margin:0;font:var(--type-item);color:var(--text-primary)}
+.sh-step-text{margin:var(--space-3) 0 0;font:var(--type-body-sm);color:var(--text-secondary);max-width:52ch}
+.sh-steps[data-rules="false"] .sh-step{border-top:0;padding-top:0}
+@media (min-width:760px){.sh-steps[data-orientation="horizontal"][data-columns="2"],.sh-steps[data-orientation="horizontal"][data-columns="3"],.sh-steps[data-orientation="horizontal"][data-columns="4"]{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:1000px){
+  .sh-steps[data-orientation="horizontal"][data-columns="3"]{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .sh-steps[data-orientation="horizontal"][data-columns="4"]{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .sh-steps[data-orientation="horizontal"][data-columns="4"] .sh-step{grid-template-columns:minmax(0,1fr);row-gap:var(--space-4)}
+}
+/* vertical timeline */
+.sh-steps[data-orientation="vertical"]{--_d:2.75rem;gap:0;max-width:var(--_vmax,44rem)}
+.sh-steps[data-orientation="vertical"] .sh-step{position:relative;grid-template-columns:var(--_d) minmax(0,1fr);column-gap:var(--space-6);align-items:start;padding:0 0 var(--space-9);border-top:0}
+.sh-steps[data-orientation="vertical"] .sh-step:last-child{padding-bottom:0}
+.sh-steps[data-orientation="vertical"] .sh-step::before{content:"";position:absolute;inset-inline-start:calc(var(--_d) / 2 - 0.5px);top:calc(var(--_d) + var(--space-2));bottom:var(--space-2);width:1px;background:var(--rule-color)}
+.sh-steps[data-orientation="vertical"] .sh-step:last-child::before{display:none}
+.sh-steps[data-orientation="vertical"] .sh-step-n{display:grid;place-items:center;width:var(--_d);height:var(--_d);border:1px solid color-mix(in srgb, var(--text-brand) 55%, transparent);border-radius:50%;font:var(--weight-regular) var(--text-sm)/1 var(--font-display)}
+.sh-steps[data-orientation="vertical"] .sh-step-body{padding-top:calc((var(--_d) - var(--text-lg) * 1.3) / 2)}
+@media (max-width:519.98px){.sh-steps[data-orientation="vertical"]{--_d:2.25rem}.sh-steps[data-orientation="vertical"] .sh-step{column-gap:var(--space-5);padding-bottom:var(--space-8)}}
+`;
+function ensure() {
+  if (typeof document === "undefined" || document.getElementById("sh-steps-css")) return;
+  const el = document.createElement("style");
+  el.id = "sh-steps-css";
+  el.textContent = CSS;
+  document.head.appendChild(el);
+}
+function NumberedSteps({
+  items = [],
+  orientation = "horizontal",
+  columns = 1,
+  start = 1,
+  rules = true,
+  headingLevel = 3,
+  style,
+  ...rest
+}) {
+  ensure();
+  const H = "h" + headingLevel;
+  return /*#__PURE__*/React.createElement("ol", _extends({
+    "data-ds-id": "editorial/NumberedSteps",
+    className: "sh-steps",
+    "data-orientation": orientation,
+    "data-columns": String(columns),
+    "data-rules": String(rules),
+    start: start,
+    style: style
+  }, rest), items.map((item, i) => /*#__PURE__*/React.createElement("li", {
+    className: "sh-step",
+    key: item.title || i
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "sh-step-n",
+    "aria-hidden": "true"
+  }, String(start + i).padStart(2, "0")), /*#__PURE__*/React.createElement("div", {
+    className: "sh-step-body"
+  }, /*#__PURE__*/React.createElement(H, {
+    className: "sh-step-title"
+  }, item.title), item.text ? /*#__PURE__*/React.createElement("p", {
+    className: "sh-step-text"
+  }, item.text) : null))));
+}
+Object.assign(__ds_scope, { NumberedSteps });
+})(); } catch (e) { __ds_ns.__errors.push({ path: "components/editorial/NumberedSteps.jsx", error: String((e && e.message) || e) }); }
+
+// components/editorial/Numeral.jsx
+try { (() => {
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+/* One large Light figure with a small caption. Two or three per row, never four.
+   Tabular figures so a row of numbers lines up. */
+const CSS = `
+.sh-num{display:flex;flex-direction:column;gap:var(--space-4);min-width:0}
+.sh-num-value{font:var(--type-numeral);font-variant-numeric:tabular-nums;font-feature-settings:"tnum" 1;color:var(--text-primary);letter-spacing:-0.01em}
+.sh-num-label{font:var(--type-body-sm);color:var(--text-secondary);max-width:24ch}
+`;
+function ensure() {
+  if (typeof document === "undefined" || document.getElementById("sh-num-css")) return;
+  const el = document.createElement("style");
+  el.id = "sh-num-css";
+  el.textContent = CSS;
+  document.head.appendChild(el);
+}
+function Numeral({
+  value,
+  label,
+  style,
+  ...rest
+}) {
+  ensure();
+  return /*#__PURE__*/React.createElement("div", _extends({
+    "data-ds-id": "editorial/Numeral",
+    className: "sh-num",
+    style: style
+  }, rest), /*#__PURE__*/React.createElement("span", {
+    className: "sh-num-value"
+  }, value), label ? /*#__PURE__*/React.createElement("span", {
+    className: "sh-num-label"
+  }, label) : null);
+}
+Object.assign(__ds_scope, { Numeral });
+})(); } catch (e) { __ds_ns.__errors.push({ path: "components/editorial/Numeral.jsx", error: String((e && e.message) || e) }); }
+
+// components/editorial/Pagination.jsx
+try { (() => {
+const { Icon } = __ds_scope;
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+/* Previous / numbered pages / next for the Insights index. Numbers collapse with an
+   ellipsis around the current page. Under 520px the numbers give way to "Page 2 of 8"
+   between the two arrows. Links when `hrefFor` is given (crawlable), buttons otherwise. */
+const CSS = `
+.sh-pag{display:flex;align-items:center;justify-content:space-between;gap:var(--space-4);padding-top:var(--space-6);border-top:var(--border-width) solid var(--rule-color);font:var(--type-body-sm);min-width:0}
+.sh-pag-list{display:flex;align-items:center;gap:var(--space-1);list-style:none;margin:0;padding:0}
+.sh-pag-step,.sh-pag-num{appearance:none;display:inline-flex;align-items:center;justify-content:center;gap:var(--space-2);min-height:var(--tap-min);min-width:var(--tap-min);padding:0 var(--space-3);border:0;border-radius:var(--radius-pill);background:transparent;color:var(--text-secondary);font:inherit;font-variant-numeric:tabular-nums;text-decoration:none;cursor:pointer}
+.sh-pag-step{color:var(--text-primary)}
+.sh-pag-num[aria-current="page"]{color:var(--text-primary);font-weight:var(--weight-medium);box-shadow:inset 0 0 0 1px var(--text-primary)}
+.sh-pag-gap{min-width:24px;text-align:center;color:var(--text-muted)}
+.sh-pag-status{display:none;margin:0;color:var(--text-secondary);font-variant-numeric:tabular-nums}
+.sh-pag [aria-disabled="true"]{opacity:0.35;pointer-events:none}
+.sh-pag-step:focus-visible,.sh-pag-num:focus-visible{outline:none;box-shadow:var(--ring-focus)}
+[dir="rtl"] .sh-pag-step [data-icon]{transform:scaleX(-1)}
+@media (hover: hover) and (pointer: fine){.sh-pag-num:hover,.sh-pag-step:hover{color:var(--text-primary);background:color-mix(in srgb, var(--text-primary) 6%, transparent)}}
+@media (max-width:519.98px){.sh-pag-list{display:none}.sh-pag-status{display:block}.sh-pag-step>span:not([data-icon]){position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}}
+`;
+function ensure() {
+  if (typeof document === "undefined" || document.getElementById("sh-pag-css")) return;
+  const el = document.createElement("style");
+  el.id = "sh-pag-css";
+  el.textContent = CSS;
+  document.head.appendChild(el);
+}
+function range(page, count, sib) {
+  const out = [];
+  const lo = Math.max(2, page - sib);
+  const hi = Math.min(count - 1, page + sib);
+  out.push(1);
+  if (lo > 2) out.push("gap-l");
+  for (let i = lo; i <= hi; i++) out.push(i);
+  if (hi < count - 1) out.push("gap-r");
+  if (count > 1) out.push(count);
+  return out;
+}
+function Pagination({
+  page = 1,
+  pageCount = 1,
+  hrefFor,
+  onChange,
+  siblings = 1,
+  prevLabel = "Previous",
+  nextLabel = "Next",
+  label = "Pages",
+  style,
+  ...rest
+}) {
+  ensure();
+  const go = n => e => {
+    if (onChange) {
+      if (!hrefFor) e.preventDefault();
+      onChange(n);
+    }
+  };
+  const Item = ({
+    n,
+    className,
+    children,
+    current,
+    disabled,
+    rel
+  }) => {
+    const common = {
+      className,
+      "aria-current": current ? "page" : undefined,
+      "aria-disabled": disabled ? "true" : undefined,
+      rel
+    };
+    return hrefFor ? /*#__PURE__*/React.createElement("a", _extends({}, common, {
+      href: disabled ? undefined : hrefFor(n),
+      onClick: disabled ? undefined : go(n)
+    }), children) : /*#__PURE__*/React.createElement("button", _extends({
+      type: "button"
+    }, common, {
+      disabled: disabled,
+      onClick: go(n)
+    }), children);
+  };
+  return /*#__PURE__*/React.createElement("nav", _extends({
+    "data-ds-id": "editorial/Pagination",
+    className: "sh-pag",
+    "aria-label": label,
+    style: style
+  }, rest), /*#__PURE__*/React.createElement(Item, {
+    n: page - 1,
+    className: "sh-pag-step",
+    disabled: page <= 1,
+    rel: "prev"
+  }, /*#__PURE__*/React.createElement(Icon, {
+    name: "arrow-left",
+    size: 16
+  }), /*#__PURE__*/React.createElement("span", null, prevLabel)), /*#__PURE__*/React.createElement("ol", {
+    className: "sh-pag-list"
+  }, range(page, pageCount, siblings).map(n => /*#__PURE__*/React.createElement("li", {
+    key: n
+  }, typeof n === "string" ? /*#__PURE__*/React.createElement("span", {
+    className: "sh-pag-gap",
+    "aria-hidden": "true"
+  }, "\u2026") : /*#__PURE__*/React.createElement(Item, {
+    n: n,
+    className: "sh-pag-num",
+    current: n === page
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "sh-visually-hidden"
+  }, "Page "), n)))), /*#__PURE__*/React.createElement("p", {
+    className: "sh-pag-status",
+    "aria-hidden": "true"
+  }, "Page ", page, " of ", pageCount), /*#__PURE__*/React.createElement(Item, {
+    n: page + 1,
+    className: "sh-pag-step",
+    disabled: page >= pageCount,
+    rel: "next"
+  }, /*#__PURE__*/React.createElement("span", null, nextLabel), /*#__PURE__*/React.createElement(Icon, {
+    name: "arrow-right",
+    size: 16
+  })));
+}
+Object.assign(__ds_scope, { Pagination });
+})(); } catch (e) { __ds_ns.__errors.push({ path: "components/editorial/Pagination.jsx", error: String((e && e.message) || e) }); }
+
+// components/editorial/PlainList.jsx
+try { (() => {
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+/* Plain text in columns — no bullets, no icons, no ticks (the deck's list style).
+   Items are strings, or { title, text } pairs. One column under 520px. */
+const CSS = `
+.sh-plist{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:minmax(0,1fr);gap:var(--space-5) var(--grid-gap)}
+.sh-plist>li{min-width:0;font:var(--type-body);color:var(--text-primary)}
+.sh-plist[data-size="sm"]>li{font:var(--type-body-sm)}
+.sh-plist[data-rules="true"]>li{padding-top:var(--space-4);border-top:var(--border-width) solid var(--rule-color)}
+.sh-plist-title{display:block;font:var(--type-item);font-size:var(--text-base);color:var(--text-primary)}
+.sh-plist-text{display:block;margin-top:var(--space-2);font:var(--type-body-sm);color:var(--text-secondary);max-width:44ch}
+@media (min-width:520px){.sh-plist[data-columns="2"],.sh-plist[data-columns="3"]{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:1000px){.sh-plist[data-columns="3"]{grid-template-columns:repeat(3,minmax(0,1fr))}}
+`;
+function ensure() {
+  if (typeof document === "undefined" || document.getElementById("sh-plist-css")) return;
+  const el = document.createElement("style");
+  el.id = "sh-plist-css";
+  el.textContent = CSS;
+  document.head.appendChild(el);
+}
+function PlainList({
+  items = [],
+  columns = 2,
+  size = "md",
+  rules = false,
+  style,
+  ...rest
+}) {
+  ensure();
+  return /*#__PURE__*/React.createElement("ul", _extends({
+    "data-ds-id": "editorial/PlainList",
+    className: "sh-plist",
+    "data-columns": String(columns),
+    "data-size": size,
+    "data-rules": String(rules),
+    style: style
+  }, rest), items.map((item, i) => /*#__PURE__*/React.createElement("li", {
+    key: typeof item === "string" ? item : item.title || i
+  }, typeof item === "string" ? item : /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("span", {
+    className: "sh-plist-title"
+  }, item.title), item.text ? /*#__PURE__*/React.createElement("span", {
+    className: "sh-plist-text"
+  }, item.text) : null))));
+}
+Object.assign(__ds_scope, { PlainList });
+})(); } catch (e) { __ds_ns.__errors.push({ path: "components/editorial/PlainList.jsx", error: String((e && e.message) || e) }); }
+
+// components/editorial/Prose.jsx
+try { (() => {
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+/* Long-form article text. Styles the plain HTML a CMS or Markdown renderer produces —
+   h2/h3/h4, p, ul/ol, blockquote, figure + figcaption, table, hr, links, strong/em, code —
+   at a 68ch measure with the body rhythm. Wide children (figure[data-width="wide"],
+   tables) may break out of the measure up to the container. */
+const CSS = `
+.sh-prose{--_measure:68ch;max-width:var(--_measure);font:var(--type-body);color:var(--text-primary);min-width:0;overflow-wrap:break-word}
+.sh-prose[data-size="lg"]{font:var(--type-lead)}
+.sh-prose>*{margin-block:0}
+.sh-prose>*+*{margin-top:1.1em}
+.sh-prose>:first-child{margin-top:0}
+.sh-prose h2{font:var(--type-h3);color:var(--text-primary);margin-top:2.2em;text-wrap:balance;scroll-margin-top:calc(var(--space-12) + 24px)}
+.sh-prose h3{font:var(--type-h4);color:var(--text-primary);margin-top:1.9em;text-wrap:balance;scroll-margin-top:calc(var(--space-12) + 24px)}
+.sh-prose h4{font:var(--type-item);font-size:var(--text-base);margin-top:1.6em}
+.sh-prose h2+*,.sh-prose h3+*,.sh-prose h4+*{margin-top:0.6em}
+.sh-prose p{text-wrap:pretty}
+.sh-prose>p:first-child[data-lead],.sh-prose .lead{font:var(--type-lead);color:var(--text-secondary)}
+.sh-prose a{color:var(--text-link);text-decoration:underline;text-decoration-thickness:1px;text-decoration-color:color-mix(in srgb, var(--text-link) 45%, transparent);text-underline-offset:3px}
+.sh-prose a:hover{color:var(--text-link-hover);text-decoration-color:currentColor}
+.sh-prose strong{font-weight:var(--weight-semibold)}
+.sh-prose ul,.sh-prose ol{padding-inline-start:1.4em}
+.sh-prose li+li{margin-top:0.45em}
+.sh-prose li::marker{color:var(--text-brand)}
+.sh-prose ol>li::marker{font-variant-numeric:tabular-nums}
+.sh-prose blockquote{margin-inline:0;padding-inline-start:var(--space-6);border-inline-start:1px solid var(--text-brand);font:var(--type-lead);font-weight:var(--weight-light);color:var(--text-primary)}
+.sh-prose blockquote p{margin:0}
+.sh-prose blockquote footer,.sh-prose blockquote cite{display:block;margin-top:var(--space-3);font:var(--type-body-sm);font-style:normal;color:var(--text-secondary)}
+.sh-prose figure{margin-inline:0;margin-block:2em}
+.sh-prose figure img{display:block;width:100%;height:auto}
+.sh-prose figcaption{margin-top:var(--space-3);font:var(--type-caption);color:var(--text-muted);max-width:60ch}
+.sh-prose hr{border:0;height:1px;background:var(--rule-color);margin-block:2.4em}
+.sh-prose table{width:100%;border-collapse:collapse;font:var(--type-body-sm);font-variant-numeric:tabular-nums}
+@media (max-width:759.98px){.sh-prose table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}}
+.sh-prose thead th{font:var(--type-label);color:var(--text-primary);text-align:start;padding:var(--space-3) var(--space-5) var(--space-3) 0;border-bottom:1px solid var(--text-primary);white-space:nowrap}
+.sh-prose td{padding:var(--space-3) var(--space-5) var(--space-3) 0;border-bottom:var(--border-width) solid var(--rule-color);vertical-align:top;color:var(--text-secondary)}
+.sh-prose caption{caption-side:bottom;text-align:start;padding-top:var(--space-3);font:var(--type-caption);color:var(--text-muted)}
+.sh-prose code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:0.9em;background:color-mix(in srgb, var(--text-primary) 6%, transparent);padding:0.1em 0.3em}
+@media (min-width:1000px){
+  .sh-prose [data-width="wide"]{width:min(100cqw, calc(var(--_measure) + 16rem));max-width:none}
+}
+`;
+function ensure() {
+  if (typeof document === "undefined" || document.getElementById("sh-prose-css")) return;
+  const el = document.createElement("style");
+  el.id = "sh-prose-css";
+  el.textContent = CSS;
+  document.head.appendChild(el);
+}
+function Prose({
+  html,
+  size = "md",
+  as: Tag = "div",
+  children,
+  className,
+  style,
+  ...rest
+}) {
+  ensure();
+  const props = {
+    "data-ds-id": "editorial/Prose",
+    className: "sh-prose" + (className ? " " + className : ""),
+    "data-size": size,
+    style,
+    ...rest
+  };
+  return html != null ? /*#__PURE__*/React.createElement(Tag, _extends({}, props, {
+    dangerouslySetInnerHTML: {
+      __html: html
+    }
+  })) : /*#__PURE__*/React.createElement(Tag, props, children);
+}
+Object.assign(__ds_scope, { Prose });
+})(); } catch (e) { __ds_ns.__errors.push({ path: "components/editorial/Prose.jsx", error: String((e && e.message) || e) }); }
+
 // components/editorial/QuoteBlock.jsx
 try { (() => {
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
-/* A large Light quote, left-aligned, with small labelled facts beneath (deck slides
-   16–17). Only real, consented words go here — never a composed testimonial. */
+/* A large Light quote, left-aligned, closed by an attribution line (a short rule, the
+   speaker in Medium, their role in secondary type) and optional labelled facts beneath
+   on a hairline (deck slides 16–17). Only real, consented words or the organisation's
+   own statements go here — never a composed testimonial. */
 const CSS = `
-.sh-quote{margin:0;display:flex;flex-direction:column;gap:var(--stack-lg);min-width:0}
-.sh-quote-text{margin:0;font:var(--type-statement);color:var(--text-primary);max-width:var(--measure-statement);quotes:"\\201C" "\\201D"}
-.sh-quote-text::before{content:open-quote}
-.sh-quote-text::after{content:close-quote}
-.sh-quote-cite{font:var(--type-body-sm);font-style:normal;color:var(--text-secondary)}
-.sh-quote-facts{display:grid;grid-template-columns:minmax(0,1fr);gap:var(--space-6);margin:0}
-.sh-quote-facts dt{margin:0 0 var(--space-2)}
+.sh-quote{margin:0;display:flex;flex-direction:column;gap:var(--space-7);min-width:0}
+.sh-quote-text{margin:0;font:var(--type-statement);color:var(--text-primary);max-width:var(--measure-statement);text-wrap:pretty}
+.sh-quote[data-size="md"] .sh-quote-text{font:var(--type-title)}
+.sh-quote-text>p{margin:0;text-indent:-0.42em}
+.sh-quote-text>p::before{content:"\\201C"}
+.sh-quote-text>p::after{content:"\\201D"}
+.sh-quote-cite{display:flex;align-items:center;flex-wrap:wrap;gap:var(--space-2) var(--space-4);font:var(--type-body-sm);color:var(--text-secondary)}
+.sh-quote-cite::before{content:"";flex:0 0 auto;width:32px;height:1px;background:var(--text-brand)}
+.sh-quote-name{font-weight:var(--weight-medium);color:var(--text-primary);font-style:normal}
+.sh-quote-facts{display:grid;grid-template-columns:minmax(0,1fr);gap:var(--space-6) var(--grid-gap);margin:var(--space-3) 0 0;padding-top:var(--space-6);border-top:var(--border-width) solid var(--rule-color)}
+.sh-quote-facts dt{margin:0 0 var(--space-2);font:var(--type-label);color:var(--text-primary)}
 .sh-quote-facts dd{margin:0;font:var(--type-body-sm);color:var(--text-secondary);max-width:44ch}
-@media (min-width:760px){.sh-quote-facts{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:760px){.sh-quote-facts{grid-template-columns:repeat(var(--_fc,2),minmax(0,1fr))}}
 `;
 function ensure() {
   if (typeof document === "undefined" || document.getElementById("sh-quote-css")) return;
@@ -2092,28 +3194,191 @@ function ensure() {
 function QuoteBlock({
   quote,
   cite,
+  role,
   facts = [],
+  size = "lg",
   style,
   ...rest
 }) {
   ensure();
+  const fc = Math.min(3, Math.max(1, facts.length));
   return /*#__PURE__*/React.createElement("figure", _extends({
+    "data-ds-id": "editorial/QuoteBlock",
     className: "sh-quote",
-    style: style
+    "data-size": size,
+    style: {
+      "--_fc": String(fc),
+      ...style
+    }
   }, rest), /*#__PURE__*/React.createElement("blockquote", {
     className: "sh-quote-text"
-  }, quote), cite ? /*#__PURE__*/React.createElement("figcaption", {
+  }, /*#__PURE__*/React.createElement("p", null, quote)), cite || role ? /*#__PURE__*/React.createElement("figcaption", {
     className: "sh-quote-cite"
-  }, cite) : null, facts.length ? /*#__PURE__*/React.createElement("dl", {
+  }, cite ? /*#__PURE__*/React.createElement("cite", {
+    className: "sh-quote-name"
+  }, cite) : null, role ? /*#__PURE__*/React.createElement("span", null, role) : null) : null, facts.length ? /*#__PURE__*/React.createElement("dl", {
     className: "sh-quote-facts"
   }, facts.map(f => /*#__PURE__*/React.createElement("div", {
     key: f.label
-  }, /*#__PURE__*/React.createElement("dt", {
-    className: "shantara-eyebrow"
-  }, f.label), /*#__PURE__*/React.createElement("dd", null, f.text)))) : null);
+  }, /*#__PURE__*/React.createElement("dt", null, f.label), /*#__PURE__*/React.createElement("dd", null, f.text)))) : null);
 }
 Object.assign(__ds_scope, { QuoteBlock });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/editorial/QuoteBlock.jsx", error: String((e && e.message) || e) }); }
+
+// components/editorial/ReviewedBy.jsx
+try { (() => {
+const { Icon } = __ds_scope;
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+/* The medical-review strip: who reviewed an article and when. A stethoscope glyph in the
+   brand colour, "Medically reviewed by <name>, <role>" and a caption line with the review
+   date (and the next review, if scheduled). Sits under the ArticleHeader byline or at the
+   end of the article body. Inline on a hairline by default; `boxed` puts it on Stone. */
+const CSS = `
+.sh-reviewed{display:grid;grid-template-columns:auto minmax(0,1fr);gap:var(--space-1) var(--space-4);align-items:start;padding-block:var(--space-4);border-block:var(--border-width) solid var(--rule-color);max-width:68ch;min-width:0}
+.sh-reviewed[data-boxed="true"]{border:0;background:var(--ground-stone);padding:var(--space-5) var(--space-6)}
+.sh-reviewed-icon{display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:color-mix(in srgb, var(--text-brand) 12%, transparent);color:var(--text-brand);grid-row:span 2}
+.sh-reviewed-who{margin:0;font:var(--type-body-sm);color:var(--text-secondary);padding-top:5px}
+.sh-reviewed-who strong{font-weight:var(--weight-medium);color:var(--text-primary)}
+.sh-reviewed-who a{color:inherit;text-decoration:underline;text-decoration-color:color-mix(in srgb, currentColor 35%, transparent);text-underline-offset:3px}
+.sh-reviewed-when{margin:0;font:var(--type-caption);color:var(--text-muted);font-variant-numeric:tabular-nums}
+.sh-reviewed-note{grid-column:2;margin:var(--space-2) 0 0;font:var(--type-caption);color:var(--text-muted);max-width:60ch}
+`;
+function ensure() {
+  if (typeof document === "undefined" || document.getElementById("sh-reviewed-css")) return;
+  const el = document.createElement("style");
+  el.id = "sh-reviewed-css";
+  el.textContent = CSS;
+  document.head.appendChild(el);
+}
+function ReviewedBy({
+  name,
+  role,
+  href,
+  date,
+  dateTime,
+  nextReview,
+  label = "Medically reviewed by",
+  note,
+  boxed = false,
+  style,
+  ...rest
+}) {
+  ensure();
+  const who = href ? /*#__PURE__*/React.createElement("a", {
+    href: href
+  }, /*#__PURE__*/React.createElement("strong", null, name)) : /*#__PURE__*/React.createElement("strong", null, name);
+  return /*#__PURE__*/React.createElement("div", _extends({
+    "data-ds-id": "editorial/ReviewedBy",
+    className: "sh-reviewed",
+    "data-boxed": String(boxed),
+    style: style
+  }, rest), /*#__PURE__*/React.createElement("span", {
+    className: "sh-reviewed-icon"
+  }, /*#__PURE__*/React.createElement(Icon, {
+    name: "stethoscope",
+    size: 16
+  })), /*#__PURE__*/React.createElement("p", {
+    className: "sh-reviewed-who"
+  }, label, " ", who, role ? /*#__PURE__*/React.createElement(React.Fragment, null, ", ", role) : null), date || nextReview ? /*#__PURE__*/React.createElement("p", {
+    className: "sh-reviewed-when"
+  }, date ? /*#__PURE__*/React.createElement(React.Fragment, null, "Reviewed ", /*#__PURE__*/React.createElement("time", {
+    dateTime: dateTime
+  }, date)) : null, date && nextReview ? " · " : null, nextReview ? /*#__PURE__*/React.createElement(React.Fragment, null, "Next review ", nextReview) : null) : null, note ? /*#__PURE__*/React.createElement("p", {
+    className: "sh-reviewed-note"
+  }, note) : null);
+}
+Object.assign(__ds_scope, { ReviewedBy });
+})(); } catch (e) { __ds_ns.__errors.push({ path: "components/editorial/ReviewedBy.jsx", error: String((e && e.message) || e) }); }
+
+// components/editorial/ShareBar.jsx
+try { (() => {
+const { Icon } = __ds_scope;
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+/* Share an article: copy link, WhatsApp, email — the three ways guests actually pass a
+   page on. Quiet outline chips with a glyph and a word; "Copy link" confirms with
+   "Link copied" for two seconds (announced politely). Wraps on phones. */
+const CSS = `
+.sh-share{display:flex;flex-wrap:wrap;align-items:center;gap:var(--space-3) var(--space-3);min-width:0}
+.sh-share-label{margin:0 var(--space-2) 0 0;font:var(--type-body-sm);color:var(--text-secondary)}
+.sh-share-btn{appearance:none;display:inline-flex;align-items:center;gap:var(--space-2);min-height:var(--tap-min);padding:0 var(--space-5);border:var(--border-width) solid var(--rule-color);border-radius:var(--radius-pill);background:transparent;color:var(--text-primary);font:var(--type-body-sm);text-decoration:none;cursor:pointer;transition:border-color var(--duration-fast) var(--ease-standard),background-color var(--duration-fast) var(--ease-standard)}
+.sh-share-btn [data-icon]{color:var(--text-brand)}
+.sh-share-btn:focus-visible{outline:none;box-shadow:var(--ring-focus)}
+@media (hover: hover) and (pointer: fine){.sh-share-btn:hover{border-color:var(--text-primary)}}
+.sh-share[data-compact="true"] .sh-share-btn{width:var(--tap-min);padding:0;justify-content:center}
+.sh-share[data-compact="true"] .sh-share-btn>span:not([data-icon]){position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+`;
+function ensure() {
+  if (typeof document === "undefined" || document.getElementById("sh-share-css")) return;
+  const el = document.createElement("style");
+  el.id = "sh-share-css";
+  el.textContent = CSS;
+  document.head.appendChild(el);
+}
+function ShareBar({
+  url,
+  title = "",
+  label = "Share",
+  channels = ["copy", "whatsapp", "email"],
+  compact = false,
+  style,
+  ...rest
+}) {
+  ensure();
+  const [copied, setCopied] = React.useState(false);
+  const href = url || (typeof location !== "undefined" ? location.href : "");
+  const text = title ? title + " " + href : href;
+  const copy = async () => {
+    try {
+      await navigator.clipboard.writeText(href);
+    } catch (e) {/* clipboard blocked: still confirm the intent */}
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+  const btn = {
+    copy: /*#__PURE__*/React.createElement("button", {
+      key: "copy",
+      type: "button",
+      className: "sh-share-btn",
+      onClick: copy
+    }, /*#__PURE__*/React.createElement(Icon, {
+      name: copied ? "check" : "link",
+      size: 16
+    }), /*#__PURE__*/React.createElement("span", null, copied ? "Link copied" : "Copy link")),
+    whatsapp: /*#__PURE__*/React.createElement("a", {
+      key: "wa",
+      className: "sh-share-btn",
+      href: "https://wa.me/?text=" + encodeURIComponent(text),
+      target: "_blank",
+      rel: "noopener noreferrer"
+    }, /*#__PURE__*/React.createElement(Icon, {
+      name: "message-circle",
+      size: 16
+    }), /*#__PURE__*/React.createElement("span", null, "WhatsApp")),
+    email: /*#__PURE__*/React.createElement("a", {
+      key: "em",
+      className: "sh-share-btn",
+      href: "mailto:?subject=" + encodeURIComponent(title) + "&body=" + encodeURIComponent(href)
+    }, /*#__PURE__*/React.createElement(Icon, {
+      name: "mail",
+      size: 16
+    }), /*#__PURE__*/React.createElement("span", null, "Email"))
+  };
+  return /*#__PURE__*/React.createElement("div", _extends({
+    "data-ds-id": "editorial/ShareBar",
+    className: "sh-share",
+    "data-compact": String(compact),
+    role: "group",
+    "aria-label": label,
+    style: style
+  }, rest), label ? /*#__PURE__*/React.createElement("p", {
+    className: "sh-share-label"
+  }, label) : null, channels.map(c => btn[c]).filter(Boolean), /*#__PURE__*/React.createElement("span", {
+    className: "sh-visually-hidden",
+    "aria-live": "polite"
+  }, copied ? "Link copied" : ""));
+}
+Object.assign(__ds_scope, { ShareBar });
+})(); } catch (e) { __ds_ns.__errors.push({ path: "components/editorial/ShareBar.jsx", error: String((e && e.message) || e) }); }
 
 // components/editorial/SpecTable.jsx
 try { (() => {
@@ -2125,7 +3390,7 @@ const CSS = `
 .sh-spec{width:100%;border-collapse:collapse;font:var(--type-body);color:var(--text-primary)}
 .sh-spec th,.sh-spec td{padding:var(--space-4) 0;padding-inline-end:var(--space-7);text-align:start;vertical-align:baseline;font-weight:var(--weight-regular)}
 .sh-spec th:last-child,.sh-spec td:last-child{padding-inline-end:0}
-.sh-spec thead th{font:var(--type-eyebrow);letter-spacing:var(--tracking-eyebrow);text-transform:uppercase;color:var(--eyebrow-color);padding-bottom:var(--space-3)}
+.sh-spec thead th{font:var(--type-label);color:var(--text-secondary);padding-bottom:var(--space-3)}
 .sh-spec tbody th{font:var(--type-body);color:var(--text-primary)}
 .sh-spec td{color:var(--text-secondary);font:var(--type-body-sm)}
 .sh-spec td[data-accent="true"]{color:var(--text-brand);font:var(--type-body);font-variant-numeric:tabular-nums}
@@ -2165,6 +3430,7 @@ function SpecTable({
   ensure();
   const [head, ...cells] = columns;
   return /*#__PURE__*/React.createElement("table", _extends({
+    "data-ds-id": "editorial/SpecTable",
     className: "sh-spec",
     "data-rules": String(rules),
     "data-size": size,
@@ -2199,22 +3465,25 @@ Object.assign(__ds_scope, { SpecTable });
 
 // components/editorial/Statement.jsx
 try { (() => {
-const { Eyebrow } = __ds_scope;
+const { MetaRow } = __ds_scope;
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
-/* Eyebrow → full-sentence headline in Light → one quiet supporting line.
-   The deck's heading block. Sizes are fluid (tokens/typography.css), so the same
-   block reads at 28px on a phone and 48px on a desktop without breakpoints. */
+/* Full-sentence headline → optional meta row → one quiet supporting line → actions.
+   The deck's heading block, with no label above it: the heading leads. Sizes are fluid
+   (tokens/typography.css) so the same block never overflows a phone. */
 const SIZE = {
   display: "var(--type-display)",
   h1: "var(--type-h1)",
   statement: "var(--type-statement)",
-  title: "var(--type-title)"
+  h2: "var(--type-h2)",
+  title: "var(--type-title)",
+  h3: "var(--type-h3)",
+  h4: "var(--type-h4)"
 };
 const CSS = `
 .sh-stmt{display:flex;flex-direction:column;gap:var(--stack-md);min-width:0}
-.sh-stmt-title{margin:0;max-width:var(--_m,var(--measure-statement));color:var(--text-primary)}
+.sh-stmt-title{margin:0;max-width:var(--_m,var(--measure-statement));color:var(--text-primary);text-wrap:balance}
 .sh-stmt-sub{margin:0;max-width:var(--measure-body);font:var(--type-body);color:var(--text-secondary)}
-.sh-stmt[data-size="display"] .sh-stmt-sub,.sh-stmt[data-size="h1"] .sh-stmt-sub{font-size:calc(clamp(17px, 0.3vw + 16px, 20px) * var(--text-scale))}
+.sh-stmt[data-size="display"] .sh-stmt-sub,.sh-stmt[data-size="h1"] .sh-stmt-sub{font:var(--type-lead)}
 .sh-stmt-actions{margin-top:var(--space-3)}
 `;
 function ensure() {
@@ -2225,8 +3494,8 @@ function ensure() {
   document.head.appendChild(el);
 }
 function Statement({
-  eyebrow,
   children,
+  meta,
   sub,
   actions,
   as: Tag = "h2",
@@ -2238,10 +3507,11 @@ function Statement({
 }) {
   ensure();
   return /*#__PURE__*/React.createElement("div", _extends({
+    "data-ds-id": "editorial/Statement",
     className: "sh-stmt" + (className ? " " + className : ""),
     "data-size": size,
     style: style
-  }, rest), eyebrow ? /*#__PURE__*/React.createElement(Eyebrow, null, eyebrow) : null, /*#__PURE__*/React.createElement(Tag, {
+  }, rest), /*#__PURE__*/React.createElement(Tag, {
     className: "sh-stmt-title",
     style: {
       font: SIZE[size] || SIZE.statement,
@@ -2249,7 +3519,9 @@ function Statement({
         "--_m": measure
       } : null)
     }
-  }, children), sub ? /*#__PURE__*/React.createElement("p", {
+  }, children), meta ? Array.isArray(meta) ? /*#__PURE__*/React.createElement(MetaRow, {
+    items: meta
+  }) : /*#__PURE__*/React.createElement("div", null, meta) : null, sub ? /*#__PURE__*/React.createElement("p", {
     className: "sh-stmt-sub"
   }, sub) : null, actions ? /*#__PURE__*/React.createElement("div", {
     className: "sh-actions sh-stmt-actions",
@@ -2258,6 +3530,110 @@ function Statement({
 }
 Object.assign(__ds_scope, { Statement });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/editorial/Statement.jsx", error: String((e && e.message) || e) }); }
+
+// components/editorial/TableOfContents.jsx
+try { (() => {
+const { Icon } = __ds_scope;
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+/* "On this page" for long articles. Desktop (≥1000px): a sticky list on a hairline rail
+   in the article's side column; the section in view is marked with a 1px brand bar.
+   Phones and tablets: a collapsed row ("On this page" + chevron) above the body that opens
+   the same list. items come from the article's h2s (each h2 needs an id). */
+const CSS = `
+.sh-toc{min-width:0;font:var(--type-body-sm)}
+.sh-toc[data-sticky="true"]{position:sticky;top:calc(var(--space-12) + 24px)}
+.sh-toc-toggle{appearance:none;display:flex;width:100%;align-items:center;justify-content:space-between;gap:var(--space-4);min-height:var(--tap-min);padding:var(--space-3) 0;background:transparent;border:0;border-block:var(--border-width) solid var(--rule-color);font:var(--type-label);font-size:var(--text-sm);color:var(--text-primary);cursor:pointer;text-align:start}
+.sh-toc-toggle [data-icon]{transition:transform var(--duration-base) var(--ease-out)}
+.sh-toc-toggle[aria-expanded="true"] [data-icon]{transform:rotate(180deg)}
+.sh-toc-toggle:focus-visible{outline:none;box-shadow:var(--ring-focus)}
+.sh-toc-title{display:none;margin:0 0 var(--space-4);font:var(--type-label);font-size:var(--text-sm);color:var(--text-primary)}
+.sh-toc-list{list-style:none;margin:0;padding:var(--space-3) 0 var(--space-4);display:flex;flex-direction:column}
+.sh-toc[data-open="false"] .sh-toc-list{display:none}
+.sh-toc-list a{display:block;padding:var(--space-2) 0 var(--space-2) var(--space-4);margin-inline-start:-1px;border-inline-start:1px solid transparent;color:var(--text-secondary);text-decoration:none;line-height:1.4}
+.sh-toc-list li[data-level="3"] a{padding-inline-start:var(--space-7);font-size:var(--text-xs)}
+.sh-toc-list a[aria-current="true"]{color:var(--text-primary);border-inline-start-color:var(--text-brand)}
+.sh-toc-list a:focus-visible{outline:none;box-shadow:var(--ring-focus)}
+@media (hover: hover) and (pointer: fine){.sh-toc-list a:hover{color:var(--text-primary)}}
+@media (max-width:999.98px){.sh-toc[data-sticky="true"]{position:static}.sh-toc-list{border-inline-start:1px solid var(--rule-color);margin-top:var(--space-3);padding-block:0}}
+@media (min-width:1000px){
+  .sh-toc-toggle{display:none}
+  .sh-toc-title{display:block}
+  .sh-toc[data-open="false"] .sh-toc-list{display:flex}
+  .sh-toc-list{padding:0;border-inline-start:1px solid var(--rule-color)}
+}
+`;
+function ensure() {
+  if (typeof document === "undefined" || document.getElementById("sh-toc-css")) return;
+  const el = document.createElement("style");
+  el.id = "sh-toc-css";
+  el.textContent = CSS;
+  document.head.appendChild(el);
+}
+function TableOfContents({
+  items = [],
+  title = "On this page",
+  activeId,
+  track = true,
+  sticky = true,
+  defaultOpen = false,
+  onNavigate,
+  style,
+  ...rest
+}) {
+  ensure();
+  const [open, setOpen] = React.useState(defaultOpen);
+  const [seen, setSeen] = React.useState(items[0] && items[0].id);
+  const listId = React.useId ? React.useId() : "sh-toc-list";
+  React.useEffect(() => {
+    if (!track || activeId || typeof IntersectionObserver === "undefined") return undefined;
+    const els = items.map(it => document.getElementById(it.id)).filter(Boolean);
+    if (!els.length) return undefined;
+    const io = new IntersectionObserver(entries => {
+      const vis = entries.filter(e => e.isIntersecting).sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+      if (vis[0]) setSeen(vis[0].target.id);
+    }, {
+      rootMargin: "-15% 0px -70% 0px"
+    });
+    els.forEach(el => io.observe(el));
+    return () => io.disconnect();
+  }, [track, activeId, items.map(i => i.id).join("|")]);
+  const current = activeId || seen;
+  return /*#__PURE__*/React.createElement("nav", _extends({
+    "data-ds-id": "editorial/TableOfContents",
+    className: "sh-toc",
+    "aria-label": title,
+    "data-open": String(open),
+    "data-sticky": String(sticky),
+    style: style
+  }, rest), /*#__PURE__*/React.createElement("button", {
+    type: "button",
+    className: "sh-toc-toggle",
+    "aria-expanded": open,
+    "aria-controls": listId,
+    onClick: () => setOpen(!open)
+  }, /*#__PURE__*/React.createElement("span", null, title), /*#__PURE__*/React.createElement(Icon, {
+    name: "chevron-down",
+    size: 18
+  })), /*#__PURE__*/React.createElement("p", {
+    className: "sh-toc-title",
+    "aria-hidden": "true"
+  }, title), /*#__PURE__*/React.createElement("ol", {
+    className: "sh-toc-list",
+    id: listId
+  }, items.map(it => /*#__PURE__*/React.createElement("li", {
+    key: it.id,
+    "data-level": String(it.level || 2)
+  }, /*#__PURE__*/React.createElement("a", {
+    href: "#" + it.id,
+    "aria-current": current === it.id ? "true" : undefined,
+    onClick: e => {
+      setSeen(it.id);
+      if (onNavigate) onNavigate(it.id, e);
+    }
+  }, it.label)))));
+}
+Object.assign(__ds_scope, { TableOfContents });
+})(); } catch (e) { __ds_ns.__errors.push({ path: "components/editorial/TableOfContents.jsx", error: String((e && e.message) || e) }); }
 
 // components/editorial/TextLink.jsx
 try { (() => {
@@ -2271,6 +3647,7 @@ function TextLink({
   ...rest
 }) {
   return /*#__PURE__*/React.createElement(Button, _extends({
+    "data-ds-id": "editorial/TextLink",
     variant: "link",
     endIcon: arrow ? /*#__PURE__*/React.createElement(Icon, {
       name: "arrow-right",
@@ -2283,11 +3660,12 @@ Object.assign(__ds_scope, { TextLink });
 
 // components/editorial/Tile.jsx
 try { (() => {
-const { Media } = __ds_scope;
+const { Media, MetaRow } = __ds_scope;
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /* Replaces the white card on linen. Photograph and text sit directly on the ground —
-   no border, shadow or radius. Hover: the photograph scales to 1.02 inside its frame and
-   the title takes a hairline underline. The whole tile is one link. */
+   no border, shadow or radius. Order: photograph → title → meta row → text. Category and
+   duration live in the meta row BELOW the title, never above it. Hover: the photograph
+   scales to 1.02 inside its frame and the title takes a hairline underline. */
 const CSS = `
 .sh-tile{display:flex;flex-direction:column;gap:var(--space-5);min-width:0;color:inherit;text-decoration:none}
 .sh-tile[data-href]{cursor:pointer}
@@ -2295,7 +3673,8 @@ const CSS = `
 .sh-tile-body{display:flex;flex-direction:column;gap:var(--space-3);min-width:0}
 .sh-tile-title{margin:0;font:var(--type-item);color:var(--text-primary);text-wrap:balance}
 .sh-tile-title>span{background:linear-gradient(currentColor,currentColor) 0 100% / 0 1px no-repeat;transition:background-size var(--duration-base) var(--ease-out);padding-bottom:2px}
-.sh-tile-text{margin:0;font:var(--type-body-sm);color:var(--text-secondary);max-width:48ch}
+.sh-tile-body>.sh-meta{margin-top:calc(var(--space-1) * -1)}
+.sh-tile-text{margin:var(--space-1) 0 0;font:var(--type-body-sm);color:var(--text-secondary);max-width:48ch}
 .sh-tile-meta{margin:0;font:var(--type-caption);color:var(--text-muted);font-variant-numeric:tabular-nums}
 .sh-tile[data-size="lg"] .sh-tile-title{font:var(--type-title)}
 .sh-tile[data-size="lg"] .sh-tile-text{font:var(--type-body);max-width:56ch}
@@ -2321,7 +3700,6 @@ function Tile({
   src,
   alt = "",
   ratio = "4:3",
-  eyebrow,
   title,
   text,
   meta,
@@ -2335,14 +3713,20 @@ function Tile({
 }) {
   ensure();
   const interactive = !!(href || onClick);
-  const Tag = href ? "a" : interactive ? "a" : "div";
+  const Tag = interactive ? "a" : "div";
   const H = "h" + headingLevel;
   const figure = media || (src ? /*#__PURE__*/React.createElement(Media, {
     src: src,
     alt: alt,
     ratio: ratio
   }) : null);
+  const metaNode = meta == null || meta === false ? null : Array.isArray(meta) || typeof meta === "string" ? /*#__PURE__*/React.createElement(MetaRow, {
+    items: meta
+  }) : /*#__PURE__*/React.createElement("div", {
+    className: "sh-tile-meta"
+  }, meta);
   return /*#__PURE__*/React.createElement(Tag, _extends({
+    "data-ds-id": "editorial/Tile",
     className: "sh-tile",
     "data-size": size,
     "data-layout": layout,
@@ -2355,18 +3739,11 @@ function Tile({
     style: style
   }, rest), figure, /*#__PURE__*/React.createElement("div", {
     className: "sh-tile-body"
-  }, eyebrow ? /*#__PURE__*/React.createElement("p", {
-    className: "shantara-eyebrow",
-    style: {
-      margin: 0
-    }
-  }, eyebrow) : null, /*#__PURE__*/React.createElement(H, {
+  }, /*#__PURE__*/React.createElement(H, {
     className: "sh-tile-title"
-  }, /*#__PURE__*/React.createElement("span", null, title)), text ? /*#__PURE__*/React.createElement("p", {
+  }, /*#__PURE__*/React.createElement("span", null, title)), metaNode, text ? /*#__PURE__*/React.createElement("p", {
     className: "sh-tile-text"
-  }, text) : null, meta ? /*#__PURE__*/React.createElement("p", {
-    className: "sh-tile-meta"
-  }, meta) : null));
+  }, text) : null));
 }
 Object.assign(__ds_scope, { Tile });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/editorial/Tile.jsx", error: String((e && e.message) || e) }); }
@@ -2401,6 +3778,7 @@ function TimeTable({
   ensure();
   const H = "h" + headingLevel;
   return /*#__PURE__*/React.createElement("ol", _extends({
+    "data-ds-id": "editorial/TimeTable",
     className: "sh-time",
     style: style
   }, rest), rows.map((r, i) => /*#__PURE__*/React.createElement("li", {
@@ -2417,13 +3795,149 @@ function TimeTable({
 Object.assign(__ds_scope, { TimeTable });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/editorial/TimeTable.jsx", error: String((e && e.message) || e) }); }
 
+// components/sections/ArticleHeader.jsx
+try { (() => {
+const { Media, MetaRow } = __ds_scope;
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+/* The top of a single Insights article. No label above the title: breadcrumbs → h1 →
+   dek (lead) → meta row (category · date · read time) → a byline on a hairline (author
+   with a small portrait, and the medical reviewer) with an optional share slot → an
+   optional lead photograph with caption. Left-aligned to the article column (68ch body),
+   so it lines up with Prose; the photograph may run the full container width. */
+const CSS = `
+.sh-ahead{padding-block:calc(var(--space-12) + var(--section-y-sm)) var(--section-y-sm)}
+.sh-ahead-col{display:flex;flex-direction:column;gap:var(--stack-md);max-width:52rem;min-width:0}
+.sh-ahead-crumbs{margin-bottom:var(--space-5)}
+.sh-ahead-title{margin:0;font:var(--type-h1);color:var(--text-primary);max-width:24ch;text-wrap:balance}
+.sh-ahead-dek{margin:0;font:var(--type-lead);color:var(--text-secondary);max-width:60ch}
+.sh-ahead-by{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:var(--space-5) var(--space-8);margin-top:var(--space-4);padding-top:var(--space-5);border-top:var(--border-width) solid var(--rule-color)}
+.sh-ahead-people{display:flex;align-items:center;gap:var(--space-4);min-width:0}
+.sh-ahead-avatar{position:relative;flex:0 0 auto;width:48px;height:48px;overflow:hidden;background:color-mix(in srgb, var(--color-pearl-bush) 82%, var(--color-pine-tree));display:grid;place-items:center;font:var(--weight-regular) var(--text-sm)/1 var(--font-display);letter-spacing:var(--tracking-wide);color:color-mix(in srgb, var(--color-pine-tree) 60%, transparent)}
+.sh-ahead-avatar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top}
+.sh-ahead-lines{display:flex;flex-direction:column;gap:var(--space-1);min-width:0;font:var(--type-body-sm);color:var(--text-secondary)}
+.sh-ahead-lines strong{font-weight:var(--weight-medium);color:var(--text-primary)}
+.sh-ahead-lines a{color:inherit;text-decoration:none}
+.sh-ahead-lines a:hover strong{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+.sh-ahead-rev{font:var(--type-caption);color:var(--text-muted)}
+.sh-ahead-fig{margin:var(--stack-lg) 0 0}
+.sh-ahead-cap{margin-top:var(--space-3);font:var(--type-caption);color:var(--text-muted);max-width:68ch}
+@media (max-width:759.98px){.sh-ahead-fig{margin-inline:calc(-1 * var(--layout-gutter))}.sh-ahead-cap{padding-inline:var(--layout-gutter)}}
+`;
+function ensure() {
+  if (typeof document === "undefined" || document.getElementById("sh-ahead-css")) return;
+  const el = document.createElement("style");
+  el.id = "sh-ahead-css";
+  el.textContent = CSS;
+  document.head.appendChild(el);
+}
+function initials(name) {
+  const p = String(name || "").replace(/^(Dr\.?|Mr\.?|Ms\.?|Mrs\.?)\s+/i, "").split(/[\s.]+/).filter(Boolean);
+  return (p.length > 1 ? [p[0], p[p.length - 1]] : p).map(s => s[0]).join("").toUpperCase();
+}
+function Person({
+  p,
+  prefix
+}) {
+  const name = /*#__PURE__*/React.createElement("strong", null, p.name);
+  return /*#__PURE__*/React.createElement(React.Fragment, null, prefix, p.href ? /*#__PURE__*/React.createElement("a", {
+    href: p.href
+  }, name) : name, p.role ? /*#__PURE__*/React.createElement(React.Fragment, null, ", ", p.role) : null);
+}
+function ArticleHeader({
+  title,
+  dek,
+  breadcrumbs,
+  category,
+  date,
+  dateTime,
+  updated,
+  updatedDateTime,
+  readTime,
+  author,
+  reviewer,
+  share,
+  media,
+  src,
+  alt = "",
+  caption,
+  credit,
+  ratio = "16:9",
+  mobileRatio = "4:3",
+  ground = "merino",
+  titleAs = "h1",
+  style,
+  ...rest
+}) {
+  ensure();
+  const meta = [category ? typeof category === "object" ? category : {
+    label: category
+  } : null, date ? {
+    label: date,
+    dateTime
+  } : null, readTime || null];
+  const figure = media || (src ? /*#__PURE__*/React.createElement(Media, {
+    src: src,
+    alt: alt,
+    ratio: ratio,
+    mobileRatio: mobileRatio,
+    priority: true
+  }) : null);
+  const H = titleAs;
+  return /*#__PURE__*/React.createElement("header", _extends({
+    "data-ds-id": "sections/ArticleHeader",
+    className: "sh-ahead",
+    "data-ground": ground,
+    style: style
+  }, rest), /*#__PURE__*/React.createElement("div", {
+    className: "sh-container"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "sh-ahead-col"
+  }, breadcrumbs ? /*#__PURE__*/React.createElement("div", {
+    className: "sh-ahead-crumbs"
+  }, breadcrumbs) : null, /*#__PURE__*/React.createElement(H, {
+    className: "sh-ahead-title"
+  }, title), dek ? /*#__PURE__*/React.createElement("p", {
+    className: "sh-ahead-dek"
+  }, dek) : null, /*#__PURE__*/React.createElement(MetaRow, {
+    items: meta
+  }), author || reviewer || share ? /*#__PURE__*/React.createElement("div", {
+    className: "sh-ahead-by"
+  }, author || reviewer ? /*#__PURE__*/React.createElement("div", {
+    className: "sh-ahead-people"
+  }, author ? /*#__PURE__*/React.createElement("span", {
+    className: "sh-ahead-avatar",
+    "aria-hidden": "true"
+  }, author.src ? /*#__PURE__*/React.createElement("img", {
+    src: author.src,
+    alt: ""
+  }) : initials(author.name)) : null, /*#__PURE__*/React.createElement("div", {
+    className: "sh-ahead-lines"
+  }, author ? /*#__PURE__*/React.createElement("span", null, /*#__PURE__*/React.createElement(Person, {
+    p: author,
+    prefix: "By "
+  })) : null, reviewer || updated ? /*#__PURE__*/React.createElement("span", {
+    className: "sh-ahead-rev"
+  }, reviewer ? /*#__PURE__*/React.createElement(Person, {
+    p: reviewer,
+    prefix: "Medically reviewed by "
+  }) : null, reviewer && updated ? " · " : null, updated ? /*#__PURE__*/React.createElement(React.Fragment, null, "Updated ", /*#__PURE__*/React.createElement("time", {
+    dateTime: updatedDateTime
+  }, updated)) : null) : null)) : /*#__PURE__*/React.createElement("span", null), share ? /*#__PURE__*/React.createElement("div", null, share) : null) : null), figure ? /*#__PURE__*/React.createElement("figure", {
+    className: "sh-ahead-fig"
+  }, figure, caption || credit ? /*#__PURE__*/React.createElement("figcaption", {
+    className: "sh-ahead-cap"
+  }, caption, caption && credit ? " " : null, credit) : null) : null));
+}
+Object.assign(__ds_scope, { ArticleHeader });
+})(); } catch (e) { __ds_ns.__errors.push({ path: "components/sections/ArticleHeader.jsx", error: String((e && e.message) || e) }); }
+
 // components/sections/BandStatement.jsx
 try { (() => {
 const { PatternPanel } = __ds_scope;
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /* Deck slide 3. Solid Himalaya with the rosette band on one edge (30% of the surface,
-   cell = 15cqw so it is always band/2 and never under 130px). Gold eyebrow, Merino
-   Light statement, optional plain list. One per page at most — it is the page's accent.
+   cell = 15cqw so it is always band/2 and never under 130px). Merino Light statement
+   (no label above it), optional plain list. One per page at most — it is the page's accent.
    Under 880px the band disappears (PatternPanel's container query). */
 const CSS = `
 .sh-band-body{padding-block:var(--section-y)}
@@ -2446,6 +3960,7 @@ function BandStatement({
 }) {
   ensure();
   return /*#__PURE__*/React.createElement(PatternPanel, _extends({
+    "data-ds-id": "sections/BandStatement",
     tone: ground === "pine" ? "pine" : "olive",
     edge: edge,
     band: "30%",
@@ -2463,18 +3978,36 @@ Object.assign(__ds_scope, { BandStatement });
 
 // components/sections/ClosingCTA.jsx
 try { (() => {
-const { Media, Statement } = __ds_scope;
+const { Media, Statement, Icon } = __ds_scope;
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
-/* Deck slide 18. A full-bleed dark photograph (or the Pine ground when `src` is omitted)
-   with a statement, ONE Gold primary button and contact lines in small type. Ends every
-   marketing page. 72svh on desktop, content-height with a 520px floor on phones. */
+/* The closing call to action (deck slide 18) — ONLY for pages that otherwise have no CTA.
+   variant "photo": a full-bleed dark photograph, 72svh, statement bottom-left.
+   variant "ground": the same block on a flat ground (pine / himalaya / stone), content height.
+   variant "compact": a single-row band — title (+ sub) on the left, actions on the right.
+   Contact items render as one aligned row (every item the same 44px inline-flex box, so a
+   link and plain text share a baseline); they stack one per line under 520px. */
 const CSS = `
-.sh-close{position:relative;display:flex;align-items:flex-end;min-height:clamp(520px, 72svh, 860px);overflow:hidden;isolation:isolate}
+.sh-close{position:relative;isolation:isolate}
+.sh-close[data-variant="photo"]{display:flex;align-items:flex-end;min-height:clamp(520px, 72svh, 860px);overflow:hidden}
 .sh-close>.sh-media{position:absolute;inset:0;z-index:-1;aspect-ratio:auto;height:100%}
 .sh-close-body{width:100%;padding-block:var(--section-y)}
-.sh-close-contact{display:flex;flex-wrap:wrap;gap:0 var(--space-8);margin-top:var(--stack-lg);padding-top:var(--space-4);border-top:var(--border-width) solid var(--rule-color);font:var(--type-body-sm);color:var(--text-secondary)}
-.sh-close-contact a{display:inline-flex;align-items:center;min-height:var(--tap-min);color:inherit;text-decoration:none}
-@media (hover: hover) and (pointer: fine){.sh-close-contact a:hover{color:var(--text-primary)}}
+.sh-close[data-variant="compact"] .sh-close-body{padding-block:clamp(40px, 3vw + 28px, 72px)}
+.sh-close[data-variant="compact"] .sh-stmt{gap:var(--space-3)}
+.sh-close-row{display:flex;flex-direction:column;gap:var(--stack-md)}
+.sh-close-actions{margin-top:var(--space-3)}
+.sh-close-contact{display:flex;flex-wrap:wrap;align-items:center;gap:0 var(--space-8);margin:var(--stack-lg) 0 0;padding:var(--space-3) 0 0;list-style:none;border-top:var(--border-width) solid var(--rule-color);font:var(--type-body-sm);color:var(--text-secondary)}
+.sh-close-contact>*{display:inline-flex;align-items:center;gap:var(--space-3);min-height:var(--tap-min);line-height:1.3;margin:0}
+.sh-close-contact a{display:inline-flex;align-items:center;gap:var(--space-3);color:inherit;text-decoration:none;min-height:var(--tap-min)}
+.sh-close-contact [data-icon]{color:var(--text-brand)}
+.sh-close-contact a:focus-visible{outline:none;box-shadow:var(--ring-focus)}
+@media (hover: hover) and (pointer: fine){.sh-close-contact a:hover{color:var(--text-primary);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px}}
+@media (max-width:519.98px){.sh-close-contact{flex-direction:column;align-items:flex-start}}
+.sh-close[data-variant="compact"] .sh-close-contact{margin-top:var(--space-6)}
+@media (min-width:760px){
+  .sh-close[data-variant="compact"] .sh-close-row{flex-direction:row;align-items:center;justify-content:space-between;gap:var(--grid-gap) calc(var(--grid-gap) * 2)}
+  .sh-close[data-variant="compact"] .sh-close-row>.sh-stmt{flex:1 1 auto}
+  .sh-close[data-variant="compact"] .sh-close-actions{flex:0 0 auto;margin-top:0}
+}
 `;
 function ensure() {
   if (typeof document === "undefined" || document.getElementById("sh-close-css")) return;
@@ -2483,24 +4016,57 @@ function ensure() {
   el.textContent = CSS;
   document.head.appendChild(el);
 }
+function Contact({
+  contact
+}) {
+  if (!contact) return null;
+  if (!Array.isArray(contact)) return /*#__PURE__*/React.createElement("div", {
+    className: "sh-close-contact"
+  }, contact);
+  return /*#__PURE__*/React.createElement("ul", {
+    className: "sh-close-contact"
+  }, contact.map((c, i) => {
+    const o = typeof c === "string" ? {
+      label: c
+    } : c;
+    const inner = /*#__PURE__*/React.createElement(React.Fragment, null, o.icon ? /*#__PURE__*/React.createElement(Icon, {
+      name: o.icon,
+      size: 16
+    }) : null, /*#__PURE__*/React.createElement("span", null, o.label));
+    return /*#__PURE__*/React.createElement("li", {
+      key: i
+    }, o.href ? /*#__PURE__*/React.createElement("a", {
+      href: o.href
+    }, inner) : inner);
+  }));
+}
 function ClosingCTA({
+  variant,
+  ground = "pine",
   src,
   alt = "",
   position,
-  eyebrow,
   title,
   sub,
   action,
+  secondaryAction,
   contact,
+  titleAs = "h2",
   style,
   ...rest
 }) {
   ensure();
+  const v = variant || (src ? "photo" : "ground");
+  const g = v === "photo" ? "photo" : ground;
+  const acts = action || secondaryAction ? /*#__PURE__*/React.createElement(React.Fragment, null, action, secondaryAction) : null;
+  const compact = v === "compact";
   return /*#__PURE__*/React.createElement("section", _extends({
+    "data-ds-id": "sections/ClosingCTA",
     className: "sh-close",
-    "data-ground": src ? "photo" : "pine",
+    "data-variant": v,
+    "data-ground": g,
     style: style
-  }, rest), src ? /*#__PURE__*/React.createElement(Media, {
+  }, rest), v === "photo" && src ? /*#__PURE__*/React.createElement(Media, {
     src: src,
     alt: alt,
     ratio: "fill",
@@ -2510,13 +4076,19 @@ function ClosingCTA({
     className: "sh-close-body"
   }, /*#__PURE__*/React.createElement("div", {
     className: "sh-container"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "sh-close-row"
   }, /*#__PURE__*/React.createElement(Statement, {
-    eyebrow: eyebrow,
+    as: titleAs,
+    size: compact ? "h3" : "statement",
     sub: sub,
-    actions: action
-  }, title), contact ? /*#__PURE__*/React.createElement("div", {
-    className: "sh-close-contact"
-  }, contact) : null)));
+    measure: compact ? "32ch" : undefined
+  }, title), acts ? /*#__PURE__*/React.createElement("div", {
+    className: "sh-actions sh-close-actions",
+    "data-stack": "mobile"
+  }, acts) : null), /*#__PURE__*/React.createElement(Contact, {
+    contact: contact
+  }))));
 }
 Object.assign(__ds_scope, { ClosingCTA });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/sections/ClosingCTA.jsx", error: String((e && e.message) || e) }); }
@@ -2551,6 +4123,7 @@ function FormSplit({
 }) {
   ensure();
   return /*#__PURE__*/React.createElement("div", _extends({
+    "data-ds-id": "sections/FormSplit",
     className: "sh-fsplit",
     style: style
   }, rest), /*#__PURE__*/React.createElement("div", {
@@ -2565,11 +4138,11 @@ Object.assign(__ds_scope, { FormSplit });
 
 // components/sections/HeroFullBleed.jsx
 try { (() => {
-const { Media, Statement } = __ds_scope;
+const { Media, Statement, MetaRow } = __ds_scope;
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /* Deck slide 1. A photograph fills the screen (100svh, floor 560px), the transparent
    header sits over it, and the text block sits bottom-left inside a scrim that covers
-   all of it. Merino type, Light headline, one Gold primary button. `height="tall"` is
+   all of it. Merino type, Light headline, one Gold primary button. No label above the headline. `height="tall"` is
    the 72svh inner-page version with an h1-size headline. */
 const CSS = `
 .sh-hero{position:relative;display:flex;align-items:flex-end;min-height:clamp(560px, 100svh, 1080px);overflow:hidden;isolation:isolate}
@@ -2578,7 +4151,8 @@ const CSS = `
 .sh-hero>.sh-media{position:absolute;inset:0;z-index:-1;aspect-ratio:auto;height:100%}
 .sh-hero-body{width:100%;padding-block:calc(var(--space-12) + 24px) var(--section-y-sm)}
 .sh-hero-body .sh-stmt{max-width:min(100%, 44rem)}
-.sh-hero-meta{margin-top:var(--stack-md);font:var(--type-caption);letter-spacing:var(--tracking-wide);color:var(--text-secondary)}
+.sh-hero-meta{margin-top:var(--stack-md);font:var(--type-caption);color:var(--text-secondary)}
+.sh-hero-body .sh-meta{margin-top:var(--stack-md);color:var(--text-secondary)}
 `;
 function ensure() {
   if (typeof document === "undefined" || document.getElementById("sh-hero-css")) return;
@@ -2593,7 +4167,6 @@ function HeroFullBleed({
   alt = "",
   position,
   mobilePosition,
-  eyebrow,
   title,
   sub,
   actions,
@@ -2614,6 +4187,7 @@ function HeroFullBleed({
     mobilePosition: mobilePosition
   });
   return /*#__PURE__*/React.createElement("section", _extends({
+    "data-ds-id": "sections/HeroFullBleed",
     className: "sh-hero",
     "data-ground": "photo",
     "data-height": height,
@@ -2625,31 +4199,176 @@ function HeroFullBleed({
   }, /*#__PURE__*/React.createElement(Statement, {
     as: titleAs,
     size: height === "full" ? "display" : "h1",
-    eyebrow: eyebrow,
     sub: sub,
     actions: actions,
     measure: "20ch"
-  }, title), meta ? /*#__PURE__*/React.createElement("p", {
+  }, title), meta ? Array.isArray(meta) ? /*#__PURE__*/React.createElement(MetaRow, {
+    items: meta
+  }) : /*#__PURE__*/React.createElement("p", {
     className: "sh-hero-meta"
   }, meta) : null)));
 }
 Object.assign(__ds_scope, { HeroFullBleed });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/sections/HeroFullBleed.jsx", error: String((e && e.message) || e) }); }
 
+// components/sections/HeroSplit.jsx
+try { (() => {
+const { Media, Statement, MetaRow } = __ds_scope;
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+/* The OFFER hero, for programme and other detail pages. A photograph on one side that
+   runs to the screen edge and the full hero height; on the other side, on a flat ground,
+   breadcrumbs at the top and the h1, meta row (category · duration), one supporting line,
+   actions and optional facts, vertically centred.
+   ≥1000px: two columns (50/50, or 40/60 with split), text aligned to the page container
+   on its outer edge. <1000px: text first (clears the header), then the photograph full
+   width at `mobileRatio`; `mobileMediaFirst` reverses that. */
+const CSS = `
+.sh-hsplit{container-type:inline-size;position:relative}
+.sh-hsplit-grid{display:grid;grid-template-columns:minmax(0,1fr)}
+.sh-hsplit-media{position:relative;min-width:0}
+.sh-hsplit-media>.sh-media{aspect-ratio:var(--_mr,var(--media-ratio))}
+.sh-hsplit-text{min-width:0;display:flex;flex-direction:column;gap:var(--stack-lg);padding:calc(var(--space-12) + var(--section-y-sm)) var(--layout-gutter) var(--section-y-sm)}
+.sh-hsplit-main{display:flex;flex-direction:column;gap:var(--stack-lg);margin-block:auto}
+.sh-hsplit[data-mobile-first="true"] .sh-hsplit-media{order:-1}
+.sh-hsplit[data-mobile-first="true"] .sh-hsplit-text{padding-top:var(--section-y-sm)}
+.sh-hsplit-facts{padding-top:var(--space-5);border-top:var(--border-width) solid var(--rule-color)}
+@media (min-width:1000px){
+  .sh-hsplit{--_outer:max(var(--layout-gutter), (100cqw - var(--layout-max)) / 2)}
+  .sh-hsplit-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);min-height:var(--_minh,clamp(600px, 88svh, 920px))}
+  .sh-hsplit[data-split="40"] .sh-hsplit-grid{grid-template-columns:minmax(0,3fr) minmax(0,2fr)}
+  .sh-hsplit[data-split="60"] .sh-hsplit-grid{grid-template-columns:minmax(0,2fr) minmax(0,3fr)}
+  .sh-hsplit[data-side="start"][data-split="40"] .sh-hsplit-grid{grid-template-columns:minmax(0,2fr) minmax(0,3fr)}
+  .sh-hsplit[data-side="start"][data-split="60"] .sh-hsplit-grid{grid-template-columns:minmax(0,3fr) minmax(0,2fr)}
+  .sh-hsplit-media,.sh-hsplit[data-mobile-first="true"] .sh-hsplit-media{order:2}
+  .sh-hsplit[data-side="start"] .sh-hsplit-media{order:-1}
+  .sh-hsplit-media>.sh-media{position:absolute;inset:0;aspect-ratio:auto;height:100%}
+  .sh-hsplit-text,.sh-hsplit[data-mobile-first="true"] .sh-hsplit-text{padding-block:calc(var(--space-12) + var(--section-y-sm)) var(--section-y-sm)}
+  .sh-hsplit[data-side="end"] .sh-hsplit-text{padding-inline:var(--_outer) calc(var(--grid-gap) * 2.5)}
+  .sh-hsplit[data-side="start"] .sh-hsplit-text{padding-inline:calc(var(--grid-gap) * 2.5) var(--_outer)}
+}
+`;
+function ensure() {
+  if (typeof document === "undefined" || document.getElementById("sh-hsplit-css")) return;
+  const el = document.createElement("style");
+  el.id = "sh-hsplit-css";
+  el.textContent = CSS;
+  document.head.appendChild(el);
+}
+const MR = {
+  "4:3": "var(--media-ratio)",
+  "4:5": "var(--media-ratio-portrait)",
+  "3:2": "3 / 2",
+  "16:9": "var(--media-ratio-wide)",
+  "1:1": "1 / 1"
+};
+function HeroSplit({
+  media,
+  src,
+  alt = "",
+  position,
+  mobilePosition,
+  title,
+  sub,
+  actions,
+  meta,
+  breadcrumbs,
+  facts,
+  mediaSide = "end",
+  split = "50",
+  ground = "merino",
+  mobileRatio = "4:3",
+  mobileMediaFirst = false,
+  minHeight,
+  size = "h1",
+  titleAs = "h1",
+  measure = "18ch",
+  style,
+  ...rest
+}) {
+  ensure();
+  const figure = media || /*#__PURE__*/React.createElement(Media, {
+    src: src,
+    alt: alt,
+    ratio: "4:3",
+    position: position,
+    mobilePosition: mobilePosition,
+    priority: true
+  });
+  const vars = {
+    "--_mr": MR[mobileRatio] || mobileRatio
+  };
+  if (minHeight) vars["--_minh"] = minHeight;
+  const metaNode = meta ? Array.isArray(meta) || typeof meta === "string" ? /*#__PURE__*/React.createElement(MetaRow, {
+    items: meta
+  }) : meta : null;
+  return /*#__PURE__*/React.createElement("section", _extends({
+    "data-ds-id": "sections/HeroSplit",
+    className: "sh-hsplit",
+    "data-ground": ground,
+    "data-side": mediaSide,
+    "data-split": split,
+    "data-mobile-first": String(mobileMediaFirst),
+    style: {
+      ...vars,
+      ...style
+    }
+  }, rest), /*#__PURE__*/React.createElement("div", {
+    className: "sh-hsplit-grid"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "sh-hsplit-text"
+  }, breadcrumbs ? /*#__PURE__*/React.createElement("div", null, breadcrumbs) : null, /*#__PURE__*/React.createElement("div", {
+    className: "sh-hsplit-main"
+  }, /*#__PURE__*/React.createElement(Statement, {
+    as: titleAs,
+    size: size,
+    meta: metaNode,
+    sub: sub,
+    actions: actions,
+    measure: measure
+  }, title), facts ? /*#__PURE__*/React.createElement("div", {
+    className: "sh-hsplit-facts"
+  }, facts) : null)), /*#__PURE__*/React.createElement("div", {
+    className: "sh-hsplit-media"
+  }, figure)));
+}
+Object.assign(__ds_scope, { HeroSplit });
+})(); } catch (e) { __ds_ns.__errors.push({ path: "components/sections/HeroSplit.jsx", error: String((e && e.message) || e) }); }
+
 // components/sections/HeroStatement.jsx
 try { (() => {
-const { Statement } = __ds_scope;
+const { Statement, MetaRow, Media, PatternPanel } = __ds_scope;
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
-/* Deck slide 2. No photograph: a Merino (or Stone) ground with the eyebrow and a large
-   Light statement placed LOW, with open space above it. For inner pages that do not need
-   a picture — conditions, about, insights, booking. Breadcrumbs sit above the eyebrow. */
+/* The EDITORIAL hero (deck slide 2). Words lead; no full photograph. A Merino or Stone
+   ground, breadcrumbs, a large Light h1 placed low with open space above, one supporting
+   line and actions — closed by a hairline with an optional meta row beneath it
+   ("Reviewed by … · Updated …"). Presence without a label above the title:
+   - pattern: the rosette band on one edge (30% of the surface) — drops under 880px of
+     hero width, and the text re-aligns to the page container on the other side;
+   - src / aside: a small 4:5 image or a short fact list in a 4-column side column (≥1000px).
+   Stacks on phones: crumbs → title → sub → actions → image/aside → rule → meta. */
 const CSS = `
-.sh-hstmt{padding-block:calc(var(--space-12) + var(--section-y-sm)) var(--section-y-sm)}
-.sh-hstmt[data-tall="true"]{min-height:clamp(420px, 62svh, 720px);display:flex;align-items:flex-end}
-.sh-hstmt>.sh-container{width:100%}
-.sh-hstmt-crumbs{margin-bottom:var(--stack-lg)}
+.sh-hstmt{position:relative;display:flex;flex-direction:column}
+.sh-hstmt[data-tall="true"]{min-height:clamp(440px, 64svh, 760px)}
+.sh-hstmt>.sh-pp{flex:1 1 auto;display:flex;flex-direction:column}
+.sh-hstmt .sh-pp-body{flex:1 1 auto;display:flex;flex-direction:column}
+.sh-hstmt-inner{flex:1 1 auto;display:flex;flex-direction:column;justify-content:flex-end;padding-block:calc(var(--space-12) + var(--section-y-sm)) var(--section-y-sm)}
+.sh-hstmt-inner>.sh-container{width:100%;flex:1 1 auto;display:flex;flex-direction:column;justify-content:flex-end}
+.sh-hstmt-crumbs{margin-bottom:auto;padding-bottom:var(--stack-lg)}
+.sh-hstmt[data-tall="false"] .sh-hstmt-crumbs{margin-bottom:0}
 .sh-hstmt-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:var(--stack-lg);align-items:end}
-@media (min-width:1000px){.sh-hstmt-grid[data-aside="true"]{grid-template-columns:minmax(0,7fr) minmax(0,4fr);gap:var(--grid-gap) calc(var(--grid-gap) * 2)}}
+.sh-hstmt-side{display:flex;flex-direction:column;gap:var(--space-6);min-width:0}
+.sh-hstmt-side>.sh-media{max-width:min(100%, 360px)}
+.sh-hstmt-foot{margin-top:var(--stack-lg);padding-top:var(--space-4);border-top:var(--border-width) solid var(--rule-color);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:var(--space-3) var(--space-6)}
+.sh-hstmt-foot:empty{padding-top:0}
+@media (max-width:759.98px){.sh-hstmt-side>.sh-media{max-width:none}}
+@media (min-width:1000px){
+  .sh-hstmt-grid[data-aside="true"]{grid-template-columns:minmax(0,7fr) minmax(0,4fr);gap:var(--grid-gap) calc(var(--grid-gap) * 2)}
+  .sh-hstmt-side>.sh-media{max-width:none}
+}
+@container (min-width:880px){
+  .sh-hstmt[data-pattern="end"] .sh-hstmt-inner>.sh-container{max-width:calc(56rem + 2 * var(--layout-gutter));margin-inline:max(0px, (100cqw - var(--layout-max)) / 2 - var(--layout-gutter)) 0}
+  .sh-hstmt[data-pattern="start"] .sh-hstmt-inner>.sh-container{max-width:calc(56rem + 2 * var(--layout-gutter));margin-inline:0 max(0px, (100cqw - var(--layout-max)) / 2 - var(--layout-gutter))}
+}
 `;
 function ensure() {
   if (typeof document === "undefined" || document.getElementById("sh-hstmt-css")) return;
@@ -2659,12 +4378,18 @@ function ensure() {
   document.head.appendChild(el);
 }
 function HeroStatement({
-  eyebrow,
   title,
   sub,
   actions,
   breadcrumbs,
+  meta,
+  rule = true,
   aside,
+  media,
+  src,
+  alt = "",
+  ratio = "4:5",
+  pattern = false,
   ground = "merino",
   tall = true,
   size = "h1",
@@ -2674,26 +4399,54 @@ function HeroStatement({
   ...rest
 }) {
   ensure();
-  return /*#__PURE__*/React.createElement("section", _extends({
-    className: "sh-hstmt",
-    "data-ground": ground,
-    "data-tall": String(tall),
-    style: style
-  }, rest), /*#__PURE__*/React.createElement("div", {
+  const edge = pattern === true ? "end" : pattern || null;
+  const figure = media || (src ? /*#__PURE__*/React.createElement(Media, {
+    src: src,
+    alt: alt,
+    ratio: ratio,
+    priority: true
+  }) : null);
+  const hasSide = !!(figure || aside);
+  const metaNode = meta ? Array.isArray(meta) || typeof meta === "string" ? /*#__PURE__*/React.createElement(MetaRow, {
+    items: meta
+  }) : meta : null;
+  const inner = /*#__PURE__*/React.createElement("div", {
+    className: "sh-hstmt-inner"
+  }, /*#__PURE__*/React.createElement("div", {
     className: "sh-container"
   }, breadcrumbs ? /*#__PURE__*/React.createElement("div", {
     className: "sh-hstmt-crumbs"
   }, breadcrumbs) : null, /*#__PURE__*/React.createElement("div", {
     className: "sh-hstmt-grid",
-    "data-aside": aside ? "true" : "false"
+    "data-aside": hasSide ? "true" : "false"
   }, /*#__PURE__*/React.createElement(Statement, {
     as: titleAs,
     size: size,
-    eyebrow: eyebrow,
     sub: sub,
     actions: actions,
     measure: measure
-  }, title), aside ? /*#__PURE__*/React.createElement("div", null, aside) : null)));
+  }, title), hasSide ? /*#__PURE__*/React.createElement("div", {
+    className: "sh-hstmt-side"
+  }, figure, aside) : null), rule || metaNode ? /*#__PURE__*/React.createElement("div", {
+    className: "sh-hstmt-foot",
+    style: rule ? undefined : {
+      borderTop: 0
+    }
+  }, metaNode) : null));
+  return /*#__PURE__*/React.createElement("section", _extends({
+    "data-ds-id": "sections/HeroStatement",
+    className: "sh-hstmt",
+    "data-ground": ground,
+    "data-tall": String(tall),
+    "data-pattern": edge || undefined,
+    style: style
+  }, rest), edge ? /*#__PURE__*/React.createElement(PatternPanel, {
+    tone: ground === "stone" ? "pearl" : "merino",
+    edge: edge,
+    band: "30%",
+    scale: "15cqw",
+    "data-ds-id": "core/PatternPanel"
+  }, inner) : inner);
 }
 Object.assign(__ds_scope, { HeroStatement });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/sections/HeroStatement.jsx", error: String((e && e.message) || e) }); }
@@ -2744,6 +4497,7 @@ function IndexList({
   const H = "h" + headingLevel;
   const I = "h" + Math.min(6, headingLevel + 1);
   return /*#__PURE__*/React.createElement("div", _extends({
+    "data-ds-id": "sections/IndexList",
     className: "sh-index",
     style: style
   }, rest), groups.map(g => /*#__PURE__*/React.createElement("section", {
@@ -2808,7 +4562,6 @@ function ensure() {
 
 /* numerals: [{ value, label }] — two or three. */
 function NumeralsSplit({
-  eyebrow,
   title,
   sub,
   numerals = [],
@@ -2819,10 +4572,10 @@ function NumeralsSplit({
   ensure();
   const shown = numerals.slice(0, 3);
   return /*#__PURE__*/React.createElement("div", _extends({
+    "data-ds-id": "sections/NumeralsSplit",
     className: "sh-nsplit",
     style: style
   }, rest), /*#__PURE__*/React.createElement(Statement, {
-    eyebrow: eyebrow,
     sub: sub
   }, title), /*#__PURE__*/React.createElement("div", {
     className: "sh-nsplit-nums",
@@ -2851,6 +4604,7 @@ const CSS = `
 .sh-pano-cap{width:100%;padding-block:var(--section-y-sm)}
 .sh-pano-cap .sh-container{display:flex;flex-direction:column;gap:var(--space-4)}
 .sh-pano-title{margin:0;font:var(--type-title);color:var(--text-primary);max-width:26ch}
+.sh-pano-sub{margin:0;font:var(--type-body-sm);color:var(--text-secondary);max-width:52ch}
 @media (min-width:1000px){.sh-pano-title{font:var(--type-statement);max-width:24ch}}
 `;
 function ensure() {
@@ -2865,8 +4619,8 @@ function PanoramaCaption({
   alt = "",
   position,
   mobilePosition,
-  eyebrow,
   title,
+  sub,
   ratio = "21:9",
   mobileRatio = "4:5",
   headingLevel = 2,
@@ -2876,6 +4630,7 @@ function PanoramaCaption({
   ensure();
   const H = "h" + headingLevel;
   return /*#__PURE__*/React.createElement("section", _extends({
+    "data-ds-id": "sections/PanoramaCaption",
     className: "sh-pano",
     "data-ground": "photo",
     style: style
@@ -2887,18 +4642,15 @@ function PanoramaCaption({
     position: position,
     mobilePosition: mobilePosition,
     scrim: "hero"
-  }, title || eyebrow ? /*#__PURE__*/React.createElement("div", {
+  }, title || sub ? /*#__PURE__*/React.createElement("div", {
     className: "sh-pano-cap"
   }, /*#__PURE__*/React.createElement("div", {
     className: "sh-container"
-  }, eyebrow ? /*#__PURE__*/React.createElement("p", {
-    className: "shantara-eyebrow",
-    style: {
-      margin: 0
-    }
-  }, eyebrow) : null, title ? /*#__PURE__*/React.createElement(H, {
+  }, title ? /*#__PURE__*/React.createElement(H, {
     className: "sh-pano-title"
-  }, title) : null)) : null));
+  }, title) : null, sub ? /*#__PURE__*/React.createElement("p", {
+    className: "sh-pano-sub"
+  }, sub) : null)) : null));
 }
 Object.assign(__ds_scope, { PanoramaCaption });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/sections/PanoramaCaption.jsx", error: String((e && e.message) || e) }); }
@@ -2926,7 +4678,6 @@ function ensure() {
 
 /* people: [{ name, role, detail?, src? }] */
 function PeopleRow({
-  eyebrow,
   title,
   sub,
   people = [],
@@ -2937,10 +4688,10 @@ function PeopleRow({
 }) {
   ensure();
   return /*#__PURE__*/React.createElement("div", _extends({
+    "data-ds-id": "sections/PeopleRow",
     className: "sh-people",
     style: style
   }, rest), title ? /*#__PURE__*/React.createElement(Statement, {
-    eyebrow: eyebrow,
     sub: sub
   }, title) : null, /*#__PURE__*/React.createElement("div", {
     className: "sh-people-grid"
@@ -2952,6 +4703,126 @@ function PeopleRow({
 }
 Object.assign(__ds_scope, { PeopleRow });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/sections/PeopleRow.jsx", error: String((e && e.message) || e) }); }
+
+// components/sections/TileGrid.jsx
+try { (() => {
+const { Statement } = __ds_scope;
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+/* Deck slide 11. A heading row (statement + one text link on the right), then tiles.
+   layout "3": three across from 1000px. layout "feature": one large tile (7 columns) and
+   the rest stacked beside it (5 columns). layout "2": two across.
+   Never an uneven last row: on tablets (760–999px) an odd count makes the first tile span
+   both columns; on phones tiles stack. Keep counts to multiples of the column count. */
+const CSS = `
+.sh-tgrid{display:flex;flex-direction:column;gap:var(--stack-lg)}
+.sh-tgrid-head{display:flex;flex-direction:column;gap:var(--space-5)}
+.sh-tgrid-items{display:grid;grid-template-columns:minmax(0,1fr);gap:var(--space-10) var(--grid-gap)}
+.sh-tgrid-foot{margin:0;font:var(--type-body-sm);color:var(--text-secondary);max-width:var(--measure-body)}
+@media (min-width:760px){
+  .sh-tgrid-head{flex-direction:row;align-items:flex-end;justify-content:space-between;gap:var(--grid-gap)}
+  .sh-tgrid-head>:last-child:not(:first-child){flex:0 0 auto}
+  .sh-tgrid-items{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .sh-tgrid-items[data-odd="true"]>:first-child{grid-column:1/-1}
+}
+@media (min-width:1000px){
+  .sh-tgrid-items[data-layout="3"]{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .sh-tgrid-items[data-layout="3"][data-odd="true"]>:first-child{grid-column:auto}
+  .sh-tgrid-items[data-layout="2"][data-odd="true"]>:first-child{grid-column:1/-1}
+  .sh-tgrid-items[data-layout="feature"]{grid-template-columns:minmax(0,7fr) minmax(0,5fr);grid-auto-flow:dense}
+  .sh-tgrid-items[data-layout="feature"]>:first-child{grid-column:1;grid-row:1 / span var(--_rest,2)}
+  .sh-tgrid-items[data-layout="feature"]>:not(:first-child){grid-column:2}
+  .sh-tgrid-items[data-layout="feature"][data-odd="true"]>:first-child{grid-column:1}
+}
+`;
+function ensure() {
+  if (typeof document === "undefined" || document.getElementById("sh-tgrid-css")) return;
+  const el = document.createElement("style");
+  el.id = "sh-tgrid-css";
+  el.textContent = CSS;
+  document.head.appendChild(el);
+}
+function TileGrid({
+  title,
+  sub,
+  action,
+  layout = "3",
+  footnote,
+  children,
+  style,
+  ...rest
+}) {
+  ensure();
+  const items = React.Children.toArray(children).filter(Boolean);
+  return /*#__PURE__*/React.createElement("div", _extends({
+    "data-ds-id": "sections/TileGrid",
+    className: "sh-tgrid",
+    style: style
+  }, rest), title || action ? /*#__PURE__*/React.createElement("div", {
+    className: "sh-tgrid-head"
+  }, title ? /*#__PURE__*/React.createElement(Statement, {
+    sub: sub
+  }, title) : /*#__PURE__*/React.createElement("span", null), action ? /*#__PURE__*/React.createElement("div", null, action) : null) : null, /*#__PURE__*/React.createElement("div", {
+    className: "sh-tgrid-items",
+    "data-layout": layout,
+    "data-odd": String(items.length % 2 === 1),
+    style: {
+      "--_rest": String(Math.max(1, items.length - 1))
+    }
+  }, items), footnote ? /*#__PURE__*/React.createElement("p", {
+    className: "sh-tgrid-foot"
+  }, footnote) : null);
+}
+Object.assign(__ds_scope, { TileGrid });
+})(); } catch (e) { __ds_ns.__errors.push({ path: "components/sections/TileGrid.jsx", error: String((e && e.message) || e) }); }
+
+// components/sections/RelatedArticles.jsx
+try { (() => {
+const { TileGrid, Tile } = __ds_scope;
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+/* A TileGrid preset for the end of an article (and the Insights index "latest" row):
+   a heading, up to three article tiles with category · read time below each title, and
+   one link to the index. Two or three items — never one. */
+function RelatedArticles({
+  title = "Related reading",
+  articles = [],
+  action,
+  layout = "3",
+  icons = false,
+  headingLevel = 3,
+  style,
+  ...rest
+}) {
+  const shown = articles.slice(0, layout === "2" ? 2 : 3);
+  return /*#__PURE__*/React.createElement(TileGrid, _extends({
+    "data-ds-id": "sections/RelatedArticles",
+    title: title,
+    action: action,
+    layout: layout,
+    style: style
+  }, rest), shown.map((a, i) => /*#__PURE__*/React.createElement(Tile, {
+    key: (a.href || "") + i,
+    src: a.src,
+    alt: a.alt || "",
+    ratio: a.ratio || "3:2",
+    title: a.title,
+    href: a.href,
+    headingLevel: headingLevel,
+    meta: icons ? [a.category ? {
+      icon: "tag",
+      label: a.category
+    } : null, a.readTime ? {
+      icon: "clock",
+      label: a.readTime
+    } : null, a.date ? {
+      icon: "calendar-days",
+      label: a.date,
+      dateTime: a.dateTime
+    } : null] : [a.category, a.readTime || a.date],
+    text: a.text
+  })));
+}
+Object.assign(__ds_scope, { RelatedArticles });
+})(); } catch (e) { __ds_ns.__errors.push({ path: "components/sections/RelatedArticles.jsx", error: String((e && e.message) || e) }); }
 
 // components/sections/Section.jsx
 try { (() => {
@@ -2971,6 +4842,7 @@ function Section({
   ...rest
 }) {
   return /*#__PURE__*/React.createElement(Tag, _extends({
+    "data-ds-id": "sections/Section",
     className: "sh-section" + (className ? " " + className : ""),
     "data-ground": ground,
     "data-space": space === "md" ? undefined : space,
@@ -3059,6 +4931,7 @@ function SplitSection({
   };
   if (minHeight) vars["--_minh"] = minHeight;
   return /*#__PURE__*/React.createElement("section", _extends({
+    "data-ds-id": "sections/SplitSection",
     className: "sh-split",
     "data-ground": ground,
     "data-side": mediaSide,
@@ -3079,82 +4952,12 @@ function SplitSection({
 Object.assign(__ds_scope, { SplitSection });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/sections/SplitSection.jsx", error: String((e && e.message) || e) }); }
 
-// components/sections/TileGrid.jsx
-try { (() => {
-const { Statement } = __ds_scope;
-function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
-/* Deck slide 11. A heading row (statement + one text link on the right), then tiles.
-   layout "3": three across from 1000px. layout "feature": one large tile (7 columns) and
-   the rest stacked beside it (5 columns). layout "2": two across.
-   Never an uneven last row: on tablets (760–999px) an odd count makes the first tile span
-   both columns; on phones tiles stack. Keep counts to multiples of the column count. */
-const CSS = `
-.sh-tgrid{display:flex;flex-direction:column;gap:var(--stack-lg)}
-.sh-tgrid-head{display:flex;flex-direction:column;gap:var(--space-5)}
-.sh-tgrid-items{display:grid;grid-template-columns:minmax(0,1fr);gap:var(--space-10) var(--grid-gap)}
-.sh-tgrid-foot{margin:0;font:var(--type-body-sm);color:var(--text-secondary);max-width:var(--measure-body)}
-@media (min-width:760px){
-  .sh-tgrid-head{flex-direction:row;align-items:flex-end;justify-content:space-between;gap:var(--grid-gap)}
-  .sh-tgrid-head>:last-child:not(:first-child){flex:0 0 auto}
-  .sh-tgrid-items{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .sh-tgrid-items[data-odd="true"]>:first-child{grid-column:1/-1}
-}
-@media (min-width:1000px){
-  .sh-tgrid-items[data-layout="3"]{grid-template-columns:repeat(3,minmax(0,1fr))}
-  .sh-tgrid-items[data-layout="3"][data-odd="true"]>:first-child{grid-column:auto}
-  .sh-tgrid-items[data-layout="2"][data-odd="true"]>:first-child{grid-column:1/-1}
-  .sh-tgrid-items[data-layout="feature"]{grid-template-columns:minmax(0,7fr) minmax(0,5fr);grid-auto-flow:dense}
-  .sh-tgrid-items[data-layout="feature"]>:first-child{grid-column:1;grid-row:1 / span var(--_rest,2)}
-  .sh-tgrid-items[data-layout="feature"]>:not(:first-child){grid-column:2}
-  .sh-tgrid-items[data-layout="feature"][data-odd="true"]>:first-child{grid-column:1}
-}
-`;
-function ensure() {
-  if (typeof document === "undefined" || document.getElementById("sh-tgrid-css")) return;
-  const el = document.createElement("style");
-  el.id = "sh-tgrid-css";
-  el.textContent = CSS;
-  document.head.appendChild(el);
-}
-function TileGrid({
-  eyebrow,
-  title,
-  sub,
-  action,
-  layout = "3",
-  footnote,
-  children,
-  style,
-  ...rest
-}) {
-  ensure();
-  const items = React.Children.toArray(children).filter(Boolean);
-  return /*#__PURE__*/React.createElement("div", _extends({
-    className: "sh-tgrid",
-    style: style
-  }, rest), title || action ? /*#__PURE__*/React.createElement("div", {
-    className: "sh-tgrid-head"
-  }, title ? /*#__PURE__*/React.createElement(Statement, {
-    eyebrow: eyebrow,
-    sub: sub
-  }, title) : /*#__PURE__*/React.createElement("span", null), action ? /*#__PURE__*/React.createElement("div", null, action) : null) : null, /*#__PURE__*/React.createElement("div", {
-    className: "sh-tgrid-items",
-    "data-layout": layout,
-    "data-odd": String(items.length % 2 === 1),
-    style: {
-      "--_rest": String(Math.max(1, items.length - 1))
-    }
-  }, items), footnote ? /*#__PURE__*/React.createElement("p", {
-    className: "sh-tgrid-foot"
-  }, footnote) : null);
-}
-Object.assign(__ds_scope, { TileGrid });
-})(); } catch (e) { __ds_ns.__errors.push({ path: "components/sections/TileGrid.jsx", error: String((e && e.message) || e) }); }
-
 __ds_ns.Badge = __ds_scope.Badge;
 __ds_ns.Button = __ds_scope.Button;
 __ds_ns.Card = __ds_scope.Card;
 __ds_ns.Divider = __ds_scope.Divider;
+__ds_ns.ICON_GROUPS = __ds_scope.ICON_GROUPS;
+__ds_ns.ICON_NAMES = __ds_scope.ICON_NAMES;
 __ds_ns.Icon = __ds_scope.Icon;
 __ds_ns.IconButton = __ds_scope.IconButton;
 __ds_ns.Logo = __ds_scope.Logo;
@@ -3174,30 +4977,40 @@ __ds_ns.Accordion = __ds_scope.Accordion;
 __ds_ns.Breadcrumbs = __ds_scope.Breadcrumbs;
 __ds_ns.LanguageSelector = __ds_scope.LanguageSelector;
 __ds_ns.Tabs = __ds_scope.Tabs;
-__ds_ns.Eyebrow = __ds_scope.Eyebrow;
-__ds_ns.GroupedList = __ds_scope.GroupedList;
 __ds_ns.Media = __ds_scope.Media;
+__ds_ns.ArticleFigure = __ds_scope.ArticleFigure;
+__ds_ns.PortraitFrame = __ds_scope.PortraitFrame;
+__ds_ns.AuthorCard = __ds_scope.AuthorCard;
+__ds_ns.GroupedList = __ds_scope.GroupedList;
+__ds_ns.MetaRow = __ds_scope.MetaRow;
 __ds_ns.NumberedSteps = __ds_scope.NumberedSteps;
 __ds_ns.Numeral = __ds_scope.Numeral;
+__ds_ns.Pagination = __ds_scope.Pagination;
 __ds_ns.PlainList = __ds_scope.PlainList;
-__ds_ns.PortraitFrame = __ds_scope.PortraitFrame;
+__ds_ns.Prose = __ds_scope.Prose;
 __ds_ns.QuoteBlock = __ds_scope.QuoteBlock;
+__ds_ns.ReviewedBy = __ds_scope.ReviewedBy;
+__ds_ns.ShareBar = __ds_scope.ShareBar;
 __ds_ns.SpecTable = __ds_scope.SpecTable;
 __ds_ns.Statement = __ds_scope.Statement;
+__ds_ns.TableOfContents = __ds_scope.TableOfContents;
 __ds_ns.TextLink = __ds_scope.TextLink;
 __ds_ns.Tile = __ds_scope.Tile;
 __ds_ns.TimeTable = __ds_scope.TimeTable;
+__ds_ns.ArticleHeader = __ds_scope.ArticleHeader;
 __ds_ns.BandStatement = __ds_scope.BandStatement;
 __ds_ns.ClosingCTA = __ds_scope.ClosingCTA;
 __ds_ns.FormSplit = __ds_scope.FormSplit;
 __ds_ns.HeroFullBleed = __ds_scope.HeroFullBleed;
+__ds_ns.HeroSplit = __ds_scope.HeroSplit;
 __ds_ns.HeroStatement = __ds_scope.HeroStatement;
 __ds_ns.IndexList = __ds_scope.IndexList;
 __ds_ns.NumeralsSplit = __ds_scope.NumeralsSplit;
 __ds_ns.PanoramaCaption = __ds_scope.PanoramaCaption;
 __ds_ns.PeopleRow = __ds_scope.PeopleRow;
+__ds_ns.TileGrid = __ds_scope.TileGrid;
+__ds_ns.RelatedArticles = __ds_scope.RelatedArticles;
 __ds_ns.Section = __ds_scope.Section;
 __ds_ns.SplitSection = __ds_scope.SplitSection;
-__ds_ns.TileGrid = __ds_scope.TileGrid;
 
 })();

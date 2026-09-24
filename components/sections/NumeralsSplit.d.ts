@@ -1,7 +1,6 @@
 import * as React from "react";
 
 export interface NumeralsSplitProps extends React.HTMLAttributes<HTMLDivElement> {
-  eyebrow?: React.ReactNode;
   title: React.ReactNode;
   sub?: React.ReactNode;
   /** Two or three figures from content/site.json `stats`. A fourth is dropped. */

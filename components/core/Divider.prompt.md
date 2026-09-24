@@ -1,4 +1,4 @@
-Hairline separator, optionally with a centred eyebrow label.
+Hairline separator, optionally with a centred caption label (normal case, muted — never an uppercase eyebrow).
 
 ```jsx
 <Divider />

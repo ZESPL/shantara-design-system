@@ -3,7 +3,7 @@ A full-width photograph with a short caption bottom-left and no button — the p
 ```jsx
 <PanoramaCaption
   src="/assets/photos/valley.jpg" alt="The Chennamangallur valley from the hilltop"
-  eyebrow="The setting" title="Overlooking the Chennamangallur valley"
+  title="Overlooking the Chennamangallur valley"
 />
 ```
 

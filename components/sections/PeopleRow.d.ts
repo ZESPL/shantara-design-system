@@ -11,7 +11,6 @@ export interface Person {
 }
 
 export interface PeopleRowProps extends React.HTMLAttributes<HTMLDivElement> {
-  eyebrow?: React.ReactNode;
   title?: React.ReactNode;
   sub?: React.ReactNode;
   /** Two to four people, each rendered as a <PortraitFrame/>. */

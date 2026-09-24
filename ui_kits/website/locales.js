@@ -165,7 +165,11 @@
     booking: "book-consultation",
     consultation: "book-consultation",
     tariffs: "tariffs",
+    /* Single Insights article. Navigate with "article:<slug>"; bare "article" opens the sample. */
+    article: "insights/how-meals-are-planned",
   };
+
+  const ARTICLE_PREFIX = "insights/";
 
   const VIEW_FROM_PATH = {
     "": "home",
@@ -512,6 +516,31 @@
     };
   }
 
+  /* LocalBusiness / Organization node. NAP name is always "Shantara Naturopathy Retreat"
+     (copy/naming-and-nap.md); one telephone for calls and WhatsApp. */
+  function organizationSchema(options) {
+    const opts = options || {};
+    const site = opts.site || {};
+    const origin = String(opts.origin || "https://shantara.life").replace(/\/$/, "");
+    const place = site.place || {};
+    return {
+      "@context": "https://schema.org",
+      "@type": (site.schema_defaults && site.schema_defaults.type) || "LocalBusiness",
+      "@id": organizationId(origin),
+      name: site.business_name || "Shantara Naturopathy Retreat",
+      url: origin + "/",
+      telephone: (site.phone && site.phone[0]) || "+91 9553 700 100",
+      email: site.email || "heal@shantara.life",
+      parentOrganization: site.parent_institution ? { "@type": "Organization", name: site.parent_institution } : undefined,
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: place.locality || "Kozhikode",
+        addressRegion: place.region || "Kerala",
+        addressCountry: place.country || "IN",
+      },
+    };
+  }
+
   function entityId(origin, kind, id) {
     return String(origin || "https://shantara.life").replace(/\/$/, "") + "/#" + kind + "/" + id;
   }
@@ -659,18 +688,29 @@
     return rec;
   }
 
-  function kitViewPath(view) {
-    return KIT_VIEWS[view] != null ? KIT_VIEWS[view] : String(view || "");
+  function kitViewPath(view, slug) {
+    const v = String(view || "");
+    if (v === "article" && slug) return ARTICLE_PREFIX + slug;
+    if (v.indexOf("article:") === 0) return ARTICLE_PREFIX + v.slice(8);
+    return KIT_VIEWS[v] != null ? KIT_VIEWS[v] : v;
+  }
+
+  /* "insights/<slug>" → the article view (slug from articleSlugFromPath). */
+  function articleSlugFromPath(rest) {
+    const key = String(rest || "").replace(/^\/+|\/+$/g, "");
+    const m = key.match(/^insights\/([a-z0-9-]+)$/);
+    return m ? m[1] : null;
   }
 
   function kitViewFromPath(rest) {
     const key = String(rest || "").replace(/^\/+|\/+$/g, "");
+    if (articleSlugFromPath(key)) return "article";
     return VIEW_FROM_PATH[key] || (key ? null : "home");
   }
 
-  function kitHash(locale, view) {
+  function kitHash(locale, view, slug) {
     const rec = localeRecord(locale) || LOCALES[DEFAULT_LOCALE];
-    const rest = kitViewPath(view);
+    const rest = kitViewPath(view, slug);
     return rest ? "#/" + rec.code + "/" + rest : "#/" + rec.code + "/";
   }
 
@@ -680,14 +720,15 @@
     if (parsed.isRoot || !parsed.locale) {
       return { locale: DEFAULT_LOCALE, view: "home", redirect: kitHash(DEFAULT_LOCALE, "home") };
     }
+    const slug = articleSlugFromPath(parsed.rest);
     if (!isEnabled(parsed.locale)) {
-      return { locale: DEFAULT_LOCALE, view: kitViewFromPath(parsed.rest) || "home", redirect: kitHash(DEFAULT_LOCALE, kitViewFromPath(parsed.rest) || "home") };
+      return { locale: DEFAULT_LOCALE, view: kitViewFromPath(parsed.rest) || "home", slug, redirect: kitHash(DEFAULT_LOCALE, kitViewFromPath(parsed.rest) || "home", slug) };
     }
     const view = kitViewFromPath(parsed.rest);
     if (!view) {
       return { locale: parsed.locale, view: "home", redirect: kitHash(parsed.locale, "home") };
     }
-    return { locale: parsed.locale, view, redirect: null };
+    return { locale: parsed.locale, view, slug, redirect: null };
   }
 
   return {
@@ -745,6 +786,8 @@
     applyDocumentLocale,
     kitViewPath,
     kitViewFromPath,
+    articleSlugFromPath,
+    organizationSchema,
     kitHash,
     parseKitHash,
   };

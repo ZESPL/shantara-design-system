@@ -79,4 +79,4 @@ Do not rewrite this kit into Astro “because the stack says so.” Implement pr
 
 ## Change control
 
-To change a row in the stack table: record the reason, confirm it does not fight [§2 Operating principles](SKILL.md#2-operating-principles) or [What not to build](skill-qa.md#what-not-to-build), then update this file in the same change that introduces the dependency.
+To change a row in the stack table: record the reason, confirm it does not fight [§2 Operating principles](SKILL.md#section-2) or [What not to build](skill-qa.md#what-not-to-build), then update this file in the same change that introduces the dependency.

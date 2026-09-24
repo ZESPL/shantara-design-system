@@ -18,6 +18,7 @@ export function Logo({ mark = "full", tone = "dark", height, assetBase, style, .
     <img
       src={`${base}/${FILE[mark] || "logo"}-${tone}.svg`}
       alt="Shantara"
+      data-ds-id="core/Logo"
       style={{ height: typeof h === "number" ? h + "px" : h, width: "auto", display: "block", ...style }}
       {...rest}
     />

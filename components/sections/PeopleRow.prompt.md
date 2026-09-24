@@ -2,7 +2,6 @@ A statement, then two to four doctors in the same 4:5 portrait framing (deck sli
 
 ```jsx
 <PeopleRow
-  eyebrow="Our doctors"
   title="Your programme is planned by our doctors."
   people={[
     { name: "Dr. P.A. Kareem", role: "Founder, Chairman & Chief Naturopathy Consultant", detail: "Government of India-certified Naturopathy Practitioner" },

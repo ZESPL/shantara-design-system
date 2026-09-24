@@ -1,20 +1,30 @@
-Ends every marketing page: a full-bleed dark photograph (or Pine) with a statement, one Gold primary button and contact lines (deck slide 18).
+The closing call to action (deck slide 18). **Use ClosingCTA only on pages that otherwise have no CTA** — if the page already has a hero action, a form or a booking block, end it without one. At most one per page, always last before the footer.
 
 ```jsx
 <ClosingCTA
   src="/assets/photos/exterior-entrance-dusk-lit-canopy.jpg" alt="The entrance at dusk"
-  eyebrow="Book a Consultation"
   title="A stay is confirmed after a doctor has spoken with you."
   sub="Share your name and a number we can reach. Our team will contact you to arrange a consultation."
   action={<Button size="lg">Book a Consultation</Button>}
-  contact={<>
-    <a href="tel:+919553600100">+91 9553 600 100</a>
-    <a href="mailto:heal@shantara.life">heal@shantara.life</a>
-    <span>Kozhikode (Calicut), Kerala</span>
-  </>}
+  secondaryAction={<TextLink href="/en/programs">View programmes</TextLink>}
+  contact={[
+    { icon: "phone", label: "+91 9553 700 100", href: "tel:+919553700100" },
+    { icon: "mail", label: "heal@shantara.life", href: "mailto:heal@shantara.life" },
+    { icon: "map-pin", label: "Kozhikode (Calicut), Kerala" },
+  ]}
 />
+
+<ClosingCTA variant="compact" ground="stone" title="Questions about a programme?"
+  action={<Button>Book a Consultation</Button>} />
 ```
 
-**Content.** One button, labelled with the site's primary CTA (“Book a Consultation”). Contact lines come from `content/site.json` — phone, email, place. No rates, no second button. Without `src` the section paints the Pine ground, which is right for pages that already carry several photographs.
+**Variants.**
+- `photo` — immersive end for long marketing pages (home, experience). Dark, quiet frame; 72svh.
+- `ground` — `pine` (default), `himalaya` or `stone`; for pages that already carry several photographs.
+- `compact` — a single band: title (h3 size) and optional sub on the left, actions on the right; for articles, the insights index, legal and utility pages.
 
-**Responsive.** Phone: content-height with a 520px floor, the statement bottom-left, the button full width, contact lines wrapping one per line. Desktop: 72svh (520–860px), the statement inside the 1240px container over a scrim that covers the whole text block. Contact lines sit above a hairline and wrap as the width allows.
+**Content.** No eyebrow. One primary button labelled with the site's primary CTA (“Book a Consultation”); `secondaryAction` optional and quieter. `sub` optional. Contact is optional and comes from `content/site.json`: one number for calls and WhatsApp (+91 9553 700 100), heal@shantara.life, the place. No rates.
+
+**Contact row.** Pass items, not loose inline elements: every item is the same 44px inline-flex box, so links and plain text share a baseline; icons are optional per item (all or none). One row on wide screens, wrapping as needed; one per line under 520px.
+
+**Responsive.** Photo: content height with a 520px floor on phones, 72svh (520–860px) on desktop, statement bottom-left inside a full scrim. Ground: content height, section padding. Compact: stacks under 760px (actions full width under 520px), one row from 760px.

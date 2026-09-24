@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Shantara design system</title>
-  <meta name="description" content="Notes, colour, type, logo, pattern, components and the two UI kits for Shantara Naturopathy.">
+  <meta name="description" content="Notes, colour, type, logo, pattern, components and the two UI kits for Shantara Naturopathy Retreat.">
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#F4F0E6">
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2D2926">
   <link rel="icon" href="assets/icon-olive.svg" type="image/svg+xml">
@@ -12,78 +12,47 @@
   <link rel="stylesheet" href="catalog.css">
 </head>
 <body class="catalog" data-view="home">
-  <a class="skip" href="#main">Skip to content</a>
+  <a class="ds-skip" href="#dsp-main">Skip to content</a>
 
-  <header class="ds-chrome top">
-    <div class="top-start">
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav" data-nav-toggle>
-        Browse
-      </button>
-      <a class="brand" href="#/" data-home>
-        <img src="assets/wordmark-dark.svg" alt="Shantara" height="16">
-        <span class="brand-rule" aria-hidden="true"></span>
-        <span class="brand-label">Design system</span>
-      </a>
-    </div>
-    <div class="top-end">
-      <div class="dir-toggle" role="group" aria-label="Reading direction" hidden>
-        <button type="button" data-dir="ltr" aria-pressed="true">LTR</button>
-        <button type="button" data-dir="rtl" aria-pressed="false">RTL</button>
+  <section class="home" data-panel="home">
+    <div class="hero shantara-pattern" data-tone="dark">
+      <span class="shantara-pattern-band" data-edge="right" aria-hidden="true"></span>
+      <div class="hero-copy">
+        <div class="hero-inner">
+          <h1>Design system</h1>
+          <p class="hero-lead">Notes, colour, type, logo, pattern, components and the two UI kits. Browse it here, or copy this folder into another repo as the design system.</p>
+          <p class="hero-meta" data-home-meta></p>
+        </div>
       </div>
-      <a class="btn top-open" data-view-open data-top-open href="#" target="_blank" rel="noopener">Open note</a>
-      <label class="search">
-        <span class="visually-hidden">Search cards</span>
-        <input type="search" placeholder="Search notes, colour, type, components" autocomplete="off" data-search>
-      </label>
     </div>
-  </header>
+    <div class="catalog-list" data-catalog></div>
+    <p class="empty" data-empty hidden>Nothing matches that search.</p>
+  </section>
 
-  <div class="shell">
-    <div class="nav-backdrop" data-nav-close hidden></div>
-    <nav class="nav" id="nav" aria-label="Design system">
-      <p class="nav-count" data-nav-count></p>
-      <div data-nav-tree></div>
-    </nav>
-
-    <main class="main" id="main">
-      <section class="home" data-panel="home">
-        <div class="hero shantara-pattern" data-tone="dark">
-          <span class="shantara-pattern-band" data-edge="right" aria-hidden="true"></span>
-          <div class="hero-copy">
-            <div class="hero-inner">
-              <span class="shantara-eyebrow" style="color: var(--color-gold-crayola)">Shantara Naturopathy</span>
-              <h1>Design system</h1>
-              <p class="hero-lead">Notes, colour, type, logo, pattern, components and the two UI kits. Browse it here, or copy this folder into another repo as the design system.</p>
-              <p class="hero-meta" data-home-meta></p>
+  <section class="viewer" data-panel="viewer" hidden>
+    <header class="ds-page-head viewer-head">
+      <div class="ds-page-head-inner">
+        <div class="viewer-title-row">
+          <h1 data-view-name></h1>
+          <div class="viewer-actions">
+            <div class="dir-toggle" role="group" aria-label="Reading direction" hidden>
+              <button type="button" data-dir="ltr" aria-pressed="true">LTR</button>
+              <button type="button" data-dir="rtl" aria-pressed="false">RTL</button>
             </div>
+            <a class="btn btn-ghost" data-view-open href="#" target="_blank" rel="noopener">Open full page</a>
           </div>
         </div>
-        <div class="catalog-list" data-catalog></div>
-      </section>
+        <p class="ds-page-lead" data-view-sub></p>
+        <p class="ds-handbook-meta" data-view-meta></p>
+      </div>
+    </header>
+    <div class="viewer-body">
+      <div data-view-toolbar></div>
+      <iframe class="frame" data-frame title="Selected card" allow="clipboard-write"></iframe>
+    </div>
+  </section>
 
-      <section class="viewer" data-panel="viewer" hidden>
-        <header class="ds-page-head viewer-head">
-          <p class="shantara-eyebrow" data-view-group></p>
-          <div class="viewer-title-row">
-            <h1 data-view-name></h1>
-            <div class="viewer-actions">
-              <a class="btn btn-ghost" data-view-open href="#" target="_blank" rel="noopener">Open full page</a>
-              <span class="viewport-pill" data-view-size></span>
-            </div>
-          </div>
-          <p class="viewer-sub" data-view-sub></p>
-        </header>
-        <div class="stage" data-stage>
-          <div class="frame-wrap" data-frame-wrap>
-            <iframe class="frame" data-frame title="Selected card" allow="clipboard-write"></iframe>
-          </div>
-        </div>
-      </section>
-
-      <p class="empty" data-empty hidden>No cards match that search.</p>
-    </main>
-  </div>
-
+  <script src="portal.js" data-mode="catalog"></script>
   <script src="catalog.js"></script>
 </body>
 </html>

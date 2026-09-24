@@ -1,7 +1,6 @@
 import * as React from "react";
 
 export interface TileGridProps extends React.HTMLAttributes<HTMLDivElement> {
-  eyebrow?: React.ReactNode;
   title?: React.ReactNode;
   sub?: React.ReactNode;
   /** One <TextLink/>, right of the heading from 760px. */

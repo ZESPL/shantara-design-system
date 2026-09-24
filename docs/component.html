@@ -1,6 +1,4 @@
-<!-- Component handbook host — open with ?c=Button (or any component name).
-     Use the extensionless URL (docs/component?c=Button): static servers that
-     strip .html also drop the query string on redirect. -->
+<!-- Component page host — open with component.html?c=Button (any component name). -->
 <!doctype html>
 <html lang="en">
 <head>
@@ -10,77 +8,28 @@
   <link rel="icon" href="../assets/icon-olive.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../styles.css">
   <link rel="stylesheet" href="doc.css">
-  <style>
-    .ds-specimen-frame{
-      width:100%;
-      min-height:280px;
-      height:320px;
-      border:1px solid var(--border-subtle);
-      border-radius:var(--radius-card);
-      background:var(--surface-page);
-      margin:0 0 var(--space-8);
-    }
-    .ds-component-families{
-      display:flex;
-      flex-wrap:wrap;
-      gap:var(--space-2);
-      margin:0 0 var(--space-6);
-    }
-    .ds-component-families a{
-      font-size:var(--text-xs);
-      color:var(--text-secondary);
-      text-decoration:none;
-      padding:6px 10px;
-      border-radius:var(--radius-sm);
-      border:1px solid var(--border-subtle);
-    }
-    .ds-component-families a[aria-current="page"]{
-      color:var(--text-primary);
-      border-color:var(--border-control);
-      background:var(--surface-raised);
-    }
-    .ds-component-siblings{
-      display:flex;
-      flex-wrap:wrap;
-      gap:8px 14px;
-      margin:0 0 var(--space-7);
-      padding:0;
-      list-style:none;
-    }
-    .ds-component-siblings a{
-      font-size:var(--text-sm);
-      color:var(--text-secondary);
-      text-decoration:none;
-    }
-    .ds-component-siblings a[aria-current="page"]{
-      color:var(--text-primary);
-      text-decoration:underline;
-      text-underline-offset:4px;
-    }
-  </style>
 </head>
-<body class="ds-doc ds-handbook">
+<body class="ds-doc ds-handbook ds-component">
   <a class="ds-skip" href="#component">Skip to content</a>
   <header class="ds-handbook-mast">
     <div class="ds-handbook-mast-inner">
-      <p class="shantara-eyebrow" data-component-family>Components</p>
       <h1 data-component-title>Component</h1>
-      <p class="ds-handbook-lead" data-component-lead>Prompt and live specimen for one design-system control.</p>
+      <p class="ds-handbook-lead" data-component-lead>Prompt and live specimen for one design-system component.</p>
       <p class="ds-handbook-meta">
+        <span data-component-family>Components</span>
         <span data-component-path></span>
-        <span>Family overview stays on the family card</span>
       </p>
     </div>
   </header>
+  <section class="ds-component-preview" aria-label="Live specimen">
+    <div data-stage-toolbar></div>
+    <iframe class="ds-specimen-frame" title="Live specimen" data-specimen allow="clipboard-write"></iframe>
+  </section>
   <div class="ds-handbook-shell">
     <nav class="ds-handbook-toc" aria-label="Component sections" data-toc></nav>
-    <div class="ds-doc-inner" id="component">
-      <nav class="ds-component-families" aria-label="Component families" data-family-nav></nav>
-      <ul class="ds-component-siblings" aria-label="Components in this family" data-sibling-nav></ul>
-      <iframe class="ds-specimen-frame" title="Live specimen" data-specimen src="about:blank"></iframe>
-      <article data-component-md></article>
-    </div>
+    <article class="ds-doc-inner" id="component" data-component-md></article>
   </div>
+  <script src="../portal.js"></script>
   <script src="doc.js"></script>
 </body>
 </html>

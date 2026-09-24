@@ -2,9 +2,8 @@ A statement beside two or three large Light numerals (deck slide 8).
 
 ```jsx
 <NumeralsSplit
-  eyebrow="Shantara in numbers"
   title="Doctor-led naturopathy, planned around your assessment."
-  numerals={[{ value: "25,000+", label: "guests since 2000" }, { value: "4", label: "hilltop acres" }]}
+  numerals={[{ value: "25,000+", label: "guests since 2000" }, { value: "13", label: "therapies" }]}
 />
 ```
 
