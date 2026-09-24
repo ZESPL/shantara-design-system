@@ -39,7 +39,7 @@ Developer-level components, not CMS sections. Recommended:
 
 Keep design tokens centralized: color, typography, spacing, width, radius, shadows, borders, animation, breakpoints.
 
-Do not use arbitrary spacing or one-off styling on individual pages. In this repo, primitives live in `components/` and tokens in `tokens/`.
+Do not use arbitrary spacing or one-off styling on individual pages. In this repo, primitives live in `components/` (editorial building blocks in `components/editorial/`) and tokens in `tokens/`. Semantic sections are built from `components/sections/`. Every section sits in `Section`, which sets one ground, the section rhythm and the container. Design rules and the component map: [skill-premium.md](skill-premium.md#design-system-rules-from-the-brand-deck).
 
 ### Visual direction
 
@@ -90,6 +90,15 @@ Build multiple intentionally designed hero components. These should be separate 
 
 Do not create a single Hero with 30 props. Do not create 12 hero variants.
 
+| Hero | Component |
+| --- | --- |
+| Immersive | `HeroFullBleed` (100svh, Display headline, one primary button) |
+| Editorial | `HeroStatement` (Merino or Stone, no photograph, Light statement placed low) |
+| Program | `HeroFullBleed height="tall"` (72svh, h1-size headline) + a booking panel directly below |
+| Compact / Utility | `HeroStatement` (short title, optional breadcrumb) |
+
+The header overlays every page. On `HeroStatement` it sits on the Merino/Stone ground.
+
 ### Immersive Hero
 
 Purpose: emotion; sense of place; brand positioning; strong photography/video.
@@ -134,6 +143,26 @@ Bad CMS sections: Spacer; Row; Column; Heading; Paragraph; Button; 50/50 layout.
 
 Editors should select **what the section means**, not manually recreate layout mechanics.
 
+### Library → components
+
+| Section | Component |
+| --- | --- |
+| Section Intro | `Statement` inside `Section` |
+| Media + Content | `SplitSection` |
+| Full-width Media | `PanoramaCaption` |
+| Statement band | `BandStatement` — at most one per page |
+| Card Collection | `TileGrid` / `Tile` |
+| A listing too long for photographs | `IndexList` |
+| Feature Grid, Key Facts | `PlainList`, `GroupedList` |
+| Stats / Proof Strip | `NumeralsSplit` |
+| Process / Steps | `NumberedSteps` |
+| Timeline | `TimeTable` |
+| Table | `SpecTable` |
+| Expert / Doctor | `PeopleRow` / `PortraitFrame` |
+| Expert Quote, Testimonial | `QuoteBlock` |
+| FAQ | `Accordion` |
+| Lead / Consultation CTA | `ClosingCTA` (page end), `FormSplit` (the form) |
+
 ### Section Intro
 
 Eyebrow; heading; short introduction. Do not use it as a substitute for long content.
@@ -148,15 +177,21 @@ When text and media need equal emphasis. Limited variants: media at **inline sta
 
 Fields: optional eyebrow; title; content; image/video; optional CTA.
 
+Component: `SplitSection`. From 1000px the photograph runs to the screen edge on one side (`mediaSide` start or end; `split` 50/50 or 40/60). Under 1000px the photograph goes first, full width at `mobileRatio`, then the text.
+
 ### Full-width Media
 
 Retreat photography; facility visual; landscape; meaningful video. May optionally include a short caption.
+
+Component: `PanoramaCaption`. 21:9 on desktop, `mobileRatio` (default 4:5) on phones. Caption bottom-left inside a scrim. No button.
 
 ### Card Collection
 
 Collections of entities: conditions; programs; therapies; rooms; doctors; articles; guest stories.
 
-The section controls heading, introduction, selected items or a controlled query, and layout. Entity-specific cards remain separate components.
+The section controls heading, introduction, selected items or a controlled query, and layout. Entity-specific cards remain separate configurations of `Tile`.
+
+Component: `TileGrid` — layout `3` (three across from 1000px), `2`, or `feature` (one large tile beside the rest). Choose the layout by count, not by page type. When the list is too long for a photograph per item (all conditions, the full programme list), use `IndexList`.
 
 ### Feature Grid
 
@@ -170,19 +205,27 @@ Program inclusions; facilities; amenities; principles; benefits; capabilities. K
 
 Concrete, verifiable numbers or credentials. Do not use invented or unverified metrics.
 
+Component: `NumeralsSplit` — a statement beside two (at most three) `Numeral`s. Never four.
+
 ### Process / Steps
 
 Sequential processes: inquiry → consultation → assessment → plan → stay → follow-up; arrival process; booking process. Keep steps concise.
 
+Component: `NumberedSteps` — muted 01–04 numerals, a Medium item title and one line each.
+
 ### Timeline
 
 Chronological content: A Day at Shantara; company history; guest journey; program schedule. Do not build a separate schedule component when Timeline can do the job.
+
+Component: `TimeTable` — time column in olive, then a title and a line. Under 760px the time sits above the title.
 
 ### Table
 
 One general controlled table section for: room comparison; program comparison; sample menu; schedule; package comparison.
 
 Display modes may include: standard; comparison; schedule. Do not create a new component for every table use case.
+
+Component: `SpecTable` — no borders, accent column in olive, a real `<table>`. Under 520px each row becomes a block. Schedules use `TimeTable`.
 
 ### Pricing / Package Options
 
@@ -196,9 +239,13 @@ Prices must match visible commercial information and current policy. **In this d
 
 Rooms; therapies; food; retreat environment; facilities. Prefer real photography. Support captions only when useful.
 
+One photograph per job: a gallery is a `TileGrid` of captioned photographs or a sequence of `SplitSection` / `PanoramaCaption`. Do not build a main image with a thumbnail strip.
+
 ### Expert / Doctor Section
 
 Full doctor/expert profile within a page. Typical fields: photo; name; qualifications; role; area of practice; short biography; relevant link/CTA.
+
+Component: `PeopleRow` for 2–4 doctors; `PortraitFrame` for one. Every doctor uses the same 4:5 framing and crop.
 
 ### Medical Reviewer
 
@@ -241,6 +288,8 @@ Contextual FAQs. Good examples: How long should I stay?; Can a companion stay wi
 
 Do not create a separate giant FAQ architecture unless needed.
 
+Component: `Accordion`.
+
 ### Related Content
 
 Connect: condition → relevant program; program → relevant condition/therapy; article → condition/program; doctor answer → deeper clinical guide.
@@ -261,57 +310,56 @@ A unified CTA system. May render as: CTA banner; inline CTA panel; modal/drawer 
 
 All should lead to the same underlying consultation mechanism.
 
-## Card component family
+Components: `ClosingCTA` ends every marketing page (dark photograph or Pine ground, one Gold primary button, contact lines). `FormSplit` holds the one consultation form (form first on phones).
 
-Use shared design language but separate semantic card components.
+## Card component family (Tile)
 
-Recommended cards:
+Marketing listings do not use cards. Each semantic card is a configuration of `Tile` (`components/editorial/Tile.jsx`): photograph and text directly on the ground, no border, shadow, radius or white card on linen. `Card` is for forms and dialogs only.
+
+Semantic cards (configurations, not separate visual systems):
 
 - ConditionCard
 - ProgramCard
 - TherapyCard
 - RoomCard
-- DoctorCard
+- DoctorCard (uses `PortraitFrame`, 4:5)
 - ArticleCard
 - GuestStoryCard
 - EventCard
 
-Do not create one `Card` component with dozens of conditional fields.
+Do not create one component with dozens of conditional fields. Each configuration picks the fields its entity needs.
 
-Cards should share: typography; spacing; radii; image behavior; interaction; focus states.
+All tiles share: typography (Light title, Regular body); square-cut photographs; hover (photograph scales to 1.02 inside its frame, `--tile-media-scale`, and the title takes a hairline underline — no lift, no shadow); focus ring; the whole tile is one link.
 
-Listing photography uses **4:3** (`--card-media-ratio` / `--media-ratio`). Wide editorial frames may use **16:9**; tall mosaic / portrait frames **3:4**. Full-bleed page heroes use an explicit **height** (typically 640 home / 420 inner), not a forced listing ratio — they are not required to be 4:3 or 16:9. Do not use 21:9. Interactive cards lift only — no media zoom on hover.
+Ratios: listing tiles **4:3** (`--card-media-ratio`). Wide editorial frames **16:9**; doctors **4:5**; tall architecture **3:4**. **21:9** only through `PanoramaCaption`, with `mobileRatio` for phones. Heroes use a height (100svh / 72svh), not a ratio. `layout="row"` puts the photograph beside the text from 760px — for lists of articles or rooms.
 
-**Card grid demos in this kit:** Home programmes = **3-col**; Conditions (and Experience / About card grids) = **2-col**. Keep both intentional.
+**Grids:** `TileGrid` layout follows the count — 3 across, 2 across, or `feature` (one large, the rest beside it). Never an uneven last row. A listing too long for a photograph per item uses `IndexList`.
 
-**Programme gallery:** thumb click swaps the main image (all four thumbs reachable; selected thumb matches main). Main + thumbs are **4:3**.
+**Grounds:** large content grounds are Merino or Stone. At most **one** `BandStatement` (Himalaya + rosette band) per page — it is the page's accent. Pine is for `ClosingCTA` without a photograph and the footer. Photography grounds are heroes, `PanoramaCaption` and `ClosingCTA`.
 
-**Section washes:** avoid full-bleed Himalaya / `--surface-brand` as large marketing grounds — brand green should stay under ~10% of a page’s surface (buttons, links, accents, rules). Prefer Pearl Bush / Merino for large content bands. Pine Tree inverse, gold eyebrows, and Himalaya accents are fine. Footer inverse pine + rosette strip stays as brand chrome.
+Condition listing tiles: title + supporting sentence only. Do not repeat the group heading as a Badge, and do not add nights or decorative chips on that listing. Programme tiles may carry one focus label and a duration when those are not duplicated by a group heading.
 
-Condition listing cards: title + supporting sentence only. Do not repeat the group heading as a Badge, and do not add nights or decorative chips on that listing. Home programme cards may keep a focus badge + duration when those are not duplicated by a group heading.
-
-Each card should present information appropriate to its entity.
+Each tile presents information appropriate to its entity.
 
 Example ProgramCard:
 
 ```text
-image
+photograph (4:3)
 program name
 one-line proposition
 duration
-CTA
 ```
 
 Example DoctorCard:
 
 ```text
-photo
+photo (4:5)
 name
 qualification
 area of practice
 ```
 
-In this kit, cards are composed from the design-system `Card` primitive plus type, photo, and badge — they are samples of the semantic jobs, not a production card library.
+In this kit, tiles are samples of the semantic jobs, not a production card library.
 
 ## Example page compositions
 

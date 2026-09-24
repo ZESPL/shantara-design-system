@@ -16,9 +16,9 @@ Entity facts for programmes, rooms, conditions, NAP, and tariff live in [`conten
 Read this file first. Open a sibling reference only when the task needs that inventory:
 
 - [Production stack](skill-stack.md) — Astro, Keystatic, Tailwind, Netlify, analytics/SEO services; locked defaults for shantara.life
-- [Premium design](skill-premium.md) — build order, photography, type, layout, motion vocabulary, “premium feel”
+- [Premium design](skill-premium.md) — build order, design-system rules from the brand deck (type voices, grounds, shape, buttons, tiles, component map, responsive rules), motion vocabulary
 - [Information architecture](skill-ia.md) — nav, URLs, page inventory, publishing families
-- [Sections and composition](skill-sections.md) — heroes, section library, cards, example pages
+- [Sections and composition](skill-sections.md) — heroes, section library → components, tiles, example pages
 - [Content and leads](skill-content.md) — CMS entities, publishing, E-E-A-T, consultation form
 - [Language and copywriting](skill-copy.md) — public-facing website language
 - [Technical](skill-technical.md) — analytics, SEO, schema, AEO/GEO, performance, accessibility
@@ -135,16 +135,16 @@ Then choose sections. Do not start by copying another page’s layout.
 
 Heroes are a **family**, not one universal Hero with 30 props, and not 12 variants:
 
-| Hero | Job | Typical uses |
-| --- | --- | --- |
-| Immersive | Place, emotion, photography | Home, Our Story, Farm & Dining, A Day at Shantara |
-| Editorial | Topic + readability | Conditions, Therapies, Approach, Guides, Articles |
-| Program | Commercial program, high intent | Program pages (duration/options, suitability, Book a Consultation — **no invented price**) |
-| Compact / utility | Minimal context | Contact, policies, listings |
+| Hero | Job | Typical uses | Component |
+| --- | --- | --- | --- |
+| Immersive | Place, emotion, photography | Home, Our Story, Farm & Dining, A Day at Shantara | `HeroFullBleed` |
+| Editorial | Topic + readability | Conditions, Therapies, Approach, Guides, Articles | `HeroStatement` |
+| Program | Commercial program, high intent | Program pages (duration/options, suitability, Book a Consultation — **no invented price**) | `HeroFullBleed height="tall"` + booking panel |
+| Compact / utility | Minimal context | Contact, policies, listings | `HeroStatement` |
 
 Section library and example compositions: [skill-sections.md](skill-sections.md).
 
-Cards are separate semantic components sharing type, spacing, radii, image behavior, and focus: `ConditionCard`, `ProgramCard`, `TherapyCard`, `RoomCard`, `DoctorCard`, `ArticleCard`, `GuestStoryCard`, `EventCard`. Do not make one `Card` with dozens of conditional fields.
+Sections are built from `components/sections/` (inside `Section`, which sets one of five grounds) and `components/editorial/`. Listings use `Tile`, not `Card` (`Card` is forms and dialogs only). Semantic cards — `ConditionCard`, `ProgramCard`, `TherapyCard`, `RoomCard`, `DoctorCard`, `ArticleCard`, `GuestStoryCard`, `EventCard` — are `Tile` configurations sharing type, square-cut photographs, hover and focus. Do not make one component with dozens of conditional fields.
 
 Visual direction: calm, premium, natural, clinically credible, spacious, human, restrained. Prefer real Shantara photography. Avoid crowded cards, excessive badges/gradients, decorative animation, wellness clichés, unrelated stock, and oversized “premium” chrome. Full premium / motion rules: [skill-premium.md](skill-premium.md).
 
@@ -272,7 +272,7 @@ These files are **previews** of the skill, not the live site:
 
 | Sample | Skill page type | Notes |
 | --- | --- | --- |
-| `screens/HomeScreen.js` | home | Immersive hero, approach, program cards, experience teasers |
+| `screens/HomeScreen.js` | home | `HeroFullBleed`, approach, programme tiles, experience teasers |
 | `screens/ConditionsScreen.js` | condition listing | Visual grouping only — no category URLs |
 | `screens/ProgrammeScreen.js` | program | Program hero composition; tariff link, no rates |
 | `screens/ExperienceScreen.js` | experience hub | Therapies, rooms, farm, a day — not one page per room |
@@ -281,7 +281,8 @@ These files are **previews** of the skill, not the live site:
 | `screens/ContactScreen.js` | contact | Compact hero + location |
 | `screens/ConsultationScreen.js` | consultation | One short form |
 | `screens/TariffScreen.js` | pricing surface | **Only** place rates appear |
-| `chrome/SiteChrome.js` | chrome | Skill nav + wordmark-only logo + Book a Consultation + LanguageSelector (hidden while only `en` is enabled) |
+| `chrome/SiteChrome.js` | chrome | Header overlays every page; menu sheet under 1000px; wordmark-only logo + Book a Consultation + LanguageSelector (hidden while only `en` is enabled); footer band via `PatternPanel` |
+| `chrome/Photo.js` | chrome | Adapter over `Media` for `assets/photos/*` |
 
 Kit notes for humans: [README.md](README.md).
 

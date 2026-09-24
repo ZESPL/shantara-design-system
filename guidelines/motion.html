@@ -24,18 +24,19 @@ h3{margin:0 0 var(--space-4);font:var(--type-h4);font-size:var(--text-base)}
 
 <div>
 <h3>The contract</h3>
-<p class="note" style="margin-bottom:var(--space-5)">No bounce, no overshoot, no spin, no <code>ease-in</code> on UI. Press is <code>scale(0.96)</code>. Hover is a one-step colour or a 4px lift, gated to fine pointers so it never sticks after a tap. Catalog tiles stagger on first paint. Website pages and app tab panels enter with <code>sh-enter-up</code>. Enter uses <code>--ease-out</code> (<code>cubic-bezier(0.23, 1, 0.32, 1)</code>) and never starts from <code>scale(0)</code>. <code>prefers-reduced-motion: reduce</code> keeps colour and opacity, drops movement, and freezes the Spinner.</p>
+<p class="note" style="margin-bottom:var(--space-5)">No bounce, no overshoot, no spin, no <code>ease-in</code> on UI. Press is <code>scale(0.96)</code>. Hover is a one-step colour, an underline, or — on a website <code>Tile</code> — the photograph scaling to 1.02 inside its frame (<code>--tile-media-scale</code>); the 4px lift is for app-kit cards only. Hover is gated to fine pointers so it never sticks after a tap. Editorial image reveals use <code>--duration-reveal</code> (640ms), one or two per page. Catalog tiles stagger on first paint. Website pages and app tab panels enter with <code>sh-enter-up</code>. Enter uses <code>--ease-out</code> (<code>cubic-bezier(0.23, 1, 0.32, 1)</code>) and never starts from <code>scale(0)</code>. <code>prefers-reduced-motion: reduce</code> keeps colour and opacity, drops movement, and freezes the Spinner.</p>
 <table>
 <thead><tr><th>Element</th><th>What moves</th><th>Token</th></tr></thead>
 <tbody>
 <tr><td>Button, IconButton</td><td>Fill / hairline colour on hover; press scale; focus ring</td><td>--duration-fast · --transition-control</td></tr>
 <tr><td>Tag</td><td>Fill on hover and selected; press scale; remove fades in</td><td>--duration-fast</td></tr>
-<tr><td>Card interactive</td><td>Lifts 4px into --shadow-lg; media does not zoom; card itself never scales</td><td>--duration-base · --lift-hover</td></tr>
+<tr><td>Tile (website)</td><td>Photograph scales to 1.02 inside its square frame; title takes a hairline underline. No lift, no shadow</td><td>--duration-base · --tile-media-scale</td></tr>
+<tr><td>Card interactive (app kit)</td><td>Lifts 4px into --shadow-lg; card itself never scales</td><td>--duration-base · --lift-hover</td></tr>
 <tr><td>Badge</td><td>Tone changes only — not a control, no hover or press</td><td>--</td></tr>
 <tr><td>Input, Textarea, Select</td><td>Border to --border-strong on hover, Himalaya + soft halo on focus; error rises 8px</td><td>--duration-fast / --duration-base</td></tr>
 <tr><td>Checkbox, Radio</td><td>Tick / inner dot scale from 0.5 with opacity; box press; radio card fill</td><td>--duration-fast · --ease-out</td></tr>
 <tr><td>Switch</td><td>Knob travels 18px; track fills Himalaya; hover darkens the off track</td><td>--duration-base</td></tr>
-<tr><td>Tabs</td><td>Underline grows from the inline start; pill selected fill + --shadow-sm; press scale. Panel content enters with sh-enter-up</td><td>--duration-base / --duration-slow</td></tr>
+<tr><td>Tabs</td><td>Underline grows from the inline start; pill variant selected fill + --shadow-sm; press scale. Panel content enters with sh-enter-up</td><td>--duration-base / --duration-slow</td></tr>
 <tr><td>Accordion</td><td>Panel opens on grid 0fr→1fr; plus becomes minus</td><td>--duration-base</td></tr>
 <tr><td>Breadcrumbs</td><td>Ancestor links colour + underline on hover</td><td>--duration-fast</td></tr>
 <tr><td>Dialog</td><td>Scrim fades; panel scales from 0.96 at centre; exit is faster than enter</td><td>--duration-base / --duration-slow</td></tr>

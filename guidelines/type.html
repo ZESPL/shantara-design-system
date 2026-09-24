@@ -206,7 +206,7 @@
     <div class="ds-page-head-inner">
       <p class="shantara-eyebrow">Brand</p>
       <h1>Type</h1>
-      <p class="ds-page-lead">One face. Diodrum Cyrillic in six weights. Display sizes stay Light — the air is the brand.</p>
+      <p class="ds-page-lead">One face. Diodrum Cyrillic in six weights. Every heading at 24px or larger is Light — the air is the brand.</p>
     </div>
   </header>
 
@@ -214,7 +214,7 @@
     <nav class="type-index" aria-label="On this page">
       <a href="#face">The face</a>
       <a href="#scale">Display scale</a>
-      <a href="#body">Body and lead</a>
+      <a href="#body">Body</a>
       <a href="#weights">Weights</a>
       <a href="#micro">Micro-type</a>
       <a href="#numerals">Numerals</a>
@@ -240,64 +240,48 @@
     </div>
 
     <h2 id="scale">Display scale</h2>
-    <p class="type-cap">84 / 64 / 48 stay Light. H2 is Regular. H3 and H4 are Medium.</p>
+    <p class="type-cap">Five voices from the brand deck. Every heading at 24px or larger is Light. Sizes are fluid between a 360px phone and a 1440px desktop.</p>
     <div class="type-scale">
       <div class="type-scale-row">
-        <div style="font:var(--weight-light) var(--text-6xl)/var(--leading-tight) var(--font-display)" data-i18n="Stillness">Stillness</div>
-        <p class="type-spec"><b>Display large</b>--text-6xl · 84 / 1.06 · Light</p>
-      </div>
-      <div class="type-scale-row">
         <div style="font:var(--type-display)" data-i18n="Return to yourself">Return to yourself</div>
-        <p class="type-spec"><b>Display</b>--type-display · 64 / 1.06 · Light</p>
+        <p class="type-spec"><b>Display</b>--type-display · 40 → 84 / 1.04 · Light</p>
       </div>
       <div class="type-scale-row">
         <div style="font:var(--type-h1)" data-i18n="A day that unwinds slowly">A day that unwinds slowly</div>
-        <p class="type-spec"><b>Heading 1</b>--type-h1 · 48 / 1.06 · Light</p>
+        <p class="type-spec"><b>Heading 1</b>--type-h1 · 34 → 64 / 1.06 · Light</p>
       </div>
       <div class="type-scale-row">
-        <div style="font:var(--type-h2)" data-i18n="Therapies for the body">Therapies for the body</div>
-        <p class="type-spec"><b>Heading 2</b>--type-h2 · 38 / 1.2 · Regular</p>
+        <div style="font:var(--type-statement)" data-i18n="Therapies for the body">Therapies for the body</div>
+        <p class="type-spec"><b>Statement · H2</b>--type-statement · 28 → 48 / 1.16 · Light</p>
       </div>
       <div class="type-scale-row">
-        <div style="font:var(--type-h3)" data-i18n="Mud therapy">Mud therapy</div>
-        <p class="type-spec"><b>Heading 3</b>--type-h3 · 30 / 1.2 · Medium</p>
+        <div style="font:var(--type-title)" data-i18n="Mud therapy">Mud therapy</div>
+        <p class="type-spec"><b>Title · H3</b>--type-title · 22 → 30 / 1.24 · Light</p>
       </div>
       <div class="type-scale-row">
-        <div style="font:var(--type-h4)" data-i18n="What to expect">What to expect</div>
-        <p class="type-spec"><b>Heading 4</b>--type-h4 · 24 / 1.2 · Medium</p>
+        <div style="font:var(--type-item)" data-i18n="What to expect">What to expect</div>
+        <p class="type-spec"><b>Item · H4</b>--type-item · 20 / 1.3 · Medium</p>
+      </div>
+      <div class="type-scale-row">
+        <div style="font:var(--type-numeral)" class="shantara-figure">25,000</div>
+        <p class="type-spec"><b>Numeral</b>--type-numeral · 48 → 84 / 1 · Light</p>
       </div>
     </div>
+    <p class="type-note">Medium is only for item titles at 20px or smaller. Headlines are left-aligned and wrap at <code>--measure-statement</code> (30ch).</p>
 
-    <h2 id="body">Body and lead</h2>
-    <p class="type-cap">Three steps down: 22 Light lead → 17 Regular body → 15 Regular small</p>
+    <h2 id="body">Body</h2>
+    <p class="type-cap">Two steps: 17 Regular body → 15 Regular small. Body is never Light.</p>
     <div class="type-stack">
       <div class="type-copy-row">
-        <p class="type-spec"><b>Lead</b>--type-lead<br>22 / 1.65<br>Light 300</p>
-        <p style="font:var(--type-lead);margin:0" data-i18n="Your programme is planned by our doctors after a consultation on your health, medical history and goals.">Your programme is planned by our doctors after a consultation on your health, medical history and goals.</p>
-      </div>
-      <div class="type-copy-row">
-        <p class="type-spec"><b>Body</b>--type-body<br>17 / 1.45<br>Regular 400</p>
+        <p class="type-spec"><b>Body</b>--type-body<br>17 / 1.6<br>Regular 400</p>
         <p style="font:var(--type-body);margin:0" data-i18n="Each guest is treated as a whole, with physical health, mental well-being and daily habits read together. Treatment is unhurried and personalised, and it addresses the root cause rather than the symptom. A doctor writes the programme after the preliminary consultation and reviews it every morning.">Each guest is treated as a whole, with physical health, mental well-being and daily habits read together. Treatment is unhurried and personalised, and it addresses the root cause rather than the symptom. A doctor writes the programme after the preliminary consultation and reviews it every morning.</p>
       </div>
       <div class="type-copy-row">
-        <p class="type-spec"><b>Body small</b>--type-body-sm<br>15 / 1.45<br>Regular 400</p>
+        <p class="type-spec"><b>Body small</b>--type-body-sm<br>15 / 1.6<br>Regular 400</p>
         <p style="font:var(--type-body-sm);color:var(--text-secondary);margin:0" data-i18n="Meals are planned as part of your programme, taking into account your doctor's recommendations and dietary requirements.">Meals are planned as part of your programme, taking into account your doctor's recommendations and dietary requirements.</p>
       </div>
-      <div class="type-copy-row">
-        <p class="type-spec"><b>Side by side</b>Same sentence, one measure</p>
-        <div class="type-pair">
-          <div>
-            <span class="type-spec" style="display:block;margin-bottom:8px">22 Light</span>
-            <p style="font:var(--type-lead);margin:0" data-i18n="Meals are planned as part of your programme based on your doctor's recommendations and dietary needs.">Meals are planned as part of your programme based on your doctor's recommendations and dietary needs.</p>
-          </div>
-          <div>
-            <span class="type-spec" style="display:block;margin-bottom:8px">17 Regular</span>
-            <p style="font:var(--type-body);margin:0" data-i18n="Meals are planned as part of your programme based on your doctor's recommendations and dietary needs.">Meals are planned as part of your programme based on your doctor's recommendations and dietary needs.</p>
-          </div>
-        </div>
-      </div>
     </div>
-    <p class="type-note">Lead is one sentence, and never more — it is the transition from a heading into body copy, not a second paragraph. Body measure is capped at 68ch. Tracking stays at 0 for both; only micro-type is letterspaced.</p>
+    <p class="type-note"><code>--type-lead</code> is deprecated — the deck has no lead voice. Use body, or a statement with one supporting line. Body measure is <code>--measure-body</code> (62ch). Light body breaks up on mid-range Android screens. Tracking stays at 0; only micro-type is letterspaced.</p>
 
     <h2 id="weights">Weights</h2>
     <p class="type-cap">All six Diodrum Cyrillic weights, supplied as TTF</p>
@@ -321,6 +305,7 @@
         <span class="shantara-wordmark-type" style="font-size:var(--text-2xl);font-weight:300">Shantara</span>
         <p class="type-spec" style="margin:4px 0 0">.shantara-wordmark-type · 0.22em — type-set lockups only; prefer the SVG wordmark</p>
       </div>
+      <p class="type-note" style="margin:0">Eyebrow colour follows the ground (<code>--eyebrow-color</code>): Himalaya on Merino and Stone, Gold on flat dark grounds, Merino on photography. An eyebrow adds information the heading does not — never a repeat of it.</p>
       <p class="type-note" style="margin:0">Body copy never carries tracking above 0.06em. <code>--tracking-wide</code> is the ceiling for labels; display and body stay at 0.</p>
     </div>
 
