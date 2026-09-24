@@ -1,101 +1,91 @@
-/* Insights — HeroStatement → category tabs, a lead article (row tile) and a 3-up grid →
-   closing. The grid shows a multiple of three; "Show older articles" reveals the rest. */
+/* Insights index — HeroStatement (rosette band) → category Tabs → a 3-up Tile grid →
+   Pagination → ClosingCTA (compact; the page has no other CTA).
+   Recipe: components/editorial/Pagination.prompt.md. Tiles open the Article view. */
+
+const JOURNAL_PAGE_SIZE = 3;
 
 function journalPosts() {
   const C = window.ShantaraContent;
   const fromArticles = (C.articles || [])
     .filter((a) => a.kit_journal)
-    .map((a) => ({
-      t: a.title,
-      k: a.category,
-      photo: a.photo,
-      read: a.read_minutes,
-      lead: a.lead,
-    }));
+    .map((a) => ({ id: a.id, t: a.title, k: a.category, photo: a.photo, read: a.read_minutes, article: true }));
   const fromAnswers = (C.doctorAnswers || [])
     .filter((a) => a.kit_journal)
-    .map((a) => ({
-      t: a.question,
-      k: a.category || "Doctor Answers",
-      photo: a.photo,
-      read: a.read_minutes,
-      lead: a.short_answer || "",
-    }));
+    .map((a) => ({ id: a.id, t: a.question, k: a.category || "Doctor Answers", photo: a.photo, read: a.read_minutes, article: false }));
   return [...fromArticles, ...fromAnswers];
 }
 
-const JOURNAL_CATEGORIES = ["All", "Doctor Answers", "Clinical Guides", "Guest Stories", "Food & Recipes"];
+/* "All" first, then the categories that have posts, in a fixed order (at most six tabs). */
+const JOURNAL_CATEGORY_ORDER = ["Clinical Guides", "Doctor Answers", "Food & Recipes", "Guest Stories"];
 
 function JournalScreen({ onNavigate }) {
   const { t } = window.ShantaraI18n.useLocale();
-  const { Tabs, Button, Icon, HeroStatement, Section, Tile, TileGrid, ClosingCTA } = window.ShantaraDesignSystem_45bbe4;
+  const { Tabs, Button, HeroStatement, Section, Tile, TileGrid, Pagination, ClosingCTA } = window.ShantaraDesignSystem_45bbe4;
+  const P = window.PageSlot;
   const L = window.ShantaraLocales;
-  const site = window.ShantaraContent.site || {};
-  const phones = site.phone || ["+91 9553 600 100", "+91 9553 700 100"];
-  const email = site.email || "heal@shantara.life";
-  const [cat, setCat] = React.useState("All");
-  const [older, setOlder] = React.useState(false);
+  const locale = window.ShantaraI18n.currentLocaleCode();
   const posts = journalPosts();
+  const cats = ["All", ...JOURNAL_CATEGORY_ORDER.filter((c) => posts.some((p) => p.k === c))];
+  const [cat, setCat] = React.useState("All");
+  const [page, setPage] = React.useState(1);
   const shown = cat === "All" ? posts : posts.filter((p) => p.k === cat);
-  const [lead, ...rest] = shown;
-  // Desktop grid is three across: show whole rows first, the remainder behind the button.
-  const firstRows = rest.length >= 3 ? rest.length - (rest.length % 3) : rest.length;
-  const visible = older ? rest : rest.slice(0, firstRows);
-  const hasOlder = !older && visible.length < rest.length;
-  const meta = (p) => [p.read ? `${p.read} ${t("min read")}` : null, t("by the clinical team")].filter(Boolean).join(" · ");
-  const onTab = (v) => { setCat(v); setOlder(false); };
+  const pageCount = Math.max(1, Math.ceil(shown.length / JOURNAL_PAGE_SIZE));
+  const visible = shown.slice((page - 1) * JOURNAL_PAGE_SIZE, page * JOURNAL_PAGE_SIZE);
+  const onTab = (v) => { setCat(v); setPage(1); };
+  const hrefFor = (p) => (p.article && L ? L.kitHash(locale, "article:" + p.id) : undefined);
   return (
     <main>
-      <HeroStatement
-        eyebrow={t("Insights")}
-        title={t("Articles from our doctors and team")}
-      />
+      <P id="insights/hero">
+        <HeroStatement
+          tall={false}
+          pattern="start"
+          title={t("Articles from our doctors and team")}
+          sub={t("Clinical guides, meals and guest stories from Shantara.")}
+        />
+      </P>
 
-      <Section space="bottom">
-        <Tabs items={JOURNAL_CATEGORIES.map((key) => ({ value: key, label: t(key) }))} value={cat} onChange={onTab} />
-        <div key={cat} className="sh-page-enter" style={{ display: "flex", flexDirection: "column", gap: "var(--section-y-sm)", marginTop: "var(--stack-lg)" }}>
-          {lead ? (
-            <Tile
-              size="lg"
-              layout="row"
-              headingLevel={2}
-              src={window.photoSrc(lead.photo)}
-              alt=""
-              eyebrow={t(lead.k)}
-              title={t(lead.t)}
-              text={lead.lead ? t(lead.lead) : undefined}
-              meta={meta(lead)}
-              onClick={() => {}}
-            />
-          ) : null}
-          {visible.length ? (
-            <TileGrid layout="3">
+      <P id="insights/index">
+        <Section space="bottom">
+          <Tabs items={cats.map((key) => ({ value: key, label: t(key) }))} value={cat} onChange={onTab} />
+          <div key={cat + "-" + page} className="sh-page-enter" style={{ display: "flex", flexDirection: "column", gap: "var(--section-y-sm)", marginTop: "var(--stack-lg)" }}>
+            <TileGrid layout="3" className="sh-kit-tiles-aligned">
               {visible.map((p) => (
-                <Tile key={p.t} src={window.photoSrc(p.photo)} alt="" eyebrow={t(p.k)} title={t(p.t)} text={p.lead ? t(p.lead) : undefined} meta={meta(p)} onClick={() => {}} />
+                <Tile
+                  key={p.id}
+                  src={window.photoSrc(p.photo)}
+                  alt=""
+                  ratio="3:2"
+                  title={t(p.t)}
+                  meta={[t(p.k), p.read ? `${p.read} ${t("min read")}` : null].filter(Boolean)}
+                  href={hrefFor(p)}
+                  onClick={p.article ? () => onNavigate("article:" + p.id) : undefined}
+                />
               ))}
             </TileGrid>
-          ) : null}
-          {hasOlder ? (
-            <div className="sh-actions" data-stack="mobile" style={{ justifyContent: "center" }}>
-              <Button variant="secondary" onClick={() => setOlder(true)} endIcon={<Icon name="arrow-down" size={16} />}>{t("Show older articles")}</Button>
-            </div>
-          ) : null}
-        </div>
-      </Section>
+            {pageCount > 1 ? (
+              <Pagination
+                page={page}
+                pageCount={pageCount}
+                onChange={(n) => { setPage(n); const s = document.getElementById("kit-scroll"); if (s) s.scrollTop = 0; }}
+                prevLabel={t("Previous")}
+                nextLabel={t("Next")}
+              />
+            ) : null}
+          </div>
+        </Section>
+      </P>
 
-      <ClosingCTA
-        src={window.photoSrc("water-wall")}
-        alt={t("The water wall court")}
-        title={t("Share your name and a number we can reach.")}
-        sub={t("Our team will contact you to arrange a consultation.")}
-        action={<Button size="lg" onClick={() => { if (L) L.track("consultation_cta_click", { page_type: "journal", content_id: "journal", content_name: "Insights", cta_location: "closing" }); onNavigate("booking"); }}>{t("Book a Consultation")}</Button>}
-        contact={<>
-          <a className="shantara-dir-ltr" href={"mailto:" + email} onClick={() => L && L.track("contact_click", { contact_method: "email", page_type: "journal", cta_location: "closing" })}>{email}</a>
-          {phones.map((n) => <a key={n} className="shantara-dir-ltr" href={"tel:" + n.replace(/\s/g, "")} style={{ fontVariantNumeric: "tabular-nums" }} onClick={() => L && L.track("contact_click", { contact_method: "phone", page_type: "journal", cta_location: "closing" })}>{n}</a>)}
-        </>}
-      />
+      <P id="insights/closing">
+        <ClosingCTA
+          variant="compact"
+          ground="himalaya"
+          title={t("Share your name and a number we can reach.")}
+          sub={t("Our team will contact you to arrange a consultation.")}
+          action={<Button size="lg" onClick={() => { if (L) L.track("consultation_cta_click", { page_type: "journal", content_id: "journal", content_name: "Insights", cta_location: "closing" }); onNavigate("booking"); }}>{t("Book a Consultation")}</Button>}
+        />
+      </P>
     </main>
   );
 }
 
-Object.assign(window, { JournalScreen });
+Object.assign(window, { JournalScreen, journalPosts });

@@ -1,4 +1,4 @@
-<!-- @dsCard group="Website" viewport="1280x900" name="Shantara website" subtitle="Thin samples — locale-prefixed English routes, hidden language selector until a second locale is enabled" -->
+<!-- @dsCard group="Website" viewport="1280x900" name="Shantara website" subtitle="Thin samples — locale-prefixed English routes; language selector in the header (menu sheet under 1000px)" -->
 <!doctype html><html lang="en" dir="ltr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>Shantara — website kit</title>
 <link rel="canonical" href="/en/">
 <meta name="description" content="Shantara website kit — English source locale.">
@@ -41,6 +41,7 @@
 <script type="text/babel" src="/ui_kits/website/screens/ExperienceScreen.js"></script>
 <script type="text/babel" src="/ui_kits/website/screens/AboutScreen.js"></script>
 <script type="text/babel" src="/ui_kits/website/screens/JournalScreen.js"></script>
+<script type="text/babel" src="/ui_kits/website/screens/ArticleScreen.js"></script>
 <script type="text/babel" src="/ui_kits/website/screens/ContactScreen.js"></script>
 <script type="text/babel" src="/ui_kits/website/screens/ConsultationScreen.js"></script>
 <script type="text/babel" src="/ui_kits/website/screens/TariffScreen.js"></script>
@@ -51,6 +52,7 @@ function Site(){
   const fixtureRtl = params.get("fixture") === "rtl";
   const first = L.parseKitHash(location.hash);
   const [view,setView]=React.useState(first.view);
+  const [slug,setSlug]=React.useState(first.slug || null);
   const [locale,setLocale]=React.useState(first.locale);
   const applyChrome = (code) => {
     if (fixtureRtl || document.documentElement.getAttribute("data-rtl-fixture") === "1") {
@@ -77,28 +79,34 @@ function Site(){
       const parsed = L.parseKitHash(location.hash);
       if (parsed.redirect) { location.hash = parsed.redirect; return; }
       setView(parsed.view);
+      setSlug(parsed.slug || null);
       setLocale(parsed.locale);
       applyChrome(parsed.locale);
     };
     window.addEventListener("hashchange", onHash);
     return () => window.removeEventListener("hashchange", onHash);
   }, []);
-  const go=(v)=>{
+  /* go("article:<slug>") opens one Insights article at #/<locale>/insights/<slug>. */
+  const go=(target)=>{
+    const t = String(target || "home");
+    const v = t.indexOf("article:") === 0 ? "article" : t;
+    const s = v === "article" ? (t.slice(8) || null) : null;
     setView(v);
-    location.hash = L.kitHash(locale, v);
+    setSlug(s);
+    location.hash = L.kitHash(locale, v, s);
     const s=document.getElementById("kit-scroll");if(s)s.scrollTop=0;
   };
   const changeLocale=(code)=>{
     if (!L.isEnabled(code)) return;
     L.rememberLocale(code);
     setLocale(code);
-    location.hash = L.kitHash(code, view);
+    location.hash = L.kitHash(code, view, slug);
     applyChrome(code);
   };
-  const { SiteHeader, SiteFooter, HomeScreen, ConditionsScreen, ProgrammeScreen, ExperienceScreen, AboutScreen, JournalScreen, ContactScreen, ConsultationScreen, TariffScreen } = window;
-  const screens={home:<HomeScreen onNavigate={go}/>,conditions:<ConditionsScreen onNavigate={go}/>,programme:<ProgrammeScreen onNavigate={go}/>,experience:<ExperienceScreen onNavigate={go}/>,about:<AboutScreen onNavigate={go}/>,journal:<JournalScreen onNavigate={go}/>,contact:<ContactScreen onNavigate={go}/>,tariffs:<TariffScreen onNavigate={go}/>,booking:<ConsultationScreen onNavigate={go} locale={locale} view={view}/>};
+  const { SiteHeader, SiteFooter, HomeScreen, ConditionsScreen, ProgrammeScreen, ExperienceScreen, AboutScreen, JournalScreen, ArticleScreen, ContactScreen, ConsultationScreen, TariffScreen } = window;
+  const screens={home:<HomeScreen onNavigate={go}/>,conditions:<ConditionsScreen onNavigate={go}/>,programme:<ProgrammeScreen onNavigate={go}/>,experience:<ExperienceScreen onNavigate={go}/>,about:<AboutScreen onNavigate={go}/>,journal:<JournalScreen onNavigate={go}/>,article:<ArticleScreen onNavigate={go} slug={slug}/>,contact:<ContactScreen onNavigate={go}/>,tariffs:<TariffScreen onNavigate={go}/>,booking:<ConsultationScreen onNavigate={go} locale={locale} view={view}/>};
   const screen=screens[view]||screens.booking;
-  const rest = L.kitViewPath(view);
+  const rest = L.kitViewPath(view, slug);
   const canonical = L.canonicalUrl({ origin: "", locale, path: rest });
   const alternates = L.hreflangAlternates({
     origin: "",
@@ -111,13 +119,14 @@ function Site(){
   return (<React.Fragment>
     {fixtureRtl ? <div className="sh-rtl-fixture" role="note">RTL development fixture — not a published Arabic page</div> : null}
     <SiteHeader view={view} onNavigate={go} locale={locale} onLocaleChange={changeLocale}/>
-    <div key={locale + "-" + view} className="sh-page-enter">{screen}</div>
+    <div key={locale + "-" + view + "-" + (slug || "")} className="sh-page-enter">{screen}</div>
     <SiteFooter onNavigate={go} locale={locale}/>
-    <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(L.webpageSchema({ locale, path: rest, name: "Shantara", type: "WebPage" }))}} />
+    <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(L.organizationSchema({ site: (window.ShantaraContent || {}).site }))}} />
+    <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(L.webpageSchema({ locale, path: rest, name: "Shantara Naturopathy Retreat", type: view === "article" ? "Article" : "WebPage" }))}} />
     {alternates.map((alt) => <link key={alt.hreflang} rel="alternate" hrefLang={alt.hreflang} href={alt.href} />)}
   </React.Fragment>);
 }
-const boot=()=>{ if(window.ShantaraLocales&&window.SiteHeader&&window.HomeScreen&&window.ConsultationScreen&&window.ConditionsScreen&&window.ExperienceScreen&&window.AboutScreen&&window.ContactScreen&&window.TariffScreen&&window.Photo){ReactDOM.createRoot(document.getElementById("root")).render(<Site/>);}else{setTimeout(boot,50);} };
+const boot=()=>{ if(window.ShantaraLocales&&window.SiteHeader&&window.HomeScreen&&window.ConsultationScreen&&window.ConditionsScreen&&window.ExperienceScreen&&window.AboutScreen&&window.ContactScreen&&window.TariffScreen&&window.JournalScreen&&window.ArticleScreen&&window.Photo){ReactDOM.createRoot(document.getElementById("root")).render(<Site/>);}else{setTimeout(boot,50);} };
 boot();
 </script>
 </body></html>
