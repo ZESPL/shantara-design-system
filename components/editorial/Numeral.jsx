@@ -19,7 +19,7 @@ function ensure() {
 export function Numeral({ value, label, style, ...rest }) {
   ensure();
   return (
-    <div className="sh-num" style={style} {...rest}>
+    <div data-ds-id="editorial/Numeral" className="sh-num" style={style} {...rest}>
       <span className="sh-num-value">{value}</span>
       {label ? <span className="sh-num-label">{label}</span> : null}
     </div>

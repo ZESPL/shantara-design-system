@@ -1,17 +1,35 @@
 import React from "react";
 import { Media } from "../editorial/Media.jsx";
 import { Statement } from "../editorial/Statement.jsx";
+import { Icon } from "../core/Icon.jsx";
 
-/* Deck slide 18. A full-bleed dark photograph (or the Pine ground when `src` is omitted)
-   with a statement, ONE Gold primary button and contact lines in small type. Ends every
-   marketing page. 72svh on desktop, content-height with a 520px floor on phones. */
+/* The closing call to action (deck slide 18) — ONLY for pages that otherwise have no CTA.
+   variant "photo": a full-bleed dark photograph, 72svh, statement bottom-left.
+   variant "ground": the same block on a flat ground (pine / himalaya / stone), content height.
+   variant "compact": a single-row band — title (+ sub) on the left, actions on the right.
+   Contact items render as one aligned row (every item the same 44px inline-flex box, so a
+   link and plain text share a baseline); they stack one per line under 520px. */
 const CSS = `
-.sh-close{position:relative;display:flex;align-items:flex-end;min-height:clamp(520px, 72svh, 860px);overflow:hidden;isolation:isolate}
+.sh-close{position:relative;isolation:isolate}
+.sh-close[data-variant="photo"]{display:flex;align-items:flex-end;min-height:clamp(520px, 72svh, 860px);overflow:hidden}
 .sh-close>.sh-media{position:absolute;inset:0;z-index:-1;aspect-ratio:auto;height:100%}
 .sh-close-body{width:100%;padding-block:var(--section-y)}
-.sh-close-contact{display:flex;flex-wrap:wrap;gap:0 var(--space-8);margin-top:var(--stack-lg);padding-top:var(--space-4);border-top:var(--border-width) solid var(--rule-color);font:var(--type-body-sm);color:var(--text-secondary)}
-.sh-close-contact a{display:inline-flex;align-items:center;min-height:var(--tap-min);color:inherit;text-decoration:none}
-@media (hover: hover) and (pointer: fine){.sh-close-contact a:hover{color:var(--text-primary)}}
+.sh-close[data-variant="compact"] .sh-close-body{padding-block:var(--section-y-sm)}
+.sh-close-row{display:flex;flex-direction:column;gap:var(--stack-md)}
+.sh-close-actions{margin-top:var(--space-3)}
+.sh-close-contact{display:flex;flex-wrap:wrap;align-items:center;gap:0 var(--space-8);margin:var(--stack-lg) 0 0;padding:var(--space-3) 0 0;list-style:none;border-top:var(--border-width) solid var(--rule-color);font:var(--type-body-sm);color:var(--text-secondary)}
+.sh-close-contact>*{display:inline-flex;align-items:center;gap:var(--space-3);min-height:var(--tap-min);line-height:1.3;margin:0}
+.sh-close-contact a{display:inline-flex;align-items:center;gap:var(--space-3);color:inherit;text-decoration:none;min-height:var(--tap-min)}
+.sh-close-contact [data-icon]{color:var(--text-brand)}
+.sh-close-contact a:focus-visible{outline:none;box-shadow:var(--ring-focus)}
+@media (hover: hover) and (pointer: fine){.sh-close-contact a:hover{color:var(--text-primary);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px}}
+@media (max-width:519.98px){.sh-close-contact{flex-direction:column;align-items:flex-start}}
+.sh-close[data-variant="compact"] .sh-close-contact{margin-top:var(--space-6)}
+@media (min-width:760px){
+  .sh-close[data-variant="compact"] .sh-close-row{flex-direction:row;align-items:center;justify-content:space-between;gap:var(--grid-gap) calc(var(--grid-gap) * 2)}
+  .sh-close[data-variant="compact"] .sh-close-row>.sh-stmt{flex:1 1 auto}
+  .sh-close[data-variant="compact"] .sh-close-actions{flex:0 0 auto;margin-top:0}
+}
 `;
 
 function ensure() {
@@ -22,15 +40,36 @@ function ensure() {
   document.head.appendChild(el);
 }
 
-export function ClosingCTA({ src, alt = "", position, eyebrow, title, sub, action, contact, style, ...rest }) {
-  ensure();
+function Contact({ contact }) {
+  if (!contact) return null;
+  if (!Array.isArray(contact)) return <div className="sh-close-contact">{contact}</div>;
   return (
-    <section className="sh-close" data-ground={src ? "photo" : "pine"} style={style} {...rest}>
-      {src ? <Media src={src} alt={alt} ratio="fill" scrim="hero" position={position} /> : null}
+    <ul className="sh-close-contact">
+      {contact.map((c, i) => {
+        const o = typeof c === "string" ? { label: c } : c;
+        const inner = <>{o.icon ? <Icon name={o.icon} size={16} /> : null}<span>{o.label}</span></>;
+        return <li key={i}>{o.href ? <a href={o.href}>{inner}</a> : inner}</li>;
+      })}
+    </ul>
+  );
+}
+
+export function ClosingCTA({ variant, ground = "pine", src, alt = "", position, title, sub, action, secondaryAction, contact, titleAs = "h2", style, ...rest }) {
+  ensure();
+  const v = variant || (src ? "photo" : "ground");
+  const g = v === "photo" ? "photo" : ground;
+  const acts = action || secondaryAction ? <>{action}{secondaryAction}</> : null;
+  const compact = v === "compact";
+  return (
+    <section data-ds-id="sections/ClosingCTA" className="sh-close" data-variant={v} data-ground={g} style={style} {...rest}>
+      {v === "photo" && src ? <Media src={src} alt={alt} ratio="fill" scrim="hero" position={position} /> : null}
       <div className="sh-close-body">
         <div className="sh-container">
-          <Statement eyebrow={eyebrow} sub={sub} actions={action}>{title}</Statement>
-          {contact ? <div className="sh-close-contact">{contact}</div> : null}
+          <div className="sh-close-row">
+            <Statement as={titleAs} size={compact ? "h3" : "statement"} sub={sub} measure={compact ? "32ch" : undefined}>{title}</Statement>
+            {acts ? <div className="sh-actions sh-close-actions" data-stack="mobile">{acts}</div> : null}
+          </div>
+          <Contact contact={contact} />
         </div>
       </div>
     </section>

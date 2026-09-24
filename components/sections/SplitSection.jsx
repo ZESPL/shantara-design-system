@@ -47,7 +47,7 @@ export function SplitSection({ media, src, alt = "", position, mediaSide = "star
   const vars = { "--_mr": { "4:3": "var(--media-ratio)", "4:5": "var(--media-ratio-portrait)", "3:4": "var(--media-ratio-tall)", "16:9": "var(--media-ratio-wide)", "1:1": "1 / 1" }[mobileRatio] || mobileRatio, "--_align": align === "center" ? "center" : align === "start" ? "flex-start" : "flex-end" };
   if (minHeight) vars["--_minh"] = minHeight;
   return (
-    <section className="sh-split" data-ground={ground} data-side={mediaSide} data-split={split} data-bleed={String(bleed)} style={{ ...vars, ...style }} {...rest}>
+    <section data-ds-id="sections/SplitSection" className="sh-split" data-ground={ground} data-side={mediaSide} data-split={split} data-bleed={String(bleed)} style={{ ...vars, ...style }} {...rest}>
       <div className="sh-split-grid">
         <div className="sh-split-media">{figure}</div>
         <div className="sh-split-text">{children}</div>

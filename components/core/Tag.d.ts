@@ -1,10 +1,16 @@
 import * as React from "react";
 
-/** Selectable / removable pill. Used for treatment filters, wellness goals, dietary preferences. */
+/**
+ * Label or selectable chip — the look follows behaviour.
+ * With `onClick`: interactive chip (pill outline, 36px / 44px on touch, hover, press, aria-pressed).
+ * Without `onClick`: flat static label (24px, 2px radius, tint, no border) that never reads as a button.
+ */
 export interface TagProps extends React.HTMLAttributes<HTMLSpanElement> {
   selected?: boolean;
-  /** Renders a × affordance; omit for a read-only chip. */
+  /** Renders a remove (×) control at the inline end. */
   onRemove?: (e: React.MouseEvent) => void;
+  /** Accessible name of the remove control. Default "Remove". */
+  removeLabel?: string;
   icon?: React.ReactNode;
   children?: React.ReactNode;
 }

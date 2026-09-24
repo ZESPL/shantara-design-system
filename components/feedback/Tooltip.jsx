@@ -2,7 +2,7 @@ import React from "react";
 
 const CSS = `
 .sh-tip{position:relative;display:inline-flex}
-.sh-tip-bubble{position:absolute;z-index:900;padding:var(--space-3) var(--space-4);background:var(--surface-inverse);color:var(--text-on-inverse);border-radius:var(--radius-xs);font-family:var(--font-body);font-size:var(--text-2xs);line-height:1.4;white-space:nowrap;pointer-events:none;opacity:0;transition:opacity 125ms var(--ease-out),transform 125ms var(--ease-out)}
+.sh-tip-bubble{position:absolute;z-index:900;padding:var(--space-3) var(--space-4);background:var(--surface-inverse);color:var(--text-on-inverse);border-radius:var(--radius-xs);font-family:var(--font-body);font-size:var(--text-xs);line-height:1.4;width:max-content;max-width:min(260px, 70vw);white-space:normal;text-wrap:balance;pointer-events:none;opacity:0;transition:opacity 125ms var(--ease-out),transform 125ms var(--ease-out)}
 .sh-tip[data-instant="true"] .sh-tip-bubble{transition-duration:0ms}
 .sh-tip[data-open="true"] .sh-tip-bubble{opacity:1}
 .sh-tip-bubble[data-side="top"]{bottom:calc(100% + 6px);left:50%;transform:translateX(-50%) translateY(4px) scale(0.97);transform-origin:bottom center}
@@ -37,9 +37,11 @@ let lastTipAt = 0;
 const TIP_RECENT_MS = 400;
 const TIP_DELAY_MS = 280;
 
-export function Tooltip({ label, side = "top", children, style, ...rest }) {
+export function Tooltip({ content, label, side = "top", open: openProp, defaultOpen = false, children, style, ...rest }) {
   ensure();
-  const [open, setOpen] = React.useState(false);
+  const text = content != null ? content : label;
+  const [openState, setOpen] = React.useState(defaultOpen);
+  const open = openProp != null ? openProp : openState;
   const [instant, setInstant] = React.useState(false);
   const uid = React.useMemo(() => "sh-tip-" + ++tipSeq, []);
   const delayRef = React.useRef(0);
@@ -76,6 +78,7 @@ export function Tooltip({ label, side = "top", children, style, ...rest }) {
   return (
     <span
       className="sh-tip"
+      data-ds-id="feedback/Tooltip"
       data-open={String(open)}
       data-instant={String(instant)}
       aria-describedby={uid}
@@ -87,7 +90,7 @@ export function Tooltip({ label, side = "top", children, style, ...rest }) {
       {...rest}
     >
       {children}
-      <span className="sh-tip-bubble" id={uid} data-side={side} role="tooltip">{label}</span>
+      <span className="sh-tip-bubble" id={uid} data-side={side} role="tooltip">{text}</span>
     </span>
   );
 }

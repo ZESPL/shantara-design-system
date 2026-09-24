@@ -47,6 +47,7 @@ export function Card({ tone = "default", padding = "md", media, mediaAlt = "", m
   return (
     <div
       className="sh-card"
+      data-ds-id="core/Card"
       data-tone={tone}
       data-pad={padding}
       data-interactive={String(interactive)}

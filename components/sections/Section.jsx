@@ -5,7 +5,7 @@ import React from "react";
    background or side padding — it chooses a Section. */
 export function Section({ ground = "merino", space = "md", width = "default", as: Tag = "section", bleed = false, children, className, style, ...rest }) {
   return (
-    <Tag className={"sh-section" + (className ? " " + className : "")} data-ground={ground} data-space={space === "md" ? undefined : space} style={style} {...rest}>
+    <Tag data-ds-id="sections/Section" className={"sh-section" + (className ? " " + className : "")} data-ground={ground} data-space={space === "md" ? undefined : space} style={style} {...rest}>
       {bleed ? children : <div className="sh-container" data-width={width === "default" ? undefined : width}>{children}</div>}
     </Tag>
   );

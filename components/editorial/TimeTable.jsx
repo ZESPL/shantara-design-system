@@ -24,7 +24,7 @@ export function TimeTable({ rows = [], headingLevel = 3, style, ...rest }) {
   ensure();
   const H = "h" + headingLevel;
   return (
-    <ol className="sh-time" style={style} {...rest}>
+    <ol data-ds-id="editorial/TimeTable" className="sh-time" style={style} {...rest}>
       {rows.map((r, i) => (
         <li className="sh-time-row" key={r.time + i}>
           <span className="sh-time-when">{r.time}</span>

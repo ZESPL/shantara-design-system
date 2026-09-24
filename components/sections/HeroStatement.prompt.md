@@ -1,16 +1,36 @@
-Photograph-free page opening: a large Light statement placed low on Merino or Stone, with breadcrumbs above (deck slide 2).
+The **editorial** hero: words lead, no full photograph (deck slide 2). A large Light h1 placed low on Merino or Stone, closed by a hairline with an optional meta row — and, for presence, the rosette band on one edge and/or a small side image.
 
 ```jsx
 <HeroStatement
   breadcrumbs={<Breadcrumbs items={[{ label: "Home", href: "/en/" }, "Conditions"]} />}
-  eyebrow="Conditions"
   title="Conditions we commonly see"
   sub="Our doctors see guests with a range of long-standing conditions. Programmes are planned after consultation and assessment."
+  pattern
+  meta={["Reviewed by Dr. Bahja Janu, Medical Director", "Updated August 2026"]}
 />
+
+<HeroStatement ground="stone" title="About Shantara" sub="…"
+  src="/assets/photos/courtyard.jpg" alt="The courtyard" />
 ```
 
-**Use** for inner pages that do not need a picture — conditions, about, insights, booking, contact. It gives the page the deck's open space without borrowing a photograph that belongs elsewhere.
+**Use** for index and inner pages that do not need a big picture — conditions, programmes index, about, insights index, contact. For a single article use `ArticleHeader`; for an offer page with a photograph use `HeroSplit`.
 
-**Content.** One full-sentence title. `aside` holds something small and factual (a text link, two or three plain facts) — never a form or a second heading.
+**Presence (no eyebrow).** Pick one or two:
+- `pattern` — the rosette band on the end (or `"start"`) edge, 30% of the hero, cell = half the band. It drops under 880px of hero width and the text realigns to the page container. At most one pattern band per page (do not combine with a `BandStatement` on the same page).
+- `ground="stone"` — a quiet change of room from the Merino page below.
+- `rule` (default on) + `meta` — the closing hairline with facts beneath: "Reviewed by … · Updated …", "12 conditions · 4 categories".
+- `src` / `aside` — a small 4:5 image or two or three plain facts in a side column. Never a form or a second heading.
 
-**Responsive.** Phone: statement and aside stack, with the fluid top padding clearing the header. `tall` (default) keeps a 420–720px floor (62svh) and sits the text at the bottom of it. From 1000px an `aside` takes a 4-column right column (7/4 split), bottom-aligned with the statement. The headline wraps at 22ch; pass `measure` to change it.
+**Content.** One full-sentence title, no label above it. `sub` is one line.
+
+**Responsive.** Phone: crumbs → title → sub → actions → image/aside → hairline → meta; the band is gone; fluid top padding clears the header. `tall` (default) keeps a 440–760px floor and sits the text low. From 1000px a side image/aside takes a 4-column column (7/4), bottom-aligned. The headline wraps at 22ch.
+
+## Choosing a hero (exactly three)
+
+| Hero | Purpose | Use on |
+| --- | --- | --- |
+| `HeroFullBleed` | Immersive — the place carries the message | Home (`height="full"`), Experience, one flagship inner page (`tall`) |
+| `HeroSplit` | Offer — a photograph beside the title, facts and the action | Programme and condition detail pages, Tariffs, Book a Consultation |
+| `HeroStatement` | Editorial — words lead, no photograph needed | Conditions and Programmes indexes, About, Insights index, Contact, legal pages (`ArticleHeader` for single articles) |
+
+One hero per page, always first. None of them takes a label above the title: place, category or duration go in `meta`, below it.

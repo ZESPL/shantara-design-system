@@ -6,6 +6,9 @@ export interface TextareaProps extends React.TextareaHTMLAttributes<HTMLTextArea
   hint?: string;
   error?: string;
   required?: boolean;
+  optional?: boolean | string;
+  /** Default 4. Resizes vertically only. */
+  rows?: number;
   /** Shows an `n/max` counter when the component is controlled. */
   maxLength?: number;
 }

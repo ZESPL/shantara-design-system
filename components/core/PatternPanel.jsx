@@ -79,7 +79,7 @@ export function PatternPanel({
     end: { top: 0, bottom: 0, insetInlineEnd: 0, width: size, borderInlineStart: `1px solid ${line}` },
   }[edge] || { top: 0, bottom: 0, right: 0, width: size, borderLeft: `1px solid ${line}` };
   return (
-    <div className="sh-pp" style={{ position: "relative", isolation: "isolate", background: BG[tone] || tone, color: dark && tone !== "none" ? "var(--text-on-inverse)" : "var(--text-primary)", borderRadius: radius, overflow: "hidden", ...style }} {...rest}>
+    <div className="sh-pp" data-ds-id="core/PatternPanel" style={{ position: "relative", isolation: "isolate", background: BG[tone] || tone, color: dark && tone !== "none" ? "var(--text-on-inverse)" : "var(--text-primary)", borderRadius: radius, overflow: "hidden", ...style }} {...rest}>
       <span
         aria-hidden="true"
         className="sh-pp-band"

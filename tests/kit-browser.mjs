@@ -46,7 +46,7 @@ try {
   const en = await run("en-desktop", 1280, base);
   if (en.hash !== "#/en/") errors.push("root did not become #/en/");
   if (en.lang !== "en" || en.dir !== "ltr") errors.push("en lang/dir wrong");
-  if (en.selector) errors.push("LanguageSelector visible with only en enabled");
+  /* The selector always renders (unavailable languages are listed disabled, "Coming soon"). */
   if (!en.nav.every((h) => h && h.startsWith("#/en/"))) errors.push("nav hrefs not locale-prefixed");
 
   const page = await browser.newPage({ viewport: { width: 1280, height: 900 } });

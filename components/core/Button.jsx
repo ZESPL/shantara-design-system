@@ -50,7 +50,7 @@ export function Button({ variant = "primary", size = "md", fullWidth = false, st
   const Tag = as || (rest.href ? "a" : "button");
   const type = Tag === "button" && !rest.type ? "button" : rest.type;
   return (
-    <Tag className="sh-btn" data-variant={variant} data-size={size} data-full={String(fullWidth)} style={style} {...rest} type={type}>
+    <Tag className="sh-btn" data-ds-id="core/Button" data-variant={variant} data-size={size} data-full={String(fullWidth)} style={style} {...rest} type={type}>
       {startIcon}
       {children ? <span>{children}</span> : null}
       {endIcon}

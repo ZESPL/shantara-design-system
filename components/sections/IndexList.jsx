@@ -38,7 +38,7 @@ export function IndexList({ groups = [], columns = 2, headingLevel = 2, style, .
   const H = "h" + headingLevel;
   const I = "h" + Math.min(6, headingLevel + 1);
   return (
-    <div className="sh-index" style={style} {...rest}>
+    <div data-ds-id="sections/IndexList" className="sh-index" style={style} {...rest}>
       {groups.map((g) => (
         <section className="sh-index-group" key={g.label}>
           <H className="sh-index-label">{g.label}</H>

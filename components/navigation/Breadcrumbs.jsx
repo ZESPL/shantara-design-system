@@ -22,7 +22,7 @@ function ensure() {
 export function Breadcrumbs({ items = [], separator = "/", style, "aria-label": ariaLabel = "Breadcrumb", ...rest }) {
   ensure();
   return (
-    <nav className="sh-bc" aria-label={ariaLabel} style={style} {...rest}>
+    <nav className="sh-bc" data-ds-id="navigation/Breadcrumbs" aria-label={ariaLabel} style={style} {...rest}>
       {items.map((it, i) => {
         const last = i === items.length - 1;
         const label = typeof it === "string" ? it : it.label;

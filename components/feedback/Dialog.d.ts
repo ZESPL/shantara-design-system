@@ -1,6 +1,6 @@
 import * as React from "react";
 
-/** Modal sheet: 24px radius, Pine Tree 55% scrim, 12px rise on entry. */
+/** Modal: Merino surface, 4px radius (--radius-card), Light 30px title, --surface-overlay scrim, focus trap + Escape. */
 export interface DialogProps extends React.HTMLAttributes<HTMLDivElement> {
   open?: boolean;
   title?: string;
@@ -9,7 +9,9 @@ export interface DialogProps extends React.HTMLAttributes<HTMLDivElement> {
   size?: "sm" | "md" | "lg";
   /** Omit to make the dialog non-dismissible (no × and no scrim click). */
   onClose?: () => void;
-  /** Right-aligned action row, usually two Buttons. */
+  /** Accessible name of the 44×44 close button. Default "Close". */
+  closeLabel?: string;
+  /** Right-aligned action row (primary last); stacks full width under 520px. */
   footer?: React.ReactNode;
   children?: React.ReactNode;
 }

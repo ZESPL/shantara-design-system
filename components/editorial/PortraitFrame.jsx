@@ -33,20 +33,22 @@ function initialsOf(name) {
   return picked.map((p) => p[0]).join("").toUpperCase();
 }
 
-export function PortraitFrame({ src, media, alt, name, role, detail, headingLevel = 3, position = "center top", style, ...rest }) {
+export function PortraitFrame({ src, media, alt, name, role, detail, caption = true, headingLevel = 3, position = "center top", style, ...rest }) {
   ensure();
   const H = "h" + headingLevel;
   const frame = media || (src
     ? <Media src={src} alt={alt || name} ratio="4:5" position={position} />
     : <div className="sh-portrait-empty" role="img" aria-label={name}><span className="sh-portrait-initials" aria-hidden="true">{initialsOf(name)}</span></div>);
   return (
-    <figure className="sh-portrait" style={style} {...rest}>
+    <figure data-ds-id="editorial/PortraitFrame" className="sh-portrait" style={style} {...rest}>
       {frame}
-      <figcaption>
-        <H className="sh-portrait-name">{name}</H>
-        {role ? <p className="sh-portrait-role">{role}</p> : null}
-        {detail ? <p className="sh-portrait-detail">{detail}</p> : null}
-      </figcaption>
+      {caption ? (
+        <figcaption>
+          <H className="sh-portrait-name">{name}</H>
+          {role ? <p className="sh-portrait-role">{role}</p> : null}
+          {detail ? <p className="sh-portrait-detail">{detail}</p> : null}
+        </figcaption>
+      ) : null}
     </figure>
   );
 }

@@ -24,7 +24,7 @@ function ensure() {
 export function FormSplit({ children, aside, style, ...rest }) {
   ensure();
   return (
-    <div className="sh-fsplit" style={style} {...rest}>
+    <div data-ds-id="sections/FormSplit" className="sh-fsplit" style={style} {...rest}>
       <div className="sh-fsplit-form">{children}</div>
       {aside ? <aside className="sh-fsplit-aside" data-ground="stone">{aside}</aside> : null}
     </div>

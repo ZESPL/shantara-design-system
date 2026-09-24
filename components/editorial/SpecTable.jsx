@@ -7,7 +7,7 @@ const CSS = `
 .sh-spec{width:100%;border-collapse:collapse;font:var(--type-body);color:var(--text-primary)}
 .sh-spec th,.sh-spec td{padding:var(--space-4) 0;padding-inline-end:var(--space-7);text-align:start;vertical-align:baseline;font-weight:var(--weight-regular)}
 .sh-spec th:last-child,.sh-spec td:last-child{padding-inline-end:0}
-.sh-spec thead th{font:var(--type-eyebrow);letter-spacing:var(--tracking-eyebrow);text-transform:uppercase;color:var(--eyebrow-color);padding-bottom:var(--space-3)}
+.sh-spec thead th{font:var(--type-label);color:var(--text-secondary);padding-bottom:var(--space-3)}
 .sh-spec tbody th{font:var(--type-body);color:var(--text-primary)}
 .sh-spec td{color:var(--text-secondary);font:var(--type-body-sm)}
 .sh-spec td[data-accent="true"]{color:var(--text-brand);font:var(--type-body);font-variant-numeric:tabular-nums}
@@ -39,7 +39,7 @@ export function SpecTable({ columns = [], rows = [], caption, showHeader = false
   ensure();
   const [head, ...cells] = columns;
   return (
-    <table className="sh-spec" data-rules={String(rules)} data-size={size} style={style} {...rest}>
+    <table data-ds-id="editorial/SpecTable" className="sh-spec" data-rules={String(rules)} data-size={size} style={style} {...rest}>
       {caption ? <caption className="sh-visually-hidden">{caption}</caption> : null}
       <thead style={showHeader ? undefined : { position: "absolute", width: 1, height: 1, overflow: "hidden", clip: "rect(0 0 0 0)" }}>
         <tr>{columns.map((c) => <th key={c.key} scope="col" data-align={c.align}>{c.label}</th>)}</tr>

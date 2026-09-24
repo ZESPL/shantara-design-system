@@ -9,7 +9,11 @@ export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> 
   hint?: string;
   /** Error message; also turns the border Clay and sets aria-invalid. */
   error?: string;
+  /** Adds a Himalaya asterisk and the native `required`. */
   required?: boolean;
+  /** Shows a muted “Optional” (or the given string) after the label. */
+  optional?: boolean | string;
+  /** Control height: sm 44 · md 52 (default) · lg 56. */
   size?: "sm" | "md" | "lg";
   startIcon?: React.ReactNode;
   endIcon?: React.ReactNode;

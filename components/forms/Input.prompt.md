@@ -1,4 +1,4 @@
-Text field for all single-line entry. Inputs use the 8px radius — only buttons are pill-shaped.
+Text field for all single-line entry.
 
 ```jsx
 <Input label="Email" type="email" placeholder="you@example.com" required hint="We only email about your booking." />
@@ -6,7 +6,7 @@ Text field for all single-line entry. Inputs use the 8px radius — only buttons
 <Input label="Search treatments" startIcon={<Icon name="search" size={16} />} />
 ```
 
-Labels are sentence case, 13px Medium, letterspaced. Hints stay short (“Optional”) at `--text-xs` minimum — never essay paragraphs in the hint. Errors also use `--text-xs`.
+**Field contract (Input, Textarea, Select).** 52px control (`--control-lg`; `sm` 44, `lg` 56), 2px radius (`--radius-input`), 1px `--border-control`, white on Merino, 17px text. Label 15px Medium sentence case, 8px above the control; hint/error 13px, 8px below. `required` adds a Himalaya `*` (and the native `required`); `optional` adds a muted “Optional”. Error: Clay border + Clay halo on focus, message with an alert icon, `aria-invalid` and `aria-describedby`. Disabled: Pearl Bush fill, subtle border, muted text, `not-allowed`. Hints stay one short line.
 
 **Motion.** Hover darkens the hairline to `--border-strong`. Focus is Himalaya plus a 3px `--surface-brand-soft` halo, 160ms. An error message rises 8px (`sh-enter-up`) over 240ms — it does not shake.
 

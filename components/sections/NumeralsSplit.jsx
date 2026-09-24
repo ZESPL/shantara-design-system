@@ -23,12 +23,12 @@ function ensure() {
 }
 
 /* numerals: [{ value, label }] — two or three. */
-export function NumeralsSplit({ eyebrow, title, sub, numerals = [], footnote, style, ...rest }) {
+export function NumeralsSplit({ title, sub, numerals = [], footnote, style, ...rest }) {
   ensure();
   const shown = numerals.slice(0, 3);
   return (
-    <div className="sh-nsplit" style={style} {...rest}>
-      <Statement eyebrow={eyebrow} sub={sub}>{title}</Statement>
+    <div data-ds-id="sections/NumeralsSplit" className="sh-nsplit" style={style} {...rest}>
+      <Statement sub={sub}>{title}</Statement>
       <div className="sh-nsplit-nums" data-count={String(shown.length)}>
         {shown.map((n) => <Numeral key={n.label} value={n.value} label={n.label} />)}
       </div>

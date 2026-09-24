@@ -1,12 +1,12 @@
 A heading row with one text link on the right, then tiles in a grid that never leaves an uneven last row (deck slide 11).
 
 ```jsx
-<TileGrid eyebrow="Programmes" title="Naturopathy programmes"
+<TileGrid title="Naturopathy programmes"
   action={<TextLink href="/en/programs">All programmes</TextLink>}>
-  <Tile src="/assets/photos/balcony.jpg" alt="" eyebrow="Mind · 7–14 nights" title="Stress Management"
+  <Tile src="/assets/photos/balcony.jpg" alt="" title="Stress Management" meta={["Mind", "7–14 nights"]}
     text="Doctor-led routines, therapies and rest for guests managing sustained stress, poor sleep or fatigue." href="/en/programs/stress-management" />
-  <Tile src="/assets/photos/water-wall.jpg" alt="" eyebrow="Metabolic · 7–21 nights" title="Detox" … />
-  <Tile src="/assets/photos/grounds.jpg" alt="" eyebrow="Metabolic · 14–21 nights" title="Weight Management" … />
+  <Tile src="/assets/photos/water-wall.jpg" alt="" title="Detox" meta={["Metabolic", "7–21 nights"]} … />
+  <Tile src="/assets/photos/grounds.jpg" alt="" title="Weight Management" meta={["Metabolic", "14–21 nights"]} … />
 </TileGrid>
 ```
 

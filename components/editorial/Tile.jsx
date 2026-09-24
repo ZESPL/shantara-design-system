@@ -1,9 +1,11 @@
 import React from "react";
 import { Media } from "./Media.jsx";
+import { MetaRow } from "./MetaRow.jsx";
 
 /* Replaces the white card on linen. Photograph and text sit directly on the ground —
-   no border, shadow or radius. Hover: the photograph scales to 1.02 inside its frame and
-   the title takes a hairline underline. The whole tile is one link. */
+   no border, shadow or radius. Order: photograph → title → meta row → text. Category and
+   duration live in the meta row BELOW the title, never above it. Hover: the photograph
+   scales to 1.02 inside its frame and the title takes a hairline underline. */
 const CSS = `
 .sh-tile{display:flex;flex-direction:column;gap:var(--space-5);min-width:0;color:inherit;text-decoration:none}
 .sh-tile[data-href]{cursor:pointer}
@@ -11,7 +13,8 @@ const CSS = `
 .sh-tile-body{display:flex;flex-direction:column;gap:var(--space-3);min-width:0}
 .sh-tile-title{margin:0;font:var(--type-item);color:var(--text-primary);text-wrap:balance}
 .sh-tile-title>span{background:linear-gradient(currentColor,currentColor) 0 100% / 0 1px no-repeat;transition:background-size var(--duration-base) var(--ease-out);padding-bottom:2px}
-.sh-tile-text{margin:0;font:var(--type-body-sm);color:var(--text-secondary);max-width:48ch}
+.sh-tile-body>.sh-meta{margin-top:calc(var(--space-1) * -1)}
+.sh-tile-text{margin:var(--space-1) 0 0;font:var(--type-body-sm);color:var(--text-secondary);max-width:48ch}
 .sh-tile-meta{margin:0;font:var(--type-caption);color:var(--text-muted);font-variant-numeric:tabular-nums}
 .sh-tile[data-size="lg"] .sh-tile-title{font:var(--type-title)}
 .sh-tile[data-size="lg"] .sh-tile-text{font:var(--type-body);max-width:56ch}
@@ -34,14 +37,18 @@ function ensure() {
   document.head.appendChild(el);
 }
 
-export function Tile({ media, src, alt = "", ratio = "4:3", eyebrow, title, text, meta, href, onClick, size = "md", layout = "stack", headingLevel = 3, style, ...rest }) {
+export function Tile({ media, src, alt = "", ratio = "4:3", title, text, meta, href, onClick, size = "md", layout = "stack", headingLevel = 3, style, ...rest }) {
   ensure();
   const interactive = !!(href || onClick);
-  const Tag = href ? "a" : interactive ? "a" : "div";
+  const Tag = interactive ? "a" : "div";
   const H = "h" + headingLevel;
   const figure = media || (src ? <Media src={src} alt={alt} ratio={ratio} /> : null);
+  const metaNode = meta == null || meta === false ? null
+    : Array.isArray(meta) || typeof meta === "string" ? <MetaRow items={meta} />
+    : <div className="sh-tile-meta">{meta}</div>;
   return (
     <Tag
+      data-ds-id="editorial/Tile"
       className="sh-tile"
       data-size={size}
       data-layout={layout}
@@ -53,10 +60,9 @@ export function Tile({ media, src, alt = "", ratio = "4:3", eyebrow, title, text
     >
       {figure}
       <div className="sh-tile-body">
-        {eyebrow ? <p className="shantara-eyebrow" style={{ margin: 0 }}>{eyebrow}</p> : null}
         <H className="sh-tile-title"><span>{title}</span></H>
+        {metaNode}
         {text ? <p className="sh-tile-text">{text}</p> : null}
-        {meta ? <p className="sh-tile-meta">{meta}</p> : null}
       </div>
     </Tag>
   );

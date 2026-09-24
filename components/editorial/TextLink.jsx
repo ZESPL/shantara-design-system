@@ -6,6 +6,6 @@ import { Icon } from "../core/Icon.jsx";
    website. It is Button variant="link" with the arrow built in. */
 export function TextLink({ children, arrow = true, ...rest }) {
   return (
-    <Button variant="link" endIcon={arrow ? <Icon name="arrow-right" size={16} /> : undefined} {...rest}>{children}</Button>
+    <Button data-ds-id="editorial/TextLink" variant="link" endIcon={arrow ? <Icon name="arrow-right" size={16} /> : undefined} {...rest}>{children}</Button>
   );
 }

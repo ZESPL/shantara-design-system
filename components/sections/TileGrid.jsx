@@ -36,14 +36,14 @@ function ensure() {
   document.head.appendChild(el);
 }
 
-export function TileGrid({ eyebrow, title, sub, action, layout = "3", footnote, children, style, ...rest }) {
+export function TileGrid({ title, sub, action, layout = "3", footnote, children, style, ...rest }) {
   ensure();
   const items = React.Children.toArray(children).filter(Boolean);
   return (
-    <div className="sh-tgrid" style={style} {...rest}>
+    <div data-ds-id="sections/TileGrid" className="sh-tgrid" style={style} {...rest}>
       {title || action ? (
         <div className="sh-tgrid-head">
-          {title ? <Statement eyebrow={eyebrow} sub={sub}>{title}</Statement> : <span />}
+          {title ? <Statement sub={sub}>{title}</Statement> : <span />}
           {action ? <div>{action}</div> : null}
         </div>
       ) : null}

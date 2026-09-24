@@ -30,7 +30,7 @@ function ensure() {
 export function IconButton({ variant = "ghost", size = "md", label, children, ...rest }) {
   ensure();
   return (
-    <button type="button" className="sh-ibtn" data-variant={variant} data-size={size} aria-label={label} title={label} {...rest}>
+    <button type="button" className="sh-ibtn" data-ds-id="core/IconButton" data-variant={variant} data-size={size} aria-label={label} title={label} {...rest}>
       {children}
     </button>
   );

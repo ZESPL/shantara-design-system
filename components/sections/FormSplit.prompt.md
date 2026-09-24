@@ -8,7 +8,7 @@ The consultation form on Merino beside a Stone panel that shows who will call an
     We'll be in touch
   </Statement>
 </>}>
-  <Statement as="h2" size="title" eyebrow="Book a Consultation">Send your details</Statement>
+  <Statement as="h2" size="title">Send your details</Statement>
   <Input label="Name" />
   <Input label="Mobile / WhatsApp number" placeholder="+91" />
   <Button size="lg">Send your details</Button>

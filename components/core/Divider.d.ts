@@ -5,7 +5,7 @@ export interface DividerProps extends React.HTMLAttributes<HTMLElement> {
   tone?: "subtle" | "default" | "strong";
   /** CSS length applied as the cross-axis margin. */
   spacing?: string;
-  /** Optional centred eyebrow label, e.g. "or". */
+  /** Optional centred caption label, e.g. "or". */
   label?: string;
   orientation?: "horizontal" | "vertical";
 }
