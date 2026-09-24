@@ -36,7 +36,7 @@ function ExperienceScreen({ onNavigate }) {
         sub={t("A typical day may include consultations, therapies, meals, physical activity, rest and time for yourself.")}
       />
 
-      <Section ground="merino">
+      <Section ground="merino" style={{ paddingTop: "var(--section-y-sm)" }}>
         <Breadcrumbs style={{ marginBottom: "var(--stack-lg)" }} items={[{ label: t("Home"), href: window.ShantaraLocales ? window.ShantaraLocales.kitHash(window.ShantaraI18n.currentLocaleCode(), "home") : "#/en/" }, t("Experience")]} />
         <Statement sub={t("A typical day is planned by your doctor and reviewed each morning. It may include a consultation, therapies, meals, movement, rest and personal time.")}>
           {t("What a day may include")}

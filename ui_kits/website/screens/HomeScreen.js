@@ -61,9 +61,8 @@ function HomeScreen({ onNavigate }) {
       </Section>
 
       <BandStatement>
-        <Statement actions={<TextLink onClick={() => onNavigate("about")}>{t("Our approach")}</TextLink>}>
-          {t("Your programme is planned after consultation and assessment.")}
-        </Statement>
+        <Statement>{t("Your programme is planned after consultation and assessment.")}</Statement>
+        <div><TextLink onClick={() => onNavigate("about")}>{t("Our approach")}</TextLink></div>
       </BandStatement>
 
       <Section ground="merino">
@@ -118,7 +117,7 @@ function HomeScreen({ onNavigate }) {
       />
 
       <SplitSection ground="stone" mediaSide="start" src={window.photoSrc("room-bedroom-balcony-open-book")} alt={t("A bedroom with a balcony over the valley")}>
-        <Statement eyebrow={t("Accommodation")}>
+        <Statement eyebrow={t("Accommodation")} size="title">
           {t("Shantara has 52 rooms across five accommodation categories, designed for comfortable residential stays.")}
         </Statement>
         <SpecTable
@@ -143,8 +142,7 @@ function HomeScreen({ onNavigate }) {
           {articles.map((a, i) => (
             <Tile
               key={a.id}
-              src={window.photoSrc(a.photo)}
-              alt=""
+              media={<DS.Media src={window.photoSrc(a.photo)} alt="" ratio={i === 0 ? "4:5" : "4:3"} mobileRatio="4:3" />}
               size={i === 0 ? "lg" : "md"}
               eyebrow={t(a.category)}
               title={t(a.title)}

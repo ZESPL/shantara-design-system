@@ -70,7 +70,7 @@ function ProgrammeScreen({ onNavigate }) {
         actions={<Button size="lg" onClick={() => onNavigate("booking")}>{t("Book a Consultation")}</Button>}
       />
 
-      <Section ground="merino">
+      <Section ground="merino" style={{ paddingTop: "var(--section-y-sm)" }}>
         <Breadcrumbs style={{ marginBottom: "var(--stack-lg)" }} items={[{ label: t("Programmes"), href: window.ShantaraLocales ? window.ShantaraLocales.kitHash(window.ShantaraI18n.currentLocaleCode(), "programme") : "#/en/programs" }, t(programme.name)]} />
         <FormSplit
           aside={<>
@@ -126,7 +126,7 @@ function ProgrammeScreen({ onNavigate }) {
         <Statement>{t("What to expect during your stay")}</Statement>
         <div className="sh-prog-strip" aria-hidden="true" style={{ marginTop: "var(--stack-lg)" }}>
           {GALLERY.map((shot) => (
-            <div key={shot.name}><Media src={window.photoSrc(shot.name)} alt="" ratio="4:5" /></div>
+            <div key={shot.name}><Media src={window.photoSrc(shot.name)} alt="" ratio="4:3" /></div>
           ))}
         </div>
         <TimeTable style={{ marginTop: "var(--stack-lg)" }} rows={DAY_TIMES.map((r) => ({ time: t(r.time), title: t(r.text) }))} />

@@ -22,15 +22,15 @@ function ensure() {
   document.head.appendChild(el);
 }
 
+/* First and last initial: "Dr. P.A. Kareem" → "PK", "Dr. Bahja Janu" → "BJ". */
 function initialsOf(name) {
-  return String(name || "")
+  const parts = String(name || "")
     .replace(/^(Dr\.?|Mr\.?|Ms\.?|Mrs\.?)\s+/i, "")
     .split(/[\s.]+/)
-    .filter(Boolean)
-    .map((p) => p[0])
-    .slice(-2)
-    .join("")
-    .toUpperCase();
+    .filter(Boolean);
+  if (!parts.length) return "";
+  const picked = parts.length > 1 ? [parts[0], parts[parts.length - 1]] : [parts[0]];
+  return picked.map((p) => p[0]).join("").toUpperCase();
 }
 
 export function PortraitFrame({ src, media, alt, name, role, detail, headingLevel = 3, position = "center top", style, ...rest }) {

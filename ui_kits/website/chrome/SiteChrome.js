@@ -53,7 +53,9 @@ const CHROME_CSS = `
 :root{--header-h:64px}
 @media (min-width:1000px){:root{--header-h:72px}}
 .sh-hdr{position:sticky;top:0;z-index:30;height:var(--header-h);margin-bottom:calc(-1 * var(--header-h));background:transparent;border-bottom:var(--border-width) solid transparent;transition:background-color var(--duration-base) var(--ease-standard),border-color var(--duration-base) var(--ease-standard)}
-.sh-hdr[data-ground="photo"]{background:var(--scrim-header)}
+.sh-hdr[data-ground="photo"]{background:var(--scrim-header);isolation:isolate}
+/* Over photography the scrim runs past the header's own edge, so it never ends in a visible line. */
+.sh-hdr[data-ground="photo"]::before{content:"";position:absolute;inset:0 0 auto 0;height:calc(var(--header-h) * 2);background:var(--scrim-header);pointer-events:none;z-index:-1}
 .sh-hdr[data-scrolled="true"]{background:color-mix(in srgb, var(--color-merino) 88%, transparent);-webkit-backdrop-filter:var(--blur-glass);backdrop-filter:var(--blur-glass);border-bottom-color:var(--border-subtle)}
 .sh-hdr-row{height:100%;display:flex;align-items:center;gap:var(--space-7)}
 .sh-hdr-logo{display:flex;align-items:center;min-height:var(--tap-min);flex:0 0 auto}
@@ -65,7 +67,7 @@ const CHROME_CSS = `
 .sh-hdr-book-full{display:none}
 .sh-hdr-menu .sh-ibtn{color:var(--text-primary)}
 @media (hover: hover) and (pointer: fine){.sh-hdr-nav a:hover{color:var(--text-primary)}}
-@media (max-width:399.98px){.sh-hdr-book-short{display:none}}
+@media (max-width:379.98px){.sh-hdr-book-short{display:none}}
 @media (min-width:1000px){
   .sh-hdr-row{gap:clamp(24px, 3vw - 6px, 48px)}
   .sh-hdr-nav{display:flex}
@@ -87,9 +89,11 @@ const CHROME_CSS = `
 .sh-menu-contact a{display:inline-flex;align-items:center;min-height:var(--tap-min);color:inherit;text-decoration:none}
 
 .sh-foot{display:block}
+/* With the rosette band showing, line the footer up with the page container's left edge (100cqw = the panel). */
+.sh-foot .sh-pp-body>.sh-container{margin-inline:max(0px, (100cqw - var(--layout-max)) / 2 - var(--layout-gutter)) 0}
 .sh-foot-main{padding-block:var(--section-y-sm) var(--space-9)}
 .sh-foot-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--space-9) var(--grid-gap)}
-.sh-foot-brand{grid-column:1/-1;display:flex;flex-direction:column;gap:var(--space-6);min-width:0}
+.sh-foot-brand{grid-column:1/-1;display:flex;flex-direction:column;align-items:flex-start;gap:var(--space-6);min-width:0}
 .sh-foot-blurb{margin:0;font:var(--type-body-sm);color:var(--text-secondary);max-width:36ch}
 .sh-foot-contact{display:flex;flex-direction:column;font:var(--type-body-sm);color:var(--text-secondary)}
 .sh-foot-col{display:flex;flex-direction:column;gap:var(--space-1);min-width:0}
