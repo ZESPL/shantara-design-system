@@ -30,7 +30,8 @@ const CSS = `
 .sh-prose figure img{display:block;width:100%;height:auto}
 .sh-prose figcaption{margin-top:var(--space-3);font:var(--type-caption);color:var(--text-muted);max-width:60ch}
 .sh-prose hr{border:0;height:1px;background:var(--rule-color);margin-block:2.4em}
-.sh-prose table{width:100%;border-collapse:collapse;font:var(--type-body-sm);font-variant-numeric:tabular-nums;display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.sh-prose table{width:100%;border-collapse:collapse;font:var(--type-body-sm);font-variant-numeric:tabular-nums}
+@media (max-width:759.98px){.sh-prose table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}}
 .sh-prose thead th{font:var(--type-label);color:var(--text-primary);text-align:start;padding:var(--space-3) var(--space-5) var(--space-3) 0;border-bottom:1px solid var(--text-primary);white-space:nowrap}
 .sh-prose td{padding:var(--space-3) var(--space-5) var(--space-3) 0;border-bottom:var(--border-width) solid var(--rule-color);vertical-align:top;color:var(--text-secondary)}
 .sh-prose caption{caption-side:bottom;text-align:start;padding-top:var(--space-3);font:var(--type-caption);color:var(--text-muted)}

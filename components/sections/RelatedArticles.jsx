@@ -9,8 +9,8 @@ export function RelatedArticles({ title = "Related reading", articles = [], acti
   const shown = articles.slice(0, layout === "2" ? 2 : 3);
   return (
     <TileGrid data-ds-id="sections/RelatedArticles" title={title} action={action} layout={layout} style={style} {...rest}>
-      {shown.map((a) => (
-        <Tile key={a.href || a.title} src={a.src} alt={a.alt || ""} ratio={a.ratio || "3:2"} title={a.title} href={a.href} headingLevel={headingLevel}
+      {shown.map((a, i) => (
+        <Tile key={(a.href || "") + i} src={a.src} alt={a.alt || ""} ratio={a.ratio || "3:2"} title={a.title} href={a.href} headingLevel={headingLevel}
           meta={icons
             ? [a.category ? { icon: "tag", label: a.category } : null, a.readTime ? { icon: "clock", label: a.readTime } : null, a.date ? { icon: "calendar-days", label: a.date, dateTime: a.dateTime } : null]
             : [a.category, a.readTime || a.date]}

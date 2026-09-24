@@ -101,7 +101,7 @@ export function Select({ label, hint, error, required, optional, size = "md", op
           aria-invalid={error ? "true" : undefined}
           aria-describedby={error || hint ? mid : undefined}
           value={controlled ? value : undefined}
-          defaultValue={controlled ? undefined : defaultValue}
+          defaultValue={controlled ? undefined : (defaultValue !== undefined ? defaultValue : placeholder ? "" : undefined)}
           onChange={(e) => { if (!controlled) setInner(e.target.value); if (onChange) onChange(e); }}
           {...rest}
         >

@@ -3,7 +3,7 @@ import React from "react";
 /* Checkbox — 20px box, 2px radius, 1.5px border. The tick is an inline SVG drawn on a
    20×20 grid and centred with place-items:center, so it sits dead centre at any zoom. */
 const CSS = `
-.sh-check{position:relative;display:inline-flex;flex-direction:column;gap:var(--space-2);font-family:var(--font-body)}
+.sh-check{position:relative;display:flex;width:fit-content;max-width:100%;flex-direction:column;gap:var(--space-2);font-family:var(--font-body)}
 .sh-check-row{display:inline-flex;align-items:flex-start;gap:var(--space-4);min-height:var(--tap-min);padding-block:10px;font:var(--weight-regular) var(--text-base)/1.4 var(--font-body);color:var(--text-primary);cursor:pointer}
 .sh-check input{position:absolute;opacity:0;width:1px;height:1px;margin:0;pointer-events:none}
 .sh-check-box{flex:0 0 auto;box-sizing:border-box;display:grid;place-items:center;width:20px;height:20px;margin-top:calc((1.4em - 20px) / 2);background:var(--surface-card);border:var(--border-width-strong) solid var(--border-control);border-radius:var(--radius-xs);color:var(--text-on-brand);transition:var(--transition-control)}

@@ -11,7 +11,7 @@ const CSS = `
 .sh-pag-step{color:var(--text-primary)}
 .sh-pag-num[aria-current="page"]{color:var(--text-primary);font-weight:var(--weight-medium);box-shadow:inset 0 0 0 1px var(--text-primary)}
 .sh-pag-gap{min-width:24px;text-align:center;color:var(--text-muted)}
-.sh-pag-status{display:none;color:var(--text-secondary);font-variant-numeric:tabular-nums}
+.sh-pag-status{display:none;margin:0;color:var(--text-secondary);font-variant-numeric:tabular-nums}
 .sh-pag [aria-disabled="true"]{opacity:0.35;pointer-events:none}
 .sh-pag-step:focus-visible,.sh-pag-num:focus-visible{outline:none;box-shadow:var(--ring-focus)}
 [dir="rtl"] .sh-pag-step [data-icon]{transform:scaleX(-1)}

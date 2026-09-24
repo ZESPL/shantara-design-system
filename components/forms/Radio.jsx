@@ -3,7 +3,7 @@ import React from "react";
 /* Radio — 20px ring, 1.5px border; the 8px dot is a grid child centred with
    place-items:center (no offsets), so it stays centred at every zoom level. */
 const CSS = `
-.sh-radio{position:relative;display:inline-flex;align-items:flex-start;gap:var(--space-4);min-height:var(--tap-min);padding-block:10px;font:var(--weight-regular) var(--text-base)/1.4 var(--font-body);color:var(--text-primary);cursor:pointer}
+.sh-radio{position:relative;display:flex;width:fit-content;max-width:100%;box-sizing:border-box;align-items:flex-start;gap:var(--space-4);min-height:var(--tap-min);padding-block:10px;font:var(--weight-regular) var(--text-base)/1.4 var(--font-body);color:var(--text-primary);cursor:pointer}
 .sh-radio input{position:absolute;opacity:0;width:1px;height:1px;margin:0;pointer-events:none}
 .sh-radio-dot{flex:0 0 auto;box-sizing:border-box;display:grid;place-items:center;width:20px;height:20px;margin-top:calc((1.4em - 20px) / 2);background:var(--surface-card);border:var(--border-width-strong) solid var(--border-control);border-radius:50%;transition:var(--transition-control)}
 .sh-radio-dot::after{content:"";width:8px;height:8px;border-radius:50%;background:var(--surface-brand);opacity:0;transform:scale(.4);transition:transform var(--duration-fast) var(--ease-out),opacity var(--duration-fast) var(--ease-out)}

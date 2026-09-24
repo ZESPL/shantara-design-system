@@ -14,7 +14,8 @@ const CSS = `
 .sh-close[data-variant="photo"]{display:flex;align-items:flex-end;min-height:clamp(520px, 72svh, 860px);overflow:hidden}
 .sh-close>.sh-media{position:absolute;inset:0;z-index:-1;aspect-ratio:auto;height:100%}
 .sh-close-body{width:100%;padding-block:var(--section-y)}
-.sh-close[data-variant="compact"] .sh-close-body{padding-block:var(--section-y-sm)}
+.sh-close[data-variant="compact"] .sh-close-body{padding-block:clamp(40px, 3vw + 28px, 72px)}
+.sh-close[data-variant="compact"] .sh-stmt{gap:var(--space-3)}
 .sh-close-row{display:flex;flex-direction:column;gap:var(--stack-md)}
 .sh-close-actions{margin-top:var(--space-3)}
 .sh-close-contact{display:flex;flex-wrap:wrap;align-items:center;gap:0 var(--space-8);margin:var(--stack-lg) 0 0;padding:var(--space-3) 0 0;list-style:none;border-top:var(--border-width) solid var(--rule-color);font:var(--type-body-sm);color:var(--text-secondary)}
