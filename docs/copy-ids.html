@@ -1,0 +1,65 @@
+<!-- @dsCard group="Start" viewport="doc" kind="doc" name="Copy IDs" subtitle="Stable ds: references for pages, sections, cards and components — paste them into a prompt or a ticket" -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Copy IDs · Shantara design system</title>
+  <link rel="icon" href="../assets/icon-olive.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="doc.css">
+</head>
+<body class="ds-doc ds-handbook">
+  <a class="ds-skip" href="#copy-ids">Skip to content</a>
+  <header class="ds-handbook-mast">
+    <div class="ds-handbook-mast-inner">
+      <h1>Copy IDs</h1>
+      <p class="ds-handbook-lead">Every page, section, card and component has a stable reference that starts with <code>ds:</code>. Copy it and paste it into a prompt, a review comment or a ticket, so a person or an agent can find the exact thing you mean.</p>
+      <p class="ds-handbook-meta"><span>Scheme version 1</span><span>Shown as “Copy ID” on hover or keyboard focus</span></p>
+    </div>
+  </header>
+  <div class="ds-handbook-shell">
+    <nav class="ds-handbook-toc" aria-label="Copy ID sections" data-toc></nav>
+    <article class="ds-doc-inner" id="copy-ids" data-static>
+      <h2 id="where">Where to find the control</h2>
+      <ul>
+        <li><strong>Page</strong> — top right of every portal page, next to the breadcrumbs.</li>
+        <li><strong>Section</strong> — hover or tab onto any section heading; a small “Copy ID” button appears after it.</li>
+        <li><strong>Catalog card</strong> — bottom right of each card on the overview.</li>
+        <li><strong>Component</strong> — in the preview toolbar on a component page. Inside the live specimen, hover any part that carries <code>data-ds-id</code> to see a dashed outline and a chip with its ID; click the chip to copy it.</li>
+      </ul>
+
+      <h2 id="scheme">The scheme</h2>
+      <div class="ds-table-wrap"><table>
+        <thead><tr><th>Thing</th><th>Pattern</th><th>Example</th></tr></thead>
+        <tbody>
+          <tr><td>Portal page</td><td><code>ds:&lt;folder&gt;/&lt;file without .html&gt;</code></td><td><code>ds:docs/website-copy-voice</code>, <code>ds:guidelines/colors</code></td></tr>
+          <tr><td>Section of a page</td><td><code>&lt;page ID&gt;#&lt;heading id&gt;</code></td><td><code>ds:docs/website-copy-voice#core-principle</code></td></tr>
+          <tr><td>Component</td><td><code>ds:components/&lt;family&gt;/&lt;Name&gt;</code></td><td><code>ds:components/editorial/Tile</code></td></tr>
+          <tr><td>Component family</td><td><code>ds:components/&lt;family&gt;</code></td><td><code>ds:components/sections</code></td></tr>
+          <tr><td>UI kit or template</td><td><code>ds:ui_kits/&lt;kit&gt;</code>, <code>ds:templates/&lt;name&gt;</code></td><td><code>ds:ui_kits/website</code>, <code>ds:templates/brand-deck</code></td></tr>
+          <tr><td>Website mockup section</td><td><code>ds:page/&lt;view&gt;/&lt;slot&gt;</code></td><td><code>ds:page/home/hero</code></td></tr>
+          <tr><td>Overview</td><td><code>ds:index</code>, <code>ds:index#group-&lt;group&gt;</code></td><td><code>ds:index#group-components</code></td></tr>
+        </tbody>
+      </table></div>
+
+      <h2 id="resolve">How to resolve an ID</h2>
+      <ol>
+        <li><code>ds:components/editorial/Tile</code> → <code>components/editorial/Tile.jsx</code>, its <code>.prompt.md</code> and <code>.d.ts</code>; the page is <code>docs/component.html?c=Tile</code>.</li>
+        <li><code>ds:docs/website-copy-voice#core-principle</code> → the page <code>docs/website-copy-voice.html</code>, scrolled to the element with that id. The markdown behind a docs page is named in its meta line.</li>
+        <li><code>ds:page/home/hero</code> → the element with <code>data-ds-id="page/home/hero"</code> in <code>ui_kits/website/</code>.</li>
+      </ol>
+
+      <h2 id="rules">Rules for authors</h2>
+      <ul>
+        <li>Every component root carries <code>data-ds-id="&lt;family&gt;/&lt;Name&gt;"</code>. Keep it when you refactor; it is the join between the code, the catalog and a prompt.</li>
+        <li>Website mockup sections carry <code>data-ds-id="page/&lt;view&gt;/&lt;slot&gt;"</code>. Slots are named for their job (<code>hero</code>, <code>programmes</code>, <code>closing</code>), not their position.</li>
+        <li>Section IDs come from the heading text. Renaming a heading changes its ID, so rename only when the meaning changes.</li>
+        <li>IDs are references, not copy. Never show them to guests.</li>
+      </ul>
+    </article>
+  </div>
+  <script src="../portal.js"></script>
+  <script src="doc.js"></script>
+</body>
+</html>

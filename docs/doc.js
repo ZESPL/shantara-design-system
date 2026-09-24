@@ -163,18 +163,6 @@
     return html.join("\n");
   }
 
-  const KIT_DOCS = [
-    ["Notes", "website-kit.html"],
-    ["Skill", "website-skill.html"],
-    ["IA", "website-ia.html"],
-    ["Sections", "website-sections.html"],
-    ["Content", "website-content.html"],
-    ["Copy", "website-copy.html"],
-    ["Technical", "website-technical.html"],
-    ["QA", "website-qa.html"],
-    ["ICP", "icp.html"],
-  ];
-
   const KIT_MD_HREF = {
     "skill-ia.md": "website-ia.html",
     "skill-sections.md": "website-sections.html",
@@ -185,13 +173,69 @@
     "SKILL.md": "website-skill.html",
     "README.md": "website-kit.html",
     "icp.md": "icp.html",
+    "skill-stack.md": "website-stack.html",
+    "skill-premium.md": "website-premium.html",
+    "voice-and-tone.md": "website-copy-voice.html",
+    "naming-and-nap.md": "website-copy-naming.html",
+    "health-claims-and-compliance.md": "website-copy-claims.html",
+    "page-copy-patterns.md": "website-copy-patterns.html",
+    "words-to-avoid.md": "website-copy-words.html",
+    "localisation.md": "website-copy-localisation.html",
+    "messaging-map.md": "icp-messaging-map.html",
+    "profile-template.md": "icp-profile-template.html",
+    "weight-metabolic.md": "icp-weight-metabolic.html",
+    "pain-mobility.md": "icp-pain-mobility.html",
+    "stress-sleep-burnout.md": "icp-stress-sleep-burnout.html",
+    "digestive-inflammatory.md": "icp-digestive-inflammatory.html",
+    "hormonal-vitality.md": "icp-hormonal-vitality.html",
+    "healthy-ageing-longevity.md": "icp-healthy-ageing-longevity.html",
+    "short-health-reset.md": "icp-short-health-reset.html",
+    "overlays.md": "icp-overlays.html",
+    "operating-guide.md": "icp-operating-guide.html",
+    "claim-governance.md": "icp-claim-governance.html",
+    "research-and-sources.md": "icp-research-and-sources.html",
+    "use.md": "use.html",
+    "sources.md": "sources.html",
+    "handbook.txt": "handbook.html",
   };
+
+  /* Repo paths (relative to the design-system root) that have a portal page. */
+  const ROOT_PAGES = {
+    "SKILL.md": "skill.html",
+    "readme.md": "readme.html",
+    "ui_kits/website/copy/": "website-copy.html",
+    "ui_kits/website/": "website-kit.html",
+    "docs/icp/": "icp.html",
+    "templates/brand-deck/": "../#/templates/brand-deck/BrandDeck.dc.html",
+  };
+
+  /* Relative links in a markdown source resolve against that file, not the wrapper page.
+     Rewrite any unmapped relative link so it still points at the same file from docs/. */
+  function resolveAgainstSource(href, sourcePath) {
+    try {
+      const src = new URL(sourcePath, location.href);
+      const target = new URL(href, src);
+      if (target.origin !== location.origin) return href;
+      const here = new URL(".", location.href);
+      const siteRoot = new URL("../", here);
+      if (!target.pathname.startsWith(siteRoot.pathname)) return href;
+      let rel = decodeURIComponent(target.pathname.slice(siteRoot.pathname.length));
+      /* Skills under .cursor/skills/<name>/ write ../../ meaning the design-system root. */
+      if (rel.startsWith(".cursor/") && !rel.startsWith(".cursor/skills/")) rel = rel.slice(8);
+      if (ROOT_PAGES[rel]) return ROOT_PAGES[rel] + target.hash;
+      if (rel.endsWith("/") || rel === "") rel += "README.md";
+      const fromDocs = rel.startsWith("docs/") ? rel.slice(5) : "../" + rel;
+      return fromDocs + target.search + target.hash;
+    } catch (err) {
+      return href;
+    }
+  }
 
   function rewriteKitLinks(el, sourcePath) {
     const fromWebsite = /ui_kits\/website\//.test(String(sourcePath || ""));
     el.querySelectorAll("a[href]").forEach((a) => {
       const href = a.getAttribute("href") || "";
-      if (/^https?:/i.test(href) || href.startsWith("#")) return;
+      if (/^[a-z][a-z0-9+.-]*:/i.test(href) || href.startsWith("#") || href.startsWith("/")) return;
       const hashIndex = href.search(/[?#]/);
       const pathPart = hashIndex === -1 ? href : href.slice(0, hashIndex);
       const suffix = hashIndex === -1 ? "" : href.slice(hashIndex);
@@ -201,35 +245,13 @@
         return;
       }
       const next = KIT_MD_HREF[file];
-      if (!next) return;
-      if ((file === "SKILL.md" || file === "README.md") && !fromWebsite) return;
-      a.setAttribute("href", next + suffix);
+      const kitOnly = file === "SKILL.md" || file === "README.md";
+      if (next && !(kitOnly && !fromWebsite && !/ui_kits\/website\//.test(pathPart))) {
+        a.setAttribute("href", next + suffix);
+        return;
+      }
+      if (sourcePath && !/\.html$/.test(pathPart)) a.setAttribute("href", resolveAgainstSource(href, sourcePath));
     });
-  }
-
-  function currentKitPage() {
-    const fromId = document.querySelector("article[id^='website-']")?.id;
-    if (fromId) return `${fromId}.html`;
-    const file = decodeURIComponent(location.pathname || "").split("/").pop() || "";
-    const bare = file.split("?")[0];
-    if (!bare) return "";
-    return bare.endsWith(".html") ? bare : `${bare}.html`;
-  }
-
-  function mountKitNav() {
-    const page = currentKitPage();
-    if (!KIT_DOCS.some(([, href]) => href === page)) return;
-    const inner = document.querySelector(".ds-handbook-mast-inner");
-    if (!inner || inner.querySelector("[data-kit-nav]")) return;
-    const nav = document.createElement("nav");
-    nav.className = "ds-handbook-meta";
-    nav.setAttribute("data-kit-nav", "");
-    nav.setAttribute("aria-label", "Website kit");
-    nav.innerHTML = KIT_DOCS.map(([label, href]) => {
-      const current = href === page;
-      return `<a href="${href}"${current ? ' aria-current="page"' : ""}>${label}</a>`;
-    }).join("");
-    inner.appendChild(nav);
   }
 
   const TOC_GROUPS = {
@@ -309,7 +331,7 @@
     toc.hidden = false;
     if (shell) shell.classList.add("has-toc");
 
-    const wide = window.matchMedia("(min-width: 1100px)");
+    const wide = window.matchMedia("(min-width: 1240px)");
     const groups = TOC_GROUPS[articleId];
     const numbered = heads.some((heading) => parseTocHeading(heading).section != null);
     let inner;
@@ -607,22 +629,17 @@
     }
   }
 
+  /* Pages without the portal tag (e.g. guidelines/type.html opened on its own) load it here. */
   function mountChrome() {
     if (framed()) {
       document.documentElement.classList.add("is-framed");
       return;
     }
-    if (document.querySelector(".ds-chrome")) return;
-    const header = document.createElement("header");
-    header.className = "ds-chrome";
-    header.innerHTML = `<a class="brand" href="../">
-      <img src="../assets/wordmark-dark.svg" alt="Shantara" height="16">
-      <span class="brand-rule" aria-hidden="true"></span>
-      <span class="brand-label">Design system</span>
-    </a>`;
-    const skip = document.querySelector(".ds-skip");
-    if (skip) skip.after(header);
-    else document.body.prepend(header);
+    if (window.DSPortal || document.querySelector("script[src$='portal.js']")) return;
+    const own = document.currentScript || document.querySelector("script[src$='doc.js']");
+    const tag = document.createElement("script");
+    tag.src = new URL("../portal.js", own ? own.src : location.href).href;
+    document.body.appendChild(tag);
   }
 
   function pageTitleFromDocument() {
@@ -653,15 +670,6 @@
     const inner = document.createElement("div");
     inner.className = "ds-page-head-inner";
 
-    const eyebrowText = document.body.dataset.eyebrow || el.querySelector(":scope > .shantara-eyebrow")?.textContent.trim();
-    if (eyebrowText) {
-      const eyebrow = document.createElement("p");
-      eyebrow.className = "shantara-eyebrow";
-      eyebrow.textContent = eyebrowText;
-      inner.appendChild(eyebrow);
-      el.querySelector(":scope > .shantara-eyebrow")?.remove();
-    }
-
     const heading = document.createElement("h1");
     heading.textContent = titleText;
     inner.appendChild(heading);
@@ -682,9 +690,7 @@
     }
 
     head.appendChild(inner);
-    const chrome = document.querySelector(".ds-chrome");
-    if (chrome) chrome.after(head);
-    else document.body.insertBefore(head, el);
+    el.parentNode.insertBefore(head, el);
   }
 
   function splitPromptLead(src) {
@@ -764,35 +770,22 @@
       if (target) requestAnimationFrame(() => target.scrollIntoView());
     }
 
-    mountKitNav();
+    el.dispatchEvent(new CustomEvent("ds:rendered", { bubbles: true }));
   }
 
-  const COMPONENT_FAMILIES = {
-    Core: ["Button", "IconButton", "Icon", "Logo", "Card", "Badge", "Tag", "Divider", "PatternPanel"],
-    Forms: ["Input", "Textarea", "Select", "Checkbox", "Radio", "Switch"],
-    Navigation: ["Tabs", "Breadcrumbs", "Accordion", "LanguageSelector"],
-    Feedback: ["Dialog", "Toast", "Tooltip", "Spinner"],
-    Editorial: ["Media", "Eyebrow", "Statement", "Numeral", "TextLink", "Tile", "NumberedSteps", "PlainList", "GroupedList", "SpecTable", "TimeTable", "QuoteBlock", "PortraitFrame"],
-    Sections: ["Section", "HeroFullBleed", "HeroStatement", "SplitSection", "BandStatement", "PanoramaCaption", "PeopleRow", "NumeralsSplit", "TileGrid", "IndexList", "ClosingCTA", "FormSplit"],
-  };
-
-  const COMPONENT_PATH = {
-    Button: "core", IconButton: "core", Icon: "core", Logo: "core", Card: "core",
-    Badge: "core", Tag: "core", Divider: "core", PatternPanel: "core",
-    Input: "forms", Textarea: "forms", Select: "forms", Checkbox: "forms",
-    Radio: "forms", Switch: "forms",
-    Tabs: "navigation", Breadcrumbs: "navigation", Accordion: "navigation", LanguageSelector: "navigation",
-    Dialog: "feedback", Toast: "feedback", Tooltip: "feedback", Spinner: "feedback",
-    Media: "editorial", Eyebrow: "editorial", Statement: "editorial", Numeral: "editorial", TextLink: "editorial",
-    Tile: "editorial", NumberedSteps: "editorial", PlainList: "editorial", GroupedList: "editorial",
-    SpecTable: "editorial", TimeTable: "editorial", QuoteBlock: "editorial", PortraitFrame: "editorial",
-    Section: "sections", HeroFullBleed: "sections", HeroStatement: "sections", SplitSection: "sections",
-    BandStatement: "sections", PanoramaCaption: "sections", PeopleRow: "sections", NumeralsSplit: "sections",
-    TileGrid: "sections", IndexList: "sections", ClosingCTA: "sections", FormSplit: "sections",
-  };
-
-  function familyOf(name) {
-    return Object.keys(COMPONENT_FAMILIES).find((family) => COMPONENT_FAMILIES[family].includes(name)) || "";
+  /* Component list comes from _ds_manifest.json (scripts/write-manifest.mjs scans components/). */
+  async function componentEntry(name) {
+    let cards = null;
+    if (window.DSPortal && window.DSPortal.ready) {
+      const data = await window.DSPortal.ready;
+      if (data) cards = data.cards;
+    }
+    if (!cards) {
+      const res = await fetch("../_ds_manifest.json");
+      if (!res.ok) throw new Error("Could not read the design-system index");
+      cards = ((await res.json()).cards || []).map((c) => ({ ...c, component: !!c.family }));
+    }
+    return cards.find((c) => c.component && c.name === name) || null;
   }
 
   async function fillComponentPage() {
@@ -800,12 +793,14 @@
     if (!host) return false;
 
     const name = new URLSearchParams(location.search).get("c") || "Button";
-    const folder = COMPONENT_PATH[name];
-    const family = familyOf(name);
-    if (!folder) {
-      host.innerHTML = `<p class="err">Unknown component <code>${escapeHtml(name)}</code>.</p>`;
+    const entry = await componentEntry(name);
+    if (!entry) {
+      host.innerHTML = `<p class="err">Unknown component <code>${escapeHtml(name)}</code>. Pick one from the sidebar.</p>`;
       return true;
     }
+    const folder = entry.folder || entry.family.toLowerCase();
+    const promptPath = entry.source || `components/${folder}/${name}.prompt.md`;
+    const ref = `ds:components/${folder}/${name}`;
 
     document.title = `${name} · Shantara design system`;
     const titleEl = document.querySelector("[data-component-title]");
@@ -813,46 +808,37 @@
     const familyEl = document.querySelector("[data-component-family]");
     const pathEl = document.querySelector("[data-component-path]");
     if (titleEl) titleEl.textContent = name;
-    if (familyEl) familyEl.textContent = family || "Components";
-    if (pathEl) pathEl.textContent = `components/${folder}/${name}.prompt.md`;
-
-    const familyNav = document.querySelector("[data-family-nav]");
-    if (familyNav) {
-      familyNav.innerHTML = Object.keys(COMPONENT_FAMILIES).map((label) => {
-        const first = COMPONENT_FAMILIES[label][0];
-        const current = label === family;
-        return `<a href="component?c=${encodeURIComponent(first)}"${current ? ' aria-current="page"' : ""}>${escapeHtml(label)}</a>`;
-      }).join("");
-    }
-
-    const siblingNav = document.querySelector("[data-sibling-nav]");
-    if (siblingNav && family) {
-      siblingNav.innerHTML = COMPONENT_FAMILIES[family].map((comp) => {
-        const current = comp === name;
-        return `<li><a href="component?c=${encodeURIComponent(comp)}"${current ? ' aria-current="page"' : ""}>${escapeHtml(comp)}</a></li>`;
-      }).join("");
-    }
+    if (familyEl) familyEl.textContent = `${entry.family} family`;
+    if (pathEl) pathEl.textContent = promptPath;
 
     const specimen = document.querySelector("[data-specimen]");
+    const toolbar = document.querySelector("[data-stage-toolbar]");
+    const src = (ground) => `../components/_specimen.html?c=${encodeURIComponent(name)}${ground ? `&ground=${ground}` : ""}`;
     if (specimen) {
-      /* Section specimens are page-width and tall: size the frame to its content (capped). */
-      specimen.addEventListener("load", () => {
-        const fit = () => {
-          try {
-            const h = specimen.contentDocument.documentElement.scrollHeight;
-            specimen.style.height = Math.min(Math.max(h, 280), 1400) + "px";
-          } catch (e) { /* cross-origin preview: keep the default height */ }
-        };
-        [0, 400, 1200, 2500].forEach((ms) => setTimeout(fit, ms));
-      });
-      specimen.src = `../components/_specimen?c=${encodeURIComponent(name)}`;
+      specimen.title = `${name} live specimen`;
+      if (window.DSPortal && window.DSPortal.mountStage && toolbar) {
+        let open = null;
+        window.DSPortal.mountStage({
+          toolbar,
+          frame: specimen,
+          minHeight: 200,
+          extra: `${window.DSPortal.idButton(ref)}<a class="dsp-tool-link" data-open-specimen href="${src("")}" target="_blank" rel="noopener">Open specimen</a>`,
+          applyGround(ground) {
+            const next = src(ground);
+            if (specimen.getAttribute("src") !== next) specimen.src = next;
+            open = open || toolbar.querySelector("[data-open-specimen]");
+            if (open) open.href = next;
+          },
+        });
+      } else {
+        specimen.src = src("");
+      }
     }
 
-    const promptPath = `../components/${folder}/${name}.prompt.md`;
-    const res = await fetch(promptPath);
+    const res = await fetch(`../${promptPath}`);
     if (!res.ok) throw new Error("Could not read " + promptPath);
     const { lead, body } = splitPromptLead(await res.text());
-    if (leadEl && lead) leadEl.textContent = lead;
+    if (leadEl && lead) leadEl.innerHTML = inline(lead);
     host.innerHTML = renderMarkdown(body);
     decorate(host);
     return true;
@@ -884,6 +870,11 @@
     const notes = el.hasAttribute("data-notes");
     const sources = el.hasAttribute("data-sources");
 
+    if (el.hasAttribute("data-static")) {
+      decorate(el);
+      return;
+    }
+
     if (md) {
       const res = await fetch(md);
       if (!res.ok) throw new Error("Could not read " + md);
@@ -894,7 +885,7 @@
     }
 
     if (notes) {
-      el.innerHTML = `<p class="shantara-eyebrow">Archive</p><h1>Component notes</h1><p>Per-component prompts now live on individual catalog pages (<code>docs/component?c=Button</code>). Website and app kit notes are under their own groups. This dump is no longer maintained.</p>`;
+      el.innerHTML = `<h1>Component notes</h1><p>Per-component prompts now live on individual catalog pages (<code>docs/component.html?c=Button</code>). Website and app kit notes are under their own groups. This dump is no longer maintained.</p>`;
       decorate(el);
       return;
     }
@@ -913,14 +904,13 @@
   }
 
   mountChrome();
-  mountKitNav();
 
   fillComponentPage().catch((err) => {
     const host = document.querySelector("[data-component-md]");
     if (host) host.innerHTML = `<p class="err">${escapeHtml(err.message)}. Serve this folder over http.</p>`;
   });
 
-  document.querySelectorAll("[data-md],[data-notes],[data-sources]").forEach((el) => {
+  document.querySelectorAll("[data-md],[data-notes],[data-sources],[data-static]").forEach((el) => {
     fill(el).catch((err) => {
       el.innerHTML = `<p class="err">${escapeHtml(err.message)}. Serve this folder over http.</p>`;
     });

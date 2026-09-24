@@ -75,7 +75,7 @@
   }
 
   document.addEventListener("click", async (event) => {
-    const btn = event.target.closest && event.target.closest("[data-ds-ref]");
+    const btn = event.target.closest && event.target.closest("button[data-ds-ref]");
     if (!btn) return;
     event.preventDefault();
     event.stopPropagation();
@@ -409,6 +409,12 @@
       body.insertBefore(link, top);
     }
 
+    const narrow = window.matchMedia("(max-width: 640px)");
+    const input = top.querySelector("#dsp-q");
+    const syncPlaceholder = () => { input.placeholder = narrow.matches ? "Search" : "Search pages and components"; };
+    syncPlaceholder();
+    narrow.addEventListener("change", syncPlaceholder);
+
     Object.assign(els, {
       top, side, nav: side.querySelector(".dsp-nav"), main, content, pager, backdrop,
       crumbs: main.querySelector(".dsp-crumbs ol"), pageid: main.querySelector(".dsp-pageid"),
@@ -520,7 +526,7 @@
 
     const ref = n ? refFor(n.card) : pathRef(current);
     els.pageid.innerHTML = `<code class="dsp-ref">${esc(ref)}</code>${idButton(ref)}`;
-    document.documentElement.dataset.dsRef = ref;
+    document.documentElement.dataset.dsPage = ref;
 
     if (!n) {
       const first = data && data.flat[0];
@@ -541,7 +547,7 @@
   /* ---------- heading Copy IDs ---------- */
   function decorateHeadings(root) {
     if (!root) return;
-    const base = document.documentElement.dataset.dsRef || pathRef(current);
+    const base = document.documentElement.dataset.dsPage || pathRef(current);
     root.querySelectorAll("h2[id], h3[id]").forEach((h) => {
       if (h.closest(".dsp-top, .dsp-side, .dsp-pager, [data-no-ds-ref]")) return;
       const ref = `${base}#${h.id}`;
@@ -692,6 +698,10 @@
       sizer.appendChild(frame);
     }
     frame.setAttribute("allow", "clipboard-write");
+    if (frame._dspAbort) frame._dspAbort.abort();
+    const ac = new AbortController();
+    frame._dspAbort = ac;
+    const sig = { signal: ac.signal };
 
     const seg = (label, list, key) => `<div class="dsp-seg" role="group" aria-label="${label}">${list.map(([k, v, text]) => `<button type="button" data-${key}="${k}" aria-pressed="${state[key] === k}">${text}${key === "screen" && v ? ` <span class="dsp-seg-n">${v}</span>` : ""}</button>`).join("")}</div>`;
     toolbar.classList.add("dsp-toolbar");
@@ -766,12 +776,12 @@
       if (grounds && !applyGround) setGround(state.ground);
       contentH = 0;
       settle();
-    });
+    }, sig);
     let raf = 0;
     window.addEventListener("resize", () => {
       cancelAnimationFrame(raf);
       raf = requestAnimationFrame(() => layout(state.screen === "fit" && !fitWidth));
-    });
+    }, sig);
     if (grounds) setGround(state.ground);
     layout(false);
     return { layout: settle, state, setGround };

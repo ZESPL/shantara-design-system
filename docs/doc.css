@@ -15,7 +15,6 @@
   padding:var(--space-11) var(--layout-gutter) var(--space-14);
 }
 
-.ds-doc-inner > .shantara-eyebrow{margin-bottom:var(--space-4)}
 
 .ds-doc h1{
   font:var(--type-h1);
@@ -226,10 +225,10 @@
   min-height:var(--tap-min);
   cursor:pointer;
   list-style:none;
-  color:var(--text-secondary);
-  font:var(--type-eyebrow);
-  letter-spacing:var(--tracking-eyebrow);
-  text-transform:uppercase;
+  color:var(--text-primary);
+  font:var(--type-label);
+  font-weight:var(--weight-medium);
+  font-size:var(--text-sm);
 }
 
 .ds-toc-box > summary::-webkit-details-marker{display:none}
@@ -237,8 +236,7 @@
 .ds-toc-box > summary::after{
   content:"Show";
   font:var(--type-label);
-  letter-spacing:var(--tracking-wide);
-  text-transform:uppercase;
+  font-size:var(--text-xs);
   color:var(--text-muted);
 }
 
@@ -260,9 +258,9 @@
   gap:var(--space-3);
   margin:0 0 var(--space-2);
   padding:0.35rem 0.65rem;
-  font:var(--type-eyebrow);
-  letter-spacing:var(--tracking-eyebrow);
-  text-transform:uppercase;
+  font:var(--type-label);
+  letter-spacing:0;
+  text-transform:none;
   color:var(--text-muted);
   cursor:pointer;
   list-style:none;
@@ -346,12 +344,12 @@
 
 .ds-toc-list a[aria-current="true"] .ds-toc-n{color:var(--text-brand)}
 
-@media (max-width:1099px){
+@media (max-width:1239px){
   .ds-toc-list a{min-height:44px}
   .ds-toc-list a span:last-child{white-space:normal}
 }
 
-@media (min-width:640px) and (max-width:1099px){
+@media (min-width:640px) and (max-width:1239px){
   .ds-toc-groups{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
@@ -360,7 +358,7 @@
 }
 
 /* Side nav only when there is room to read both the labels and the page. */
-@media (min-width:1100px){
+@media (min-width:1240px){
   .ds-handbook-shell{
     align-items:start;
     gap:var(--space-10);
@@ -368,7 +366,7 @@
   }
 
   .ds-handbook-shell.has-toc{
-    grid-template-columns:minmax(0,1fr) minmax(300px,360px);
+    grid-template-columns:minmax(0,1fr) minmax(220px,260px);
     grid-template-areas:"main toc";
   }
 
@@ -377,8 +375,8 @@
 
   .ds-handbook-toc{
     position:sticky;
-    top:var(--space-6);
-    max-height:calc(100vh - var(--space-8));
+    top:calc(var(--dsp-top, 0px) + var(--space-5));
+    max-height:calc(100vh - var(--dsp-top, 0px) - var(--space-8));
     overflow:auto;
     overscroll-behavior:contain;
     padding:var(--space-2) 0 var(--space-8) var(--space-2);
@@ -534,9 +532,9 @@ html.is-framed .ds-handbook-toc{
 }
 
 .ds-icp-card-id{
-  font:var(--type-eyebrow);
-  letter-spacing:var(--tracking-eyebrow);
-  text-transform:uppercase;
+  font:var(--type-label);
+  letter-spacing:0;
+  text-transform:none;
   color:var(--text-muted);
 }
 
@@ -901,3 +899,28 @@ html.is-framed .ds-handbook-toc{
   .ds-icp-profile{break-inside:avoid;border-color:var(--border-default)}
   .ds-icp-card{break-inside:avoid}
 }
+
+/* ---------- inside the portal shell (portal.js) ---------- */
+.dsp .ds-handbook-shell{
+  max-width:1200px;
+  margin:0;
+  padding:var(--space-8) var(--dsp-gutter) var(--space-12);
+}
+.dsp .ds-doc:not(.ds-handbook) .ds-doc-inner,
+.dsp.ds-doc:not(.ds-handbook) .ds-doc-inner{
+  margin:0;
+  padding:var(--space-8) var(--dsp-gutter) var(--space-12);
+}
+.dsp .ds-handbook h2,
+.dsp.ds-handbook h2,
+.dsp .ds-doc-inner h2,
+.dsp .ds-doc-inner h3{scroll-margin-top:calc(var(--dsp-top) + var(--space-5))}
+.dsp .ds-doc-inner h2,
+.dsp .ds-doc-inner h3{overflow-wrap:anywhere}
+
+/* Component page: preview toolbar + stage sit between the head and the prompt. */
+.ds-component-preview{
+  max-width:1200px;
+  padding:var(--space-6) var(--dsp-gutter) 0;
+}
+.ds-specimen-frame{width:100%;min-height:200px;border:0}

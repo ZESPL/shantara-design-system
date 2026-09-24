@@ -48,7 +48,7 @@ tokens/                 → fonts, colors, typography, spacing, radius, elevatio
 assets/                 → logo / icon / wordmark in 4 colourways each, pattern cell + motif, Diodrum TTFs
 assets/photos/          → property + doctor photos (flat; see assets/photos/README.md)
 guidelines/             → specimen cards (Brand, Foundations)
-components/             → core, forms, navigation, feedback, editorial, sections — jsx, d.ts, prompt.md; catalog pages via docs/component?c=
+components/             → core, forms, navigation, feedback, editorial, sections — jsx, d.ts, prompt.md; catalog pages via docs/component.html?c=
 scripts/build-bundle.mjs → rebuilds _ds_bundle.js from components/ (see its header for Babel)
 docs/                   → use, orientation, skill wrappers, handbook, ICP, sources
 scraps/                 → working extracts (not published)
@@ -69,7 +69,7 @@ SKILL.md                → Agent-Skills wrapper — drop this folder into anoth
 **editorial** — `Media`, `Eyebrow`, `Statement`, `Numeral`, `TextLink`, `Tile`, `NumberedSteps`, `PlainList`, `GroupedList`, `SpecTable`, `TimeTable`, `QuoteBlock`, `PortraitFrame`
 **sections** — `Section`, `HeroFullBleed`, `HeroStatement`, `SplitSection`, `BandStatement`, `PanoramaCaption`, `PeopleRow`, `NumeralsSplit`, `TileGrid`, `IndexList`, `ClosingCTA`, `FormSplit`
 
-Each directory holds `<Name>.jsx`, `<Name>.d.ts` (props contract) and `<Name>.prompt.md`, plus one `@dsCard` HTML showing the family's states. Editorial and sections are the website's building blocks, drawn from the brand deck; `Card` is for forms and dialogs only. Rules: `ui_kits/website/skill-premium.md`. Per-component catalog pages: `docs/component?c=Button`.
+Each directory holds `<Name>.jsx`, `<Name>.d.ts` (props contract) and `<Name>.prompt.md`, plus one `@dsCard` HTML showing the family's states. Editorial and sections are the website's building blocks, drawn from the brand deck; `Card` is for forms and dialogs only. Rules: `ui_kits/website/skill-premium.md`. Per-component catalog pages: `docs/component.html?c=Button`.
 
 **Intentional additions.** The brand package defines no component inventory, so this is a standard set sized to the brand's needs. Brand-specific entries: `Icon` (Lucide stand-in), `PatternPanel` (only sanctioned rosette placement), `LanguageSelector` (website locale control; hidden while only `en` is enabled), and `Spinner` (breathing three-dot, not a rotating ring).
 

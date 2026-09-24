@@ -8,6 +8,20 @@
   --dsp-gutter:clamp(16px, 3vw, 40px);
 }
 
+.dsp-idbox[hidden],
+.dsp-id[hidden],
+.dsp-results[hidden],
+.dsp-backdrop[hidden]{display:none !important}
+
+/* Doc typography (docs/doc.css) must not leak into the chrome. */
+body .dsp-nav ul,
+body .dsp-crumbs ol{padding-left:0;margin-top:0;margin-bottom:0;list-style:none}
+body .dsp-results{padding:6px;margin-bottom:0;list-style:none}
+body .dsp-nav li,
+body .dsp-crumbs li,
+body .dsp-results li{margin:0}
+body .dsp-pageid code.dsp-ref{background:none;padding:0;border:0}
+
 .dsp-vh{
   position:absolute !important;
   width:1px;height:1px;
@@ -41,6 +55,7 @@ body.dsp{
   display:none;
   align-items:center;
   justify-content:center;
+  flex:none;
   width:40px;height:40px;
   margin-left:-8px;
   padding:0;
