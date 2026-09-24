@@ -40,7 +40,7 @@ const TARIFF_ROOM_PHOTOS = {
 
 function TariffScreen({ onNavigate }) {
   const { t } = window.ShantaraI18n.useLocale();
-  const { Button, Breadcrumbs, HeroFullBleed, Section, FormSplit, SpecTable, Eyebrow, PlainList, TileGrid, Tile, ClosingCTA } = window.ShantaraDesignSystem_45bbe4;
+  const { Button, Breadcrumbs, HeroFullBleed, Section, FormSplit, SpecTable, Eyebrow, PlainList, TileGrid, Tile, Media, ClosingCTA } = window.ShantaraDesignSystem_45bbe4;
   const L = window.ShantaraLocales;
   const site = window.ShantaraContent.site || {};
   const phones = site.phone || ["+91 9553 600 100", "+91 9553 700 100"];
@@ -86,7 +86,7 @@ function TariffScreen({ onNavigate }) {
               name: t(r.name),
               single: r.single ? `${symbol}${r.single}` : "—",
               double: r.double ? `${symbol}${r.double}` : "—",
-              size: r.size,
+              size: r.size.replace(/ /g, "\u00a0"),
               occ: t(r.occ),
             }))}
           />
@@ -95,22 +95,24 @@ function TariffScreen({ onNavigate }) {
       </Section>
 
       <Section space="bottom">
-        <TileGrid layout="3">
-          {rows.map((r) => (
-            <Tile key={r.id} src={window.photoSrc(TARIFF_ROOM_PHOTOS[r.id] || "room-twin")} alt="" title={t(r.name)} meta={t(r.spec)} />
+        {/* Five categories: layout "2" puts the first across the full width and the other
+            four in two even rows, so no row is left half empty. */}
+        <TileGrid layout="2">
+          {rows.map((r, i) => (
+            <Tile key={r.id} media={<Media src={window.photoSrc(TARIFF_ROOM_PHOTOS[r.id] || "room-twin")} alt="" ratio={i === 0 && rows.length % 2 === 1 ? "21:9" : "4:3"} mobileRatio="4:3" />} title={t(r.name)} meta={t(r.spec)} />
           ))}
         </TileGrid>
       </Section>
 
       <ClosingCTA
-        src={window.photoSrc("balcony-lounge-infinity-edge-valley")}
-        alt={t("The balcony lounge above the valley")}
+        src={window.photoSrc("exterior-entrance-dusk-lit-canopy")}
+        alt={t("The entrance canopy at dusk")}
         title={t("Share your name and a number we can reach.")}
         sub={t("Our team will contact you to arrange a consultation.")}
         action={<Button size="lg" onClick={book("closing")}>{t("Book a Consultation")}</Button>}
         contact={<>
           <a className="shantara-dir-ltr" href={"mailto:" + email} onClick={() => L && L.track("contact_click", { contact_method: "email", page_type: "tariffs", cta_location: "closing" })}>{email}</a>
-          <a className="shantara-dir-ltr" href={"tel:" + phones[0].replace(/\s/g, "")} style={{ fontVariantNumeric: "tabular-nums" }} onClick={() => L && L.track("contact_click", { contact_method: "phone", page_type: "tariffs", cta_location: "closing" })}>{phones.join(" · ")}</a>
+          {phones.map((n) => <a key={n} className="shantara-dir-ltr" href={"tel:" + n.replace(/\s/g, "")} style={{ fontVariantNumeric: "tabular-nums" }} onClick={() => L && L.track("contact_click", { contact_method: "phone", page_type: "tariffs", cta_location: "closing" })}>{n}</a>)}
         </>}
       />
     </main>

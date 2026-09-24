@@ -1,4 +1,4 @@
-Ends every marketing page: a full-bleed dark photograph (or Pine) with a statement, ONE Gold primary button and contact lines in small type (deck slide 18).
+Ends every marketing page: a full-bleed dark photograph (or Pine) with a statement, one Gold primary button and contact lines (deck slide 18).
 
 ```jsx
 <ClosingCTA

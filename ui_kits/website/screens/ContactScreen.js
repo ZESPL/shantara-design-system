@@ -12,7 +12,7 @@ function ContactScreen({ onNavigate }) {
   const L = window.ShantaraLocales;
   const home = L ? L.kitHash(window.ShantaraI18n.currentLocaleCode(), "home") : "#/en/";
   const trackContact = (method, where) => L && L.track("contact_click", { contact_method: method, page_type: "contact", cta_location: where });
-  const lineStyle = { margin: 0, font: "var(--type-body)" };
+  const linkStyle = { display: "inline-flex", alignItems: "center", minHeight: "var(--tap-min)", font: "var(--type-body)", fontVariantNumeric: "tabular-nums" };
   return (
     <main>
       <HeroStatement
@@ -35,15 +35,13 @@ function ContactScreen({ onNavigate }) {
           ]}
           rows={CONTACT_DISTANCES.map((d) => ({ place: t(d.place), km: d.km, mins: d.mins }))}
         />
-        <p style={{ margin: 0, font: "var(--type-body-sm)", color: "var(--text-secondary)" }}>{t("Transfer included with a confirmed stay")}</p>
-        <div style={{ display: "flex", flexDirection: "column", gap: "var(--space-3)" }}>
+        <div>
           <Eyebrow>{t("Email and telephone")}</Eyebrow>
-          <p style={lineStyle}><a className="shantara-dir-ltr" href="mailto:heal@shantara.life" onClick={() => trackContact("email", "inline")}>heal@shantara.life</a></p>
-          <p style={{ ...lineStyle, fontVariantNumeric: "tabular-nums" }}>
-            <a className="shantara-dir-ltr" href="tel:+919553600100" onClick={() => trackContact("phone", "inline")}>+91 9553 600 100</a>
-            {" · "}
-            <a className="shantara-dir-ltr" href="tel:+919553700100" onClick={() => trackContact("phone", "inline")}>+91 9553 700 100</a>
-          </p>
+          <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", marginTop: "var(--space-3)" }}>
+            <a className="shantara-dir-ltr" style={linkStyle} href="mailto:heal@shantara.life" onClick={() => trackContact("email", "inline")}>heal@shantara.life</a>
+            <a className="shantara-dir-ltr" style={linkStyle} href="tel:+919553600100" onClick={() => trackContact("phone", "inline")}>+91 9553 600 100</a>
+            <a className="shantara-dir-ltr" style={linkStyle} href="tel:+919553700100" onClick={() => trackContact("phone", "inline")}>+91 9553 700 100</a>
+          </div>
         </div>
         <div className="sh-actions">
           <TextLink onClick={() => onNavigate("tariffs")}>{t("View tariffs")}</TextLink>

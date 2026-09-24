@@ -1,0 +1,137 @@
+<!-- @dsCard group="Components" viewport="1000x4380" name="Editorial" subtitle="Media, statements, numerals, tiles, lists, tables, quotes and portraits — the brand deck's page parts" -->
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<script src="../../i18n.js"></script>
+<style>
+body{margin:0;padding:clamp(20px,3vw,40px);background:var(--ground-merino)}
+.blk{display:flex;flex-direction:column;gap:var(--space-6);padding-block:var(--space-9);border-top:1px solid var(--rule-color)}
+.blk:first-child{border-top:0;padding-top:0}
+.two{display:grid;grid-template-columns:minmax(0,1fr);gap:var(--space-9) var(--grid-gap)}
+.three{display:grid;grid-template-columns:minmax(0,1fr);gap:var(--space-9) var(--grid-gap)}
+.portraits{display:grid;grid-template-columns:repeat(2,minmax(0,220px));gap:var(--grid-gap)}
+@media (min-width:760px){.two{grid-template-columns:repeat(2,minmax(0,1fr))}.three{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.dark{padding:clamp(24px,4vw,48px)}
+</style></head><body><div id="root"></div>
+<script type="text/babel">
+const { Media, Eyebrow, Statement, Numeral, TextLink, Tile, NumberedSteps, PlainList, GroupedList, SpecTable, TimeTable, QuoteBlock, PortraitFrame } = window.ShantaraDesignSystem_45bbe4;
+const P = "../../assets/photos/";
+const L = ({ children }) => <p className="shantara-usage-label" style={{ margin: 0 }}>{children}</p>;
+const rooms = [
+  { name: "Standard Room", size: "220 sq.ft", occ: "Single only" },
+  { name: "Superior Room", size: "300 sq.ft · balcony", occ: "Single or double" },
+  { name: "Premium Room", size: "460 sq.ft · balcony", occ: "Single or double" },
+  { name: "Executive Suite", size: "530 sq.ft · balcony", occ: "Single or double" },
+];
+function Demo(){
+  return (<div>
+<div className="blk">
+  <L>Statement · Eyebrow</L>
+  <Statement eyebrow="Our approach" sub="The clinical team plans your programme and adjusts it where necessary during your stay.">Your programme is planned after consultation and assessment.</Statement>
+</div>
+<div className="blk">
+  <L>Media — square-cut, ratio tokens, 21:9 becomes 4:3 on phones</L>
+  <div className="three">
+    <Media src={P + "balcony.jpg"} alt="A balcony over the valley" ratio="4:3" />
+    <Media src={P + "water-wall.jpg"} alt="The water wall court" ratio="4:5" />
+    <Media src={P + "corridor.jpg"} alt="A corridor" ratio="3:4" />
+  </div>
+  <Media src={P + "valley.jpg"} alt="The Chennamangallur valley from the hilltop" ratio="21:9" mobileRatio="4:3" />
+</div>
+<div className="blk">
+  <L>Tile — photograph and text directly on the ground; hover scales the photo to 1.02</L>
+  <div className="three">
+    <Tile href="#" src={P + "balcony.jpg"} alt="" eyebrow="Mind · 7–14 nights" title="Stress Management" text="Doctor-led routines, therapies and rest for guests managing sustained stress, poor sleep or fatigue." />
+    <Tile href="#" src={P + "water-wall.jpg"} alt="" eyebrow="Metabolic · 7–21 nights" title="Detox" text="Your doctor may recommend a meal plan or supervised fasting based on your assessment." />
+    <Tile href="#" src={P + "grounds.jpg"} alt="" eyebrow="Metabolic · 14–21 nights" title="Weight Management" text="Meals, daily activity and therapies, with weight and vitals reviewed by a doctor each morning." />
+  </div>
+  <Tile href="#" layout="row" src={P + "courtyard.jpg"} alt="" eyebrow="Immersive · 21–28 nights" title="Complete Healing" text="For guests managing several long-standing conditions at once, across metabolic, musculoskeletal and mental health." />
+</div>
+<div className="blk">
+  <L>Numeral · TextLink</L>
+  <div className="two" style={{ alignItems: "end" }}>
+    <div style={{ display: "flex", flexWrap: "wrap", gap: "var(--space-8) calc(var(--grid-gap) * 2)" }}>
+      <Numeral value="25,000+" label="guests since 2000" />
+      <Numeral value="52" label="rooms, 5 categories" />
+    </div>
+    <div style={{ display: "flex", flexWrap: "wrap", gap: "var(--space-4) var(--space-8)" }}>
+      <TextLink href="#">View conditions</TextLink>
+      <TextLink href="#">All programmes</TextLink>
+    </div>
+  </div>
+</div>
+<div className="blk">
+  <L>NumberedSteps — the care model</L>
+  <NumberedSteps columns={4} items={[
+    { title: "Consultation and assessment", text: "Our doctors consider your medical history, current health, lifestyle and goals." },
+    { title: "A plan for you", text: "They then plan your treatments, meals, activity and rest." },
+    { title: "Therapies and daily routines", text: "Your doctor may recommend therapies based on your assessment and programme." },
+    { title: "Progress reviewed", text: "The plan is reviewed during your stay and adjusted where necessary." },
+  ]} />
+</div>
+<div className="blk">
+  <div className="two">
+    <div style={{ display: "flex", flexDirection: "column", gap: "var(--space-6)" }}>
+      <L>PlainList — no bullets, no ticks</L>
+      <PlainList columns={2} size="sm" items={["En-suite bathroom with rain shower", "Individually controlled central air-conditioning", "Orthopaedic mattress", "Electronic safe, Wi-Fi, smart LED TV"]} />
+    </div>
+    <div style={{ display: "flex", flexDirection: "column", gap: "var(--space-6)" }}>
+      <L>GroupedList — programmes by focus</L>
+      <GroupedList columns={2} groups={[
+        { label: "Metabolic", items: ["Detox", "Weight Management"] },
+        { label: "Clinical", items: ["Diabetes Reversal", "Longevity", "Men's Vitality"] },
+        { label: "Rest", items: ["Executive Wellness", "Weekend Rejuvenation"] },
+        { label: "Mind", items: ["Stress Management"] },
+      ]} />
+    </div>
+  </div>
+</div>
+<div className="blk">
+  <div className="two">
+    <div style={{ display: "flex", flexDirection: "column", gap: "var(--space-6)" }}>
+      <L>SpecTable — rooms, no rates</L>
+      <SpecTable caption="Room categories" showHeader columns={[{ key: "name", label: "Room" }, { key: "size", label: "Size", accent: true, mobileLabel: true }, { key: "occ", label: "Occupancy", mobileLabel: true }]} rows={rooms} />
+    </div>
+    <div style={{ display: "flex", flexDirection: "column", gap: "var(--space-6)" }}>
+      <L>TimeTable — a typical day may include</L>
+      <TimeTable rows={[
+        { time: "Morning", title: "Vitals and doctor review", text: "Then yoga therapy in the hall, adapted to what you can manage that day." },
+        { time: "Midday", title: "Therapies", text: "Sessions sequenced by the clinical team." },
+        { time: "Evening", title: "Meal and rest", text: "A meal planned for your programme, a mind-body session and an early night." },
+      ]} />
+    </div>
+  </div>
+</div>
+<div className="blk">
+  <div className="two">
+    <div style={{ display: "flex", flexDirection: "column", gap: "var(--space-6)" }}>
+      <L>QuoteBlock — brand statements only until consented words exist</L>
+      <QuoteBlock quote="Naturopathy treats the causes of a condition through diet, activity, therapies and rest rather than through medication." cite="Our approach"
+        facts={[{ label: "Since 2000", text: "The evolution of Hygiene Nature Cure Hospital." }, { label: "The setting", text: "Four hilltop acres above the Chennamangallur valley." }]} />
+    </div>
+    <div style={{ display: "flex", flexDirection: "column", gap: "var(--space-6)" }}>
+      <L>PortraitFrame — initials until a photograph exists</L>
+      <div className="portraits">
+        <PortraitFrame name="Dr. P.A. Kareem" role="Founder, Chairman & Chief Naturopathy Consultant" />
+        <PortraitFrame src={P + "doctor-bahja-janu-portrait-cropped.jpeg"} name="Dr. Bahja Janu" role="Medical Director" />
+      </div>
+    </div>
+  </div>
+</div>
+<div className="blk">
+  <L>On a dark ground — ink, eyebrow, rules and links re-point; no tone props</L>
+  <div className="dark" data-ground="himalaya">
+    <div className="two" style={{ alignItems: "end" }}>
+      <Statement eyebrow="Our approach" size="title">Your programme is planned after consultation and assessment.</Statement>
+      <div style={{ display: "flex", flexDirection: "column", gap: "var(--space-7)" }}>
+        <PlainList columns={2} rules items={["Consultation and assessment", "A plan for you", "Therapies and daily routines", "Progress reviewed"]} />
+        <div><TextLink href="#">Read what to expect</TextLink></div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>);}
+ReactDOM.createRoot(document.getElementById('root')).render(<Demo/>);
+</script></body></html>

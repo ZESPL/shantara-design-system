@@ -31,6 +31,8 @@ function ExperienceScreen({ onNavigate }) {
       <HeroFullBleed
         height="tall"
         src={window.photoSrc("courtyard")}
+        position="center 80%"
+        mobilePosition="center"
         alt={t("The planted courtyard")}
         title={t("What to expect during your stay")}
         sub={t("A typical day may include consultations, therapies, meals, physical activity, rest and time for yourself.")}

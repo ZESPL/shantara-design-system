@@ -59,10 +59,12 @@ function AboutScreen({ onNavigate }) {
         <Statement
           eyebrow={t("Our approach")}
           sub={t("Treatment is drug-free and planned by our doctors after consultation and assessment. Plans are reviewed during the stay and adjusted where needed.")}
-          actions={<TextLink onClick={() => onNavigate("programme")}>{t("Programmes")}</TextLink>}
         >
           {t("Your programme is planned after consultation and assessment.")}
         </Statement>
+        <div>
+          <TextLink onClick={() => onNavigate("programme")}>{t("Programmes")}</TextLink>
+        </div>
       </SplitSection>
 
       <Section ground="stone" space="sm">
@@ -72,14 +74,14 @@ function AboutScreen({ onNavigate }) {
       </Section>
 
       <ClosingCTA
-        src={window.photoSrc("valley")}
-        alt={t("The Chennamangallur valley from Shantara")}
+        src={window.photoSrc("arrival-dusk")}
+        alt={t("Shantara at dusk")}
         title={t("Share your name and a number we can reach.")}
         sub={t("Our team will contact you to arrange a consultation.")}
         action={<Button size="lg" onClick={() => { if (L) L.track("consultation_cta_click", { page_type: "about", content_id: "about", content_name: "About", cta_location: "closing" }); onNavigate("booking"); }}>{t("Book a Consultation")}</Button>}
         contact={<>
           <a className="shantara-dir-ltr" href={"mailto:" + email} onClick={() => L && L.track("contact_click", { contact_method: "email", page_type: "about", cta_location: "closing" })}>{email}</a>
-          <a className="shantara-dir-ltr" href={"tel:" + phones[0].replace(/\s/g, "")} style={{ fontVariantNumeric: "tabular-nums" }} onClick={() => L && L.track("contact_click", { contact_method: "phone", page_type: "about", cta_location: "closing" })}>{phones.join(" · ")}</a>
+          {phones.map((n) => <a key={n} className="shantara-dir-ltr" href={"tel:" + n.replace(/\s/g, "")} style={{ fontVariantNumeric: "tabular-nums" }} onClick={() => L && L.track("contact_click", { contact_method: "phone", page_type: "about", cta_location: "closing" })}>{n}</a>)}
         </>}
       />
     </main>

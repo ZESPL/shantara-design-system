@@ -51,7 +51,7 @@ function JournalScreen({ onNavigate }) {
         title={t("Articles from our doctors and team")}
       />
 
-      <Section space="sm" style={{ paddingBlockEnd: "var(--section-y)" }}>
+      <Section space="bottom">
         <Tabs items={JOURNAL_CATEGORIES.map((key) => ({ value: key, label: t(key) }))} value={cat} onChange={onTab} />
         <div key={cat} className="sh-page-enter" style={{ display: "flex", flexDirection: "column", gap: "var(--section-y-sm)", marginTop: "var(--stack-lg)" }}>
           {lead ? (
@@ -91,7 +91,7 @@ function JournalScreen({ onNavigate }) {
         action={<Button size="lg" onClick={() => { if (L) L.track("consultation_cta_click", { page_type: "journal", content_id: "journal", content_name: "Insights", cta_location: "closing" }); onNavigate("booking"); }}>{t("Book a Consultation")}</Button>}
         contact={<>
           <a className="shantara-dir-ltr" href={"mailto:" + email} onClick={() => L && L.track("contact_click", { contact_method: "email", page_type: "journal", cta_location: "closing" })}>{email}</a>
-          <a className="shantara-dir-ltr" href={"tel:" + phones[0].replace(/\s/g, "")} style={{ fontVariantNumeric: "tabular-nums" }} onClick={() => L && L.track("contact_click", { contact_method: "phone", page_type: "journal", cta_location: "closing" })}>{phones.join(" · ")}</a>
+          {phones.map((n) => <a key={n} className="shantara-dir-ltr" href={"tel:" + n.replace(/\s/g, "")} style={{ fontVariantNumeric: "tabular-nums" }} onClick={() => L && L.track("contact_click", { contact_method: "phone", page_type: "journal", cta_location: "closing" })}>{n}</a>)}
         </>}
       />
     </main>

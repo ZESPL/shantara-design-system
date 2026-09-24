@@ -9,8 +9,8 @@ const CSS = `
 .sh-close{position:relative;display:flex;align-items:flex-end;min-height:clamp(520px, 72svh, 860px);overflow:hidden;isolation:isolate}
 .sh-close>.sh-media{position:absolute;inset:0;z-index:-1;aspect-ratio:auto;height:100%}
 .sh-close-body{width:100%;padding-block:var(--section-y)}
-.sh-close-contact{display:flex;flex-wrap:wrap;gap:var(--space-3) var(--space-8);margin-top:var(--stack-lg);padding-top:var(--space-6);border-top:var(--border-width) solid var(--rule-color);font:var(--type-body-sm);color:var(--text-secondary)}
-.sh-close-contact a{color:inherit;text-decoration:none}
+.sh-close-contact{display:flex;flex-wrap:wrap;gap:0 var(--space-8);margin-top:var(--stack-lg);padding-top:var(--space-4);border-top:var(--border-width) solid var(--rule-color);font:var(--type-body-sm);color:var(--text-secondary)}
+.sh-close-contact a{display:inline-flex;align-items:center;min-height:var(--tap-min);color:inherit;text-decoration:none}
 @media (hover: hover) and (pointer: fine){.sh-close-contact a:hover{color:var(--text-primary)}}
 `;
 

@@ -53,7 +53,7 @@ const CHROME_CSS = `
 :root{--header-h:64px}
 @media (min-width:1000px){:root{--header-h:72px}}
 .sh-hdr{position:sticky;top:0;z-index:30;height:var(--header-h);margin-bottom:calc(-1 * var(--header-h));background:transparent;border-bottom:var(--border-width) solid transparent;transition:background-color var(--duration-base) var(--ease-standard),border-color var(--duration-base) var(--ease-standard)}
-.sh-hdr[data-ground="photo"]{background:var(--scrim-header);isolation:isolate}
+.sh-hdr[data-ground="photo"]{background:transparent;isolation:isolate}
 /* Over photography the scrim runs past the header's own edge, so it never ends in a visible line. */
 .sh-hdr[data-ground="photo"]::before{content:"";position:absolute;inset:0 0 auto 0;height:calc(var(--header-h) * 2);background:var(--scrim-header);pointer-events:none;z-index:-1}
 .sh-hdr[data-scrolled="true"]{background:color-mix(in srgb, var(--color-merino) 88%, transparent);-webkit-backdrop-filter:var(--blur-glass);backdrop-filter:var(--blur-glass);border-bottom-color:var(--border-subtle)}
@@ -90,7 +90,7 @@ const CHROME_CSS = `
 
 .sh-foot{display:block}
 /* With the rosette band showing, line the footer up with the page container's left edge (100cqw = the panel). */
-.sh-foot .sh-pp-body>.sh-container{margin-inline:max(0px, (100cqw - var(--layout-max)) / 2 - var(--layout-gutter)) 0}
+.sh-foot .sh-pp-body>.sh-container{width:auto;margin-inline:max(0px, (100cqw - var(--layout-max)) / 2 - var(--layout-gutter)) 0}
 .sh-foot-main{padding-block:var(--section-y-sm) var(--space-9)}
 .sh-foot-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--space-9) var(--grid-gap)}
 .sh-foot-brand{grid-column:1/-1;display:flex;flex-direction:column;align-items:flex-start;gap:var(--space-6);min-width:0}
@@ -110,7 +110,8 @@ const CHROME_CSS = `
   .sh-foot-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
   .sh-foot-size{margin-inline-start:auto}
 }
-@media (min-width:1000px){
+/* Brand column beside the three link columns once the band leaves them room. */
+@media (min-width:1280px){
   .sh-foot-grid{grid-template-columns:minmax(0,1.4fr) repeat(3,minmax(0,1fr))}
   .sh-foot-brand{grid-column:auto}
 }

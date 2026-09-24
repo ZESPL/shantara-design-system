@@ -1,0 +1,128 @@
+<!-- @dsCard group="Components" viewport="1440x10300" name="Sections" subtitle="Full-width page sections from the brand deck, stacked at desktop width — heroes, splits, band, panorama, people, numerals, tiles, index, form, close" -->
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<script src="../../i18n.js"></script>
+<style>
+body{margin:0;background:var(--ground-merino)}
+/* A thin label strip between sections — catalog chrome, not part of any section. */
+.lbl{margin:0;max-width:none;padding:10px var(--layout-gutter);font:var(--type-caption);letter-spacing:var(--tracking-wide);color:var(--text-muted);background:var(--surface-page);border-block:1px dashed var(--border-subtle)}
+.lbl b{font-weight:var(--weight-medium);color:var(--text-primary)}
+</style></head><body><div id="root"></div>
+<script type="text/babel">
+const NS = window.ShantaraDesignSystem_45bbe4;
+const { Button, Breadcrumbs, Input, Select, Textarea, Statement, Tile, TextLink, PlainList, SpecTable, PortraitFrame,
+  Section, HeroFullBleed, HeroStatement, SplitSection, BandStatement, PanoramaCaption, PeopleRow, NumeralsSplit, TileGrid, IndexList, ClosingCTA, FormSplit } = NS;
+const P = "../../assets/photos/";
+const Label = ({ name, note }) => <p className="lbl"><b>{name}</b>{note ? " · " + note : ""}</p>;
+const rooms = [
+  { name: "Standard Room", size: "220 sq.ft", occ: "Single only" },
+  { name: "Deluxe Room", size: "260 sq.ft", occ: "Single only" },
+  { name: "Superior Room", size: "300 sq.ft · balcony", occ: "Single or double" },
+  { name: "Premium Room", size: "460 sq.ft · balcony", occ: "Single or double" },
+  { name: "Executive Suite", size: "530 sq.ft · balcony", occ: "Single or double" },
+];
+function Demo(){
+  return (<div>
+<Label name="HeroFullBleed" note="deck slide 1 · photo ground, Gold primary" />
+<HeroFullBleed src={P + "arrival-dusk.jpg"} alt="Shantara at dusk"
+  eyebrow="Kozhikode, Kerala · since 2000"
+  title="A doctor-led naturopathy retreat in Kerala"
+  sub="Drug-free naturopathy on four hilltop acres above the Chennamangallur valley. Every stay begins with a consultation, and your programme is planned by our doctors."
+  actions={<><Button size="lg">Book a Consultation</Button><TextLink href="#">View programmes</TextLink></>} />
+
+<Label name="Section + NumeralsSplit" note="deck slide 8 · stone ground" />
+<Section ground="stone">
+  <NumeralsSplit eyebrow="Shantara in numbers" title="Doctor-led naturopathy, planned around your assessment."
+    numerals={[{ value: "25,000+", label: "guests since 2000" }, { value: "4", label: "hilltop acres" }]} />
+</Section>
+
+<Label name="BandStatement" note="deck slide 3 · himalaya ground, rosette band on one edge" />
+<BandStatement>
+  <Statement eyebrow="Our approach" sub="The clinical team plans your programme and adjusts it where necessary during your stay.">Your programme is planned after consultation and assessment.</Statement>
+  <PlainList columns={2} items={["Consultation and assessment", "A plan for you", "Therapies and daily routines", "Progress reviewed"]} />
+</BandStatement>
+
+<Label name="Section + TileGrid" note="deck slide 11 · layout 3" />
+<Section>
+  <TileGrid eyebrow="Programmes" title="Naturopathy programmes" action={<TextLink href="#">All programmes</TextLink>}>
+    <Tile href="#" src={P + "balcony.jpg"} alt="" eyebrow="Mind · 7–14 nights" title="Stress Management" text="Doctor-led routines, therapies and rest for guests managing sustained stress, poor sleep or fatigue." />
+    <Tile href="#" src={P + "water-wall.jpg"} alt="" eyebrow="Metabolic · 7–21 nights" title="Detox" text="Your doctor may recommend a meal plan or supervised fasting based on your assessment. Therapies may also form part of your programme." />
+    <Tile href="#" src={P + "grounds.jpg"} alt="" eyebrow="Metabolic · 14–21 nights" title="Weight Management" text="Meals, daily activity and therapies, with weight and vitals reviewed by a doctor each morning." />
+  </TileGrid>
+</Section>
+
+<Label name="SplitSection" note="deck slides 4 / 6 · photo to the edge, text bottom-aligned" />
+<SplitSection src={P + "dining-restaurant-valley-window.jpg"} alt="The dining room by the valley window">
+  <Statement eyebrow="Meals during your stay" sub="Meals are planned as part of your programme, taking into account your doctor's recommendations and dietary requirements.">Meals are planned for your programme.</Statement>
+  <div><TextLink href="#">Read what to expect</TextLink></div>
+</SplitSection>
+
+<Label name="SplitSection" note="deck slide 13 · mediaSide end, split 40, stone ground, SpecTable" />
+<SplitSection src={P + "room-premium.jpg"} alt="A room with a balcony" mediaSide="end" split="40" ground="stone">
+  <Statement eyebrow="Accommodation" sub="Shantara has 52 rooms across five categories, designed for comfortable residential stays.">Five room categories</Statement>
+  <SpecTable caption="Room categories" columns={[{ key: "name", label: "Room" }, { key: "size", label: "Size", accent: true, mobileLabel: true }, { key: "occ", label: "Occupancy", mobileLabel: true }]} rows={rooms} />
+</SplitSection>
+
+<Label name="PanoramaCaption" note="deck slide 5 · 21:9, 4:5 on phones, no button" />
+<PanoramaCaption src={P + "valley.jpg"} alt="The Chennamangallur valley from the hilltop" eyebrow="The setting" title="Overlooking the Chennamangallur valley" />
+
+<Label name="Section + PeopleRow" note="deck slide 7 · initials until a photograph exists" />
+<Section>
+  <PeopleRow eyebrow="Our doctors" title="Your programme is planned by our doctors."
+    people={[
+      { name: "Dr. P.A. Kareem", role: "Founder, Chairman & Chief Naturopathy Consultant", detail: "Government of India-certified Naturopathy Practitioner" },
+      { name: "Dr. Bahja Janu", role: "Medical Director", src: P + "doctor-bahja-janu-portrait-cropped.jpeg" },
+    ]}
+    action={<TextLink href="#">About Shantara</TextLink>} />
+</Section>
+
+<Label name="HeroStatement" note="deck slide 2 · inner page, no photograph" />
+<HeroStatement tall={false}
+  breadcrumbs={<Breadcrumbs items={[{ label: "Home", href: "#" }, "Conditions"]} />}
+  eyebrow="Conditions" title="Conditions we commonly see"
+  sub="Our doctors see guests with a range of long-standing conditions. Programmes are planned after consultation and assessment." />
+
+<Label name="Section + IndexList" note="text-only index" />
+<Section>
+  <IndexList groups={[
+    { label: "Metabolic", items: [
+      { title: "Diabetes", text: "Residential programmes planned around blood-sugar control, meals and daily doctor review.", href: "#" },
+      { title: "Weight management", text: "Meals, activity and therapies, with weight and vitals reviewed each morning.", href: "#" },
+    ] },
+    { label: "Hormonal", items: [
+      { title: "PCOS", text: "A programme may be planned around hormonal health, meals, activity and rest, following assessment.", href: "#" },
+    ] },
+    { label: "Musculoskeletal", items: [
+      { title: "Arthritis", text: "Therapies, movement and rest may be recommended to support joint comfort, following assessment.", href: "#" },
+    ] },
+  ]} />
+</Section>
+
+<Label name="Section + FormSplit" note="consultation form beside the Stone panel" />
+<Section>
+  <FormSplit aside={<>
+    <PortraitFrame src={P + "doctor-bahja-janu-portrait-cropped.jpeg"} name="Dr. Bahja Janu" role="Medical Director" style={{ maxWidth: 220 }} />
+    <Statement as="h3" size="title" sub="A member of the team will call you to understand what you need. A doctor then reviews whether a stay is the right next step.">We'll be in touch</Statement>
+  </>}>
+    <Statement as="h2" size="title" eyebrow="Book a Consultation" sub="Share your name and a number we can reach. Our team will contact you to arrange a consultation.">Send your details</Statement>
+    <Input label="Name" />
+    <Input label="Mobile / WhatsApp number" placeholder="+91" />
+    <Select label="Country" options={["India", "United Arab Emirates", "United Kingdom", "Other"]} />
+    <Textarea label="Anything you'd like us to know?" rows={3} />
+    <div><Button size="lg">Send your details</Button></div>
+  </FormSplit>
+</Section>
+
+<Label name="ClosingCTA" note="deck slide 18 · one Gold button, contact lines" />
+<ClosingCTA src={P + "exterior-entrance-dusk-lit-canopy.jpg"} alt="The entrance at dusk"
+  eyebrow="Book a Consultation"
+  title="A stay is confirmed after a doctor has spoken with you."
+  sub="Share your name and a number we can reach. Our team will contact you to arrange a consultation."
+  action={<Button size="lg">Book a Consultation</Button>}
+  contact={<><a href="tel:+919553600100">+91 9553 600 100</a><a href="mailto:heal@shantara.life">heal@shantara.life</a><span>Kozhikode (Calicut), Kerala</span></>} />
+</div>);}
+ReactDOM.createRoot(document.getElementById('root')).render(<Demo/>);
+</script></body></html>
