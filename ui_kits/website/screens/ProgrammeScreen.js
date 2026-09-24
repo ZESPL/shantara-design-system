@@ -3,7 +3,7 @@
 const PROGRAMME_ID = "detox";
 
 /* Three frames that are not the hero (water-wall): therapy, meals, the grounds.
-   Supplementary imagery, so the strip is aria-hidden with empty alts. */
+   A keyboard-scrollable region on phones and tablets; every photo keeps its alt text. */
 const GALLERY = [
   { name: "treatment", alt: "Treatment room" },
   { name: "dining-restaurant-valley-window", alt: "The dining room over the valley" },
@@ -26,6 +26,7 @@ const PLANNING = [
 const STRIP_CSS = `
 .sh-prog-strip{display:flex;gap:var(--grid-gap);overflow-x:auto;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;scrollbar-width:none;margin-inline:calc(-1 * var(--layout-gutter));padding-inline:var(--layout-gutter);scroll-padding-inline:var(--layout-gutter)}
 .sh-prog-strip::-webkit-scrollbar{display:none}
+.sh-prog-strip:focus-visible{outline:none;box-shadow:var(--ring-focus)}
 .sh-prog-strip>*{flex:0 0 max(calc((100% - 2 * var(--grid-gap)) / 3), min(78%, 22rem));scroll-snap-align:start}
 @media (min-width:1000px){.sh-prog-strip{margin-inline:0;padding-inline:0}}
 .sh-prog-h{margin:0;font:var(--type-title);color:var(--text-primary)}
@@ -124,9 +125,9 @@ function ProgrammeScreen({ onNavigate }) {
 
       <Section ground="stone">
         <Statement>{t("What to expect during your stay")}</Statement>
-        <div className="sh-prog-strip" aria-hidden="true" style={{ marginTop: "var(--stack-lg)" }}>
+        <div className="sh-prog-strip" role="region" aria-label={t("Photographs of the retreat")} tabIndex={0} style={{ marginTop: "var(--stack-lg)" }}>
           {GALLERY.map((shot) => (
-            <div key={shot.name}><Media src={window.photoSrc(shot.name)} alt="" ratio="4:3" /></div>
+            <div key={shot.name}><Media src={window.photoSrc(shot.name)} alt={t(shot.alt)} ratio="4:3" /></div>
           ))}
         </div>
         <TimeTable style={{ marginTop: "var(--stack-lg)" }} rows={DAY_TIMES.map((r) => ({ time: t(r.time), title: t(r.text) }))} />

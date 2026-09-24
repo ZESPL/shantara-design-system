@@ -38,6 +38,17 @@ function ConsultationScreen({ onNavigate, locale = "en", view = "booking" }) {
     }, 1400);
   };
 
+  // The success view is much shorter than the form: bring it into view.
+  React.useEffect(() => {
+    if (!done || typeof document === "undefined") return;
+    const el = document.getElementById("kit-scroll");
+    if (el) el.scrollTop = 0;
+    if (typeof window !== "undefined" && window.scrollTo) window.scrollTo(0, 0);
+    // The toast repeats the heading; let it go on its own so it never sits over the buttons.
+    const timer = setTimeout(() => setToast(false), 4000);
+    return () => clearTimeout(timer);
+  }, [done]);
+
   const bahja = (window.ShantaraContent.doctors || []).find((d) => d.id === "bahja-janu");
 
   if (done) {
