@@ -14,19 +14,34 @@
 --space-12:80px;
 --space-13:96px;
 --space-14:128px;
+--space-15:160px;
 
-/* Layout */
+/* Layout.
+   Breakpoints (media queries cannot read custom properties, so these are the
+   agreed literals every component uses — mobile first, min-width):
+     sm  520px   large phone
+     md  760px   tablet portrait — two columns start
+     lg  1000px  tablet landscape / small laptop — split layouts and full nav start
+     xl  1280px  desktop — full 12-column rhythm
+   The pattern band has its own floor at 880px (tokens/pattern.css). */
 --layout-max:1240px;
+--layout-wide:1440px;
 --layout-narrow:720px;
---layout-gutter:var(--space-7);
---layout-gutter-lg:var(--space-10);
---section-y:var(--space-13);
---section-y-sm:var(--space-11);
+--layout-gutter:clamp(20px, 3.4vw + 8px, 48px);        /* 20 → 48, the page side margin */
+--layout-gutter-lg:var(--layout-gutter);               /* legacy name — same fluid value */
+--grid-columns:12; /* @kind other */
+--grid-gap:clamp(16px, 1.5vw + 10px, 32px);            /* 16 → 32 */
+
+/* Section rhythm — the deck gives every idea its own screen. */
+--section-y:clamp(80px, 7.4vw + 53px, 160px);          /* 80 → 160 */
+--section-y-sm:clamp(56px, 3.7vw + 43px, 96px);        /* 56 → 96 */
+--stack-lg:clamp(32px, 2.2vw + 24px, 56px);            /* heading → content */
+--stack-md:clamp(20px, 1.1vw + 16px, 32px);            /* eyebrow/heading → body */
 
 /* Control heights */
---control-sm:32px;
---control-md:40px;
---control-lg:48px;
+--control-sm:36px;
+--control-md:44px;
+--control-lg:52px;
 --control-xl:56px;
 --tap-min:44px;
 }

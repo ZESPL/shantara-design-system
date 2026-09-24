@@ -1,19 +1,27 @@
+/* Shape follows the brand deck: photographs are square-cut, controls are near-square.
+   Stone and timber architecture, not app chrome. Pills survive only for small
+   selection chips (Tag) and status marks (Badge). */
 :root{
---radius-xs:4px;
---radius-sm:8px;
---radius-md:12px;
+--radius-none:0px;
+--radius-xs:2px;
+--radius-sm:4px;
+--radius-md:8px;
 --radius-lg:16px;
 --radius-xl:24px;
 --radius-2xl:32px;
 --radius-pill:999px;
---radius-card:var(--radius-sm);
---radius-control:var(--radius-pill);
---radius-input:var(--radius-sm);
---radius-media:var(--radius-sm);
---card-media-ratio:4 / 3;           /* listing cards */
---media-ratio:var(--card-media-ratio); /* default Photo */
---media-ratio-wide:16 / 9;          /* cinematic / hero */
---media-ratio-portrait:3 / 4;       /* tall architectural */
+--radius-card:var(--radius-sm);      /* forms and dialogs only — marketing uses Tile */
+--radius-control:var(--radius-xs);   /* buttons */
+--radius-input:var(--radius-xs);
+--radius-chip:var(--radius-pill);    /* Tag, Badge */
+--radius-media:var(--radius-none);   /* every photograph */
+--radius-tile:var(--radius-none);
+--card-media-ratio:4 / 3;           /* listing tiles */
+--media-ratio:var(--card-media-ratio); /* default Media */
+--media-ratio-wide:16 / 9;          /* cinematic */
+--media-ratio-portrait:4 / 5;       /* doctor portraits, tall split media */
+--media-ratio-tall:3 / 4;           /* tall architectural */
+--media-ratio-panorama:21 / 9;      /* PanoramaCaption on desktop only */
 --border-width:1px;
 --border-width-strong:1.5px;
 }

@@ -1,0 +1,41 @@
+import React from "react";
+import { Media } from "../editorial/Media.jsx";
+
+/* Deck slide 5. A full-width photograph with a short caption bottom-left and no button —
+   the pause between dense sections. 21:9 on desktop, 4:5 on phones so the frame keeps
+   its height; the caption always sits inside a bottom scrim. */
+const CSS = `
+.sh-pano{position:relative}
+.sh-pano .sh-media-over{display:flex;align-items:flex-end}
+.sh-pano-cap{width:100%;padding-block:var(--section-y-sm)}
+.sh-pano-cap .sh-container{display:flex;flex-direction:column;gap:var(--space-4)}
+.sh-pano-title{margin:0;font:var(--type-title);color:var(--text-primary);max-width:26ch}
+@media (min-width:1000px){.sh-pano-title{font:var(--type-statement);max-width:24ch}}
+`;
+
+function ensure() {
+  if (typeof document === "undefined" || document.getElementById("sh-pano-css")) return;
+  const el = document.createElement("style");
+  el.id = "sh-pano-css";
+  el.textContent = CSS;
+  document.head.appendChild(el);
+}
+
+export function PanoramaCaption({ src, alt = "", position, mobilePosition, eyebrow, title, ratio = "21:9", mobileRatio = "4:5", headingLevel = 2, style, ...rest }) {
+  ensure();
+  const H = "h" + headingLevel;
+  return (
+    <section className="sh-pano" data-ground="photo" style={style} {...rest}>
+      <Media src={src} alt={alt} ratio={ratio} mobileRatio={mobileRatio} position={position} mobilePosition={mobilePosition} scrim="hero">
+        {title || eyebrow ? (
+          <div className="sh-pano-cap">
+            <div className="sh-container">
+              {eyebrow ? <p className="shantara-eyebrow" style={{ margin: 0 }}>{eyebrow}</p> : null}
+              {title ? <H className="sh-pano-title">{title}</H> : null}
+            </div>
+          </div>
+        ) : null}
+      </Media>
+    </section>
+  );
+}

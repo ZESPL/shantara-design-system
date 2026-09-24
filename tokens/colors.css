@@ -45,6 +45,14 @@
 --surface-accent:var(--color-gold-crayola);
 --surface-overlay:color-mix(in srgb, var(--color-pine-tree) 55%, transparent);
 
+/* — Section grounds — the deck's three flat grounds plus photo and the footer.
+   Sections choose one with data-ground; nothing else paints a marketing surface.
+   White is not a ground: it is reserved for form fields and dialogs. */
+--ground-merino:var(--color-merino);
+--ground-stone:var(--color-pearl-bush);
+--ground-himalaya:var(--color-himalaya);
+--ground-pine:var(--color-pine-tree);
+
 /* — Semantic text — */
 --text-primary:var(--color-pine-tree);
 --text-secondary:var(--color-stone-500);

@@ -11,7 +11,7 @@ const CSS = `
 .sh-radio input:disabled ~ *{opacity:.45}
 .sh-radio-desc{display:block;color:var(--text-muted);font-size:var(--text-xs);margin-top:2px}
 .sh-radio:active .sh-radio-dot{transform:scale(var(--press-scale))}
-.sh-radio-card{padding:var(--space-5);border:var(--border-width) solid var(--border-control);border-radius:var(--radius-md);background:var(--surface-card);width:100%;transition:var(--transition-control)}
+.sh-radio-card{padding:var(--space-5);border:var(--border-width) solid var(--border-control);border-radius:var(--radius-sm);background:var(--surface-card);width:100%;transition:var(--transition-control)}
 .sh-radio-card:has(input:checked){border-color:var(--surface-brand);background:var(--surface-brand-soft)}
 @media (hover: hover) and (pointer: fine){
   .sh-radio:hover .sh-radio-dot{border-color:var(--border-strong)}

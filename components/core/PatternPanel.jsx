@@ -1,5 +1,18 @@
 import React from "react";
 
+/* Responsive floor (tokens/pattern.css): the cell cannot go under 130px, so a SURFACE under
+   ~880px (a container query, not the viewport) loses its band and the space it reserved goes back to the content. */
+const CSS = `.sh-pp{container-type:inline-size}
+@container (max-width:879.98px){.sh-pp-band{display:none}.sh-pp-body[data-pattern-reserve]{padding:0!important}}`;
+
+function ensure() {
+  if (typeof document === "undefined" || document.getElementById("sh-pp-css")) return;
+  const el = document.createElement("style");
+  el.id = "sh-pp-css";
+  el.textContent = CSS;
+  document.head.appendChild(el);
+}
+
 function resolveBase() {
   if (typeof document === "undefined") return "assets";
   const s = document.querySelector('script[src$="_ds_bundle.js"]');
@@ -36,6 +49,7 @@ export function PatternPanel({
   style,
   ...rest
 }) {
+  ensure();
   const base = resolveBase();
   const vertical = edge === "right" || edge === "left" || edge === "start" || edge === "end";
   const dark = tone === "olive" || tone === "pine" || tone === "none";
@@ -65,9 +79,10 @@ export function PatternPanel({
     end: { top: 0, bottom: 0, insetInlineEnd: 0, width: size, borderInlineStart: `1px solid ${line}` },
   }[edge] || { top: 0, bottom: 0, right: 0, width: size, borderLeft: `1px solid ${line}` };
   return (
-    <div style={{ position: "relative", isolation: "isolate", background: BG[tone] || tone, color: dark && tone !== "none" ? "var(--text-on-inverse)" : "var(--text-primary)", borderRadius: radius, overflow: "hidden", ...style }} {...rest}>
+    <div className="sh-pp" style={{ position: "relative", isolation: "isolate", background: BG[tone] || tone, color: dark && tone !== "none" ? "var(--text-on-inverse)" : "var(--text-primary)", borderRadius: radius, overflow: "hidden", ...style }} {...rest}>
       <span
         aria-hidden="true"
+        className="sh-pp-band"
         style={{
           position: "absolute",
           boxSizing: "border-box",
@@ -91,7 +106,7 @@ export function PatternPanel({
           }}
         />
       </span>
-      <div style={{ position: "relative", zIndex: 1, ...pad }}>{children}</div>
+      <div className="sh-pp-body" data-pattern-reserve={pad ? "" : undefined} style={{ position: "relative", zIndex: 1, ...pad }}>{children}</div>
     </div>
   );
 }

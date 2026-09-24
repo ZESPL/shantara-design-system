@@ -8,8 +8,8 @@ const CSS = `
 .sh-card[data-tone="inverse"]{background:var(--surface-inverse);border-color:transparent;color:var(--text-on-inverse)}
 .sh-card[data-tone="outline"]{background:transparent;border-color:var(--border-control);box-shadow:none}
 .sh-card[data-pad="sm"] .sh-card-body{padding:var(--space-5)}
-.sh-card[data-pad="md"] .sh-card-body{padding:var(--space-7)}
-.sh-card[data-pad="lg"] .sh-card-body{padding:var(--space-9)}
+.sh-card[data-pad="md"] .sh-card-body{padding:clamp(20px, 0.8vw + 17px, 28px)}
+.sh-card[data-pad="lg"] .sh-card-body{padding:clamp(24px, 2vw + 16px, 40px)}
 .sh-card[data-pad="none"] .sh-card-body{padding:0}
 .sh-card-body{display:flex;flex-direction:column;gap:var(--space-3)}
 .sh-card-media{display:block;width:100%;height:auto;aspect-ratio:var(--card-media-ratio);object-fit:cover;background:var(--surface-sunken)}

@@ -1,0 +1,36 @@
+import React from "react";
+import { Statement } from "../editorial/Statement.jsx";
+import { PortraitFrame } from "../editorial/PortraitFrame.jsx";
+
+/* Deck slide 7. A statement, then 2–4 doctors in the same 4:5 framing. Columns are
+   auto-filled at a fixed portrait width (150→280px), so two doctors stay portrait-sized
+   on a desktop instead of stretching, and two sit side by side on a 360px phone. */
+const CSS = `
+.sh-people{display:flex;flex-direction:column;gap:var(--stack-lg)}
+.sh-people-grid{display:grid;grid-template-columns:repeat(auto-fill, minmax(clamp(140px, 18vw + 70px, 280px), 1fr));gap:var(--space-8) var(--grid-gap);max-width:calc(4 * 280px + 3 * var(--grid-gap))}
+.sh-people-note{margin:0;font:var(--type-body-sm);color:var(--text-secondary);max-width:var(--measure-body)}
+@media (max-width:519.98px){.sh-people-grid{gap:var(--space-7) var(--space-5)}}
+`;
+
+function ensure() {
+  if (typeof document === "undefined" || document.getElementById("sh-people-css")) return;
+  const el = document.createElement("style");
+  el.id = "sh-people-css";
+  el.textContent = CSS;
+  document.head.appendChild(el);
+}
+
+/* people: [{ name, role, detail?, src? }] */
+export function PeopleRow({ eyebrow, title, sub, people = [], note, action, style, ...rest }) {
+  ensure();
+  return (
+    <div className="sh-people" style={style} {...rest}>
+      {title ? <Statement eyebrow={eyebrow} sub={sub}>{title}</Statement> : null}
+      <div className="sh-people-grid">
+        {people.map((p) => <PortraitFrame key={p.name} {...p} />)}
+      </div>
+      {note ? <p className="sh-people-note">{note}</p> : null}
+      {action ? <div>{action}</div> : null}
+    </div>
+  );
+}

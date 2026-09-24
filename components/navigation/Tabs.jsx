@@ -1,8 +1,10 @@
 import React from "react";
 
 const CSS = `
-.sh-tabs{display:flex;align-items:center;gap:var(--space-7);border-bottom:var(--border-width) solid var(--border-subtle);font-family:var(--font-body)}
-.sh-tab{position:relative;appearance:none;border:0;background:transparent;padding:var(--space-4) 0;min-height:32px;font-size:var(--text-sm);font-weight:var(--weight-regular);color:var(--text-secondary);cursor:pointer;transition:color var(--duration-fast) var(--ease-standard),background-color var(--duration-fast) var(--ease-standard),box-shadow var(--duration-fast) var(--ease-standard),transform var(--duration-fast) var(--ease-standard)}
+.sh-tabs{display:flex;align-items:center;gap:var(--space-7);border-bottom:var(--border-width) solid var(--border-subtle);font-family:var(--font-body);overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.sh-tabs::-webkit-scrollbar{display:none}
+@media (max-width:759.98px){.sh-tabs{gap:var(--space-6);margin-inline:calc(-1 * var(--layout-gutter));padding-inline:var(--layout-gutter);scroll-padding-inline:var(--layout-gutter)}}
+.sh-tab{position:relative;flex:0 0 auto;white-space:nowrap;appearance:none;border:0;background:transparent;padding:var(--space-4) 0;min-height:var(--tap-min);font-family:inherit;font-size:var(--text-sm);font-weight:var(--weight-regular);color:var(--text-secondary);cursor:pointer;transition:color var(--duration-fast) var(--ease-standard),background-color var(--duration-fast) var(--ease-standard),box-shadow var(--duration-fast) var(--ease-standard),transform var(--duration-fast) var(--ease-standard)}
 .sh-tab:active{transform:scale(var(--press-scale))}
 @media (hover: hover) and (pointer: fine){
   .sh-tab:hover{color:var(--text-primary)}
@@ -12,7 +14,7 @@ const CSS = `
 [dir="rtl"] .sh-tab::after{transform-origin:right center}
 .sh-tab[aria-selected="true"]{color:var(--text-primary);font-weight:var(--weight-medium)}
 .sh-tab[aria-selected="true"]::after{transform:scaleX(1)}
-.sh-tabs[data-variant="pill"]{border-bottom:0;gap:var(--space-2);background:var(--surface-raised);padding:var(--space-2);border-radius:var(--radius-pill);display:inline-flex}
+.sh-tabs[data-variant="pill"]{border-bottom:0;gap:var(--space-2);background:var(--surface-raised);padding:var(--space-2);border-radius:var(--radius-pill);display:inline-flex;max-width:100%;margin-inline:0}
 .sh-tabs[data-variant="pill"] .sh-tab{padding:0 var(--space-6);height:34px;border-radius:var(--radius-pill)}
 .sh-tabs[data-variant="pill"] .sh-tab::after{display:none}
 .sh-tabs[data-variant="pill"] .sh-tab[aria-selected="true"]{background:var(--surface-card);box-shadow:var(--shadow-sm)}
