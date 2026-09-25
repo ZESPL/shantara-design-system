@@ -195,6 +195,7 @@
     "README.md": "website-kit.html",
     "icp.md": "icp.html",
     "skill-stack.md": "website-stack.html",
+    "skill-images.md": "website-images.html",
     "skill-premium.md": "website-premium.html",
     "voice-and-tone.md": "website-copy-voice.html",
     "naming-and-nap.md": "website-copy-naming.html",

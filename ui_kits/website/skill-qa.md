@@ -78,6 +78,7 @@ Before publishing:
 - [ ] Schema matches visible content.
 - [ ] Page is keyboard accessible.
 - [ ] Images have correct alt behavior.
+- [ ] Image files pass the checks in [skill-images.md](skill-images.md#7-checks): masters under 1 MB and 2560px, no photographs in `public/`.
 - [ ] Performance has not materially regressed.
 - [ ] No console errors.
 - [ ] No broken links.

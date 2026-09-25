@@ -13,7 +13,7 @@ Canonical skill lives with the Website Kit so humans and agents read the same fi
 
 **`ui_kits/website/SKILL.md`**
 
-Read that file first. Its sibling references (`skill-stack.md`, `skill-premium.md`, `skill-ia.md`, `skill-sections.md`, `skill-content.md`, `skill-copy.md`, `skill-technical.md`, `skill-qa.md`) hold the inventories and checklists. Production technology for shantara.life is locked in `skill-stack.md`. Premium design and motion vocabulary live in `skill-premium.md`.
+Read that file first. Its sibling references (`skill-stack.md`, `skill-images.md`, `skill-premium.md`, `skill-ia.md`, `skill-sections.md`, `skill-content.md`, `skill-copy.md`, `skill-technical.md`, `skill-qa.md`) hold the inventories and checklists. Production technology for shantara.life is locked in `skill-stack.md`. Premium design and motion vocabulary live in `skill-premium.md`.
 
 Public website language is governed by `skill-copy.md`. Read it before writing or rewriting visitor-facing copy.
 

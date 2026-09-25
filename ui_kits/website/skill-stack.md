@@ -19,7 +19,7 @@ This design-system Website Kit (`ui_kits/website/`) remains a composition previe
 | **Interactivity** | **Astro first; React only if genuinely required** | Do not introduce React for ordinary UI components |
 | **Animation** | **CSS / Tailwind transitions** | Default and primary animation mechanism |
 | **Page transitions** | **Astro View Transitions** | Restrained navigation transitions |
-| **Images** | **Astro Image** | Responsive images, sizing and optimization |
+| **Images** | **Astro Image** | Responsive images, sizing and optimization. Storage, compression and widths: [skill-images.md](skill-images.md) |
 | **Multilingual** | **Astro native i18n** | Architecture ready for `/en/`, `/ar/`, etc. |
 | **Forms** | **Web3Forms** | Contact, enquiry and lead forms; no custom forms backend |
 | **Analytics** | **OpenPanel** | Behaviour, events, funnels and site analytics |

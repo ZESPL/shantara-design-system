@@ -323,7 +323,7 @@ Static content should remain static.
 
 ### Images
 
-In production, use **Astro Image**. In all surfaces:
+In production, use **Astro Image**. Where files go, how to compress them and which widths to generate: [skill-images.md](skill-images.md). In all surfaces:
 
 - use responsive sizes;
 - modern formats;
