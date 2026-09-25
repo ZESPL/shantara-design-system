@@ -516,7 +516,7 @@
     };
   }
 
-  /* LocalBusiness / Organization node. NAP name is always "Shantara Naturopathy Retreat"
+  /* MedicalClinic (a LocalBusiness subtype) organisation node. NAP name is always "Shantara Naturopathy Retreat"
      (copy/naming-and-nap.md); one telephone for calls and WhatsApp. */
   function organizationSchema(options) {
     const opts = options || {};
@@ -525,7 +525,7 @@
     const place = site.place || {};
     return {
       "@context": "https://schema.org",
-      "@type": (site.schema_defaults && site.schema_defaults.type) || "LocalBusiness",
+      "@type": (site.schema_defaults && site.schema_defaults.type) || "MedicalClinic",
       "@id": organizationId(origin),
       name: site.business_name || "Shantara Naturopathy Retreat",
       url: origin + "/",

@@ -45,7 +45,7 @@ This design-system Website Kit (`ui_kits/website/`) remains a composition previe
 | Service | Where | Notes |
 | --- | --- | --- |
 | **Production site** | `https://shantara.life` | Public marketing domain |
-| **OpenPanel** | `http://openpanel.zescloud.net/` | Product analytics; use the shared `track()` abstraction — see [skill-technical.md](skill-technical.md) |
+| **OpenPanel** | `https://openpanel.zescloud.net/` | Product analytics; use the shared `track()` abstraction — see [skill-technical.md](skill-technical.md) |
 | **OpenSEO** | `https://openseo.zescloud.net/` | SEO audit and opportunity monitoring; not runtime page code |
 | **DataForSEO** | Research tooling (API / MCP) | Keyword and SERP research for SEO work; not a site dependency |
 | **Google Analytics / Tag** | Via Google Tag / GA4 | Attribution and Ads conversion; forward through the same `track()` abstraction |
