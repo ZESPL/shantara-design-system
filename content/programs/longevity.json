@@ -2,28 +2,33 @@
   "id": "longevity",
   "slug": "longevity",
   "name": "Longevity",
-  "photo": "valley",
   "focus": "Clinical",
-  "home_featured": false,
   "proposition": "Preventive routines, metabolic and movement support, and doctor-guided reassessment for guests who want to stay capable and well. Catalogue programme, not a longevity-medicine product.",
   "durations": null,
-  "icp_ids": [
-    "healthy_ageing_longevity"
-  ],
-  "related_therapy_ids": [
-    "physiotherapy",
-    "yoga-therapy",
-    "diet-therapy",
-    "heliotherapy"
-  ],
-  "related_condition_ids": [],
   "locale": "en",
-  "translation_status": null,
-  "source_version": "2026-07",
-  "last_translated_at": null,
-  "translation_reviewed_at": null,
-  "translation_reviewed_by": null,
-  "needs_translation_review": null,
-  "publication_status": "published",
-  "source": "handbook"
+  "source": "handbook",
+  "related_pages": [
+    {
+      "type": "therapy",
+      "id": "physiotherapy"
+    },
+    {
+      "type": "therapy",
+      "id": "yoga-therapy"
+    },
+    {
+      "type": "therapy",
+      "id": "diet-therapy"
+    },
+    {
+      "type": "therapy",
+      "id": "heliotherapy"
+    }
+  ],
+  "status": "published",
+  "featured_image": {
+    "src": "valley",
+    "alt": "The valley below Shantara"
+  },
+  "featured": false
 }

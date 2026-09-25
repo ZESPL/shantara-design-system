@@ -22,7 +22,7 @@ In the catalog, open `index.html` for the sample, then the Website kit cards for
 
 Welnez is the former name. Use **Shantara** in all new public copy.
 
-Primary visitor-facing action: **Book a Consultation**. Rates appear **only** in [`content/tariff.json`](../../content/tariff.json), the tariff card (`screens/TariffScreen.js`), brand-deck tariff slides, and the handbook tariff section.
+Primary visitor-facing action: **Book a Consultation**. This kit holds no rates, currencies or validity dates. [`content/tariff.json`](../../content/tariff.json) holds the tariff structure, and the tariff card (`screens/TariffScreen.js`) shows it with “—”. Production rates live only in the Keystatic tariff.
 
 Entity facts for kit screens: [`content/`](../../content/) (load `content/kit.js` → `window.ShantaraContent`). After editing facts, edit `content/` only. Screens compose `components/sections/` and `components/editorial/`. After editing `components/**`, rebuild `_ds_bundle.js` with `node scripts/build-bundle.mjs` (components only — never for copy).
 
@@ -58,10 +58,10 @@ rtl-fixture.html
 
 Locale config: `locales.js` (`window.ShantaraLocales`). Shared UI strings: root `i18n.js`. Sample routing uses locale-prefixed hashes (`#/en/`, `#/en/programs`).
 
-**Deliberately not built in this kit:** individual condition/therapy/room pages; Keystatic/Astro app wiring; production analytics/SEO endpoints; multiple forms; stay-total calculators; translated AR/DE/FR/RU/HI/ML website content. Production stack lives in [`skill-stack.md`](skill-stack.md).
+**Deliberately not built in this kit:** individual condition pages; therapy and room pages (production has one page each for all therapies and all rooms); Keystatic/Astro app wiring; production analytics/SEO endpoints; multiple forms; stay-total calculators; translated AR/DE/FR/RU/HI/ML website content. Production stack lives in [`skill-stack.md`](skill-stack.md).
 
 ## Confirm before any real use
 
-Tariffs (valid to 31 Dec 2026 and marked *to confirm* in the handbook — edit the tariff card only), the Monday-intake convention and monthly cap presentation, programme durations (indicative), and insights copy written for this kit rather than supplied.
+The tariff sample holds no rates, currencies or validity dates — production rates live only in the Keystatic tariff. Also confirm the Monday-intake convention and monthly cap presentation, programme durations (indicative), and insights copy written for this kit rather than supplied.
 
 The programme name “Diabetes Reversal” is approved for catalogue use; do not present reversal as a guaranteed outcome or invent rates.

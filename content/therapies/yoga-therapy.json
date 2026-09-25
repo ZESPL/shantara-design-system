@@ -1,16 +1,10 @@
 {
   "id": "yoga-therapy",
   "name": "Yoga Therapy",
-  "home_featured": true,
   "description": "Gentle movement and breathwork adapted to the individual.",
   "slug": "yoga-therapy",
   "locale": "en",
-  "translation_status": null,
-  "source_version": "2026-07",
-  "last_translated_at": null,
-  "translation_reviewed_at": null,
-  "translation_reviewed_by": null,
-  "needs_translation_review": null,
-  "publication_status": "published",
-  "source": "kit"
+  "source": "kit",
+  "status": "published",
+  "featured": true
 }

@@ -110,7 +110,7 @@ Program pages are commercially important and should explain:
 - inclusions;
 - clinical supervision;
 - experience;
-- price or pricing approach when available — **in this repo, link to the tariff card; do not invent or copy rates**;
+- a link to the tariff page — **never quote, invent or copy rates**; rates live only in the production Keystatic tariff;
 - next step.
 
 ## Experience
@@ -123,7 +123,14 @@ Typical pages may include:
 - Farm & Dining
 - A Day at Shantara
 
-Do not create individual pages for every therapy or every room category unless future content volume or search intent justifies it.
+Therapies and rooms each have **one page**:
+
+```text
+/en/therapies
+/en/rooms
+```
+
+Do not create individual pages for a therapy or a room category. Links to a single therapy or room point to its section on that page (for example `/en/therapies#hijama`).
 
 ## About
 
@@ -133,6 +140,14 @@ Typical pages:
 - Our Approach
 - Our Doctors
 - Medical Editorial Policy
+
+Each doctor has a profile page:
+
+```text
+/en/doctors/[doctor-slug]
+```
+
+Dr. P.A. Kareem (`/en/doctors/pa-kareem`) and Dr. Bahja Janu (`/en/doctors/bahja-janu`) each have one. The page lists the doctor's answers, the articles they reviewed and their programmes automatically.
 
 Entity and parent history (including Hygiene Nature Cure Hospital / HNCH) belong here — not on condition or programme pages, and not as a hospital product pitch.
 ## Publishing families
@@ -163,6 +178,7 @@ Traditional blog articles may continue to exist, but do not make generic blog pr
 
 - Book a Consultation
 - Contact
+- Frequently asked questions (`/en/faq`, grouped by category)
 - Resident Policies
 - Cancellation Policy
 - Privacy Policy
@@ -223,7 +239,7 @@ Create meaningful relationships:
 - Doctor Answer → deeper Guide
 - Article → relevant core page
 
-Optional CMS fields `icp_ids[]` on Program and Condition records may reference the stable IDs in [`docs/icp.md`](../../docs/icp.md). Those IDs do not become URL segments.
+Links are stored once, in `related_pages`, and the reverse direction is generated — see [skill-content.md](skill-content.md#shared-fields). Content records carry no ICP IDs.
 
 Do not insert links solely for keyword density.
 

@@ -20,7 +20,7 @@ function homeDoctors(t) {
 }
 
 function siteFaqs() {
-  return (window.ShantaraContent.faqs || []).map((f) => ({ title: f.question, content: f.answer }));
+  return ((window.ShantaraContent.faq || {}).categories || []).flatMap((c) => c.faqs).map((f) => ({ title: f.question, content: f.answer }));
 }
 
 function HomeScreen({ onNavigate }) {
@@ -29,10 +29,10 @@ function HomeScreen({ onNavigate }) {
   const { Button, Accordion, Section, HeroFullBleed, Statement, BandStatement, PeopleRow, TileGrid, Tile, IndexList, SplitSection, PlainList, PanoramaCaption, SpecTable, TextLink } = DS;
   const P = window.PageSlot;
   const C = window.ShantaraContent;
-  const programs = (C.programs || []).filter((p) => p.publication_status !== "draft");
+  const programs = (C.programs || []).filter((p) => p.status !== "draft");
   const tiles = HOME_TILE_PROGRAMMES.map((id) => programs.find((p) => p.id === id)).filter(Boolean);
   const rest = programs.filter((p) => !HOME_TILE_PROGRAMMES.includes(p.id));
-  const therapies = (C.therapies || []).filter((x) => x.home_featured);
+  const therapies = (C.therapies || []).filter((x) => x.featured);
   const rooms = C.rooms || [];
   const articles = HOME_ARTICLES.map((id) => (C.articles || []).find((a) => a.id === id)).filter(Boolean);
 
@@ -89,7 +89,7 @@ function HomeScreen({ onNavigate }) {
             {tiles.map((p) => (
               <Tile
                 key={p.id}
-                src={window.photoSrc(p.photo)}
+                src={window.photoSrc((p.featured_image || {}).src)}
                 alt=""
                 ratio="4:3"
                 title={t(p.name)}
@@ -162,7 +162,7 @@ function HomeScreen({ onNavigate }) {
             {articles.map((a) => (
               <Tile
                 key={a.id}
-                src={window.photoSrc(a.photo)}
+                src={window.photoSrc((a.featured_image || {}).src)}
                 alt=""
                 ratio="3:2"
                 title={t(a.title)}

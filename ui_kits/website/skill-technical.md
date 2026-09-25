@@ -50,6 +50,14 @@ Properties: `form_id`; `page_type`; `source_page`; `locale` (added centrally).
 
 Do not treat a button click as a successful lead.
 
+#### `question_submitted`
+
+Fire when the Ask the Doctor form confirms a successful submission.
+
+Properties: `page_type`; `source_page`; `locale` (added centrally).
+
+This is user-generated content, not a lead. Never fire `generate_lead` for it, and never send the question text to analytics.
+
 #### `contact_click`
 
 Use one event for alternate contact channels.
@@ -164,6 +172,8 @@ Do not guess legacy URL mappings. Inspect the actual existing site before migrat
 
 Create meaningful relationships: Condition → relevant Program; Program → Condition; Program → Therapy; Clinical Guide → Condition/Program; Doctor Answer → deeper Guide; Article → relevant core page.
 
+Editors set each link once, in `related_pages`; the build generates the reverse links. Therapy and room links point to their section on the single `/en/therapies` or `/en/rooms` page.
+
 Do not insert links solely for keyword density.
 
 ### Search tools
@@ -213,7 +223,7 @@ Where appropriate: `MedicalWebPage`; `MedicalCondition`; `BreadcrumbList`; revie
 
 Where appropriate: `WebPage`; `Service`; `Offer` only where real visible commercial information exists; `BreadcrumbList`.
 
-In this repo, visible commercial figures exist on the tariff card. Do not emit `Offer` amounts that are not on that surface.
+Visible commercial figures exist only on the production tariff page, read from the Keystatic tariff. Do not emit `Offer` amounts anywhere else. Each `Offer` uses the exact amount and ISO currency code as entered; never convert or round. This design system holds no rates.
 
 ### Doctors
 

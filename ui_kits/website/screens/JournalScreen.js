@@ -8,10 +8,10 @@ function journalPosts() {
   const C = window.ShantaraContent;
   const fromArticles = (C.articles || [])
     .filter((a) => a.kit_journal)
-    .map((a) => ({ id: a.id, t: a.title, k: a.category, photo: a.photo, read: a.read_minutes, article: true }));
+    .map((a) => ({ id: a.id, t: a.title, k: a.category, photo: (a.featured_image || {}).src, read: a.read_minutes, article: true }));
   const fromAnswers = (C.doctorAnswers || [])
     .filter((a) => a.kit_journal)
-    .map((a) => ({ id: a.id, t: a.question, k: a.category || "Doctor Answers", photo: a.photo, read: a.read_minutes, article: false }));
+    .map((a) => ({ id: a.id, t: a.question, k: a.category || "Doctor Answers", photo: (a.featured_image || {}).src, read: a.read_minutes, article: false }));
   return [...fromArticles, ...fromAnswers];
 }
 

@@ -2,36 +2,37 @@
   "id": "complete-healing",
   "slug": "complete-healing",
   "name": "Complete Healing",
-  "photo": "courtyard",
   "focus": "Immersive",
-  "home_featured": true,
   "proposition": "For guests managing several long-standing conditions at once, across metabolic, musculoskeletal and mental health.",
   "durations": "21–28 nights",
-  "icp_ids": [
-    "pain_mobility",
-    "digestive_inflammatory",
-    "stress_sleep_burnout",
-    "weight_metabolic"
-  ],
-  "related_therapy_ids": [
-    "mud-therapy",
-    "physiotherapy",
-    "diet-therapy",
-    "yoga-therapy",
-    "mind-body-therapy"
-  ],
-  "related_condition_ids": [
-    "arthritis",
-    "diabetes",
-    "hypertension"
-  ],
   "locale": "en",
-  "translation_status": null,
-  "source_version": "2026-07",
-  "last_translated_at": null,
-  "translation_reviewed_at": null,
-  "translation_reviewed_by": null,
-  "needs_translation_review": null,
-  "publication_status": "published",
-  "source": "kit"
+  "source": "kit",
+  "related_pages": [
+    {
+      "type": "therapy",
+      "id": "mud-therapy"
+    },
+    {
+      "type": "therapy",
+      "id": "physiotherapy"
+    },
+    {
+      "type": "therapy",
+      "id": "diet-therapy"
+    },
+    {
+      "type": "therapy",
+      "id": "yoga-therapy"
+    },
+    {
+      "type": "therapy",
+      "id": "mind-body-therapy"
+    }
+  ],
+  "status": "published",
+  "featured_image": {
+    "src": "courtyard",
+    "alt": "The courtyard at Shantara"
+  },
+  "featured": true
 }

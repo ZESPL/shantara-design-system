@@ -2,28 +2,29 @@
   "id": "weekend-rejuvenation",
   "slug": "weekend-rejuvenation",
   "name": "Weekend Rejuvenation",
-  "photo": "lounge",
   "focus": "Rest",
-  "home_featured": true,
   "proposition": "A shorter stay for guests with limited time: rest, gentle therapies and meals planned for the programme.",
   "durations": "7 nights",
-  "icp_ids": [
-    "short_reset",
-    "stress_sleep_burnout"
-  ],
-  "related_therapy_ids": [
-    "yoga-therapy",
-    "massage-therapy",
-    "hydrotherapy"
-  ],
-  "related_condition_ids": [],
   "locale": "en",
-  "translation_status": null,
-  "source_version": "2026-07",
-  "last_translated_at": null,
-  "translation_reviewed_at": null,
-  "translation_reviewed_by": null,
-  "needs_translation_review": null,
-  "publication_status": "published",
-  "source": "kit"
+  "source": "kit",
+  "related_pages": [
+    {
+      "type": "therapy",
+      "id": "yoga-therapy"
+    },
+    {
+      "type": "therapy",
+      "id": "massage-therapy"
+    },
+    {
+      "type": "therapy",
+      "id": "hydrotherapy"
+    }
+  ],
+  "status": "published",
+  "featured_image": {
+    "src": "lounge",
+    "alt": "The lounge at Shantara"
+  },
+  "featured": true
 }

@@ -1,13 +1,13 @@
 {
-  "id": "premium-room",
-  "slug": "premium-room",
-  "name": "Premium Room",
-  "size": "460 sq.ft",
+  "id": "junior-suite",
+  "slug": "junior-suite",
+  "name": "Junior Suite",
+  "size": "420 sq.ft",
   "occupancy": "Single or double",
-  "balcony": true,
-  "spec_line": "460 sq.ft room · balcony",
+  "balcony": false,
+  "spec_line": "420 sq.ft suite",
   "locale": "en",
-  "source": "kit",
+  "source": "handbook",
   "amenities": [
     "En-suite bathroom with rain shower",
     "Individually controlled central air-conditioning",
@@ -16,8 +16,8 @@
   ],
   "status": "published",
   "featured_image": {
-    "src": "room-twin",
-    "alt": "A guest room at Shantara"
+    "src": "room-bedroom-forest-view-armchair",
+    "alt": "A suite bedroom with a forest view"
   },
-  "featured": true
+  "featured": false
 }

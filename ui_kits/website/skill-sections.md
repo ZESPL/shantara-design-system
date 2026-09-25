@@ -233,7 +233,7 @@ Use when commercial options need stronger presentation than a generic table.
 
 Typical fields: package/duration; price or “from” price; inclusions summary; occupancy/room assumptions if necessary; CTA.
 
-Prices must match visible commercial information and current policy. **In this design system, publish figures only on the tariff card / handbook tariff / brand-deck tariff slides.** Elsewhere, link to that surface.
+Prices must match visible commercial information and current policy. **Figures appear only on the production tariff page, read from the Keystatic tariff.** This design system holds no rates. Elsewhere, link to the tariff page.
 
 ### Gallery
 

@@ -36,7 +36,7 @@ const payload = {
   doctors: readJsonFiles(path.join(contentDir, "doctors")),
   articles: readJsonFiles(path.join(contentDir, "articles")),
   doctorAnswers: readJsonFiles(path.join(contentDir, "doctor-answers")),
-  faqs: readJsonFiles(path.join(contentDir, "faqs")),
+  faq: readJson("faq.json"),
   guestStories: readJsonFiles(path.join(contentDir, "guest-stories")),
   events: readJsonFiles(path.join(contentDir, "events")),
   testimonials: readJsonFiles(path.join(contentDir, "testimonials")),

@@ -3,7 +3,6 @@
   "slug": "understanding-insulin-resistance",
   "title": "Understanding Insulin Resistance",
   "category": "Clinical Guides",
-  "photo": "treatment",
   "read_minutes": null,
   "lead": "Educational guide placeholder — body pending medical review.",
   "body": null,
@@ -11,12 +10,10 @@
   "medical_reviewer": null,
   "kit_journal": false,
   "locale": "en",
-  "translation_status": null,
-  "source_version": "2026-07",
-  "last_translated_at": null,
-  "translation_reviewed_at": null,
-  "translation_reviewed_by": null,
-  "needs_translation_review": null,
-  "publication_status": "needs_original",
-  "source": "gap"
+  "source": "gap",
+  "status": "draft",
+  "featured_image": {
+    "src": "treatment",
+    "alt": "A treatment room at Shantara"
+  }
 }

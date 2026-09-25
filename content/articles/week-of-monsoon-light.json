@@ -3,7 +3,6 @@
   "slug": "week-of-monsoon-light",
   "title": "A week of monsoon light",
   "category": "Guest Stories",
-  "photo": "valley",
   "read_minutes": 6,
   "lead": "A hilltop above Chennamangallur, hour by hour.",
   "body": null,
@@ -11,12 +10,10 @@
   "medical_reviewer": null,
   "kit_journal": true,
   "locale": "en",
-  "translation_status": null,
-  "source_version": "2026-07",
-  "last_translated_at": null,
-  "translation_reviewed_at": null,
-  "translation_reviewed_by": null,
-  "needs_translation_review": null,
-  "publication_status": "kit_sample",
-  "source": "kit"
+  "source": "kit",
+  "status": "draft",
+  "featured_image": {
+    "src": "valley",
+    "alt": "The valley below Shantara"
+  }
 }

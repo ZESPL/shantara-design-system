@@ -2,29 +2,25 @@
   "id": "arthritis",
   "slug": "arthritis",
   "name": "Arthritis",
-  "listing_group": "Musculoskeletal",
   "summary": "Therapies, movement and rest may be recommended to support joint comfort, following assessment.",
-  "photo": "treatment",
-  "icp_ids": [
-    "pain_mobility"
-  ],
-  "related_program_ids": [
-    "complete-healing"
-  ],
-  "related_therapy_ids": [],
   "clinical": null,
   "faqs": [],
   "medical_reviewer": null,
   "last_medically_reviewed": null,
-  "references": [],
   "note": null,
   "locale": "en",
-  "translation_status": null,
-  "source_version": "2026-07",
-  "last_translated_at": null,
-  "translation_reviewed_at": null,
-  "translation_reviewed_by": null,
-  "needs_translation_review": null,
-  "publication_status": "kit_sample",
-  "source": "kit"
+  "source": "kit",
+  "related_pages": [
+    {
+      "type": "programme",
+      "id": "complete-healing"
+    }
+  ],
+  "category": "Musculoskeletal",
+  "status": "draft",
+  "featured_image": {
+    "src": "treatment",
+    "alt": "A treatment room at Shantara"
+  },
+  "external_references": []
 }

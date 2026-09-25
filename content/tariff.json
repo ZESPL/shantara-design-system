@@ -1,53 +1,40 @@
 {
   "id": "tariff",
   "locale": "en",
-  "translation_status": null,
-  "source_version": "2026-07",
-  "last_translated_at": null,
-  "translation_reviewed_at": null,
-  "translation_reviewed_by": null,
-  "needs_translation_review": null,
-  "publication_status": "published",
-  "source": "kit",
-  "currency": "INR",
-  "currency_symbol": "₹",
-  "valid_to": "2026-12-31",
-  "to_confirm": true,
-  "note": "Confirm before quoting rates to guests. Kit categories (includes Deluxe); handbook also lists Junior Suite — resolve before print.",
-  "inclusions": [
+  "status": "published",
+  "source": "rate-control-sheet",
+  "includes": [
+    "Accommodation",
+    "The programme and treatments prescribed by your doctor",
     "Daily doctor consultation",
-    "All prescribed naturopathy therapies",
-    "Yoga therapy and meditation",
-    "Personalised diet therapy",
-    "Wellness attire and daily laundry",
+    "Diagnostic tests, as advised by your doctor",
+    "All therapeutic naturopathy meals",
+    "Entertainment and activities",
+    "Two complimentary recreational therapies per week",
     "Airport and railway transfers",
-    "All applicable taxes"
+    "Attire provided for your stay, and its laundry"
   ],
-  "rooms": [
-    {
-      "room_id": "executive-suite",
-      "single_per_night": 22000,
-      "double_per_night": 28000
-    },
-    {
-      "room_id": "premium-room",
-      "single_per_night": 18000,
-      "double_per_night": 24000
-    },
-    {
-      "room_id": "superior-room",
-      "single_per_night": 16000,
-      "double_per_night": 22000
-    },
-    {
-      "room_id": "deluxe-room",
-      "single_per_night": 14000,
-      "double_per_night": null
-    },
-    {
-      "room_id": "standard-room",
-      "single_per_night": 12000,
-      "double_per_night": null
-    }
+  "excludes": [
+    "Recreational therapies beyond the two complimentary per week",
+    "Treatments beyond those prescribed by your doctor",
+    "Personal laundry"
+  ],
+  "supplements": [
+    { "label": "Non-participating companion", "basis": "Per person, per night" },
+    { "label": "Extra bed or mattress", "basis": "Per bed, per night" }
+  ],
+  "payment_terms": [
+    { "booked_before": "31 days or more before arrival", "at_confirmation": "30%", "balance": "70%, due 30 days before arrival" },
+    { "booked_before": "30 days or less before arrival", "at_confirmation": "100%", "balance": "None" }
+  ],
+  "cancellation": [
+    { "cancelled_before": "More than 30 days before arrival", "refund": "100%" },
+    { "cancelled_before": "21 to 30 days before arrival", "refund": "50%" },
+    { "cancelled_before": "20 days or less before arrival, no-show or early departure", "refund": "No refund" }
+  ],
+  "public_notes": [
+    "Rates are per room, per night, and include all taxes.",
+    "You can be quoted and pay in any currency shown on the tariff.",
+    "A companion staying in a separate room is charged separately. Our team confirms the amount."
   ]
 }

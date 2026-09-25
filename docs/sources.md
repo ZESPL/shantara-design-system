@@ -8,7 +8,6 @@ The original brand pack lives in `uploads/`. Claude Design read it, curated what
 | --- | --- | --- |
 | `uploads/Compressed/Frame 1–5.jpg` | Five photographed guideline spreads | Voice, pattern, palette, type, colourways, print, imagery — written into `readme.md` and the guideline cards |
 | `uploads/Shantara_Brand Guidelines HQ.pdf` | Full guideline PDF | Not parsed. The Frame images superseded it |
-| `uploads/shantara_property_handbook.docx` | Property Handbook, draft July 2026 | All kit content. Structured extract: [handbook](handbook.html) |
 | `uploads/Compressed/TRD*.jpg` | Property shoot, 45 frames | Merged into flat `assets/photos/` (kit slugs + descriptive alternates, ~2880px long edge) |
 | `uploads/Primary Colors.jpg` | Primary colour board | Himalaya, Gold Crayola |
 | `uploads/colors secondary.jpg` | Neutral board | Pine Tree through Merino |

@@ -245,7 +245,7 @@ When asked to modify Shantara’s website:
 2. Preserve working patterns unless there is a clear reason to replace them.
 3. Make the least invasive change that solves the task.
 4. Reuse existing sections/components.
-5. Do not invent content, credentials, prices, medical facts, or program details. Prefer `content/`; empty folders and `needs_original` mean do not fabricate.
+5. Do not invent content, credentials, prices, medical facts, or program details. Prefer `content/`; empty folders and `draft` records mean do not fabricate.
 6. Flag missing information explicitly.
 7. Do not introduce dependencies casually.
 8. Do not redesign unrelated pages.

@@ -5,18 +5,15 @@
   "short_answer": "How a supervised fast is introduced, monitored and ended.",
   "detailed_answer": null,
   "doctor_id": null,
-  "photo": "treatment",
   "read_minutes": 7,
   "category": "Doctor Answers",
   "kit_journal": true,
-  "references": [],
   "locale": "en",
-  "translation_status": null,
-  "source_version": "2026-07",
-  "last_translated_at": null,
-  "translation_reviewed_at": null,
-  "translation_reviewed_by": null,
-  "needs_translation_review": null,
-  "publication_status": "kit_sample",
-  "source": "kit"
+  "source": "kit",
+  "status": "draft",
+  "featured_image": {
+    "src": "treatment",
+    "alt": "A treatment room at Shantara"
+  },
+  "external_references": []
 }

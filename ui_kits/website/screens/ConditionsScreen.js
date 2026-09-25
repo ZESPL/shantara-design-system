@@ -3,13 +3,13 @@
    No photographs in the list: a condition is not a room or a meal. */
 
 function conditionListingGroups() {
-  const items = (window.ShantaraContent.conditions || []).filter((c) => c.listing_group && c.summary);
+  const items = (window.ShantaraContent.conditions || []).filter((c) => c.category && c.summary);
   const order = ["Metabolic", "Hormonal", "Musculoskeletal"];
   return order
     .map((name) => ({
       name,
       items: items
-        .filter((c) => c.listing_group === name)
+        .filter((c) => c.category === name)
         .map((c) => ({ name: c.name, copy: c.summary })),
     }))
     .filter((g) => g.items.length);

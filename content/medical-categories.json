@@ -1,13 +1,6 @@
 {
   "id": "medical-categories",
   "locale": "en",
-  "translation_status": null,
-  "source_version": "2026-07",
-  "last_translated_at": null,
-  "translation_reviewed_at": null,
-  "translation_reviewed_by": null,
-  "needs_translation_review": null,
-  "publication_status": "draft",
   "source": "handbook",
   "note": "Eleven handbook clinical groupings — staff routing aid, not public IA.",
   "categories": [
@@ -134,5 +127,6 @@
         "micronutrient deficiencies"
       ]
     }
-  ]
+  ],
+  "status": "draft"
 }

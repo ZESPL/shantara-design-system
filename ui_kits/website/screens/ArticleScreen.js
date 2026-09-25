@@ -71,7 +71,7 @@ function ArticleScreen({ onNavigate, slug }) {
     .map((x) => ({
       title: t(x.title),
       href: href("article:" + x.id),
-      src: window.photoSrc(x.photo),
+      src: window.photoSrc((x.featured_image || {}).src),
       alt: "",
       category: t(x.category),
       readTime: x.read_minutes ? `${x.read_minutes} ${t("min read")}` : undefined,
@@ -93,7 +93,7 @@ function ArticleScreen({ onNavigate, slug }) {
           category={{ label: t(a.category), href: href("journal") }}
           readTime={readTime}
           share={<ShareBar compact label="" title={t(a.title)} />}
-          src={window.photoSrc(a.photo)}
+          src={window.photoSrc((a.featured_image || {}).src)}
           alt=""
         />
       </P>
