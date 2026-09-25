@@ -189,7 +189,7 @@
           "docs/icp-overlays.html", "docs/icp-operating-guide.html", "docs/icp-claim-governance.html",
           "docs/icp-research-and-sources.html",
         ] },
-        "docs/website-technical.html", "docs/website-stack.html", "docs/website-premium.html", "docs/website-qa.html",
+        "docs/website-technical.html", "docs/website-search-visibility.html", "docs/website-stack.html", "docs/website-premium.html", "docs/website-qa.html",
       ] },
     { key: "App", label: "App kit", blurb: "In-stay guest companion — schedule, protocol, notes",
       order: ["ui_kits/app/index.html", "docs/app-kit.html"] },
