@@ -16,6 +16,7 @@ Entity facts for programmes, rooms, conditions, NAP, and tariff live in [`conten
 Read this file first. Open a sibling reference only when the task needs that inventory:
 
 - [Production stack](skill-stack.md) — Astro, Keystatic, Tailwind, Netlify, analytics/SEO services; locked defaults for shantara.life
+- [Folder structure](skill-structure.md) — folder layout, route table, data sources, Keystatic scope and build checks for the shantara.life Astro repo
 - [Images](skill-images.md) — where image files go in the Astro repo, preparing files before commit, widths and formats, share images, build checks
 - [Premium design](skill-premium.md) — build order, design-system rules from the brand deck (type voices, grounds, shape, buttons, tiles, component map, responsive rules), motion vocabulary
 - [Information architecture](skill-ia.md) — nav, URLs, page inventory, publishing families
