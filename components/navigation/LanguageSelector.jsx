@@ -18,7 +18,8 @@ const CSS = `
 .sh-lang-btn[aria-expanded="true"] .sh-lang-chev{transform:rotate(180deg)}
 .sh-lang-btn:focus-visible{outline:none;box-shadow:var(--ring-focus)}
 .sh-lang-btn[aria-expanded="true"]{color:var(--text-primary)}
-.sh-lang-list{position:absolute;inset-block-start:100%;inset-inline-end:0;z-index:40;margin:var(--space-2) 0 0;min-width:15rem;padding:var(--space-2);background:var(--surface-card);border:var(--border-width) solid var(--border-subtle);border-radius:var(--radius-card);box-shadow:var(--shadow-md);list-style:none;animation:sh-enter-up var(--duration-fast) var(--ease-out)}
+.sh-lang-list{position:absolute;inset-block-start:100%;inset-inline-end:0;z-index:40;margin:var(--space-2) 0 0;min-width:15rem;padding:var(--space-2);background:var(--surface-card);border:var(--border-width) solid var(--border-subtle);border-radius:var(--radius-card);box-shadow:var(--shadow-md);list-style:none;animation:sh-enter-up var(--duration-fast) var(--ease-out);
+  --text-primary:var(--color-pine-tree);--text-muted:var(--color-stone-500);--text-brand:var(--color-himalaya);--border-subtle:color-mix(in srgb, var(--color-pine-tree) 10%, transparent);--ring-focus:0 0 0 2px var(--color-white), 0 0 0 4px var(--color-himalaya);color:var(--text-primary)}
 .sh-lang-opt{display:flex;align-items:center;justify-content:space-between;gap:var(--space-5);width:100%;min-height:var(--tap-min);padding:var(--space-3) var(--space-4);appearance:none;border:0;border-radius:var(--radius-xs);background:transparent;color:var(--text-primary);text-align:start;text-decoration:none;font:var(--weight-regular) var(--text-sm)/1.3 var(--font-body);letter-spacing:0;cursor:pointer}
 .sh-lang-opt[aria-selected="true"]{font-weight:var(--weight-medium);background:var(--surface-raised)}
 .sh-lang-opt:focus-visible{outline:none;box-shadow:var(--ring-focus)}
