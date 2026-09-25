@@ -1,0 +1,43 @@
+{
+  "id": "faq",
+  "locale": "en",
+  "status": "published",
+  "source": "kit",
+  "categories": [
+    {
+      "name": "Booking",
+      "faqs": [
+        {
+          "question": "Is my booking confirmed straight away?",
+          "answer": "A stay is confirmed after a preliminary consultation with our doctors. You will be asked to share a health assessment, relevant medical records and your current medication first."
+        },
+        {
+          "question": "How long should I stay?",
+          "answer": "Duration depends on the programme and your assessment. Your doctor advises a typical duration after consultation."
+        }
+      ]
+    },
+    {
+      "name": "Who can stay",
+      "faqs": [
+        {
+          "question": "Who can stay?",
+          "answer": "Shantara accepts guests aged 18 to 80 with conditions that can be managed through residential naturopathy. Acute or emergency care is outside what we provide."
+        }
+      ]
+    },
+    {
+      "name": "During your stay",
+      "faqs": [
+        {
+          "question": "How do meals work?",
+          "answer": "Meals are planned as part of your programme, taking into account your doctor's recommendations and dietary requirements."
+        },
+        {
+          "question": "Can I leave the property during my stay?",
+          "answer": "Guests usually remain at the retreat during the programme so meals, therapies and reviews can follow the plan. Leaving for a medical emergency is arranged with the team."
+        }
+      ]
+    }
+  ]
+}

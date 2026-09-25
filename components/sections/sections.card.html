@@ -18,8 +18,8 @@ const { Button, Breadcrumbs, Input, Select, Textarea, Statement, Tile, TextLink,
 const P = "../../assets/photos/";
 const Label = ({ name, note }) => <p className="lbl"><b>{name}</b>{note ? " · " + note : ""}</p>;
 const rooms = [
-  { name: "Standard Room", size: "220 sq.ft", occ: "Single only" },
-  { name: "Deluxe Room", size: "260 sq.ft", occ: "Single only" },
+  { name: "Standard Room", size: "260 sq.ft", occ: "Single or double" },
+  { name: "Junior Suite", size: "420 sq.ft", occ: "Single or double" },
   { name: "Superior Room", size: "300 sq.ft · balcony", occ: "Single or double" },
   { name: "Premium Room", size: "460 sq.ft · balcony", occ: "Single or double" },
   { name: "Executive Suite", size: "530 sq.ft · balcony", occ: "Single or double" },

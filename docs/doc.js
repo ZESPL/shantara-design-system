@@ -866,7 +866,6 @@
   }
 
   const SOURCE_PROBES = [
-    "uploads/shantara_property_handbook.docx",
     "uploads/Shantara_Brand Guidelines HQ.pdf",
     "uploads/Primary Colors.jpg",
     "uploads/colors secondary.jpg",

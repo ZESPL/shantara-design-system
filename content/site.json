@@ -1,13 +1,6 @@
 {
   "id": "site",
   "locale": "en",
-  "translation_status": null,
-  "source_version": "2026-07",
-  "last_translated_at": null,
-  "translation_reviewed_at": null,
-  "translation_reviewed_by": null,
-  "needs_translation_review": null,
-  "publication_status": "published",
   "source": "handbook",
   "business_name": "Shantara Naturopathy Retreat",
   "parent_institution": "Hygiene Nature Cure Hospital",
@@ -26,7 +19,7 @@
   "rooms_count": 52,
   "room_categories": 5,
   "built_up_sq_ft": 60000,
-  "built_up_note": "[TO CONFIRM] Website previously showed 56,000+ sq. ft.; handbook uses tariff-sheet 60,000 sq. ft.",
+  "built_up_note": "[TO CONFIRM] Website previously showed 56,000+ sq. ft.; the handbook uses 60,000 sq. ft.",
   "therapies_count": 13,
   "guests_served_label": "25,000+",
   "guests_served_since": 2000,
@@ -56,5 +49,6 @@
   "short_name": "Shantara",
   "whatsapp": "+91 9553 700 100",
   "land_acres_note": "Internal only. Never publish the acreage; say 'hilltop'.",
-  "rooms_count_note": "Mention at most once on the website, never as a stat or heading."
+  "rooms_count_note": "Mention at most once on the website, never as a stat or heading.",
+  "status": "published"
 }

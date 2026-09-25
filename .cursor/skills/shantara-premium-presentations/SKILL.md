@@ -108,7 +108,7 @@ Set the goal before writing. Common Shantara deck types:
 
 - Never say a programme or therapy cures or treats a disease. Use wording like "supports", "designed for guests who" or "may help".
 - Any slide about medical conditions, therapies or research is flagged for human review before the deck is shared. India's Drugs and Magic Remedies (Objectionable Advertisements) Act, 1954 applies.
-- Agent and partner decks show only Shantara's published rates. No discounts or markups presented as available.
+- Agent and partner decks show only Shantara's published rates, taken from the current tariff at the time the deck is made. The brand-deck template stores no rates, currencies or validity dates. Copy amounts exactly; never convert or round them. No discounts or markups presented as available.
 - Investor decks do not promise returns. Shareholder entitlements must match the current Shareholder Privilege Program document exactly.
 - Use real guest testimonials only with written consent, and never imply a medical outcome.
 
@@ -143,7 +143,7 @@ Before sharing any deck, check:
 - [ ] Consistent grid, margins and headline position.
 - [ ] Every number has a source, a period and a comparison. Currency is labelled.
 - [ ] No "cure" or "treat" claims. Health slides are flagged for review.
-- [ ] Rates and entitlements match the current official documents.
+- [ ] Rates match the current tariff exactly, and entitlements match the current official documents.
 - [ ] Text contrast meets WCAG AA, including on images.
 - [ ] The deck reads correctly as a PDF with no animation.
 - [ ] The final slide states one clear next step.

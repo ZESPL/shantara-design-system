@@ -1,16 +1,10 @@
 {
   "id": "fasting-therapy",
   "name": "Fasting Therapy",
-  "home_featured": true,
   "description": "Introduced gradually and supervised by a doctor throughout.",
   "slug": "fasting-therapy",
   "locale": "en",
-  "translation_status": null,
-  "source_version": "2026-07",
-  "last_translated_at": null,
-  "translation_reviewed_at": null,
-  "translation_reviewed_by": null,
-  "needs_translation_review": null,
-  "publication_status": "published",
-  "source": "kit"
+  "source": "kit",
+  "status": "published",
+  "featured": true
 }

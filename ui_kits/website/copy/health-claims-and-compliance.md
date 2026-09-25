@@ -166,13 +166,13 @@ Do not place individual rates casually throughout the marketing website.
 
 Do not write:
 
-> Deluxe Room from ₹8,500
+> Junior Suite from ₹X
 
-> Detox Programme ₹12,000 per night
+> Detox Programme ₹X per night
 
-> Consultation ₹2,000
+> Consultation ₹X
 
-> Therapy package ₹4,500
+> Therapy package ₹X
 
 Prices should appear only on designated pricing surfaces that present the relevant pricing structure together.
 

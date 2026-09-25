@@ -5,13 +5,6 @@ window.ShantaraContent = {
   "site": {
     "id": "site",
     "locale": "en",
-    "translation_status": null,
-    "source_version": "2026-07",
-    "last_translated_at": null,
-    "translation_reviewed_at": null,
-    "translation_reviewed_by": null,
-    "needs_translation_review": null,
-    "publication_status": "published",
     "source": "handbook",
     "business_name": "Shantara Naturopathy Retreat",
     "parent_institution": "Hygiene Nature Cure Hospital",
@@ -30,7 +23,7 @@ window.ShantaraContent = {
     "rooms_count": 52,
     "room_categories": 5,
     "built_up_sq_ft": 60000,
-    "built_up_note": "[TO CONFIRM] Website previously showed 56,000+ sq. ft.; handbook uses tariff-sheet 60,000 sq. ft.",
+    "built_up_note": "[TO CONFIRM] Website previously showed 56,000+ sq. ft.; the handbook uses 60,000 sq. ft.",
     "therapies_count": 13,
     "guests_served_label": "25,000+",
     "guests_served_since": 2000,
@@ -60,71 +53,75 @@ window.ShantaraContent = {
     "short_name": "Shantara",
     "whatsapp": "+91 9553 700 100",
     "land_acres_note": "Internal only. Never publish the acreage; say 'hilltop'.",
-    "rooms_count_note": "Mention at most once on the website, never as a stat or heading."
+    "rooms_count_note": "Mention at most once on the website, never as a stat or heading.",
+    "status": "published"
   },
   "tariff": {
     "id": "tariff",
     "locale": "en",
-    "translation_status": null,
-    "source_version": "2026-07",
-    "last_translated_at": null,
-    "translation_reviewed_at": null,
-    "translation_reviewed_by": null,
-    "needs_translation_review": null,
-    "publication_status": "published",
-    "source": "kit",
-    "currency": "INR",
-    "currency_symbol": "₹",
-    "valid_to": "2026-12-31",
-    "to_confirm": true,
-    "note": "Confirm before quoting rates to guests. Kit categories (includes Deluxe); handbook also lists Junior Suite — resolve before print.",
-    "inclusions": [
+    "status": "published",
+    "source": "rate-control-sheet",
+    "includes": [
+      "Accommodation",
+      "The programme and treatments prescribed by your doctor",
       "Daily doctor consultation",
-      "All prescribed naturopathy therapies",
-      "Yoga therapy and meditation",
-      "Personalised diet therapy",
-      "Wellness attire and daily laundry",
+      "Diagnostic tests, as advised by your doctor",
+      "All therapeutic naturopathy meals",
+      "Entertainment and activities",
+      "Two complimentary recreational therapies per week",
       "Airport and railway transfers",
-      "All applicable taxes"
+      "Attire provided for your stay, and its laundry"
     ],
-    "rooms": [
+    "excludes": [
+      "Recreational therapies beyond the two complimentary per week",
+      "Treatments beyond those prescribed by your doctor",
+      "Personal laundry"
+    ],
+    "supplements": [
       {
-        "room_id": "executive-suite",
-        "single_per_night": 22000,
-        "double_per_night": 28000
+        "label": "Non-participating companion",
+        "basis": "Per person, per night"
       },
       {
-        "room_id": "premium-room",
-        "single_per_night": 18000,
-        "double_per_night": 24000
-      },
-      {
-        "room_id": "superior-room",
-        "single_per_night": 16000,
-        "double_per_night": 22000
-      },
-      {
-        "room_id": "deluxe-room",
-        "single_per_night": 14000,
-        "double_per_night": null
-      },
-      {
-        "room_id": "standard-room",
-        "single_per_night": 12000,
-        "double_per_night": null
+        "label": "Extra bed or mattress",
+        "basis": "Per bed, per night"
       }
+    ],
+    "payment_terms": [
+      {
+        "booked_before": "31 days or more before arrival",
+        "at_confirmation": "30%",
+        "balance": "70%, due 30 days before arrival"
+      },
+      {
+        "booked_before": "30 days or less before arrival",
+        "at_confirmation": "100%",
+        "balance": "None"
+      }
+    ],
+    "cancellation": [
+      {
+        "cancelled_before": "More than 30 days before arrival",
+        "refund": "100%"
+      },
+      {
+        "cancelled_before": "21 to 30 days before arrival",
+        "refund": "50%"
+      },
+      {
+        "cancelled_before": "20 days or less before arrival, no-show or early departure",
+        "refund": "No refund"
+      }
+    ],
+    "public_notes": [
+      "Rates are per room, per night, and include all taxes.",
+      "You can be quoted and pay in any currency shown on the tariff.",
+      "A companion staying in a separate room is charged separately. Our team confirms the amount."
     ]
   },
   "medicalCategories": {
     "id": "medical-categories",
     "locale": "en",
-    "translation_status": null,
-    "source_version": "2026-07",
-    "last_translated_at": null,
-    "translation_reviewed_at": null,
-    "translation_reviewed_by": null,
-    "needs_translation_review": null,
-    "publication_status": "draft",
     "source": "handbook",
     "note": "Eleven handbook clinical groupings — staff routing aid, not public IA.",
     "categories": [
@@ -251,315 +248,337 @@ window.ShantaraContent = {
           "micronutrient deficiencies"
         ]
       }
-    ]
+    ],
+    "status": "draft"
   },
   "programs": [
     {
       "id": "complete-healing",
       "slug": "complete-healing",
       "name": "Complete Healing",
-      "photo": "courtyard",
       "focus": "Immersive",
-      "home_featured": true,
       "proposition": "For guests managing several long-standing conditions at once, across metabolic, musculoskeletal and mental health.",
       "durations": "21–28 nights",
-      "icp_ids": [
-        "pain_mobility",
-        "digestive_inflammatory",
-        "stress_sleep_burnout",
-        "weight_metabolic"
-      ],
-      "related_therapy_ids": [
-        "mud-therapy",
-        "physiotherapy",
-        "diet-therapy",
-        "yoga-therapy",
-        "mind-body-therapy"
-      ],
-      "related_condition_ids": [
-        "arthritis",
-        "diabetes",
-        "hypertension"
-      ],
       "locale": "en",
-      "translation_status": null,
-      "source_version": "2026-07",
-      "last_translated_at": null,
-      "translation_reviewed_at": null,
-      "translation_reviewed_by": null,
-      "needs_translation_review": null,
-      "publication_status": "published",
-      "source": "kit"
+      "source": "kit",
+      "related_pages": [
+        {
+          "type": "therapy",
+          "id": "mud-therapy"
+        },
+        {
+          "type": "therapy",
+          "id": "physiotherapy"
+        },
+        {
+          "type": "therapy",
+          "id": "diet-therapy"
+        },
+        {
+          "type": "therapy",
+          "id": "yoga-therapy"
+        },
+        {
+          "type": "therapy",
+          "id": "mind-body-therapy"
+        }
+      ],
+      "status": "published",
+      "featured_image": {
+        "src": "courtyard",
+        "alt": "The courtyard at Shantara"
+      },
+      "featured": true
     },
     {
       "id": "corporate-retreats",
       "slug": "corporate-retreats",
       "name": "Corporate Retreats",
-      "photo": "dining",
       "focus": "Groups",
-      "home_featured": true,
       "proposition": "Group programmes for teams, with therapies and schedule planned around group size and objectives.",
       "durations": "By arrangement",
-      "icp_ids": [
-        "stress_sleep_burnout",
-        "short_reset"
-      ],
-      "related_therapy_ids": [
-        "yoga-therapy",
-        "mind-body-therapy",
-        "massage-therapy"
-      ],
-      "related_condition_ids": [],
       "locale": "en",
-      "translation_status": null,
-      "source_version": "2026-07",
-      "last_translated_at": null,
-      "translation_reviewed_at": null,
-      "translation_reviewed_by": null,
-      "needs_translation_review": null,
-      "publication_status": "published",
-      "source": "kit"
+      "source": "kit",
+      "related_pages": [
+        {
+          "type": "therapy",
+          "id": "yoga-therapy"
+        },
+        {
+          "type": "therapy",
+          "id": "mind-body-therapy"
+        },
+        {
+          "type": "therapy",
+          "id": "massage-therapy"
+        }
+      ],
+      "status": "published",
+      "featured_image": {
+        "src": "dining",
+        "alt": "The dining room at Shantara"
+      },
+      "featured": true
     },
     {
       "id": "detox",
       "slug": "detox",
       "name": "Detox",
-      "photo": "water-wall",
       "focus": "Metabolic",
-      "home_featured": true,
       "proposition": "Your doctor may recommend a meal plan or supervised fasting based on your assessment. Therapies may also form part of your programme.",
       "durations": "7–21 nights",
-      "icp_ids": [
-        "digestive_inflammatory",
-        "weight_metabolic",
-        "short_reset"
-      ],
-      "related_therapy_ids": [
-        "fasting-therapy",
-        "diet-therapy",
-        "hydrotherapy",
-        "heliotherapy"
-      ],
-      "related_condition_ids": [],
       "locale": "en",
-      "translation_status": null,
-      "source_version": "2026-07",
-      "last_translated_at": null,
-      "translation_reviewed_at": null,
-      "translation_reviewed_by": null,
-      "needs_translation_review": null,
-      "publication_status": "published",
-      "source": "kit"
+      "source": "kit",
+      "related_pages": [
+        {
+          "type": "therapy",
+          "id": "fasting-therapy"
+        },
+        {
+          "type": "therapy",
+          "id": "diet-therapy"
+        },
+        {
+          "type": "therapy",
+          "id": "hydrotherapy"
+        },
+        {
+          "type": "therapy",
+          "id": "heliotherapy"
+        }
+      ],
+      "status": "published",
+      "featured_image": {
+        "src": "water-wall",
+        "alt": "The water wall at the therapy wing"
+      },
+      "featured": true
     },
     {
       "id": "diabetes-reversal",
       "slug": "diabetes-reversal",
       "name": "Diabetes Reversal",
-      "photo": "treatment",
       "focus": "Clinical",
-      "home_featured": true,
       "proposition": "Diet, activity and therapies planned around blood-sugar control, with medication reviewed by a doctor. Recommendations depend on your assessment.",
       "durations": "14–28 nights",
-      "icp_ids": [
-        "weight_metabolic"
-      ],
-      "related_therapy_ids": [
-        "diet-therapy",
-        "fasting-therapy",
-        "yoga-therapy",
-        "heliotherapy"
-      ],
-      "related_condition_ids": [
-        "diabetes",
-        "obesity"
-      ],
       "locale": "en",
-      "translation_status": null,
-      "source_version": "2026-07",
-      "last_translated_at": null,
-      "translation_reviewed_at": null,
-      "translation_reviewed_by": null,
-      "needs_translation_review": null,
-      "publication_status": "published",
-      "source": "kit"
+      "source": "kit",
+      "related_pages": [
+        {
+          "type": "therapy",
+          "id": "diet-therapy"
+        },
+        {
+          "type": "therapy",
+          "id": "fasting-therapy"
+        },
+        {
+          "type": "therapy",
+          "id": "yoga-therapy"
+        },
+        {
+          "type": "therapy",
+          "id": "heliotherapy"
+        }
+      ],
+      "status": "published",
+      "featured_image": {
+        "src": "treatment",
+        "alt": "A treatment room at Shantara"
+      },
+      "featured": true
     },
     {
       "id": "executive-wellness",
       "slug": "executive-wellness",
       "name": "Executive Wellness",
-      "photo": "library",
       "focus": "Rest",
-      "home_featured": true,
       "proposition": "A compact daily plan for guests who need to stay partly available for work.",
       "durations": "7–10 nights",
-      "icp_ids": [
-        "stress_sleep_burnout",
-        "short_reset"
-      ],
-      "related_therapy_ids": [
-        "yoga-therapy",
-        "mind-body-therapy",
-        "diet-therapy"
-      ],
-      "related_condition_ids": [],
       "locale": "en",
-      "translation_status": null,
-      "source_version": "2026-07",
-      "last_translated_at": null,
-      "translation_reviewed_at": null,
-      "translation_reviewed_by": null,
-      "needs_translation_review": null,
-      "publication_status": "published",
-      "source": "kit"
+      "source": "kit",
+      "related_pages": [
+        {
+          "type": "therapy",
+          "id": "yoga-therapy"
+        },
+        {
+          "type": "therapy",
+          "id": "mind-body-therapy"
+        },
+        {
+          "type": "therapy",
+          "id": "diet-therapy"
+        }
+      ],
+      "status": "published",
+      "featured_image": {
+        "src": "library",
+        "alt": "The library at Shantara"
+      },
+      "featured": true
     },
     {
       "id": "longevity",
       "slug": "longevity",
       "name": "Longevity",
-      "photo": "valley",
       "focus": "Clinical",
-      "home_featured": false,
       "proposition": "Preventive routines, metabolic and movement support, and doctor-guided reassessment for guests who want to stay capable and well. Catalogue programme, not a longevity-medicine product.",
       "durations": null,
-      "icp_ids": [
-        "healthy_ageing_longevity"
-      ],
-      "related_therapy_ids": [
-        "physiotherapy",
-        "yoga-therapy",
-        "diet-therapy",
-        "heliotherapy"
-      ],
-      "related_condition_ids": [],
       "locale": "en",
-      "translation_status": null,
-      "source_version": "2026-07",
-      "last_translated_at": null,
-      "translation_reviewed_at": null,
-      "translation_reviewed_by": null,
-      "needs_translation_review": null,
-      "publication_status": "published",
-      "source": "handbook"
+      "source": "handbook",
+      "related_pages": [
+        {
+          "type": "therapy",
+          "id": "physiotherapy"
+        },
+        {
+          "type": "therapy",
+          "id": "yoga-therapy"
+        },
+        {
+          "type": "therapy",
+          "id": "diet-therapy"
+        },
+        {
+          "type": "therapy",
+          "id": "heliotherapy"
+        }
+      ],
+      "status": "published",
+      "featured_image": {
+        "src": "valley",
+        "alt": "The valley below Shantara"
+      },
+      "featured": false
     },
     {
       "id": "mens-vitality",
       "slug": "mens-vitality",
       "name": "Men's Vitality",
-      "photo": "grounds",
       "focus": "Clinical",
-      "home_featured": false,
       "proposition": "Supports energy, metabolic health, and hormone-related concerns through assessment-led routines, nourishment, activity, and rest. Matched after clinical review.",
       "durations": null,
-      "icp_ids": [
-        "hormonal_vitality"
-      ],
-      "related_therapy_ids": [
-        "diet-therapy",
-        "yoga-therapy",
-        "physiotherapy"
-      ],
-      "related_condition_ids": [],
       "locale": "en",
-      "translation_status": null,
-      "source_version": "2026-07",
-      "last_translated_at": null,
-      "translation_reviewed_at": null,
-      "translation_reviewed_by": null,
-      "needs_translation_review": null,
-      "publication_status": "published",
-      "source": "handbook"
+      "source": "handbook",
+      "related_pages": [
+        {
+          "type": "therapy",
+          "id": "diet-therapy"
+        },
+        {
+          "type": "therapy",
+          "id": "yoga-therapy"
+        },
+        {
+          "type": "therapy",
+          "id": "physiotherapy"
+        }
+      ],
+      "status": "published",
+      "featured_image": {
+        "src": "grounds",
+        "alt": "The grounds at Shantara"
+      },
+      "featured": false
     },
     {
       "id": "stress-management",
       "slug": "stress-management",
       "name": "Stress Management",
-      "photo": "balcony",
       "focus": "Mind",
-      "home_featured": true,
       "proposition": "Doctor-led routines, therapies and rest for guests managing sustained stress, poor sleep or fatigue.",
       "durations": "7–14 nights",
-      "icp_ids": [
-        "stress_sleep_burnout",
-        "short_reset"
-      ],
-      "related_therapy_ids": [
-        "yoga-therapy",
-        "mind-body-therapy",
-        "hydrotherapy",
-        "mud-therapy"
-      ],
-      "related_condition_ids": [],
       "locale": "en",
-      "translation_status": null,
-      "source_version": "2026-07",
-      "last_translated_at": null,
-      "translation_reviewed_at": null,
-      "translation_reviewed_by": null,
-      "needs_translation_review": null,
-      "publication_status": "published",
-      "source": "kit"
+      "source": "kit",
+      "related_pages": [
+        {
+          "type": "therapy",
+          "id": "yoga-therapy"
+        },
+        {
+          "type": "therapy",
+          "id": "mind-body-therapy"
+        },
+        {
+          "type": "therapy",
+          "id": "hydrotherapy"
+        },
+        {
+          "type": "therapy",
+          "id": "mud-therapy"
+        }
+      ],
+      "status": "published",
+      "featured_image": {
+        "src": "balcony",
+        "alt": "A room balcony over the valley"
+      },
+      "featured": true
     },
     {
       "id": "weekend-rejuvenation",
       "slug": "weekend-rejuvenation",
       "name": "Weekend Rejuvenation",
-      "photo": "lounge",
       "focus": "Rest",
-      "home_featured": true,
       "proposition": "A shorter stay for guests with limited time: rest, gentle therapies and meals planned for the programme.",
       "durations": "7 nights",
-      "icp_ids": [
-        "short_reset",
-        "stress_sleep_burnout"
-      ],
-      "related_therapy_ids": [
-        "yoga-therapy",
-        "massage-therapy",
-        "hydrotherapy"
-      ],
-      "related_condition_ids": [],
       "locale": "en",
-      "translation_status": null,
-      "source_version": "2026-07",
-      "last_translated_at": null,
-      "translation_reviewed_at": null,
-      "translation_reviewed_by": null,
-      "needs_translation_review": null,
-      "publication_status": "published",
-      "source": "kit"
+      "source": "kit",
+      "related_pages": [
+        {
+          "type": "therapy",
+          "id": "yoga-therapy"
+        },
+        {
+          "type": "therapy",
+          "id": "massage-therapy"
+        },
+        {
+          "type": "therapy",
+          "id": "hydrotherapy"
+        }
+      ],
+      "status": "published",
+      "featured_image": {
+        "src": "lounge",
+        "alt": "The lounge at Shantara"
+      },
+      "featured": true
     },
     {
       "id": "weight-management",
       "slug": "weight-management",
       "name": "Weight Management",
-      "photo": "grounds",
       "focus": "Metabolic",
-      "home_featured": true,
       "proposition": "Meals, daily activity and therapies, with weight and vitals reviewed by a doctor each morning.",
       "durations": "14–21 nights",
-      "icp_ids": [
-        "weight_metabolic"
-      ],
-      "related_therapy_ids": [
-        "diet-therapy",
-        "yoga-therapy",
-        "hydrotherapy",
-        "physiotherapy"
-      ],
-      "related_condition_ids": [
-        "obesity",
-        "weight-management",
-        "diabetes"
-      ],
       "locale": "en",
-      "translation_status": null,
-      "source_version": "2026-07",
-      "last_translated_at": null,
-      "translation_reviewed_at": null,
-      "translation_reviewed_by": null,
-      "needs_translation_review": null,
-      "publication_status": "published",
-      "source": "kit"
+      "source": "kit",
+      "related_pages": [
+        {
+          "type": "therapy",
+          "id": "diet-therapy"
+        },
+        {
+          "type": "therapy",
+          "id": "yoga-therapy"
+        },
+        {
+          "type": "therapy",
+          "id": "hydrotherapy"
+        },
+        {
+          "type": "therapy",
+          "id": "physiotherapy"
+        }
+      ],
+      "status": "published",
+      "featured_image": {
+        "src": "grounds",
+        "alt": "The grounds at Shantara"
+      },
+      "featured": true
     }
   ],
   "conditions": [
@@ -567,692 +586,527 @@ window.ShantaraContent = {
       "id": "arthritis",
       "slug": "arthritis",
       "name": "Arthritis",
-      "listing_group": "Musculoskeletal",
       "summary": "Therapies, movement and rest may be recommended to support joint comfort, following assessment.",
-      "photo": "treatment",
-      "icp_ids": [
-        "pain_mobility"
-      ],
-      "related_program_ids": [
-        "complete-healing"
-      ],
-      "related_therapy_ids": [],
       "clinical": null,
       "faqs": [],
       "medical_reviewer": null,
       "last_medically_reviewed": null,
-      "references": [],
       "note": null,
       "locale": "en",
-      "translation_status": null,
-      "source_version": "2026-07",
-      "last_translated_at": null,
-      "translation_reviewed_at": null,
-      "translation_reviewed_by": null,
-      "needs_translation_review": null,
-      "publication_status": "kit_sample",
-      "source": "kit"
+      "source": "kit",
+      "related_pages": [
+        {
+          "type": "programme",
+          "id": "complete-healing"
+        }
+      ],
+      "category": "Musculoskeletal",
+      "status": "draft",
+      "featured_image": {
+        "src": "treatment",
+        "alt": "A treatment room at Shantara"
+      },
+      "external_references": []
     },
     {
       "id": "asthma",
       "slug": "asthma",
       "name": "Asthma",
-      "listing_group": null,
       "summary": null,
-      "photo": null,
-      "icp_ids": [
-        "healthy_ageing_longevity"
-      ],
-      "related_program_ids": [
-        "complete-healing"
-      ],
-      "related_therapy_ids": [],
       "clinical": null,
       "faqs": [],
       "medical_reviewer": null,
       "last_medically_reviewed": null,
-      "references": [],
       "locale": "en",
-      "translation_status": null,
-      "source_version": "2026-07",
-      "last_translated_at": null,
-      "translation_reviewed_at": null,
-      "translation_reviewed_by": null,
-      "needs_translation_review": null,
-      "publication_status": "needs_original",
-      "source": "gap"
+      "source": "gap",
+      "related_pages": [
+        {
+          "type": "programme",
+          "id": "complete-healing"
+        }
+      ],
+      "category": null,
+      "status": "draft",
+      "featured_image": null,
+      "external_references": []
     },
     {
       "id": "back-pain",
       "slug": "back-pain",
       "name": "Low back / neck pain",
-      "listing_group": null,
       "summary": null,
-      "photo": null,
-      "icp_ids": [
-        "pain_mobility"
-      ],
-      "related_program_ids": [
-        "complete-healing"
-      ],
-      "related_therapy_ids": [],
       "clinical": null,
       "faqs": [],
       "medical_reviewer": null,
       "last_medically_reviewed": null,
-      "references": [],
       "locale": "en",
-      "translation_status": null,
-      "source_version": "2026-07",
-      "last_translated_at": null,
-      "translation_reviewed_at": null,
-      "translation_reviewed_by": null,
-      "needs_translation_review": null,
-      "publication_status": "needs_original",
-      "source": "gap"
+      "source": "gap",
+      "related_pages": [
+        {
+          "type": "programme",
+          "id": "complete-healing"
+        }
+      ],
+      "category": null,
+      "status": "draft",
+      "featured_image": null,
+      "external_references": []
     },
     {
       "id": "diabetes",
       "slug": "diabetes",
       "name": "Diabetes",
-      "listing_group": "Metabolic",
       "summary": "Residential programmes planned around blood-sugar control, meals and daily doctor review.",
-      "photo": "dining",
-      "icp_ids": [
-        "weight_metabolic"
-      ],
-      "related_program_ids": [
-        "diabetes-reversal",
-        "weight-management",
-        "detox"
-      ],
-      "related_therapy_ids": [],
       "clinical": null,
       "faqs": [],
       "medical_reviewer": null,
       "last_medically_reviewed": null,
-      "references": [],
       "note": null,
       "locale": "en",
-      "translation_status": null,
-      "source_version": "2026-07",
-      "last_translated_at": null,
-      "translation_reviewed_at": null,
-      "translation_reviewed_by": null,
-      "needs_translation_review": null,
-      "publication_status": "needs_original",
-      "source": "kit"
+      "source": "kit",
+      "related_pages": [
+        {
+          "type": "programme",
+          "id": "diabetes-reversal"
+        },
+        {
+          "type": "programme",
+          "id": "weight-management"
+        },
+        {
+          "type": "programme",
+          "id": "detox"
+        },
+        {
+          "type": "programme",
+          "id": "complete-healing"
+        }
+      ],
+      "category": "Metabolic",
+      "status": "draft",
+      "featured_image": {
+        "src": "dining",
+        "alt": "The dining room at Shantara"
+      },
+      "external_references": []
     },
     {
       "id": "fatty-liver",
       "slug": "fatty-liver",
       "name": "Fatty liver (NAFLD)",
-      "listing_group": null,
       "summary": null,
-      "photo": null,
-      "icp_ids": [
-        "weight_metabolic"
-      ],
-      "related_program_ids": [
-        "weight-management",
-        "detox"
-      ],
-      "related_therapy_ids": [],
       "clinical": null,
       "faqs": [],
       "medical_reviewer": null,
       "last_medically_reviewed": null,
-      "references": [],
       "locale": "en",
-      "translation_status": null,
-      "source_version": "2026-07",
-      "last_translated_at": null,
-      "translation_reviewed_at": null,
-      "translation_reviewed_by": null,
-      "needs_translation_review": null,
-      "publication_status": "needs_original",
-      "source": "gap"
+      "source": "gap",
+      "related_pages": [
+        {
+          "type": "programme",
+          "id": "weight-management"
+        },
+        {
+          "type": "programme",
+          "id": "detox"
+        }
+      ],
+      "category": null,
+      "status": "draft",
+      "featured_image": null,
+      "external_references": []
     },
     {
       "id": "gastritis",
       "slug": "gastritis",
       "name": "Gastritis",
-      "listing_group": null,
       "summary": null,
-      "photo": null,
-      "icp_ids": [
-        "digestive_inflammatory"
-      ],
-      "related_program_ids": [
-        "detox"
-      ],
-      "related_therapy_ids": [],
       "clinical": null,
       "faqs": [],
       "medical_reviewer": null,
       "last_medically_reviewed": null,
-      "references": [],
       "locale": "en",
-      "translation_status": null,
-      "source_version": "2026-07",
-      "last_translated_at": null,
-      "translation_reviewed_at": null,
-      "translation_reviewed_by": null,
-      "needs_translation_review": null,
-      "publication_status": "needs_original",
-      "source": "gap"
+      "source": "gap",
+      "related_pages": [
+        {
+          "type": "programme",
+          "id": "detox"
+        }
+      ],
+      "category": null,
+      "status": "draft",
+      "featured_image": null,
+      "external_references": []
     },
     {
       "id": "hypertension",
       "slug": "hypertension",
       "name": "Hypertension",
-      "listing_group": null,
       "summary": null,
-      "photo": null,
-      "icp_ids": [
-        "weight_metabolic"
-      ],
-      "related_program_ids": [
-        "complete-healing",
-        "detox"
-      ],
-      "related_therapy_ids": [],
       "clinical": null,
       "faqs": [],
       "medical_reviewer": null,
       "last_medically_reviewed": null,
-      "references": [],
       "locale": "en",
-      "translation_status": null,
-      "source_version": "2026-07",
-      "last_translated_at": null,
-      "translation_reviewed_at": null,
-      "translation_reviewed_by": null,
-      "needs_translation_review": null,
-      "publication_status": "needs_original",
-      "source": "gap"
+      "source": "gap",
+      "related_pages": [
+        {
+          "type": "programme",
+          "id": "complete-healing"
+        },
+        {
+          "type": "programme",
+          "id": "detox"
+        }
+      ],
+      "category": null,
+      "status": "draft",
+      "featured_image": null,
+      "external_references": []
     },
     {
       "id": "ibs",
       "slug": "ibs",
       "name": "IBS",
-      "listing_group": null,
       "summary": null,
-      "photo": null,
-      "icp_ids": [
-        "digestive_inflammatory"
-      ],
-      "related_program_ids": [
-        "detox",
-        "complete-healing"
-      ],
-      "related_therapy_ids": [],
       "clinical": null,
       "faqs": [],
       "medical_reviewer": null,
       "last_medically_reviewed": null,
-      "references": [],
       "locale": "en",
-      "translation_status": null,
-      "source_version": "2026-07",
-      "last_translated_at": null,
-      "translation_reviewed_at": null,
-      "translation_reviewed_by": null,
-      "needs_translation_review": null,
-      "publication_status": "needs_original",
-      "source": "gap"
+      "source": "gap",
+      "related_pages": [
+        {
+          "type": "programme",
+          "id": "detox"
+        },
+        {
+          "type": "programme",
+          "id": "complete-healing"
+        }
+      ],
+      "category": null,
+      "status": "draft",
+      "featured_image": null,
+      "external_references": []
     },
     {
       "id": "insomnia",
       "slug": "insomnia",
       "name": "Insomnia",
-      "listing_group": null,
       "summary": null,
-      "photo": null,
-      "icp_ids": [
-        "stress_sleep_burnout"
-      ],
-      "related_program_ids": [
-        "stress-management"
-      ],
-      "related_therapy_ids": [],
       "clinical": null,
       "faqs": [],
       "medical_reviewer": null,
       "last_medically_reviewed": null,
-      "references": [],
       "locale": "en",
-      "translation_status": null,
-      "source_version": "2026-07",
-      "last_translated_at": null,
-      "translation_reviewed_at": null,
-      "translation_reviewed_by": null,
-      "needs_translation_review": null,
-      "publication_status": "needs_original",
-      "source": "gap"
+      "source": "gap",
+      "related_pages": [
+        {
+          "type": "programme",
+          "id": "stress-management"
+        }
+      ],
+      "category": null,
+      "status": "draft",
+      "featured_image": null,
+      "external_references": []
     },
     {
       "id": "menopause",
       "slug": "menopause",
       "name": "Perimenopause",
-      "listing_group": null,
       "summary": null,
-      "photo": null,
-      "icp_ids": [
-        "hormonal_vitality",
-        "healthy_ageing_longevity"
-      ],
-      "related_program_ids": [
-        "complete-healing"
-      ],
-      "related_therapy_ids": [],
       "clinical": null,
       "faqs": [],
       "medical_reviewer": null,
       "last_medically_reviewed": null,
-      "references": [],
       "locale": "en",
-      "translation_status": null,
-      "source_version": "2026-07",
-      "last_translated_at": null,
-      "translation_reviewed_at": null,
-      "translation_reviewed_by": null,
-      "needs_translation_review": null,
-      "publication_status": "needs_original",
-      "source": "gap"
+      "source": "gap",
+      "related_pages": [
+        {
+          "type": "programme",
+          "id": "complete-healing"
+        }
+      ],
+      "category": null,
+      "status": "draft",
+      "featured_image": null,
+      "external_references": []
     },
     {
       "id": "migraine",
       "slug": "migraine",
       "name": "Migraine",
-      "listing_group": null,
       "summary": null,
-      "photo": null,
-      "icp_ids": [
-        "stress_sleep_burnout",
-        "pain_mobility"
-      ],
-      "related_program_ids": [
-        "stress-management",
-        "complete-healing"
-      ],
-      "related_therapy_ids": [],
       "clinical": null,
       "faqs": [],
       "medical_reviewer": null,
       "last_medically_reviewed": null,
-      "references": [],
       "locale": "en",
-      "translation_status": null,
-      "source_version": "2026-07",
-      "last_translated_at": null,
-      "translation_reviewed_at": null,
-      "translation_reviewed_by": null,
-      "needs_translation_review": null,
-      "publication_status": "needs_original",
-      "source": "gap"
+      "source": "gap",
+      "related_pages": [
+        {
+          "type": "programme",
+          "id": "stress-management"
+        },
+        {
+          "type": "programme",
+          "id": "complete-healing"
+        }
+      ],
+      "category": null,
+      "status": "draft",
+      "featured_image": null,
+      "external_references": []
     },
     {
       "id": "obesity",
       "slug": "obesity",
       "name": "Obesity",
-      "listing_group": null,
       "summary": "Meals, activity and therapies, with weight and vitals reviewed each morning.",
-      "photo": null,
-      "icp_ids": [
-        "weight_metabolic"
-      ],
-      "related_program_ids": [
-        "weight-management",
-        "diabetes-reversal",
-        "detox"
-      ],
-      "related_therapy_ids": [],
       "clinical": null,
       "faqs": [],
       "medical_reviewer": null,
       "last_medically_reviewed": null,
-      "references": [],
       "locale": "en",
-      "translation_status": null,
-      "source_version": "2026-07",
-      "last_translated_at": null,
-      "translation_reviewed_at": null,
-      "translation_reviewed_by": null,
-      "needs_translation_review": null,
-      "publication_status": "needs_original",
       "source": "kit",
-      "note": "Launch slug for /en/conditions/obesity — not a kit listing card (weight-management need card covers the sample)."
+      "note": "Launch slug for /en/conditions/obesity — not a kit listing card (weight-management need card covers the sample).",
+      "related_pages": [
+        {
+          "type": "programme",
+          "id": "weight-management"
+        },
+        {
+          "type": "programme",
+          "id": "diabetes-reversal"
+        },
+        {
+          "type": "programme",
+          "id": "detox"
+        }
+      ],
+      "category": null,
+      "status": "draft",
+      "featured_image": null,
+      "external_references": []
     },
     {
       "id": "pcos",
       "slug": "pcos",
       "name": "PCOS",
-      "listing_group": "Hormonal",
       "summary": "A programme may be planned around hormonal health, meals, activity and rest, following assessment.",
-      "photo": "lounge",
-      "icp_ids": [
-        "hormonal_vitality"
-      ],
-      "related_program_ids": [
-        "complete-healing",
-        "detox"
-      ],
-      "related_therapy_ids": [],
       "clinical": null,
       "faqs": [],
       "medical_reviewer": null,
       "last_medically_reviewed": null,
-      "references": [],
       "note": null,
       "locale": "en",
-      "translation_status": null,
-      "source_version": "2026-07",
-      "last_translated_at": null,
-      "translation_reviewed_at": null,
-      "translation_reviewed_by": null,
-      "needs_translation_review": null,
-      "publication_status": "needs_original",
-      "source": "kit"
+      "source": "kit",
+      "related_pages": [
+        {
+          "type": "programme",
+          "id": "complete-healing"
+        },
+        {
+          "type": "programme",
+          "id": "detox"
+        }
+      ],
+      "category": "Hormonal",
+      "status": "draft",
+      "featured_image": {
+        "src": "lounge",
+        "alt": "The lounge at Shantara"
+      },
+      "external_references": []
     },
     {
       "id": "thyroid",
       "slug": "thyroid",
       "name": "Thyroid dysfunction",
-      "listing_group": null,
       "summary": null,
-      "photo": null,
-      "icp_ids": [
-        "hormonal_vitality"
-      ],
-      "related_program_ids": [
-        "complete-healing"
-      ],
-      "related_therapy_ids": [],
       "clinical": null,
       "faqs": [],
       "medical_reviewer": null,
       "last_medically_reviewed": null,
-      "references": [],
       "locale": "en",
-      "translation_status": null,
-      "source_version": "2026-07",
-      "last_translated_at": null,
-      "translation_reviewed_at": null,
-      "translation_reviewed_by": null,
-      "needs_translation_review": null,
-      "publication_status": "needs_original",
-      "source": "gap"
+      "source": "gap",
+      "related_pages": [
+        {
+          "type": "programme",
+          "id": "complete-healing"
+        }
+      ],
+      "category": null,
+      "status": "draft",
+      "featured_image": null,
+      "external_references": []
     },
     {
       "id": "weight-management",
       "slug": "weight-management",
       "name": "Weight management",
-      "listing_group": "Metabolic",
       "summary": "Meals, activity and therapies, with weight and vitals reviewed each morning.",
-      "photo": "grounds",
-      "icp_ids": [
-        "weight_metabolic"
-      ],
-      "related_program_ids": [
-        "weight-management",
-        "detox"
-      ],
-      "related_therapy_ids": [],
       "clinical": null,
       "faqs": [],
       "medical_reviewer": null,
       "last_medically_reviewed": null,
-      "references": [],
       "note": "Listing need-card sample; distinct from the Weight Management programme entity.",
       "locale": "en",
-      "translation_status": null,
-      "source_version": "2026-07",
-      "last_translated_at": null,
-      "translation_reviewed_at": null,
-      "translation_reviewed_by": null,
-      "needs_translation_review": null,
-      "publication_status": "kit_sample",
-      "source": "kit"
+      "source": "kit",
+      "related_pages": [
+        {
+          "type": "programme",
+          "id": "weight-management"
+        },
+        {
+          "type": "programme",
+          "id": "detox"
+        }
+      ],
+      "category": "Metabolic",
+      "status": "draft",
+      "featured_image": {
+        "src": "grounds",
+        "alt": "The grounds at Shantara"
+      },
+      "external_references": []
     }
   ],
   "therapies": [
     {
       "id": "acupuncture",
       "name": "Acupuncture",
-      "home_featured": true,
       "description": "Fine needles used to ease pain, when recommended by your doctor.",
       "slug": "acupuncture",
       "locale": "en",
-      "translation_status": null,
-      "source_version": "2026-07",
-      "last_translated_at": null,
-      "translation_reviewed_at": null,
-      "translation_reviewed_by": null,
-      "needs_translation_review": null,
-      "publication_status": "published",
-      "source": "kit"
+      "source": "kit",
+      "status": "published",
+      "featured": true
     },
     {
       "id": "diet-therapy",
       "name": "Diet Therapy",
-      "home_featured": true,
       "description": "Meals planned for your programme and reviewed as your stay progresses.",
       "slug": "diet-therapy",
       "locale": "en",
-      "translation_status": null,
-      "source_version": "2026-07",
-      "last_translated_at": null,
-      "translation_reviewed_at": null,
-      "translation_reviewed_by": null,
-      "needs_translation_review": null,
-      "publication_status": "published",
-      "source": "kit"
+      "source": "kit",
+      "status": "published",
+      "featured": true
     },
     {
       "id": "fasting-therapy",
       "name": "Fasting Therapy",
-      "home_featured": true,
       "description": "Introduced gradually and supervised by a doctor throughout.",
       "slug": "fasting-therapy",
       "locale": "en",
-      "translation_status": null,
-      "source_version": "2026-07",
-      "last_translated_at": null,
-      "translation_reviewed_at": null,
-      "translation_reviewed_by": null,
-      "needs_translation_review": null,
-      "publication_status": "published",
-      "source": "kit"
+      "source": "kit",
+      "status": "published",
+      "featured": true
     },
     {
       "id": "heliotherapy",
       "name": "Heliotherapy",
-      "home_featured": true,
       "description": "Controlled sunlight exposure, scheduled in the early morning.",
       "slug": "heliotherapy",
       "locale": "en",
-      "translation_status": null,
-      "source_version": "2026-07",
-      "last_translated_at": null,
-      "translation_reviewed_at": null,
-      "translation_reviewed_by": null,
-      "needs_translation_review": null,
-      "publication_status": "published",
-      "source": "kit"
+      "source": "kit",
+      "status": "published",
+      "featured": true
     },
     {
       "id": "herbal-medicine",
       "name": "Herbal Medicine",
-      "home_featured": false,
       "description": "Plant-based formulations selected to complement other therapies when recommended.",
       "slug": "herbal-medicine",
       "locale": "en",
-      "translation_status": null,
-      "source_version": "2026-07",
-      "last_translated_at": null,
-      "translation_reviewed_at": null,
-      "translation_reviewed_by": null,
-      "needs_translation_review": null,
-      "publication_status": "published",
-      "source": "handbook"
+      "source": "handbook",
+      "status": "published",
+      "featured": false
     },
     {
       "id": "hijama",
       "name": "Hijama",
-      "home_featured": true,
       "description": "Traditional cupping, delivered under medical supervision.",
       "slug": "hijama",
       "locale": "en",
-      "translation_status": null,
-      "source_version": "2026-07",
-      "last_translated_at": null,
-      "translation_reviewed_at": null,
-      "translation_reviewed_by": null,
-      "needs_translation_review": null,
-      "publication_status": "published",
-      "source": "kit"
+      "source": "kit",
+      "status": "published",
+      "featured": true
     },
     {
       "id": "hydrotherapy",
       "name": "Hydrotherapy",
-      "home_featured": true,
       "description": "Water at controlled temperatures to support circulation.",
       "slug": "hydrotherapy",
       "locale": "en",
-      "translation_status": null,
-      "source_version": "2026-07",
-      "last_translated_at": null,
-      "translation_reviewed_at": null,
-      "translation_reviewed_by": null,
-      "needs_translation_review": null,
-      "publication_status": "published",
-      "source": "kit"
+      "source": "kit",
+      "status": "published",
+      "featured": true
     },
     {
       "id": "manual-therapy",
       "name": "Manual Therapy",
-      "home_featured": false,
       "description": "Hands-on techniques to support joint mobility and reduce stiffness.",
       "slug": "manual-therapy",
       "locale": "en",
-      "translation_status": null,
-      "source_version": "2026-07",
-      "last_translated_at": null,
-      "translation_reviewed_at": null,
-      "translation_reviewed_by": null,
-      "needs_translation_review": null,
-      "publication_status": "published",
-      "source": "handbook"
+      "source": "handbook",
+      "status": "published",
+      "featured": false
     },
     {
       "id": "massage-therapy",
       "name": "Massage Therapy",
-      "home_featured": false,
       "description": "Therapeutic touch to ease muscle tension and support rest.",
       "slug": "massage-therapy",
       "locale": "en",
-      "translation_status": null,
-      "source_version": "2026-07",
-      "last_translated_at": null,
-      "translation_reviewed_at": null,
-      "translation_reviewed_by": null,
-      "needs_translation_review": null,
-      "publication_status": "published",
-      "source": "handbook"
+      "source": "handbook",
+      "status": "published",
+      "featured": false
     },
     {
       "id": "mind-body-therapy",
       "name": "Mind-Body Therapy",
-      "home_featured": false,
       "description": "Guided practices to reduce stress and support emotional balance.",
       "slug": "mind-body-therapy",
       "locale": "en",
-      "translation_status": null,
-      "source_version": "2026-07",
-      "last_translated_at": null,
-      "translation_reviewed_at": null,
-      "translation_reviewed_by": null,
-      "needs_translation_review": null,
-      "publication_status": "published",
-      "source": "handbook"
+      "source": "handbook",
+      "status": "published",
+      "featured": false
     },
     {
       "id": "mud-therapy",
       "name": "Mud Therapy",
-      "home_featured": true,
       "description": "Mineral-rich earth applied to calm inflammation and ease physical tension.",
       "slug": "mud-therapy",
       "locale": "en",
-      "translation_status": null,
-      "source_version": "2026-07",
-      "last_translated_at": null,
-      "translation_reviewed_at": null,
-      "translation_reviewed_by": null,
-      "needs_translation_review": null,
-      "publication_status": "published",
-      "source": "kit"
+      "source": "kit",
+      "status": "published",
+      "featured": true
     },
     {
       "id": "physiotherapy",
       "name": "Physiotherapy",
-      "home_featured": false,
       "description": "Guided exercises and hands-on therapy to support strength, mobility, and posture.",
       "slug": "physiotherapy",
       "locale": "en",
-      "translation_status": null,
-      "source_version": "2026-07",
-      "last_translated_at": null,
-      "translation_reviewed_at": null,
-      "translation_reviewed_by": null,
-      "needs_translation_review": null,
-      "publication_status": "published",
-      "source": "handbook"
+      "source": "handbook",
+      "status": "published",
+      "featured": false
     },
     {
       "id": "yoga-therapy",
       "name": "Yoga Therapy",
-      "home_featured": true,
       "description": "Gentle movement and breathwork adapted to the individual.",
       "slug": "yoga-therapy",
       "locale": "en",
-      "translation_status": null,
-      "source_version": "2026-07",
-      "last_translated_at": null,
-      "translation_reviewed_at": null,
-      "translation_reviewed_by": null,
-      "needs_translation_review": null,
-      "publication_status": "published",
-      "source": "kit"
+      "source": "kit",
+      "status": "published",
+      "featured": true
     }
   ],
   "rooms": [
-    {
-      "id": "deluxe-room",
-      "slug": "deluxe-room",
-      "name": "Deluxe Room",
-      "size": "260 sq.ft",
-      "occupancy": "Single only",
-      "balcony": false,
-      "photo": "room-twin",
-      "home_teaser": false,
-      "spec_line": "260 sq.ft",
-      "locale": "en",
-      "translation_status": null,
-      "source_version": "2026-07",
-      "last_translated_at": null,
-      "translation_reviewed_at": null,
-      "translation_reviewed_by": null,
-      "needs_translation_review": null,
-      "publication_status": "published",
-      "source": "kit",
-      "amenities": [
-        "En-suite bathroom with rain shower",
-        "Individually controlled central air-conditioning",
-        "Orthopaedic mattress",
-        "Electronic safe, Wi-Fi, smart LED TV"
-      ]
-    },
     {
       "id": "executive-suite",
       "slug": "executive-suite",
@@ -1260,24 +1114,44 @@ window.ShantaraContent = {
       "size": "530 sq.ft",
       "occupancy": "Single or double",
       "balcony": true,
-      "photo": "room-premium",
-      "home_teaser": true,
-      "spec_line": "530 sq.ft · balcony",
+      "spec_line": "530 sq.ft suite · balcony",
       "locale": "en",
-      "translation_status": null,
-      "source_version": "2026-07",
-      "last_translated_at": null,
-      "translation_reviewed_at": null,
-      "translation_reviewed_by": null,
-      "needs_translation_review": null,
-      "publication_status": "published",
       "source": "kit",
       "amenities": [
         "En-suite bathroom with rain shower",
         "Individually controlled central air-conditioning",
         "Orthopaedic mattress",
         "Electronic safe, Wi-Fi, smart LED TV"
-      ]
+      ],
+      "status": "published",
+      "featured_image": {
+        "src": "room-premium",
+        "alt": "A room with a balcony over the valley"
+      },
+      "featured": true
+    },
+    {
+      "id": "junior-suite",
+      "slug": "junior-suite",
+      "name": "Junior Suite",
+      "size": "420 sq.ft",
+      "occupancy": "Single or double",
+      "balcony": false,
+      "spec_line": "420 sq.ft suite",
+      "locale": "en",
+      "source": "handbook",
+      "amenities": [
+        "En-suite bathroom with rain shower",
+        "Individually controlled central air-conditioning",
+        "Orthopaedic mattress",
+        "Electronic safe, Wi-Fi, smart LED TV"
+      ],
+      "status": "published",
+      "featured_image": {
+        "src": "room-bedroom-forest-view-armchair",
+        "alt": "A suite bedroom with a forest view"
+      },
+      "featured": false
     },
     {
       "id": "premium-room",
@@ -1286,50 +1160,44 @@ window.ShantaraContent = {
       "size": "460 sq.ft",
       "occupancy": "Single or double",
       "balcony": true,
-      "photo": "room-twin",
-      "home_teaser": true,
-      "spec_line": "460 sq.ft · balcony",
+      "spec_line": "460 sq.ft room · balcony",
       "locale": "en",
-      "translation_status": null,
-      "source_version": "2026-07",
-      "last_translated_at": null,
-      "translation_reviewed_at": null,
-      "translation_reviewed_by": null,
-      "needs_translation_review": null,
-      "publication_status": "published",
       "source": "kit",
       "amenities": [
         "En-suite bathroom with rain shower",
         "Individually controlled central air-conditioning",
         "Orthopaedic mattress",
         "Electronic safe, Wi-Fi, smart LED TV"
-      ]
+      ],
+      "status": "published",
+      "featured_image": {
+        "src": "room-twin",
+        "alt": "A guest room at Shantara"
+      },
+      "featured": true
     },
     {
       "id": "standard-room",
       "slug": "standard-room",
       "name": "Standard Room",
-      "size": "220 sq.ft",
-      "occupancy": "Single only",
+      "size": "260 sq.ft",
+      "occupancy": "Single or double",
       "balcony": false,
-      "photo": "room-twin",
-      "home_teaser": false,
-      "spec_line": "220 sq.ft",
+      "spec_line": "260 sq.ft room",
       "locale": "en",
-      "translation_status": null,
-      "source_version": "2026-07",
-      "last_translated_at": null,
-      "translation_reviewed_at": null,
-      "translation_reviewed_by": null,
-      "needs_translation_review": null,
-      "publication_status": "published",
       "source": "kit",
       "amenities": [
         "En-suite bathroom with rain shower",
         "Individually controlled central air-conditioning",
         "Orthopaedic mattress",
         "Electronic safe, Wi-Fi, smart LED TV"
-      ]
+      ],
+      "status": "published",
+      "featured_image": {
+        "src": "room-twin",
+        "alt": "A guest room at Shantara"
+      },
+      "featured": false
     },
     {
       "id": "superior-room",
@@ -1338,24 +1206,21 @@ window.ShantaraContent = {
       "size": "300 sq.ft",
       "occupancy": "Single or double",
       "balcony": true,
-      "photo": "balcony",
-      "home_teaser": true,
-      "spec_line": "300 sq.ft · balcony",
+      "spec_line": "300 sq.ft room · balcony",
       "locale": "en",
-      "translation_status": null,
-      "source_version": "2026-07",
-      "last_translated_at": null,
-      "translation_reviewed_at": null,
-      "translation_reviewed_by": null,
-      "needs_translation_review": null,
-      "publication_status": "published",
       "source": "kit",
       "amenities": [
         "En-suite bathroom with rain shower",
         "Individually controlled central air-conditioning",
         "Orthopaedic mattress",
         "Electronic safe, Wi-Fi, smart LED TV"
-      ]
+      ],
+      "status": "published",
+      "featured_image": {
+        "src": "balcony",
+        "alt": "A room balcony over the valley"
+      },
+      "featured": true
     }
   ],
   "doctors": [
@@ -1364,28 +1229,19 @@ window.ShantaraContent = {
       "slug": "bahja-janu",
       "full_name": "Dr. Bahja Janu",
       "role": "Medical Director",
-      "photo": "doctor-bahja-janu-portrait",
       "photo_profile": "doctor-bahja-janu-portrait-cropped.jpeg",
       "qualification": null,
       "years_practice": null,
       "publications_note": null,
       "biography": null,
       "areas_of_practice": [],
-      "to_confirm": [
-        "Qualifications",
-        "Areas of expertise",
-        "Years of clinical practice",
-        "Biography — do not invent; live site previously showed a mismatched bio"
-      ],
       "locale": "en",
-      "translation_status": null,
-      "source_version": "2026-07",
-      "last_translated_at": null,
-      "translation_reviewed_at": null,
-      "translation_reviewed_by": null,
-      "needs_translation_review": null,
-      "publication_status": "needs_original",
-      "source": "handbook"
+      "source": "handbook",
+      "status": "draft",
+      "featured_image": {
+        "src": "doctor-bahja-janu-portrait",
+        "alt": "Dr. Bahja Janu"
+      }
     },
     {
       "id": "pa-kareem",
@@ -1399,16 +1255,9 @@ window.ShantaraContent = {
       "areas_of_practice": [
         "Naturopathy"
       ],
-      "to_confirm": [],
       "locale": "en",
-      "translation_status": null,
-      "source_version": "2026-07",
-      "last_translated_at": null,
-      "translation_reviewed_at": null,
-      "translation_reviewed_by": null,
-      "needs_translation_review": null,
-      "publication_status": "published",
-      "source": "handbook"
+      "source": "handbook",
+      "status": "published"
     }
   ],
   "articles": [
@@ -1417,7 +1266,6 @@ window.ShantaraContent = {
       "slug": "how-meals-are-planned",
       "title": "How meals are planned during a stay",
       "category": "Food & Recipes",
-      "photo": "dining",
       "read_minutes": 4,
       "lead": "How meals are planned around your programme and dietary requirements.",
       "body": null,
@@ -1425,21 +1273,18 @@ window.ShantaraContent = {
       "medical_reviewer": null,
       "kit_journal": true,
       "locale": "en",
-      "translation_status": null,
-      "source_version": "2026-07",
-      "last_translated_at": null,
-      "translation_reviewed_at": null,
-      "translation_reviewed_by": null,
-      "needs_translation_review": null,
-      "publication_status": "kit_sample",
-      "source": "kit"
+      "source": "kit",
+      "status": "draft",
+      "featured_image": {
+        "src": "dining",
+        "alt": "The dining room at Shantara"
+      }
     },
     {
       "id": "how-programme-duration-is-decided",
       "slug": "how-programme-duration-is-decided",
       "title": "How programme duration is decided",
       "category": "Clinical Guides",
-      "photo": "corridor",
       "read_minutes": 5,
       "lead": "How doctors advise the length of a stay after consultation and assessment.",
       "body": null,
@@ -1447,21 +1292,18 @@ window.ShantaraContent = {
       "medical_reviewer": null,
       "kit_journal": true,
       "locale": "en",
-      "translation_status": null,
-      "source_version": "2026-07",
-      "last_translated_at": null,
-      "translation_reviewed_at": null,
-      "translation_reviewed_by": null,
-      "needs_translation_review": null,
-      "publication_status": "kit_sample",
-      "source": "kit"
+      "source": "kit",
+      "status": "draft",
+      "featured_image": {
+        "src": "corridor",
+        "alt": "A corridor at Shantara"
+      }
     },
     {
       "id": "how-rooms-are-designed",
       "slug": "how-rooms-are-designed",
       "title": "How our rooms are designed",
       "category": "Guest Stories",
-      "photo": "room-premium",
       "read_minutes": 5,
       "lead": "Why the rooms are quiet, plain and easy to rest in.",
       "body": null,
@@ -1469,21 +1311,18 @@ window.ShantaraContent = {
       "medical_reviewer": null,
       "kit_journal": true,
       "locale": "en",
-      "translation_status": null,
-      "source_version": "2026-07",
-      "last_translated_at": null,
-      "translation_reviewed_at": null,
-      "translation_reviewed_by": null,
-      "needs_translation_review": null,
-      "publication_status": "kit_sample",
-      "source": "kit"
+      "source": "kit",
+      "status": "draft",
+      "featured_image": {
+        "src": "room-premium",
+        "alt": "A room with a balcony over the valley"
+      }
     },
     {
       "id": "managing-pcos-lifestyle",
       "slug": "managing-pcos-lifestyle",
       "title": "Managing PCOS Through Lifestyle Change",
       "category": "Clinical Guides",
-      "photo": "lounge",
       "read_minutes": null,
       "lead": "Educational guide placeholder — body pending medical review.",
       "body": null,
@@ -1491,21 +1330,18 @@ window.ShantaraContent = {
       "medical_reviewer": null,
       "kit_journal": false,
       "locale": "en",
-      "translation_status": null,
-      "source_version": "2026-07",
-      "last_translated_at": null,
-      "translation_reviewed_at": null,
-      "translation_reviewed_by": null,
-      "needs_translation_review": null,
-      "publication_status": "needs_original",
-      "source": "gap"
+      "source": "gap",
+      "status": "draft",
+      "featured_image": {
+        "src": "lounge",
+        "alt": "The lounge at Shantara"
+      }
     },
     {
       "id": "naturopathy-assessment",
       "slug": "naturopathy-assessment",
       "title": "What Happens During a Naturopathy Assessment?",
       "category": "Clinical Guides",
-      "photo": "corridor",
       "read_minutes": null,
       "lead": "Educational guide placeholder — body pending medical review.",
       "body": null,
@@ -1513,21 +1349,18 @@ window.ShantaraContent = {
       "medical_reviewer": null,
       "kit_journal": false,
       "locale": "en",
-      "translation_status": null,
-      "source_version": "2026-07",
-      "last_translated_at": null,
-      "translation_reviewed_at": null,
-      "translation_reviewed_by": null,
-      "needs_translation_review": null,
-      "publication_status": "needs_original",
-      "source": "gap"
+      "source": "gap",
+      "status": "draft",
+      "featured_image": {
+        "src": "corridor",
+        "alt": "A corridor at Shantara"
+      }
     },
     {
       "id": "twenty-six-years",
       "slug": "twenty-six-years",
       "title": "Twenty-six years of treating the cause",
       "category": "Clinical Guides",
-      "photo": "library",
       "read_minutes": 3,
       "lead": "Dr. P.A. Kareem on drug-free practice since 2000.",
       "body": null,
@@ -1535,21 +1368,18 @@ window.ShantaraContent = {
       "medical_reviewer": null,
       "kit_journal": true,
       "locale": "en",
-      "translation_status": null,
-      "source_version": "2026-07",
-      "last_translated_at": null,
-      "translation_reviewed_at": null,
-      "translation_reviewed_by": null,
-      "needs_translation_review": null,
-      "publication_status": "kit_sample",
-      "source": "kit"
+      "source": "kit",
+      "status": "draft",
+      "featured_image": {
+        "src": "library",
+        "alt": "The library at Shantara"
+      }
     },
     {
       "id": "understanding-insulin-resistance",
       "slug": "understanding-insulin-resistance",
       "title": "Understanding Insulin Resistance",
       "category": "Clinical Guides",
-      "photo": "treatment",
       "read_minutes": null,
       "lead": "Educational guide placeholder — body pending medical review.",
       "body": null,
@@ -1557,21 +1387,18 @@ window.ShantaraContent = {
       "medical_reviewer": null,
       "kit_journal": false,
       "locale": "en",
-      "translation_status": null,
-      "source_version": "2026-07",
-      "last_translated_at": null,
-      "translation_reviewed_at": null,
-      "translation_reviewed_by": null,
-      "needs_translation_review": null,
-      "publication_status": "needs_original",
-      "source": "gap"
+      "source": "gap",
+      "status": "draft",
+      "featured_image": {
+        "src": "treatment",
+        "alt": "A treatment room at Shantara"
+      }
     },
     {
       "id": "week-of-monsoon-light",
       "slug": "week-of-monsoon-light",
       "title": "A week of monsoon light",
       "category": "Guest Stories",
-      "photo": "valley",
       "read_minutes": 6,
       "lead": "A hilltop above Chennamangallur, hour by hour.",
       "body": null,
@@ -1579,14 +1406,12 @@ window.ShantaraContent = {
       "medical_reviewer": null,
       "kit_journal": true,
       "locale": "en",
-      "translation_status": null,
-      "source_version": "2026-07",
-      "last_translated_at": null,
-      "translation_reviewed_at": null,
-      "translation_reviewed_by": null,
-      "needs_translation_review": null,
-      "publication_status": "kit_sample",
-      "source": "kit"
+      "source": "kit",
+      "status": "draft",
+      "featured_image": {
+        "src": "valley",
+        "alt": "The valley below Shantara"
+      }
     }
   ],
   "doctorAnswers": [
@@ -1597,20 +1422,14 @@ window.ShantaraContent = {
       "short_answer": null,
       "detailed_answer": null,
       "doctor_id": null,
-      "photo": null,
       "read_minutes": null,
       "category": "Doctor Answers",
       "kit_journal": false,
-      "references": [],
       "locale": "en",
-      "translation_status": null,
-      "source_version": "2026-07",
-      "last_translated_at": null,
-      "translation_reviewed_at": null,
-      "translation_reviewed_by": null,
-      "needs_translation_review": null,
-      "publication_status": "needs_original",
-      "source": "gap"
+      "source": "gap",
+      "status": "draft",
+      "featured_image": null,
+      "external_references": []
     },
     {
       "id": "first-consultation",
@@ -1619,20 +1438,14 @@ window.ShantaraContent = {
       "short_answer": null,
       "detailed_answer": null,
       "doctor_id": null,
-      "photo": null,
       "read_minutes": null,
       "category": "Doctor Answers",
       "kit_journal": false,
-      "references": [],
       "locale": "en",
-      "translation_status": null,
-      "source_version": "2026-07",
-      "last_translated_at": null,
-      "translation_reviewed_at": null,
-      "translation_reviewed_by": null,
-      "needs_translation_review": null,
-      "publication_status": "needs_original",
-      "source": "gap"
+      "source": "gap",
+      "status": "draft",
+      "featured_image": null,
+      "external_references": []
     },
     {
       "id": "supervised-fast-feels-like",
@@ -1641,20 +1454,17 @@ window.ShantaraContent = {
       "short_answer": "How a supervised fast is introduced, monitored and ended.",
       "detailed_answer": null,
       "doctor_id": null,
-      "photo": "treatment",
       "read_minutes": 7,
       "category": "Doctor Answers",
       "kit_journal": true,
-      "references": [],
       "locale": "en",
-      "translation_status": null,
-      "source_version": "2026-07",
-      "last_translated_at": null,
-      "translation_reviewed_at": null,
-      "translation_reviewed_by": null,
-      "needs_translation_review": null,
-      "publication_status": "kit_sample",
-      "source": "kit"
+      "source": "kit",
+      "status": "draft",
+      "featured_image": {
+        "src": "treatment",
+        "alt": "A treatment room at Shantara"
+      },
+      "external_references": []
     },
     {
       "id": "weight-management-duration",
@@ -1663,94 +1473,59 @@ window.ShantaraContent = {
       "short_answer": null,
       "detailed_answer": null,
       "doctor_id": null,
-      "photo": null,
       "read_minutes": null,
       "category": "Doctor Answers",
       "kit_journal": false,
-      "references": [],
       "locale": "en",
-      "translation_status": null,
-      "source_version": "2026-07",
-      "last_translated_at": null,
-      "translation_reviewed_at": null,
-      "translation_reviewed_by": null,
-      "needs_translation_review": null,
-      "publication_status": "needs_original",
-      "source": "gap"
+      "source": "gap",
+      "status": "draft",
+      "featured_image": null,
+      "external_references": []
     }
   ],
-  "faqs": [
-    {
-      "id": "faq-booking-confirm",
-      "question": "Is my booking confirmed straight away?",
-      "answer": "A stay is confirmed after a preliminary consultation with our doctors. You will be asked to share a health assessment, relevant medical records and your current medication first.",
-      "locale": "en",
-      "translation_status": null,
-      "source_version": "2026-07",
-      "last_translated_at": null,
-      "translation_reviewed_at": null,
-      "translation_reviewed_by": null,
-      "needs_translation_review": null,
-      "publication_status": "published",
-      "source": "kit"
-    },
-    {
-      "id": "faq-leave-property",
-      "question": "Can I leave the property during my stay?",
-      "answer": "Guests usually remain at the retreat during the programme so meals, therapies and reviews can follow the plan. Leaving for a medical emergency is arranged with the team.",
-      "locale": "en",
-      "translation_status": null,
-      "source_version": "2026-07",
-      "last_translated_at": null,
-      "translation_reviewed_at": null,
-      "translation_reviewed_by": null,
-      "needs_translation_review": null,
-      "publication_status": "published",
-      "source": "kit"
-    },
-    {
-      "id": "faq-meals",
-      "question": "How do meals work?",
-      "answer": "Meals are planned as part of your programme, taking into account your doctor's recommendations and dietary requirements.",
-      "locale": "en",
-      "translation_status": null,
-      "source_version": "2026-07",
-      "last_translated_at": null,
-      "translation_reviewed_at": null,
-      "translation_reviewed_by": null,
-      "needs_translation_review": null,
-      "publication_status": "published",
-      "source": "kit"
-    },
-    {
-      "id": "faq-stay-duration",
-      "question": "How long should I stay?",
-      "answer": "Duration depends on the programme and your assessment. Your doctor advises a typical duration after consultation.",
-      "locale": "en",
-      "translation_status": null,
-      "source_version": "2026-07",
-      "last_translated_at": null,
-      "translation_reviewed_at": null,
-      "translation_reviewed_by": null,
-      "needs_translation_review": null,
-      "publication_status": "published",
-      "source": "kit"
-    },
-    {
-      "id": "faq-who-can-stay",
-      "question": "Who can stay?",
-      "answer": "Shantara accepts guests aged 18 to 80 with conditions that can be managed through residential naturopathy. Acute or emergency care is outside what we provide.",
-      "locale": "en",
-      "translation_status": null,
-      "source_version": "2026-07",
-      "last_translated_at": null,
-      "translation_reviewed_at": null,
-      "translation_reviewed_by": null,
-      "needs_translation_review": null,
-      "publication_status": "published",
-      "source": "kit"
-    }
-  ],
+  "faq": {
+    "id": "faq",
+    "locale": "en",
+    "status": "published",
+    "source": "kit",
+    "categories": [
+      {
+        "name": "Booking",
+        "faqs": [
+          {
+            "question": "Is my booking confirmed straight away?",
+            "answer": "A stay is confirmed after a preliminary consultation with our doctors. You will be asked to share a health assessment, relevant medical records and your current medication first."
+          },
+          {
+            "question": "How long should I stay?",
+            "answer": "Duration depends on the programme and your assessment. Your doctor advises a typical duration after consultation."
+          }
+        ]
+      },
+      {
+        "name": "Who can stay",
+        "faqs": [
+          {
+            "question": "Who can stay?",
+            "answer": "Shantara accepts guests aged 18 to 80 with conditions that can be managed through residential naturopathy. Acute or emergency care is outside what we provide."
+          }
+        ]
+      },
+      {
+        "name": "During your stay",
+        "faqs": [
+          {
+            "question": "How do meals work?",
+            "answer": "Meals are planned as part of your programme, taking into account your doctor's recommendations and dietary requirements."
+          },
+          {
+            "question": "Can I leave the property during my stay?",
+            "answer": "Guests usually remain at the retreat during the programme so meals, therapies and reviews can follow the plan. Leaving for a medical emergency is arranged with the team."
+          }
+        ]
+      }
+    ]
+  },
   "guestStories": [],
   "events": [],
   "testimonials": []

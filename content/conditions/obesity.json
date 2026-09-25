@@ -2,31 +2,30 @@
   "id": "obesity",
   "slug": "obesity",
   "name": "Obesity",
-  "listing_group": null,
   "summary": "Meals, activity and therapies, with weight and vitals reviewed each morning.",
-  "photo": null,
-  "icp_ids": [
-    "weight_metabolic"
-  ],
-  "related_program_ids": [
-    "weight-management",
-    "diabetes-reversal",
-    "detox"
-  ],
-  "related_therapy_ids": [],
   "clinical": null,
   "faqs": [],
   "medical_reviewer": null,
   "last_medically_reviewed": null,
-  "references": [],
   "locale": "en",
-  "translation_status": null,
-  "source_version": "2026-07",
-  "last_translated_at": null,
-  "translation_reviewed_at": null,
-  "translation_reviewed_by": null,
-  "needs_translation_review": null,
-  "publication_status": "needs_original",
   "source": "kit",
-  "note": "Launch slug for /en/conditions/obesity — not a kit listing card (weight-management need card covers the sample)."
+  "note": "Launch slug for /en/conditions/obesity — not a kit listing card (weight-management need card covers the sample).",
+  "related_pages": [
+    {
+      "type": "programme",
+      "id": "weight-management"
+    },
+    {
+      "type": "programme",
+      "id": "diabetes-reversal"
+    },
+    {
+      "type": "programme",
+      "id": "detox"
+    }
+  ],
+  "category": null,
+  "status": "draft",
+  "featured_image": null,
+  "external_references": []
 }

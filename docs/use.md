@@ -42,7 +42,7 @@ You can also keep the folder at the repo root (as it is here) and treat `SKILL.m
 
 2. Copy or import the components you need from `components/` (`*.jsx` + `*.d.ts`). Read the matching `*.prompt.md` before using a control.
 3. Use `assets/` as shipped — logos, pattern cell, fonts, photos under `assets/photos/` (flat; kit slugs plus descriptive alternates — see that folder’s README). Do not retile `pattern-motif.png`. Do not invent a new icon set without replacing Lucide on purpose.
-4. For entity facts (programmes, rooms, NAP, tariff), load [`content/`](../content/) or generated `content/kit.js`. Do not keep local `PROGRAMMES` / rate arrays in app code.
+4. For entity facts (programmes, rooms, NAP, tariff structure), load [`content/`](../content/) or generated `content/kit.js`. Do not keep local `PROGRAMMES` / rate arrays in app code. This folder holds no rates.
 5. For a marketing page, start from `ui_kits/website/`. Read `ui_kits/website/SKILL.md` before composing pages, forms, or SEO. For an in-stay surface, start from `ui_kits/app/`. Both kits are extrapolations; read their READMEs.
 
 ### Take / leave
@@ -63,7 +63,7 @@ You can also keep the folder at the repo root (as it is here) and treat `SKILL.m
 | Fact | Canonical file | Do not restate in |
 | --- | --- | --- |
 | Entity records (programmes, rooms, conditions, NAP) | [`content/`](../content/) | local arrays in kit screens |
-| Rates | [`content/tariff.json`](../content/tariff.json) + tariff surfaces only | home, programme, enquiry, journal, app, specimens |
+| Rates, currencies, validity dates | The shantara.life Keystatic tariff only. [`content/tariff.json`](../content/tariff.json) holds structure, not rates | anywhere in this design system or its docs |
 | Voice / public language | [`ui_kits/website/skill-copy.md`](../ui_kits/website/skill-copy.md) (browsed as [`docs/website-copy.html`](website-copy.html)) | long essays in `readme.md`; do not keep a second brand-copy card |
 | Colour, type, logo, pattern | the matching `guidelines/*.html` card | |
 | Contrast | [`guidelines/accessibility.html`](../guidelines/accessibility.html) | a11y changelog in `readme.md` |
@@ -89,4 +89,4 @@ You can also keep the folder at the repo root (as it is here) and treat `SKILL.m
 
 It is not an npm package and not a Figma library. There is no install command beyond copying the folder. There is no product codebase behind the kits.
 
-Rates live only on the tariff card, in `content/tariff.json`, and in the handbook tariff section. Do not copy them onto home, programme, enquiry, journal, app or type specimens.
+Rates, currencies and validity dates are not stored in this design system or its documentation. Production rates live only in the shantara.life Keystatic tariff. Everywhere else, link to the tariff page and never quote a rate.

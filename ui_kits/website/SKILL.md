@@ -56,7 +56,7 @@ Primary business action, in visitor-facing language:
 
 Form chrome may use **Send your details**. Make the action easy without becoming aggressive, cluttered, or sales-heavy. Do not invent parallel primary CTAs. Do not use **Enquire about a stay** or **Request a consultation** as visitor-facing primary CTAs.
 
-Rates, currency amounts, “from …” figures, and stay totals appear **only** on dedicated tariff surfaces (`TariffScreen.js`, brand-deck tariff slides, handbook tariff). Program, condition, enquiry, and home pages **link** to the tariff card. Do not invent prices.
+Rates, currency amounts, “from …” figures, and stay totals appear **only** on the production tariff page, read from the Keystatic tariff. This design system and its documentation hold no rates, currencies or validity dates — the kit tariff screen and brand-deck tariff slides show the structure with “—”. Program, condition, enquiry, and home pages **link** to the tariff page. Do not invent prices.
 
 ## 2. Operating principles
 
@@ -286,7 +286,7 @@ These files are **previews** of the skill, not the live site:
 | `screens/ArticleScreen.js` | article | `#/en/insights/<slug>`: `ArticleHeader`, `Prose`, `TableOfContents`, `ReviewedBy`, `ShareBar`, `AuthorCard`, `RelatedArticles` (kit body is a marked sample) |
 | `screens/ContactScreen.js` | contact | `HeroStatement` + NAP (Shantara Naturopathy Retreat), distances, call / WhatsApp / email |
 | `screens/ConsultationScreen.js` | consultation | One short form |
-| `screens/TariffScreen.js` | pricing surface | **Only** place rates appear |
+| `screens/TariffScreen.js` | pricing surface | Structure only: currency selector, room × occupancy table, supplements, payment terms and cancellation, with “—” in place of every rate |
 | `chrome/SiteChrome.js` | chrome | Header overlays every page: logo, five centred nav items, LanguageSelector, phone dropdown, Book a Consultation; menu sheet (with the LanguageSelector) under 1000px; compact wordmark / frangipani mark at narrow or zoomed widths. Footer: Pine Tree ground, rosette strip on top, brand column (NAP) + three link columns (accordions under 760px), bottom bar with text size. Also `PageSlot` (`data-ds-id="page/<view>/<slot>"` on every section) |
 | `chrome/Photo.js` | chrome | Adapter over `Media` for `assets/photos/*` |
 
@@ -344,11 +344,7 @@ It always renders (globe + current code + chevron); planned locales that are not
 
 Page / entity → source record → localized records per locale. Same section composition. Only English is populated initially.
 
-Localized metadata (simplest fields the future CMS should carry):
-
-`locale`, `translation_status` (`draft` / `translated` / `review_required` / `published`), `source_version`, `last_translated_at`, `translation_reviewed_at`, `translation_reviewed_by`, `needs_translation_review`.
-
-When English changes materially, bump `source_version` so translations can be marked stale. A translation publishes independently — it must not block English.
+Each language is a folder of files with the same filenames as English, holding only the translatable text. The only publishing field is `status` (`draft` / `published`). There are no translation review fields: the build warns when the English file was committed after its translation. A translation publishes independently — it must not block English. Full model: [skill-content.md](skill-content.md#languages).
 
 **Medical workflow (documented, not a workflow engine):** English source → clinical/medical review of the source → translation → language review → medical terminology / localized clinical review where required → localized publication.
 

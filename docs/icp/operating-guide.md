@@ -194,7 +194,7 @@ Capability currently illustrated in source material includes: metabolic health, 
 
 **The ICP system must not be limited by the current catalogue.** If Shantara adds a programme, map it to ICPs in section M and in [Need states and programme areas](messaging-map.md#section-5). If it withdraws one, the ICP remains.
 
-Programme and condition entities in the CMS should **reference ICP IDs**, not define them. Suggested optional fields on Program and Condition records: `icp_ids[]` (from the taxonomy above). Do not rename ICPs to match slugs.
+Content records in the CMS do **not** carry ICP IDs. Map a lead to an ICP in CRM from the page it came from (for example, a condition page). Do not rename ICPs to match slugs.
 
 The programme name **Diabetes Reversal** is approved for public catalogue use. Do not write that it guarantees reversal, cures diabetes, or invents clinical rates. The name is not a numeric promise.
 
@@ -226,7 +226,7 @@ Canonical ICP definitions live **only** here (`docs/icp.md`, browsed as `docs/ic
 | [Property handbook](handbook.html) | Clinical eligibility, programme catalogue, house rules. Admission lists are not ICPs. |
 | [Website skill](website-skill.html) | How to build the public site. Page-job “audience” should cite an ICP ID. |
 | [Information architecture](website-ia.html) | Conditions and programmes as visitor IA, not as ICP architecture. |
-| [Content and leads](website-content.html) | CMS entities, E-E-A-T, one form. Optional `icp_ids[]` on entities. |
+| [Content and leads](website-content.html) | CMS entities, E-E-A-T, one form. No ICP IDs on entities. |
 | [Voice & copywriting](website-copy.html) | Public voice, register, taglines, headings, and CTAs. Internal ICP language stays out. |
 | [Technical](website-technical.html) | Analytics privacy; SEO. Taxonomy above does not add health pixels. |
 | [QA](website-qa.html) | Page job includes audience; map it to an ICP when relevant. |

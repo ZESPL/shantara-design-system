@@ -4,7 +4,9 @@ This handbook exists so that any team member, regardless of department, can conf
 
 Read [Quick Reference](#section-1) first. It answers between 80 and 90 percent of ordinary guest questions on its own. Clinical and admission knowledge comes next, followed by property details, then policies, then guest-facing communication and internal contacts.
 
-[TO CONFIRM] Sections marked like this need input from Azhar, Dr. P.A. Kareem, or Dr. Bahja Janu before this handbook is finalised and printed. Two figures in the source documents conflict and are flagged where they appear: the built-up area (56,000+ sq. ft. on the website versus 60,000 sq. ft. in the official tariff sheet — this handbook uses the tariff sheet figure) and check-in/check-out timing (1:00 PM / 11:00 AM in the tariff sheet versus 2:00 PM / 12:00 PM in the House Rules document — this handbook uses the House Rules figure as the more recent document).
+[TO CONFIRM] Sections marked like this need input from Azhar, Dr. P.A. Kareem, or Dr. Bahja Janu before this handbook is finalised and printed. One figure in the source documents conflicts: the built-up area (56,000+ sq. ft. on the website versus 60,000 sq. ft. in property documents). This handbook uses 60,000 sq. ft.
+
+This handbook is evergreen. It does not carry rates, currencies or validity dates. Rates are published only on the current tariff.
 
 ## 1. Quick Reference
 
@@ -397,19 +399,17 @@ Every guest in a medical programme is under a doctor's direct care. Staff should
 | Number of rooms | 52, across 5 categories |
 | Number of floors | 6 |
 
-### Room types & rates
+### Room types
 
-Rooms are designed with restraint, so comfort feels subtle rather than excessive, in order to support rest. Some rooms in each category open to mountain views. Tariffs below are per night and valid till 31 December 2026.
+Rooms are designed with restraint, so comfort feels subtle rather than excessive, in order to support rest. Some rooms in each category open to mountain views. Every category can be booked for single or double occupancy. Rates are on the current tariff; this handbook does not quote them.
 
-[TO CONFIRM] Confirm before quoting rates to guests, as these may change.
-
-| Category | Specification | Single Occ. (₹/night) | Double Occ. (₹/night) |
-| --- | --- | --- | --- |
-| Executive Suite | 530 sq.ft, with balcony | 22,000 | 28,000 |
-| Junior Suite | 420 sq.ft | 20,000 | 26,000 |
-| Premium Room | 460 sq.ft, with balcony | 18,000 | 24,000 |
-| Superior Room | 300 sq.ft, with balcony | 16,000 | 22,000 |
-| Standard Room | 260 sq.ft | 12,000 | 18,000 |
+| Category | Specification |
+| --- | --- |
+| Executive Suite | 530 sq. ft. suite with balcony |
+| Junior Suite | 420 sq. ft. suite |
+| Premium Room | 460 sq. ft. room with balcony |
+| Superior Room | 300 sq. ft. room with balcony |
+| Standard Room | 260 sq. ft. room |
 
 **All room categories include**
 
@@ -418,11 +418,23 @@ Rooms are designed with restraint, so comfort feels subtle rather than excessive
 - 10-inch orthopaedic mattress, king or twin options
 - Electronic safe locker, high-speed Wi-Fi, and a 49-inch smart LED TV
 
-**Tariffs include**
+**What a stay includes**
 
-- Daily doctor consultation, naturopathy treatments, yoga therapies, meditation sessions, and diet therapy
-- Accommodation in the guest's preferred category, and all applicable taxes
-- Airport and railway transfers, wellness attire, and daily laundry of that attire (see [section 12](#section-12))
+- Accommodation
+- The programme and treatments prescribed by the doctor
+- Daily doctor consultation
+- Diagnostic tests, as advised by the doctor
+- All therapeutic naturopathy meals
+- Entertainment and activities
+- Two complimentary recreational therapies per week
+- Airport and railway transfers (see [section 12](#section-12))
+- Attire provided for the stay, and its laundry
+
+**What a stay does not include**
+
+- Recreational therapies beyond the two complimentary per week
+- Treatments beyond those prescribed by the doctor
+- Personal laundry
 
 ### Facilities & amenities
 
@@ -460,7 +472,10 @@ In-room dining is available only on a doctor's recommendation.
 
 ### Booking & payment
 
-- Reservations are confirmed with a 30% advance payment; the remaining 70% is due 30 days before arrival, subject to room availability.
+- Booked 31 days or more before arrival: 30% at confirmation, and the remaining 70% is due 30 days before arrival.
+- Booked 30 days or less before arrival: 100% at confirmation.
+- Reservations are subject to room availability.
+- Guests can be quoted and pay in any currency shown on the current tariff.
 - Accepted payment methods: bank transfer, UPI, and credit/debit cards.
 - Room assignment is based on availability at the time of booking; preferences are accommodated wherever possible.
 
@@ -473,7 +488,6 @@ In-room dining is available only on a doctor's recommendation.
 ### Check-in & check-out
 
 - Check-in: 2:00 PM. Check-out: 12:00 PM. Guests are asked to have lunch before departure.
-- Early check-in or late check-out, up to 4 hours, can be provided complimentary based on room availability. Beyond 4 hours, 25% of the per-night rate is charged.
 
 ### Airport & railway transfer
 
@@ -494,8 +508,8 @@ These policies protect the clinical integrity of naturopathy treatment and creat
 
 - More than 30 days before arrival: 100% refund
 - 21 to 30 days before arrival: 50% refund
-- 20 days or less before arrival: no refund
-- No refunds for no-shows, early departures, or disciplinary discharges
+- 20 days or less before arrival, no-show, or early departure: no refund
+- No refunds for disciplinary discharges
 
 ### Date changes
 
@@ -508,12 +522,14 @@ Most programmes are designed around a week or longer so naturopathy protocols ha
 ### Non-participating companions
 
 - A companion may accompany a guest who needs a caretaker, if this is requested and approved during the preliminary consultation.
-- Companions are charged 25% of the per-night program rate, covering accommodation and meals aligned with retreat guidelines.
+- A companion sharing the guest's room pays the nightly companion supplement shown on the current tariff. It covers meals aligned with retreat guidelines.
+- A companion staying in a separate room is charged separately. The team confirms the amount.
+- An extra bed or mattress is charged per bed, per night, as shown on the current tariff.
 - Companions must follow all retreat policies, including diet, movement restrictions, prohibited items, attire, and conduct. Violation results in discharge without refund, and companions may not bring outside food or leave the premises.
 
 ### Helper policy
 
-If a guest's condition requires continuous assistance, Shantara assigns a qualified nurse for 24/7 support at ₹2,000 per day. This must be requested during the preliminary consultation and is subject to the doctor's recommendation.
+If a guest's condition requires continuous assistance, Shantara assigns a qualified nurse for 24/7 support for a daily charge that the team confirms. This must be requested during the preliminary consultation and is subject to the doctor's recommendation.
 
 ### Prohibited items
 

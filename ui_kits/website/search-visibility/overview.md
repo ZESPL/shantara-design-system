@@ -27,7 +27,7 @@ Recorded on 25 September 2026. The rules below already follow them.
 | Organisation schema type | `MedicalClinic`. `content/site.json` and the kit's schema helper in `locales.js` updated to match. |
 | Lodging companion type | Still open in [skill-technical.md](../skill-technical.md). Emit `MedicalClinic` only until it is decided. |
 | AI crawlers, including training crawlers (GPTBot, ClaudeBot, Google-Extended, CCBot) | Allowed. robots.txt has no named groups that block any AI crawler. |
-| Tax on rates | Tariff rates include GST. Each rate is labelled "incl. GST". |
+| Tax on rates | Tariff rates include all taxes. The page says so once; no tax is broken out. |
 | OpenPanel address | `https://openpanel.zescloud.net/`. [skill-stack.md](../skill-stack.md) updated. |
 | Google Business Profile | Shantara has its own profile, linked only to Shantara. It is not merged with, or managed as part of, the Hygiene Nature Cure Hospital listing. |
 | Page size | Every page's HTML stays below 2 MB. |
@@ -52,7 +52,7 @@ Recorded on 25 September 2026. The rules below already follow them.
 | [Migration from the current site (MIG)](migration.md) | MIG-01 to MIG-05 | Crawl of the old site, legacy redirects, top pages, external listings, post-launch checks |
 | [Pages (PAGE)](pages.md) | PAGE-01 to PAGE-08 | Titles and descriptions, breadcrumbs, orphan pages, internal-only facts, original copy, trust pages |
 | [Medical content (MED)](medical.md) | MED-01 to MED-05 | Doctor review, sources, claim words in metadata, testimonials, honest dates |
-| [Rates (RATE)](rates.md) | RATE-01 to RATE-04 | Rates only on the tariff page, currency and GST labels, same rates for everyone, Offer schema |
+| [Rates (RATE)](rates.md) | RATE-01 to RATE-05 | Rates only on the tariff page, currency labels, same default for everyone, Offer schema, no rate-sheet internals |
 | [Structured data (SCHEMA)](schema.md) | SCHEMA-01 to SCHEMA-15 | JSON-LD graph, `@id` values, MedicalClinic, page nodes, doctors, programmes, articles, FAQ, schema map |
 | [Link previews (SOCIAL)](social.md) | SOCIAL-01 to SOCIAL-04 | Open Graph tags, share images, Twitter card |
 | [Images (IMG)](images.md) | IMG-01 to IMG-06 | Astro Image, hero loading, lazy loading, alt text, filenames, real photography |
@@ -66,6 +66,7 @@ Recorded on 25 September 2026. The rules below already follow them.
 
 ## Change log
 
+- **1.4, 25 September 2026.** Rates: any number of currencies from the production Keystatic tariff, exact amounts, no tax breakdown (RATE-02), same default currency for everyone (RATE-03), new RATE-05 keeps rate-sheet internals off the site. This design system holds no rates.
 - **1.3, 25 September 2026.** Split into one file per section, with this overview holding priorities, owners and decisions. Removed the table that mapped each Zarnik rule. No rule text changed.
 - **1.2, 25 September 2026.** MEAS-06 now gives the Search Console menu path: Settings > Search generative AI, or Settings > AI Controls.
 - **1.1, 25 September 2026.** Recorded the decisions: canonical host `https://shantara.life`, `MedicalClinic`, all AI crawlers allowed, rates include GST, OpenPanel over HTTPS, Shantara's own Google Business Profile, pages below 2 MB, FAQ rich results removed in May 2026, and the Search Console Help source for MEAS-06. Changed CRAWL-04, REN-04 (now P1 with a build check), REDIR-03, RATE-02, RATE-04, SCHEMA-13, SEC-02, AI-06 and MEAS-06.

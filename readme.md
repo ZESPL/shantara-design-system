@@ -11,7 +11,6 @@ Foundations (colour, type, logo, pattern, voice, imagery, print) are **verbatim 
 | Source | Notes |
 | --- | --- |
 | `uploads/Compressed/Frame 1–5.jpg` | The five brand-guideline pages as images. **Read** — logo story, pattern structure, colour palette, tone of voice, typography, logo colourways, print rules, product applications, imagery direction. |
-| `uploads/shantara_property_handbook.docx` | Property Handbook (draft, July 2026). Read in full: programmes, therapies, rooms and tariffs, admission and eligibility, house rules, privacy rules, team, contact. Source of all content in the UI kits. |
 | `uploads/Compressed/TRD*.jpg` (45 frames) | The property shoot. Organised in flat `assets/photos/` (kit slugs + descriptive frames, retina-sized). |
 | `uploads/Primary Colors.jpg`, `colors secondary.jpg`, `accent colors.jpg` | Colour boards. Hexes read from the labels; three mislabels corrected by sampling (below). |
 | `uploads/Shantara - Full logo / Icon / wordmark` (.svg ×4 each, .pdf) | The numbered SVG copies are byte-identical monochrome artwork with no fill declared. Copied in and re-coloured programmatically into four brand tones. |
@@ -25,7 +24,7 @@ Keep these here so they are not buried only in guideline cards:
 
 - **Ocean / Clay / Lavender.** The guideline deck printed `#3B6B7B` under Ocean, Clay **and** Lavender. Sampled from artwork instead: Ocean `#A0B1BB`, Clay `#E0A198`, Lavender `#C6C2D1`.
 - **Icon set.** The brand package ships **no icon set**. Stand-in: **Lucide** (`lucide-static@0.544.0`), flagged for review. Render through `Icon` as CSS masks. **No emoji.**
-- **`[TO CONFIRM]`.** Tariffs, timings, built-up area, and check-in/out conflicts in the handbook stay marked until Azhar / Dr. P.A. Kareem / Dr. Bahja Janu confirm them.
+- **`[TO CONFIRM]`.** Timings and the built-up area in the handbook stay marked until Azhar / Dr. P.A. Kareem / Dr. Bahja Janu confirm them. The handbook is evergreen and carries no rates; [`docs/handbook.txt`](docs/handbook.txt) is the canonical handbook text.
 - **Clear-space and minimum-size numbers** in `guidelines/logo.html` are conventions consistent with the guideline artwork, not quoted brand law.
 
 Voice, colour, type, pattern, motion, corners, cards, imagery, print, and accessibility live on the matching **Brand** and **Foundations** catalog cards. Public website language has one source: `ui_kits/website/skill-copy.md`, browsed as `docs/website-copy.html`. Do not restate those chapters here. Live contrast audit: `guidelines/accessibility.html`.
@@ -75,7 +74,7 @@ Each directory holds `<Name>.jsx`, `<Name>.d.ts` (props contract) and `<Name>.pr
 
 ### UI kits
 
-- `ui_kits/website/` — builder skill plus thin samples. Primary CTA is *Book a Consultation*. Public copy follows `skill-copy.md`. Rates appear only on the tariff card. Locale architecture: `ui_kits/website/locales.js` (root `locales.js` is a shim).
+- `ui_kits/website/` — builder skill plus thin samples. Primary CTA is *Book a Consultation*. Public copy follows `skill-copy.md`. The tariff sample shows structure only; this folder holds no rates. Locale architecture: `ui_kits/website/locales.js` (root `locales.js` is a shim).
 - `ui_kits/app/` — in-stay guest companion, 390×844.
 
 ### Templates
@@ -85,7 +84,7 @@ Each directory holds `<Name>.jsx`, `<Name>.d.ts` (props contract) and `<Name>.pr
 ## Caveats
 
 1. **No product UI or copy deck was supplied.** Both kits are extrapolations. The handbook never mentions a guest app; if there is no app, that kit is a proposal.
-2. **Tariffs and timings are handbook figures marked `[TO CONFIRM]`.** When a rate changes, edit only the dedicated tariff surfaces (`ui_kits/website/screens/TariffScreen.js`, brand-deck tariff slides). Do not scatter the new figure.
+2. **Rates are not stored here.** Rates, currencies and validity dates live only in the shantara.life Keystatic tariff. When a rate changes, nothing in this folder changes. Timings in the handbook stay marked `[TO CONFIRM]` until confirmed.
 3. **Ocean / Clay / Lavender hexes were sampled**, not read, because the source printed the same value for all three.
 4. **Programme durations in the kits are indicative.** Do not present a single night count as a site-wide public policy.
 5. **Journal copy is written for these kits**, not supplied.

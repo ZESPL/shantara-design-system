@@ -64,7 +64,7 @@ function ProgrammeScreen({ onNavigate }) {
     <main>
       <P id="programme/hero">
         <HeroSplit
-          src={window.photoSrc(programme.photo || "water-wall")}
+          src={window.photoSrc((programme.featured_image || {}).src || "water-wall")}
           alt={t("Water wall at the therapy wing")}
           breadcrumbs={<Breadcrumbs items={[{ label: t("Programmes"), href: window.ShantaraLocales ? window.ShantaraLocales.kitHash(window.ShantaraI18n.currentLocaleCode(), "programme") : "#/en/programs" }, t(programme.name)]} />}
           title={t(programme.name)}

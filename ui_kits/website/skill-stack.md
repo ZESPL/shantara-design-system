@@ -58,7 +58,7 @@ This design-system Website Kit (`ui_kits/website/`) remains a composition previe
 1. **Static-first.** Prefer Astro prerender. Hydrate only forms, navigation, gallery, accordion, modal/drawer, analytics, and video — same bar as [skill-technical.md](skill-technical.md).
 2. **No UI kit besides Shantara + Tailwind.** Tokens and components come from this design system. Do not add MUI, Chakra, shadcn-as-product-UI, SmoothUI, or similar.
 3. **React is exceptional.** Ordinary sections and chrome stay Astro/HTML. Introduce a React island only when interactivity cannot be done with Astro + light client script.
-4. **Content path.** Keystatic → Markdoc for long-form → Astro Content Collections for typed entities. Keep entity facts aligned with [`content/`](../../content/) in this repo where records already exist.
+4. **Content path.** Keystatic → Markdoc for long-form → Astro Content Collections for typed entities. The Keystatic singletons, collections, shared fields and language folders are defined in [skill-content.md](skill-content.md#cms--content-model). No page builder. Keep entity facts aligned with [`content/`](../../content/) in this repo where records already exist. Rates are entered only in the production Keystatic tariff.
 5. **One lead path.** Web3Forms for consultation/contact. No custom forms API, no database for leads.
 6. **One analytics path.** OpenPanel + Google Tag via one internal `track()`. Event inventory stays in [skill-technical.md](skill-technical.md).
 7. **SEO stays in code.** Metadata, canonicals, hreflang, robots, redirects, JSON-LD, and `@astrojs/sitemap` are developer-owned. OpenSEO and DataForSEO inform work; they do not replace implementation.
