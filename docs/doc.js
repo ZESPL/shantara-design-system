@@ -169,6 +169,7 @@
     "skill-content.md": "website-content.html",
     "skill-copy.md": "website-copy.html",
     "skill-technical.md": "website-technical.html",
+    "skill-search-visibility.md": "website-search-visibility.html",
     "skill-qa.md": "website-qa.html",
     "SKILL.md": "website-skill.html",
     "README.md": "website-kit.html",
