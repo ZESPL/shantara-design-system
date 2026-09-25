@@ -2,7 +2,7 @@
 
 Back to the [website skill](SKILL.md).
 
-Version 1.1. Updated 25 September 2026. Adapted from the Zarnik Marketplace checklist "Search and AI Visibility" version 6.2 (frozen 24 September 2026), with every Zarnik rule reviewed for **shantara.life**.
+Version 1.2. Updated 25 September 2026. Adapted from the Zarnik Marketplace checklist "Search and AI Visibility" version 6.2 (frozen 24 September 2026), with every Zarnik rule reviewed for **shantara.life**.
 
 This is the checkable rule list for search engines, AI answer engines (ChatGPT, Perplexity, Claude, Gemini, Google AI Overviews), AI browsing agents and accessibility on Shantara's public website. The reasoning and the locked decisions stay in [skill-technical.md](skill-technical.md), [skill-ia.md](skill-ia.md), [SKILL.md §15](SKILL.md#section-15) and [skill-stack.md](skill-stack.md). This file turns them into rules with IDs and checks. It does not replace them.
 
@@ -270,7 +270,7 @@ Google says there is no separate trick for AI answers: pages first need to be in
 - **MEAS-03 (P0) [Build]** Personal and health data never appears in URLs, page titles, analytics or JSON-LD. The form posts its data. The confirmation URL carries no field values. **Check:** submit a test form with a unique word in the notes field. That word appears in no URL and no analytics request in the network panel.
 - **MEAS-04 (P1) [Ops]** Referrals from chatgpt.com, perplexity.ai, gemini.google.com, copilot.microsoft.com and claude.ai are grouped as their own "AI assistants" channel in GA4 and as a saved referrer filter in OpenPanel. **Check:** the channel report shows "AI assistants".
 - **MEAS-05 (P1) [Ops]** Measure AI visibility mainly with data: Search Console, Bing Webmaster Tools, OpenSEO and the "AI assistants" channel. Once a month, also ask ChatGPT, Perplexity and Google AI Mode Shantara's core guest questions once each, for each market (India, UAE, UK). Record whether Shantara is cited, which URL, and which competitors appear. **Check:** a monthly note combining the numbers and the manual check.
-- **MEAS-06 (P0) [Ops]** In Search Console, set "Search generative AI" to Include, so pages can appear in AI Overviews and AI Mode. Google documents the setting in [Search Console Help](https://support.google.com/webmasters/answer/16908024?hl=en). **Check:** a settings screenshot saved at launch.
+- **MEAS-06 (P0) [Ops]** In Search Console, open Settings > Search generative AI (in some accounts, Settings > AI Controls) and set it to Include. This setting controls whether Shantara's pages can appear in Google's AI-powered features, such as AI Overviews and AI Mode. Google documents it in [Search Console Help](https://support.google.com/webmasters/answer/16908024?hl=en). **Check:** a settings screenshot saved at launch.
 - **MEAS-07 (P1) [Ops]** Failures alert a person: failed Netlify deploys, IndexNow errors, and form delivery. A monthly test submission confirms Web3Forms still delivers to the inbox. **Check:** force a test deploy to fail. An alert arrives.
 
 ## 20. Do not do this
@@ -390,5 +390,6 @@ New at Shantara, with no Zarnik source: LANG-01 to LANG-05, MED-01 to MED-05 (pa
 
 ## Change log
 
+- **1.2, 25 September 2026.** MEAS-06 now gives the Search Console menu path: Settings > Search generative AI, or Settings > AI Controls.
 - **1.1, 25 September 2026.** Recorded the decisions: canonical host `https://shantara.life`, `MedicalClinic`, all AI crawlers allowed, rates include GST, OpenPanel over HTTPS, Shantara's own Google Business Profile, pages below 2 MB, FAQ rich results removed in May 2026, and the Search Console Help source for MEAS-06. Changed CRAWL-04, REN-04 (now P1 with a build check), REDIR-03, RATE-02, RATE-04, SCHEMA-13, SEC-02, AI-06 and MEAS-06.
 - **1.0, 25 September 2026.** First version. Adapted from Zarnik "Search and AI Visibility" version 6.2.
