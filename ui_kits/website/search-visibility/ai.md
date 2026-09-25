@@ -1,0 +1,17 @@
+# 18. AI answers, AI agents and local presence (AI)
+
+Part of the [search and AI visibility rules](overview.md). Priorities, owner tags and recorded decisions are in the overview.
+
+Google says there is no separate trick for AI answers: pages first need to be indexed and good in normal search. These rules make pages easier to quote and Shantara easier to recognise as one entity.
+
+- **AI-01 (P1) [Content]** Guides and FAQ answers start with a direct one- or two-sentence answer. Each section under a question heading makes sense if quoted alone. **Check:** read each section out of context. It still answers its heading.
+- **AI-02 (P1) [Content]** Headings are written as the plain questions guests ask, for example "Can I continue my medication during a stay?". **Check:** content review.
+- **AI-03 (P1) [Content]** Pages give specific, checkable facts (programme durations, what is included, who the doctors are, distance from Calicut airport, meals) instead of general claims, using only verified facts. **Check:** content review against `content/` and the handbook.
+- **AI-04 (P1) [Content]** Each guide covers its topic, including the follow-up questions a guest needs answered before deciding. AI search tools split one question into several related searches. The brief lists those questions before writing. Do not pad a guide to reach a question count. **Check:** each guide brief lists its related questions.
+- **AI-05 (P0) [Ops]** Name, address, phone and email are identical everywhere Shantara controls: the website, Google Business Profile, every social profile and every directory listing. Use "Shantara Naturopathy Retreat", +91 9553 700 100 and heal@shantara.life. Those profiles are also the JSON-LD `sameAs` list. **Check:** a quarterly review of every listing.
+- **AI-06 (P1) [Ops]** Shantara has its own claimed and verified Google Business Profile, linked only to Shantara. It is never merged with, or managed as part of, the Hygiene Nature Cure Hospital listing. Its category fits a medical clinic, its website link is `https://shantara.life/en/`, and its photos are real. **Check:** Google Business Profile shows the profile as verified, with Shantara's name, phone, address and website link.
+- **AI-07 (P1) [Build]** AI browsing agents can use the site: the ACC rules cover it. The consultation form also submits as a plain HTML form POST when JavaScript fails. **Check:** submit the form with JavaScript turned off. The submission arrives and the visitor sees a confirmation.
+- **AI-08 (P2) [Build]** `llms.txt` is optional. Google Search ignores it and no major AI search engine has confirmed using it. Add it only because it is cheap. **Check:** none needed.
+- **AI-09 (P2) [Build]** Do not build AI booking integrations (Universal Commerce Protocol, WebMCP, agent checkout). Shantara takes consultations, not online bookings. **Check:** none needed.
+- **AI-10 (P2) [Content]** Publish original first-party material others can cite: a sample daily schedule, menus, therapy explanations by Shantara's doctors, recordings of doctor talks. Any outcome statistic goes through [health claims](../copy/health-claims-and-compliance.md) first. **Check:** each piece is published and linked from the relevant pages.
+- **AI-11 (P2) [Ops]** Build real mentions of Shantara on trusted sites: media coverage, doctor talks and events, the Hygiene Nature Cure Hospital history, and credible health and travel publications. No paid link schemes. This builds authority over time. It is not a formula for AI recommendations. **Check:** a quarterly review.
