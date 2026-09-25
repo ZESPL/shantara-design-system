@@ -19,7 +19,7 @@ window.ShantaraContent = {
       "+91 9553 700 100"
     ],
     "email": "heal@shantara.life",
-    "website": "www.shantara.life",
+    "website": "https://shantara.life",
     "place": {
       "locality": "Kozhikode (Calicut)",
       "region": "Kerala",
@@ -44,7 +44,7 @@ window.ShantaraContent = {
       "notes"
     ],
     "schema_defaults": {
-      "type": "LocalBusiness",
+      "type": "MedicalClinic",
       "name": "Shantara Naturopathy Retreat"
     },
     "stats": [

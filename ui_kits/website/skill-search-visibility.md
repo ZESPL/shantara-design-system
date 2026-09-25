@@ -2,7 +2,7 @@
 
 Back to the [website skill](SKILL.md).
 
-Version 1.0. Written 25 September 2026. Adapted from the Zarnik Marketplace checklist "Search and AI Visibility" version 6.2 (frozen 24 September 2026), with every Zarnik rule reviewed for **shantara.life**.
+Version 1.1. Updated 25 September 2026. Adapted from the Zarnik Marketplace checklist "Search and AI Visibility" version 6.2 (frozen 24 September 2026), with every Zarnik rule reviewed for **shantara.life**.
 
 This is the checkable rule list for search engines, AI answer engines (ChatGPT, Perplexity, Claude, Gemini, Google AI Overviews), AI browsing agents and accessibility on Shantara's public website. The reasoning and the locked decisions stay in [skill-technical.md](skill-technical.md), [skill-ia.md](skill-ia.md), [SKILL.md §15](SKILL.md#section-15) and [skill-stack.md](skill-stack.md). This file turns them into rules with IDs and checks. It does not replace them.
 
@@ -16,19 +16,27 @@ This is the checkable rule list for search engines, AI answer engines (ChatGPT, 
 - Shantara has no backend, no shop, no cart, no site search and no product feed. Zarnik rules that only exist because of those were dropped. The [rule map](#where-every-zarnik-rule-went) at the end lists every Zarnik rule and where it went.
 - Change a rule only when a real problem on the site, or a documented change by Google, Bing or a browser, requires it. Record every change in the [change log](#change-log).
 
-## Open decisions
+## Decisions
 
-These block a few rules. Each needs one owner decision, then the rule text stays as written.
+Recorded on 25 September 2026. The rules below already follow them.
 
-| Decision | Why it matters | Recommendation |
-| --- | --- | --- |
-| Canonical host: `https://shantara.life` or `https://www.shantara.life` | [skill-stack.md](skill-stack.md) says `https://shantara.life`. `content/site.json` says `www.shantara.life`. Canonicals, sitemaps, hreflang, schema `@id` values and redirects all depend on one host. | Use `https://shantara.life`, which matches the stack file and the email domain. Update `content/site.json` in the same change. |
-| Organisation schema type | `content/site.json` sets `schema_defaults.type` to `LocalBusiness`. [skill-technical.md](skill-technical.md) says `MedicalClinic`. | Use `MedicalClinic`. It is a subtype of `LocalBusiness`, so nothing is lost. Update `content/site.json`. |
-| Lodging companion type | [skill-technical.md](skill-technical.md) leaves `Hotel` versus other lodging types open. | Emit `MedicalClinic` only until this is decided. Do not create a second Organisation. |
-| Training crawlers (GPTBot, ClaudeBot, Google-Extended, CCBot) | Blocking them does not remove Shantara from AI search, but it can reduce what AI models know about Shantara. | Allow them. Record the decision here either way. |
-| Tax wording on rates | The handbook tariffs are still marked `[TO CONFIRM]`, including whether GST is included. | Confirm before the tariff page publishes. |
-| OpenPanel address | [skill-stack.md](skill-stack.md) lists `http://openpanel.zescloud.net/`. Browsers block an `http://` script on an `https://` page. | Serve OpenPanel over HTTPS before launch. |
-| Former web addresses | Migration needs the full list of old domains (for example any Welnez domain) and a decision on whether any Hygiene Nature Cure Hospital pages move. | Owner confirms the list before MIG-01 starts. |
+| Decision | Outcome |
+| --- | --- |
+| Canonical host | `https://shantara.life`. Every other host and protocol 301s to it. `content/site.json` updated to match. |
+| Organisation schema type | `MedicalClinic`. `content/site.json` and the kit's schema helper in `locales.js` updated to match. |
+| Lodging companion type | Still open in [skill-technical.md](skill-technical.md). Emit `MedicalClinic` only until it is decided. |
+| AI crawlers, including training crawlers (GPTBot, ClaudeBot, Google-Extended, CCBot) | Allowed. robots.txt has no named groups that block any AI crawler. |
+| Tax on rates | Tariff rates include GST. Each rate is labelled "incl. GST". |
+| OpenPanel address | `https://openpanel.zescloud.net/`. [skill-stack.md](skill-stack.md) updated. |
+| Google Business Profile | Shantara has its own profile, linked only to Shantara. It is not merged with, or managed as part of, the Hygiene Nature Cure Hospital listing. |
+| Page size | Every page's HTML stays below 2 MB. |
+| FAQ rich results | Google removed FAQ rich results in May 2026. `FAQPage` markup brings no Google benefit. |
+
+### Still open
+
+| Decision | Why it matters |
+| --- | --- |
+| Former web addresses | Migration (MIG-01) needs the full list of old domains, for example any Welnez domain, and a decision on whether any Hygiene Nature Cure Hospital pages move. |
 
 ## 1. One content truth (DATA)
 
@@ -43,7 +51,7 @@ These block a few rules. Each needs one owner decision, then the rule text stays
 - **REN-01 (P0) [Build]** Every public page is prerendered by Astro. Text inside accordions, tabs and galleries is in the first HTML response (accordions hide content with `aria-hidden` or `inert`, not by leaving it out). React islands are used only where [skill-stack.md](skill-stack.md) allows them. **Check:** load a condition page, a programme page, an article and the tariff page with JavaScript turned off. The H1, body copy, FAQ answers, medical reviewer line and rates (on the tariff page) are all visible.
 - **REN-02 (P0) [Build]** The title, meta description, canonical, robots tag, hreflang links and JSON-LD are in the first HTML response. JavaScript never adds, changes or removes them. **Check:** compare `curl` output with the rendered DOM. The canonical, robots and hreflang tags match.
 - **REN-03 (P1) [Build]** The 404 and 410 pages are static HTML with the site header, a link to `/en/` and the contact options. Google does not render JavaScript on error pages. **Check:** request a URL that never existed. It returns 404 with the message visible and JavaScript turned off.
-- **REN-04 (P2) [Build]** Keep every page's HTML well under 2 MB, the limit the Zarnik checklist records for Googlebot. Watch inline SVG (the rosette) and props serialised into islands. **Check:** measure the uncompressed HTML of the homepage and the longest article.
+- **REN-04 (P1) [Build]** Every page's HTML is below 2 MB uncompressed. Googlebot stops reading after the first 2 MB. Watch inline SVG (the rosette) and props serialised into islands. **Check:** a build step measures every HTML file in `dist/` and fails on any file of 2 MB or more.
 - **REN-05 (P1) [Build]** One `<h1>` per page. Headings follow order (H2 under H1, H3 under H2). Section components take a heading level instead of hard-coding one. **Check:** an automated test on each page type.
 
 ## 3. Crawling and sitemaps (CRAWL)
@@ -60,7 +68,7 @@ Sitemap: https://shantara.life/sitemap-index.xml
 
 - **CRAWL-02 (P0) [Build]** Private or utility-only pages are protected by login or `noindex`, not by robots.txt. The Keystatic admin requires a GitHub login. A separate form confirmation page, if one exists, is `noindex` and left out of the sitemap. **Check:** open `/keystatic` logged out and get a login screen. The confirmation page source shows `noindex`.
 - **CRAWL-03 (P0) [Infra]** Only the production domain is indexable. Deploy previews, branch deploys and the `*.netlify.app` address either 301 to the canonical host or send `X-Robots-Tag: noindex`. **Check:** `curl -I` a deploy preview URL and the site's `netlify.app` address.
-- **CRAWL-04 (P0) [Build]** Every crawler reaches public pages through the `User-agent: *` group, including Googlebot, Bingbot, OAI-SearchBot, ChatGPT-User, PerplexityBot, Claude-SearchBot and Claude-User. Add a named group only for a recorded exception, such as a training crawler (see [Open decisions](#open-decisions)). A crawler with its own named group ignores the `*` group, so every shared rule is repeated inside each named group. **Check:** robots.txt has named groups only for recorded exceptions, and no rule blocks the AI search crawlers listed above.
+- **CRAWL-04 (P0) [Build]** Every crawler reaches public pages through the `User-agent: *` group, including Googlebot, Bingbot, OAI-SearchBot, ChatGPT-User, PerplexityBot, Claude-SearchBot and Claude-User. Training crawlers (GPTBot, ClaudeBot, Google-Extended, CCBot) are allowed too, so robots.txt has no named groups. If a named group is ever added, repeat every shared rule inside it, because a crawler with its own group ignores the `*` group. **Check:** robots.txt contains only the `*` group, and no rule blocks any AI crawler.
 - **CRAWL-05 (P1) [Infra]** robots.txt always returns 200, and no Netlify firewall, bot or rate-limit rule blocks or challenges verified search and AI crawlers on public pages. A 5xx on robots.txt makes crawlers treat the whole site as blocked. **Check:** an uptime monitor on `/robots.txt`, and a review of any Netlify traffic rules in the first week after launch.
 - **CRAWL-06 (P0) [Build]** `@astrojs/sitemap` generates the sitemap at build time. The sitemap index is listed in robots.txt. It lists only published, canonical, indexable URLs that return 200, in enabled locales. It never lists drafts, `noindex` pages, redirected URLs, the confirmation page, the root `/` or URLs in a disabled locale. Alternate-language entries appear only for published equivalents. **Check:** an automated script requests every sitemap URL and fails on any non-200, redirect, query string or `noindex`.
 - **CRAWL-07 (P1) [Build]** Each sitemap `lastmod` comes from the content record's real modified date, not the build time. **Check:** two builds with no content change produce identical `lastmod` values.
@@ -90,13 +98,13 @@ Zarnik has no equivalent section. These rules make [SKILL.md §15](SKILL.md#sect
 
 - **REDIR-01 (P0) [Build]** A slug change adds its redirect in the same commit. Each content record keeps `previous_slugs[]`, and the build generates Netlify redirects from every previous slug straight to the current URL. The build fails if a URL from the last production sitemap disappears without a redirect or a recorded 410. A retired slug can never be reused. **Check:** rename a test entry and the old URL 301s to the new one after deploy. Delete a test page without a decision and the build fails.
 - **REDIR-02 (P0) [Build]** Every redirect is a single 301 to a URL that returns 200. There are no chains or loops, and no redirect has a live page as its source. **Check:** an automated test runs every redirect rule, including the legacy list from MIG-02, and fails on any response that redirects again.
-- **REDIR-03 (P1) [Infra]** Protocol and host clean-up (`http://` to `https://`, the non-canonical host to the canonical host) happen in the same hop as any slug redirect. If Netlify cannot combine the bare-root `/` to `/en/` step into that hop, record the result. **Check:** request `http://www.shantara.life/en/programs/{old-slug}`. One 301 to the final URL.
+- **REDIR-03 (P1) [Infra]** Protocol and host clean-up (`http://` to `https://`, the non-canonical host to the canonical host) happen in the same hop as any slug redirect. If Netlify cannot combine the bare-root `/` to `/en/` step into that hop, record the result. **Check:** request `http://www.shantara.life/en/programs/{old-slug}`. One 301 to `https://shantara.life/en/programs/{current-slug}`.
 - **REDIR-04 (P1) [Build]** Redirects keep the query string, so `utm_` and `gclid` survive. **Check:** request an old slug with `?utm_source=test`. The final URL still has it.
 - **REDIR-05 (P1) [Content]** Retiring a page is a recorded decision. A true replacement (the same programme under a new name, a merged duplicate) gets a 301. With no true replacement the page returns 410. Never redirect a retired page to something only similar, to a listing hub, or to the homepage. Pages are never simply deleted. **Check:** retire a test programme each way once and confirm the status code.
 
 ## 7. Migration from the current site (MIG)
 
-- **MIG-01 (P0) [Ops]** Crawl and export every URL of every site being replaced: the current shantara.life and any former addresses confirmed under [Open decisions](#open-decisions). Include PDFs and images with traffic or backlinks. Add URLs from Search Console (Pages report and 16 months of Performance data) and from OpenSEO backlink data. Do not guess mappings. **Check:** the export is saved in the website repo.
+- **MIG-01 (P0) [Ops]** Crawl and export every URL of every site being replaced: the current shantara.life and any former addresses confirmed under [Still open](#still-open). Include PDFs and images with traffic or backlinks. Add URLs from Search Console (Pages report and 16 months of Performance data) and from OpenSEO backlink data. Do not guess mappings. **Check:** the export is saved in the website repo.
 - **MIG-02 (P0) [Build]** Every old URL is loaded as a redirect to its true equivalent page, or returns 410 when none exists. Do not redirect to the homepage, a listing hub or a merely similar page. **Check:** every URL in the export has a redirect or a recorded 410 decision.
 - **MIG-03 (P0) [Content]** The top 20 old pages by Search Console clicks over the last 12 months keep their topic, main facts and answers on the new URL. **Check:** a side-by-side review before launch.
 - **MIG-04 (P0) [Ops]** On launch day, update the website link on every listing Shantara controls (Google Business Profile, social profiles, directories) to the new URL. **Check:** a dated checklist of listings with their new links.
@@ -128,9 +136,9 @@ Zarnik has no equivalent section. Shantara publishes health information, so Goog
 Adapted from Zarnik's price rules. Rates appear only on tariff surfaces ([SKILL.md §1](SKILL.md)).
 
 - **RATE-01 (P0) [Build]** Rates appear only on the tariff page. Every other page links to it. **Check:** a build step searches `dist/` outside the tariff page for `₹`, `INR` and rate figures, and fails on a match.
-- **RATE-02 (P0) [Content]** Each rate states its currency (ISO code), its unit (per night, per person or per stay, and the room category) and whether taxes are included. It is visible server-rendered text, never an image, tooltip or something that needs a click. A figure still marked `[TO CONFIRM]` is not published. **Check:** `curl` the tariff page. Every rate, currency and unit appears as text.
+- **RATE-02 (P0) [Content]** Each rate states its currency (ISO code), its unit (per night, per person or per stay, and the room category) and the label "incl. GST", because every tariff rate includes GST. It is visible server-rendered text, never an image, tooltip or something that needs a click. A figure still marked `[TO CONFIRM]` is not published. **Check:** `curl` the tariff page. Every rate, currency, unit and "incl. GST" label appears as text.
 - **RATE-03 (P0) [Build]** Every visitor sees the same rates. They never change with IP address, locale, cookie or device. Locale is not currency. **Check:** load the tariff page from two countries and two devices. Same figures.
-- **RATE-04 (P1) [Build]** If the tariff page emits JSON-LD `Offer` nodes, each `price` is a plain number that equals the visible figure, with an ISO `priceCurrency`. No other page emits `Offer`. Visible figures carry a `data-rate` attribute so tests can read them. **Check:** an automated test compares each visible `data-rate` value with the JSON-LD price.
+- **RATE-04 (P1) [Build]** If the tariff page emits JSON-LD `Offer` nodes, each `price` is a plain number that equals the visible figure, with an ISO `priceCurrency` and a `priceSpecification` with `valueAddedTaxIncluded: true`. No other page emits `Offer`. Visible figures carry a `data-rate` attribute so tests can read them. **Check:** an automated test compares each visible `data-rate` value with the JSON-LD price.
 
 ## 11. Structured data (SCHEMA)
 
@@ -156,7 +164,7 @@ https://shantara.life/#condition-{internal-id}
 - **SCHEMA-10 (P1) [Build]** Programme pages use `Service` with name, description and `provider` pointing to the organisation. No `offers` on programme pages (RATE-04). **Check:** Schema Markup Validator on one programme page.
 - **SCHEMA-11 (P1) [Build]** Listing pages (`/en/conditions`, `/en/programs`, `/en/insights`) use `CollectionPage` with an `ItemList` of the URLs shown. Condition and programme nodes live only on their own pages. **Check:** Schema Markup Validator shows no `Service` or `MedicalCondition` nodes on listing pages.
 - **SCHEMA-12 (P1) [Build]** Articles use `Article` or `BlogPosting` with headline, image, datePublished, dateModified, `author` pointing to a doctor's or writer's Person `@id`, and `publisher` pointing to the organisation. Medical articles also follow SCHEMA-08. **Check:** Rich Results Test.
-- **SCHEMA-13 (P2) [Build]** `FAQPage` markup is optional and used only when the questions and answers are visible on the page. According to the Zarnik checklist, Google retired FAQ rich results for all sites in May 2026, so the markup brings no Google benefit. Never use `HowTo`. **Check:** none needed.
+- **SCHEMA-13 (P2) [Build]** `FAQPage` markup is optional and used only when the questions and answers are visible on the page. Google removed FAQ rich results in May 2026, so the markup brings no Google benefit. Never use `HowTo`. **Check:** none needed.
 - **SCHEMA-14 (P1) [Build]** No empty values: omit an optional property instead of sending an empty string or "N/A". URLs are absolute, dates are ISO 8601, and the phone number is `+919553700100`. **Check:** an automated JSON-LD lint in CI.
 - **SCHEMA-15 (P1) [Build]** Only add schema that states something true and useful, or that a known consumer (Google, Bing, AI tools) reads. Do not chase schema coverage. **Check:** every type in the generator is listed in the map below.
 
@@ -235,7 +243,7 @@ The target is WCAG 2.2 AA. The component contract is `guidelines/accessibility.h
 ## 17. Security and hosts (SEC)
 
 - **SEC-01 (P0) [Infra]** HTTPS everywhere. Both `http://` and the non-canonical host 301 to the canonical host in one hop (REDIR-03). **Check:** request the four variants of the homepage. All land on one URL.
-- **SEC-02 (P0) [Infra]** The HSTS header is set and there is no mixed content, which includes loading OpenPanel over HTTPS (see [Open decisions](#open-decisions)). **Check:** response headers and the browser console on a page with analytics running.
+- **SEC-02 (P0) [Infra]** The HSTS header is set and there is no mixed content, which includes loading OpenPanel from `https://openpanel.zescloud.net/`. **Check:** response headers and the browser console on a page with analytics running.
 - **SEC-03 (P0) [Infra]** No exposed `.env`, `.git`, Keystatic secrets or raw uploads. **Check:** request `/.env` and `/.git/config`. Both return 404.
 - **SEC-04 (P1) [Infra]** A Content-Security-Policy header allows only the site itself, OpenPanel, Google Tag and the Web3Forms endpoint. **Check:** response headers, and the browser console shows no CSP errors during a test consultation.
 
@@ -248,7 +256,7 @@ Google says there is no separate trick for AI answers: pages first need to be in
 - **AI-03 (P1) [Content]** Pages give specific, checkable facts (programme durations, what is included, who the doctors are, distance from Calicut airport, meals) instead of general claims, using only verified facts. **Check:** content review against `content/` and the handbook.
 - **AI-04 (P1) [Content]** Each guide covers its topic, including the follow-up questions a guest needs answered before deciding. AI search tools split one question into several related searches. The brief lists those questions before writing. Do not pad a guide to reach a question count. **Check:** each guide brief lists its related questions.
 - **AI-05 (P0) [Ops]** Name, address, phone and email are identical everywhere Shantara controls: the website, Google Business Profile, every social profile and every directory listing. Use "Shantara Naturopathy Retreat", +91 9553 700 100 and heal@shantara.life. Those profiles are also the JSON-LD `sameAs` list. **Check:** a quarterly review of every listing.
-- **AI-06 (P1) [Ops]** Shantara has its own claimed and verified Google Business Profile. Its category matches the organisation type decision, its website link is `https://shantara.life/en/`, and its photos are real. The relationship to any Hygiene Nature Cure Hospital listing is decided and written down. The two are never merged by accident. **Check:** Google Business Profile shows verified, and the decision is recorded here.
+- **AI-06 (P1) [Ops]** Shantara has its own claimed and verified Google Business Profile, linked only to Shantara. It is never merged with, or managed as part of, the Hygiene Nature Cure Hospital listing. Its category fits a medical clinic, its website link is `https://shantara.life/en/`, and its photos are real. **Check:** Google Business Profile shows the profile as verified, with Shantara's name, phone, address and website link.
 - **AI-07 (P1) [Build]** AI browsing agents can use the site: the ACC rules cover it. The consultation form also submits as a plain HTML form POST when JavaScript fails. **Check:** submit the form with JavaScript turned off. The submission arrives and the visitor sees a confirmation.
 - **AI-08 (P2) [Build]** `llms.txt` is optional. Google Search ignores it and no major AI search engine has confirmed using it. Add it only because it is cheap. **Check:** none needed.
 - **AI-09 (P2) [Build]** Do not build AI booking integrations (Universal Commerce Protocol, WebMCP, agent checkout). Shantara takes consultations, not online bookings. **Check:** none needed.
@@ -262,7 +270,7 @@ Google says there is no separate trick for AI answers: pages first need to be in
 - **MEAS-03 (P0) [Build]** Personal and health data never appears in URLs, page titles, analytics or JSON-LD. The form posts its data. The confirmation URL carries no field values. **Check:** submit a test form with a unique word in the notes field. That word appears in no URL and no analytics request in the network panel.
 - **MEAS-04 (P1) [Ops]** Referrals from chatgpt.com, perplexity.ai, gemini.google.com, copilot.microsoft.com and claude.ai are grouped as their own "AI assistants" channel in GA4 and as a saved referrer filter in OpenPanel. **Check:** the channel report shows "AI assistants".
 - **MEAS-05 (P1) [Ops]** Measure AI visibility mainly with data: Search Console, Bing Webmaster Tools, OpenSEO and the "AI assistants" channel. Once a month, also ask ChatGPT, Perplexity and Google AI Mode Shantara's core guest questions once each, for each market (India, UAE, UK). Record whether Shantara is cited, which URL, and which competitors appear. **Check:** a monthly note combining the numbers and the manual check.
-- **MEAS-06 (P0) [Ops]** In Search Console, set "Search generative AI" to Include, so pages can appear in AI Overviews and AI Mode. This setting comes from the Zarnik checklist; confirm its exact name in Search Console. **Check:** a settings screenshot saved at launch.
+- **MEAS-06 (P0) [Ops]** In Search Console, set "Search generative AI" to Include, so pages can appear in AI Overviews and AI Mode. Google documents the setting in [Search Console Help](https://support.google.com/webmasters/answer/16908024?hl=en). **Check:** a settings screenshot saved at launch.
 - **MEAS-07 (P1) [Ops]** Failures alert a person: failed Netlify deploys, IndexNow errors, and form delivery. A monthly test submission confirms Web3Forms still delivers to the inbox. **Check:** force a test deploy to fail. An alert arrives.
 
 ## 20. Do not do this
@@ -300,7 +308,7 @@ Every rule in Zarnik's "Search and AI Visibility" version 6.2 was reviewed. "Dro
 | DATA | DATA-01, DATA-02, DATA-03, DATA-04, DATA-07 | DATA-01, DATA-02, DATA-03, DATA-04 (raised to P0 because of the one-number rule), DATA-05 |
 | DATA | DATA-05 | Covered by the one consultation form and one `track()` abstraction in [SKILL.md §6–7](SKILL.md#section-6) |
 | DATA | DATA-06 | Dropped. No product feeds. |
-| REN | REN-01 to REN-05 | REN-01 to REN-05. REN-04 lowered to P2: a static marketing site has little risk of 2 MB pages. |
+| REN | REN-01 to REN-05 | REN-01 to REN-05. REN-04 now fails the build on any page of 2 MB or more. |
 | CRAWL | CRAWL-01 | CRAWL-01. No cart, account, search or filter URLs to block. |
 | CRAWL | CRAWL-02 | Dropped. No variant parameters. Pagination moved to URL-05. |
 | CRAWL | CRAWL-03, CRAWL-08 | CRAWL-05 |
@@ -382,4 +390,5 @@ New at Shantara, with no Zarnik source: LANG-01 to LANG-05, MED-01 to MED-05 (pa
 
 ## Change log
 
+- **1.1, 25 September 2026.** Recorded the decisions: canonical host `https://shantara.life`, `MedicalClinic`, all AI crawlers allowed, rates include GST, OpenPanel over HTTPS, Shantara's own Google Business Profile, pages below 2 MB, FAQ rich results removed in May 2026, and the Search Console Help source for MEAS-06. Changed CRAWL-04, REN-04 (now P1 with a build check), REDIR-03, RATE-02, RATE-04, SCHEMA-13, SEC-02, AI-06 and MEAS-06.
 - **1.0, 25 September 2026.** First version. Adapted from Zarnik "Search and AI Visibility" version 6.2.
