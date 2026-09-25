@@ -110,7 +110,7 @@ Do not make analytics code part of every visual component if a shared abstractio
 
 Implement SEO as part of the page system, not as manual aftercare.
 
-The checkable version of this section and the schema section, with rule IDs, priorities, owners and checks, is [skill-search-visibility.md](skill-search-visibility.md).
+The checkable version of this section and the schema section, with rule IDs, priorities, owners and checks, is [search-visibility/overview.md](search-visibility/overview.md). Open only the section file your task needs.
 
 ### Every indexable page
 
@@ -217,7 +217,7 @@ In this repo, visible commercial figures exist on the tariff card. Do not emit `
 
 ### Doctors
 
-Use `Person` for an individual doctor. Schema.org defines `Physician` as a medical business type, so do not use it for a person. See SCHEMA-09 in [skill-search-visibility.md](skill-search-visibility.md).
+Use `Person` for an individual doctor. Schema.org defines `Physician` as a medical business type, so do not use it for a person. See SCHEMA-09 in [search-visibility/schema.md](search-visibility/schema.md).
 
 Reference the same doctor entity consistently across pages.
 

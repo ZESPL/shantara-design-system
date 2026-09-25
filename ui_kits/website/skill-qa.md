@@ -36,7 +36,7 @@ For health/condition content ensure: reviewer; date; evidence; safe claims; auth
 
 ### Step 6 — Add SEO metadata
 
-Check: title; description; canonical; H1; OG; internal links. Rule IDs and checks: [skill-search-visibility.md](skill-search-visibility.md).
+Check: title; description; canonical; H1; OG; internal links. Rule IDs and checks: [search-visibility/overview.md](search-visibility/overview.md).
 
 ### Step 7 — Verify schema
 

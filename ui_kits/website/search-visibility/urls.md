@@ -1,0 +1,10 @@
+# 5. URLs (URL)
+
+Part of the [search and AI visibility rules](overview.md). Priorities, owner tags and recorded decisions are in the overview.
+
+- **URL-01 (P0) [Build]** Slugs are short and readable: lowercase letters, numbers and hyphens only, one level under each family (`/en/conditions/{slug}`, `/en/programs/{slug}`, `/en/insights/{slug}`). No category hubs, no ICP segments, no location doorways. Slugs are unique within each family, and page identity is the internal ID, not the slug. **Check:** the build fails on a duplicate slug or a slug with an uppercase letter, underscore or space.
+- **URL-02 (P1) [Build]** `/en/` keeps its trailing slash. Every other path has none. Uppercase and trailing-slash variants 301 to the correct URL in one hop. **Check:** request `/en/Conditions/Diabetes/`. One 301 to `/en/conditions/diabetes`.
+- **URL-03 (P0) [Build]** Every indexable page has a self-referencing canonical with the absolute URL on the canonical host and no query string, so `utm_`, `gclid` and `fbclid` never reach a canonical. **Check:** open a page with `?utm_source=test`. The canonical has no query string.
+- **URL-04 (P0) [Build]** URLs that never existed return a real 404. No page returns 200 with "not found" text, and no unknown URL redirects to the homepage. **Check:** request `/en/conditions/this-does-not-exist`. Status is 404.
+- **URL-05 (P1) [Build]** The Insights listing paginates with real `<a href>` links (`/en/insights/2`, `/en/insights/3`). Each page has a canonical to itself. Page 2 is never canonicalised to page 1. Insights category tabs either link to real category URLs or filter the list already on the page, and never create indexable parameter combinations. **Check:** crawl Insights with JavaScript turned off. Every article is reachable.
+- **URL-06 (P1) [Build]** Internal links, canonicals, hreflang, sitemap and JSON-LD always use the current URL through the central `localePath` helper. Internal links never rely on a redirect. **Check:** a crawl report shows zero internal links that redirect.
