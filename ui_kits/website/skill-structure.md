@@ -65,7 +65,8 @@ src/
   layouts/       BaseLayout.astro, ArticleLayout.astro, PolicyLayout.astro
   pages/
     index.astro                  ← redirects to /en/ (root is never an indexable duplicate)
-    [locale]/                    ← see the route table
+    [locale]/                    ← see the route table; nothing else may sit beside it
+
   lib/
     content.ts        createReader(); typed queries, English fallback for non-text fields, reverse links
     images.ts         stored image path → Astro ImageMetadata; throws on a missing file
@@ -77,7 +78,7 @@ src/
   markdoc/       config.ts (tags and nodes) + Renderer.astro (maps them to editorial/*.astro)
   styles/        global.css: design-system tokens/*.css + Tailwind @theme
 scripts/
-  check-routes.mjs    fails on forbidden route folders
+  check-routes.mjs    fails on pages outside [locale]/ and on forbidden route folders
   check-content.ts    reads every entry with the Keystatic reader, then cross-entry rules
 tests/                Playwright: 4–5 smoke tests only
 ```
@@ -92,7 +93,7 @@ tests/                Playwright: 4–5 smoke tests only
 
 ## Route table
 
-Every URL carries a locale prefix. Until a localisation project starts, only `/en/` exists.
+Every URL carries a locale prefix, and `check-routes.mjs` enforces it ([Build checks](#build-checks)). Until a localisation project starts, only `/en/` exists.
 
 | URL | File under `src/pages/[locale]/` | Data | Schema nodes (plus `WebSite` and the organisation reference) |
 | --- | --- | --- | --- |
@@ -190,6 +191,7 @@ Set these in Netlify. `.env.example` lists the names with no values.
 
 `scripts/check-routes.mjs` and `scripts/check-content.ts` run in GitHub Actions next to Astro Check. `check-content.ts` imports `keystatic.config.ts`, so it runs on Node 24, which runs TypeScript files directly.
 
+- **Locale route invariant.** No public page may sit directly under `src/pages/` except `index.astro`, the root redirect. Every public route lives beneath `src/pages/[locale]/`. Any other `.astro`, `.md` or `.mdx` file, or any other route directory, directly beneath `src/pages/` fails the build.
 - **Route guard.** The build fails if `src/pages/[locale]/` contains a `therapies/`, `rooms/`, `our-doctors/` or `insights/` folder, or if `doctors/` holds anything other than `[slug].astro`. It also fails if `src/content/pages/` or `src/content.config.ts` exists.
 - **Doctor profiles.** `DOCTOR_PROFILES` is exactly `pa-kareem` and `bahja-janu`, and both entries are published.
 - **Slugs.** Slugs are lowercase with hyphens. They are unique across articles and doctor answers (they share `/en/journal/`), and they are never purely numeric, which keeps them clear of pagination.
