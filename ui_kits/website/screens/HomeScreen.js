@@ -45,11 +45,8 @@ function HomeScreen({ onNavigate }) {
           src={window.photoSrc("arrival-dusk")}
           alt={t("The entrance to Shantara at dusk")}
           title={t("A doctor-led naturopathy retreat in Kerala")}
-          sub={t("Drug-free naturopathy on a hilltop above the Chennamangallur valley. Every stay begins with a consultation, and your programme is planned by our doctors.")}
-          actions={<>
-            <Button size="lg" onClick={() => onNavigate("booking")}>{t("Book a Consultation")}</Button>
-            <Button size="lg" variant="secondary" onClick={() => onNavigate("programme")}>{t("View programmes")}</Button>
-          </>}
+          sub={t("Every stay begins with a doctor's consultation.")}
+          actions={<Button size="lg" onClick={() => onNavigate("booking")}>{t("Book a Consultation")}</Button>}
           meta={[t("Kozhikode, Kerala"), t("Since 2000")]}
         />
       </P>
