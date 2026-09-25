@@ -16,6 +16,9 @@ const CSS = `
   .sh-ibtn:hover:not(:disabled){background:var(--surface-raised)}
   .sh-ibtn[data-variant="solid"]:hover:not(:disabled){background:var(--color-himalaya-800)}
   .sh-ibtn[data-variant="inverse"]:hover:not(:disabled){background:color-mix(in srgb, var(--color-merino) 18%, transparent)}
+  /* Dark grounds re-point the ink to Merino, so a light --surface-raised fill would wash the
+     icon out. Use a translucent Merino wash instead, as the inverse variant does. */
+  :is([data-ground="himalaya"],[data-ground="pine"],[data-ground="photo"]) .sh-ibtn:not([data-variant="solid"]):hover:not(:disabled){background:color-mix(in srgb, var(--color-merino) 18%, transparent)}
 }
 `;
 
