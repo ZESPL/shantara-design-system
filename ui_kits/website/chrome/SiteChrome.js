@@ -131,7 +131,7 @@ const CHROME_CSS = `
 .sh-menu-nav a[aria-current="page"]{color:var(--text-brand)}
 .sh-menu-nav a:focus-visible,.sh-menu-contact a:focus-visible{outline:none;box-shadow:var(--ring-focus)}
 .sh-menu-contact{display:flex;flex-direction:column;gap:var(--space-2);font:var(--type-body-sm);color:var(--text-secondary)}
-.sh-menu-contact a{display:inline-flex;align-items:center;min-height:var(--tap-min);color:inherit;text-decoration:none}
+.sh-menu-contact a{display:inline-flex;align-items:center;gap:var(--space-3);min-height:var(--tap-min);color:inherit;text-decoration:none}
 .sh-menu-lang{display:flex;align-items:center;justify-content:space-between;gap:var(--space-5);padding-top:var(--space-5);border-top:var(--border-width) solid var(--rule-color);font:var(--type-body-sm);color:var(--text-secondary)}
 
 /* FOOTER — Pine Tree ground, a rosette strip across the top, brand column + three link
@@ -326,9 +326,9 @@ function MenuSheet({ view, locale, onNavigate, onClose, onBook, onLocaleChange }
         </nav>
         <Button size="lg" fullWidth onClick={() => { onClose(false); onBook("menu"); }}>{t("Book a Consultation")}</Button>
         <div className="sh-menu-contact">
-          <a className="shantara-dir-ltr" href={c.tel} style={{ fontVariantNumeric: "tabular-nums" }}>{c.phone}</a>
-          <a href={c.whatsapp} target="_blank" rel="noopener">{t("WhatsApp")}</a>
-          <a className="shantara-dir-ltr" href={"mailto:" + c.email}>{c.email}</a>
+          <a className="shantara-dir-ltr" href={c.tel} style={{ fontVariantNumeric: "tabular-nums" }}><Icon name="phone" size={18} />{c.phone}</a>
+          <a href={c.whatsapp} target="_blank" rel="noopener"><Icon name="message-circle" size={18} />{t("WhatsApp")}</a>
+          <a className="shantara-dir-ltr" href={"mailto:" + c.email}><Icon name="mail" size={18} />{c.email}</a>
         </div>
         {LanguageSelector ? (
           <div className="sh-menu-lang">
