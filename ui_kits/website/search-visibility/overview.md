@@ -47,7 +47,7 @@ Recorded on 25 September 2026. The rules below already follow them.
 | [Rendering (REN)](rendering.md) | REN-01 to REN-05 | Prerendering, head tags in the first HTML, error pages, 2 MB page limit, heading order |
 | [Crawling and sitemaps (CRAWL)](crawling.md) | CRAWL-01 to CRAWL-09 | robots.txt, Keystatic and confirmation pages, deploy previews, AI crawlers, sitemaps, IndexNow |
 | [Languages (LANG)](languages.md) | LANG-01 to LANG-05 | Locale prefixes, root redirect, hreflang, disabled locales, translation canonicals and review |
-| [URLs (URL)](urls.md) | URL-01 to URL-06 | Slugs, trailing slashes, canonicals, real 404s, Insights pagination, internal links |
+| [URLs (URL)](urls.md) | URL-01 to URL-06 | Slugs, trailing slashes, canonicals, real 404s, Journal pagination, internal links |
 | [Redirects and retired pages (REDIR)](redirects.md) | REDIR-01 to REDIR-05 | Slug-change redirects, single-hop 301s, host clean-up, query strings, retired pages |
 | [Migration from the current site (MIG)](migration.md) | MIG-01 to MIG-05 | Crawl of the old site, legacy redirects, top pages, external listings, post-launch checks |
 | [Pages (PAGE)](pages.md) | PAGE-01 to PAGE-08 | Titles and descriptions, breadcrumbs, orphan pages, internal-only facts, original copy, trust pages |

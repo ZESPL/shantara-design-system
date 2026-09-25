@@ -21,7 +21,7 @@ The closing call to action (deck slide 18). **Use ClosingCTA only on pages that 
 **Variants.**
 - `photo` — immersive end for long marketing pages (home, experience). Dark, quiet frame; 72svh.
 - `ground` — `pine` (default), `himalaya` or `stone`; for pages that already carry several photographs.
-- `compact` — a single band: title (h3 size) and optional sub on the left, actions on the right; for articles, the insights index, legal and utility pages.
+- `compact` — a single band: title (h3 size) and optional sub on the left, actions on the right; for articles, the journal index, legal and utility pages.
 
 **Content.** No eyebrow. One primary button labelled with the site's primary CTA (“Book a Consultation”); `secondaryAction` optional and quieter. `sub` optional. Contact is optional and comes from `content/site.json`: one number for calls and WhatsApp (+91 9553 700 100), heal@shantara.life, the place. No rates.
 

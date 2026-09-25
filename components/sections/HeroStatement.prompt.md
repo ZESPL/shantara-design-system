@@ -13,7 +13,7 @@ The **editorial** hero: words lead, no full photograph (deck slide 2). A large L
   src="/assets/photos/courtyard.jpg" alt="The courtyard" />
 ```
 
-**Use** for index and inner pages that do not need a big picture — conditions, programmes index, about, insights index, contact. For a single article use `ArticleHeader`; for an offer page with a photograph use `HeroSplit`.
+**Use** for index and inner pages that do not need a big picture — conditions, programmes index, about, journal index, contact. For a single article use `ArticleHeader`; for an offer page with a photograph use `HeroSplit`.
 
 **Presence (no eyebrow).** Pick one or two:
 - `pattern` — the rosette band on the end (or `"start"`) edge, 30% of the hero, cell = half the band. It drops under 880px of hero width and the text realigns to the page container. At most one pattern band per page (do not combine with a `BandStatement` on the same page).
@@ -31,6 +31,6 @@ The **editorial** hero: words lead, no full photograph (deck slide 2). A large L
 | --- | --- | --- |
 | `HeroFullBleed` | Immersive — the place carries the message | Home (`height="full"`), Experience, one flagship inner page (`tall`) |
 | `HeroSplit` | Offer — a photograph beside the title, facts and the action | Programme and condition detail pages, Tariffs, Book a Consultation |
-| `HeroStatement` | Editorial — words lead, no photograph needed | Conditions and Programmes indexes, About, Insights index, Contact, legal pages (`ArticleHeader` for single articles) |
+| `HeroStatement` | Editorial — words lead, no photograph needed | Conditions and Programmes indexes, About, Journal index, Contact, legal pages (`ArticleHeader` for single articles) |
 
 One hero per page, always first. None of them takes a label above the title: place, category or duration go in `meta`, below it.

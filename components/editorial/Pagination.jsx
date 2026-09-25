@@ -1,7 +1,7 @@
 import React from "react";
 import { Icon } from "../core/Icon.jsx";
 
-/* Previous / numbered pages / next for the Insights index. Numbers collapse with an
+/* Previous / numbered pages / next for the Journal index. Numbers collapse with an
    ellipsis around the current page. Under 520px the numbers give way to "Page 2 of 8"
    between the two arrows. Links when `hrefFor` is given (crawlable), buttons otherwise. */
 const CSS = `

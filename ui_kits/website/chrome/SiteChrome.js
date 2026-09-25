@@ -7,7 +7,7 @@ const NAV = [
   { label: "Conditions", view: "conditions" },
   { label: "Experience", view: "experience" },
   { label: "About", view: "about" },
-  { label: "Insights", view: "journal" },
+  { label: "Journal", view: "journal" },
 ];
 
 /* Views that open on HeroFullBleed: the header starts transparent with Merino type over a
@@ -427,7 +427,7 @@ const FOOTER_COLS = [
     { label: "Programmes", view: "programme" },
     { label: "Conditions", view: "conditions" },
     { label: "Experience", view: "experience" },
-    { label: "Insights", view: "journal" },
+    { label: "Journal", view: "journal" },
   ] },
   { title: "About", links: [
     { label: "Our story", view: "about" },

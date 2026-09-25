@@ -54,7 +54,6 @@
     Conditions: "الحالات",
     Experience: "التجربة",
     About: "عن شانتارا",
-    Insights: "المدونة",
     Contact: "اتصل بنا",
     Explore: "استكشف",
     Visit: "الزيارة",

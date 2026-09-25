@@ -86,7 +86,7 @@ function Site(){
     window.addEventListener("hashchange", onHash);
     return () => window.removeEventListener("hashchange", onHash);
   }, []);
-  /* go("article:<slug>") opens one Insights article at #/<locale>/insights/<slug>. */
+  /* go("article:<slug>") opens one Journal article at #/<locale>/journal/<slug>. */
   const go=(target)=>{
     const t = String(target || "home");
     const v = t.indexOf("article:") === 0 ? "article" : t;

@@ -72,10 +72,10 @@ try {
     if (!form.names.includes(key)) errors.push("missing field " + key);
   }
   if (form.hash !== "#/en/book-consultation") errors.push("booking hash " + form.hash);
-  await page.goto(base + "#/en/insights/how-meals-are-planned", { waitUntil: "networkidle" });
+  await page.goto(base + "#/en/journal/how-meals-are-planned", { waitUntil: "networkidle" });
   await page.waitForTimeout(600);
   const art = await page.evaluate(() => ({ hash: location.hash, h1: document.querySelector("h1")?.textContent }));
-  if (art.hash !== "#/en/insights/how-meals-are-planned" || !art.h1) errors.push("article route " + JSON.stringify(art));
+  if (art.hash !== "#/en/journal/how-meals-are-planned" || !art.h1) errors.push("article route " + JSON.stringify(art));
   await page.close();
 
   const rtl = await run("rtl-fixture", 390, "http://localhost:4173/ui_kits/website/?fixture=rtl#/en/");

@@ -4,7 +4,7 @@ export interface PaginationProps extends React.HTMLAttributes<HTMLElement> {
   /** Current page, 1-based. */
   page: number;
   pageCount: number;
-  /** Build each page's URL (renders crawlable links), e.g. n => n === 1 ? "/en/insights" : `/en/insights/page/${n}`. */
+  /** Build each page's URL (renders crawlable links), e.g. n => n === 1 ? "/en/journal" : `/en/journal/${n}`. */
   hrefFor?: (n: number) => string;
   /** Client-side paging; with hrefFor it runs alongside the link. */
   onChange?: (n: number) => void;

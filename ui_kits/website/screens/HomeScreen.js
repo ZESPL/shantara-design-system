@@ -150,7 +150,7 @@ function HomeScreen({ onNavigate }) {
         </SplitSection>
       </P>
 
-      <P id="home/insights">
+      <P id="home/journal">
         <Section ground="merino">
           {/* Three equal tiles: same image ratio, titles on one line start, meta aligned. */}
           <div className="sh-kit-tiles-aligned">

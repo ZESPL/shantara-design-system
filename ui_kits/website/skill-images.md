@@ -45,9 +45,7 @@ public/
 
 ### Keystatic image fields
 
-Point every Keystatic image field at `src/assets/images/<collection>/` and make the stored path resolve from the entry file, so Astro's `image()` schema helper can import it.
-
-English entries sit at `src/content/<collection>/en/<slug>.json`, three folders below `src/`. The path back up to `src/assets/` is therefore `../../../assets/`.
+Point every Keystatic image field at `src/assets/images/<collection>/` and store the path from the project root. There is no Zod schema: pages read entries through the Keystatic reader ([skill-structure.md](skill-structure.md#reading-content)), and `lib/images.ts` turns each stored path into an Astro image.
 
 ```ts
 // keystatic.config.ts — one shared field, reused by every collection
@@ -56,7 +54,7 @@ const featuredImage = (collection: string) =>
     src: fields.image({
       label: 'Image',
       directory: `src/assets/images/${collection}`,
-      publicPath: `../../../assets/images/${collection}/`,
+      publicPath: `/src/assets/images/${collection}/`,
       validation: { isRequired: true },
     }),
     alt: fields.text({ label: 'Alt text', validation: { isRequired: true } }),
@@ -64,15 +62,19 @@ const featuredImage = (collection: string) =>
 ```
 
 ```ts
-// src/content.config.ts
-schema: ({ image }) => z.object({
-  featured_image: z.object({ src: image(), alt: z.string().min(1) }),
-  // …
-}),
+// src/lib/images.ts — every stored path must resolve, or the build stops
+const files = import.meta.glob<{ default: ImageMetadata }>(
+  '/src/assets/images/**/*.{jpg,jpeg,png}', { eager: true });
+
+export function image(path: string): ImageMetadata {
+  const file = files[path];
+  if (!file) throw new Error(`Missing image: ${path}`);
+  return file.default;
+}
 ```
 
-- Using `image()` makes the build fail when a file is missing, and gives each image its width and height. Do not type image fields as `z.string()`.
-- Markdoc body images in articles use the same `directory` and `publicPath` pattern, and render through a custom Markdoc `image` node that calls Astro's `<Picture>`. A plain `<img>` in Markdoc output skips optimisation.
+- Pass the result of `image()` to `<Picture>` or `<Image>`. The build fails when a file is missing, and every image gets its width and height. Never pass the stored path string straight to an `<img>`.
+- Markdoc body images in articles use the same `directory` and `publicPath` pattern, and the Markdoc renderer maps the `image` node to a component that calls `image()` and Astro's `<Picture>`. A plain `<img>` in Markdoc output skips optimisation.
 - **Check the filename Keystatic writes on the first upload.** If it names the file after the field (for example `src.jpg`) rather than the uploaded name, the published file will not have a descriptive name, which is what IMG-05 asks for. Record the result in [Still open](#8-still-open).
 
 ## 2. File types

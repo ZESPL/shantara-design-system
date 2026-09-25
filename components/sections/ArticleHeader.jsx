@@ -2,7 +2,7 @@ import React from "react";
 import { Media } from "../editorial/Media.jsx";
 import { MetaRow } from "../editorial/MetaRow.jsx";
 
-/* The top of a single Insights article. No label above the title: breadcrumbs → h1 →
+/* The top of a single Journal article. No label above the title: breadcrumbs → h1 →
    dek (lead) → meta row (category · date · read time) → a byline on a hairline (author
    with a small portrait, and the medical reviewer) with an optional share slot → an
    optional lead photograph with caption. Left-aligned to the article column (68ch body),

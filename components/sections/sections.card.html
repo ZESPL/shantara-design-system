@@ -1,4 +1,4 @@
-<!-- @dsCard group="Components" viewport="1440x14200" name="Sections" subtitle="Full-width page sections from the brand deck, stacked at desktop width — heroes, splits, band, panorama, people, numerals, tiles, index, form, close — plus HeroSplit and the Insights article header and related reading" -->
+<!-- @dsCard group="Components" viewport="1440x14200" name="Sections" subtitle="Full-width page sections from the brand deck, stacked at desktop width — heroes, splits, band, panorama, people, numerals, tiles, index, form, close — plus HeroSplit and the Journal article header and related reading" -->
 <!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../styles.css">
 <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
@@ -94,17 +94,17 @@ function Demo(){
   sub="Our doctors see guests with a range of long-standing conditions. Programmes are planned after consultation and assessment."
   meta={["Reviewed by Dr. Bahja Janu, Medical Director", "Updated August 2026"]} />
 
-<Label name="ArticleHeader" note="insights article · meta below the title, byline + reviewer" />
-<ArticleHeader breadcrumbs={<Breadcrumbs items={[{ label: "Insights", href: "#" }, "Food & Recipes"]} />}
+<Label name="ArticleHeader" note="journal article · meta below the title, byline + reviewer" />
+<ArticleHeader breadcrumbs={<Breadcrumbs items={[{ label: "Journal", href: "#" }, "Food & Recipes"]} />}
   title="How meals are planned during a stay" dek="How meals are planned around your programme and dietary requirements."
   category="Food & Recipes" date="12 August 2026" dateTime="2026-08-12" readTime="4 min read"
   author={{ name: "Dr. Bahja Janu", role: "Medical Director", src: P + "doctor-bahja-janu-portrait-cropped.jpeg" }}
   reviewer={{ name: "Dr. P.A. Kareem", role: "Chief Naturopathy Consultant" }}
-  share={<ShareBar compact label="" url="https://shantara.life/en/insights/how-meals-are-planned" />} />
+  share={<ShareBar compact label="" url="https://shantara.life/en/journal/how-meals-are-planned" />} />
 
 <Label name="Section + RelatedArticles" note="TileGrid preset for the end of an article" />
 <Section ground="stone">
-  <RelatedArticles action={<TextLink href="#">All insights</TextLink>} articles={[
+  <RelatedArticles action={<TextLink href="#">All articles</TextLink>} articles={[
     { title: "How programme duration is decided", href: "#", src: P + "treatment.jpg", alt: "", category: "Clinical Guides", readTime: "5 min read" },
     { title: "Managing PCOS through lifestyle", href: "#", src: P + "grounds.jpg", alt: "", category: "Clinical Guides", readTime: "6 min read" },
     { title: "How rooms are designed", href: "#", src: P + "room-twin.jpg", alt: "", category: "Life at Shantara", readTime: "3 min read" },

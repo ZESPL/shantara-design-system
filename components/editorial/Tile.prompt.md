@@ -7,7 +7,7 @@ Replaces the white card on linen: photograph and text sit directly on the ground
 
 {/* icon-led meta — for article lists and anywhere the row is scanned */}
 <Tile src={photo} alt="" title="How meals are planned during a stay"
-  meta={[{ icon: "tag", label: "Food & Recipes" }, { icon: "clock", label: "4 min read" }]} href="/en/insights/how-meals-are-planned" />
+  meta={[{ icon: "tag", label: "Food & Recipes" }, { icon: "clock", label: "4 min read" }]} href="/en/journal/how-meals-are-planned" />
 ```
 
 **Use for** programmes, rooms, articles, experiences — every listing on the website. `Card` stays for forms and dialogs only.

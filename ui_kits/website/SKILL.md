@@ -92,7 +92,7 @@ Top-level navigation — **five items, no more**, centred between the logo and t
 - Conditions
 - Experience
 - About
-- Insights
+- Journal
 
 Header actions: `LanguageSelector` (desktop; inside the menu sheet under 1000px), a **phone button** that opens a dropdown (Call +91 9553 700 100 · WhatsApp · Email heal@shantara.life), and **Book a Consultation** (primary CTA). Contact is reached from the phone dropdown and the footer, not the main nav. There is one public number for calls and WhatsApp: **+91 9553 700 100**.
 
@@ -142,8 +142,8 @@ Heroes are a **family**, not one universal Hero with 30 props, and not 12 varian
 | --- | --- | --- | --- |
 | Immersive | Place, emotion, photography | Home, Experience | `HeroFullBleed` |
 | Offer | Commercial page, high intent | Programme pages, Rooms and tariffs (duration/options, suitability, Book a Consultation — **no invented price**) | `HeroSplit` + booking panel |
-| Editorial / utility | Topic + readability | Conditions, About, Insights, Contact, Book a Consultation | `HeroStatement` with a rosette band (`pattern`) or a side image — never "naked" |
-| Article | One Insights article | `/en/insights/<slug>` | `ArticleHeader` |
+| Editorial / utility | Topic + readability | Conditions, About, Journal, Contact, Book a Consultation | `HeroStatement` with a rosette band (`pattern`) or a side image — never "naked" |
+| Article | One Journal article | `/en/journal/<slug>` | `ArticleHeader` |
 
 No eyebrows anywhere: no small uppercase label above a hero, section or card title. Category, duration or place goes in a caption meta row **below** the title (`meta` prop / `MetaRow`).
 
@@ -279,13 +279,13 @@ These files are **previews** of the skill, not the live site:
 
 | Sample | Skill page type | Notes |
 | --- | --- | --- |
-| `screens/HomeScreen.js` | home | `HeroFullBleed`, approach, doctors, programme tiles + roomy index, therapies, rooms, insights, FAQ |
+| `screens/HomeScreen.js` | home | `HeroFullBleed`, approach, doctors, programme tiles + roomy index, therapies, rooms, journal, FAQ |
 | `screens/ConditionsScreen.js` | condition listing | Visual grouping only — no category URLs |
 | `screens/ProgrammeScreen.js` | program | `HeroSplit` + booking panel; tariff link, no rates |
 | `screens/ExperienceScreen.js` | experience hub | Therapies, rooms, farm, a day — not one page per room |
 | `screens/AboutScreen.js` | about hub | Story, approach, doctors, editorial policy |
 | `screens/JournalScreen.js` | article listing | `HeroStatement` → `Tabs` → `TileGrid` → `Pagination` |
-| `screens/ArticleScreen.js` | article | `#/en/insights/<slug>`: `ArticleHeader`, `Prose`, `TableOfContents`, `ReviewedBy`, `ShareBar`, `AuthorCard`, `RelatedArticles` (kit body is a marked sample) |
+| `screens/ArticleScreen.js` | article | `#/en/journal/<slug>`: `ArticleHeader`, `Prose`, `TableOfContents`, `ReviewedBy`, `ShareBar`, `AuthorCard`, `RelatedArticles` (kit body is a marked sample) |
 | `screens/ContactScreen.js` | contact | `HeroStatement` + NAP (Shantara Naturopathy Retreat), distances, call / WhatsApp / email |
 | `screens/ConsultationScreen.js` | consultation | One short form |
 | `screens/TariffScreen.js` | pricing surface | Structure only: currency selector, room × occupancy table, supplements, payment terms and cancellation, with “—” in place of every rate |

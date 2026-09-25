@@ -20,7 +20,7 @@ export interface RelatedArticlesProps extends React.HTMLAttributes<HTMLDivElemen
   title?: React.ReactNode;
   /** 2–3 articles (extra ones are dropped). */
   articles: RelatedArticle[];
-  /** Usually <TextLink href="/en/insights">All insights</TextLink>. */
+  /** Usually <TextLink href="/en/journal">All articles</TextLink>. */
   action?: React.ReactNode;
   layout?: "3" | "2";
   /** Icon-led meta (tag / clock / calendar) instead of "Category · 4 min read". */

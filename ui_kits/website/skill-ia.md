@@ -14,7 +14,7 @@ Recommended top-level structure:
 - Programmes
 - Experience
 - About
-- Blog / Insights
+- Journal (articles and Doctor Answers)
 - Contact
 - Book a Consultation
 
@@ -31,7 +31,7 @@ OpenSEO (20 Sep 2026) clarified **how** to resource discovery and comparison. It
 | Job | Existing family / surface | Notes |
 | --- | --- | --- |
 | What Shantara is (entity) | Home + About | Lead with the positive entity sentence before atmospheric copy. HNCH / Hygiene Nature Cure Hospital relationship → **About only**. |
-| Ayurveda vs naturopathy | One medically reviewed **article / Clinical Guide** under Insights | Required GCC/West interception path. Not a fake Ayurveda service page. Not a nav item. |
+| Ayurveda vs naturopathy | One medically reviewed **article / Clinical Guide** under Journal | Required GCC/West interception path. Not a fake Ayurveda service page. Not a nav item. |
 | What a residential stay is | Experience hub + FAQ | Fixes US/UK “ND clinic” misread. Not a new `/stay` family. |
 | Named conditions | `/en/conditions/{slug}` only | Original clinical content; India commercial spine. Do not invent ICP-named hubs. |
 | HNCH parent history | About | Keep hospital out of audience framing elsewhere. |
@@ -56,7 +56,7 @@ Other named needs (`fatty-liver`, `back-pain`, `menopause`, and similar) remain 
 
 **GCC / West content jobs** (no new URL families):
 
-- Comparison article — medically reviewed Ayurveda vs naturopathy under Insights (IN comparison cluster measurable; UAE/UK comparison seeds ~10/mo each — still resource for interception)
+- Comparison article — medically reviewed Ayurveda vs naturopathy under Journal (IN comparison cluster measurable; UAE/UK comparison seeds ~10/mo each — still resource for interception)
 - Experience hub + FAQ — what a residential stay is (UK `naturopathy uk` SERP is ND college/clinic; UAE `naturopathy dubai` SERP is day clinic)
 - About — entity sentence + HNCH / parent history only
 - Do **not** buy UK `weight loss retreat` / `burnout retreat` or UAE `naturopathy dubai` as primary paid keywords for Shantara — SERPs are spa / fitness / local clinic
@@ -115,42 +115,44 @@ Program pages are commercially important and should explain:
 
 ## Experience
 
-Typical pages may include:
-
-- Therapies
-- Rooms & Suites
-- Amenities & Activities
-- Farm & Dining
-- A Day at Shantara
-
-Therapies and rooms each have **one page**:
+Pages:
 
 ```text
 /en/therapies
 /en/rooms
+/en/amenities-activities
+/en/farm-dining
+/en/a-day-at-shantara
 ```
 
-Do not create individual pages for a therapy or a room category. Links to a single therapy or room point to its section on that page (for example `/en/therapies#hijama`).
+Therapies and rooms each have **one page**. Do not create individual pages for a therapy or a room category. Links to a single therapy or room point to its section on that page (for example `/en/therapies#hijama`).
 
 ## About
 
-Typical pages:
-
-- Our Story
-- Our Approach
-- Our Doctors
-- Medical Editorial Policy
-
-Each doctor has a profile page:
+Pages:
 
 ```text
-/en/doctors/[doctor-slug]
+/en/our-story
+/en/our-approach
+/en/our-doctors
+/en/doctors/pa-kareem
+/en/doctors/bahja-janu
 ```
 
-Dr. P.A. Kareem (`/en/doctors/pa-kareem`) and Dr. Bahja Janu (`/en/doctors/bahja-janu`) each have one. The page lists the doctor's answers, the articles they reviewed and their programmes automatically.
+Medical Editorial Policy also sits under About.
+
+`/en/our-doctors` lists every doctor with a photo, name, qualification, areas of practice and a **Book a Consultation** button. Only Dr. P.A. Kareem and Dr. Bahja Janu have a profile page. Each profile lists the doctor's answers, the articles they reviewed and their programmes automatically. Do not create a profile page for any other doctor; link to their section on `/en/our-doctors` instead (for example `/en/our-doctors#{slug}`).
 
 Entity and parent history (including Hygiene Nature Cure Hospital / HNCH) belong here — not on condition or programme pages, and not as a hospital product pitch.
 ## Publishing families
+
+Articles and Doctor Answers publish under one Journal family:
+
+```text
+/en/journal
+/en/journal/2
+/en/journal/[slug]
+```
 
 Traditional blog articles may continue to exist, but do not make generic blog production the center of the content strategy.
 
@@ -176,13 +178,13 @@ Traditional blog articles may continue to exist, but do not make generic blog pr
 
 ## Utility pages
 
-- Book a Consultation
-- Contact
+- Book a Consultation (`/en/book-consultation`)
+- Contact (`/en/contact`)
 - Frequently asked questions (`/en/faq`, grouped by category)
-- Resident Policies
-- Cancellation Policy
-- Privacy Policy
-- Terms of Service
+- Resident Policies (`/en/resident-policies`)
+- Cancellation Policy (`/en/cancellation-policy`, rendered from the tariff's cancellation terms)
+- Privacy Policy (`/en/privacy-policy`)
+- Terms of Service (`/en/terms-of-service`)
 
 ## Page types
 
@@ -254,7 +256,7 @@ The Website Kit shows **one thin sample per family**, not every URL above.
 | `/en/programs/[slug]` | `ProgrammeScreen.js` (Detox) |
 | Experience hub | `ExperienceScreen.js` |
 | About hub | `AboutScreen.js` |
-| Insights listing | `JournalScreen.js` |
+| Journal listing | `JournalScreen.js` |
 | `/en/contact` | `ContactScreen.js` |
 | `/en/book-consultation` | `ConsultationScreen.js` |
 | Tariff / pricing | `TariffScreen.js` |

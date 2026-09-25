@@ -346,7 +346,7 @@
           return <div className="stack" style={{ maxWidth: 960, gap: 48 }}>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "var(--grid-gap)" }}>
               {tiles[0]}
-              <Tile src={P + "dining.jpg"} alt="The dining room" title="How meals are planned during a stay" meta={[{ icon: "tag", label: "Food & Recipes" }, { icon: "clock", label: "4 min read" }]} href="#/en/insights/how-meals-are-planned" />
+              <Tile src={P + "dining.jpg"} alt="The dining room" title="How meals are planned during a stay" meta={[{ icon: "tag", label: "Food & Recipes" }, { icon: "clock", label: "4 min read" }]} href="#/en/journal/how-meals-are-planned" />
             </div>
             <Tile layout="row" src={P + "courtyard.jpg"} alt="The courtyard" meta={["Immersive", "21–28 nights"]} title="Complete Healing" text="For guests managing several long-standing conditions at once, across metabolic, musculoskeletal and mental health." href="#/en/programs/complete-healing" />
           </div>;
@@ -407,8 +407,8 @@
           </div>;
         case "ShareBar":
           return <div className="stack" style={{ maxWidth: 720, gap: 24 }}>
-            <ShareBar url="https://shantara.life/en/insights/how-meals-are-planned" title="How meals are planned during a stay" />
-            <ShareBar compact url="https://shantara.life/en/insights/how-meals-are-planned" title="How meals are planned during a stay" />
+            <ShareBar url="https://shantara.life/en/journal/how-meals-are-planned" title="How meals are planned during a stay" />
+            <ShareBar compact url="https://shantara.life/en/journal/how-meals-are-planned" title="How meals are planned during a stay" />
           </div>;
         case "Pagination": {
           const [pg, setPg] = React.useState(3);
@@ -553,7 +553,7 @@
           </Section>;
         case "ArticleHeader":
           return <ArticleHeader
-            breadcrumbs={<Breadcrumbs items={[{ label: "Insights", href: "#" }, "Food & Recipes"]} />}
+            breadcrumbs={<Breadcrumbs items={[{ label: "Journal", href: "#" }, "Food & Recipes"]} />}
             title="How meals are planned during a stay"
             dek="How meals are planned around your programme and dietary requirements."
             category={{ label: "Food & Recipes", href: "#" }}
@@ -561,12 +561,12 @@
             author={{ name: "Dr. Bahja Janu", role: "Medical Director", src: P + "doctor-bahja-janu-portrait-cropped.jpeg", href: "#" }}
             reviewer={{ name: "Dr. P.A. Kareem", role: "Chief Naturopathy Consultant", href: "#" }}
             updated="20 August 2026" updatedDateTime="2026-08-20"
-            share={<ShareBar compact label="" url="https://shantara.life/en/insights/how-meals-are-planned" title="How meals are planned during a stay" />}
+            share={<ShareBar compact label="" url="https://shantara.life/en/journal/how-meals-are-planned" title="How meals are planned during a stay" />}
             src={P + "dining-restaurant-valley-window.jpg"} alt="The dining room by the valley window"
             caption="Meals are served in the dining room by the valley window." />;
         case "RelatedArticles":
           return <Section ground="stone">
-            <RelatedArticles action={<TextLink href="#">All insights</TextLink>} articles={[
+            <RelatedArticles action={<TextLink href="#">All articles</TextLink>} articles={[
               { title: "How programme duration is decided", href: "#", src: P + "treatment.jpg", alt: "A treatment room", category: "Clinical Guides", readTime: "5 min read" },
               { title: "Managing PCOS through lifestyle", href: "#", src: P + "grounds.jpg", alt: "The grounds", category: "Clinical Guides", readTime: "6 min read" },
               { title: "How rooms are designed", href: "#", src: P + "room-twin.jpg", alt: "A twin room", category: "Life at Shantara", readTime: "3 min read" },

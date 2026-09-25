@@ -44,15 +44,15 @@ rtl-fixture.html
 
 | File | Surface |
 | --- | --- |
-| `chrome/SiteChrome.js` | Header over every page: logo, five centred nav items (Programmes, Conditions, Experience, About, Insights), LanguageSelector, phone dropdown (Call / WhatsApp / Email, one number +91 9553 700 100), Book a Consultation; menu sheet under 1000px holds the nav, contact lines and LanguageSelector. Breakpoints are container queries so text size lg/xl (html `zoom`) re-lays the header. Footer: Pine Tree ground, rosette strip, brand + NAP "Shantara Naturopathy Retreat", three link columns (accordions under 760px), bottom bar with the text-size control. `PageSlot` wraps every page section with `data-ds-id="page/<view>/<slot>"` |
+| `chrome/SiteChrome.js` | Header over every page: logo, five centred nav items (Programmes, Conditions, Experience, About, Journal), LanguageSelector, phone dropdown (Call / WhatsApp / Email, one number +91 9553 700 100), Book a Consultation; menu sheet under 1000px holds the nav, contact lines and LanguageSelector. Breakpoints are container queries so text size lg/xl (html `zoom`) re-lays the header. Footer: Pine Tree ground, rosette strip, brand + NAP "Shantara Naturopathy Retreat", three link columns (accordions under 760px), bottom bar with the text-size control. `PageSlot` wraps every page section with `data-ds-id="page/<view>/<slot>"` |
 | `chrome/Photo.js` | Adapter over the `Media` primitive for `assets/photos/*` (square-cut, ratio, `mobileRatio`, scrim) |
-| `screens/HomeScreen.js` | Full-bleed hero, approach, doctors, programme tiles + index, therapies, rooms, insights, FAQ (no ClosingCTA — the hero carries the CTA) |
+| `screens/HomeScreen.js` | Full-bleed hero, approach, doctors, programme tiles + index, therapies, rooms, journal, FAQ (no ClosingCTA — the hero carries the CTA) |
 | `screens/ConditionsScreen.js` | Condition listing — visual groups only |
 | `screens/ProgrammeScreen.js` | Detox programme sample |
 | `screens/ExperienceScreen.js` | What a stay includes |
 | `screens/AboutScreen.js` | Story, approach, doctors, policy |
-| `screens/JournalScreen.js` | Insights index — Tabs, 3-up Tile grid, Pagination |
-| `screens/ArticleScreen.js` | One Insights article at `#/en/insights/<slug>` (ArticleHeader, Prose, TableOfContents, ReviewedBy, ShareBar, AuthorCard, RelatedArticles, compact ClosingCTA). The body and reviewer are kit samples, marked in code |
+| `screens/JournalScreen.js` | Journal index — Tabs, 3-up Tile grid, Pagination |
+| `screens/ArticleScreen.js` | One Journal article at `#/en/journal/<slug>` (ArticleHeader, Prose, TableOfContents, ReviewedBy, ShareBar, AuthorCard, RelatedArticles, compact ClosingCTA). The body and reviewer are kit samples, marked in code |
 | `screens/ContactScreen.js` | Location and directions |
 | `screens/ConsultationScreen.js` | One short consultation form |
 | `screens/TariffScreen.js` | Dedicated tariff card — only surface that quotes rates |
@@ -63,6 +63,6 @@ Locale config: `locales.js` (`window.ShantaraLocales`). Shared UI strings: root 
 
 ## Confirm before any real use
 
-The tariff sample holds no rates, currencies or validity dates — production rates live only in the Keystatic tariff. Also confirm the Monday-intake convention and monthly cap presentation, programme durations (indicative), and insights copy written for this kit rather than supplied.
+The tariff sample holds no rates, currencies or validity dates — production rates live only in the Keystatic tariff. Also confirm the Monday-intake convention and monthly cap presentation, programme durations (indicative), and journal copy written for this kit rather than supplied.
 
 The programme name “Diabetes Reversal” is approved for catalogue use; do not present reversal as a guaranteed outcome or invent rates.

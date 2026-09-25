@@ -20,9 +20,9 @@ https://shantara.life/#condition-{internal-id}
 - **SCHEMA-06 (P0) [Build]** Structured data describes only what is visible and public. Never put form data, health information or a guest's identity in JSON-LD unless the guest consented and the details are visible on the page. **Check:** code review of the generator. The consultation page emits only `WebPage`.
 - **SCHEMA-07 (P1) [Build]** A `BreadcrumbList` appears on every page that shows breadcrumbs and matches the visible trail. **Check:** Rich Results Test.
 - **SCHEMA-08 (P1) [Build]** Medical pages use `MedicalWebPage` with `about` pointing to a `MedicalCondition` (name and only what is visible), `reviewedBy` pointing to the doctor's `@id`, and `lastReviewed` equal to the visible date. **Check:** Schema Markup Validator on one condition page.
-- **SCHEMA-09 (P1) [Build]** Doctors are `Person` nodes with name, jobTitle, image, `worksFor` pointing to the organisation, and qualifications and `sameAs` links only when they are public and visible. A doctor profile page is `ProfilePage` with `mainEntity` pointing to that Person. Do not use `Physician` for an individual: Schema.org defines `Physician` as a medical business type, not a person. **Check:** the generator outputs `ProfilePage` only on doctor pages.
+- **SCHEMA-09 (P1) [Build]** Doctors are `Person` nodes with name, jobTitle, image, `worksFor` pointing to the organisation, and qualifications and `sameAs` links only when they are public and visible. A doctor profile page is `ProfilePage` with `mainEntity` pointing to that Person. Only Dr. P.A. Kareem and Dr. Bahja Janu have one; every other doctor's full `Person` node sits on `/en/our-doctors`. Do not use `Physician` for an individual: Schema.org defines `Physician` as a medical business type, not a person. **Check:** the generator outputs `ProfilePage` only on doctor pages.
 - **SCHEMA-10 (P1) [Build]** Programme pages use `Service` with name, description and `provider` pointing to the organisation. No `offers` on programme pages (RATE-04). **Check:** Schema Markup Validator on one programme page.
-- **SCHEMA-11 (P1) [Build]** Listing pages (`/en/conditions`, `/en/programs`, `/en/insights`) use `CollectionPage` with an `ItemList` of the URLs shown. Condition and programme nodes live only on their own pages. **Check:** Schema Markup Validator shows no `Service` or `MedicalCondition` nodes on listing pages.
+- **SCHEMA-11 (P1) [Build]** Listing pages (`/en/conditions`, `/en/programs`, `/en/journal`) use `CollectionPage` with an `ItemList` of the URLs shown. Condition and programme nodes live only on their own pages. **Check:** Schema Markup Validator shows no `Service` or `MedicalCondition` nodes on listing pages.
 - **SCHEMA-12 (P1) [Build]** Articles use `Article` or `BlogPosting` with headline, image, datePublished, dateModified, `author` pointing to a doctor's or writer's Person `@id`, and `publisher` pointing to the organisation. Medical articles also follow SCHEMA-08. **Check:** Rich Results Test.
 - **SCHEMA-13 (P2) [Build]** `FAQPage` markup is optional and used only when the questions and answers are visible on the page. Google removed FAQ rich results in May 2026, so the markup brings no Google benefit. Never use `HowTo`. **Check:** none needed.
 - **SCHEMA-14 (P1) [Build]** No empty values: omit an optional property instead of sending an empty string or "N/A". URLs are absolute, dates are ISO 8601, and the phone number is `+919553700100`. **Check:** an automated JSON-LD lint in CI.
@@ -39,9 +39,10 @@ Every indexable page also gets the `WebSite` node and a reference to `https://sh
 | Programme | `WebPage` + `Service` + `BreadcrumbList` |
 | Tariff | `WebPage` + `BreadcrumbList`, and `Offer` nodes only for visible, confirmed rates |
 | Experience pages | `WebPage` + `BreadcrumbList` |
-| Doctor profile | `ProfilePage` + `Person` + `BreadcrumbList` |
+| Doctor profile (Dr. P.A. Kareem and Dr. Bahja Janu only) | `ProfilePage` + `Person` + `BreadcrumbList` |
+| Our Doctors (`/en/our-doctors`) | `AboutPage` + `ItemList` + `BreadcrumbList`. A full `Person` node for each doctor without a profile page; an `@id` reference for the two who have one |
 | Article, Clinical Guide, Doctor Answer | `Article` or `BlogPosting` + `BreadcrumbList`, and `MedicalWebPage` fields when medical |
-| Conditions, Programmes and Insights listings | `CollectionPage` + `ItemList` + `BreadcrumbList` |
+| Conditions, Programmes and Journal listings | `CollectionPage` + `ItemList` + `BreadcrumbList` |
 | About | `AboutPage` with `about` pointing to the organisation |
 | Contact | `ContactPage` with `about` pointing to the organisation |
 | Book a Consultation, policies, terms, privacy | `WebPage` only |

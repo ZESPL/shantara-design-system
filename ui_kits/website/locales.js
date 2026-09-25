@@ -159,17 +159,16 @@
     programs: "programs",
     experience: "experience",
     about: "about",
-    journal: "insights",
-    insights: "insights",
+    journal: "journal",
     contact: "contact",
     booking: "book-consultation",
     consultation: "book-consultation",
     tariffs: "tariffs",
-    /* Single Insights article. Navigate with "article:<slug>"; bare "article" opens the sample. */
-    article: "insights/how-meals-are-planned",
+    /* Single Journal article. Navigate with "article:<slug>"; bare "article" opens the sample. */
+    article: "journal/how-meals-are-planned",
   };
 
-  const ARTICLE_PREFIX = "insights/";
+  const ARTICLE_PREFIX = "journal/";
 
   const VIEW_FROM_PATH = {
     "": "home",
@@ -178,7 +177,6 @@
     programmes: "programme",
     experience: "experience",
     about: "about",
-    insights: "journal",
     journal: "journal",
     contact: "contact",
     "book-consultation": "booking",
@@ -695,10 +693,10 @@
     return KIT_VIEWS[v] != null ? KIT_VIEWS[v] : v;
   }
 
-  /* "insights/<slug>" → the article view (slug from articleSlugFromPath). */
+  /* "journal/<slug>" → the article view (slug from articleSlugFromPath). */
   function articleSlugFromPath(rest) {
     const key = String(rest || "").replace(/^\/+|\/+$/g, "");
-    const m = key.match(/^insights\/([a-z0-9-]+)$/);
+    const m = key.match(/^journal\/([a-z0-9-]+)$/);
     return m ? m[1] : null;
   }
 

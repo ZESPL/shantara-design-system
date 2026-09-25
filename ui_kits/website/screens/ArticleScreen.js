@@ -1,4 +1,4 @@
-/* Insights article — route #/<locale>/insights/<slug> (view "article").
+/* Journal article — route #/<locale>/journal/<slug> (view "article").
    ArticleHeader → TableOfContents (collapsed above the text on phones, sticky beside it from
    1000px) + Prose → ReviewedBy → ShareBar → AuthorCard → RelatedArticles →
    ClosingCTA (compact; the article has no other CTA).
@@ -87,7 +87,7 @@ function ArticleScreen({ onNavigate, slug }) {
     <main>
       <P id="article/header">
         <ArticleHeader
-          breadcrumbs={<Breadcrumbs items={[{ label: t("Insights"), href: href("journal") }, t(a.category)]} />}
+          breadcrumbs={<Breadcrumbs items={[{ label: t("Journal"), href: href("journal") }, t(a.category)]} />}
           title={t(a.title)}
           dek={a.lead ? t(a.lead) : undefined}
           category={{ label: t(a.category), href: href("journal") }}
@@ -140,7 +140,7 @@ function ArticleScreen({ onNavigate, slug }) {
           <Section ground="stone">
             <RelatedArticles
               articles={related}
-              action={<TextLink href={href("journal")} onClick={(e) => { e.preventDefault(); onNavigate("journal"); }}>{t("All insights")}</TextLink>}
+              action={<TextLink href={href("journal")} onClick={(e) => { e.preventDefault(); onNavigate("journal"); }}>{t("All articles")}</TextLink>}
             />
           </Section>
         </P>

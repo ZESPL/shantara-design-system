@@ -2,7 +2,7 @@ import React from "react";
 import { TileGrid } from "./TileGrid.jsx";
 import { Tile } from "../editorial/Tile.jsx";
 
-/* A TileGrid preset for the end of an article (and the Insights index "latest" row):
+/* A TileGrid preset for the end of an article (and the Journal index "latest" row):
    a heading, up to three article tiles with category · read time below each title, and
    one link to the index. Two or three items — never one. */
 export function RelatedArticles({ title = "Related reading", articles = [], action, layout = "3", icons = false, headingLevel = 3, style, ...rest }) {

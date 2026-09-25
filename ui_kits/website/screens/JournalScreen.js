@@ -1,4 +1,4 @@
-/* Insights index — HeroStatement (rosette band) → category Tabs → a 3-up Tile grid →
+/* Journal index — HeroStatement (rosette band) → category Tabs → a 3-up Tile grid →
    Pagination → ClosingCTA (compact; the page has no other CTA).
    Recipe: components/editorial/Pagination.prompt.md. Tiles open the Article view. */
 
@@ -35,7 +35,7 @@ function JournalScreen({ onNavigate }) {
   const hrefFor = (p) => (p.article && L ? L.kitHash(locale, "article:" + p.id) : undefined);
   return (
     <main>
-      <P id="insights/hero">
+      <P id="journal/hero">
         <HeroStatement
           tall={false}
           pattern="start"
@@ -44,7 +44,7 @@ function JournalScreen({ onNavigate }) {
         />
       </P>
 
-      <P id="insights/index">
+      <P id="journal/index">
         <Section space="bottom">
           <Tabs items={cats.map((key) => ({ value: key, label: t(key) }))} value={cat} onChange={onTab} />
           <div key={cat + "-" + page} className="sh-page-enter" style={{ display: "flex", flexDirection: "column", gap: "var(--section-y-sm)", marginTop: "var(--stack-lg)" }}>
@@ -75,13 +75,13 @@ function JournalScreen({ onNavigate }) {
         </Section>
       </P>
 
-      <P id="insights/closing">
+      <P id="journal/closing">
         <ClosingCTA
           variant="compact"
           ground="himalaya"
           title={t("Share your name and a number we can reach.")}
           sub={t("Our team will contact you to arrange a consultation.")}
-          action={<Button size="lg" onClick={() => { if (L) L.track("consultation_cta_click", { page_type: "journal", content_id: "journal", content_name: "Insights", cta_location: "closing" }); onNavigate("booking"); }}>{t("Book a Consultation")}</Button>}
+          action={<Button size="lg" onClick={() => { if (L) L.track("consultation_cta_click", { page_type: "journal", content_id: "journal", content_name: "Journal", cta_location: "closing" }); onNavigate("booking"); }}>{t("Book a Consultation")}</Button>}
         />
       </P>
     </main>

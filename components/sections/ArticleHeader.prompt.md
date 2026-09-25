@@ -1,11 +1,11 @@
-The top of a single Insights article: breadcrumbs → h1 → dek → meta row (category · date · read time) → byline on a hairline (author with a small portrait; "Medically reviewed by …" and "Updated …" beneath) with an optional share slot → optional lead photograph with caption. **No eyebrow** — the category is the first item of the meta row, below the title.
+The top of a single Journal article: breadcrumbs → h1 → dek → meta row (category · date · read time) → byline on a hairline (author with a small portrait; "Medically reviewed by …" and "Updated …" beneath) with an optional share slot → optional lead photograph with caption. **No eyebrow** — the category is the first item of the meta row, below the title.
 
 ```jsx
 <ArticleHeader
-  breadcrumbs={<Breadcrumbs items={[{ label: "Insights", href: "/en/insights" }, "Food & Recipes"]} />}
+  breadcrumbs={<Breadcrumbs items={[{ label: "Journal", href: "/en/journal" }, "Food & Recipes"]} />}
   title="How meals are planned during a stay"
   dek="How meals are planned around your programme and dietary requirements."
-  category={{ label: "Food & Recipes", href: "/en/insights/category/food-recipes" }}
+  category={{ label: "Food & Recipes", href: "/en/journal/category/food-recipes" }}
   date="12 August 2026" dateTime="2026-08-12" readTime="4 min read"
   author={{ name: "Dr. Bahja Janu", role: "Medical Director", src: portrait, href: "/en/about#doctors" }}
   share={<ShareBar compact label="" title="How meals are planned during a stay" />}

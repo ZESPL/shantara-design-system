@@ -13,9 +13,9 @@ This design-system Website Kit (`ui_kits/website/`) remains a composition previe
 | **Framework** | **Astro** | Static-first marketing website; pre-render pages wherever possible |
 | **Language** | **TypeScript** | Use throughout the codebase |
 | **Styling** | **Tailwind CSS** | Implement the Shantara design system; avoid separate UI frameworks |
-| **CMS** | **Keystatic** | Git-based structured content management |
+| **CMS** | **Keystatic** | Git-based content schema and typed reader. Local mode; the admin runs in development only |
 | **Rich content** | **Markdoc** | Long-form editorial content within Keystatic |
-| **Content architecture** | **Astro Content Collections** | Typed collections for programmes, therapies, conditions, articles, research, etc. |
+| **Content architecture** | **Keystatic reader API** | Typed reads from `keystatic.config.ts` for programmes, therapies, conditions, articles, etc. No Astro Content Collections, no Zod: one schema, not two |
 | **Interactivity** | **Astro first; React only if genuinely required** | Do not introduce React for ordinary UI components |
 | **Animation** | **CSS / Tailwind transitions** | Default and primary animation mechanism |
 | **Page transitions** | **Astro View Transitions** | Restrained navigation transitions |
@@ -51,14 +51,14 @@ This design-system Website Kit (`ui_kits/website/`) remains a composition previe
 | **Google Analytics / Tag** | Via Google Tag / GA4 | Attribution and Ads conversion; forward through the same `track()` abstraction |
 | **Google Search Console** | Google property for `shantara.life` | Indexing and query performance |
 | **Netlify** | Git-connected site | Builds, preview deploys, CDN; production deploy authority |
-| **Keystatic** | Git-backed CMS in the website repo | Editors commit structured content; no headless SaaS CMS required |
+| **Keystatic** | Git-backed schema in the website repo | Content is committed as files. Staff do not edit in Keystatic; no headless SaaS CMS |
 
 ## Rules of engagement
 
 1. **Static-first.** Prefer Astro prerender. Hydrate only forms, navigation, gallery, accordion, modal/drawer, analytics, and video — same bar as [skill-technical.md](skill-technical.md).
 2. **No UI kit besides Shantara + Tailwind.** Tokens and components come from this design system. Do not add MUI, Chakra, shadcn-as-product-UI, SmoothUI, or similar.
 3. **React is exceptional.** Ordinary sections and chrome stay Astro/HTML. Introduce a React island only when interactivity cannot be done with Astro + light client script.
-4. **Content path.** Keystatic → Markdoc for long-form → Astro Content Collections for typed entities. The Keystatic singletons, collections, shared fields and language folders are defined in [skill-content.md](skill-content.md#cms--content-model). No page builder. Keep entity facts aligned with [`content/`](../../content/) in this repo where records already exist. Rates are entered only in the production Keystatic tariff.
+4. **Content path.** `keystatic.config.ts` is the only content schema. Pages read entries through the Keystatic reader (`createReader`); long-form fields are Markdoc, rendered by the site's own Markdoc renderer. Folder layout and routes: [skill-structure.md](skill-structure.md). The Keystatic singletons, collections, shared fields and language folders are defined in [skill-content.md](skill-content.md#cms--content-model). No page builder. Keep entity facts aligned with [`content/`](../../content/) in this repo where records already exist. Rates are entered only in the production Keystatic tariff.
 5. **One lead path.** Web3Forms for consultation/contact. No custom forms API, no database for leads.
 6. **One analytics path.** OpenPanel + Google Tag via one internal `track()`. Event inventory stays in [skill-technical.md](skill-technical.md).
 7. **SEO stays in code.** Metadata, canonicals, hreflang, robots, redirects, JSON-LD, and `@astrojs/sitemap` are developer-owned. OpenSEO and DataForSEO inform work; they do not replace implementation.
@@ -78,5 +78,7 @@ This design-system Website Kit (`ui_kits/website/`) remains a composition previe
 Do not rewrite this kit into Astro “because the stack says so.” Implement production in the website app; keep the kit as the skill + samples surface.
 
 ## Change control
+
+**2026-09-25:** Content architecture changed from Astro Content Collections with Zod to the Keystatic reader API. Reason: staff do not use the Keystatic admin, so one schema (Keystatic) replaces two that had to be kept in sync.
 
 To change a row in the stack table: record the reason, confirm it does not fight [§2 Operating principles](SKILL.md#section-2) or [What not to build](skill-qa.md#what-not-to-build), then update this file in the same change that introduces the dependency.

@@ -4,11 +4,11 @@ A `TileGrid` preset for the end of an article: heading, 2–3 article tiles (tit
 <Section ground="stone">
   <RelatedArticles
     articles={[
-      { title: "How programme duration is decided", href: "/en/insights/how-programme-duration-is-decided", src: p1, alt: "…", category: "Clinical Guides", readTime: "5 min read" },
-      { title: "Managing PCOS through lifestyle", href: "/en/insights/managing-pcos-lifestyle", src: p2, alt: "…", category: "Clinical Guides", readTime: "6 min read" },
-      { title: "How rooms are designed", href: "/en/insights/how-rooms-are-designed", src: p3, alt: "…", category: "Life at Shantara", readTime: "3 min read" },
+      { title: "How programme duration is decided", href: "/en/journal/how-programme-duration-is-decided", src: p1, alt: "…", category: "Clinical Guides", readTime: "5 min read" },
+      { title: "Managing PCOS through lifestyle", href: "/en/journal/managing-pcos-lifestyle", src: p2, alt: "…", category: "Clinical Guides", readTime: "6 min read" },
+      { title: "How rooms are designed", href: "/en/journal/how-rooms-are-designed", src: p3, alt: "…", category: "Life at Shantara", readTime: "3 min read" },
     ]}
-    action={<TextLink href="/en/insights">All insights</TextLink>} />
+    action={<TextLink href="/en/journal">All articles</TextLink>} />
 </Section>
 ```
 

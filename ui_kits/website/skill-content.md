@@ -4,7 +4,7 @@ Back to the [website skill](SKILL.md).
 
 ## CMS / content model
 
-**Production CMS:** Keystatic (git-based) with Markdoc for long-form, typed via Astro Content Collections — see [skill-stack.md](skill-stack.md).
+**Production CMS:** Keystatic (git-based) with Markdoc for long-form. `keystatic.config.ts` is the only schema, and pages read it through the Keystatic reader — see [skill-stack.md](skill-stack.md) and [skill-structure.md](skill-structure.md). Staff do not edit in Keystatic.
 
 This model is instantiated in [`content/`](../../content/) for the design-system kit. Empty folders (`guest-stories/`, `events/`, `testimonials/`) mean the entity is not ready. Do not invent records to fill them. Stub conditions stay `draft` with empty clinical bodies until medical review exists.
 
@@ -25,7 +25,7 @@ Define each group once and reuse it.
 | FAQs | `faqs`: list of `{question, answer}` | Conditions, programmes |
 | SEO | Meta title, meta description | Conditions, programmes, doctors, articles, doctor answers |
 
-**Related pages.** `type` is a fixed list in the Keystatic config: `condition`, `programme`, `therapy`, `room`, `doctor`, `article`, `doctor_answer`, `page`. It is not an editable collection. Link in one direction only; the site generates the reverse links at build time (a programme page lists every condition that points to it). Page templates group items by type, so a condition page renders its `programme` items as "Programmes for …". Relationships use stable IDs, never URLs. Therapy and room links point to their section on the single therapies or rooms page.
+**Related pages.** `type` is a fixed list in the Keystatic config: `condition`, `program`, `therapy`, `room`, `doctor`, `article`, `doctor_answer`, `page`. It is not an editable collection. Link in one direction only; the site generates the reverse links at build time (a programme page lists every condition that points to it). Page templates group items by type, so a condition page renders its `program` items as "Programmes for …". Relationships use stable IDs, never URLs. Therapy and room links point to their section on the single therapies or rooms page. Doctor links go to the doctor's profile page when one exists, otherwise to their section on `/en/our-doctors`.
 
 Attribution is not a related page: an article's author and a doctor answer's doctor keep their own fields.
 
@@ -36,7 +36,10 @@ Attribution is not a related page: an article's author and a doctor answer's doc
 | Site settings | See [Site settings](#site-settings) |
 | Tariff | Structure only in this design system: `includes`, `excludes`, `supplements` (`label`, `basis`), `payment_terms`, `cancellation`, `public_notes`. See [Tariff](#tariff). |
 | General FAQ | `categories`: list of `{name, faqs: [{question, answer}]}`. Editors can add categories. |
-| Medical categories | Handbook clinical groupings. A staff routing aid, not public IA. |
+
+Each singleton is one file per language: `site/{locale}.json`, `tariff/{locale}.json`, `faq/{locale}.json`. English is the master. A translated tariff carries labels, terms and notes, never amounts.
+
+Medical categories ([`content/medical-categories.json`](../../content/medical-categories.json)) stay in this design system as a staff routing aid. They are not modelled in Keystatic and are not public IA.
 
 ### Collections
 
@@ -46,10 +49,10 @@ Attribution is not a related page: an article's author and a doctor answer's doc
 | Programme | name; slug; focus; proposition; durations; suitability; inclusions; clinicians (doctors). **No prices.** | `/en/programs/[slug]` |
 | Therapy | name; slug; description; purpose; how it is used at Shantara | One `/en/therapies` page for all therapies. No page per therapy. |
 | Room | name; slug; summary; size; specification (`spec_line`); occupancy; balcony; amenities; gallery. **No prices.** | One `/en/rooms` page for all room categories. No page per room. |
-| Doctor | full name; slug; role; `photo_profile`; qualification; registration/licence; years in practice; biography (Markdoc); areas of practice; professional memberships; publications; external profiles | `/en/doctors/[slug]` — one page each for Dr. P.A. Kareem and Dr. Bahja Janu. Their answers, reviewed articles and programmes are listed automatically. |
+| Doctor | full name; slug; role; `photo_profile`; qualification; registration/licence; years in practice; biography (Markdoc); areas of practice; professional memberships; publications; external profiles | Every doctor is listed on `/en/our-doctors`. Only Dr. P.A. Kareem and Dr. Bahja Janu have a profile page (`/en/doctors/[slug]`), which lists their answers, reviewed articles and programmes automatically. No other doctor gets one. |
 | Author | name; slug; role; photo; short bio; optional link to a doctor | No page |
-| Article / Clinical Guide | title; slug; category; lead; body (Markdoc); read minutes; date published; date modified; author (required); medical reviewer (doctor, required for clinical content) | `/en/insights/[slug]` |
-| Doctor Answer | question; slug; short answer; detailed answer (Markdoc); category; read minutes; reviewed date; doctor (required) | `/en/insights/[slug]` |
+| Article / Clinical Guide | title; slug; category; lead; body (Markdoc); read minutes; date published; date modified; author (required); medical reviewer (doctor, required for clinical content) | `/en/journal/[slug]` |
+| Doctor Answer | question; slug; short answer; detailed answer (Markdoc); category; read minutes; reviewed date; doctor (required) | `/en/journal/[slug]` |
 | Testimonial | quote; display name; country; anonymised; photo; stay month and year; programme; `consent_status` (`recorded`, `pending`, `withdrawn`); `consent_date` | No page. Publish only when consent is `recorded`. |
 
 Deferred until real records exist: Guest Story, Event.
@@ -89,7 +92,9 @@ src/content/conditions/ar/diabetes.json   ← only the text fields
 
 ## Site settings
 
-Centralize: business name; contact information; physical address; social links; Google Maps/location data; primary CTA labels; consultation form settings; global SEO defaults; Organization/LocalBusiness schema data; analytics IDs; social share defaults.
+Centralize, one file per language (`site/{locale}.json`): business name; contact information; physical address; social links; Google Maps/location data; primary CTA labels; consultation form settings; global SEO defaults; Organization/LocalBusiness schema data; social share defaults.
+
+Analytics IDs and service keys are not content. They live in Netlify environment variables ([skill-structure.md](skill-structure.md#environment-variables)).
 
 ## Unified lead capture
 
